@@ -105,6 +105,7 @@ function projects(lastOnly) {
   return arr.sort((a, b) => b.files - a.files || a.name.localeCompare(b.name));
 }
 async function fetchFile(f) {
+  if (f.blob) return f.blob; // contenido armado aquí mismo, no hay que ir a buscarlo
   const tries = [fileSrc(f)];
   if (f.path) tries.push(f.path.split('/').map(encodeURIComponent).join('/')); // copia publicada en esta misma página
   for (const u of tries) {
@@ -161,11 +162,35 @@ const IC = {
   folder: '<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>',
   eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
   key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M17 6l3 3M14 9l3 3"/>',
-  cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>'
+  cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>',
+  copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>'
 };
 // Marca de Neorigen: el volumen con su división en T
 const marca = () => '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" aria-hidden="true"><path d="M30 26 H70 L90 76 H10 Z"/><path d="M23.8 41.5 H76.2"/><path d="M47 41.5 V76"/></svg>';
 const ic = (n, s = 20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n] || ''}</svg>`;
+
+/* ---------- apariencia y secciones (cada uno en su teléfono) ---------- */
+const UI_KEY = 'crono_ui_v1';
+const UI = Object.assign({ tema: 'auto', escala: 1, oculto: [] }, (() => {
+  try { return JSON.parse(localStorage.getItem(UI_KEY)) || {}; } catch (e) { return {}; }
+})());
+const TEMAS = [['auto', 'Según el sistema'], ['light', 'Claro'], ['dark', 'Oscuro']];
+const ESCALAS = [[0.9, 'Chica'], [1, 'Normal'], [1.15, 'Grande'], [1.3, 'Más grande']];
+const SECCIONES = [['calendar', 'Calendario'], ['list', 'Agenda'], ['board', 'Tablero'], ['files', 'Entregas'], ['dash', 'Panel']];
+function guardarUI() { try { localStorage.setItem(UI_KEY, JSON.stringify(UI)); } catch (e) { /* sin espacio */ } }
+function aplicarUI() {
+  const r = document.documentElement;
+  if (UI.tema === 'auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme', UI.tema);
+  r.style.setProperty('--escala', String(UI.escala || 1));
+  const color = getComputedStyle(r).getPropertyValue('--bg').trim();
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta && color) meta.setAttribute('content', UI.tema === 'auto' ? '#1F2A44' : color);
+}
+const visibles = () => SECCIONES.filter(([id]) => !UI.oculto.includes(id));
+function asegurarVista() {
+  const v = visibles();
+  if (!v.some(([id]) => id === S.view)) { S.view = v[0][0]; localStorage.setItem('crono_view', S.view); }
+}
 
 /* ---------- estado ---------- */
 const S = {
@@ -176,6 +201,7 @@ const S = {
   f: { q: '', person: '', platform: '', status: '', format: '', mine: false },
   offline: '',
   lastOnly: localStorage.getItem('crono_last_only') !== '0',
+  conPrompts: localStorage.getItem('crono_prompts') === '1',
   openProject: localStorage.getItem('crono_open_project') || '',
   db: { posts: [], comments: [], activity: [], notifications: [], prefs: [] }
 };
@@ -422,6 +448,7 @@ function viewFiles() {
   const totalFiles = groups.reduce((a, g) => a + g.files, 0);
   const head = `<div class="fhead">
       <div class="chips"><button class="chip${S.lastOnly ? ' on' : ''}" data-act="toggle-last">${ic('check', 15)} Solo última versión</button>
+      <button class="chip${S.conPrompts ? ' on' : ''}" data-act="toggle-prompts">${ic('copy', 15)} Con prompt para IA</button>
       <button class="btn ghost sm" data-act="dl-all">${ic('download', 16)} Todo</button></div>
       <small>${groups.length} proyecto${groups.length === 1 ? '' : 's'} · ${totalFiles} archivo${totalFiles === 1 ? '' : 's'}</small></div>`;
   if (!groups.length) return head + emptyBox('Todavía no hay entregas', 'Cada pieza con archivos o enlaces aparece aquí, agrupada por proyecto.');
@@ -437,6 +464,7 @@ function viewFiles() {
           ${links.length ? `<div class="flinks">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
           <div class="pzacts">
             ${files.length ? `<button class="btn ghost sm" data-act="dl-piece" data-id="${esc(post.id)}">${ic('download', 15)} Descargar pieza</button>` : ''}
+            <button class="btn ghost sm" data-act="pr-open" data-id="${esc(post.id)}">${ic('copy', 15)} Prompt IA</button>
             <button class="btn ghost sm" data-act="open-post" data-id="${esc(post.id)}">Abrir pieza</button></div>
         </div></details>`;
     }).join('');
@@ -455,7 +483,13 @@ function entriesOfPost(p, lastOnly) {
 function entriesOfProject(name, lastOnly) {
   const out = [];
   filtered().filter((p) => projectName(p) === name).forEach((p) => {
-    pieceFiles(p, lastOnly).forEach((f) => out.push({ name: `${slugify(p.title, 'pieza')}/${f.name}`, file: f }));
+    const carpeta = slugify(p.title, 'pieza');
+    const archivos = pieceFiles(p, lastOnly);
+    archivos.forEach((f) => out.push({ name: `${carpeta}/${f.name}`, file: f }));
+    if (S.conPrompts && (archivos.length || pendientesDe(p).length)) {
+      const texto = promptDe(p, tipoTarea(p));
+      out.push({ name: `${carpeta}/PROMPT.txt`, file: { name: 'PROMPT.txt', blob: new Blob([texto], { type: 'text/plain' }) } });
+    }
   });
   return out;
 }
@@ -634,8 +668,8 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const T = [['calendar', 'Calendario', 'calendar'], ['list', 'Agenda', 'list'], ['board', 'Tablero', 'board'],
-    ['files', 'Entregas', esAdmin() ? 'folder' : 'image'], ['dash', 'Panel', 'chart']];
+  const IC_TAB = { calendar: 'calendar', list: 'list', board: 'board', files: esAdmin() ? 'folder' : 'image', dash: 'chart' };
+  const T = visibles().map(([id, l]) => [id, l, IC_TAB[id]]);
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
@@ -662,7 +696,7 @@ function renderBanner() {
   }
   $('#banner').innerHTML = out.join('');
 }
-function renderAll() { if (!S.me) return; renderHeader(); renderToolbar(); renderTabs(); renderMain(); }
+function renderAll() { if (!S.me) return; asegurarVista(); renderHeader(); renderToolbar(); renderTabs(); renderMain(); }
 
 /* ---------- hojas ---------- */
 function openSheet(html, full) {
@@ -792,6 +826,16 @@ function openMe() {
       <div class="pushbox" id="gh-box">${ghBoxHtml()}</div>` : ''}
       <label class="lbl">Este celular</label>
       <div class="pushbox" id="push-box"><b>Revisando…</b></div>
+      <label class="lbl">Apariencia <small>solo en este dispositivo</small></label>
+      <div class="pushbox">
+        <small class="ap-t">Colores</small>
+        <div class="chips">${TEMAS.map(([v, n]) => `<button class="chip${UI.tema === v ? ' on' : ''}" data-act="ui-tema" data-v="${v}">${esc(n)}</button>`).join('')}</div>
+        <small class="ap-t">Tamaño de la letra</small>
+        <div class="chips">${ESCALAS.map(([v, n]) => `<button class="chip${UI.escala === v ? ' on' : ''}" data-act="ui-escala" data-v="${v}">${esc(n)}</button>`).join('')}</div>
+        <small class="ap-t">Secciones que quiero ver</small>
+        <div class="chips">${SECCIONES.map(([id, n]) => `<button class="chip${UI.oculto.includes(id) ? '' : ' on'}" data-act="ui-seccion" data-v="${id}">${UI.oculto.includes(id) ? '' : ic('check', 14)}${esc(n)}</button>`).join('')}</div>
+        <p class="hint">Se guarda en este teléfono; a los demás no les cambia nada.</p>
+      </div>
       <label class="lbl">Avisarme cuando…<small>App · Celular</small></label>
       <div class="sgrid"><span></span><span class="h">App</span><span class="h">Celular</span>
         ${EVENTS.map((e) => `<div class="n">${esc(e.label)}<small>${esc(e.hint)}</small></div>
@@ -947,7 +991,8 @@ function renderEditor() {
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
   </div>
-  <div class="pf"><button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
+  <div class="pf">${old && esAdmin() ? `<button class="btn ghost" data-act="pr-open" data-id="${esc(d.id)}" aria-label="Prompt para la IA">${ic('copy', 18)}</button>` : ''}
+    <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
   $('#panel').innerHTML = html;
   if ($('#pb')) $('#pb').scrollTop = sc;
 }
@@ -1008,6 +1053,188 @@ async function onFiles(input) {
   toast('Archivos listos');
 }
 
+
+/* ---------- prompts para la IA (solo quien administra) ---------- */
+const TIPOS = [
+  ['editar-imagen', 'Editar fotos', 'image'],
+  ['generar-imagen', 'Generar imagen', 'plus'],
+  ['codigo', 'Código / web', 'board'],
+  ['texto', 'Texto y copy', 'msg'],
+  ['diseno', 'Diseño de láminas', 'folder']
+];
+// Qué le estamos pidiendo a la pieza: se adivina y después se puede cambiar a mano
+function tipoTarea(post) {
+  const files = pieceFiles(post, true);
+  const hayImg = files.some(isImg);
+  const txt = (pendientesDe(post).join(' ') + ' ' + post.title + ' ' + (post.notes || '') + ' ' + (post.caption || '')).toLowerCase();
+  const web = post.format === 'web' || post.platforms.includes('web') ||
+    /cotizador|sitio web|p[áa]gina|formulario|bot[óo]n|enlace|link|c[óo]digo|wix|men[úu]|landing/.test(txt);
+  if (web) return 'codigo';
+  if (hayImg && /sacar|saquemos|quita|limpia|borra|elimina|retoca|recorta|sombra|luz|color|fondo|cielo|escombro|pl[áa]stico|camioneta|reflejo|brillo/.test(txt)) return 'editar-imagen';
+  if (!files.length && /genera|crear|ilustra|render|imagen de|mockup/.test(txt)) return 'generar-imagen';
+  if (/copy|texto|t[íi]tulo|titular|hashtag|redacta|descripci[óo]n|caption|ortograf/.test(txt)) return 'texto';
+  if (hayImg) return 'editar-imagen';
+  if (['carrusel', 'banner', 'grafica', 'pdf'].includes(post.format)) return 'diseno';
+  return 'texto';
+}
+const pendientesDe = (post) => (post.checklist || []).filter((c) => !c.done).map((c) => c.text);
+function feedbackDe(post) {
+  return S.db.comments.filter((c) => c.postId === post.id && c.author !== S.me.id)
+    .sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)))
+    .slice(-8).map((c) => `${person(c.author).name}: ${c.text.replace(/\s+/g, ' ').trim()}`);
+}
+function promptDe(post, tipo) {
+  const files = pieceFiles(post, true);
+  const imgs = files.filter(isImg);
+  const pend = pendientesDe(post);
+  const fb = feedbackDe(post);
+  const marca = CFG.MARCA || '';
+  const cambios = (pend.length ? pend : fb).map((t, i) => `${i + 1}. ${t}`).join('\n') || '(todavía no hay cambios anotados: escríbelos aquí)';
+  const ficha = [
+    `Pieza: ${post.title}`,
+    post.campaign ? `Proyecto: ${post.campaign}` : '',
+    `Formato: ${formatName(post.format)}${post.platforms.length ? ' · ' + post.platforms.map((x) => platOf(x).name).join(', ') : ''}`,
+    post.date ? `Se publica: ${fmtLong(post.date)}` : ''
+  ].filter(Boolean).join('\n');
+
+  const base = `CONTEXTO DE MARCA\n${marca}\n\nFICHA\n${ficha}\n\nCAMBIOS PEDIDOS\n${cambios}`;
+  const extra = fb.length && pend.length ? `\n\nCOMENTARIOS DEL EQUIPO (por si ayudan)\n${fb.map((t) => '- ' + t).join('\n')}` : '';
+
+  const plantillas = {
+    'editar-imagen': `Actúa como retocador fotográfico profesional.
+Te adjunto ${imgs.length > 1 ? imgs.length + ' fotos' : 'una foto'} de un proyecto real.
+${imgs.length > 1 ? 'Edita cada una aplicando' : 'Edítala aplicando'} SOLO los cambios pedidos, sin alterar nada más.
+
+${base}${extra}
+
+REGLAS
+- Respeta el encuadre, la perspectiva y la proporción original.
+- Conserva la luz natural y los colores reales; nada de filtros ni saturación extra.
+- Si hay que quitar un objeto, rellena el fondo de forma realista y coherente.
+- No agregues texto, logos ni marcas de agua.
+- Devuélveme la imagen en la mayor resolución posible.`,
+
+    'generar-imagen': `Genera una imagen para una publicación de Neorigen.
+
+${base}${extra}
+
+CÓMO DEBE VERSE
+- Fotografía realista, no ilustración; luz natural, hora dorada o día nublado suave.
+- Madera a la vista, ventanales grandes, integración con el paisaje chileno.
+- Sin texto, sin logos, sin personas reconocibles.
+- Proporción ${post.format === 'reel' || post.format === 'story' ? '9:16 (vertical para historias)' : post.platforms.includes('instagram') ? '4:5 (vertical de Instagram)' : '16:9'}.`,
+
+    codigo: `Actúa como desarrollador web. Vas a modificar una página ya hecha.
+
+${base}${extra}
+
+CÓMO QUIERO LA RESPUESTA
+- Primero, en dos líneas, qué vas a cambiar y dónde.
+- Después el código completo de cada archivo modificado, listo para reemplazar (no fragmentos sueltos).
+- Mantén el estilo, los nombres y la estructura que ya existen.
+- Que funcione igual en celular y en computador.`,
+
+    texto: `Actúa como redactor de redes sociales de Neorigen.
+
+${base}${extra}
+
+CÓMO QUIERO EL TEXTO
+- Español de Chile, cercano y sobrio. Nada de signos de exclamación de más ni palabras infladas.
+- Primera línea con gancho, de una sola frase.
+- ${post.platforms.includes('instagram') ? 'Máximo 150 palabras, con saltos de línea para que se lea fácil.' : 'Breve y directo.'}
+- Cierra con una pregunta al lector y luego los hashtags (máximo 6, al final).
+- Dame 3 versiones para elegir.`,
+
+    diseno: `Actúa como diseñador gráfico. Vas a ajustar las láminas de ${formatName(post.format).toLowerCase()} que te adjunto.
+
+${base}${extra}
+
+REGLAS
+- Respeta la grilla, la tipografía y la paleta de la marca.
+- Los textos tienen que leerse en un celular: nada de letra chica.
+- Mantén el orden de las láminas, salvo que el cambio diga otra cosa.
+- Entrega cada lámina por separado, en la misma proporción del original.`
+  };
+  return plantillas[tipo] || plantillas.texto;
+}
+
+let PR = null;
+function openPrompt(postId, tipo) {
+  const post = S.db.posts.find((p) => p.id === postId);
+  if (!post) { toast('Esa pieza ya no está'); return; }
+  const t = tipo || tipoTarea(post);
+  PR = { postId, tipo: t, texto: promptDe(post, t) };
+  renderPrompt();
+}
+function renderPrompt() {
+  const post = S.db.posts.find((p) => p.id === PR.postId);
+  const imgs = pieceFiles(post, true).filter((f) => isImg(f) || isVideo(f));
+  const files = pieceFiles(post, true);
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close">${ic('x')}</button><h2>Prompt para la IA</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <p class="hint">Hecho con los pendientes y los comentarios de “${esc(post.title)}”. Revísalo y pégalo en Gemini, ChatGPT o Claude.</p>
+      <label class="lbl">Qué le vamos a pedir</label>
+      <div class="chips scroll">${TIPOS.map(([id, n, i]) => `<button class="chip${PR.tipo === id ? ' on' : ''}" data-act="pr-tipo" data-v="${id}">${ic(i, 15)}${esc(n)}</button>`).join('')}</div>
+      <label class="lbl">Prompt <small>se puede editar</small></label>
+      <textarea class="area" id="pr-texto" style="min-height:260px;font-size:0.82rem">${esc(PR.texto)}</textarea>
+      ${imgs.length ? `<label class="lbl">Fotos de la entrega <small>versión final</small></label>
+      <div class="prfotos">${imgs.map((f, i) => `<button class="prfoto" data-act="pr-copiar-foto" data-f="${esc(f.id)}">
+        <img loading="lazy" alt="" src="${esc(fileSrc(f))}"><span>${ic('copy', 15)} Foto ${i + 1} + prompt</span></button>`).join('')}</div>
+      <p class="hint">Copia la foto y el prompt juntos: en Gemini pegas una sola vez con Ctrl+V (o mantén apretado → Pegar).</p>` : ''}
+    </div>
+    <div class="pf">
+      ${files.length ? `<button class="btn ghost" data-act="pr-zip">${ic('download', 17)} ZIP</button>` : ''}
+      <button class="btn" data-act="pr-copiar">${ic('copy', 17)} Copiar prompt</button>
+    </div>`, true);
+}
+
+async function copiarTexto(txt) {
+  try { await navigator.clipboard.writeText(txt); return true; }
+  catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
+    ta.remove();
+    return ok;
+  }
+}
+// Convierte lo que sea a PNG, que es lo que acepta el portapapeles
+async function comoPng(blob) {
+  const bmp = await createImageBitmap(blob);
+  const c = document.createElement('canvas');
+  c.width = bmp.width; c.height = bmp.height;
+  c.getContext('2d').drawImage(bmp, 0, 0);
+  return new Promise((res) => c.toBlob(res, 'image/png'));
+}
+async function copiarFotoYPrompt(fileId) {
+  const hit = findFile(fileId); if (!hit) return;
+  const texto = ($('#pr-texto') || {}).value || PR.texto;
+  const png = (async () => comoPng(await fetchFile(hit.file)))();
+  try {
+    await navigator.clipboard.write([new ClipboardItem({
+      'image/png': png,
+      'text/plain': new Blob([texto], { type: 'text/plain' })
+    })]);
+    toast('Foto y prompt copiados: pégalos en la IA', 3800);
+  } catch (e) {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': await png })]);
+      toast('Foto copiada. El prompt va aparte con “Copiar prompt”.', 4200);
+    } catch (e2) {
+      const ok = await copiarTexto(texto);
+      toast(ok ? 'Este navegador no deja copiar la foto: copié solo el prompt. Descarga la foto y adjúntala.' : 'No se pudo copiar aquí', 5200);
+    }
+  }
+}
+// ZIP de la pieza con el prompt adentro
+async function zipConPrompt(post) {
+  const texto = ($('#pr-texto') || {}).value || promptDe(post, tipoTarea(post));
+  const entradas = entriesOfPost(post, true);
+  entradas.push({ name: 'PROMPT.txt', file: { name: 'PROMPT.txt', url: 'data:texto', blob: new Blob([texto], { type: 'text/plain' }) } });
+  await downloadZip(entradas, slugify(post.title, 'entrega'));
+}
 
 /* ---------- entrada con contraseña ---------- */
 const esAdmin = () => (CFG.ADMIN_PEOPLE || []).includes(S.me.id);
@@ -1307,6 +1534,24 @@ const ACTS = {
     if (fs.length === 1) await downloadOne(fs[0]);            // uno solo: el archivo tal cual
     else await downloadZip(entriesOfPost(p, true), slugify(p.title, 'entrega'));
   },
+  'toggle-prompts': () => { S.conPrompts = !S.conPrompts; localStorage.setItem('crono_prompts', S.conPrompts ? '1' : '0'); renderMain(); },
+  'pr-open': (el, e) => { if (e) e.stopPropagation(); if (!esAdmin()) return; openPrompt(el.dataset.id); },
+  'pr-tipo': (el) => { PR.tipo = el.dataset.v; PR.texto = promptDe(S.db.posts.find((p) => p.id === PR.postId), PR.tipo); renderPrompt(); },
+  'pr-copiar': async () => {
+    const t = ($('#pr-texto') || {}).value || PR.texto;
+    toast(await copiarTexto(t) ? 'Prompt copiado ✅' : 'No se pudo copiar; selecciona el texto a mano', 3000);
+  },
+  'pr-copiar-foto': (el, e) => { if (e) e.stopPropagation(); copiarFotoYPrompt(el.dataset.f); },
+  'pr-zip': async () => { const p = S.db.posts.find((x) => x.id === PR.postId); if (p) await zipConPrompt(p); },
+  'ui-tema': (el) => { UI.tema = el.dataset.v; guardarUI(); aplicarUI(); openMe(); },
+  'ui-escala': (el) => { UI.escala = parseFloat(el.dataset.v); guardarUI(); aplicarUI(); openMe(); },
+  'ui-seccion': (el) => {
+    const v = el.dataset.v;
+    const i = UI.oculto.indexOf(v);
+    if (i >= 0) UI.oculto.splice(i, 1);
+    else { if (visibles().length <= 1) { toast('Deja al menos una sección'); return; } UI.oculto.push(v); }
+    guardarUI(); renderAll(); openMe();
+  },
   'buscar-update': (el) => buscarActualizacion(el),
   'acc-pedir': () => pedirContrasena(),
   'acc-entrar': async (el) => {
@@ -1590,6 +1835,7 @@ async function boot() {
     store = window.Store.local; S.db = normalize(await store.init());
   }
   if (store.mode === 'local' && store.isFirstRun() && !S.db.posts.length) await seedDemo();
+  aplicarUI();
   store.onError = (e) => toast('No se pudo guardar: ' + (e.message || e), 6000);
   watchSaving();
   try { store.subscribe(debounce(reload, 500)); } catch (e) { /* sin actualización automática */ }

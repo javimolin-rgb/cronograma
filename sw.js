@@ -1,6 +1,6 @@
 /* Service worker: notificaciones y funcionamiento tipo app.
    Al cambiar VERSION, todas las apps instaladas se actualizan solas la próxima vez que se abren. */
-const VERSION = '2026.10.22-5';
+const VERSION = '2026.10.22-6';
 const CACHE = 'crono-' + VERSION;
 const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'store.js', 'zip.js', 'whatsapp.js', 'app.js', 'icon.svg', 'icon-192.png'];
 

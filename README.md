@@ -13,6 +13,21 @@ Las entregas de agosto a octubre de 2026: diagnóstico y resumen de marca, cotiz
 - **Flavio y Maca** entran a **Entregas** y ven cada pieza terminada como resultado: el carrusel se desliza con el dedo, con su descripción, sus hashtags y los enlaces. Pueden comentar y descargar la versión final. No ven archivos sueltos, ni versiones, ni carpetas.
 - **Javi** ve en esa misma pestaña la carpeta completa: proyectos, piezas, todos los archivos, las versiones anteriores y las descargas en zip.
 
+## Apariencia (cada uno en su teléfono)
+
+En **Ajustes → Apariencia**: colores (según el sistema, claro u oscuro), tamaño de la letra (cuatro tamaños) y qué secciones mostrar en la barra de abajo. Se guarda en ese dispositivo y no le cambia nada a los demás.
+
+## Prompts para la IA (solo Javi)
+
+En cada pieza, el botón **Prompt IA** arma el texto para pedirle los cambios a Gemini, ChatGPT o Claude, usando los pendientes de la pieza y los comentarios del equipo. Detecta solo de qué se trata —editar fotos, generar una imagen, código, copy o diseño de láminas— y se puede cambiar a mano. Desde ahí:
+
+- **Copiar prompt**: el texto al portapapeles.
+- **Foto + prompt**: copia la foto *y* el texto juntos, para pegar una sola vez en la IA.
+- **ZIP**: la entrega con un `PROMPT.txt` adentro.
+- En la cabecera de Entregas, el interruptor **Con prompt para IA** agrega ese `PROMPT.txt` a los zips de proyectos completos.
+
+El contexto de marca que se incluye en los prompts se edita en `MARCA`, en `config.js`.
+
 ## Quién entra y cómo
 
 | | Qué tiene que hacer |

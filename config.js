@@ -26,6 +26,9 @@ window.CRONO_CONFIG = {
   // Si lo dejas vacío usa la URL desde donde se abre la página.
   SITE_URL: "",
 
+  // Contexto de marca que se incluye en los prompts para la IA
+  MARCA: "Neorigen: casas prediseñadas de madera, diseñadas y construidas a medida en Chile. Estética natural, cálida y sobria; luz natural, madera a la vista, integración con el entorno. Paleta azul marino (#1F2A44), verde oliva (#4E5D3C) y blanco. Lema: Vive lo natural.",
+
   // Quién administra (deja preparada la entrada del equipo y ve las opciones avanzadas)
   ADMIN_PEOPLE: ["javi"],
 

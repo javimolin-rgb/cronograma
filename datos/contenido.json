@@ -461,18 +461,18 @@
    "publishedAt": "2026-09-10T19:00:00.000Z"
   },
   {
-   "id": "e-c4",
    "title": "Carrusel: terminaciones y llave en mano",
    "caption": "Terminaciones, quincallería y detalles de la entrega llave en mano.",
    "notes": "Aprobado tras varias rondas (cambiar la lámpara que no ponemos nosotros, otro baño, foto de quincallería). No quedó registro del enlace de publicación en el chat.",
    "hashtags": "",
    "campaign": "Instagram",
-   "date": "2026-09-14",
    "time": "",
+   "date": "2026-09-14",
    "format": "carrusel",
-   "status": "aprobado",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 3,
+   "id": "e-c4",
    "platforms": [
     "instagram"
    ],
@@ -485,10 +485,10 @@
    "checklist": [],
    "createdAt": "2026-09-11T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-09-14T19:00:00.000Z",
+   "updatedAt": "2026-10-22T22:02:34.432Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-09-14T19:00:00.000Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-10-22T22:02:34.432Z",
+   "publishedAt": "2026-10-22T22:02:34.432Z"
   },
   {
    "id": "e-c-web",
@@ -1079,6 +1079,19 @@
  ],
  "activity": [
   {
+   "id": "7c14eb91-6933-4338-b01a-2394d3763003",
+   "postId": "e-c4",
+   "postTitle": "Carrusel: terminaciones y llave en mano",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a Publicado",
+   "meta": {
+    "from": "aprobado",
+    "to": "publicado"
+   },
+   "createdAt": "2026-10-22T22:02:34.432Z"
+  },
+  {
    "id": "08ad4bd0-d611-40b2-a316-929fb6b64857",
    "postId": "e-web-formulario",
    "postTitle": "Formulario de contacto de la web → bandeja de entrada",
@@ -1626,6 +1639,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f92aaa9d-102c-4c5c-925d-42f8dc24a0e7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e-c4",
+   "type": "status",
+   "text": "movió “Carrusel: terminaciones y llave en mano” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Carrusel: terminaciones y llave en mano” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-c4",
+   "createdAt": "2026-10-22T22:02:34.433Z"
+  },
   {
    "id": "b5d57353-9588-4ec3-8300-4b29f4513345",
    "to": "flavio",

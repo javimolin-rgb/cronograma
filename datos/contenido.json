@@ -323,18 +323,18 @@
    "publishedAt": "2026-10-16T19:00:00.000Z"
   },
   {
-   "id": "e-web-formulario",
    "title": "Formulario de contacto de la web → bandeja de entrada",
    "caption": "Que los mensajes del formulario lleguen a la bandeja de entrada de Wix y no solo a la base de datos.",
    "notes": "Probado con mensajes de prueba el 22 de octubre. Falta la confirmación de Flavio.",
    "hashtags": "",
    "campaign": "Sitio web",
-   "date": "2026-10-22",
    "time": "",
+   "date": "2026-10-22",
    "format": "web",
-   "status": "revision",
+   "status": "publicado",
    "priority": "alta",
    "revisions": 0,
+   "id": "e-web-formulario",
    "platforms": [
     "web"
    ],
@@ -347,10 +347,10 @@
    "checklist": [],
    "createdAt": "2026-10-22T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-22T19:00:00.000Z",
+   "updatedAt": "2026-10-22T22:02:21.150Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-10-22T19:00:00.000Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-10-22T22:02:21.150Z",
+   "publishedAt": "2026-10-22T22:02:21.150Z"
   },
   {
    "id": "e-c1",
@@ -1079,6 +1079,19 @@
  ],
  "activity": [
   {
+   "id": "08ad4bd0-d611-40b2-a316-929fb6b64857",
+   "postId": "e-web-formulario",
+   "postTitle": "Formulario de contacto de la web → bandeja de entrada",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Publicado",
+   "meta": {
+    "from": "revision",
+    "to": "publicado"
+   },
+   "createdAt": "2026-10-22T22:02:21.153Z"
+  },
+  {
    "id": "3512626b-9ed7-40f4-be53-083931dbfb9e",
    "postId": "e-fotos-itahue",
    "postTitle": "Edición de fotos de obra — Itahue",
@@ -1613,6 +1626,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b5d57353-9588-4ec3-8300-4b29f4513345",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e-web-formulario",
+   "type": "status",
+   "text": "movió “Formulario de contacto de la web → bandeja de entrada” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Formulario de contacto de la web → bandeja de entrada” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-web-formulario",
+   "createdAt": "2026-10-22T22:02:21.154Z"
+  },
   {
    "id": "c027b907-b2e9-48a7-ab78-8664c9bec06e",
    "to": "maca",

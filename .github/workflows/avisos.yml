@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - run: npm install web-push@3.6.7 --no-save --no-audit --no-fund
       - name: Enviar los avisos pendientes
         env:

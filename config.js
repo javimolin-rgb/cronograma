@@ -26,6 +26,9 @@ window.CRONO_CONFIG = {
   // Si lo dejas vacío usa la URL desde donde se abre la página.
   SITE_URL: "",
 
+  // Quién administra (deja preparada la entrada del equipo y ve las opciones avanzadas)
+  ADMIN_PEOPLE: ["javi"],
+
   // Quién puede importar conversaciones de WhatsApp (el resto no ve el botón)
   IMPORT_PEOPLE: ["javi"],
 

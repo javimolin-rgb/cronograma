@@ -15,6 +15,29 @@
   const TOKEN_KEY = 'crono_gh_token';
   const API = 'https://api.github.com';
 
+  /* La clave del equipo se guarda cifrada con una contraseña corta.
+     En el archivo publicado solo queda texto ilegible: sin la contraseña no sirve de nada. */
+  const b64 = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf)));
+  const deB64 = (s) => Uint8Array.from(atob(String(s || '')), (c) => c.charCodeAt(0));
+  async function derivar(pass, salt) {
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey(
+      { name: 'PBKDF2', salt, iterations: 150000, hash: 'SHA-256' },
+      base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+  }
+  async function cifrar(pass, texto) {
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const k = await derivar(pass, salt);
+    const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, k, new TextEncoder().encode(texto));
+    return { v: 1, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
+  }
+  async function descifrar(pass, obj) {
+    const k = await derivar(pass, deB64(obj.salt));
+    const txt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: deB64(obj.iv) }, k, deB64(obj.ct));
+    return new TextDecoder().decode(txt);
+  }
+
   const uid = () => (window.crypto && crypto.randomUUID)
     ? crypto.randomUUID()
     : Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
@@ -118,7 +141,9 @@
     mode: 'github',
     cfg: null,        // { owner, repo, branch, data, files }
     token: '',
-    user: '',         // nombre de la cuenta de GitHub, si la llave es válida
+    acceso: null,      // sobre cifrado con la clave del equipo, si la administradora lo dejó
+    caducada: false,   // la clave dejó de servir
+    user: '',
     db: null,
     sha: null,        // sha actual de datos/contenido.json
     etag: null,
@@ -136,12 +161,13 @@
       const tok = (t || '').trim();
       if (!tok) throw new Error('Pega la llave');
       const r = await fetch(`${API}/repos/${this.cfg.owner}/${this.cfg.repo}`, { headers: this.headers(tok) });
-      if (r.status === 401) throw new Error('La llave no es válida o ya venció');
-      if (r.status === 403 || r.status === 404) throw new Error('La llave no tiene acceso a este repositorio');
-      if (!r.ok) throw new Error('GitHub respondió ' + r.status);
+      if (r.status === 401) throw new Error('esa clave no es válida o ya venció');
+      if (r.status === 403 || r.status === 404) throw new Error('esa clave no da acceso a esta aplicación');
+      if (!r.ok) throw new Error('no se pudo comprobar la clave (error ' + r.status + ')');
       const repo = await r.json();
-      if (!repo.permissions || !repo.permissions.push) throw new Error('La llave puede leer pero no escribir (necesita permiso de Contenido: lectura y escritura)');
+      if (!repo.permissions || !repo.permissions.push) throw new Error('esa clave solo deja mirar, no guardar');
       this.token = tok;
+      this.caducada = false;
       try { localStorage.setItem(TOKEN_KEY, tok); } catch (e) { /* sin espacio */ }
       try {
         const me = await (await fetch(`${API}/user`, { headers: this.headers(tok) })).json();
@@ -167,7 +193,73 @@
     },
 
     /* --- lectura --- */
-    async init() { this.loadToken(); return this.load(); },
+    async init() {
+      this.loadToken();
+      if (!this.token) await this.buscarAcceso();
+      return this.load();
+    },
+    hayAcceso() { return !!(this.acceso && this.acceso.ct); },
+    // Sobre cifrado que dejó la administradora para que el resto solo escriba una contraseña
+    async buscarAcceso() {
+      const leer = async (url, cab) => {
+        const r = await fetch(url, { headers: cab || {}, cache: 'no-store' });
+        return r.ok ? r.json() : null;
+      };
+      try {
+        let j = null;
+        try {
+          const api = await leer(`${this.contentsUrl(this.cfg.access)}?ref=${encodeURIComponent(this.cfg.branch)}`, this.headers());
+          if (api && api.content) j = JSON.parse(b64ToUtf8(api.content));
+        } catch (e) { /* probamos la copia publicada */ }
+        if (!j) j = await leer(this.rawUrl(this.cfg.access) + '?t=' + Date.now());
+        if (j && j.ct && j.salt && j.iv) this.acceso = j;
+      } catch (e) { /* sin sobre: queda en solo lectura */ }
+    },
+    // Escribe la contraseña una vez y este teléfono queda listo para siempre
+    async entrarConContrasena(pass) {
+      if (!this.hayAcceso()) throw new Error('todavía no hay una entrada preparada');
+      let clave = '';
+      try { clave = await descifrar(String(pass || ''), this.acceso); }
+      catch (e) { throw new Error('esa contraseña no es'); }
+      await this.setToken(clave);
+      return true;
+    },
+    // La administradora deja preparada la entrada para el resto del equipo
+    async prepararAcceso(pass) {
+      if (!this.token) throw new Error('primero necesitas tu propia clave');
+      if (String(pass || '').length < 4) throw new Error('usa una contraseña de al menos 4 letras');
+      const sobre = await cifrar(String(pass), this.token);
+      sobre.at = new Date().toISOString();
+      await this.putJson(this.cfg.access, sobre);
+      this.acceso = sobre;
+    },
+    async quitarAcceso() {
+      const r = await fetch(`${this.contentsUrl(this.cfg.access)}?ref=${encodeURIComponent(this.cfg.branch)}`, { headers: this.headers(), cache: 'no-store' });
+      if (!r.ok) { this.acceso = null; return; }
+      const j = await r.json();
+      await fetch(this.contentsUrl(this.cfg.access), {
+        method: 'DELETE', headers: Object.assign({ 'Content-Type': 'application/json' }, this.headers()),
+        body: JSON.stringify({ message: 'Cronograma: quita la entrada del equipo', sha: j.sha, branch: this.cfg.branch })
+      });
+      this.acceso = null;
+    },
+    async putJson(path, obj) {
+      let sha = null;
+      try {
+        const r = await fetch(`${this.contentsUrl(path)}?ref=${encodeURIComponent(this.cfg.branch)}`, { headers: this.headers(), cache: 'no-store' });
+        if (r.ok) sha = (await r.json()).sha;
+      } catch (e) { /* no existía */ }
+      const body = { message: 'Cronograma: ' + path, content: utf8ToB64(JSON.stringify(obj, null, 1)), branch: this.cfg.branch };
+      if (sha) body.sha = sha;
+      const r2 = await fetch(this.contentsUrl(path), {
+        method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, this.headers()), body: JSON.stringify(body)
+      });
+      if (!r2.ok) {
+        let msg = 'no se pudo guardar (' + r2.status + ')';
+        try { const e = await r2.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
+        throw new Error(msg);
+      }
+    },
     emptyDb() { const o = {}; TABLES.forEach((t) => { o[t] = []; }); return o; },
 
     async load() {
@@ -185,11 +277,11 @@
       if (r.status === 403 && !this.token) {
         // Se acabaron las consultas sin llave: leemos la copia publicada
         const raw = await fetch(this.rawUrl(c.data) + '?t=' + Date.now(), { cache: 'no-store' });
-        if (!raw.ok) throw new Error('No se pudo leer los datos (GitHub respondió ' + r.status + ')');
+        if (!raw.ok) throw new Error('no se pudieron leer los datos (error ' + r.status + ')');
         this.db = this.normalizeDb(await raw.json());
         return clone(this.db);
       }
-      if (!r.ok) throw new Error('No se pudo leer los datos (GitHub respondió ' + r.status + ')');
+      if (!r.ok) throw new Error('no se pudieron leer los datos (error ' + r.status + ')');
       this.etag = r.headers.get('ETag');
       const j = await r.json();
       this.sha = j.sha;
@@ -212,7 +304,7 @@
       const a = this.db[t];
       const i = a.findIndex((x) => x.id === o.id);
       if (i >= 0) a[i] = clone(o); else a.unshift(clone(o));
-      if (!this.token) throw new Error('solo lectura: agrega tu llave de GitHub en Ajustes');
+      if (!this.token) throw new Error('modo solo lectura');
       this.dirty.add(t + ':' + o.id);
       this.gone.delete(t + ':' + o.id);
       this.queueSave(); // se sube en segundo plano, junto con los demás cambios
@@ -287,16 +379,15 @@
         await this.rebase();
         return this.commit(intento + 1);
       }
-      let msg = 'GitHub respondió ' + r.status;
+      let msg = 'error ' + r.status;
       try { const e = await r.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
-      if (r.status === 401) msg = 'la llave no es válida o ya venció';
-      if (r.status === 403) msg = 'la llave no tiene permiso para escribir en el repositorio';
+      if (r.status === 401 || r.status === 403) { this.caducada = true; msg = 'la clave de acceso ya no sirve'; }
       throw new Error(msg);
     },
 
     /* --- archivos --- */
     async upload(file, opts = {}) {
-      if (!this.token) throw new Error('agrega tu llave de GitHub en Ajustes para poder subir archivos');
+      if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
       const max = 24 * 1024 * 1024;
       const small = await resize(file, 1800, 0.84);
       const blob = small || file;
@@ -313,7 +404,7 @@
         method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, this.headers()), body: JSON.stringify(body)
       });
       if (!r.ok) {
-        let msg = 'GitHub respondió ' + r.status;
+        let msg = 'error ' + r.status;
         try { const e = await r.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
         throw new Error(msg);
       }
@@ -388,7 +479,8 @@
       owner, repo,
       branch: g.BRANCH || 'main',
       data: g.DATA || 'datos/contenido.json',
-      files: g.FILES || 'archivos'
+      files: g.FILES || 'archivos',
+      access: g.ACCESS || 'datos/acceso.json'
     };
   }
 

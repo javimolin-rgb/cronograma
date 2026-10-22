@@ -1,5 +1,7 @@
-/* Service worker: notificaciones push + funcionamiento tipo app */
-const CACHE = 'crono-shell-v3';
+/* Service worker: notificaciones y funcionamiento tipo app.
+   Al cambiar VERSION, todas las apps instaladas se actualizan solas la próxima vez que se abren. */
+const VERSION = '2026.10.22-4';
+const CACHE = 'crono-' + VERSION;
 const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'store.js', 'zip.js', 'whatsapp.js', 'app.js', 'icon.svg', 'icon-192.png'];
 
 self.addEventListener('install', (e) => {
@@ -7,7 +9,15 @@ self.addEventListener('install', (e) => {
   self.skipWaiting();
 });
 self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys()
+    .then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+    .then(() => self.clients.claim()));
+});
+
+self.addEventListener('message', (e) => {
+  const d = e.data || {};
+  if (d.type === 'version' && e.source) e.source.postMessage({ type: 'version', version: VERSION });
+  if (d.type === 'skip-waiting') self.skipWaiting();
 });
 
 // Red primero (siempre la versión más nueva); si no hay internet, usa lo guardado.

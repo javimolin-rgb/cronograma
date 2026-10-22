@@ -194,7 +194,7 @@ function normalize(db) {
 /* ---------- guardado ---------- */
 function requireWrite() {
   if (store.mode !== 'github' || store.canWrite) return true;
-  toast('Solo lectura: pega tu llave de GitHub en Ajustes para guardar', 3800);
+  toast('Para escribir necesitas la clave de acceso', 3400);
   openMe();
   return false;
 }
@@ -601,9 +601,10 @@ window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); defe
 window.addEventListener('appinstalled', () => { deferredInstall = null; if (S.me) renderBanner(); });
 function renderBanner() {
   const out = [];
-  if (S.offline) out.push(`<div class="demo"><b>Sin conexión con GitHub</b> (${esc(S.offline)}). Se está usando una copia local de prueba: lo que escribas aquí no se guarda en el repositorio.</div>`);
-  if (store.mode === 'local' && !S.offline) out.push(`<div class="demo"><b>Modo demo:</b> los datos solo se guardan en este dispositivo. Publica la página en GitHub Pages para trabajar en equipo (ver LEEME.md).</div>`);
-  else if (!store.canWrite) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para guardar cambios, pega tu llave de GitHub en <button class="lnk" data-act="me">Ajustes</button>.</div>`);
+  if (S.offline) out.push(`<div class="demo"><b>Sin conexión</b> · Se está usando una copia de prueba de este teléfono: lo que escribas aquí no le llega al equipo.</div>`);
+  if (store.mode === 'local' && !S.offline) out.push(`<div class="demo"><b>Modo de prueba:</b> lo que hagas aquí solo queda en este dispositivo.</div>`);
+  else if (!store.canWrite) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para escribir, ${store.hayAcceso && store.hayAcceso() ? `<button class="lnk" data-act="acc-pedir">escribe tu clave</button>` : 'pídele la clave a Javi'}.</div>`);
+  else if (store.caducada) out.push(`<div class="demo"><b>La clave dejó de servir.</b> Pídele una nueva a Javi.</div>`);
   if (!isStandalone() && !localStorage.getItem('crono_hide_install')) {
     const how = deferredInstall ? `<button class="btn sm" data-act="install-app">Instalar</button>`
       : isIOS() ? 'Toca <b>Compartir</b> y luego <b>“Agregar a pantalla de inicio”</b>.' : 'Menú del navegador (⋮) → <b>“Instalar app”</b> o “Agregar a pantalla de inicio”.';
@@ -721,8 +722,8 @@ async function renderPushBox() {
   const st = await pushState();
   const box = $('#push-box'); if (!box) return;
   const M = {
-    norepo: ['Modo demo: sin notificaciones', 'Las notificaciones al celular funcionan cuando la página está publicada en GitHub Pages (ver LEEME.md).', ''],
-    notoken: ['Falta tu llave de GitHub', 'Agrégala más abajo, en “Guardar cambios”, y después vuelve a activar las notificaciones.', ''],
+    norepo: ['Modo de prueba: sin notificaciones', 'Las notificaciones funcionan en la aplicación publicada, no en esta copia de prueba.', ''],
+    notoken: ['Primero entra con tu clave', 'Escribe la clave de acceso aquí arriba y después activa las notificaciones.', ''],
     install: ['Primero instala la app', 'En iPhone: toca Compartir → “Agregar a pantalla de inicio”, ábrela desde ese ícono y vuelve a Ajustes.', ''],
     unsupported: ['Este navegador no permite notificaciones', 'Usa Chrome en Android, o Safari con la app instalada en la pantalla de inicio en iPhone.', ''],
     blocked: ['Notificaciones bloqueadas', 'Actívalas en los ajustes del celular (o del navegador) para esta app y vuelve a intentar.', ''],
@@ -736,8 +737,8 @@ function openMe() {
   const pr = prefsOf(S.me.id);
   openSheet(`<div class="ph"><h2>Ajustes</h2><button class="iconbtn" data-act="sheet-close">${ic('x')}</button></div>
     <div class="pb">
-      <div class="meinfo">${av(S.me.id, 'xl')}<div><h3>${esc(S.me.name)}</h3><small style="color:var(--muted)">${store.mode === 'github' ? (store.canWrite ? 'Conectada al repositorio' : 'Solo lectura') : 'Modo demo (solo este dispositivo)'}</small></div></div>
-      ${store.mode === 'github' ? `<label class="lbl">Guardar cambios <small>una sola vez por celular</small></label>
+      <div class="meinfo">${av(S.me.id, 'xl')}<div><h3>${esc(S.me.name)}</h3><small style="color:var(--muted)">${store.mode === 'github' ? (store.canWrite ? 'Conectada al equipo' : 'Solo lectura') : 'Modo de prueba (solo este dispositivo)'}</small></div></div>
+      ${store.mode === 'github' ? `<label class="lbl">Acceso <small>una sola vez por celular</small></label>
       <div class="pushbox" id="gh-box">${ghBoxHtml()}</div>` : ''}
       <label class="lbl">Este celular</label>
       <div class="pushbox" id="push-box"><b>Revisando…</b></div>
@@ -753,20 +754,36 @@ function openMe() {
       <p class="hint">Pegas el chat y se transforma en comentarios con su fecha, a nombre de quien los escribió, más los cambios que te pidieron y sus fotos.</p>` : ''}
       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
         <button class="btn ghost sm" data-act="switch-user">Cambiar de persona</button>
+        <button class="btn ghost sm" data-act="buscar-update">Buscar actualización</button>
       </div>
+      <p class="hint">Versión <span id="ver-txt">${esc(SW_VERSION || '—')}</span>. La app se actualiza sola al abrirla; este botón la revisa al instante.</p>
     </div>`);
   renderPushBox();
+  if (navigator.serviceWorker && navigator.serviceWorker.controller) navigator.serviceWorker.controller.postMessage({ type: 'version' });
 }
 function ghBoxHtml() {
+  const admin = esAdmin();
   if (!store.canWrite) {
     return `<b>Modo solo lectura</b>
-      <p class="hint">Puedes ver y descargar todo. Para crear piezas, comentar o subir archivos, pega una vez tu llave de GitHub: queda guardada solo en este celular.</p>
-      <div class="addrow" style="margin-top:10px"><input class="field" id="gh-token" type="password" autocomplete="off" placeholder="github_pat_…"><button class="btn sm" data-act="gh-save">Guardar</button></div>
-      <p class="hint">Cómo se crea la llave: paso a paso en el LEEME del repositorio.</p>`;
+      <p class="hint">Puedes ver y descargar todo. Para escribir, entra con la clave que te mandó Javi.</p>
+      <div class="addrow" style="margin-top:10px">
+        <input class="field" id="acc-pass" type="password" autocomplete="current-password" placeholder="Clave de acceso">
+        <button class="btn sm" data-act="acc-entrar">Entrar</button>
+      </div>
+      ${admin ? `<p class="hint" style="margin-top:12px">Como administradora, aquí va tu clave larga (la que creaste en tu cuenta, empieza con <code>github_pat_</code>):</p>
+      <div class="addrow"><input class="field" id="gh-token" type="password" autocomplete="off" placeholder="github_pat_…"><button class="btn sm" data-act="gh-save">Guardar</button></div>` : ''}`;
   }
+  const hay = store.hayAcceso && store.hayAcceso();
   return `<b>Puedes guardar cambios ✅</b>
-    <p class="hint">Todo lo que escribas queda en el repositorio <b>${esc(store.cfg.owner + '/' + store.cfg.repo)}</b>${store.user ? ` (como <b>${esc(store.user)}</b>)` : ''}. Recuerda que el repositorio es público.</p>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn ghost sm" data-act="gh-forget">Quitar la llave de este celular</button></div>`;
+    <p class="hint">Lo que escribas lo ve todo el equipo${store.caducada ? '' : ''}.</p>
+    ${admin ? `<label class="lbl" style="margin-top:14px">Entrada del equipo</label>
+      <p class="hint">Elige una clave simple, deja la entrada preparada y mándasela a Flavio y a Maca. Ellos la escriben una vez en su teléfono y listo: no tienen que configurar nada más.</p>
+      <div class="addrow" style="margin-top:10px">
+        <input class="field" id="acc-pass2" type="text" autocomplete="off" placeholder="${hay ? 'Nueva clave para el equipo' : 'Clave para el equipo'}">
+        <button class="btn sm" data-act="acc-preparar">${hay ? 'Cambiar' : 'Preparar'}</button>
+      </div>
+      ${hay ? `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn ghost sm" data-act="acc-quitar">Quitar la entrada del equipo</button></div>` : ''}` : ''}
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn ghost sm" data-act="gh-forget">Salir de este teléfono</button></div>`;
 }
 async function savePrefs() {
   const events = {};
@@ -941,6 +958,24 @@ async function onFiles(input) {
 }
 
 
+/* ---------- entrada con contraseña ---------- */
+const esAdmin = () => (CFG.ADMIN_PEOPLE || []).includes(S.me.id);
+function pedirContrasena() {
+  openSheet(`<div class="ph"><h2>Clave de acceso</h2><button class="iconbtn" data-act="sheet-close">${ic('x')}</button></div>
+    <div class="pb">
+      <div class="pushbox">
+        <b>Escribe la clave que te mandó Javi</b>
+        <p class="hint">Es una sola vez en este teléfono: después entras directo.</p>
+        <div class="addrow" style="margin-top:10px">
+          <input class="field" id="acc-pass" type="password" autocomplete="current-password" placeholder="Clave">
+          <button class="btn sm" data-act="acc-entrar">Entrar</button>
+        </div>
+      </div>
+      <p class="hint">Si no la tienes a mano, puedes mirar y descargar todo igual; solo no vas a poder escribir.</p>
+    </div>`);
+  setTimeout(() => { const i = $('#acc-pass'); if (i) i.focus(); }, 120);
+}
+
 /* ---------- importar conversación de WhatsApp ---------- */
 let IMP = null;
 const puedeImportar = () => (CFG.IMPORT_PEOPLE || []).includes(S.me.id) && store.canWrite;
@@ -1040,7 +1075,7 @@ function renderImport() {
   $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="imp-volver">${ic('left')}</button><h2>Revisar e importar</h2><span style="width:40px"></span></div>
     <div class="pb" id="imp-pb">
       <div class="impres"><b>${r.utiles} mensajes</b> · ${cambios} cambio${cambios === 1 ? '' : 's'} pedido${cambios === 1 ? '' : 's'} · ${r.fotos} foto${r.fotos === 1 ? '' : 's'}${r.desde ? ` · del ${esc(fmtShort(r.desde))} al ${esc(fmtShort(r.hasta))}` : ''}</div>
-      ${sin.length ? `<p class="hint">No reconocí a: ${sin.map(esc).join(', ')}. Sus mensajes quedarán a tu nombre. Puedes agregarlos en <b>WHATSAPP_ALIAS</b> de config.js.</p>` : ''}
+      ${sin.length ? `<p class="hint">No reconocí a: ${sin.map(esc).join(', ')}. Sus mensajes quedarán a tu nombre.</p>` : ''}
       <label class="lbl">¿A qué pieza van?</label>
       <select class="sel" id="imp-destino" data-act="imp-destino">
         <option value="nuevo"${IMP.destino === 'nuevo' ? ' selected' : ''}>➕ Crear una pieza nueva</option>
@@ -1208,6 +1243,30 @@ const ACTS = {
   filters: () => openFilters(),
   'clear-filters': () => { Object.assign(S.f, { person: '', platform: '', status: '', format: '' }); closeSheet(); renderToolbar(); renderMain(); },
   'toggle-mine': () => { S.f.mine = !S.f.mine; renderToolbar(); renderMain(); },
+  'buscar-update': (el) => buscarActualizacion(el),
+  'acc-pedir': () => pedirContrasena(),
+  'acc-entrar': async (el) => {
+    const i = $('#acc-pass'); if (!i) return;
+    el.disabled = true;
+    try {
+      await store.entrarConContrasena(i.value);
+      closeSheet(); await reload(); renderAll();
+      toast('Listo, ya puedes escribir ✅');
+    } catch (e) { toast(String(e.message || e), 4000); el.disabled = false; i.select(); }
+  },
+  'acc-preparar': async (el) => {
+    const i = $('#acc-pass2'); if (!i) return;
+    el.disabled = true;
+    try {
+      await store.prepararAcceso(i.value);
+      toast('Entrada lista. Mándales esa clave a Flavio y Maca.', 5000);
+      $('#gh-box').innerHTML = ghBoxHtml();
+    } catch (e) { toast('No se pudo: ' + (e.message || e), 5000); el.disabled = false; }
+  },
+  'acc-quitar': async () => {
+    try { await store.quitarAcceso(); toast('Entrada quitada. Los demás volverán a solo lectura.', 4000); $('#gh-box').innerHTML = ghBoxHtml(); }
+    catch (e) { toast('No se pudo quitar: ' + (e.message || e), 4000); }
+  },
   'import-open': () => { closeSheet(); setTimeout(openImport, 60); },
   'imp-leer': () => leerConversacion(),
   'imp-volver': () => { if (IMP && IMP.paso === 2) { IMP.paso = 1; renderImport(); } else closeSheet(); },
@@ -1232,13 +1291,13 @@ const ACTS = {
     el.disabled = true;
     try {
       await store.setToken(i.value);
-      toast('Llave guardada. Ya puedes guardar cambios.');
+      toast('Clave guardada. Ya puedes escribir.');
       $('#gh-box').innerHTML = ghBoxHtml();
       renderPushBox(); renderAll();
       await reload();
     } catch (e) { toast('No sirvió: ' + (e.message || e), 5000); el.disabled = false; }
   },
-  'gh-forget': () => { store.clearToken(); toast('Llave borrada de este celular'); $('#gh-box').innerHTML = ghBoxHtml(); renderPushBox(); renderAll(); },
+  'gh-forget': () => { store.clearToken(); toast('Clave borrada de este teléfono'); $('#gh-box').innerHTML = ghBoxHtml(); renderPushBox(); renderAll(); },
   'switch-user': async () => { await disablePush().catch(() => {}); localStorage.removeItem('crono_me'); location.reload(); },
   'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); },
   'push-off': async () => { await disablePush(); toast('Notificaciones desactivadas en este celular'); renderPushBox(); },
@@ -1364,6 +1423,7 @@ async function startApp() {
   openFromHash();
   syncPushSub();
   pruneOld();
+  if (store.mode === 'github' && !store.canWrite && store.hayAcceso && store.hayAcceso()) setTimeout(pedirContrasena, 400);
 }
 function openFromHash() {
   const m = location.hash.match(/post=([\w-]+)/);
@@ -1381,6 +1441,52 @@ async function reload() {
   try { S.db = normalize(await store.load()); if (S.me) { renderAll(); if (ED && sheetOpen && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
   catch (e) { console.warn('No se pudo refrescar', e); }
 }
+/* ---------- mantenerse al día ---------- */
+let SW_REG = null, SW_VERSION = '', yaRecargando = false;
+function prepararActualizaciones() {
+  if (!('serviceWorker' in navigator) || !/^https?:$/.test(location.protocol)) return;
+  let tuvoControlador = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then((reg) => {
+    SW_REG = reg;
+    const buscar = () => { if (!document.hidden) reg.update().catch(() => {}); };
+    buscar();
+    setInterval(buscar, 10 * 60 * 1000);
+    document.addEventListener('visibilitychange', buscar);
+    window.addEventListener('online', buscar);
+  }).catch((e) => console.warn('SW', e));
+
+  // Cuando entra una versión nueva, la app se recarga sola una vez
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    // La primera vez solo toma el control (no hay nada viejo que refrescar)
+    if (!tuvoControlador) { tuvoControlador = true; return; }
+    if (yaRecargando) return;
+    yaRecargando = true;
+    location.reload();
+  });
+  navigator.serviceWorker.addEventListener('message', (e) => {
+    if (e.data && e.data.type === 'version') { SW_VERSION = e.data.version; const v = $('#ver-txt'); if (v) v.textContent = SW_VERSION; }
+  });
+  const pedirVersion = () => { if (navigator.serviceWorker.controller) navigator.serviceWorker.controller.postMessage({ type: 'version' }); };
+  pedirVersion();
+  setTimeout(pedirVersion, 1500);
+}
+async function buscarActualizacion(el) {
+  if (el) el.disabled = true;
+  try {
+    if (!SW_REG) { location.reload(); return; }
+    await SW_REG.update();
+    const nueva = SW_REG.waiting || SW_REG.installing;
+    if (nueva) {
+      toast('Hay una versión nueva, actualizando…');
+      if (SW_REG.waiting) SW_REG.waiting.postMessage({ type: 'skip-waiting' });
+      setTimeout(() => { yaRecargando = true; location.reload(); }, 1200);
+    } else {
+      toast('Ya tienes la última versión');
+      if (el) el.disabled = false;
+    }
+  } catch (e) { toast('No se pudo comprobar: ' + (e.message || e)); if (el) el.disabled = false; }
+}
+
 /* ---------- aviso de guardado ---------- */
 function watchSaving() {
   const el = $('#saving');
@@ -1399,7 +1505,7 @@ function watchSaving() {
 }
 
 async function boot() {
-  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW', e));
+  prepararActualizaciones();
   store = window.Store.create(CFG);
   try { S.db = normalize(await store.init()); }
   catch (e) {
@@ -1408,7 +1514,7 @@ async function boot() {
     store = window.Store.local; S.db = normalize(await store.init());
   }
   if (store.mode === 'local' && store.isFirstRun() && !S.db.posts.length) await seedDemo();
-  store.onError = (e) => toast('No se pudo guardar en GitHub: ' + (e.message || e), 6000);
+  store.onError = (e) => toast('No se pudo guardar: ' + (e.message || e), 6000);
   watchSaving();
   try { store.subscribe(debounce(reload, 500)); } catch (e) { /* sin actualización automática */ }
   document.addEventListener('visibilitychange', () => { if (!document.hidden && S.me) reload(); });

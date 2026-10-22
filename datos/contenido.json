@@ -651,7 +651,7 @@
    "time": "",
    "date": "2026-10-22",
    "format": "carrusel",
-   "status": "aprobado",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "id": "e-fotos-itahue",
@@ -693,9 +693,9 @@
    "checklist": [],
    "createdAt": "2026-10-21T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-22T22:17:20.949Z",
-   "updatedBy": "flavio",
-   "statusChangedAt": "2026-10-21T19:00:00.000Z",
+   "updatedAt": "2026-10-22T23:50:51.609Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-22T23:50:51.609Z",
    "publishedAt": null
   },
   {
@@ -1062,6 +1062,19 @@
   }
  ],
  "activity": [
+  {
+   "id": "7cdca6d5-2ef0-4e4c-b659-cb62de56eb4b",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a En revisión",
+   "meta": {
+    "from": "aprobado",
+    "to": "revision"
+   },
+   "createdAt": "2026-10-22T23:50:51.611Z"
+  },
   {
    "id": "2eae9185-a500-455d-8739-33e1a62f3643",
    "postId": "e-fotos-itahue",
@@ -1663,6 +1676,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9fc7bae0-9914-4dfe-8547-e64d84d2f2f3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e-fotos-itahue",
+   "type": "status",
+   "text": "movió “Edición de fotos de obra — Itahue” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Edición de fotos de obra — Itahue” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-22T23:50:51.612Z"
+  },
   {
    "id": "cc001870-cb08-42ed-ab4c-e631b4249736",
    "to": "maca",

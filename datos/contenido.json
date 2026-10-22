@@ -643,18 +643,18 @@
    "publishedAt": "2026-10-20T19:00:00.000Z"
   },
   {
-   "id": "e-fotos-itahue",
    "title": "Edición de fotos de obra — Itahue",
    "caption": "Cinco fotos de obra limpiadas (escombros, plásticos, camioneta, palos del ventanal) para usarlas como contenido real.",
    "notes": "Las cinco quedaron aprobadas, con la limpieza acordada. Los originales están en el Drive compartido.",
    "hashtags": "",
    "campaign": "Instagram",
-   "date": "2026-10-21",
    "time": "",
-   "format": "grafica",
+   "date": "2026-10-21",
+   "format": "carrusel",
    "status": "aprobado",
    "priority": "normal",
    "revisions": 0,
+   "id": "e-fotos-itahue",
    "platforms": [
     "instagram"
    ],
@@ -693,7 +693,7 @@
    "checklist": [],
    "createdAt": "2026-10-21T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-21T19:00:00.000Z",
+   "updatedAt": "2026-10-22T20:43:18.247Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-21T19:00:00.000Z",
    "publishedAt": null
@@ -1078,6 +1078,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "65996507-f0b8-41e6-80c0-4767c5b1c6a2",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó formato",
+   "meta": null,
+   "createdAt": "2026-10-22T20:43:18.247Z"
+  },
   {
    "id": "e-diagnostico-a1",
    "postId": "e-diagnostico",
@@ -1590,6 +1600,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a45c6b20-97bb-4a27-ab98-ad62f61b11c8",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e-fotos-itahue",
+   "type": "update",
+   "text": "editó “Edición de fotos de obra — Itahue” (formato)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Edición de fotos de obra — Itahue” (formato)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-22T20:43:18.248Z"
+  },
   {
    "id": "e95fb6af-b34a-4e76-bcc5-ee4813c7efbb",
    "to": "javi",

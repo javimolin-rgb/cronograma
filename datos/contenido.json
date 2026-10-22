@@ -649,7 +649,7 @@
    "hashtags": "",
    "campaign": "Instagram",
    "time": "",
-   "date": "2026-10-21",
+   "date": "2026-10-22",
    "format": "carrusel",
    "status": "aprobado",
    "priority": "normal",
@@ -693,7 +693,7 @@
    "checklist": [],
    "createdAt": "2026-10-21T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-22T20:43:18.247Z",
+   "updatedAt": "2026-10-22T20:43:32.149Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-21T19:00:00.000Z",
    "publishedAt": null
@@ -1078,6 +1078,19 @@
   }
  ],
  "activity": [
+  {
+   "id": "3512626b-9ed7-40f4-be53-083931dbfb9e",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 21 oct a 22 oct",
+   "meta": {
+    "from": "2026-10-21",
+    "to": "2026-10-22"
+   },
+   "createdAt": "2026-10-22T20:43:32.149Z"
+  },
   {
    "id": "65996507-f0b8-41e6-80c0-4767c5b1c6a2",
    "postId": "e-fotos-itahue",
@@ -1600,6 +1613,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c027b907-b2e9-48a7-ab78-8664c9bec06e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e-fotos-itahue",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Edición de fotos de obra — Itahue” a 22 oct",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Edición de fotos de obra — Itahue” a 22 oct",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-22T20:43:32.149Z"
+  },
   {
    "id": "a45c6b20-97bb-4a27-ab98-ad62f61b11c8",
    "to": "maca",

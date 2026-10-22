@@ -921,6 +921,13 @@
  ],
  "comments": [
   {
+   "id": "1130b170-f6be-48bc-ab06-dcc91d741124",
+   "postId": "e-fotos-itahue",
+   "author": "flavio",
+   "text": "La foto la dejamos fuera. No va! Gx!",
+   "createdAt": "2026-10-22T22:17:19.428Z"
+  },
+  {
    "id": "6627625c-4354-43e6-8ced-3d80cd97792e",
    "postId": "e-web-formulario",
    "author": "flavio",
@@ -1055,6 +1062,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "2eae9185-a500-455d-8739-33e1a62f3643",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-22T22:17:19.428Z"
+  },
   {
    "id": "dfbd2304-f805-47a7-b2a5-b0f138ae1389",
    "postId": "e-web-formulario",
@@ -1646,6 +1663,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cc001870-cb08-42ed-ab4c-e631b4249736",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "e-fotos-itahue",
+   "type": "comment",
+   "text": "comentó en “Edición de fotos de obra — Itahue”: La foto la dejamos fuera. No va! Gx!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Edición de fotos de obra — Itahue”: La foto la dejamos fuera. No va! Gx!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-22T22:17:19.429Z"
+  },
+  {
+   "id": "d50bbbc2-d186-4a16-b404-8d3aaab210be",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "e-fotos-itahue",
+   "type": "comment",
+   "text": "comentó en “Edición de fotos de obra — Itahue”: La foto la dejamos fuera. No va! Gx!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Edición de fotos de obra — Itahue”: La foto la dejamos fuera. No va! Gx!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-22T22:17:19.429Z"
+  },
   {
    "id": "a9b22534-27b5-48a6-bf11-4bc0d25e590f",
    "to": "javi",

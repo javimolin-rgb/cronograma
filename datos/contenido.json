@@ -325,7 +325,7 @@
   {
    "title": "Formulario de contacto de la web → bandeja de entrada",
    "caption": "Que los mensajes del formulario lleguen a la bandeja de entrada de Wix y no solo a la base de datos.",
-   "notes": "Probado con mensajes de prueba el 22 de octubre. Falta la confirmación de Flavio.",
+   "notes": "Probado con mensajes de prueba el 22 de octubre. Falta la confirmación de Flavio.\n",
    "hashtags": "",
    "campaign": "Sitio web",
    "time": "",
@@ -347,8 +347,8 @@
    "checklist": [],
    "createdAt": "2026-10-22T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-22T22:02:21.150Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-10-22T22:16:07.174Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-10-22T22:02:21.150Z",
    "publishedAt": "2026-10-22T22:02:21.150Z"
   },
@@ -1056,6 +1056,16 @@
  ],
  "activity": [
   {
+   "id": "dfbd2304-f805-47a7-b2a5-b0f138ae1389",
+   "postId": "e-web-formulario",
+   "postTitle": "Formulario de contacto de la web → bandeja de entrada",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó notas",
+   "meta": null,
+   "createdAt": "2026-10-22T22:16:07.175Z"
+  },
+  {
    "id": "ef9df67a-b322-4cdb-85e5-b76dfb82a7c0",
    "postId": "e-web-formulario",
    "postTitle": "Formulario de contacto de la web → bandeja de entrada",
@@ -1636,6 +1646,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a9b22534-27b5-48a6-bf11-4bc0d25e590f",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "e-web-formulario",
+   "type": "update",
+   "text": "editó “Formulario de contacto de la web → bandeja de entrada” (notas)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio editó “Formulario de contacto de la web → bandeja de entrada” (notas)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-web-formulario",
+   "createdAt": "2026-10-22T22:16:07.176Z"
+  },
   {
    "id": "8a5a0234-a153-4122-834f-7e4db3d7ea11",
    "to": "javi",

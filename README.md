@@ -1,54 +1,87 @@
-# Cronograma de contenido — app móvil
+# Cronograma de contenido — app del equipo Neorigen
 
-Calendario, agenda, tablero y panel de seguimiento. Se instala en la pantalla de inicio como una app y avisa con **notificaciones del celular** cuando te etiquetan o mencionan. Sin correos.
+Calendario, agenda, tablero, **entregas** y panel de seguimiento. Se instala en la pantalla de inicio como una app y avisa con notificaciones del celular cuando te etiquetan o mencionan.
 
-## Qué hay en este repositorio
+**Todo vive en este mismo repositorio**, no hay otro servicio ni cuentas aparte:
 
-- **La raíz** (`index.html`, `app.js`, `store.js`, `styles.css`, `config.js`, `sw.js` e iconos) → es el sitio que publica GitHub Pages.
-- `supabase/` → se pega solo en Supabase (base de datos y notificaciones). No forma parte de la página.
-- `supabase/CLAVES-PRIVADAS.txt` **no se sube**: está en `.gitignore`. Cópialo desde `supabase/CLAVES-PRIVADAS.ejemplo.txt` en tu computador.
+- lo que escriben (piezas, comentarios, historial) → `datos/contenido.json`
+- los archivos que suben → carpeta `archivos/`, ordenados por proyecto
 
-Sin configurar nada la app abre en **modo demo** (datos solo en tu navegador, sin notificaciones push).
+Es gratis, no se borra y queda enlazado para siempre. Y como es un repositorio de GitHub, cualquier cosa se puede recuperar aunque se borre por error.
 
-## Paso 1 · Supabase (base de datos y archivos)
+## Lo que ya viene cargado
 
-1. supabase.com → **New project**.
-2. **SQL Editor → New query** → pega `supabase/setup.sql` → **Run**.
-3. **Project Settings → API**: copia **Project URL** y **anon public** y pégalas en `config.js` (`SUPABASE_URL`, `SUPABASE_ANON_KEY`).
+Las entregas de agosto a octubre de 2026 están registradas: diagnóstico y resumen de marca, cotizador y sus tres cambios, el sitio web (maqueta, Wix, textos, portada y formulario), los carruseles de Instagram, el render de la Casa Lingue, las fotos de obra y la carpeta institucional completa, hasta las 50 carpetas impresas. Cada una con su fecha, su proyecto, quién participó, el feedback que les dieron por WhatsApp y los enlaces a la publicación o al Drive.
 
-## Paso 2 · Enviar las notificaciones (una sola vez)
+## Cómo se usa
 
-La página sola no puede avisar a un celular con la app cerrada; una función de Supabase (gratis) lo hace.
+- **Calendario / Agenda / Tablero**: lo de siempre, para planificar y mover piezas de estado.
+- **Entregas**: todo agrupado por proyecto. Desde ahí puedes:
+  - **ver** una imagen, un PDF o un video sin salir de la app;
+  - **descargar un archivo** suelto;
+  - **descargar una pieza completa** o **un proyecto completo** en un `.zip`, con sus carpetas ordenadas;
+  - **descargar todo** de una vez;
+  - elegir entre **solo la última versión** (lo normal) o **todas las versiones**.
+- **Versiones**: si subes dos veces un archivo con el mismo nombre, el segundo queda como `v2` automáticamente. En la app se ve la etiqueta `v2` y puedes volver a cualquier versión anterior.
+- **Panel**: cumplimiento del mes, atrasadas, estancadas, % a tiempo, días promedio de idea a publicada, rondas de cambios y carga por persona.
 
-1. **Edge Functions → Deploy a new function → Via Editor**. Nombre: `send-push`. Pega el contenido de `supabase/send-push/index.ts` → **Deploy**.
-2. **Edge Functions → Secrets** (o Project Settings → Edge Functions): agrega `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` y `VAPID_SUBJECT`. Si no tienes un par de claves, genéralo una vez con `npx web-push generate-vapid-keys`: la **pública** va además en `config.js` (`PUSH.VAPID_PUBLIC_KEY`) y la **privada** solo aquí. El detalle está en `supabase/CLAVES-PRIVADAS.ejemplo.txt`.
-3. **Database → Webhooks → Create a new hook**: tabla `notifications`, evento **Insert**, tipo **Supabase Edge Functions**, función `send-push`, método POST → Confirm.
+## Paso 1 · Publicar la página
 
-(Los nombres de los menús pueden variar un poco según la versión del panel de Supabase.)
+**Settings → Pages** → *Deploy from a branch* → rama `main` → carpeta `/ (root)` → **Save**.
 
-## Paso 3 · GitHub Pages
+Queda en `https://javimolin-rgb.github.io/cronograma/`. Esa es la dirección que abren las tres.
 
-1. **Settings → Pages** → *Deploy from a branch* → `main` → `/ (root)` → Save.
-2. Queda en `https://TU-USUARIO.github.io/NOMBRE-DEL-REPO/`. Pon esa URL en `SITE_URL` de `config.js`.
+## Paso 2 · La llave para poder guardar (una vez por persona)
 
-## Paso 4 · Instalar y activar avisos en cada celular
+Sin llave la app se abre igual: se ve todo y se descarga todo, pero no deja escribir. Para crear piezas, comentar o subir archivos, cada una pega su propia llave:
 
-- **iPhone (iOS 16.4 o más):** abre la URL en **Safari** → Compartir → **Agregar a pantalla de inicio**. Las notificaciones **solo funcionan si abres la app desde ese ícono**.
-- **Android:** abre la URL en Chrome → botón **Instalar** del aviso superior (o menú ⋮ → Instalar app).
-- Abre la app, elige quién eres → tu foto → **Ajustes** → **Activar en este celular** → acepta el permiso → **Enviarme una de prueba**.
-- En la misma pantalla marcas qué avisos quieres en **App** (campana) y en **Celular** (notificación).
+1. En GitHub: foto de perfil → **Settings** → abajo del todo **Developer settings** → **Personal access tokens** → **Fine-grained tokens** → **Generate new token**.
+2. Nombre: `cronograma`. Vencimiento: el más largo que te deje (cuando venza, se repite este paso).
+3. **Repository access** → *Only select repositories* → elige **cronograma**.
+4. **Permissions** → *Repository permissions* → **Contents: Read and write**. Nada más.
+5. **Generate token** y copia el texto que aparece (`github_pat_…`). Solo se ve una vez.
+6. En la app: tu foto arriba a la derecha → **Ajustes** → **Guardar cambios** → pega la llave → **Guardar**.
 
-## Uso
+La llave queda guardada **solo en ese celular**. Si cambias de teléfono, se repite el paso.
 
-- **+** crea una pieza (estado, fecha/hora, plataformas, formato, copy, hashtags, archivos, enlaces, checklist, notas).
-- **Etiquetar** a alguien en la pieza o escribir `@Maca` en un comentario → le llega la notificación; al tocarla se abre esa pieza.
-- **Tablero:** toca el estado de una tarjeta para moverla (en computador también se arrastra).
-- **Panel:** cumplimiento del mes, atrasadas, estancadas, % a tiempo, días promedio idea→publicada, rondas de cambios, carga por persona y actividad.
-- El ícono de la app muestra el número de avisos sin leer (donde el celular lo permite).
+> Para que Flavio y Maca puedan guardar, primero tienen que estar invitados al repositorio: **Settings → Collaborators → Add people**. Si no, verán todo pero no podrán escribir.
 
-## Limitaciones
+## Paso 3 · Notificaciones al celular (opcional)
 
-- **No hay contraseña**: el selector “¿Quién eres?” registra autoría y a quién avisar. GitHub Pages gratis exige repo público; cualquiera con el link podría entrar. Para privacidad real, el siguiente paso es agregar inicio de sesión con Supabase.
-- Si un celular cambia de persona (Ajustes → Cambiar de persona), las notificaciones pasan a la persona nueva.
-- Los avisos de **vencimiento** se ven en la campana de la app, no como notificación del celular.
-- Archivos: hasta 50 MB cada uno; el plan gratis de Supabase da 1 GB.
+Las notificaciones las manda GitHub solo, con el archivo `.github/workflows/avisos.yml` que ya está en el repositorio. Solo faltan las claves:
+
+1. **Settings → Secrets and variables → Actions → New repository secret**, y crea tres:
+   - `VAPID_PUBLIC_KEY` → la misma que está en `config.js`
+   - `VAPID_PRIVATE_KEY` → la clave privada (está en el `CLAVES-PRIVADAS.txt` del zip que te mandé)
+   - `VAPID_SUBJECT` → `https://javimolin-rgb.github.io/cronograma/`
+2. Si quieres claves nuevas en vez de esas: con Node instalado, `npx web-push generate-vapid-keys`, la pública va en `config.js` y las tres en los secretos.
+3. En cada celular: **Ajustes → Activar en este celular** → aceptar el permiso → **Enviarme una de prueba**.
+
+Sin este paso todo funciona igual, pero los avisos solo se ven en la campana de la app.
+
+## Paso 4 · Instalarla como app
+
+- **iPhone (iOS 16.4 o más):** abre la dirección en **Safari** → Compartir → **Agregar a pantalla de inicio**. Las notificaciones **solo funcionan abriéndola desde ese ícono**.
+- **Android:** ábrela en Chrome → botón **Instalar** del aviso de arriba (o menú ⋮ → Instalar app).
+
+Se ve a pantalla completa, sin barra del navegador, y se adapta sola al ancho de cualquier teléfono.
+
+## Dónde queda cada cosa
+
+| Qué | Dónde |
+|---|---|
+| Piezas, comentarios, historial, avisos | `datos/contenido.json` |
+| Archivos subidos desde la app | `archivos/<proyecto>/<archivo>-v1.jpg` |
+| La página | `index.html`, `app.js`, `store.js`, `zip.js`, `styles.css`, `config.js` |
+| Equipo, estados, plataformas y formatos | `config.js` |
+| Envío de notificaciones | `.github/workflows/avisos.yml` |
+
+Cada cambio que hacen en la app queda como un commit en el historial del repositorio, así que siempre se puede ver quién cambió qué y volver atrás.
+
+## Cuidados
+
+- **El repositorio es público.** Todo lo que suban (archivos, copys, comentarios) lo puede ver cualquiera que tenga el link. No subas datos de clientes, precios reservados, capturas con nombres o correos, ni contraseñas. Para eso, deja el archivo en el Drive y pega solo el enlace.
+- **No hay contraseña para entrar.** El “¿Quién eres?” sirve para registrar autoría y para saber a quién avisar; cualquiera con el link puede abrir la app. Escribir sí requiere llave.
+- **Tamaño:** hasta 24 MB por archivo, y conviene no pasar de 1 GB en todo el repositorio. Las fotos muy grandes se achican solas al subirlas. Videos pesados: mejor al Drive y pegar el enlace.
+- **Al subir algo, GitHub se demora un poco** (menos de un minuto) en publicar el archivo. En tu celular lo ves al instante igual.
+- Si dice **“Guardando…”** abajo, espera un segundo antes de cerrar la app.

@@ -1,6 +1,6 @@
 # Claves secretas: nunca se suben al repositorio
-supabase/CLAVES-PRIVADAS.txt
 *.key
 .env
 .env.*
 .DS_Store
+node_modules/

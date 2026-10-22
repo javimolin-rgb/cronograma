@@ -1,16 +1,21 @@
 /* ============================================================
    CONFIGURACIÓN — es el único archivo que necesitas editar.
-   Las claves de Supabase (anon) y la clave VAPID pública están
-   pensadas para ser públicas; no pongas aquí claves secretas.
+   Aquí no van claves secretas: todo lo de este archivo es público.
    ============================================================ */
 window.CRONO_CONFIG = {
   APP_NAME: "Cronograma de contenido",
 
-  // 1) Supabase (base de datos + archivos compartidos). Ver README.md
-  //    Mientras estén vacíos, la app funciona en "modo demo" (solo en este navegador).
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: "",
-  STORAGE_BUCKET: "media",
+  // 1) Dónde se guarda todo: este mismo repositorio de GitHub.
+  //    Si la página está publicada en usuario.github.io/repositorio/
+  //    se detecta solo y puedes dejar OWNER y REPO vacíos.
+  //    Los datos van a datos/contenido.json y los archivos a archivos/.
+  GITHUB: {
+    OWNER: "javimolin-rgb",
+    REPO: "cronograma",
+    BRANCH: "main",
+    DATA: "datos/contenido.json",
+    FILES: "archivos"
+  },
 
   // 2) Notificaciones push al celular (clave PÚBLICA). Ver LEEME.md
   PUSH: {
@@ -46,6 +51,7 @@ window.CRONO_CONFIG = {
     { id: "linkedin",  name: "LinkedIn",  short: "IN",  color: "#0A66C2" },
     { id: "youtube",   name: "YouTube",   short: "YT",  color: "#E62117" },
     { id: "web",       name: "Web / Blog",short: "WEB", color: "#475569" },
+    { id: "impreso",   name: "Impreso",   short: "IMP", color: "#8B5E34" },
     { id: "email",     name: "Newsletter",short: "MAIL",color: "#D97706" },
     { id: "otro",      name: "Otro",      short: "···", color: "#7C7A89" }
   ],
@@ -58,6 +64,9 @@ window.CRONO_CONFIG = {
     { id: "video",    name: "Video largo" },
     { id: "banner",   name: "Banner / Gráfica" },
     { id: "articulo", name: "Artículo" },
+    { id: "web",      name: "Página web" },
+    { id: "pdf",      name: "PDF / Documento" },
+    { id: "grafica",  name: "Pieza impresa" },
     { id: "otro",     name: "Otro" }
   ]
 };

@@ -1,0 +1,1595 @@
+{
+ "posts": [
+  {
+   "id": "e-diagnostico",
+   "title": "Diagnóstico integral de marca (39 páginas)",
+   "caption": "Revisión completa de la marca, las redes y la comunicación de Neorigen, con recomendaciones.",
+   "notes": "Entregado por WhatsApp como NEORIGEN_Diagnostico_Integral_7.pdf. El archivo original está en el Drive compartido.",
+   "hashtags": "",
+   "campaign": "Marca y estrategia",
+   "date": "2026-09-01",
+   "time": "",
+   "format": "pdf",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "otro"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-09-01T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-01T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-01T19:00:00.000Z",
+   "publishedAt": "2026-09-01T19:00:00.000Z"
+  },
+  {
+   "id": "e-resumen-marca",
+   "title": "Resumen de marca (una página)",
+   "caption": "Síntesis de la marca en una lámina vertical.",
+   "notes": "Entregado como Neorigen_Resumen_de_Marca_Vertical_1.pdf.",
+   "hashtags": "",
+   "campaign": "Marca y estrategia",
+   "date": "2026-09-01",
+   "time": "",
+   "format": "pdf",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "otro"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-09-01T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-01T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-01T19:00:00.000Z",
+   "publishedAt": "2026-09-01T19:00:00.000Z"
+  },
+  {
+   "id": "e-iconos-ig",
+   "title": "Íconos de historias destacadas de Instagram",
+   "caption": "Set de íconos para las historias destacadas, en la línea gráfica de Neorigen.",
+   "notes": "Primera tanda con 11 íconos. Maca pidió revisar “proyectos” y “procesos”, sacar “entregas” y sumar “modelos”. Los destacados sin contenido se borraron hasta tener material.",
+   "hashtags": "",
+   "campaign": "Marca y estrategia",
+   "date": "2026-10-19",
+   "time": "",
+   "format": "grafica",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-14T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-19T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-19T19:00:00.000Z",
+   "publishedAt": "2026-10-19T19:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1",
+   "title": "Cotizador web — primera versión",
+   "caption": "Cotizador en línea que reemplaza la planilla: genera la cotización lista para enviar al cliente.",
+   "notes": "Base: PRECIOS VENTA NEO.xlsx y COTIZADOR EJEMPLO.xlsx que mandó Flavio. Se entregó también plantilla-cotizacion.xlsx para subir precios.",
+   "hashtags": "",
+   "campaign": "Cotizador",
+   "date": "2026-09-08",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 1,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "flavio"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-cotizador-v1-l1",
+     "label": "Cotizador publicado",
+     "url": "https://javimolin-rgb.github.io/COTIZADOR/"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-09-08T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-08T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-08T19:00:00.000Z",
+   "publishedAt": "2026-09-14T19:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-correos",
+   "title": "Cotizador — correos y teléfono predeterminados, valor neto y total",
+   "caption": "Los cuatro correos del equipo y el teléfono quedan por defecto, y se muestra el valor neto junto al total.",
+   "notes": "Pedido de Flavio el 28 de septiembre. Listo el mismo día.",
+   "hashtags": "",
+   "campaign": "Cotizador",
+   "date": "2026-09-28",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-09-28T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-28T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-28T19:00:00.000Z",
+   "publishedAt": "2026-09-28T19:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-manio",
+   "title": "Cotizador — Huingán Familiar pasa a llamarse Casa Mañío",
+   "caption": "Cambio de nombre del modelo en el cotizador y en la ficha que se descarga.",
+   "notes": "Pedido el 19 de octubre junto con la ficha 5-Ficha_HUINGAN_FAMILIAR.pdf. La ficha va dentro del zip que genera cada modelo.",
+   "hashtags": "",
+   "campaign": "Cotizador",
+   "date": "2026-10-21",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-19T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-21T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-21T19:00:00.000Z",
+   "publishedAt": "2026-10-21T19:00:00.000Z"
+  },
+  {
+   "id": "e-web-propuesta",
+   "title": "Propuesta de sitio web (maqueta navegable)",
+   "caption": "Primera propuesta completa del sitio, para revisar y comentar antes de pasarla a Wix.",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "Sitio web",
+   "date": "2026-09-01",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-web-propuesta-l1",
+     "label": "Maqueta",
+     "url": "https://javimolin-rgb.github.io/NEORIGEN/"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-09-01T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-01T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-01T19:00:00.000Z",
+   "publishedAt": "2026-09-01T19:00:00.000Z"
+  },
+  {
+   "id": "e-web-textos",
+   "title": "Sitio web — textos nuevos (misión, visión, quiénes somos, FAQ)",
+   "caption": "Carga de los textos redactados por Maca: qué nos diferencia, personaliza tu casa, por qué Neorigen, quiénes somos, preguntas frecuentes, misión y visión.",
+   "notes": "Los textos llegaron por WhatsApp entre el 14 y el 30 de septiembre. Misión y visión se ajustaron dos veces.",
+   "hashtags": "",
+   "campaign": "Sitio web",
+   "date": "2026-09-30",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 2,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-09-14T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-30T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-30T19:00:00.000Z",
+   "publishedAt": "2026-09-30T19:00:00.000Z"
+  },
+  {
+   "id": "e-web-wix",
+   "title": "Sitio web Neorigen en Wix — publicado",
+   "caption": "Traspaso completo del sitio a Wix, revisión con comentarios en el propio sitio y publicación.",
+   "notes": "Revisión previa con enlace de Wix. Flavio dejó comentarios página por página (banners con el mismo entramado, fotos reales en vez de renders repetidos, Promociones escondida hasta tener qué comunicar).",
+   "hashtags": "",
+   "campaign": "Sitio web",
+   "date": "2026-09-23",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 3,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-web-wix-l1",
+     "label": "Sitio publicado",
+     "url": "https://www.neorigen.cl/"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-09-16T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-23T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-23T19:00:00.000Z",
+   "publishedAt": "2026-09-23T19:00:00.000Z"
+  },
+  {
+   "id": "e-web-portada",
+   "title": "Sitio web — portada: botones en blanco y ajustes de foto",
+   "caption": "Los textos bajo los números quedan en blanco y se revisa la foto de portada.",
+   "notes": "Flavio pidió además una foto de proyecto real para la portada; se probaron varias y por ahora sigue la anterior.",
+   "hashtags": "",
+   "campaign": "Sitio web",
+   "date": "2026-10-16",
+   "time": "",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 1,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-15T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-16T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-16T19:00:00.000Z",
+   "publishedAt": "2026-10-16T19:00:00.000Z"
+  },
+  {
+   "id": "e-web-formulario",
+   "title": "Formulario de contacto de la web → bandeja de entrada",
+   "caption": "Que los mensajes del formulario lleguen a la bandeja de entrada de Wix y no solo a la base de datos.",
+   "notes": "Probado con mensajes de prueba el 22 de octubre. Falta la confirmación de Flavio.",
+   "hashtags": "",
+   "campaign": "Sitio web",
+   "date": "2026-10-22",
+   "time": "",
+   "format": "web",
+   "status": "revision",
+   "priority": "alta",
+   "revisions": 0,
+   "platforms": [
+    "web"
+   ],
+   "assignees": [
+    "javi",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-22T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-22T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-22T19:00:00.000Z",
+   "publishedAt": null
+  },
+  {
+   "id": "e-c1",
+   "title": "Carrusel: elegir un modelo prediseñado",
+   "caption": "Las ventajas de partir de un modelo prediseñado.",
+   "notes": "Ajustes de Maca: sacar “El modelo probado se mantiene” y eliminar un párrafo.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-08-30",
+   "time": "",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 1,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-c1-l1",
+     "label": "Publicación",
+     "url": "https://www.instagram.com/p/Dcr325lFi5P/"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-08-30T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-08-30T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-08-30T19:00:00.000Z",
+   "publishedAt": "2026-08-30T19:00:00.000Z"
+  },
+  {
+   "id": "e-c2",
+   "title": "Carrusel: los modelos y sus metros cuadrados",
+   "caption": "Recorrido por los modelos con sus metrajes.",
+   "notes": "Cuatro rondas de ajustes: agrandar la letra de abajo, sumar los m², no repetir la Lingue, luz de atardecer para que no se vea tan render.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-09-03",
+   "time": "",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 3,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-c2-l1",
+     "label": "Publicación",
+     "url": "https://www.instagram.com/p/Dc2DdmBFvQi/"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-09-03T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-03T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-03T19:00:00.000Z",
+   "publishedAt": "2026-09-03T19:00:00.000Z"
+  },
+  {
+   "id": "e-c3",
+   "title": "Carrusel: un mismo modelo, tres lugares (Maitén)",
+   "caption": "El modelo Maitén construido en Punta Peuque (Chiloé), Roblerías (Teno) y El Claro (Maitencillo).",
+   "notes": "Seis versiones hasta el visto bueno: nombres de lugar más grandes, menos desorden visual en las fotos de obra, la última foto de cada proyecto más terminada.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-09-10",
+   "time": "",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 5,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-c3-l1",
+     "label": "Publicación",
+     "url": "https://www.instagram.com/p/DdID5JnkZws/"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-09-10T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-10T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-10T19:00:00.000Z",
+   "publishedAt": "2026-09-10T19:00:00.000Z"
+  },
+  {
+   "id": "e-c4",
+   "title": "Carrusel: terminaciones y llave en mano",
+   "caption": "Terminaciones, quincallería y detalles de la entrega llave en mano.",
+   "notes": "Aprobado tras varias rondas (cambiar la lámpara que no ponemos nosotros, otro baño, foto de quincallería). No quedó registro del enlace de publicación en el chat.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-09-14",
+   "time": "",
+   "format": "carrusel",
+   "status": "aprobado",
+   "priority": "normal",
+   "revisions": 3,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-09-11T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-14T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-14T19:00:00.000Z",
+   "publishedAt": null
+  },
+  {
+   "id": "e-c-web",
+   "title": "Carrusel: estrenamos nueva web",
+   "caption": "Anuncio del nuevo sitio de Neorigen.",
+   "notes": "Programado para las 18:00 del 30 de septiembre. Ajustes: agrandar la frase de portada y “Diseño para el bienestar” en el banner.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-09-30",
+   "time": "18:00",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 1,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-09-29T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-09-30T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-09-30T19:00:00.000Z",
+   "publishedAt": "2026-09-30T19:00:00.000Z"
+  },
+  {
+   "id": "e-c-fachada",
+   "title": "Carrusel: fachada ventilada",
+   "caption": "Qué es una fachada ventilada y por qué cambia el confort de la casa.",
+   "notes": "Tres versiones. Flavio: la lámina 01 más de enganche, dejar solo los enunciados en la 02, cambiar confort por bienestar, otro título en la 07, otra tipografía para el teléfono. Maca: cambiar “tecnología” por “estrategia sustentable” y agrandar los encabezados y los “desliza”.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-08",
+   "time": "18:30",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 2,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-05T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-08T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-08T19:00:00.000Z",
+   "publishedAt": "2026-10-08T19:00:00.000Z"
+  },
+  {
+   "id": "e-c-cipres",
+   "title": "Carrusel: Casa Ciprés",
+   "caption": "Presentación del modelo nuevo, con techo a un agua.",
+   "notes": "Las decisiones de diseño se explican por lo que logran (ventanales, doble altura, vida social al centro, orientación), sin usarlo como eslogan.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-05",
+   "time": "",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 2,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-05T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-05T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-05T19:00:00.000Z",
+   "publishedAt": "2026-10-05T19:00:00.000Z"
+  },
+  {
+   "id": "e-c-personalizables",
+   "title": "Carrusel: diseños personalizables",
+   "caption": "Un proceso simple y directo: eliges tu modelo, lo adaptamos, construimos contigo y recibes tu casa.",
+   "notes": "Cuatro versiones. Cambios: no hablar de estilo nórdico, “terminaciones” en vez de “acabados”, 9 modelos, fotos reales en vez de renders, textos más grandes para leer en el celular.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-13",
+   "time": "",
+   "format": "carrusel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 3,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-09T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-13T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-13T19:00:00.000Z",
+   "publishedAt": "2026-10-13T19:00:00.000Z"
+  },
+  {
+   "id": "e-render-lingue",
+   "title": "Render Casa Lingue en movimiento (tipo dron)",
+   "caption": "Recorrido completo de la Casa Lingue renderizado como si fuera una toma de dron.",
+   "notes": "Un fin de semana completo de render. Publicado el 20 de octubre.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-20",
+   "time": "",
+   "format": "reel",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-19T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-20T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-20T19:00:00.000Z",
+   "publishedAt": "2026-10-20T19:00:00.000Z"
+  },
+  {
+   "id": "e-fotos-itahue",
+   "title": "Edición de fotos de obra — Itahue",
+   "caption": "Cinco fotos de obra limpiadas (escombros, plásticos, camioneta, palos del ventanal) para usarlas como contenido real.",
+   "notes": "Las cinco quedaron aprobadas, con la limpieza acordada. Los originales están en el Drive compartido.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-21",
+   "time": "",
+   "format": "grafica",
+   "status": "aprobado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [
+    {
+     "id": "e-fotos-itahue-l1",
+     "label": "Foto 1",
+     "url": "https://drive.google.com/file/d/1lXaVYHivJ5Y4AOe5DPweYdTFAKrQrJVA/view"
+    },
+    {
+     "id": "e-fotos-itahue-l2",
+     "label": "Foto 2",
+     "url": "https://drive.google.com/file/d/1bg1hEVmfJROErjejLwrV_lIKVmum8a9h/view"
+    },
+    {
+     "id": "e-fotos-itahue-l3",
+     "label": "Foto 3",
+     "url": "https://drive.google.com/file/d/1SQ7hirhR3iFfBSOHLmQ5t8HGD0rRmKpk/view"
+    },
+    {
+     "id": "e-fotos-itahue-l4",
+     "label": "Foto 4",
+     "url": "https://drive.google.com/file/d/1hdIiuJRrD7Fvkzhki7wlGhQtEb7PUSyo/view"
+    },
+    {
+     "id": "e-fotos-itahue-l5",
+     "label": "Foto 5",
+     "url": "https://drive.google.com/file/d/14RQ2qyO-0QDHUMbcvYnyEHWBWhWTHXnt/view"
+    }
+   ],
+   "checklist": [],
+   "createdAt": "2026-10-21T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-21T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-21T19:00:00.000Z",
+   "publishedAt": null
+  },
+  {
+   "id": "e-carpeta-1",
+   "title": "Carpeta institucional — primera tanda de propuestas (30)",
+   "caption": "Treinta alternativas de carpeta tamaño carta para entregar documentos y contratos a los clientes.",
+   "notes": "Entregado como Carpeta_Neorigen_propuestas.pdf. Favoritas: de Javi la 17, 22, 23 y 24; de Flavio el interior de la 06, la 18 y la 29. Acuerdo: nada de información que pueda cambiar (metrajes, modelos, plantas).",
+   "hashtags": "",
+   "campaign": "Carpeta institucional",
+   "date": "2026-10-06",
+   "time": "",
+   "format": "pdf",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "impreso"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-06T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-06T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-06T19:00:00.000Z",
+   "publishedAt": "2026-10-06T19:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-2",
+   "title": "Carpeta institucional — segunda tanda (13)",
+   "caption": "Mezcla de las favoritas: exterior tipo 23/29, interior con tramado de tablón y el logo como marca de agua.",
+   "notes": "Entregado como Carpeta_Neorigen_segunda_propuesta.pdf.",
+   "hashtags": "",
+   "campaign": "Carpeta institucional",
+   "date": "2026-10-07",
+   "time": "",
+   "format": "pdf",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 1,
+   "platforms": [
+    "impreso"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-07T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-07T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-07T19:00:00.000Z",
+   "publishedAt": "2026-10-07T19:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-3",
+   "title": "Carpeta institucional — tercera tanda y elección final (7)",
+   "caption": "Siete alternativas afinadas. Queda elegida la 03 en verde, con el gris de la paleta al 15% y la casita solo en la pestaña.",
+   "notes": "Entregado como Carpeta_Neorigen_tercera_propuesta.pdf.",
+   "hashtags": "",
+   "campaign": "Carpeta institucional",
+   "date": "2026-10-07",
+   "time": "",
+   "format": "pdf",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 1,
+   "platforms": [
+    "impreso"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-07T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-07T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-07T19:00:00.000Z",
+   "publishedAt": "2026-10-07T19:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-imprenta",
+   "title": "Carpeta institucional — archivo final para imprenta (46×32 cm)",
+   "caption": "Archivo listo para imprimir, con la línea gris inferior y las medidas de la imprenta.",
+   "notes": "Entregado como Carpeta_Neorigen_IMPRENTA_46x32.zip. Cotizado en dos imprentas; $2.900 por carpeta con impresión por dos caras y bolsillo impreso, IVA incluido.",
+   "hashtags": "",
+   "campaign": "Carpeta institucional",
+   "date": "2026-10-20",
+   "time": "",
+   "format": "grafica",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "impreso"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-20T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-20T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-20T19:00:00.000Z",
+   "publishedAt": "2026-10-20T19:00:00.000Z"
+  },
+  {
+   "id": "e-carpetas-impresas",
+   "title": "Carpetas impresas y laminadas (50 unidades)",
+   "caption": "Las 50 carpetas terminadas, listas para retirar en Avenida Providencia 1939, oficina 13B.",
+   "notes": "Fotos del resultado final enviadas al grupo el 21 de octubre.",
+   "hashtags": "",
+   "campaign": "Carpeta institucional",
+   "date": "2026-10-21",
+   "time": "",
+   "format": "grafica",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "impreso"
+   ],
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "files": [
+    {
+     "id": "f-carpetas-impresas-pila-v1-jpg",
+     "name": "carpetas-impresas-pila-v1.jpg",
+     "path": "archivos/carpeta-institucional/carpetas-impresas-pila-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/carpeta-institucional/carpetas-impresas-pila-v1.jpg",
+     "type": "image/jpeg",
+     "size": 173336,
+     "base": "carpetas-impresas-pila",
+     "version": 1,
+     "by": "javi",
+     "at": "2026-10-21T14:21:00.000Z"
+    },
+    {
+     "id": "f-carpeta-azul-abierta-v1-jpg",
+     "name": "carpeta-azul-abierta-v1.jpg",
+     "path": "archivos/carpeta-institucional/carpeta-azul-abierta-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/carpeta-institucional/carpeta-azul-abierta-v1.jpg",
+     "type": "image/jpeg",
+     "size": 157934,
+     "base": "carpeta-azul-abierta",
+     "version": 1,
+     "by": "javi",
+     "at": "2026-10-21T14:21:00.000Z"
+    },
+    {
+     "id": "f-carpeta-verde-abierta-v1-jpg",
+     "name": "carpeta-verde-abierta-v1.jpg",
+     "path": "archivos/carpeta-institucional/carpeta-verde-abierta-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/carpeta-institucional/carpeta-verde-abierta-v1.jpg",
+     "type": "image/jpeg",
+     "size": 170094,
+     "base": "carpeta-verde-abierta",
+     "version": 1,
+     "by": "javi",
+     "at": "2026-10-21T14:21:00.000Z"
+    }
+   ],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-21T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-21T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-21T19:00:00.000Z",
+   "publishedAt": "2026-10-21T19:00:00.000Z"
+  },
+  {
+   "id": "p-reel-obra",
+   "title": "Reel con el material de obra nuevo",
+   "caption": "Reel con los videos y fotos de proceso que subió la Maca al Drive.",
+   "notes": "Idea conversada el 14 y el 21 de octubre: con video se puede armar un reel de proceso.",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-23",
+   "time": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-21T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-23T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-23T19:00:00.000Z",
+   "publishedAt": null
+  },
+  {
+   "id": "p-carrusel-procesos",
+   "title": "Carrusel de procesos constructivos",
+   "caption": "Contenido de proceso real, en la línea de las publicaciones antiguas que mandó Maca de referencia.",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "Instagram",
+   "date": "2026-10-29",
+   "time": "",
+   "format": "carrusel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi"
+   ],
+   "files": [],
+   "links": [],
+   "checklist": [],
+   "createdAt": "2026-10-21T10:00:00.000Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-10-29T19:00:00.000Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-10-29T19:00:00.000Z",
+   "publishedAt": null
+  }
+ ],
+ "comments": [
+  {
+   "id": "e-diagnostico-c1",
+   "postId": "e-diagnostico",
+   "author": "maca",
+   "text": "Javi, estuve revisando y me encanta!!!! Lo reviso más detallado y te comento cualquier cosa, pero hasta ahora va perfect",
+   "createdAt": "2026-09-01T15:36:00.000Z"
+  },
+  {
+   "id": "e-iconos-ig-c1",
+   "postId": "e-iconos-ig",
+   "author": "maca",
+   "text": "Me encantaron los nuevos iconos !!!",
+   "createdAt": "2026-10-19T12:28:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1-c1",
+   "postId": "e-cotizador-v1",
+   "author": "flavio",
+   "text": "Automatizar fecha. Los campos dicen Vendedor pero me imagino es cliente, eso está confuso. Falta el total UF IVA incluido.",
+   "createdAt": "2026-09-09T13:45:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1-c2",
+   "postId": "e-cotizador-v1",
+   "author": "flavio",
+   "text": "Javi funciona perfecto el cotizador, Muchas gracias!",
+   "createdAt": "2026-09-14T12:29:00.000Z"
+  },
+  {
+   "id": "e-web-propuesta-c1",
+   "postId": "e-web-propuesta",
+   "author": "maca",
+   "text": "Me gusta mucho la propuesta. El fondo ideal un poco menos oscuro, y ver posibilidad de poner otras fotos en llave en mano, ventanas termopanel, etc.",
+   "createdAt": "2026-09-01T16:24:00.000Z"
+  },
+  {
+   "id": "e-web-wix-c1",
+   "postId": "e-web-wix",
+   "author": "flavio",
+   "text": "Que linda quedó Javi, te pasaste!!! La revisé completa y dejé los comentarios. Ideal dejarla publicada luego.",
+   "createdAt": "2026-09-23T15:12:00.000Z"
+  },
+  {
+   "id": "e-web-wix-c2",
+   "postId": "e-web-wix",
+   "author": "maca",
+   "text": "Está quedando atómica la página! 👏",
+   "createdAt": "2026-09-23T18:16:00.000Z"
+  },
+  {
+   "id": "e-web-wix-c3",
+   "postId": "e-web-wix",
+   "author": "flavio",
+   "text": "quedó increíble... muchísimas gracias Javi",
+   "createdAt": "2026-09-23T22:55:00.000Z"
+  },
+  {
+   "id": "e-c1-c1",
+   "postId": "e-c1",
+   "author": "maca",
+   "text": "Un par de ajustes y le damos !!! Me gusta mucho",
+   "createdAt": "2026-08-30T20:54:00.000Z"
+  },
+  {
+   "id": "e-c2-c1",
+   "postId": "e-c2",
+   "author": "maca",
+   "text": "Aprobadisimo",
+   "createdAt": "2026-09-03T19:59:00.000Z"
+  },
+  {
+   "id": "e-c3-c1",
+   "postId": "e-c3",
+   "author": "maca",
+   "text": "Un mismo modelo. Tres lugares. Tres casas con identidad propia. 🌲🏡 (copy final acordado para la publicación)",
+   "createdAt": "2026-09-10T20:49:00.000Z"
+  },
+  {
+   "id": "e-c-fachada-c1",
+   "postId": "e-c-fachada",
+   "author": "maca",
+   "text": "Me encanta!!!! Está todo Ok!",
+   "createdAt": "2026-10-07T12:01:00.000Z"
+  },
+  {
+   "id": "e-c-personalizables-c1",
+   "postId": "e-c-personalizables",
+   "author": "maca",
+   "text": "Super!!!! Estamos Ok!!! Muchísimas gracias",
+   "createdAt": "2026-10-13T19:04:00.000Z"
+  },
+  {
+   "id": "e-render-lingue-c1",
+   "postId": "e-render-lingue",
+   "author": "maca",
+   "text": "Guaaaauuuu!!!! Te pasaste!!!!! Lo encontré increíble!!!",
+   "createdAt": "2026-10-20T11:05:00.000Z"
+  },
+  {
+   "id": "e-carpeta-1-c1",
+   "postId": "e-carpeta-1",
+   "author": "maca",
+   "text": "💙💙 te embalaste con tanta propuesta!!!! Que seca Javi!!! 👏",
+   "createdAt": "2026-10-06T20:01:00.000Z"
+  },
+  {
+   "id": "e-carpeta-1-c2",
+   "postId": "e-carpeta-1",
+   "author": "flavio",
+   "text": "Me gustó el interior del 06, la 18 con algunas observaciones y la 29. Lo que no hay que hacer es poner información que pueda cambiar.",
+   "createdAt": "2026-10-06T20:11:00.000Z"
+  },
+  {
+   "id": "e-carpeta-3-c1",
+   "postId": "e-carpeta-3",
+   "author": "maca",
+   "text": "Entonces ese!!! El q tú creas se ve mejor. Démosle!!! Aprobadisimo!!!",
+   "createdAt": "2026-10-07T22:37:00.000Z"
+  },
+  {
+   "id": "e-carpetas-impresas-c1",
+   "postId": "e-carpetas-impresas",
+   "author": "maca",
+   "text": "Gracias Javi! 👏 Sabes si las despachan o hay q ir a retirarlas?",
+   "createdAt": "2026-10-21T14:22:00.000Z"
+  }
+ ],
+ "activity": [
+  {
+   "id": "e-diagnostico-a1",
+   "postId": "e-diagnostico",
+   "postTitle": "Diagnóstico integral de marca (39 páginas)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-01T10:00:00.000Z"
+  },
+  {
+   "id": "e-diagnostico-a2",
+   "postId": "e-diagnostico",
+   "postTitle": "Diagnóstico integral de marca (39 páginas)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-01T19:05:00.000Z"
+  },
+  {
+   "id": "e-resumen-marca-a1",
+   "postId": "e-resumen-marca",
+   "postTitle": "Resumen de marca (una página)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-01T10:00:00.000Z"
+  },
+  {
+   "id": "e-resumen-marca-a2",
+   "postId": "e-resumen-marca",
+   "postTitle": "Resumen de marca (una página)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-01T19:05:00.000Z"
+  },
+  {
+   "id": "e-iconos-ig-a1",
+   "postId": "e-iconos-ig",
+   "postTitle": "Íconos de historias destacadas de Instagram",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-14T10:00:00.000Z"
+  },
+  {
+   "id": "e-iconos-ig-a2",
+   "postId": "e-iconos-ig",
+   "postTitle": "Íconos de historias destacadas de Instagram",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-19T19:05:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1-a1",
+   "postId": "e-cotizador-v1",
+   "postTitle": "Cotizador web — primera versión",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-08T10:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1-a2",
+   "postId": "e-cotizador-v1",
+   "postTitle": "Cotizador web — primera versión",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-14T19:05:00.000Z"
+  },
+  {
+   "id": "e-cotizador-correos-a1",
+   "postId": "e-cotizador-correos",
+   "postTitle": "Cotizador — correos y teléfono predeterminados, valor neto y total",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-28T10:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-correos-a2",
+   "postId": "e-cotizador-correos",
+   "postTitle": "Cotizador — correos y teléfono predeterminados, valor neto y total",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-28T19:05:00.000Z"
+  },
+  {
+   "id": "e-cotizador-manio-a1",
+   "postId": "e-cotizador-manio",
+   "postTitle": "Cotizador — Huingán Familiar pasa a llamarse Casa Mañío",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-19T10:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-manio-a2",
+   "postId": "e-cotizador-manio",
+   "postTitle": "Cotizador — Huingán Familiar pasa a llamarse Casa Mañío",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-21T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-propuesta-a1",
+   "postId": "e-web-propuesta",
+   "postTitle": "Propuesta de sitio web (maqueta navegable)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-01T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-propuesta-a2",
+   "postId": "e-web-propuesta",
+   "postTitle": "Propuesta de sitio web (maqueta navegable)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-01T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-textos-a1",
+   "postId": "e-web-textos",
+   "postTitle": "Sitio web — textos nuevos (misión, visión, quiénes somos, FAQ)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-14T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-textos-a2",
+   "postId": "e-web-textos",
+   "postTitle": "Sitio web — textos nuevos (misión, visión, quiénes somos, FAQ)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-30T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-wix-a1",
+   "postId": "e-web-wix",
+   "postTitle": "Sitio web Neorigen en Wix — publicado",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-16T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-wix-a2",
+   "postId": "e-web-wix",
+   "postTitle": "Sitio web Neorigen en Wix — publicado",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-23T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-portada-a1",
+   "postId": "e-web-portada",
+   "postTitle": "Sitio web — portada: botones en blanco y ajustes de foto",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-15T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-portada-a2",
+   "postId": "e-web-portada",
+   "postTitle": "Sitio web — portada: botones en blanco y ajustes de foto",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-16T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-formulario-a1",
+   "postId": "e-web-formulario",
+   "postTitle": "Formulario de contacto de la web → bandeja de entrada",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-22T10:00:00.000Z"
+  },
+  {
+   "id": "e-c1-a1",
+   "postId": "e-c1",
+   "postTitle": "Carrusel: elegir un modelo prediseñado",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-08-30T10:00:00.000Z"
+  },
+  {
+   "id": "e-c1-a2",
+   "postId": "e-c1",
+   "postTitle": "Carrusel: elegir un modelo prediseñado",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-08-30T19:05:00.000Z"
+  },
+  {
+   "id": "e-c2-a1",
+   "postId": "e-c2",
+   "postTitle": "Carrusel: los modelos y sus metros cuadrados",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-03T10:00:00.000Z"
+  },
+  {
+   "id": "e-c2-a2",
+   "postId": "e-c2",
+   "postTitle": "Carrusel: los modelos y sus metros cuadrados",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-03T19:05:00.000Z"
+  },
+  {
+   "id": "e-c3-a1",
+   "postId": "e-c3",
+   "postTitle": "Carrusel: un mismo modelo, tres lugares (Maitén)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-10T10:00:00.000Z"
+  },
+  {
+   "id": "e-c3-a2",
+   "postId": "e-c3",
+   "postTitle": "Carrusel: un mismo modelo, tres lugares (Maitén)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-10T19:05:00.000Z"
+  },
+  {
+   "id": "e-c4-a1",
+   "postId": "e-c4",
+   "postTitle": "Carrusel: terminaciones y llave en mano",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-11T10:00:00.000Z"
+  },
+  {
+   "id": "e-c-web-a1",
+   "postId": "e-c-web",
+   "postTitle": "Carrusel: estrenamos nueva web",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-29T10:00:00.000Z"
+  },
+  {
+   "id": "e-c-web-a2",
+   "postId": "e-c-web",
+   "postTitle": "Carrusel: estrenamos nueva web",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-30T19:05:00.000Z"
+  },
+  {
+   "id": "e-c-fachada-a1",
+   "postId": "e-c-fachada",
+   "postTitle": "Carrusel: fachada ventilada",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-05T10:00:00.000Z"
+  },
+  {
+   "id": "e-c-fachada-a2",
+   "postId": "e-c-fachada",
+   "postTitle": "Carrusel: fachada ventilada",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-08T19:05:00.000Z"
+  },
+  {
+   "id": "e-c-cipres-a1",
+   "postId": "e-c-cipres",
+   "postTitle": "Carrusel: Casa Ciprés",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-05T10:00:00.000Z"
+  },
+  {
+   "id": "e-c-cipres-a2",
+   "postId": "e-c-cipres",
+   "postTitle": "Carrusel: Casa Ciprés",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-05T19:05:00.000Z"
+  },
+  {
+   "id": "e-c-personalizables-a1",
+   "postId": "e-c-personalizables",
+   "postTitle": "Carrusel: diseños personalizables",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-09T10:00:00.000Z"
+  },
+  {
+   "id": "e-c-personalizables-a2",
+   "postId": "e-c-personalizables",
+   "postTitle": "Carrusel: diseños personalizables",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-13T19:05:00.000Z"
+  },
+  {
+   "id": "e-render-lingue-a1",
+   "postId": "e-render-lingue",
+   "postTitle": "Render Casa Lingue en movimiento (tipo dron)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-19T10:00:00.000Z"
+  },
+  {
+   "id": "e-render-lingue-a2",
+   "postId": "e-render-lingue",
+   "postTitle": "Render Casa Lingue en movimiento (tipo dron)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-20T19:05:00.000Z"
+  },
+  {
+   "id": "e-fotos-itahue-a1",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-21T10:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-1-a1",
+   "postId": "e-carpeta-1",
+   "postTitle": "Carpeta institucional — primera tanda de propuestas (30)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-06T10:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-1-a2",
+   "postId": "e-carpeta-1",
+   "postTitle": "Carpeta institucional — primera tanda de propuestas (30)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-06T19:05:00.000Z"
+  },
+  {
+   "id": "e-carpeta-2-a1",
+   "postId": "e-carpeta-2",
+   "postTitle": "Carpeta institucional — segunda tanda (13)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-07T10:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-2-a2",
+   "postId": "e-carpeta-2",
+   "postTitle": "Carpeta institucional — segunda tanda (13)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-07T19:05:00.000Z"
+  },
+  {
+   "id": "e-carpeta-3-a1",
+   "postId": "e-carpeta-3",
+   "postTitle": "Carpeta institucional — tercera tanda y elección final (7)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-07T10:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-3-a2",
+   "postId": "e-carpeta-3",
+   "postTitle": "Carpeta institucional — tercera tanda y elección final (7)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-07T19:05:00.000Z"
+  },
+  {
+   "id": "e-carpeta-imprenta-a1",
+   "postId": "e-carpeta-imprenta",
+   "postTitle": "Carpeta institucional — archivo final para imprenta (46×32 cm)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-20T10:00:00.000Z"
+  },
+  {
+   "id": "e-carpeta-imprenta-a2",
+   "postId": "e-carpeta-imprenta",
+   "postTitle": "Carpeta institucional — archivo final para imprenta (46×32 cm)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-20T19:05:00.000Z"
+  },
+  {
+   "id": "e-carpetas-impresas-a1",
+   "postId": "e-carpetas-impresas",
+   "postTitle": "Carpetas impresas y laminadas (50 unidades)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-21T10:00:00.000Z"
+  },
+  {
+   "id": "e-carpetas-impresas-a2",
+   "postId": "e-carpetas-impresas",
+   "postTitle": "Carpetas impresas y laminadas (50 unidades)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-10-21T19:05:00.000Z"
+  },
+  {
+   "id": "p-reel-obra-a1",
+   "postId": "p-reel-obra",
+   "postTitle": "Reel con el material de obra nuevo",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-21T10:00:00.000Z"
+  },
+  {
+   "id": "p-carrusel-procesos-a1",
+   "postId": "p-carrusel-procesos",
+   "postTitle": "Carrusel de procesos constructivos",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-10-21T10:00:00.000Z"
+  }
+ ],
+ "notifications": [],
+ "prefs": [],
+ "push_subs": []
+}

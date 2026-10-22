@@ -42,6 +42,102 @@ const platOf = (id) => byId(PLATFORMS, id) || { id, name: id, short: '?', color:
 const formatName = (id) => (byId(FORMATS, id) || { name: id }).name;
 const descBy = (k) => (a, b) => (a[k] < b[k] ? 1 : -1);
 
+/* ---------- archivos, versiones y descargas ---------- */
+const slugify = (s, f) => window.Store.slug(s, f);
+const VER_RE = /[ _.-]*(?:v|ver|versi[oó]n)\s*0*(\d+)\s*$/i;
+function splitName(name) {
+  const n = String(name || 'archivo');
+  const i = n.lastIndexOf('.');
+  let base = i > 0 ? n.slice(0, i) : n;
+  const ext = i > 0 ? n.slice(i + 1).toLowerCase() : '';
+  let version = 0;
+  const m = base.match(VER_RE);
+  if (m) { version = parseInt(m[1], 10); base = base.slice(0, m.index); }
+  base = base.replace(/[ _-]*(final|definitiv[oa]|ok)\s*$/i, '');
+  return { base: slugify(base, 'archivo'), label: base.trim() || n, ext, version };
+}
+const fileSrc = (f) => f.blobUrl || f.url || '';
+const extOf = (f) => (splitName(f.name).ext || (f.path || '').split('.').pop() || '').toLowerCase();
+const isImg = (f) => (f.type || '').startsWith('image/') || ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'svg'].includes(extOf(f));
+const isVideo = (f) => (f.type || '').startsWith('video/') || ['mp4', 'mov', 'webm', 'm4v'].includes(extOf(f));
+const isPdf = (f) => (f.type || '') === 'application/pdf' || extOf(f) === 'pdf';
+function prettySize(n) {
+  if (!n && n !== 0) return '';
+  if (n < 1024) return n + ' B';
+  if (n < 1048576) return Math.round(n / 1024) + ' KB';
+  return (n / 1048576).toFixed(n < 10485760 ? 1 : 0) + ' MB';
+}
+// Archivos de una pieza, ya ordenados y con su número de versión
+function filesOf(p) {
+  const groups = {};
+  (p.files || []).forEach((f) => {
+    const info = splitName(f.name);
+    const base = f.base || info.base;
+    (groups[base] = groups[base] || []).push(Object.assign({}, f, { base, version: f.version || info.version || 1, postId: p.id }));
+  });
+  Object.values(groups).forEach((g) => g.sort((a, b) => (b.version - a.version) || String(b.at || '').localeCompare(String(a.at || ''))));
+  return groups;
+}
+function pieceFiles(p, lastOnly) {
+  const g = filesOf(p);
+  const out = [];
+  Object.keys(g).sort().forEach((k) => { (lastOnly ? g[k].slice(0, 1) : g[k]).forEach((f) => out.push(Object.assign({}, f, { versions: g[k].length }))); });
+  return out;
+}
+const findFile = (fid) => {
+  for (const p of S.db.posts) { const f = (p.files || []).find((x) => x.id === fid); if (f) return { post: p, file: f }; }
+  return null;
+};
+const projectName = (p) => (p.campaign || '').trim() || 'Sin proyecto';
+function projects(lastOnly) {
+  const map = new Map();
+  filtered().forEach((p) => {
+    const files = pieceFiles(p, lastOnly);
+    const k = projectName(p);
+    if (!map.has(k)) map.set(k, { name: k, posts: [], files: 0, size: 0 });
+    const g = map.get(k);
+    g.posts.push({ post: p, files });
+    g.files += files.length;
+    g.size += files.reduce((a, f) => a + (f.size || 0), 0);
+  });
+  const arr = [...map.values()];
+  arr.forEach((g) => g.posts.sort((a, b) => String(b.post.date || b.post.createdAt || '').localeCompare(String(a.post.date || a.post.createdAt || ''))));
+  return arr.sort((a, b) => b.files - a.files || a.name.localeCompare(b.name));
+}
+async function fetchFile(f) {
+  const tries = [fileSrc(f)];
+  if (f.path) tries.push(f.path.split('/').map(encodeURIComponent).join('/')); // copia publicada en esta misma página
+  for (const u of tries) {
+    if (!u) continue;
+    try {
+      const r = await fetch(u, { cache: 'no-store' });
+      if (r.ok) return await r.blob();
+    } catch (e) { /* probamos la siguiente */ }
+  }
+  throw new Error('no se pudo descargar ' + f.name);
+}
+async function downloadOne(f) {
+  try {
+    toast('Descargando ' + f.name + '…', 8000);
+    window.Zip.save(await fetchFile(f), f.name);
+    toast('Listo');
+  } catch (e) { toast('No se pudo descargar: ' + (e.message || e), 4000); }
+}
+async function downloadZip(entries, zipName) {
+  if (!entries.length) { toast('No hay archivos para descargar'); return; }
+  try {
+    const parts = [];
+    for (let i = 0; i < entries.length; i++) {
+      const e = entries[i];
+      toast(`Preparando ${i + 1} de ${entries.length}…`, 15000);
+      parts.push({ name: e.name, blob: await fetchFile(e.file), date: e.file.at ? new Date(e.file.at) : new Date() });
+    }
+    const blob = await window.Zip.make(parts);
+    window.Zip.save(blob, zipName.replace(/[\\/:*?"<>|]+/g, '-') + '.zip');
+    toast(`${parts.length} archivo${parts.length === 1 ? '' : 's'} · ${prettySize(blob.size)}`);
+  } catch (e) { toast('No se pudo armar el zip: ' + (e.message || e), 4000); }
+}
+
 const IC = {
   calendar: '<rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/>',
   list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
@@ -60,7 +156,12 @@ const IC = {
   msg: '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
   alert: '<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/>',
   image: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>',
-  plus: '<path d="M12 5v14M5 12h14"/>'
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  download: '<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+  folder: '<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>',
+  eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+  key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M17 6l3 3M14 9l3 3"/>',
+  cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>'
 };
 const ic = (n, s = 20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n] || ''}</svg>`;
 
@@ -71,6 +172,9 @@ const S = {
   cursor: (() => { const d = new Date(); d.setDate(1); return d; })(),
   sel: today(),
   f: { q: '', person: '', platform: '', status: '', format: '', mine: false },
+  offline: '',
+  lastOnly: localStorage.getItem('crono_last_only') !== '0',
+  openProject: localStorage.getItem('crono_open_project') || '',
   db: { posts: [], comments: [], activity: [], notifications: [], prefs: [] }
 };
 let store, ED = null, sheetOpen = false, toastT;
@@ -86,6 +190,12 @@ function normalize(db) {
 }
 
 /* ---------- guardado ---------- */
+function requireWrite() {
+  if (store.mode !== 'github' || store.canWrite) return true;
+  toast('Solo lectura: pega tu llave de GitHub en Ajustes para guardar', 3800);
+  openMe();
+  return false;
+}
 async function save(table, obj) {
   const arr = S.db[table];
   const i = arr.findIndex((x) => x.id === obj.id);
@@ -194,6 +304,7 @@ async function commitPost(old, p) {
 async function changeStatus(id, status) {
   const old = S.db.posts.find((p) => p.id === id);
   if (!old || old.status === status) return;
+  if (!requireWrite()) return;
   const p = clone(old); p.status = status;
   await commitPost(old, p);
   renderAll();
@@ -292,6 +403,92 @@ function viewBoard() {
   }).join('')}</div>`;
 }
 
+/* ---------- vista: entregas (archivos) ---------- */
+function fileTile(f) {
+  const src = fileSrc(f);
+  const thumb = isImg(f) && src
+    ? `<img loading="lazy" alt="" src="${esc(src)}">`
+    : `<span class="ext">${esc((extOf(f) || '?').slice(0, 4).toUpperCase())}</span>`;
+  return `<div class="ftile" data-act="file-open" data-f="${esc(f.id)}">
+    <div class="fthumb">${thumb}${f.version > 1 || f.versions > 1 ? `<i class="vtag">v${f.version}</i>` : ''}</div>
+    <div class="fmeta"><b>${esc(f.name)}</b><small>${esc(prettySize(f.size))}${f.versions > 1 ? ` · ${f.versions} versiones` : ''}</small></div>
+    <button class="fdl" data-act="file-dl" data-f="${esc(f.id)}" aria-label="Descargar ${esc(f.name)}">${ic('download', 18)}</button>
+  </div>`;
+}
+function viewFiles() {
+  const groups = projects(S.lastOnly);
+  const totalFiles = groups.reduce((a, g) => a + g.files, 0);
+  const head = `<div class="fhead">
+      <div class="chips"><button class="chip${S.lastOnly ? ' on' : ''}" data-act="toggle-last">${ic('check', 15)} Solo última versión</button>
+      <button class="btn ghost sm" data-act="dl-all">${ic('download', 16)} Todo</button></div>
+      <small>${groups.length} proyecto${groups.length === 1 ? '' : 's'} · ${totalFiles} archivo${totalFiles === 1 ? '' : 's'}</small></div>`;
+  if (!groups.length) return head + emptyBox('Todavía no hay entregas', 'Cada pieza con archivos o enlaces aparece aquí, agrupada por proyecto.');
+  const body = groups.map((g) => {
+    const open = S.openProject === g.name;
+    const piezas = g.posts.map(({ post, files }) => {
+      const links = post.links || [];
+      return `<details class="pz"${files.length || links.length ? '' : ''}>
+        <summary><span class="dotst" style="background:${statusOf(post.status).color}"></span><b>${esc(post.title)}</b>
+          <small>${post.date ? esc(fmtShort(post.date)) : 'sin fecha'}${files.length ? ' · ' + files.length + ' arch.' : ''}${links.length ? ' · ' + links.length + ' enl.' : ''}</small></summary>
+        <div class="pzbody">
+          ${files.length ? `<div class="fgrid">${files.map(fileTile).join('')}</div>` : '<p class="hint">Sin archivos subidos.</p>'}
+          ${links.length ? `<div class="flinks">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
+          <div class="pzacts">
+            ${files.length ? `<button class="btn ghost sm" data-act="dl-piece" data-id="${esc(post.id)}">${ic('download', 15)} Descargar pieza</button>` : ''}
+            <button class="btn ghost sm" data-act="open-post" data-id="${esc(post.id)}">Abrir pieza</button></div>
+        </div></details>`;
+    }).join('');
+    return `<section class="box proj">
+      <h3 class="projh"><button class="projt" data-act="toggle-project" data-p="${esc(g.name)}">${ic('folder', 18)}<span>${esc(g.name)}</span></button>
+        <button class="btn ghost sm" data-act="dl-project" data-p="${esc(g.name)}">${ic('download', 15)} ZIP</button></h3>
+      <small class="projs">${g.posts.length} pieza${g.posts.length === 1 ? '' : 's'} · ${g.files} archivo${g.files === 1 ? '' : 's'}${g.size ? ' · ' + prettySize(g.size) : ''}</small>
+      <div class="pzs"${open ? '' : ''}>${piezas}</div></section>`;
+  }).join('');
+  return head + body;
+}
+
+function entriesOfPost(p, lastOnly) {
+  return pieceFiles(p, lastOnly).map((f) => ({ name: f.name, file: f }));
+}
+function entriesOfProject(name, lastOnly) {
+  const out = [];
+  filtered().filter((p) => projectName(p) === name).forEach((p) => {
+    pieceFiles(p, lastOnly).forEach((f) => out.push({ name: `${slugify(p.title, 'pieza')}/${f.name}`, file: f }));
+  });
+  return out;
+}
+
+/* ---------- ver un archivo ---------- */
+function openFilePreview(fid) {
+  const hit = findFile(fid);
+  if (!hit) { toast('Ese archivo ya no está'); return; }
+  const { post, file } = hit;
+  const info = splitName(file.name);
+  const all = (filesOf(post)[file.base || info.base] || []);
+  const src = fileSrc(file);
+  let media;
+  if (isImg(file)) media = `<img src="${esc(src)}" alt="${esc(file.name)}" data-act="file-zoom" data-f="${esc(file.id)}">`;
+  else if (isVideo(file)) media = `<video src="${esc(src)}" controls playsinline></video>`;
+  else if (isPdf(file)) media = `<iframe src="${esc(src)}" title="${esc(file.name)}"></iframe>`;
+  else media = `<div class="noprev"><span class="ext">${esc((extOf(file) || '?').toUpperCase())}</span><p class="hint">Este tipo de archivo no se puede ver aquí. Descárgalo para abrirlo.</p></div>`;
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button>
+      <h2>${esc(file.name)}</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <div class="preview">${media}</div>
+      <div class="track" style="margin-top:14px">
+        <div><span>Pieza</span><b>${esc(post.title)}</b></div>
+        <div><span>Proyecto</span><b>${esc(projectName(post))}</b></div>
+        <div><span>Versión</span><b>v${file.version || info.version || 1}${all.length > 1 ? ` de ${all.length}` : ''}</b></div>
+        <div><span>Peso</span><b>${esc(prettySize(file.size) || '—')}</b></div>
+        <div><span>Subido por</span><b>${esc(person(file.by).name)}</b></div>
+        <div><span>Cuándo</span><b>${file.at ? esc(ago(file.at)) : '—'}</b></div>
+      </div>
+      ${all.length > 1 ? `<label class="lbl">Otras versiones</label><div class="vlist">${all.map((v) => `<button class="vrow${v.id === file.id ? ' on' : ''}" data-act="file-open" data-f="${esc(v.id)}"><b>v${v.version}</b><span>${esc(v.name)}</span><small>${esc(prettySize(v.size))}</small></button>`).join('')}</div>` : ''}
+    </div>
+    <div class="pf"><button class="btn ghost" data-act="open-post" data-id="${esc(post.id)}">Ver pieza</button>
+      <button class="btn" data-act="file-dl" data-f="${esc(file.id)}">${ic('download', 18)} Descargar</button></div>`, true);
+}
+
 /* ---------- vista: panel de seguimiento ---------- */
 const bars = (rows) => { const max = Math.max(1, ...rows.map((r) => r.n)); return `<div class="bars">${rows.map((r) => `<div class="bar"><span class="bl">${esc(r.label)}</span><div class="bt"><i style="width:${(r.n / max) * 100}%;background:${r.color}"></i></div><b>${r.n}</b></div>`).join('')}</div>`; };
 const miniRow = (p, extra) => `<div class="minirow" data-act="open-post" data-id="${esc(p.id)}"><span class="av md" style="--c:${statusOf(p.status).color}">${esc(statusOf(p.status).name[0])}</span><div class="t"><b>${esc(p.title)}</b><small>${esc(extra)}</small></div>${p.assignees.slice(0, 3).map((a) => av(a, 'sm')).join('')}</div>`;
@@ -386,13 +583,14 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const T = [['calendar', 'Calendario', 'calendar'], ['list', 'Agenda', 'list'], ['board', 'Tablero', 'board'], ['dash', 'Panel', 'chart']];
+  const T = [['calendar', 'Calendario', 'calendar'], ['list', 'Agenda', 'list'], ['board', 'Tablero', 'board'], ['files', 'Entregas', 'folder'], ['dash', 'Panel', 'chart']];
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
-  const v = { calendar: viewCalendar, list: viewList, board: viewBoard, dash: viewDash }[S.view] || viewCalendar;
+  const v = { calendar: viewCalendar, list: viewList, board: viewBoard, files: viewFiles, dash: viewDash }[S.view] || viewCalendar;
   const sy = window.scrollY;
   $('#main').innerHTML = v();
+  $('.fab').hidden = S.view === 'files' || S.view === 'dash'; // en estas vistas estorba
   renderBanner();
   window.scrollTo(0, sy);
 }
@@ -401,7 +599,9 @@ window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); defe
 window.addEventListener('appinstalled', () => { deferredInstall = null; if (S.me) renderBanner(); });
 function renderBanner() {
   const out = [];
-  if (store.mode === 'local') out.push(`<div class="demo"><b>Modo demo:</b> los datos solo se guardan en este dispositivo. Conecta Supabase para trabajar en equipo (ver LEEME.md).</div>`);
+  if (S.offline) out.push(`<div class="demo"><b>Sin conexión con GitHub</b> (${esc(S.offline)}). Se está usando una copia local de prueba: lo que escribas aquí no se guarda en el repositorio.</div>`);
+  if (store.mode === 'local' && !S.offline) out.push(`<div class="demo"><b>Modo demo:</b> los datos solo se guardan en este dispositivo. Publica la página en GitHub Pages para trabajar en equipo (ver LEEME.md).</div>`);
+  else if (!store.canWrite) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para guardar cambios, pega tu llave de GitHub en <button class="lnk" data-act="me">Ajustes</button>.</div>`);
   if (!isStandalone() && !localStorage.getItem('crono_hide_install')) {
     const how = deferredInstall ? `<button class="btn sm" data-act="install-app">Instalar</button>`
       : isIOS() ? 'Toca <b>Compartir</b> y luego <b>“Agregar a pantalla de inicio”</b>.' : 'Menú del navegador (⋮) → <b>“Instalar app”</b> o “Agregar a pantalla de inicio”.';
@@ -482,7 +682,8 @@ async function currentSub() {
   try { const reg = await navigator.serviceWorker.getRegistration(); return reg ? await reg.pushManager.getSubscription() : null; } catch (e) { return null; }
 }
 async function pushState() {
-  if (store.mode !== 'supabase') return 'nosupabase';
+  if (store.mode !== 'github') return 'norepo';
+  if (!store.canWrite) return 'notoken';
   if (isIOS() && !isStandalone()) return 'install';
   if (!pushSupported()) return 'unsupported';
   if (Notification.permission === 'denied') return 'blocked';
@@ -508,7 +709,7 @@ async function disablePush() {
 }
 async function syncPushSub() { // este celular pasa a ser de la persona que está usando la app
   try {
-    if (store.mode !== 'supabase' || !pushSupported() || Notification.permission !== 'granted') return;
+    if (store.mode !== 'github' || !store.canWrite || !pushSupported() || Notification.permission !== 'granted') return;
     const sub = await currentSub(); if (sub) await registerSub(sub);
   } catch (e) { /* silencioso */ }
 }
@@ -517,7 +718,8 @@ async function renderPushBox() {
   const st = await pushState();
   const box = $('#push-box'); if (!box) return;
   const M = {
-    nosupabase: ['Conecta Supabase para recibir notificaciones', 'Las notificaciones al celular funcionan cuando la app está conectada al equipo (ver LEEME.md).', ''],
+    norepo: ['Modo demo: sin notificaciones', 'Las notificaciones al celular funcionan cuando la página está publicada en GitHub Pages (ver LEEME.md).', ''],
+    notoken: ['Falta tu llave de GitHub', 'Agrégala más abajo, en “Guardar cambios”, y después vuelve a activar las notificaciones.', ''],
     install: ['Primero instala la app', 'En iPhone: toca Compartir → “Agregar a pantalla de inicio”, ábrela desde ese ícono y vuelve a Ajustes.', ''],
     unsupported: ['Este navegador no permite notificaciones', 'Usa Chrome en Android, o Safari con la app instalada en la pantalla de inicio en iPhone.', ''],
     blocked: ['Notificaciones bloqueadas', 'Actívalas en los ajustes del celular (o del navegador) para esta app y vuelve a intentar.', ''],
@@ -531,7 +733,9 @@ function openMe() {
   const pr = prefsOf(S.me.id);
   openSheet(`<div class="ph"><h2>Ajustes</h2><button class="iconbtn" data-act="sheet-close">${ic('x')}</button></div>
     <div class="pb">
-      <div class="meinfo">${av(S.me.id, 'xl')}<div><h3>${esc(S.me.name)}</h3><small style="color:var(--muted)">${store.mode === 'supabase' ? 'Conectado al equipo' : 'Modo demo (solo este dispositivo)'}</small></div></div>
+      <div class="meinfo">${av(S.me.id, 'xl')}<div><h3>${esc(S.me.name)}</h3><small style="color:var(--muted)">${store.mode === 'github' ? (store.canWrite ? 'Conectada al repositorio' : 'Solo lectura') : 'Modo demo (solo este dispositivo)'}</small></div></div>
+      ${store.mode === 'github' ? `<label class="lbl">Guardar cambios <small>una sola vez por celular</small></label>
+      <div class="pushbox" id="gh-box">${ghBoxHtml()}</div>` : ''}
       <label class="lbl">Este celular</label>
       <div class="pushbox" id="push-box"><b>Revisando…</b></div>
       <label class="lbl">Avisarme cuando…<small>App · Celular</small></label>
@@ -546,6 +750,17 @@ function openMe() {
       </div>
     </div>`);
   renderPushBox();
+}
+function ghBoxHtml() {
+  if (!store.canWrite) {
+    return `<b>Modo solo lectura</b>
+      <p class="hint">Puedes ver y descargar todo. Para crear piezas, comentar o subir archivos, pega una vez tu llave de GitHub: queda guardada solo en este celular.</p>
+      <div class="addrow" style="margin-top:10px"><input class="field" id="gh-token" type="password" autocomplete="off" placeholder="github_pat_…"><button class="btn sm" data-act="gh-save">Guardar</button></div>
+      <p class="hint">Cómo se crea la llave: paso a paso en el LEEME del repositorio.</p>`;
+  }
+  return `<b>Puedes guardar cambios ✅</b>
+    <p class="hint">Todo lo que escribas queda en el repositorio <b>${esc(store.cfg.owner + '/' + store.cfg.repo)}</b>${store.user ? ` (como <b>${esc(store.user)}</b>)` : ''}. Recuerda que el repositorio es público.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn ghost sm" data-act="gh-forget">Quitar la llave de este celular</button></div>`;
 }
 async function savePrefs() {
   const events = {};
@@ -621,9 +836,10 @@ function renderEditor() {
     <datalist id="camps">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
 
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
-    <div class="files">${d.files.map((f) => `<div class="file">${(f.type || '').startsWith('image/')
-      ? `<img loading="lazy" alt="" src="${esc(f.thumb || f.url)}" data-act="ed-view" data-id="${esc(f.id)}">`
-      : `<a class="fileico" href="${esc(f.url)}" target="_blank" rel="noopener">${ic('paperclip', 26)}<span>${esc(f.name)}</span></a>`}
+    <div class="files">${d.files.map((f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${isImg(f)
+      ? `<img loading="lazy" alt="" src="${esc(fileSrc(f))}">`
+      : `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
+      ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
       <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`).join('')}
       <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple accept="image/*,video/*,application/pdf,.psd,.ai,.fig,.zip"></label></div>
 
@@ -660,6 +876,7 @@ function renderEditor() {
 
 async function saveEditor() {
   if (!ED) return;
+  if (!requireWrite()) return;
   if (ED.uploading) { toast('Espera a que terminen de subirse los archivos'); return; }
   syncDraft();
   const d = ED.d;
@@ -676,6 +893,7 @@ async function saveEditor() {
 }
 
 async function addComment() {
+  if (!requireWrite()) return;
   syncDraft();
   const text = (ED.comment || '').trim(); if (!text) return;
   const p = ED.old; if (!p) return;
@@ -697,7 +915,14 @@ async function onFiles(input) {
   ed.uploading += files.length; renderEditor();
   toast(`Subiendo ${files.length} archivo${files.length > 1 ? 's' : ''}…`, 10000);
   for (const f of files) {
-    try { const r = await store.upload(f); ed.d.files.push(Object.assign({ id: uid(), by: S.me.id, at: nowISO() }, r)); }
+    try {
+      const info = splitName(f.name);
+      const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
+      const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
+      const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
+      const r = await store.upload(f, { dir: projectName(ed.d), name: nombre });
+      ed.d.files.push(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r));
+    }
     catch (e) { console.error(e); toast(`No se pudo subir ${f.name}: ${e.message || e}`, 4000); }
     ed.uploading -= 1;
   }
@@ -712,7 +937,7 @@ const ACTS = {
   'next-m': () => { S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() + 1, 1); renderMain(); },
   today: () => { const d = new Date(); d.setDate(1); S.cursor = d; S.sel = today(); renderMain(); },
   'pick-day': (el) => { S.sel = el.dataset.d; renderMain(); },
-  new: (el) => openEditor(null, { date: el.dataset.d }),
+  new: (el) => { if (requireWrite()) openEditor(null, { date: el.dataset.d }); },
   'open-post': (el) => openEditor(el.dataset.id),
   'status-menu': (el) => openStatusMenu(el.dataset.id),
   'set-status': async (el) => { closeSheet(); await changeStatus(el.dataset.id, el.dataset.v); },
@@ -721,7 +946,31 @@ const ACTS = {
   filters: () => openFilters(),
   'clear-filters': () => { Object.assign(S.f, { person: '', platform: '', status: '', format: '' }); closeSheet(); renderToolbar(); renderMain(); },
   'toggle-mine': () => { S.f.mine = !S.f.mine; renderToolbar(); renderMain(); },
+  'toggle-last': () => { S.lastOnly = !S.lastOnly; localStorage.setItem('crono_last_only', S.lastOnly ? '1' : '0'); renderMain(); },
+  'toggle-project': (el) => { S.openProject = S.openProject === el.dataset.p ? '' : el.dataset.p; localStorage.setItem('crono_open_project', S.openProject); renderMain(); },
+  'file-open': (el, e) => { if (e) e.stopPropagation(); openFilePreview(el.dataset.f); },
+  'file-dl': (el, e) => { if (e) e.stopPropagation(); const h = findFile(el.dataset.f); if (h) downloadOne(h.file); },
+  'file-zoom': (el) => { const lb = $('#lightbox'); lb.innerHTML = `<img src="${esc(el.getAttribute('src'))}" alt="">`; lb.hidden = false; },
+  'dl-piece': async (el, e) => { if (e) e.stopPropagation(); const p = S.db.posts.find((x) => x.id === el.dataset.id); if (p) await downloadZip(entriesOfPost(p, S.lastOnly), slugify(p.title, 'pieza')); },
+  'dl-project': async (el, e) => { if (e) e.stopPropagation(); await downloadZip(entriesOfProject(el.dataset.p, S.lastOnly), slugify(el.dataset.p, 'proyecto')); },
+  'dl-all': async () => {
+    const out = [];
+    projects(S.lastOnly).forEach((g) => entriesOfProject(g.name, S.lastOnly).forEach((e) => out.push({ name: `${slugify(g.name, 'proyecto')}/${e.name}`, file: e.file })));
+    await downloadZip(out, 'entregas-' + today());
+  },
   'sheet-close': () => closeSheet(),
+  'gh-save': async (el) => {
+    const i = $('#gh-token'); if (!i) return;
+    el.disabled = true;
+    try {
+      await store.setToken(i.value);
+      toast('Llave guardada. Ya puedes guardar cambios.');
+      $('#gh-box').innerHTML = ghBoxHtml();
+      renderPushBox(); renderAll();
+      await reload();
+    } catch (e) { toast('No sirvió: ' + (e.message || e), 5000); el.disabled = false; }
+  },
+  'gh-forget': () => { store.clearToken(); toast('Llave borrada de este celular'); $('#gh-box').innerHTML = ghBoxHtml(); renderPushBox(); renderAll(); },
   'switch-user': async () => { await disablePush().catch(() => {}); localStorage.removeItem('crono_me'); location.reload(); },
   'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); },
   'push-off': async () => { await disablePush(); toast('Notificaciones desactivadas en este celular'); renderPushBox(); },
@@ -737,8 +986,18 @@ const ACTS = {
   'ed-plat': (el) => { syncDraft(); const a = ED.d.platforms, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
   'ed-person': (el) => { syncDraft(); const a = ED.d.assignees, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
   'ed-prio': () => { syncDraft(); ED.d.priority = ED.d.priority === 'alta' ? 'normal' : 'alta'; renderEditor(); },
-  'ed-rmfile': (el) => { syncDraft(); ED.d.files = ED.d.files.filter((f) => f.id !== el.dataset.id); renderEditor(); },
-  'ed-view': (el) => { const f = ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return; const lb = $('#lightbox'); lb.innerHTML = `<img src="${esc(f.url)}" alt="">`; lb.hidden = false; },
+  'ed-rmfile': (el) => {
+    syncDraft();
+    const f = ED.d.files.find((x) => x.id === el.dataset.id);
+    ED.d.files = ED.d.files.filter((x) => x.id !== el.dataset.id);
+    renderEditor();
+    if (f && f.path && store.deleteFile) store.deleteFile(f.path, f.sha).catch(() => {});
+  },
+  'ed-view': (el) => {
+    const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;
+    if (isImg(f)) { const lb = $('#lightbox'); lb.innerHTML = `<img src="${esc(fileSrc(f))}" alt=""><a class="lbdl" href="${esc(fileSrc(f))}" download="${esc(f.name)}" target="_blank" rel="noopener">${ic('download', 18)} ${esc(f.name)}</a>`; lb.hidden = false; }
+    else downloadOne(f);
+  },
   'ed-addlink': () => {
     syncDraft();
     const u = normUrl(ED.newLink.url);
@@ -816,12 +1075,23 @@ async function seedDemo() {
   ];
   for (const p of demo) await save('posts', p);
 }
+// Los avisos viejos se borran solos para que el archivo de datos no crezca sin fin
+async function pruneOld() {
+  try {
+    if (store.mode !== 'github' || !store.canWrite) return;
+    const limite = Date.now() - 45 * 864e5;
+    const viejas = S.db.notifications.filter((n) => new Date(n.createdAt || 0).getTime() < limite);
+    if (viejas.length < 20) return;
+    for (const n of viejas) await removeRow('notifications', n.id);
+  } catch (e) { /* no es importante */ }
+}
 async function startApp() {
   $('#who').hidden = true; $('#app').hidden = false;
   S.f.mine = false;
   renderAll();
   openFromHash();
   syncPushSub();
+  pruneOld();
 }
 function openFromHash() {
   const m = location.hash.match(/post=([\w-]+)/);
@@ -839,17 +1109,36 @@ async function reload() {
   try { S.db = normalize(await store.load()); if (S.me) { renderAll(); if (ED && sheetOpen && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
   catch (e) { console.warn('No se pudo refrescar', e); }
 }
+/* ---------- aviso de guardado ---------- */
+function watchSaving() {
+  const el = $('#saving');
+  if (!el) return;
+  let visto = false;
+  setInterval(() => {
+    const p = store.pending && store.pending();
+    if (p === visto) return;
+    visto = p;
+    el.hidden = !p;
+  }, 400);
+  window.addEventListener('beforeunload', (e) => {
+    if (store.pending && store.pending()) { e.preventDefault(); e.returnValue = ''; }
+  });
+  document.addEventListener('visibilitychange', () => { if (document.hidden && store.flushNow) store.flushNow(); });
+}
+
 async function boot() {
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW', e));
   store = window.Store.create(CFG);
   try { S.db = normalize(await store.init()); }
   catch (e) {
     console.error(e);
-    alert('No se pudo conectar con Supabase (' + (e.message || e) + '). Se abrirá en modo demo; revisa config.js y el SQL de instalación.');
+    S.offline = e.message || String(e);
     store = window.Store.local; S.db = normalize(await store.init());
   }
   if (store.mode === 'local' && store.isFirstRun() && !S.db.posts.length) await seedDemo();
-  try { store.subscribe(debounce(reload, 500)); } catch (e) { /* sin tiempo real */ }
+  store.onError = (e) => toast('No se pudo guardar en GitHub: ' + (e.message || e), 6000);
+  watchSaving();
+  try { store.subscribe(debounce(reload, 500)); } catch (e) { /* sin actualización automática */ }
   document.addEventListener('visibilitychange', () => { if (!document.hidden && S.me) reload(); });
   const saved = localStorage.getItem('crono_me');
   if (saved && byId(P, saved)) { S.me = byId(P, saved); startApp(); } else showWho();

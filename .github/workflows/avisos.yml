@@ -1,0 +1,41 @@
+# Manda la notificación al celular cuando alguien te etiqueta o te menciona.
+# Se ejecuta solo, en GitHub, cada vez que la app guarda un cambio.
+name: Avisos al celular
+
+on:
+  push:
+    branches: [main]
+    paths: ['datos/contenido.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: avisos
+  cancel-in-progress: false
+
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install web-push@3.6.7 --no-save --no-audit --no-fund
+      - name: Enviar los avisos pendientes
+        env:
+          VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+        run: node .github/scripts/enviar-avisos.mjs
+      - name: Anotar lo que ya se envió
+        run: |
+          if [ -n "$(git status --porcelain datos/avisos-enviados.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add datos/avisos-enviados.json
+            git commit -m "Avisos enviados [skip ci]"
+            git push
+          fi

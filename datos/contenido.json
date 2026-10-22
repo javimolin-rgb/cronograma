@@ -1606,7 +1606,42 @@
    "createdAt": "2026-10-22T20:37:48.635Z"
   }
  ],
- "prefs": [],
+ "prefs": [
+  {
+   "id": "javi",
+   "events": {
+    "tagged": {
+     "app": 1,
+     "push": 1
+    },
+    "mention": {
+     "app": 1,
+     "push": 1
+    },
+    "comment": {
+     "app": 1,
+     "push": 1
+    },
+    "status": {
+     "app": 1,
+     "push": 0
+    },
+    "reschedule": {
+     "app": 1,
+     "push": 1
+    },
+    "update": {
+     "app": 1,
+     "push": 0
+    },
+    "deadline": {
+     "app": 1,
+     "push": 0
+    }
+   },
+   "createdAt": "2026-10-22T20:38:02.121Z"
+  }
+ ],
  "push_subs": [
   {
    "id": "ps_ebcf5a56ff790a73984db4c86ac13607",

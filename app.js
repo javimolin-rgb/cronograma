@@ -474,21 +474,70 @@ function openFilePreview(fid) {
   else if (isPdf(file)) media = `<iframe src="${esc(src)}" title="${esc(file.name)}"></iframe>`;
   else media = `<div class="noprev"><span class="ext">${esc((extOf(file) || '?').toUpperCase())}</span><p class="hint">Este tipo de archivo no se puede ver aquí. Descárgalo para abrirlo.</p></div>`;
   openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button>
-      <h2>${esc(file.name)}</h2><span style="width:40px"></span></div>
+      <h2>${esc(esAdmin() ? file.name : post.title)}</h2><span style="width:40px"></span></div>
     <div class="pb">
       <div class="preview">${media}</div>
       <div class="track" style="margin-top:14px">
         <div><span>Pieza</span><b>${esc(post.title)}</b></div>
         <div><span>Proyecto</span><b>${esc(projectName(post))}</b></div>
-        <div><span>Versión</span><b>v${file.version || info.version || 1}${all.length > 1 ? ` de ${all.length}` : ''}</b></div>
+        ${esAdmin() ? `<div><span>Versión</span><b>v${file.version || info.version || 1}${all.length > 1 ? ` de ${all.length}` : ''}</b></div>
         <div><span>Peso</span><b>${esc(prettySize(file.size) || '—')}</b></div>
-        <div><span>Subido por</span><b>${esc(person(file.by).name)}</b></div>
+        <div><span>Subido por</span><b>${esc(person(file.by).name)}</b></div>` : ''}
         <div><span>Cuándo</span><b>${file.at ? esc(ago(file.at)) : '—'}</b></div>
       </div>
-      ${all.length > 1 ? `<label class="lbl">Otras versiones</label><div class="vlist">${all.map((v) => `<button class="vrow${v.id === file.id ? ' on' : ''}" data-act="file-open" data-f="${esc(v.id)}"><b>v${v.version}</b><span>${esc(v.name)}</span><small>${esc(prettySize(v.size))}</small></button>`).join('')}</div>` : ''}
+      ${esAdmin() && all.length > 1 ? `<label class="lbl">Otras versiones</label><div class="vlist">${all.map((v) => `<button class="vrow${v.id === file.id ? ' on' : ''}" data-act="file-open" data-f="${esc(v.id)}"><b>v${v.version}</b><span>${esc(v.name)}</span><small>${esc(prettySize(v.size))}</small></button>`).join('')}</div>` : ''}
     </div>
     <div class="pf"><button class="btn ghost" data-act="open-post" data-id="${esc(post.id)}">Ver pieza</button>
       <button class="btn" data-act="file-dl" data-f="${esc(file.id)}">${ic('download', 18)} Descargar</button></div>`, true);
+}
+
+/* ---------- vista de resultado (lo que ven Flavio y Maca) ---------- */
+// Un archivo dentro del carrusel: foto, video o documento
+function slideHtml(f) {
+  const src = fileSrc(f);
+  if (isImg(f)) return `<div class="slide"><img loading="lazy" alt="" src="${esc(src)}" data-act="file-zoom"></div>`;
+  if (isVideo(f)) return `<div class="slide"><video src="${esc(src)}" controls playsinline preload="metadata"></video></div>`;
+  return `<div class="slide doc" data-act="file-open" data-f="${esc(f.id)}"><span class="ext">${esc((extOf(f) || 'archivo').toUpperCase())}</span><small>Tocar para abrir</small></div>`;
+}
+function carruselHtml(files, id) {
+  if (!files.length) return '';
+  const uno = files.length === 1;
+  return `<div class="carru${uno ? ' uno' : ''}" id="c-${esc(id)}">
+    <div class="carru-track">${files.map(slideHtml).join('')}</div>
+    ${uno ? '' : `<button class="carru-ar prev" data-act="carru" data-d="-1" aria-label="Anterior">${ic('left', 20)}</button>
+    <button class="carru-ar next" data-act="carru" data-d="1" aria-label="Siguiente">${ic('right', 20)}</button>
+    <div class="carru-dots">${files.map((f, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div>
+    <span class="carru-n">1/${files.length}</span>`}
+  </div>`;
+}
+// Piezas que ya se mostraron al equipo: lo entregado, no lo que está en preparación
+const esEntrega = (p) => !['idea', 'diseno'].includes(p.status);
+function viewResultados() {
+  const piezas = filtered().filter(esEntrega)
+    .sort((a, b) => String(b.date || b.updatedAt || '').localeCompare(String(a.date || a.updatedAt || '')));
+  if (!piezas.length) return emptyBox('Todavía no hay entregas', 'Aquí vas a ver cada pieza terminada, como se ve publicada.');
+  return `<div class="resfeed">${piezas.map((p) => {
+    const files = pieceFiles(p, true); // solo la versión final de cada archivo
+    const st = statusOf(p.status);
+    const tags = (p.hashtags || '').trim();
+    return `<article class="res" style="--c:${st.color}">
+      <header>
+        <div><h3>${esc(p.title)}</h3>
+          <small>${p.date ? esc(cap(fmtLong(p.date))) : 'Sin fecha'}${p.time ? ' · ' + esc(p.time) : ''} · ${esc(formatName(p.format))}</small></div>
+        <span class="badge" style="--c:${st.color}">${esc(st.name)}</span>
+      </header>
+      ${carruselHtml(files, p.id)}
+      <div class="resbody">
+        <div class="plats">${p.platforms.map(platBadge).join('')}</div>
+        ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
+        ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
+        ${(p.links || []).length ? `<div class="flinks">${p.links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
+        <div class="resacts">
+          <button class="btn ghost sm" data-act="open-post" data-id="${esc(p.id)}">${ic('msg', 15)} Comentar</button>
+          ${files.length ? `<button class="btn ghost sm" data-act="dl-final" data-id="${esc(p.id)}">${ic('download', 15)} Descargar</button>` : ''}
+        </div>
+      </div></article>`;
+  }).join('')}</div>`;
 }
 
 /* ---------- vista: panel de seguimiento ---------- */
@@ -585,11 +634,12 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const T = [['calendar', 'Calendario', 'calendar'], ['list', 'Agenda', 'list'], ['board', 'Tablero', 'board'], ['files', 'Entregas', 'folder'], ['dash', 'Panel', 'chart']];
+  const T = [['calendar', 'Calendario', 'calendar'], ['list', 'Agenda', 'list'], ['board', 'Tablero', 'board'],
+    ['files', 'Entregas', esAdmin() ? 'folder' : 'image'], ['dash', 'Panel', 'chart']];
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
-  const v = { calendar: viewCalendar, list: viewList, board: viewBoard, files: viewFiles, dash: viewDash }[S.view] || viewCalendar;
+  const v = { calendar: viewCalendar, list: viewList, board: viewBoard, files: esAdmin() ? viewFiles : viewResultados, dash: viewDash }[S.view] || viewCalendar;
   const sy = window.scrollY;
   $('#main').innerHTML = v();
   $('.fab').hidden = S.view === 'files' || S.view === 'dash'; // en estas vistas estorba
@@ -858,13 +908,14 @@ function renderEditor() {
     <label class="lbl">Campaña / pilar</label><input class="field" id="e-camp" list="camps" placeholder="Ej. Lanzamiento, Educativo…" value="${esc(d.campaign || '')}">
     <datalist id="camps">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
 
+    ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
     <div class="files">${d.files.map((f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${isImg(f)
       ? `<img loading="lazy" alt="" src="${esc(fileSrc(f))}">`
       : `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
       ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
       <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`).join('')}
-      <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple accept="image/*,video/*,application/pdf,.psd,.ai,.fig,.zip"></label></div>
+      <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple accept="image/*,video/*,application/pdf,.psd,.ai,.fig,.zip"></label></div>`}
 
     <label class="lbl">Enlaces <small>Canva, Drive, Figma…</small></label>
     ${d.links.map((l) => `<div class="linkrow">${ic('link', 18)}<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a><button data-act="ed-rmlink" data-id="${esc(l.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
@@ -1200,6 +1251,7 @@ async function pegarImagenes(files) {
     return;
   }
   if (ED && sheetOpen) {
+    if (!esAdmin()) { toast('Mándale la foto a Javi y ella la suma a la entrega'); return; }
     const dt = new DataTransfer();
     files.forEach((f) => dt.items.add(f));
     await onFiles({ files: dt.files, value: '' });
@@ -1243,6 +1295,18 @@ const ACTS = {
   filters: () => openFilters(),
   'clear-filters': () => { Object.assign(S.f, { person: '', platform: '', status: '', format: '' }); closeSheet(); renderToolbar(); renderMain(); },
   'toggle-mine': () => { S.f.mine = !S.f.mine; renderToolbar(); renderMain(); },
+  carru: (el) => {
+    const c = el.closest('.carru'); if (!c) return;
+    const t = c.querySelector('.carru-track');
+    t.scrollBy({ left: (+el.dataset.d) * t.clientWidth, behavior: 'smooth' });
+  },
+  'dl-final': async (el, e) => {
+    if (e) e.stopPropagation();
+    const p = S.db.posts.find((x) => x.id === el.dataset.id); if (!p) return;
+    const fs = pieceFiles(p, true);
+    if (fs.length === 1) await downloadOne(fs[0]);            // uno solo: el archivo tal cual
+    else await downloadZip(entriesOfPost(p, true), slugify(p.title, 'entrega'));
+  },
   'buscar-update': (el) => buscarActualizacion(el),
   'acc-pedir': () => pedirContrasena(),
   'acc-entrar': async (el) => {
@@ -1377,6 +1441,18 @@ document.addEventListener('drop', (e) => {
   e.preventDefault(); col.classList.remove('over');
   const id = e.dataTransfer.getData('text/plain'); if (id) changeStatus(id, col.dataset.status);
 });
+/* Puntitos y contador del carrusel */
+document.addEventListener('scroll', (e) => {
+  const t = e.target;
+  if (!t.classList || !t.classList.contains('carru-track')) return;
+  const i = Math.round(t.scrollLeft / Math.max(1, t.clientWidth));
+  const c = t.parentElement;
+  const dots = c.querySelectorAll('.carru-dots i');
+  dots.forEach((d, n) => d.classList.toggle('on', n === i));
+  const n = c.querySelector('.carru-n');
+  if (n) n.textContent = `${Math.min(i + 1, dots.length || 1)}/${dots.length || 1}`;
+}, true);
+
 /* Deslizar para cambiar de mes */
 let tx = 0, ty = 0;
 document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });

@@ -8,6 +8,11 @@ Funciona sin servicios externos ni cuentas aparte: los datos y los archivos vive
 
 Las entregas de agosto a octubre de 2026: diagnóstico y resumen de marca, cotizador y sus cambios, el sitio web (maqueta, Wix, textos, portada y formulario), los carruseles de Instagram, el render de la Casa Lingue, las fotos de obra y la carpeta institucional completa hasta las 50 impresas. Cada una con su fecha, su proyecto, quién participó, el feedback que les dieron y los enlaces.
 
+## Qué ve cada uno
+
+- **Flavio y Maca** entran a **Entregas** y ven cada pieza terminada como resultado: el carrusel se desliza con el dedo, con su descripción, sus hashtags y los enlaces. Pueden comentar y descargar la versión final. No ven archivos sueltos, ni versiones, ni carpetas.
+- **Javi** ve en esa misma pestaña la carpeta completa: proyectos, piezas, todos los archivos, las versiones anteriores y las descargas en zip.
+
 ## Quién entra y cómo
 
 | | Qué tiene que hacer |

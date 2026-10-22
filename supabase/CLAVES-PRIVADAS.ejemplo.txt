@@ -1,0 +1,14 @@
+PLANTILLA. Copia este archivo como "CLAVES-PRIVADAS.txt" (ese nombre está en .gitignore
+y NO se sube a GitHub) y pega ahí tus claves. Los valores se escriben solo en
+Supabase → Edge Functions → Secrets. La clave PÚBLICA además va en config.js.
+
+VAPID_PUBLIC_KEY  = (clave pública, la misma que pongas en config.js → PUSH.VAPID_PUBLIC_KEY)
+VAPID_PRIVATE_KEY = (clave privada, SECRETA: solo en Supabase)
+VAPID_SUBJECT     = https://TU-USUARIO.github.io/NOMBRE-DEL-REPO/   (o mailto:tu@correo.com)
+
+Para generar un par nuevo (una sola vez), con Node instalado:
+
+    npx web-push generate-vapid-keys
+
+Pega la pública en config.js y las tres en los Secrets de Supabase. Si cambias el par,
+cada celular tiene que volver a entrar a Ajustes → "Activar en este celular".

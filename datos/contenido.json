@@ -890,36 +890,6 @@
    "publishedAt": "2026-10-21T19:00:00.000Z"
   },
   {
-   "id": "p-reel-obra",
-   "title": "Reel con el material de obra nuevo",
-   "caption": "Reel con los videos y fotos de proceso que subió la Maca al Drive.",
-   "notes": "Idea conversada el 14 y el 21 de octubre: con video se puede armar un reel de proceso.",
-   "hashtags": "",
-   "campaign": "Instagram",
-   "date": "2026-10-23",
-   "time": "",
-   "format": "reel",
-   "status": "idea",
-   "priority": "normal",
-   "revisions": 0,
-   "platforms": [
-    "instagram"
-   ],
-   "assignees": [
-    "javi",
-    "maca"
-   ],
-   "files": [],
-   "links": [],
-   "checklist": [],
-   "createdAt": "2026-10-21T10:00:00.000Z",
-   "createdBy": "javi",
-   "updatedAt": "2026-10-23T19:00:00.000Z",
-   "updatedBy": "javi",
-   "statusChangedAt": "2026-10-23T19:00:00.000Z",
-   "publishedAt": null
-  },
-  {
    "id": "p-carrusel-procesos",
    "title": "Carrusel de procesos constructivos",
    "caption": "Contenido de proceso real, en la línea de las publicaciones antiguas que mandó Maca de referencia.",
@@ -1078,6 +1048,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "1a110b6a-8681-4702-b254-726b5421e2bf",
+   "postId": "p-reel-obra",
+   "postTitle": "Reel con el material de obra nuevo",
+   "actor": "javi",
+   "type": "deleted",
+   "text": "eliminó la pieza",
+   "meta": null,
+   "createdAt": "2026-10-22T22:02:47.759Z"
+  },
   {
    "id": "7c14eb91-6933-4338-b01a-2394d3763003",
    "postId": "e-c4",

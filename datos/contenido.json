@@ -921,6 +921,13 @@
  ],
  "comments": [
   {
+   "id": "6627625c-4354-43e6-8ced-3d80cd97792e",
+   "postId": "e-web-formulario",
+   "author": "flavio",
+   "text": "Esta funcionando perfecto. Muchas gracias !!",
+   "createdAt": "2026-10-22T22:15:57.540Z"
+  },
+  {
    "id": "e-diagnostico-c1",
    "postId": "e-diagnostico",
    "author": "maca",
@@ -1048,6 +1055,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ef9df67a-b322-4cdb-85e5-b76dfb82a7c0",
+   "postId": "e-web-formulario",
+   "postTitle": "Formulario de contacto de la web → bandeja de entrada",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-22T22:15:57.550Z"
+  },
   {
    "id": "1a110b6a-8681-4702-b254-726b5421e2bf",
    "postId": "p-reel-obra",
@@ -1619,6 +1636,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8a5a0234-a153-4122-834f-7e4db3d7ea11",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "e-web-formulario",
+   "type": "comment",
+   "text": "comentó en “Formulario de contacto de la web → bandeja de entrada”: Esta funcionando perfecto. Muchas gracias !!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Formulario de contacto de la web → bandeja de entrada”: Esta funcionando perfecto. Muchas gracias !!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-web-formulario",
+   "createdAt": "2026-10-22T22:15:57.551Z"
+  },
   {
    "id": "f92aaa9d-102c-4c5c-925d-42f8dc24a0e7",
    "to": "maca",

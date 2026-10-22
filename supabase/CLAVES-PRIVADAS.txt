@@ -1,0 +1,8 @@
+NO SUBIR A GITHUB. Estas claves se pegan solo en Supabase (Edge Functions → Secrets).
+
+VAPID_PUBLIC_KEY  = BFVhhcnInQ5drFTNNNd_t7sDeXjP_Pd0kTsXgh3_X7L1ydgz6pu8fB1RBZHATFa_GQcNUnI9IKduJSMbxLEpM0Q
+VAPID_PRIVATE_KEY = lfDuij4DmGcn5bGsP4Lw-n8TYUMxRQzUDJ6XvDA1IWw
+VAPID_SUBJECT     = https://TU-USUARIO.github.io/NOMBRE-DEL-REPO/   (o mailto:tu@correo.com)
+
+La clave pública ya está puesta en config.js. Si quieres claves propias, genera un par
+nuevo y cambia ambas (pública en config.js, las tres en Supabase).

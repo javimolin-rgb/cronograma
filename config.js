@@ -19,29 +19,45 @@ window.CRONO_CONFIG = {
 
   // 2) Notificaciones push al celular (clave PÚBLICA). Ver LEEME.md
   PUSH: {
-    VAPID_PUBLIC_KEY: "BFVhhcnInQ5drFTNNNd_t7sDeXjP_Pd0kTsXgh3_X7L1ydgz6pu8fB1RBZHATFa_GQcNUnI9IKduJSMbxLEpM0Q"
+    VAPID_PUBLIC_KEY: "BFv9No2myL8rqHE1ch3ZuvVsZHPnlSjPG3UW5IBWV-AKPNZpJe06l5IAuYaGFnXUyoyiXe2nwHnQEI9_aHmbqlk"
   },
 
   // URL pública del sitio (para abrir la pieza al tocar una notificación).
   // Si lo dejas vacío usa la URL desde donde se abre la página.
   SITE_URL: "",
 
+  // Quién puede importar conversaciones de WhatsApp (el resto no ve el botón)
+  IMPORT_PEOPLE: ["javi"],
+
+  // Cómo se llama cada persona en WhatsApp, para asignarle sus mensajes
+  WHATSAPP_ALIAS: {
+    "Javi Molin": "javi",
+    "Javiera Molin": "javi",
+    "Javiera": "javi",
+    "Macarena Miquel NEO": "maca",
+    "Macarena Miquel": "maca",
+    "Maca": "maca",
+    "Flavio Simonetti NEO": "flavio",
+    "Flavio Simonetti": "flavio",
+    "Flavio": "flavio"
+  },
+
   // Equipo
   PEOPLE: [
-    { id: "flavio", name: "Flavio", color: "#6C5CE7" },
-    { id: "maca",   name: "Maca",   color: "#E84393" },
-    { id: "javi",   name: "Javi",   color: "#0E9F8E" }
+    { id: "flavio", name: "Flavio", color: "#3C5A82" },
+    { id: "maca",   name: "Maca",   color: "#A8554E" },
+    { id: "javi",   name: "Javi",   color: "#5E7142" }
   ],
 
   // Flujo de trabajo de cada pieza (en este orden)
   STATUSES: [
-    { id: "idea",       name: "Idea",        color: "#8A8799" },
-    { id: "diseno",     name: "En diseño",   color: "#8B5CF6" },
-    { id: "revision",   name: "En revisión", color: "#F59E0B" },
-    { id: "cambios",    name: "Cambios",     color: "#EF4444" },
-    { id: "aprobado",   name: "Aprobado",    color: "#10B981" },
-    { id: "programado", name: "Programado",  color: "#3B82F6" },
-    { id: "publicado",  name: "Publicado",   color: "#0D9488" }
+    { id: "idea",       name: "Idea",        color: "#8C8A93" },
+    { id: "diseno",     name: "En diseño",   color: "#5A6B8C" },
+    { id: "revision",   name: "En revisión", color: "#B4701B" },
+    { id: "cambios",    name: "Cambios",     color: "#C2453E" },
+    { id: "aprobado",   name: "Aprobado",    color: "#5E7142" },
+    { id: "programado", name: "Programado",  color: "#3C5A82" },
+    { id: "publicado",  name: "Publicado",   color: "#2F5D50" }
   ],
 
   PLATFORMS: [

@@ -163,6 +163,8 @@ const IC = {
   key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M17 6l3 3M14 9l3 3"/>',
   cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>'
 };
+// Marca de Neorigen: el volumen con su división en T
+const marca = () => '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" aria-hidden="true"><path d="M30 26 H70 L90 76 H10 Z"/><path d="M23.8 41.5 H76.2"/><path d="M47 41.5 V76"/></svg>';
 const ic = (n, s = 20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n] || ''}</svg>`;
 
 /* ---------- estado ---------- */
@@ -569,7 +571,7 @@ function deadlineAlerts() {
 function renderHeader() {
   const n = badgeCount();
   try { if (navigator.setAppBadge) { if (n) navigator.setAppBadge(n); else navigator.clearAppBadge(); } } catch (e) { /* sin soporte */ }
-  $('#top').innerHTML = `<div class="brand"><span class="logo">✦</span><div><h1>${esc(CFG.APP_NAME)}</h1><small>Hola, ${esc(S.me.name)}</small></div></div>
+  $('#top').innerHTML = `<div class="brand"><span class="logo">${marca()}</span><div><h1>${esc(CFG.APP_NAME)}</h1><small>Hola, ${esc(S.me.name)}</small></div></div>
     <div class="tools"><button class="iconbtn" data-act="bell" aria-label="Notificaciones">${ic('bell')}${n ? `<i class="dot">${n > 9 ? '9+' : n}</i>` : ''}</button>
     <button class="avbtn" data-act="me" aria-label="Ajustes">${av(S.me.id)}</button></div>`;
 }
@@ -622,6 +624,7 @@ function openSheet(html, full) {
 function closeSheet(fromPop) {
   if (!sheetOpen) return;
   sheetOpen = false; ED = null;
+  if (IMP) { IMP.msgs.forEach((m) => { if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl); }); IMP = null; }
   $('#sheet').hidden = true; $('#panel').innerHTML = '';
   document.body.style.overflow = '';
   if (!fromPop) history.back();
@@ -745,6 +748,9 @@ function openMe() {
           <label class="sw"><input type="checkbox" data-ev="${e.id}" data-ch="push"${pr.events[e.id].push && !e.appOnly ? ' checked' : ''}${e.appOnly ? ' disabled' : ''}><span></span></label>`).join('')}
       </div>
       <p class="hint">“App” = campana dentro de la aplicación. “Celular” = notificación del teléfono, incluso con la app cerrada.</p>
+      ${puedeImportar() ? `<label class="lbl">Herramientas</label>
+      <button class="btn ghost block" data-act="import-open">${ic('msg', 18)} Importar conversación de WhatsApp</button>
+      <p class="hint">Pegas el chat y se transforma en comentarios con su fecha, a nombre de quien los escribió, más los cambios que te pidieron y sus fotos.</p>` : ''}
       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
         <button class="btn ghost sm" data-act="switch-user">Cambiar de persona</button>
       </div>
@@ -864,7 +870,11 @@ function renderEditor() {
     <details class="hist"><summary>Historial de cambios (${acts.length})</summary><ul>${acts.map((a) => `<li>${av(a.actor, 'sm')} <b>${esc(person(a.actor).name)}</b> ${esc(a.text)}<br><small>${ago(a.createdAt)}</small></li>`).join('') || '<li><small>Sin movimientos</small></li>'}</ul></details>
 
     <label class="lbl">Comentarios <small>${comments.length}</small></label>
-    ${comments.map((c) => `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}</small>${mentionHtml(c.text)}</div></div>`).join('')}
+    ${comments.map((c) => {
+      const fotos = (c.fileIds || []).map((fid) => d.files.find((f) => f.id === fid)).filter(Boolean);
+      return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}${c.via === 'whatsapp' ? ' · <i class="viatag">WhatsApp</i>' : ''}</small>${mentionHtml(c.text)}
+        ${fotos.length ? `<div class="cmfotos">${fotos.map((f) => `<img loading="lazy" alt="" src="${esc(fileSrc(f))}" data-act="ed-view" data-id="${esc(f.id)}">`).join('')}</div>` : ''}</div></div>`;
+    }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
@@ -930,6 +940,258 @@ async function onFiles(input) {
   toast('Archivos listos');
 }
 
+
+/* ---------- importar conversación de WhatsApp ---------- */
+let IMP = null;
+const puedeImportar = () => (CFG.IMPORT_PEOPLE || []).includes(S.me.id) && store.canWrite;
+const hashCorto = (t) => { let h = 0; for (let i = 0; i < t.length; i++) { h = (h * 31 + t.charCodeAt(i)) | 0; } return Math.abs(h).toString(36); };
+const waId = (m) => 'wa_' + m.at.slice(0, 16) + '_' + (m.persona || m.autor).toLowerCase().slice(0, 6) + '_' + hashCorto(m.texto.slice(0, 60));
+
+// Busca a qué pieza se parece más la conversación (por las palabras del título)
+function adivinaPieza(msgs) {
+  const texto = msgs.map((m) => m.texto).join(' ').toLowerCase();
+  let mejor = null, mejorPts = 0;
+  S.db.posts.forEach((p) => {
+    const palabras = p.title.toLowerCase().split(/[^\wáéíóúñ]+/).filter((w) => w.length > 4);
+    if (!palabras.length) return;
+    const pts = palabras.filter((w) => texto.includes(w)).length;
+    if (pts > mejorPts) { mejorPts = pts; mejor = p; }
+  });
+  return mejorPts >= 2 ? mejor : null;
+}
+
+function openImport() {
+  IMP = { paso: 1, texto: '', msgs: [], sinMapear: {}, destino: 'nuevo', titulo: '', proyecto: '', subiendo: 0, objetivo: null };
+  openSheet('', true);
+  renderImport();
+}
+
+function leerConversacion() {
+  const t = ($('#imp-texto') || {}).value || '';
+  if (t.trim().length < 20) { toast('Pega primero la conversación'); return; }
+  const msgs = window.WhatsApp.parse(t);
+  if (!msgs.length) { toast('No reconocí mensajes de WhatsApp en ese texto', 4000); return; }
+  IMP.sinMapear = window.WhatsApp.mapearAutores(msgs, P, CFG.WHATSAPP_ALIAS || {});
+  const pieza = adivinaPieza(msgs);
+  msgs.forEach((m) => {
+    m.usar = !m.sistema && (!!m.texto || (m.adjunto && m.adjunto.kind === 'imagen'));
+    m.pendiente = !!m.pide && m.persona !== S.me.id;
+    m.foto = null;
+  });
+  IMP.msgs = msgs;
+  IMP.paso = 2;
+  IMP.destino = pieza ? pieza.id : 'nuevo';
+  IMP.objetivo = pieza;
+  const otros = [...new Set(msgs.filter((m) => !m.sistema && m.persona && m.persona !== S.me.id).map((m) => person(m.persona).name))];
+  IMP.titulo = pieza ? '' : `WhatsApp con ${otros.join(' y ') || 'el equipo'} · ${fmtShort(msgs[0].dia)}`;
+  IMP.proyecto = pieza ? pieza.campaign : ''; // se elige a mano para no guardarlo en el proyecto equivocado
+  renderImport();
+}
+
+function syncImport() {
+  if (!IMP || IMP.paso !== 2) return;
+  const t = $('#imp-titulo'), pr = $('#imp-proyecto'), d = $('#imp-destino');
+  if (d) IMP.destino = d.value;
+  if (t) IMP.titulo = t.value;
+  if (pr) IMP.proyecto = pr.value;
+}
+
+function renderImport() {
+  if (!IMP) return;
+  if (IMP.paso === 1) {
+    $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="sheet-close">${ic('x')}</button><h2>Importar de WhatsApp</h2><span style="width:40px"></span></div>
+      <div class="pb">
+        <p class="hint">Copia la conversación desde WhatsApp y pégala aquí. En el teléfono: entra al chat → los tres puntos → <b>Más</b> → <b>Exportar chat</b> → <b>Sin archivos</b> → compártelo contigo misma y pega el texto. También sirve seleccionar mensajes y copiarlos.</p>
+        <label class="lbl">Conversación</label>
+        <textarea class="area" id="imp-texto" style="min-height:260px;font-size:13px" placeholder="[05-10-26, 11:59:29] Macarena Miquel NEO: Me gusta mucho !!!&#10;[05-10-26, 12:01:11] Macarena Miquel NEO: Lo que creo que no es tecnología…"></textarea>
+        <p class="hint">Las fotos no viajan en el texto: después de leerla, puedes <b>pegarlas o elegirlas</b> una por una y quedan junto al mensaje que las pidió.</p>
+      </div>
+      <div class="pf"><button class="btn block" data-act="imp-leer">Leer conversación</button></div>`;
+    return;
+  }
+
+  const r = window.WhatsApp.resumen(IMP.msgs);
+  const cambios = IMP.msgs.filter((m) => m.pide && !m.sistema && m.persona !== S.me.id).length;
+  const sin = Object.keys(IMP.sinMapear);
+  const piezas = S.db.posts.slice().sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || ''))).slice(0, 40);
+  const yaEstan = IMP.destino !== 'nuevo'
+    ? new Set(S.db.comments.filter((c) => c.postId === IMP.destino).map((c) => c.waId).filter(Boolean)) : new Set();
+
+  const filas = IMP.msgs.map((m, i) => {
+    if (m.sistema && !m.usar) return '';
+    const repetido = yaEstan.has(waId(m));
+    const quien = m.persona ? person(m.persona) : { name: m.autor, color: '#9A97A6', id: '' };
+    const foto = m.adjunto && m.adjunto.kind === 'imagen';
+    const otroAdj = m.adjunto && m.adjunto.kind !== 'imagen';
+    return `<div class="improw${m.usar ? ' on' : ''}${repetido ? ' rep' : ''}" data-i="${i}">
+      <label class="cb2"><input type="checkbox" data-act="imp-usar" data-i="${i}"${m.usar && !repetido ? ' checked' : ''}${repetido ? ' disabled' : ''}><span>${ic('check', 16)}</span></label>
+      <div class="impcon">
+        <small><span class="av sm" style="--c:${quien.color};margin:0">${esc(quien.name[0] || '?')}</span> <b>${esc(quien.name)}</b> · ${esc(m.dia === today() ? m.hora : fmtShort(m.dia) + ' ' + m.hora)}${repetido ? ' · <i class="rept">ya importado</i>' : ''}</small>
+        ${m.texto ? `<p>${mentionHtml(m.texto)}</p>` : ''}
+        ${otroAdj ? `<p class="hint">📎 ${esc(m.adjunto.name || m.adjunto.kind)}${m.adjunto.name ? '' : ' (no viene en el texto)'}</p>` : ''}
+        ${m.enlaces.length ? `<p class="hint">${m.enlaces.map((l) => `<a href="${esc(l)}" target="_blank" rel="noopener">${esc(l.slice(0, 44))}…</a>`).join('<br>')}</p>` : ''}
+        ${foto ? (m.foto
+          ? `<div class="impfoto"><img src="${esc(m.foto.blobUrl)}" alt=""><button class="x" data-act="imp-quitar-foto" data-i="${i}">${ic('x', 14)}</button></div>`
+          : `<label class="impslot">${ic('image', 18)} Elegir foto<input type="file" accept="image/*" data-imp-foto="${i}" hidden></label>`) : ''}
+        ${m.pide && m.persona !== S.me.id ? `<label class="imppend"><input type="checkbox" data-act="imp-pend" data-i="${i}"${m.pendiente ? ' checked' : ''}> Sumar a pendientes de la pieza</label>` : ''}
+      </div></div>`;
+  }).join('');
+
+  $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="imp-volver">${ic('left')}</button><h2>Revisar e importar</h2><span style="width:40px"></span></div>
+    <div class="pb" id="imp-pb">
+      <div class="impres"><b>${r.utiles} mensajes</b> · ${cambios} cambio${cambios === 1 ? '' : 's'} pedido${cambios === 1 ? '' : 's'} · ${r.fotos} foto${r.fotos === 1 ? '' : 's'}${r.desde ? ` · del ${esc(fmtShort(r.desde))} al ${esc(fmtShort(r.hasta))}` : ''}</div>
+      ${sin.length ? `<p class="hint">No reconocí a: ${sin.map(esc).join(', ')}. Sus mensajes quedarán a tu nombre. Puedes agregarlos en <b>WHATSAPP_ALIAS</b> de config.js.</p>` : ''}
+      <label class="lbl">¿A qué pieza van?</label>
+      <select class="sel" id="imp-destino" data-act="imp-destino">
+        <option value="nuevo"${IMP.destino === 'nuevo' ? ' selected' : ''}>➕ Crear una pieza nueva</option>
+        ${piezas.map((p) => `<option value="${esc(p.id)}"${IMP.destino === p.id ? ' selected' : ''}>${esc(p.title.slice(0, 54))}</option>`).join('')}
+      </select>
+      ${IMP.destino === 'nuevo' ? `<div class="row2" style="margin-top:10px">
+        <input class="field" id="imp-titulo" placeholder="Título de la pieza" value="${esc(IMP.titulo)}">
+        <input class="field" id="imp-proyecto" list="camps2" placeholder="Proyecto" value="${esc(IMP.proyecto)}">
+        <datalist id="camps2">${[...new Set(S.db.posts.map((p) => p.campaign).filter(Boolean))].map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
+      </div>` : `<p class="hint">Los mensajes se suman como comentarios de esa pieza, con su fecha y a nombre de quien los escribió.</p>`}
+      <label class="lbl">Mensajes <small>desmarca lo que no quieras</small></label>
+      <div class="implist">${filas || '<p class="hint">No hay mensajes que importar.</p>'}</div>
+    </div>
+    <div class="pf"><button class="btn ghost" data-act="imp-todas-fotos">${ic('image', 16)} Pegar fotos</button>
+      <button class="btn" data-act="imp-ok">Importar</button></div>`;
+}
+
+// Recibe una imagen pegada o elegida y la deja junto a su mensaje
+function ponerFoto(i, file) {
+  const m = IMP.msgs[i];
+  if (!m) return;
+  if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl);
+  m.foto = { file, blobUrl: URL.createObjectURL(file) };
+  IMP.objetivoFoto = null;
+  renderImport();
+}
+function siguienteSlot() {
+  return IMP.msgs.findIndex((m) => m.usar && m.adjunto && m.adjunto.kind === 'imagen' && !m.foto);
+}
+
+async function hacerImport() {
+  syncImport();
+  const btn = $('[data-act="imp-ok"]'); if (btn) btn.disabled = true;
+  try {
+    const elegidos = IMP.msgs.filter((m) => m.usar);
+    if (!elegidos.length) { toast('No hay mensajes marcados'); return; }
+
+    let post, viejo = null;
+    if (IMP.destino === 'nuevo') {
+      const titulo = (IMP.titulo || '').trim() || 'Conversación de WhatsApp';
+      post = {
+        id: uid(), title: titulo, caption: '', notes: 'Importado desde WhatsApp.', hashtags: '',
+        campaign: (IMP.proyecto || '').trim(), date: elegidos[0].dia, time: '', platforms: [], format: 'post',
+        status: 'diseno', assignees: [...new Set(elegidos.map((m) => m.persona).filter(Boolean))],
+        priority: 'normal', links: [], files: [], checklist: []
+      };
+      if (!post.assignees.includes(S.me.id)) post.assignees.push(S.me.id);
+    } else {
+      viejo = S.db.posts.find((p) => p.id === IMP.destino);
+      if (!viejo) { toast('Esa pieza ya no existe'); return; }
+      post = clone(viejo);
+    }
+
+    // 1) fotos al repositorio
+    const conFoto = elegidos.filter((m) => m.foto);
+    for (let k = 0; k < conFoto.length; k++) {
+      const m = conFoto[k];
+      toast(`Subiendo foto ${k + 1} de ${conFoto.length}…`, 15000);
+      const base = slugify(post.title, 'foto').slice(0, 34).replace(/-+$/, '');
+      const n = post.files.filter((f) => (f.base || '').startsWith(base)).length + 1;
+      try {
+        const r = await store.upload(m.foto.file, { dir: projectName(post), name: `${base}-${n}-v1.jpg` });
+        m.archivo = Object.assign({ id: uid(), by: S.me.id, at: m.at, base: `${base}-${n}`, version: 1 }, r);
+        post.files.push(m.archivo);
+      } catch (e) { toast('No se pudo subir una foto: ' + (e.message || e), 4000); }
+    }
+
+    // 2) pendientes que pidieron
+    elegidos.filter((m) => m.pendiente && m.texto).forEach((m) => {
+      const t = m.texto.length > 90 ? m.texto.slice(0, 90) + '…' : m.texto;
+      const etiqueta = `${person(m.persona || S.me.id).name}: ${t}`;
+      if (!post.checklist.some((c) => c.text === etiqueta)) post.checklist.push({ id: uid(), text: etiqueta, done: false });
+    });
+
+    // 3) enlaces que aparezcan en la conversación
+    elegidos.forEach((m) => m.enlaces.forEach((u) => {
+      const url = normUrl(u);
+      if (url && !post.links.some((l) => l.url === url)) post.links.push({ id: uid(), label: 'De WhatsApp', url });
+    }));
+
+    post.updatedAt = nowISO(); post.updatedBy = S.me.id;
+    if (!viejo) Object.assign(post, { createdAt: nowISO(), createdBy: S.me.id, statusChangedAt: nowISO(), revisions: 0, publishedAt: null });
+    else Object.assign(post, { createdAt: viejo.createdAt, createdBy: viejo.createdBy, revisions: viejo.revisions || 0, statusChangedAt: viejo.statusChangedAt, publishedAt: viejo.publishedAt || null });
+    await save('posts', post);
+
+    // 4) los mensajes como comentarios, con su fecha y su autor
+    const previos = new Set(S.db.comments.filter((c) => c.postId === post.id).map((c) => c.waId).filter(Boolean));
+    let nuevos = 0;
+    for (const m of elegidos) {
+      const id = waId(m);
+      if (previos.has(id)) continue;
+      const texto = m.texto || (m.foto ? 'Mandó una foto' : (m.adjunto ? '📎 ' + (m.adjunto.name || m.adjunto.kind) : ''));
+      if (!texto) continue;
+      await save('comments', {
+        id: uid(), postId: post.id, author: m.persona || S.me.id, text: texto,
+        createdAt: m.at, via: 'whatsapp', waId: id,
+        fileIds: m.archivo ? [m.archivo.id] : []
+      });
+      previos.add(id); nuevos++;
+    }
+    await log(post, 'import', `importó ${nuevos} mensaje${nuevos === 1 ? '' : 's'} de WhatsApp`);
+
+    IMP = null; closeSheet(); renderAll();
+    toast(`Listo: ${nuevos} mensaje${nuevos === 1 ? '' : 's'} y ${conFoto.length} foto${conFoto.length === 1 ? '' : 's'} en “${post.title}”`, 4200);
+    setTimeout(() => openEditor(post.id), 350);
+  } catch (e) {
+    console.error(e); toast('No se pudo importar: ' + (e.message || e), 5000);
+    if (btn) btn.disabled = false;
+  }
+}
+
+/* Pegar imágenes: dentro del editor van a la pieza; en la importación, al mensaje */
+async function pegarImagenes(files) {
+  if (!files.length) return;
+  if (IMP && sheetOpen && IMP.paso === 2) {
+    let i = IMP.objetivoFoto != null ? IMP.objetivoFoto : siguienteSlot();
+    for (const f of files) {
+      if (i < 0) { toast('No quedan mensajes con foto pendiente'); break; }
+      ponerFoto(i, f);
+      i = siguienteSlot();
+    }
+    return;
+  }
+  if (ED && sheetOpen) {
+    const dt = new DataTransfer();
+    files.forEach((f) => dt.items.add(f));
+    await onFiles({ files: dt.files, value: '' });
+    return;
+  }
+  toast('Abre una pieza para pegar la foto ahí');
+}
+document.addEventListener('paste', (e) => {
+  if (!S.me) return;
+  const t = e.target;
+  const escribiendo = t && t.matches && t.matches('input,textarea') && !(IMP && IMP.objetivoFoto != null);
+  const items = [...((e.clipboardData && e.clipboardData.items) || [])];
+  const imgs = items.filter((i) => i.kind === 'file' && /^image\//.test(i.type)).map((i) => i.getAsFile()).filter(Boolean);
+  if (!imgs.length) return;
+  if (escribiendo && !ED && !IMP) return;
+  e.preventDefault();
+  pegarImagenes(imgs.map((f, n) => new File([f], f.name && f.name !== 'image.png' ? f.name : `pegada-${Date.now()}-${n + 1}.png`, { type: f.type })));
+});
+document.addEventListener('dragover', (e) => { if (sheetOpen && e.dataTransfer && [...e.dataTransfer.types].includes('Files')) e.preventDefault(); });
+document.addEventListener('drop', (e) => {
+  if (!sheetOpen || !e.dataTransfer || !e.dataTransfer.files.length) return;
+  const imgs = [...e.dataTransfer.files].filter((f) => /^image\//.test(f.type));
+  if (!imgs.length) return;
+  e.preventDefault();
+  pegarImagenes(imgs);
+});
+
 /* ---------- acciones (clicks) ---------- */
 const ACTS = {
   nav: (el) => { S.view = el.dataset.v; localStorage.setItem('crono_view', S.view); renderAll(); window.scrollTo(0, 0); },
@@ -946,6 +1208,12 @@ const ACTS = {
   filters: () => openFilters(),
   'clear-filters': () => { Object.assign(S.f, { person: '', platform: '', status: '', format: '' }); closeSheet(); renderToolbar(); renderMain(); },
   'toggle-mine': () => { S.f.mine = !S.f.mine; renderToolbar(); renderMain(); },
+  'import-open': () => { closeSheet(); setTimeout(openImport, 60); },
+  'imp-leer': () => leerConversacion(),
+  'imp-volver': () => { if (IMP && IMP.paso === 2) { IMP.paso = 1; renderImport(); } else closeSheet(); },
+  'imp-quitar-foto': (el, e) => { if (e) e.stopPropagation(); const m = IMP.msgs[+el.dataset.i]; if (m && m.foto) { URL.revokeObjectURL(m.foto.blobUrl); m.foto = null; renderImport(); } },
+  'imp-todas-fotos': () => toast('Copia una foto (en el Drive, en WhatsApp o donde esté) y pégala con Ctrl+V o pegar: se va poniendo sola en el siguiente mensaje con foto.', 6000),
+  'imp-ok': () => hacerImport(),
   'toggle-last': () => { S.lastOnly = !S.lastOnly; localStorage.setItem('crono_last_only', S.lastOnly ? '1' : '0'); renderMain(); },
   'toggle-project': (el) => { S.openProject = S.openProject === el.dataset.p ? '' : el.dataset.p; localStorage.setItem('crono_open_project', S.openProject); renderMain(); },
   'file-open': (el, e) => { if (e) e.stopPropagation(); openFilePreview(el.dataset.f); },
@@ -1033,6 +1301,10 @@ document.addEventListener('input', (e) => {
 });
 document.addEventListener('change', (e) => {
   const t = e.target;
+  if (t.dataset && t.dataset.impFoto != null && t.files && t.files[0]) { ponerFoto(+t.dataset.impFoto, t.files[0]); return; }
+  if (t.dataset && t.dataset.act === 'imp-usar') { IMP.msgs[+t.dataset.i].usar = t.checked; t.closest('.improw').classList.toggle('on', t.checked); return; }
+  if (t.dataset && t.dataset.act === 'imp-pend') { IMP.msgs[+t.dataset.i].pendiente = t.checked; return; }
+  if (t.id === 'imp-destino') { syncImport(); renderImport(); return; }
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
@@ -1059,7 +1331,7 @@ document.addEventListener('touchend', (e) => {
 function showWho() {
   $('#app').hidden = true;
   const w = $('#who'); w.hidden = false;
-  w.innerHTML = `<div class="who-in"><div class="logo">✦</div><h1>${esc(CFG.APP_NAME)}</h1><p class="q">¿Quién eres?</p>
+  w.innerHTML = `<div class="who-in"><div class="logo">${marca()}</div><h1>${esc(CFG.APP_NAME)}</h1><p class="q">¿Quién eres?</p>
     <div class="who-list">${P.map((p) => `<button class="who-card" data-act="pick-me" data-id="${p.id}">${av(p.id)}<span>${esc(p.name)}</span></button>`).join('')}</div>
     <p class="hint" style="margin-top:20px">Solo sirve para registrar quién hace cada cambio y a quién avisar.</p></div>`;
 }

@@ -1,8 +1,9 @@
 /* ===== Base ===== */
 :root{
   --bg:#F7F5F2; --surface:#FFFFFF; --surface2:#F0EDE8; --ink:#1C1B22; --muted:#6E6B78; --line:#E6E2DB;
-  --accent:#5B3FFF; --accent-ink:#FFFFFF; --accent-soft:#ECE8FF;
-  --danger:#E5484D; --ok:#0D9488; --warn:#D97706;
+  --accent:#22304F; --accent-ink:#FFFFFF; --accent-soft:#E7ECF5;
+  --brand:#1F2A44; --brand-green:#4E5D3C;
+  --danger:#E5484D; --ok:#55683F; --warn:#B4701B;
   --r:16px; --shadow:0 1px 2px rgba(20,16,40,.06),0 8px 24px rgba(20,16,40,.07);
   --nav-h:62px; --safe-b:env(safe-area-inset-bottom,0px); --safe-t:env(safe-area-inset-top,0px);
   --gut:clamp(11px,3.8vw,16px);
@@ -10,7 +11,7 @@
 }
 @media (prefers-color-scheme:dark){
   :root{--bg:#121116;--surface:#1C1A22;--surface2:#262330;--ink:#F3F1F7;--muted:#A19FAD;--line:#2E2B38;
-    --accent:#9382FF;--accent-ink:#14102B;--accent-soft:#2A2547;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);}
+    --accent:#A3B8DA;--accent-ink:#141A2B;--accent-soft:#283449;--brand:#A3B8DA;--brand-green:#9CB377;--ok:#9CB377;--warn:#D9933B;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);}
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;min-width:0}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:15px;line-height:1.4;
@@ -30,7 +31,8 @@ a{color:var(--accent)}
   padding:calc(10px + var(--safe-t)) var(--gut) 10px;background:color-mix(in srgb,var(--bg) 88%,transparent);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .brand{display:flex;align-items:center;gap:10px;min-width:0}
-.logo{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--accent);color:var(--accent-ink);font-size:18px;flex:none}
+.logo{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:var(--brand);color:#fff;flex:none;overflow:hidden}
+.logo svg{width:66%;height:66%}
 .brand h1{font-size:16px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand small{color:var(--muted);font-size:12px}
 .tools{display:flex;align-items:center;gap:6px}
@@ -356,3 +358,30 @@ html{overscroll-behavior-y:none}
 #saving{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + var(--safe-b) + 54px);z-index:99;
   background:var(--accent-soft);color:var(--accent);padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;
   box-shadow:0 4px 14px rgba(20,16,40,.12)}
+
+/* ===== Importar de WhatsApp ===== */
+.impres{background:var(--accent-soft);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:13px}
+.implist{display:flex;flex-direction:column;gap:8px}
+.improw{display:flex;gap:10px;padding:10px;border-radius:12px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);opacity:.55;transition:.12s}
+.improw.on{opacity:1;box-shadow:inset 0 0 0 1px var(--accent)}
+.improw.rep{opacity:.4}
+.improw .cb2{margin-top:2px}
+.impcon{flex:1;min-width:0}
+.impcon small{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:11.5px;margin-bottom:3px}
+.impcon small .av.sm{box-shadow:none;margin-left:0}
+.impcon p{font-size:13.5px;overflow-wrap:anywhere;white-space:pre-wrap}
+.impcon .hint{margin-top:4px}
+.rept{color:var(--warn);font-style:normal;font-weight:700}
+.impslot{display:inline-flex;align-items:center;gap:7px;margin-top:7px;padding:8px 12px;border-radius:10px;border:2px dashed var(--line);
+  color:var(--muted);font-size:12.5px;font-weight:700;cursor:pointer}
+.impslot:active{background:var(--surface2)}
+.impfoto{position:relative;width:110px;margin-top:7px;border-radius:10px;overflow:hidden}
+.impfoto img{width:100%;display:block}
+.impfoto .x{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center}
+.imppend{display:flex;align-items:center;gap:7px;margin-top:7px;font-size:12.5px;font-weight:600;color:var(--warn)}
+.imppend input{width:17px;height:17px;accent-color:var(--warn)}
+
+/* fotos dentro de un comentario */
+.cmfotos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.cmfotos img{width:84px;height:84px;object-fit:cover;border-radius:10px;cursor:zoom-in}
+.viatag{font-style:normal;background:var(--surface2);border-radius:5px;padding:0 5px;font-size:10.5px;font-weight:700;color:var(--muted)}

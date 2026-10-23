@@ -1690,6 +1690,21 @@
  ],
  "notifications": [
   {
+   "id": "80285f4e-7b83-4472-b231-8664c77a55f9",
+   "to": "javi",
+   "from": "javi",
+   "postId": null,
+   "type": "test",
+   "text": "probó las notificaciones",
+   "read": true,
+   "inApp": false,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Si ves esto, las notificaciones funcionan ✅",
+   "url": "https://javimolin-rgb.github.io/cronograma/",
+   "createdAt": "2026-10-23T14:51:35.651Z"
+  },
+  {
    "id": "71ed42f4-d541-4280-936c-ce071621870e",
    "to": "maca",
    "from": "javi",

@@ -72,9 +72,37 @@ Al publicar cambios, sube el número de `VERSION` en `sw.js` para que todos los 
 
 En iPhone, el **ícono** de la pantalla de inicio es lo único que no se renueva solo: si cambia el diseño del ícono, hay que borrar el acceso directo y volver a agregarlo. El contenido sí se actualiza siempre.
 
-## Importar una conversación de WhatsApp
+## Sumar mensajes de WhatsApp (solo Javi)
 
-**Ajustes → Importar conversación de WhatsApp** (solo Javi). Pegas el chat exportado *sin archivos*, la app reconoce quién escribió cada mensaje y cuándo, marca los cambios que pidieron y deja un espacio para cada foto. Las fotos se pegan con Ctrl+V (o se eligen desde el teléfono) y quedan dentro del comentario que las pidió. Al importar, todo queda en la pieza: comentarios con su autor y fecha, los cambios como pendientes, y los enlaces.
+**Lo más rápido: reenviar.** En WhatsApp, mantén apretado un mensaje (texto, foto o audio; también varios a la vez) → **Compartir** → **Cronograma**. La app se abre con lo reenviado listo para revisar, sin exportar el chat. Si reenvías varias cosas seguidas, se juntan y aparece un aviso *“N reenvíos esperando revisión”*.
+
+- **Audios:** se transcriben en el mismo teléfono (no se mandan a ningún servicio). La primera vez descarga el modelo de voz (unos 80 MB) y después queda guardado. Si no se puede, aparece un espacio para escribir lo importante.
+- **Quién lo dijo:** al reenviar, WhatsApp no manda el nombre; se elige con un toque (y la app recuerda la última elección).
+- *Compartir → Cronograma* funciona con la app instalada en **Android**. En **iPhone**, Apple no deja que las apps web aparezcan en *Compartir*, así que ahí es:
+  1. En WhatsApp, mantén apretado el mensaje (o elige varios) → **Copiar**.
+  2. En la app, el botón de **mensaje** de arriba (al lado de la campana) → **Pegar lo copiado**. Sirve para texto y para una foto copiada.
+  3. Para un audio: **Reenviar → Compartir → Guardar en Archivos**, y en la app **Fotos o audios**.
+  - Opcional: un **Atajo** de iPhone que reciba texto y abra `https://javimolin-rgb.github.io/cronograma/?texto=` seguido del texto también funciona: aparece en *Compartir* y lo manda directo a revisión.
+
+**También se puede pegar** el chat exportado (*Exportar chat → Sin archivos*) en el mismo lugar (o en **Ajustes → Importar mensajes**).
+
+Al importar, siempre:
+
+- **Filtra la conversación:** los saludos, felicitaciones, agradecimientos, risas y emojis quedan fuera. Lo técnico se guarda escrito de forma objetiva (*“Guaaau te pasaste!!! en la foto 2 porfa saca la camioneta jaja”* → *“En la foto 2 saca la camioneta.”*). Un “¡Está todo ok!” queda como *“Aprobado.”*. Se puede ver el original antes de importar.
+- **Cuenta los cambios** que pidieron y los muestra en una lista numerada por pieza.
+- **Reconoce de qué pieza se habla** (y si son varias, separa la conversación por temas). Se puede cambiar a mano.
+- **Detecta lo repetido:** si un mensaje ya estaba en la pieza, o si un cambio ya estaba en pendientes o ya se hizo, lo marca y no lo duplica.
+- Los cambios pedidos pasan a **pendientes** de la pieza, las fotos quedan dentro del comentario que las pidió, y los enlaces se suman a la pieza. En la pieza no queda ninguna marca de que vino de WhatsApp.
+
+Lo que Flavio y Maca escriben directo en la app no se filtra ni se toca.
+
+## Perfil de Javi con contraseña
+
+Al elegir **Javi** en *¿Quién eres?* la app pide la contraseña. Queda recordada en ese teléfono hasta que se toque **Cambiar de persona**. Para cambiarla, se reemplaza la huella en `PERFIL_CLAVE`, dentro de `config.js` (la instrucción está ahí mismo).
+
+## Avisos de cada pieza
+
+Dentro de cada pieza, la **campana** de arriba activa o silencia los avisos de *esa* pieza: silenciada, no llega nada de ella (ni a la app ni al celular); activada, llegan los comentarios, cambios de estado, de fecha y de contenido aunque no estés etiquetado.
 
 ## Dónde queda cada cosa
 
@@ -89,6 +117,6 @@ En iPhone, el **ícono** de la pantalla de inicio es lo único que no se renueva
 ## Cuidados
 
 - Esto es público: todo lo que se suba lo puede ver cualquiera con el link. Nada de datos de clientes, precios reservados ni capturas con nombres o correos. Para eso, el archivo al Drive y aquí solo el enlace.
-- Lo mismo al importar de WhatsApp: desmarca lo que no quieras que quede a la vista.
+- Lo mismo al importar mensajes: desmarca lo que no quieras que quede a la vista.
 - Hasta 24 MB por archivo. Las fotos grandes se achican solas al subirlas; los videos pesados, mejor al Drive.
 - Si abajo dice **“Guardando…”**, espera un segundo antes de cerrar.

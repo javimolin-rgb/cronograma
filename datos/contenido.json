@@ -4,7 +4,7 @@
    "id": "e-diagnostico",
    "title": "Diagnóstico integral de marca (39 páginas)",
    "caption": "Revisión completa de la marca, las redes y la comunicación de Neorigen, con recomendaciones.",
-   "notes": "Entregado por WhatsApp como NEORIGEN_Diagnostico_Integral_7.pdf. El archivo original está en el Drive compartido.",
+   "notes": "Archivo: NEORIGEN_Diagnostico_Integral_7.pdf. El original está en el Drive compartido.",
    "hashtags": "",
    "campaign": "Marca y estrategia",
    "date": "2026-09-01",
@@ -35,7 +35,7 @@
    "id": "e-resumen-marca",
    "title": "Resumen de marca (una página)",
    "caption": "Síntesis de la marca en una lámina vertical.",
-   "notes": "Entregado como Neorigen_Resumen_de_Marca_Vertical_1.pdf.",
+   "notes": "Archivo: Neorigen_Resumen_de_Marca_Vertical_1.pdf.",
    "hashtags": "",
    "campaign": "Marca y estrategia",
    "date": "2026-09-01",
@@ -66,7 +66,7 @@
    "id": "e-iconos-ig",
    "title": "Íconos de historias destacadas de Instagram",
    "caption": "Set de íconos para las historias destacadas, en la línea gráfica de Neorigen.",
-   "notes": "Primera tanda con 11 íconos. Maca pidió revisar “proyectos” y “procesos”, sacar “entregas” y sumar “modelos”. Los destacados sin contenido se borraron hasta tener material.",
+   "notes": "Primera tanda con 11 íconos. Los destacados sin contenido se borraron hasta tener material.",
    "hashtags": "",
    "campaign": "Marca y estrategia",
    "date": "2026-10-19",
@@ -132,7 +132,7 @@
    "id": "e-cotizador-correos",
    "title": "Cotizador — correos y teléfono predeterminados, valor neto y total",
    "caption": "Los cuatro correos del equipo y el teléfono quedan por defecto, y se muestra el valor neto junto al total.",
-   "notes": "Pedido de Flavio el 28 de septiembre. Listo el mismo día.",
+   "notes": "Listo el mismo día del pedido.",
    "hashtags": "",
    "campaign": "Cotizador",
    "date": "2026-09-28",
@@ -162,7 +162,7 @@
    "id": "e-cotizador-manio",
    "title": "Cotizador — Huingán Familiar pasa a llamarse Casa Mañío",
    "caption": "Cambio de nombre del modelo en el cotizador y en la ficha que se descarga.",
-   "notes": "Pedido el 19 de octubre junto con la ficha 5-Ficha_HUINGAN_FAMILIAR.pdf. La ficha va dentro del zip que genera cada modelo.",
+   "notes": "La ficha 5-Ficha_HUINGAN_FAMILIAR.pdf va dentro del zip que genera cada modelo.",
    "hashtags": "",
    "campaign": "Cotizador",
    "date": "2026-10-21",
@@ -180,7 +180,18 @@
    ],
    "files": [],
    "links": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-cotizador-manio-k1",
+     "text": "Cambiar el nombre «Huingán Familiar» por «Casa Mañío»",
+     "done": true
+    },
+    {
+     "id": "e-cotizador-manio-k2",
+     "text": "Incluir la ficha del modelo en el zip",
+     "done": true
+    }
+   ],
    "createdAt": "2026-10-19T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-10-21T19:00:00.000Z",
@@ -229,7 +240,7 @@
    "id": "e-web-textos",
    "title": "Sitio web — textos nuevos (misión, visión, quiénes somos, FAQ)",
    "caption": "Carga de los textos redactados por Maca: qué nos diferencia, personaliza tu casa, por qué Neorigen, quiénes somos, preguntas frecuentes, misión y visión.",
-   "notes": "Los textos llegaron por WhatsApp entre el 14 y el 30 de septiembre. Misión y visión se ajustaron dos veces.",
+   "notes": "Textos entregados entre el 14 y el 30 de septiembre.",
    "hashtags": "",
    "campaign": "Sitio web",
    "date": "2026-09-30",
@@ -247,7 +258,18 @@
    ],
    "files": [],
    "links": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-web-textos-k1",
+     "text": "Ajustar misión (dos rondas)",
+     "done": true
+    },
+    {
+     "id": "e-web-textos-k2",
+     "text": "Ajustar visión (dos rondas)",
+     "done": true
+    }
+   ],
    "createdAt": "2026-09-14T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-09-30T19:00:00.000Z",
@@ -259,7 +281,7 @@
    "id": "e-web-wix",
    "title": "Sitio web Neorigen en Wix — publicado",
    "caption": "Traspaso completo del sitio a Wix, revisión con comentarios en el propio sitio y publicación.",
-   "notes": "Revisión previa con enlace de Wix. Flavio dejó comentarios página por página (banners con el mismo entramado, fotos reales en vez de renders repetidos, Promociones escondida hasta tener qué comunicar).",
+   "notes": "Revisión previa con enlace de Wix.",
    "hashtags": "",
    "campaign": "Sitio web",
    "date": "2026-09-23",
@@ -296,7 +318,7 @@
    "id": "e-web-portada",
    "title": "Sitio web — portada: botones en blanco y ajustes de foto",
    "caption": "Los textos bajo los números quedan en blanco y se revisa la foto de portada.",
-   "notes": "Flavio pidió además una foto de proyecto real para la portada; se probaron varias y por ahora sigue la anterior.",
+   "notes": "Se probaron varias fotos de proyecto real; por ahora sigue la anterior.",
    "hashtags": "",
    "campaign": "Sitio web",
    "date": "2026-10-16",
@@ -314,7 +336,18 @@
    ],
    "files": [],
    "links": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-web-portada-k1",
+     "text": "Botones de la portada en blanco",
+     "done": true
+    },
+    {
+     "id": "e-web-portada-k2",
+     "text": "Ajustes de la foto de portada",
+     "done": true
+    }
+   ],
    "createdAt": "2026-10-15T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-10-16T19:00:00.000Z",
@@ -356,7 +389,7 @@
    "id": "e-c1",
    "title": "Carrusel: elegir un modelo prediseñado",
    "caption": "Las ventajas de partir de un modelo prediseñado.",
-   "notes": "Ajustes de Maca: sacar “El modelo probado se mantiene” y eliminar un párrafo.",
+   "notes": "",
    "hashtags": "",
    "campaign": "Instagram",
    "date": "2026-08-30",
@@ -380,7 +413,18 @@
      "url": "https://www.instagram.com/p/Dcr325lFi5P/"
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-c1-k1",
+     "text": "Sacar «El modelo probado se mantiene»",
+     "done": true
+    },
+    {
+     "id": "e-c1-k2",
+     "text": "Eliminar un párrafo",
+     "done": true
+    }
+   ],
    "createdAt": "2026-08-30T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-08-30T19:00:00.000Z",
@@ -392,7 +436,7 @@
    "id": "e-c2",
    "title": "Carrusel: los modelos y sus metros cuadrados",
    "caption": "Recorrido por los modelos con sus metrajes.",
-   "notes": "Cuatro rondas de ajustes: agrandar la letra de abajo, sumar los m², no repetir la Lingue, luz de atardecer para que no se vea tan render.",
+   "notes": "Cuatro rondas de ajustes.",
    "hashtags": "",
    "campaign": "Instagram",
    "date": "2026-09-03",
@@ -416,7 +460,28 @@
      "url": "https://www.instagram.com/p/Dc2DdmBFvQi/"
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-c2-k1",
+     "text": "Agrandar la letra de abajo",
+     "done": true
+    },
+    {
+     "id": "e-c2-k2",
+     "text": "Sumar los m² de cada modelo",
+     "done": true
+    },
+    {
+     "id": "e-c2-k3",
+     "text": "No repetir la Lingue",
+     "done": true
+    },
+    {
+     "id": "e-c2-k4",
+     "text": "Luz de atardecer, para que no se vea tan render",
+     "done": true
+    }
+   ],
    "createdAt": "2026-09-03T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-09-03T19:00:00.000Z",
@@ -428,7 +493,7 @@
    "id": "e-c3",
    "title": "Carrusel: un mismo modelo, tres lugares (Maitén)",
    "caption": "El modelo Maitén construido en Punta Peuque (Chiloé), Roblerías (Teno) y El Claro (Maitencillo).",
-   "notes": "Seis versiones hasta el visto bueno: nombres de lugar más grandes, menos desorden visual en las fotos de obra, la última foto de cada proyecto más terminada.",
+   "notes": "Seis versiones hasta el visto bueno.",
    "hashtags": "",
    "campaign": "Instagram",
    "date": "2026-09-10",
@@ -452,7 +517,23 @@
      "url": "https://www.instagram.com/p/DdID5JnkZws/"
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-c3-k1",
+     "text": "Nombres de lugar más grandes",
+     "done": true
+    },
+    {
+     "id": "e-c3-k2",
+     "text": "Menos desorden visual en las fotos de obra",
+     "done": true
+    },
+    {
+     "id": "e-c3-k3",
+     "text": "La última foto de cada proyecto, más terminada",
+     "done": true
+    }
+   ],
    "createdAt": "2026-09-10T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-09-10T19:00:00.000Z",
@@ -463,7 +544,7 @@
   {
    "title": "Carrusel: terminaciones y llave en mano",
    "caption": "Terminaciones, quincallería y detalles de la entrega llave en mano.",
-   "notes": "Aprobado tras varias rondas (cambiar la lámpara que no ponemos nosotros, otro baño, foto de quincallería). No quedó registro del enlace de publicación en el chat.",
+   "notes": "Aprobado tras varias rondas. Falta el enlace de la publicación.",
    "hashtags": "",
    "campaign": "Instagram",
    "time": "",
@@ -482,7 +563,23 @@
    ],
    "files": [],
    "links": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-c4-k1",
+     "text": "Cambiar la lámpara (no la instalamos nosotros)",
+     "done": true
+    },
+    {
+     "id": "e-c4-k2",
+     "text": "Cambiar la foto del baño",
+     "done": true
+    },
+    {
+     "id": "e-c4-k3",
+     "text": "Sumar una foto de quincallería",
+     "done": true
+    }
+   ],
    "createdAt": "2026-09-11T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-10-22T22:02:34.432Z",
@@ -494,7 +591,7 @@
    "id": "e-c-web",
    "title": "Carrusel: estrenamos nueva web",
    "caption": "Anuncio del nuevo sitio de Neorigen.",
-   "notes": "Programado para las 18:00 del 30 de septiembre. Ajustes: agrandar la frase de portada y “Diseño para el bienestar” en el banner.",
+   "notes": "Programado para las 18:00 del 30 de septiembre.",
    "hashtags": "",
    "campaign": "Instagram",
    "date": "2026-09-30",
@@ -512,7 +609,18 @@
    ],
    "files": [],
    "links": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-c-web-k1",
+     "text": "Agrandar la frase de portada",
+     "done": true
+    },
+    {
+     "id": "e-c-web-k2",
+     "text": "«Diseño para el bienestar» en el banner",
+     "done": true
+    }
+   ],
    "createdAt": "2026-09-29T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-09-30T19:00:00.000Z",
@@ -524,7 +632,7 @@
    "id": "e-c-fachada",
    "title": "Carrusel: fachada ventilada",
    "caption": "Qué es una fachada ventilada y por qué cambia el confort de la casa.",
-   "notes": "Tres versiones. Flavio: la lámina 01 más de enganche, dejar solo los enunciados en la 02, cambiar confort por bienestar, otro título en la 07, otra tipografía para el teléfono. Maca: cambiar “tecnología” por “estrategia sustentable” y agrandar los encabezados y los “desliza”.",
+   "notes": "Tres versiones.",
    "hashtags": "",
    "campaign": "Instagram",
    "date": "2026-10-08",
@@ -585,7 +693,7 @@
    "id": "e-c-personalizables",
    "title": "Carrusel: diseños personalizables",
    "caption": "Un proceso simple y directo: eliges tu modelo, lo adaptamos, construimos contigo y recibes tu casa.",
-   "notes": "Cuatro versiones. Cambios: no hablar de estilo nórdico, “terminaciones” en vez de “acabados”, 9 modelos, fotos reales en vez de renders, textos más grandes para leer en el celular.",
+   "notes": "Cuatro versiones.",
    "hashtags": "",
    "campaign": "Instagram",
    "date": "2026-10-13",
@@ -603,7 +711,33 @@
    ],
    "files": [],
    "links": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-c-personalizables-k1",
+     "text": "No hablar de estilo nórdico",
+     "done": true
+    },
+    {
+     "id": "e-c-personalizables-k2",
+     "text": "«Terminaciones» en vez de «acabados»",
+     "done": true
+    },
+    {
+     "id": "e-c-personalizables-k3",
+     "text": "Nueve modelos",
+     "done": true
+    },
+    {
+     "id": "e-c-personalizables-k4",
+     "text": "Fotos reales en vez de renders",
+     "done": true
+    },
+    {
+     "id": "e-c-personalizables-k5",
+     "text": "Textos más grandes, para leer en el celular",
+     "done": true
+    }
+   ],
    "createdAt": "2026-10-09T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-10-13T19:00:00.000Z",
@@ -645,7 +779,7 @@
   {
    "title": "Edición de fotos de obra — Itahue",
    "caption": "Cinco fotos de obra limpiadas (escombros, plásticos, camioneta, palos del ventanal) para usarlas como contenido real.",
-   "notes": "Las cinco quedaron aprobadas, con la limpieza acordada. Los originales están en el Drive compartido.",
+   "notes": "Cinco fotos con la limpieza acordada. Los originales están en el Drive compartido.",
    "hashtags": "",
    "campaign": "Instagram",
    "time": "",
@@ -690,7 +824,28 @@
      "url": "https://drive.google.com/file/d/14RQ2qyO-0QDHUMbcvYnyEHWBWhWTHXnt/view"
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "id": "e-fotos-itahue-k1",
+     "text": "Sacar los escombros",
+     "done": true
+    },
+    {
+     "id": "e-fotos-itahue-k2",
+     "text": "Sacar los plásticos",
+     "done": true
+    },
+    {
+     "id": "e-fotos-itahue-k3",
+     "text": "Sacar la camioneta",
+     "done": true
+    },
+    {
+     "id": "e-fotos-itahue-k4",
+     "text": "Sacar los palos del ventanal",
+     "done": true
+    }
+   ],
    "createdAt": "2026-10-21T10:00:00.000Z",
    "createdBy": "javi",
    "updatedAt": "2026-10-23T14:45:49.914Z",
@@ -702,7 +857,7 @@
    "id": "e-carpeta-1",
    "title": "Carpeta institucional — primera tanda de propuestas (30)",
    "caption": "Treinta alternativas de carpeta tamaño carta para entregar documentos y contratos a los clientes.",
-   "notes": "Entregado como Carpeta_Neorigen_propuestas.pdf. Favoritas: de Javi la 17, 22, 23 y 24; de Flavio el interior de la 06, la 18 y la 29. Acuerdo: nada de información que pueda cambiar (metrajes, modelos, plantas).",
+   "notes": "Archivo: Carpeta_Neorigen_propuestas.pdf. Favoritas de Javi: 17, 22, 23 y 24.",
    "hashtags": "",
    "campaign": "Carpeta institucional",
    "date": "2026-10-06",
@@ -733,7 +888,7 @@
    "id": "e-carpeta-2",
    "title": "Carpeta institucional — segunda tanda (13)",
    "caption": "Mezcla de las favoritas: exterior tipo 23/29, interior con tramado de tablón y el logo como marca de agua.",
-   "notes": "Entregado como Carpeta_Neorigen_segunda_propuesta.pdf.",
+   "notes": "Archivo: Carpeta_Neorigen_segunda_propuesta.pdf.",
    "hashtags": "",
    "campaign": "Carpeta institucional",
    "date": "2026-10-07",
@@ -764,7 +919,7 @@
    "id": "e-carpeta-3",
    "title": "Carpeta institucional — tercera tanda y elección final (7)",
    "caption": "Siete alternativas afinadas. Queda elegida la 03 en verde, con el gris de la paleta al 15% y la casita solo en la pestaña.",
-   "notes": "Entregado como Carpeta_Neorigen_tercera_propuesta.pdf.",
+   "notes": "Archivo: Carpeta_Neorigen_tercera_propuesta.pdf.",
    "hashtags": "",
    "campaign": "Carpeta institucional",
    "date": "2026-10-07",
@@ -795,7 +950,7 @@
    "id": "e-carpeta-imprenta",
    "title": "Carpeta institucional — archivo final para imprenta (46×32 cm)",
    "caption": "Archivo listo para imprimir, con la línea gris inferior y las medidas de la imprenta.",
-   "notes": "Entregado como Carpeta_Neorigen_IMPRENTA_46x32.zip. Cotizado en dos imprentas; $2.900 por carpeta con impresión por dos caras y bolsillo impreso, IVA incluido.",
+   "notes": "Archivo: Carpeta_Neorigen_IMPRENTA_46x32.zip. Cotizado en dos imprentas; $2.900 por carpeta con impresión por dos caras y bolsillo impreso, IVA incluido.",
    "hashtags": "",
    "campaign": "Carpeta institucional",
    "date": "2026-10-20",
@@ -825,7 +980,7 @@
    "id": "e-carpetas-impresas",
    "title": "Carpetas impresas y laminadas (50 unidades)",
    "caption": "Las 50 carpetas terminadas, listas para retirar en Avenida Providencia 1939, oficina 13B.",
-   "notes": "Fotos del resultado final enviadas al grupo el 21 de octubre.",
+   "notes": "Fotos del resultado final del 21 de octubre.",
    "hashtags": "",
    "campaign": "Carpeta institucional",
    "date": "2026-10-21",
@@ -935,130 +1090,140 @@
    "createdAt": "2026-10-22T22:15:57.540Z"
   },
   {
-   "id": "e-diagnostico-c1",
-   "postId": "e-diagnostico",
-   "author": "maca",
-   "text": "Javi, estuve revisando y me encanta!!!! Lo reviso más detallado y te comento cualquier cosa, pero hasta ahora va perfect",
-   "createdAt": "2026-09-01T15:36:00.000Z"
-  },
-  {
-   "id": "e-iconos-ig-c1",
-   "postId": "e-iconos-ig",
-   "author": "maca",
-   "text": "Me encantaron los nuevos iconos !!!",
-   "createdAt": "2026-10-19T12:28:00.000Z"
-  },
-  {
    "id": "e-cotizador-v1-c1",
    "postId": "e-cotizador-v1",
    "author": "flavio",
-   "text": "Automatizar fecha. Los campos dicen Vendedor pero me imagino es cliente, eso está confuso. Falta el total UF IVA incluido.",
-   "createdAt": "2026-09-09T13:45:00.000Z"
+   "text": "Automatizar la fecha. Los campos dicen «Vendedor», pero corresponde a «Cliente»: corregir la etiqueta. Falta el total en UF con IVA incluido.",
+   "createdAt": "2026-09-09T13:45:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-cotizador-v1-c2",
    "postId": "e-cotizador-v1",
    "author": "flavio",
-   "text": "Javi funciona perfecto el cotizador, Muchas gracias!",
-   "createdAt": "2026-09-14T12:29:00.000Z"
+   "text": "Cotizador probado: funciona correctamente.",
+   "createdAt": "2026-09-14T12:29:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-web-propuesta-c1",
    "postId": "e-web-propuesta",
    "author": "maca",
-   "text": "Me gusta mucho la propuesta. El fondo ideal un poco menos oscuro, y ver posibilidad de poner otras fotos en llave en mano, ventanas termopanel, etc.",
-   "createdAt": "2026-09-01T16:24:00.000Z"
+   "text": "Fondo un poco menos oscuro. Evaluar otras fotos para llave en mano, ventanas termopanel, etc.",
+   "createdAt": "2026-09-01T16:24:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-web-wix-c1",
    "postId": "e-web-wix",
    "author": "flavio",
-   "text": "Que linda quedó Javi, te pasaste!!! La revisé completa y dejé los comentarios. Ideal dejarla publicada luego.",
-   "createdAt": "2026-09-23T15:12:00.000Z"
-  },
-  {
-   "id": "e-web-wix-c2",
-   "postId": "e-web-wix",
-   "author": "maca",
-   "text": "Está quedando atómica la página! 👏",
-   "createdAt": "2026-09-23T18:16:00.000Z"
-  },
-  {
-   "id": "e-web-wix-c3",
-   "postId": "e-web-wix",
-   "author": "flavio",
-   "text": "quedó increíble... muchísimas gracias Javi",
-   "createdAt": "2026-09-23T22:55:00.000Z"
+   "text": "Revisión completa, página por página: banners con el mismo entramado, fotos reales en vez de renders repetidos y la página de Promociones oculta hasta tener qué comunicar. Publicar después de esos ajustes.",
+   "createdAt": "2026-09-23T15:12:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-c1-c1",
    "postId": "e-c1",
    "author": "maca",
-   "text": "Un par de ajustes y le damos !!! Me gusta mucho",
-   "createdAt": "2026-08-30T20:54:00.000Z"
+   "text": "Sacar la frase «El modelo probado se mantiene» y eliminar un párrafo. Con esos ajustes, se publica.",
+   "createdAt": "2026-08-30T20:54:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-c2-c1",
    "postId": "e-c2",
    "author": "maca",
-   "text": "Aprobadisimo",
-   "createdAt": "2026-09-03T19:59:00.000Z"
+   "text": "Aprobado.",
+   "createdAt": "2026-09-03T19:59:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-c3-c1",
    "postId": "e-c3",
    "author": "maca",
-   "text": "Un mismo modelo. Tres lugares. Tres casas con identidad propia. 🌲🏡 (copy final acordado para la publicación)",
-   "createdAt": "2026-09-10T20:49:00.000Z"
+   "text": "Copy final para la publicación: «Un mismo modelo. Tres lugares. Tres casas con identidad propia.»",
+   "createdAt": "2026-09-10T20:49:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-c-fachada-c1",
    "postId": "e-c-fachada",
    "author": "maca",
-   "text": "Me encanta!!!! Está todo Ok!",
-   "createdAt": "2026-10-07T12:01:00.000Z"
+   "text": "Aprobado sin cambios.",
+   "createdAt": "2026-10-07T12:01:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-c-personalizables-c1",
    "postId": "e-c-personalizables",
    "author": "maca",
-   "text": "Super!!!! Estamos Ok!!! Muchísimas gracias",
-   "createdAt": "2026-10-13T19:04:00.000Z"
-  },
-  {
-   "id": "e-render-lingue-c1",
-   "postId": "e-render-lingue",
-   "author": "maca",
-   "text": "Guaaaauuuu!!!! Te pasaste!!!!! Lo encontré increíble!!!",
-   "createdAt": "2026-10-20T11:05:00.000Z"
-  },
-  {
-   "id": "e-carpeta-1-c1",
-   "postId": "e-carpeta-1",
-   "author": "maca",
-   "text": "💙💙 te embalaste con tanta propuesta!!!! Que seca Javi!!! 👏",
-   "createdAt": "2026-10-06T20:01:00.000Z"
+   "text": "Aprobado.",
+   "createdAt": "2026-10-13T19:04:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-carpeta-1-c2",
    "postId": "e-carpeta-1",
    "author": "flavio",
-   "text": "Me gustó el interior del 06, la 18 con algunas observaciones y la 29. Lo que no hay que hacer es poner información que pueda cambiar.",
-   "createdAt": "2026-10-06T20:11:00.000Z"
+   "text": "Seleccionadas: el interior de la 06, la 18 (con observaciones) y la 29. No incluir información que pueda cambiar (metrajes, modelos, plantas).",
+   "createdAt": "2026-10-06T20:11:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-carpeta-3-c1",
    "postId": "e-carpeta-3",
    "author": "maca",
-   "text": "Entonces ese!!! El q tú creas se ve mejor. Démosle!!! Aprobadisimo!!!",
-   "createdAt": "2026-10-07T22:37:00.000Z"
+   "text": "Aprobada la opción final.",
+   "createdAt": "2026-10-07T22:37:00.000Z",
+   "via": "imp"
   },
   {
    "id": "e-carpetas-impresas-c1",
    "postId": "e-carpetas-impresas",
    "author": "maca",
-   "text": "Gracias Javi! 👏 Sabes si las despachan o hay q ir a retirarlas?",
-   "createdAt": "2026-10-21T14:22:00.000Z"
+   "text": "¿Las carpetas se despachan o hay que ir a retirarlas?",
+   "createdAt": "2026-10-21T14:22:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-iconos-ig-i1",
+   "postId": "e-iconos-ig",
+   "author": "maca",
+   "text": "Revisar los íconos de «proyectos» y «procesos». Sacar «entregas» y sumar «modelos».",
+   "createdAt": "2026-10-19T15:20:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-cotizador-correos-i1",
+   "postId": "e-cotizador-correos",
+   "author": "flavio",
+   "text": "Dejar correos y teléfono predeterminados en el cotizador, y mostrar el valor neto y el total.",
+   "createdAt": "2026-09-28T14:00:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-web-portada-i1",
+   "postId": "e-web-portada",
+   "author": "flavio",
+   "text": "Usar una foto de proyecto real en la portada.",
+   "createdAt": "2026-10-16T14:00:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-c-fachada-i2",
+   "postId": "e-c-fachada",
+   "author": "flavio",
+   "text": "Lámina 01: más gancho. Lámina 02: dejar solo los enunciados. Cambiar «confort» por «bienestar». Otro título en la lámina 07. Otra tipografía para el teléfono.",
+   "createdAt": "2026-10-06T21:00:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-c-fachada-i3",
+   "postId": "e-c-fachada",
+   "author": "maca",
+   "text": "Cambiar «tecnología» por «estrategia sustentable». Agrandar los encabezados y los «desliza».",
+   "createdAt": "2026-10-06T21:30:00.000Z",
+   "via": "imp"
   }
  ],
  "activity": [

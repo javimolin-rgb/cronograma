@@ -19,6 +19,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Mientras arranca -->
+  <div id="carga" role="status" aria-label="Cargando">
+    <div class="carga-in">
+      <span class="logo"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" aria-hidden="true"><path d="M30 26 H70 L90 76 H10 Z"/><path d="M23.8 41.5 H76.2"/><path d="M47 41.5 V76"/></svg></span>
+      <div class="carga-barra"><i></i></div>
+      <span>Cargando el cronograma…</span>
+    </div>
+  </div>
+  <script>setTimeout(function () { var c = document.getElementById('carga'); if (c) c.remove(); }, 20000);</script>
+
   <!-- ¿Quién eres? -->
   <div id="who" hidden></div>
 

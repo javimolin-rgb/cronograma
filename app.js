@@ -145,6 +145,9 @@ const IC = {
   board: '<rect x="3" y="3" width="7" height="18" rx="2"/><rect x="14" y="3" width="7" height="11" rx="2"/>',
   chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
   bell: '<path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/>',
+  bellOff: '<path d="M13.7 21a2 2 0 01-3.4 0M18.6 13A17 17 0 0118 8M6.3 6.3A6 6 0 006 8c0 7-3 9-3 9h14M18 8a6 6 0 00-9.3-5M1 1l22 22"/>',
+  mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 17v5M8 22h8"/>',
+  share: '<path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/>',
   search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
   sliders: '<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
   x: '<path d="M18 6L6 18M6 6l12 12"/>',
@@ -203,6 +206,7 @@ const S = {
   lastOnly: localStorage.getItem('crono_last_only') !== '0',
   conPrompts: localStorage.getItem('crono_prompts') === '1',
   openProject: localStorage.getItem('crono_open_project') || '',
+  compartidos: 0,
   db: { posts: [], comments: [], activity: [], notifications: [], prefs: [] }
 };
 let store, ED = null, sheetOpen = false, toastT;
@@ -257,13 +261,32 @@ function prefsOf(pid) {
   const p = S.db.prefs.find((x) => x.id === pid) || {};
   const events = {};
   Object.keys(DEFAULT_EV).forEach((k) => { events[k] = Object.assign({}, DEFAULT_EV[k], (p.events || {})[k] || {}); });
-  return { events };
+  return { events, silenciadas: p.silenciadas || [], seguidas: p.seguidas || [] };
+}
+// Avisos de una pieza en particular: cada uno puede silenciarla o seguirla aunque no esté etiquetado
+const silenciada = (pid, postId) => prefsOf(pid).silenciadas.includes(postId);
+const sigue = (pid, postId) => prefsOf(pid).seguidas.includes(postId);
+function recibeAvisos(pid, post) {
+  if (!post || silenciada(pid, post.id)) return false;
+  return post.assignees.includes(pid) || sigue(pid, post.id);
+}
+async function cambiarAvisosPieza(post) {
+  const me = S.me.id;
+  const old = S.db.prefs.find((x) => x.id === me) || { id: me, events: prefsOf(me).events, createdAt: nowISO() };
+  const pr = Object.assign({}, old, { silenciadas: (old.silenciadas || []).filter((x) => x !== post.id), seguidas: (old.seguidas || []).filter((x) => x !== post.id) });
+  const activar = !recibeAvisos(me, post);
+  if (activar) { if (!post.assignees.includes(me)) pr.seguidas.push(post.id); }
+  else pr.silenciadas.push(post.id);
+  await save('prefs', pr);
+  return activar;
 }
 const siteBase = () => CFG.SITE_URL || (location.origin + location.pathname);
 const siteLink = (id) => `${siteBase()}#post=${id}`;
 
 async function notify(type, post, targets, text) {
-  const set = [...new Set(targets)].filter((id) => id && id !== S.me.id);
+  // quienes siguen la pieza también se enteran; quienes la silenciaron, no
+  const seguidores = ['comment', 'status', 'reschedule', 'update'].includes(type) ? P.filter((x) => sigue(x.id, post.id)).map((x) => x.id) : [];
+  const set = [...new Set(targets.concat(seguidores))].filter((id) => id && id !== S.me.id && !silenciada(id, post.id));
   for (const pid of set) {
     const ev = prefsOf(pid).events[type];
     if (!ev || (!ev.app && !ev.push)) continue;
@@ -649,13 +672,13 @@ function badgeCount() {
 function deadlineAlerts() {
   if (!prefsOf(S.me.id).events.deadline.app) return [];
   const t = today(), lim = addDays(t, 1);
-  return S.db.posts.filter((p) => p.assignees.includes(S.me.id) && p.status !== 'publicado' && p.date && p.date <= lim).sort(sortPosts);
+  return S.db.posts.filter((p) => recibeAvisos(S.me.id, p) && p.status !== 'publicado' && p.date && p.date <= lim).sort(sortPosts);
 }
 function renderHeader() {
   const n = badgeCount();
   try { if (navigator.setAppBadge) { if (n) navigator.setAppBadge(n); else navigator.clearAppBadge(); } } catch (e) { /* sin soporte */ }
   $('#top').innerHTML = `<div class="brand"><span class="logo">${marca()}</span><div><h1>${esc(CFG.APP_NAME)}</h1><small>Hola, ${esc(S.me.name)}</small></div></div>
-    <div class="tools"><button class="iconbtn" data-act="bell" aria-label="Notificaciones">${ic('bell')}${n ? `<i class="dot">${n > 9 ? '9+' : n}</i>` : ''}</button>
+    <div class="tools">${puedeImportar() ? `<button class="iconbtn" data-act="imp-abrir" aria-label="Sumar mensajes" title="Sumar mensajes de WhatsApp">${ic('msg')}</button>` : ''}<button class="iconbtn" data-act="bell" aria-label="Notificaciones">${ic('bell')}${n ? `<i class="dot">${n > 9 ? '9+' : n}</i>` : ''}</button>
     <button class="avbtn" data-act="me" aria-label="Ajustes">${av(S.me.id)}</button></div>`;
 }
 function renderToolbar() {
@@ -689,6 +712,7 @@ function renderBanner() {
   if (store.mode === 'local' && !S.offline) out.push(`<div class="demo"><b>Modo de prueba:</b> lo que hagas aquí solo queda en este dispositivo.</div>`);
   else if (!store.canWrite) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para escribir, ${store.hayAcceso && store.hayAcceso() ? `<button class="lnk" data-act="acc-pedir">escribe tu clave</button>` : 'pídele la clave a Javi'}.</div>`);
   else if (store.caducada) out.push(`<div class="demo"><b>La clave dejó de servir.</b> Pídele una nueva a Javi.</div>`);
+  if (S.compartidos && puedeImportar() && !(IMP && IMP.compartido)) out.push(`<div class="demo comp"><span>${ic('share', 16)} <b>${S.compartidos} reenvío${S.compartidos === 1 ? '' : 's'}</b> esperando revisión.</span><button class="btn sm" data-act="comp-revisar">Revisar</button></div>`);
   if (!isStandalone() && !localStorage.getItem('crono_hide_install')) {
     const how = deferredInstall ? `<button class="btn sm" data-act="install-app">Instalar</button>`
       : isIOS() ? 'Toca <b>Compartir</b> y luego <b>“Agregar a pantalla de inicio”</b>.' : 'Menú del navegador (⋮) → <b>“Instalar app”</b> o “Agregar a pantalla de inicio”.';
@@ -709,7 +733,7 @@ function openSheet(html, full) {
 function closeSheet(fromPop) {
   if (!sheetOpen) return;
   sheetOpen = false; ED = null;
-  if (IMP) { IMP.msgs.forEach((m) => { if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl); }); IMP = null; }
+  if (IMP) { IMP.msgs.forEach((m) => { if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl); }); IMP = null; if (S.compartidos) setTimeout(renderBanner, 0); }
   $('#sheet').hidden = true; $('#panel').innerHTML = '';
   document.body.style.overflow = '';
   if (!fromPop) history.back();
@@ -844,8 +868,8 @@ function openMe() {
       </div>
       <p class="hint">“App” = campana dentro de la aplicación. “Celular” = notificación del teléfono, incluso con la app cerrada.</p>
       ${puedeImportar() ? `<label class="lbl">Herramientas</label>
-      <button class="btn ghost block" data-act="import-open">${ic('msg', 18)} Importar conversación de WhatsApp</button>
-      <p class="hint">Pegas el chat y se transforma en comentarios con su fecha, a nombre de quien los escribió, más los cambios que te pidieron y sus fotos.</p>` : ''}
+      <button class="btn ghost block" data-act="import-open">${ic('msg', 18)} Importar mensajes</button>
+      <p class="hint">Reenvía desde WhatsApp (Compartir → Cronograma) o pega el chat: queda solo lo técnico, a nombre de quien lo dijo, con los cambios como pendientes.</p>` : ''}
       <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
         <button class="btn ghost sm" data-act="switch-user">Cambiar de persona</button>
         <button class="btn ghost sm" data-act="buscar-update">Buscar actualización</button>
@@ -884,7 +908,7 @@ async function savePrefs() {
   Object.keys(DEFAULT_EV).forEach((k) => { events[k] = { app: 0, push: 0 }; });
   $$('#panel input[data-ev]').forEach((i) => { events[i.dataset.ev][i.dataset.ch] = i.checked ? 1 : 0; });
   const old = S.db.prefs.find((x) => x.id === S.me.id) || {};
-  await save('prefs', { id: S.me.id, events, createdAt: old.createdAt || nowISO() });
+  await save('prefs', Object.assign({}, old, { id: S.me.id, events, createdAt: old.createdAt || nowISO() }));
   renderHeader();
 }
 
@@ -926,7 +950,7 @@ function renderEditor() {
   const st = statusOf(d.status);
   const html = `
   <div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>${old ? 'Editar pieza' : 'Nueva pieza'}</h2>
-    ${old ? `<button class="iconbtn danger" data-act="ed-delete" aria-label="Eliminar">${ic('trash')}</button>` : '<span style="width:40px"></span>'}</div>
+    ${old ? `<div class="phacts">${(() => { const on = recibeAvisos(S.me.id, old); return `<button class="iconbtn avisos${on ? ' on' : ''}" data-act="ed-avisos" aria-label="${on ? 'Silenciar avisos de esta pieza' : 'Activar avisos de esta pieza'}" title="${on ? 'Recibes avisos de esta pieza' : 'Avisos de esta pieza apagados'}">${ic(on ? 'bell' : 'bellOff')}</button>`; })()}<button class="iconbtn danger" data-act="ed-delete" aria-label="Eliminar">${ic('trash')}</button></div>` : '<span style="width:40px"></span>'}</div>
   <div class="pb" id="pb">
     <input id="e-title" class="title-in" placeholder="Título de la pieza" value="${esc(d.title)}" autocomplete="off">
 
@@ -984,7 +1008,7 @@ function renderEditor() {
     <label class="lbl">Comentarios <small>${comments.length}</small></label>
     ${comments.map((c) => {
       const fotos = (c.fileIds || []).map((fid) => d.files.find((f) => f.id === fid)).filter(Boolean);
-      return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}${c.via === 'whatsapp' ? ' · <i class="viatag">WhatsApp</i>' : ''}</small>${mentionHtml(c.text)}
+      return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}</small>${mentionHtml(c.text)}
         ${fotos.length ? `<div class="cmfotos">${fotos.map((f) => `<img loading="lazy" alt="" src="${esc(fileSrc(f))}" data-act="ed-view" data-id="${esc(f.id)}">`).join('')}</div>` : ''}</div></div>`;
     }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
@@ -1254,27 +1278,49 @@ function pedirContrasena() {
   setTimeout(() => { const i = $('#acc-pass'); if (i) i.focus(); }, 120);
 }
 
-/* ---------- importar conversación de WhatsApp ---------- */
+/* ---------- importar conversaciones (pegadas o reenviadas desde WhatsApp) ---------- */
 let IMP = null;
+const W = () => window.WhatsApp;
 const puedeImportar = () => (CFG.IMPORT_PEOPLE || []).includes(S.me.id) && store.canWrite;
 const hashCorto = (t) => { let h = 0; for (let i = 0; i < t.length; i++) { h = (h * 31 + t.charCodeAt(i)) | 0; } return Math.abs(h).toString(36); };
-const waId = (m) => 'wa_' + m.at.slice(0, 16) + '_' + (m.persona || m.autor).toLowerCase().slice(0, 6) + '_' + hashCorto(m.texto.slice(0, 60));
+const impId = (m) => 'wa_' + m.at.slice(0, 16) + '_' + (m.persona || m.autor || 'x').toLowerCase().slice(0, 6) + '_' + hashCorto((m.original || m.texto || '').slice(0, 60));
+const idsImportados = (postId) => new Set(S.db.comments.filter((c) => c.postId === postId).map((c) => c.impId || c.waId).filter(Boolean));
+const URLS = /https?:\/\/[^\s<>"']+/gi;
 
-// Busca a qué pieza se parece más la conversación (por las palabras del título)
-function adivinaPieza(msgs) {
-  const texto = msgs.map((m) => m.texto).join(' ').toLowerCase();
-  let mejor = null, mejorPts = 0;
-  S.db.posts.forEach((p) => {
-    const palabras = p.title.toLowerCase().split(/[^\wáéíóúñ]+/).filter((w) => w.length > 4);
-    if (!palabras.length) return;
-    const pts = palabras.filter((w) => texto.includes(w)).length;
-    if (pts > mejorPts) { mejorPts = pts; mejor = p; }
+// Puntaje de cada pieza según cuánto se parece a lo que dicen los mensajes.
+// Las palabras que aparecen en muchas piezas (foto, carrusel, obra…) pesan poco; las raras, mucho.
+function candidatas(msgs) {
+  const texto = msgs.map((m) => (m.original || m.texto || '') + ' ' + ((m.adjunto && m.adjunto.name) || '')).join(' ');
+  const dichas = new Set(W().palabras(texto));
+  if (!dichas.size) return [];
+  const N = S.db.posts.length || 1, df = {};
+  const bolsa = S.db.posts.map((p) => {
+    const tit = W().palabras(p.title);
+    const resto = W().palabras(`${p.campaign || ''} ${p.caption || ''} ${(p.files || []).map((f) => f.name).join(' ')}`);
+    const extra = W().palabras(`${p.notes || ''} ${(p.checklist || []).map((c) => c.text).join(' ')}`);
+    new Set(tit.concat(resto)).forEach((w) => { df[w] = (df[w] || 0) + 1; });
+    return { p, tit, resto, extra };
   });
-  return mejorPts >= 2 ? mejor : null;
+  const peso = (w) => Math.log(1 + N / (df[w] || 1));
+  const ahora = Date.now();
+  const orden = W().palabras(texto);
+  const pares = new Set(orden.slice(1).map((w, i) => orden[i] + ' ' + w));
+  return bolsa.map(({ p, tit, resto, extra }) => {
+    // Título: cuenta qué parte del título se nombró (y si se nombró seguido, mejor)
+    const total = tit.reduce((a, w) => a + peso(w), 0) || 1;
+    const dicho = tit.filter((w) => dichas.has(w)).reduce((a, w) => a + peso(w), 0);
+    let pts = 2 * dicho * (0.3 + dicho / total);
+    tit.slice(1).forEach((w, i) => { if (pares.has(tit[i] + ' ' + w)) pts += 2 * (peso(w) + peso(tit[i])); });
+    resto.forEach((w) => { if (dichas.has(w)) pts += 0.6 * peso(w); });
+    extra.forEach((w) => { if (dichas.has(w)) pts += 0.3 * peso(w); });
+    if (pts && ['diseno', 'revision', 'cambios', 'aprobado', 'idea'].includes(p.status)) pts *= 1.25; // lo que está en curso
+    if (pts && ahora - new Date(p.updatedAt || 0).getTime() < 7 * 864e5) pts *= 1.1;                // y lo reciente
+    return { post: p, pts };
+  }).filter((x) => x.pts > 0).sort((a, b) => b.pts - a.pts);
 }
 
 function openImport() {
-  IMP = { paso: 1, texto: '', msgs: [], sinMapear: {}, destino: 'nuevo', titulo: '', proyecto: '', subiendo: 0, objetivo: null };
+  IMP = { paso: 1, texto: '', msgs: [], tramos: [], sinMapear: {}, compartido: false };
   openSheet('', true);
   renderImport();
 }
@@ -1282,93 +1328,200 @@ function openImport() {
 function leerConversacion() {
   const t = ($('#imp-texto') || {}).value || '';
   if (t.trim().length < 20) { toast('Pega primero la conversación'); return; }
-  const msgs = window.WhatsApp.parse(t);
-  if (!msgs.length) { toast('No reconocí mensajes de WhatsApp en ese texto', 4000); return; }
-  IMP.sinMapear = window.WhatsApp.mapearAutores(msgs, P, CFG.WHATSAPP_ALIAS || {});
-  const pieza = adivinaPieza(msgs);
+  const msgs = W().parse(t);
+  if (!msgs.length) { toast('No reconocí mensajes en ese texto', 4000); return; }
+  IMP.texto = t;
+  prepararImport(msgs);
+  renderImport();
+}
+
+// Deja los mensajes listos: los filtra, los dice de forma objetiva y adivina a qué pieza van
+function prepararImport(msgs) {
+  IMP.sinMapear = W().mapearAutores(msgs.filter((m) => !m.manual), P, CFG.WHATSAPP_ALIAS || {});
   msgs.forEach((m) => {
-    m.usar = !m.sistema && (!!m.texto || (m.adjunto && m.adjunto.kind === 'imagen'));
-    m.pendiente = !!m.pide && m.persona !== S.me.id;
-    m.foto = null;
+    if (m.manual && !m.persona) m.persona = autorPorDefecto();
+    filtrarMensaje(m);
+    m.usar = !m.sistema && (!m.charla || !!m.foto || !!m.audio || (m.adjunto && m.adjunto.kind === 'imagen'));
+    if (m.foto === undefined) m.foto = null;
   });
   IMP.msgs = msgs;
+  // Tramos de conversación: cada uno puede ser sobre una pieza distinta
+  const n = W().tramos(msgs, 5);
+  let tramos = [];
+  for (let k = 0; k < n; k++) {
+    const del = msgs.filter((m) => m.tramo === k && !m.sistema);
+    const c = candidatas(del);
+    const mejor = c[0] && c[0].pts >= 4 && (!c[1] || c[0].pts >= c[1].pts * 1.25) ? c[0].post : null;
+    tramos.push({ destino: mejor ? mejor.id : 'nuevo', seguro: !!mejor, cands: c.slice(0, 3).map((x) => x.post.id), titulo: '', proyecto: '' });
+  }
+  // Tramos seguidos que hablan de lo mismo se juntan; uno sin pista se suma al anterior
+  const mapa = [];
+  tramos.forEach((t, k) => {
+    const prev = mapa.length ? tramos[mapa[mapa.length - 1]] : null;
+    if (prev && (t.destino === prev.destino || (!t.seguro && prev.seguro && !IMP.compartido))) mapa.push(mapa[mapa.length - 1]);
+    else mapa.push(k);
+  });
+  msgs.forEach((m) => { m.tramo = mapa[m.tramo]; });
+  const usados = [...new Set(mapa)];
+  IMP.tramos = tramos.map((t, k) => (usados.includes(k) ? t : null));
+  // Si todo es una sola conversación sin pista, se sugiere la pieza más parecida igual
+  IMP.tramos.forEach((t, k) => {
+    if (!t || t.destino !== 'nuevo') return;
+    const del = msgs.filter((m) => m.tramo === k && !m.sistema);
+    const otros = [...new Set(del.filter((m) => m.persona && m.persona !== S.me.id).map((m) => person(m.persona).name))];
+    t.titulo = (del.find((m) => m.texto) || {}).texto ? del.find((m) => m.texto).texto.split(/[.?]/)[0].slice(0, 60) : `Pedido de ${otros.join(' y ') || 'el equipo'}`;
+    t.proyecto = '';
+  });
+  marcarRepetidos();
   IMP.paso = 2;
-  IMP.destino = pieza ? pieza.id : 'nuevo';
-  IMP.objetivo = pieza;
-  const otros = [...new Set(msgs.filter((m) => !m.sistema && m.persona && m.persona !== S.me.id).map((m) => person(m.persona).name))];
-  IMP.titulo = pieza ? '' : `WhatsApp con ${otros.join(' y ') || 'el equipo'} · ${fmtShort(msgs[0].dia)}`;
-  IMP.proyecto = pieza ? pieza.campaign : ''; // se elige a mano para no guardarlo en el proyecto equivocado
-  renderImport();
+}
+
+// Texto objetivo, si pide un cambio y si es pura conversación
+function filtrarMensaje(m) {
+  if (m.original === undefined) m.original = m.texto || '';
+  const o = W().objetivar(m.original);
+  m.texto = o.texto;
+  m.charla = o.charla;
+  m.aprueba = !!(m.aprueba || o.aprueba);
+  m.pide = W().pideCambio(m.original) && !o.charla && !(o.aprueba && !W().pideCambio(o.texto));
+  m.pendiente = m.pide && m.persona !== S.me.id;
+}
+
+// ¿Ya está en la pieza? (mismo mensaje importado antes, o el mismo cambio ya anotado)
+function marcarRepetidos() {
+  IMP.msgs.forEach((m) => {
+    const t = IMP.tramos[m.tramo];
+    m.repetido = false; m.yaPedido = '';
+    if (!t || t.destino === 'nuevo') return;
+    const post = S.db.posts.find((p) => p.id === t.destino);
+    if (!post) return;
+    const coms = S.db.comments.filter((c) => c.postId === post.id);
+    if (idsImportados(post.id).has(impId(m)) || (m.texto && coms.some((c) => W().parecido(c.text, m.texto) >= 0.85))) m.repetido = true;
+    if (m.pide && m.texto) {
+      const igual = (post.checklist || []).find((c) => W().parecido(c.text.replace(/^[^:]{1,20}:\s*/, ''), m.texto) >= 0.7);
+      if (igual) { m.yaPedido = igual.done ? 'ya se había hecho' : 'ya estaba en pendientes'; m.pendiente = false; }
+    }
+  });
+}
+
+function autorPorDefecto() {
+  const ult = localStorage.getItem('crono_ultimo_autor');
+  if (ult && byId(P, ult)) return ult;
+  const otro = P.find((x) => x.id !== S.me.id);
+  return otro ? otro.id : S.me.id;
 }
 
 function syncImport() {
   if (!IMP || IMP.paso !== 2) return;
-  const t = $('#imp-titulo'), pr = $('#imp-proyecto'), d = $('#imp-destino');
-  if (d) IMP.destino = d.value;
-  if (t) IMP.titulo = t.value;
-  if (pr) IMP.proyecto = pr.value;
+  $$('[data-imp-titulo]').forEach((i) => { const t = IMP.tramos[+i.dataset.impTitulo]; if (t) t.titulo = i.value; });
+  $$('[data-imp-proyecto]').forEach((i) => { const t = IMP.tramos[+i.dataset.impProyecto]; if (t) t.proyecto = i.value; });
+}
+
+function estadoAudio(m) {
+  if (!m.audio) return '';
+  const T = {
+    espera: 'En cola para transcribir…',
+    cargando: `Preparando la transcripción${TRANS.progreso ? ' · ' + TRANS.progreso + '%' : ''} (la primera vez tarda un poco)…`,
+    escuchando: 'Escuchando el audio…',
+    listo: 'Audio transcrito',
+    error: 'No se pudo transcribir aquí: escribe lo importante del audio.'
+  };
+  return `<p class="hint audiost">${ic('mic', 14)} ${esc(T[m.trans] || T.espera)}</p>`;
 }
 
 function renderImport() {
   if (!IMP) return;
   if (IMP.paso === 1) {
-    $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="sheet-close">${ic('x')}</button><h2>Importar de WhatsApp</h2><span style="width:40px"></span></div>
+    $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="sheet-close">${ic('x')}</button><h2>Importar mensajes</h2><span style="width:40px"></span></div>
       <div class="pb">
-        <p class="hint">Copia la conversación desde WhatsApp y pégala aquí. En el teléfono: entra al chat → los tres puntos → <b>Más</b> → <b>Exportar chat</b> → <b>Sin archivos</b> → compártelo contigo misma y pega el texto. También sirve seleccionar mensajes y copiarlos.</p>
+        ${isIOS()
+          ? `<p class="hint"><b>Desde WhatsApp:</b> mantén apretado el mensaje (o elige varios) → <b>Copiar</b>, y vuelve aquí a <b>Pegar lo copiado</b>. Para un audio: <b>Reenviar → Compartir → Guardar en Archivos</b> y elígelo con el otro botón.</p>`
+          : `<p class="hint"><b>Lo más rápido:</b> en WhatsApp mantén apretado un mensaje (texto, foto o audio) → <b>Compartir</b> → <b>Cronograma</b>. Llega aquí solo, sin exportar el chat.</p>`}
+        <div class="impbtns">
+          <button class="btn" data-act="imp-pegar">${ic('copy', 17)} Pegar lo copiado</button>
+          <label class="btn ghost">${ic('mic', 17)} Fotos o audios<input type="file" id="imp-archivos" accept="image/*,audio/*,video/*,.opus,.ogg,.m4a,.mp3" multiple hidden></label>
+        </div>
+        <p class="hint">También puedes pegar abajo una conversación exportada (<b>Exportar chat → Sin archivos</b>).</p>
         <label class="lbl">Conversación</label>
-        <textarea class="area" id="imp-texto" style="min-height:260px;font-size:13px" placeholder="[05-10-26, 11:59:29] Macarena Miquel NEO: Me gusta mucho !!!&#10;[05-10-26, 12:01:11] Macarena Miquel NEO: Lo que creo que no es tecnología…"></textarea>
-        <p class="hint">Las fotos no viajan en el texto: después de leerla, puedes <b>pegarlas o elegirlas</b> una por una y quedan junto al mensaje que las pidió.</p>
+        <textarea class="area" id="imp-texto" style="min-height:240px;font-size:13px" placeholder="[05-10-26, 11:59:29] Macarena Miquel NEO: …">${esc(IMP.texto || '')}</textarea>
+        <p class="hint">Las fotos no viajan en el texto: después de leerla, puedes <b>pegarlas o elegirlas</b> y quedan junto al mensaje que las pidió.</p>
       </div>
-      <div class="pf"><button class="btn block" data-act="imp-leer">Leer conversación</button></div>`;
+      <div class="pf"><button class="btn block" data-act="imp-leer">Leer</button></div>`;
     return;
   }
-
-  const r = window.WhatsApp.resumen(IMP.msgs);
-  const cambios = IMP.msgs.filter((m) => m.pide && !m.sistema && m.persona !== S.me.id).length;
+  const sc = $('#imp-pb') ? $('#imp-pb').scrollTop : 0;
   const sin = Object.keys(IMP.sinMapear);
-  const piezas = S.db.posts.slice().sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || ''))).slice(0, 40);
-  const yaEstan = IMP.destino !== 'nuevo'
-    ? new Set(S.db.comments.filter((c) => c.postId === IMP.destino).map((c) => c.waId).filter(Boolean)) : new Set();
+  const piezas = S.db.posts.slice().sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || ''))).slice(0, 60);
+  const camps = [...new Set(S.db.posts.map((p) => p.campaign).filter(Boolean))];
+  const utiles = IMP.msgs.filter((m) => !m.sistema);
+  const charla = utiles.filter((m) => m.charla && !m.foto && !m.audio && !(m.adjunto && m.adjunto.kind === 'imagen')).length;
+  const nTramos = IMP.tramos.filter(Boolean).length;
+  const cambiosTot = utiles.filter((m) => m.pide && m.usar).length;
 
-  const filas = IMP.msgs.map((m, i) => {
-    if (m.sistema && !m.usar) return '';
-    const repetido = yaEstan.has(waId(m));
-    const quien = m.persona ? person(m.persona) : { name: m.autor, color: '#9A97A6', id: '' };
-    const foto = m.adjunto && m.adjunto.kind === 'imagen';
-    const otroAdj = m.adjunto && m.adjunto.kind !== 'imagen';
-    return `<div class="improw${m.usar ? ' on' : ''}${repetido ? ' rep' : ''}" data-i="${i}">
-      <label class="cb2"><input type="checkbox" data-act="imp-usar" data-i="${i}"${m.usar && !repetido ? ' checked' : ''}${repetido ? ' disabled' : ''}><span>${ic('check', 16)}</span></label>
+  const fila = (m, i) => {
+    const quien = m.persona ? person(m.persona) : { name: m.autor || '¿?', color: '#9A97A6', id: '' };
+    const foto = m.foto || (m.adjunto && m.adjunto.kind === 'imagen');
+    const editable = m.manual || m.audio;
+    return `<div class="improw${m.usar ? ' on' : ''}${m.repetido ? ' rep' : ''}${m.charla ? ' charla' : ''}" data-i="${i}">
+      <label class="cb2"><input type="checkbox" data-act="imp-usar" data-i="${i}"${m.usar && !m.repetido ? ' checked' : ''}${m.repetido ? ' disabled' : ''}><span>${ic('check', 16)}</span></label>
       <div class="impcon">
-        <small><span class="av sm" style="--c:${quien.color};margin:0">${esc(quien.name[0] || '?')}</span> <b>${esc(quien.name)}</b> · ${esc(m.dia === today() ? m.hora : fmtShort(m.dia) + ' ' + m.hora)}${repetido ? ' · <i class="rept">ya importado</i>' : ''}</small>
-        ${m.texto ? `<p>${mentionHtml(m.texto)}</p>` : ''}
-        ${otroAdj ? `<p class="hint">📎 ${esc(m.adjunto.name || m.adjunto.kind)}${m.adjunto.name ? '' : ' (no viene en el texto)'}</p>` : ''}
+        <small><span class="av sm" style="--c:${quien.color};margin:0">${esc(quien.name[0] || '?')}</span> <b>${esc(quien.name)}</b>${m.manual ? '' : ' · ' + esc(m.dia === today() ? m.hora : fmtShort(m.dia) + ' ' + m.hora)}
+          ${m.pide ? '<i class="imptag cambio">cambio</i>' : ''}${m.aprueba && !m.pide ? '<i class="imptag ok">aprobación</i>' : ''}${m.charla && !foto && !m.audio ? '<i class="imptag">conversación, no se importa</i>' : ''}${m.repetido ? '<i class="rept">ya está en la pieza</i>' : ''}</small>
+        ${m.manual ? `<div class="chips quien">${P.map((x) => `<button class="chip${m.persona === x.id ? ' on' : ''}" style="--c:${x.color}" data-act="imp-autor" data-i="${i}" data-v="${x.id}">${esc(x.name)}</button>`).join('')}</div>` : ''}
+        ${estadoAudio(m)}
+        ${editable ? `<textarea class="area imptxt" data-imp-txt="${i}" placeholder="${m.audio ? 'Lo que dice el audio…' : 'Mensaje'}">${esc(m.texto)}</textarea>`
+          : (m.texto ? `<p>${mentionHtml(m.texto)}</p>` : '')}
+        ${!editable && m.original && m.original !== m.texto ? `<details class="orig"><summary>Ver original</summary><p>${esc(m.original)}</p></details>` : ''}
+        ${m.adjunto && !['imagen', 'audio'].includes(m.adjunto.kind) && !m.foto ? `<p class="hint">📎 ${esc(m.adjunto.name || m.adjunto.kind)}${m.adjunto.name ? '' : ' (no viene en el texto)'}</p>` : ''}
         ${m.enlaces.length ? `<p class="hint">${m.enlaces.map((l) => `<a href="${esc(l)}" target="_blank" rel="noopener">${esc(l.slice(0, 44))}…</a>`).join('<br>')}</p>` : ''}
         ${foto ? (m.foto
-          ? `<div class="impfoto"><img src="${esc(m.foto.blobUrl)}" alt=""><button class="x" data-act="imp-quitar-foto" data-i="${i}">${ic('x', 14)}</button></div>`
+          ? `<div class="impfoto">${(m.foto.file.type || '').startsWith('image/') ? `<img src="${esc(m.foto.blobUrl)}" alt="">` : `<span class="ext">${esc((m.foto.file.name.split('.').pop() || 'archivo').toUpperCase())}</span>`}<button class="x" data-act="imp-quitar-foto" data-i="${i}">${ic('x', 14)}</button></div>`
           : `<label class="impslot">${ic('image', 18)} Elegir foto<input type="file" accept="image/*" data-imp-foto="${i}" hidden></label>`) : ''}
-        ${m.pide && m.persona !== S.me.id ? `<label class="imppend"><input type="checkbox" data-act="imp-pend" data-i="${i}"${m.pendiente ? ' checked' : ''}> Sumar a pendientes de la pieza</label>` : ''}
+        ${m.pide && m.persona !== S.me.id ? (m.yaPedido ? `<p class="hint">↺ Este cambio ${esc(m.yaPedido)}.</p>` : `<label class="imppend"><input type="checkbox" data-act="imp-pend" data-i="${i}"${m.pendiente ? ' checked' : ''}> Sumar a pendientes de la pieza</label>`) : ''}
       </div></div>`;
+  };
+
+  const bloques = IMP.tramos.map((t, k) => {
+    if (!t) return '';
+    const del = IMP.msgs.map((m, i) => [m, i]).filter(([m]) => m.tramo === k && !(m.sistema && !m.usar));
+    if (!del.length) return '';
+    const cambios = del.filter(([m]) => m.pide && m.usar && !m.repetido);
+    const nuevos = cambios.filter(([m]) => !m.yaPedido);
+    const post = t.destino !== 'nuevo' ? S.db.posts.find((p) => p.id === t.destino) : null;
+    const aprob = del.some(([m]) => m.aprueba && m.usar && !m.pide);
+    const fechas = del.map(([m]) => m.dia).filter(Boolean);
+    const ops = [...new Set(t.cands.concat(piezas.map((p) => p.id)))].map((id) => S.db.posts.find((p) => p.id === id)).filter(Boolean);
+    return `<section class="tramo">
+      <div class="tramoh">
+        <small>${nTramos > 1 ? `Tema ${IMP.tramos.slice(0, k + 1).filter(Boolean).length} · ` : ''}${del.length} mensaje${del.length === 1 ? '' : 's'}${!IMP.compartido && fechas.length ? ` · ${esc(fmtShort(fechas[0]))}${fechas[fechas.length - 1] !== fechas[0] ? ' al ' + esc(fmtShort(fechas[fechas.length - 1])) : ''}` : ''}</small>
+        <b class="tramoveredicto">${post ? `${t.seguro ? 'Es la misma pieza:' : 'Va a:'} “${esc(post.title)}”` : (t.cands.length ? 'Puede ser más de una pieza: elige (★ las más parecidas) o crea una nueva' : 'Contenido nuevo')}</b>
+        <select class="sel" data-imp-destino="${k}">
+          <option value="nuevo"${t.destino === 'nuevo' ? ' selected' : ''}>➕ Crear una pieza nueva</option>
+          ${ops.map((p) => `<option value="${esc(p.id)}"${t.destino === p.id ? ' selected' : ''}>${t.cands.includes(p.id) ? '★ ' : ''}${esc(p.title.slice(0, 54))}</option>`).join('')}
+        </select>
+        ${t.destino === 'nuevo' ? `<div class="row2" style="margin-top:8px">
+          <input class="field" data-imp-titulo="${k}" placeholder="Título de la pieza" value="${esc(t.titulo)}">
+          <input class="field" data-imp-proyecto="${k}" list="camps2" placeholder="Proyecto" value="${esc(t.proyecto)}"></div>` : ''}
+        <div class="cambios">
+          <b>${cambios.length ? `${cambios.length} cambio${cambios.length === 1 ? '' : 's'} pedido${cambios.length === 1 ? '' : 's'}${cambios.length !== nuevos.length ? ` · ${nuevos.length} nuevo${nuevos.length === 1 ? '' : 's'}` : ''}` : (aprob ? 'Sin cambios: lo aprobaron ✅' : 'Sin cambios pedidos')}</b>
+          ${cambios.length ? `<ol>${cambios.map(([m]) => `<li${m.yaPedido ? ' class="ya"' : ''}>${esc(m.texto || '(audio por transcribir)')}${m.yaPedido ? ` <small>(${esc(m.yaPedido)})</small>` : ''}</li>`).join('')}</ol>` : ''}
+        </div>
+      </div>
+      <div class="implist">${del.map(([m, i]) => fila(m, i)).join('')}</div>
+    </section>`;
   }).join('');
 
   $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="imp-volver">${ic('left')}</button><h2>Revisar e importar</h2><span style="width:40px"></span></div>
     <div class="pb" id="imp-pb">
-      <div class="impres"><b>${r.utiles} mensajes</b> · ${cambios} cambio${cambios === 1 ? '' : 's'} pedido${cambios === 1 ? '' : 's'} · ${r.fotos} foto${r.fotos === 1 ? '' : 's'}${r.desde ? ` · del ${esc(fmtShort(r.desde))} al ${esc(fmtShort(r.hasta))}` : ''}</div>
+      <div class="impres"><b>${cambiosTot} cambio${cambiosTot === 1 ? '' : 's'} detectado${cambiosTot === 1 ? '' : 's'}</b> en ${nTramos === 1 ? 'una pieza' : nTramos + ' temas'} · ${utiles.length} mensaje${utiles.length === 1 ? '' : 's'}${charla ? ` · ${charla} de pura conversación quedan fuera` : ''}</div>
+      <p class="hint">Se guarda solo lo técnico, escrito de forma objetiva. Lo que escriban directo en la app no se toca.</p>
       ${sin.length ? `<p class="hint">No reconocí a: ${sin.map(esc).join(', ')}. Sus mensajes quedarán a tu nombre.</p>` : ''}
-      <label class="lbl">¿A qué pieza van?</label>
-      <select class="sel" id="imp-destino" data-act="imp-destino">
-        <option value="nuevo"${IMP.destino === 'nuevo' ? ' selected' : ''}>➕ Crear una pieza nueva</option>
-        ${piezas.map((p) => `<option value="${esc(p.id)}"${IMP.destino === p.id ? ' selected' : ''}>${esc(p.title.slice(0, 54))}</option>`).join('')}
-      </select>
-      ${IMP.destino === 'nuevo' ? `<div class="row2" style="margin-top:10px">
-        <input class="field" id="imp-titulo" placeholder="Título de la pieza" value="${esc(IMP.titulo)}">
-        <input class="field" id="imp-proyecto" list="camps2" placeholder="Proyecto" value="${esc(IMP.proyecto)}">
-        <datalist id="camps2">${[...new Set(S.db.posts.map((p) => p.campaign).filter(Boolean))].map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
-      </div>` : `<p class="hint">Los mensajes se suman como comentarios de esa pieza, con su fecha y a nombre de quien los escribió.</p>`}
-      <label class="lbl">Mensajes <small>desmarca lo que no quieras</small></label>
-      <div class="implist">${filas || '<p class="hint">No hay mensajes que importar.</p>'}</div>
+      <datalist id="camps2">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
+      ${bloques || '<p class="hint">No hay mensajes que importar.</p>'}
     </div>
-    <div class="pf"><button class="btn ghost" data-act="imp-todas-fotos">${ic('image', 16)} Pegar fotos</button>
+    <div class="pf">${IMP.compartido ? `<button class="btn ghost" data-act="imp-descartar">Descartar</button>` : `<button class="btn ghost" data-act="imp-todas-fotos">${ic('image', 16)} Pegar fotos</button>`}
       <button class="btn" data-act="imp-ok">Importar</button></div>`;
+  if ($('#imp-pb')) $('#imp-pb').scrollTop = sc;
 }
 
 // Recibe una imagen pegada o elegida y la deja junto a su mensaje
@@ -1377,6 +1530,7 @@ function ponerFoto(i, file) {
   if (!m) return;
   if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl);
   m.foto = { file, blobUrl: URL.createObjectURL(file) };
+  m.usar = true;
   IMP.objetivoFoto = null;
   renderImport();
 }
@@ -1388,81 +1542,266 @@ async function hacerImport() {
   syncImport();
   const btn = $('[data-act="imp-ok"]'); if (btn) btn.disabled = true;
   try {
-    const elegidos = IMP.msgs.filter((m) => m.usar);
-    if (!elegidos.length) { toast('No hay mensajes marcados'); return; }
-
-    let post, viejo = null;
-    if (IMP.destino === 'nuevo') {
-      const titulo = (IMP.titulo || '').trim() || 'Conversación de WhatsApp';
-      post = {
-        id: uid(), title: titulo, caption: '', notes: 'Importado desde WhatsApp.', hashtags: '',
-        campaign: (IMP.proyecto || '').trim(), date: elegidos[0].dia, time: '', platforms: [], format: 'post',
-        status: 'diseno', assignees: [...new Set(elegidos.map((m) => m.persona).filter(Boolean))],
-        priority: 'normal', links: [], files: [], checklist: []
-      };
-      if (!post.assignees.includes(S.me.id)) post.assignees.push(S.me.id);
-    } else {
-      viejo = S.db.posts.find((p) => p.id === IMP.destino);
-      if (!viejo) { toast('Esa pieza ya no existe'); return; }
-      post = clone(viejo);
+    if (IMP.msgs.some((m) => m.usar && m.audio && ['espera', 'cargando', 'escuchando'].includes(m.trans) && !m.texto)) {
+      toast('Espera a que terminen de transcribirse los audios', 3500); if (btn) btn.disabled = false; return;
     }
-
-    // 1) fotos al repositorio
-    const conFoto = elegidos.filter((m) => m.foto);
-    for (let k = 0; k < conFoto.length; k++) {
-      const m = conFoto[k];
-      toast(`Subiendo foto ${k + 1} de ${conFoto.length}…`, 15000);
-      const base = slugify(post.title, 'foto').slice(0, 34).replace(/-+$/, '');
-      const n = post.files.filter((f) => (f.base || '').startsWith(base)).length + 1;
-      try {
-        const r = await store.upload(m.foto.file, { dir: projectName(post), name: `${base}-${n}-v1.jpg` });
-        m.archivo = Object.assign({ id: uid(), by: S.me.id, at: m.at, base: `${base}-${n}`, version: 1 }, r);
-        post.files.push(m.archivo);
-      } catch (e) { toast('No se pudo subir una foto: ' + (e.message || e), 4000); }
-    }
-
-    // 2) pendientes que pidieron
-    elegidos.filter((m) => m.pendiente && m.texto).forEach((m) => {
-      const t = m.texto.length > 90 ? m.texto.slice(0, 90) + '…' : m.texto;
-      const etiqueta = `${person(m.persona || S.me.id).name}: ${t}`;
-      if (!post.checklist.some((c) => c.text === etiqueta)) post.checklist.push({ id: uid(), text: etiqueta, done: false });
+    const elegidos = IMP.msgs.filter((m) => m.usar && !m.repetido && (m.texto || m.foto));
+    if (!elegidos.length) { toast('No hay mensajes marcados'); if (btn) btn.disabled = false; return; }
+    const grupos = new Map();
+    elegidos.forEach((m) => {
+      const t = IMP.tramos[m.tramo] || IMP.tramos.find(Boolean);
+      const clave = t.destino === 'nuevo' ? 'nuevo:' + m.tramo : t.destino;
+      if (!grupos.has(clave)) grupos.set(clave, { t, msgs: [] });
+      grupos.get(clave).msgs.push(m);
     });
-
-    // 3) enlaces que aparezcan en la conversación
-    elegidos.forEach((m) => m.enlaces.forEach((u) => {
-      const url = normUrl(u);
-      if (url && !post.links.some((l) => l.url === url)) post.links.push({ id: uid(), label: 'De WhatsApp', url });
-    }));
-
-    post.updatedAt = nowISO(); post.updatedBy = S.me.id;
-    if (!viejo) Object.assign(post, { createdAt: nowISO(), createdBy: S.me.id, statusChangedAt: nowISO(), revisions: 0, publishedAt: null });
-    else Object.assign(post, { createdAt: viejo.createdAt, createdBy: viejo.createdBy, revisions: viejo.revisions || 0, statusChangedAt: viejo.statusChangedAt, publishedAt: viejo.publishedAt || null });
-    await save('posts', post);
-
-    // 4) los mensajes como comentarios, con su fecha y su autor
-    const previos = new Set(S.db.comments.filter((c) => c.postId === post.id).map((c) => c.waId).filter(Boolean));
-    let nuevos = 0;
-    for (const m of elegidos) {
-      const id = waId(m);
-      if (previos.has(id)) continue;
-      const texto = m.texto || (m.foto ? 'Mandó una foto' : (m.adjunto ? '📎 ' + (m.adjunto.name || m.adjunto.kind) : ''));
-      if (!texto) continue;
-      await save('comments', {
-        id: uid(), postId: post.id, author: m.persona || S.me.id, text: texto,
-        createdAt: m.at, via: 'whatsapp', waId: id,
-        fileIds: m.archivo ? [m.archivo.id] : []
-      });
-      previos.add(id); nuevos++;
+    let totM = 0, totF = 0, totC = 0, ultimo = null;
+    for (const { t, msgs } of grupos.values()) {
+      const r = await importarEn(t, msgs);
+      totM += r.nuevos; totF += r.fotos; totC += r.cambios; ultimo = r.post;
     }
-    await log(post, 'import', `importó ${nuevos} mensaje${nuevos === 1 ? '' : 's'} de WhatsApp`);
-
-    IMP = null; closeSheet(); renderAll();
-    toast(`Listo: ${nuevos} mensaje${nuevos === 1 ? '' : 's'} y ${conFoto.length} foto${conFoto.length === 1 ? '' : 's'} en “${post.title}”`, 4200);
-    setTimeout(() => openEditor(post.id), 350);
+    if (IMP.desdeCache) await borrarCompartidos();
+    const varias = grupos.size > 1;
+    IMP = null; closeSheet(); renderAll(); renderBanner();
+    toast(`Listo: ${totM} comentario${totM === 1 ? '' : 's'}, ${totC} cambio${totC === 1 ? '' : 's'} a pendientes y ${totF} archivo${totF === 1 ? '' : 's'}${varias ? ` en ${grupos.size} piezas` : ` en “${ultimo.title}”`}`, 4600);
+    if (!varias && ultimo) setTimeout(() => openEditor(ultimo.id), 350);
   } catch (e) {
     console.error(e); toast('No se pudo importar: ' + (e.message || e), 5000);
     if (btn) btn.disabled = false;
   }
+}
+
+async function importarEn(t, elegidos) {
+  let post, viejo = null;
+  if (t.destino === 'nuevo') {
+    post = {
+      id: uid(), title: (t.titulo || '').trim() || 'Pedido del equipo', caption: '', notes: '', hashtags: '',
+      campaign: (t.proyecto || '').trim(), date: elegidos[0].dia || today(), time: '', platforms: [], format: 'post',
+      status: 'diseno', assignees: [...new Set(elegidos.map((m) => m.persona).filter(Boolean))],
+      priority: 'normal', links: [], files: [], checklist: []
+    };
+    if (!post.assignees.includes(S.me.id)) post.assignees.push(S.me.id);
+  } else {
+    viejo = S.db.posts.find((p) => p.id === t.destino);
+    if (!viejo) throw new Error('esa pieza ya no existe');
+    post = clone(viejo);
+  }
+
+  // 1) fotos y archivos al repositorio
+  const conFoto = elegidos.filter((m) => m.foto);
+  for (let k = 0; k < conFoto.length; k++) {
+    const m = conFoto[k];
+    toast(`Subiendo archivo ${k + 1} de ${conFoto.length}…`, 15000);
+    const base = slugify(post.title, 'foto').slice(0, 34).replace(/-+$/, '');
+    const n = post.files.filter((f) => (f.base || '').startsWith(base)).length + 1;
+    const ext = (m.foto.file.type || '').startsWith('image/') ? 'jpg' : ((m.foto.file.name || '').split('.').pop() || 'bin').toLowerCase();
+    try {
+      const r = await store.upload(m.foto.file, { dir: projectName(post), name: `${base}-${n}-v1.${ext}` });
+      m.archivo = Object.assign({ id: uid(), by: m.persona || S.me.id, at: m.at, base: `${base}-${n}`, version: 1 }, r);
+      post.files.push(m.archivo);
+    } catch (e) { toast('No se pudo subir un archivo: ' + (e.message || e), 4000); }
+  }
+
+  // 2) los cambios pedidos pasan a pendientes, sin repetir lo que ya estaba
+  let cambios = 0;
+  elegidos.filter((m) => m.pendiente && m.texto && !m.yaPedido).forEach((m) => {
+    const tx = m.texto.length > 160 ? m.texto.slice(0, 160) + '…' : m.texto;
+    const etiqueta = `${person(m.persona || S.me.id).name}: ${tx}`;
+    if (!post.checklist.some((c) => c.text === etiqueta || W().parecido(c.text, tx) >= 0.8)) { post.checklist.push({ id: uid(), text: etiqueta, done: false }); cambios++; }
+  });
+
+  // 3) enlaces que aparezcan
+  elegidos.forEach((m) => m.enlaces.forEach((u) => {
+    const url = normUrl(u);
+    if (url && !post.links.some((l) => l.url === url)) post.links.push({ id: uid(), label: 'Enlace', url });
+  }));
+
+  post.updatedAt = nowISO(); post.updatedBy = S.me.id;
+  if (!viejo) Object.assign(post, { createdAt: nowISO(), createdBy: S.me.id, statusChangedAt: nowISO(), revisions: 0, publishedAt: null });
+  else Object.assign(post, { createdAt: viejo.createdAt, createdBy: viejo.createdBy, revisions: viejo.revisions || 0, statusChangedAt: viejo.statusChangedAt, publishedAt: viejo.publishedAt || null });
+  await save('posts', post);
+
+  // 4) los mensajes como comentarios, con su fecha y su autor
+  const previos = idsImportados(post.id);
+  let nuevos = 0;
+  for (const m of elegidos) {
+    const id = impId(m);
+    if (previos.has(id)) continue;
+    const texto = m.texto || (m.foto ? 'Archivo de referencia.' : '');
+    if (!texto) continue;
+    await save('comments', {
+      id: uid(), postId: post.id, author: m.persona || S.me.id, text: texto,
+      createdAt: m.at, via: 'imp', impId: id,
+      fileIds: m.archivo ? [m.archivo.id] : []
+    });
+    previos.add(id); nuevos++;
+  }
+  if (nuevos || cambios) await log(post, 'edit', `sumó ${nuevos} observaci${nuevos === 1 ? 'ón' : 'ones'}${cambios ? ` y ${cambios} pendiente${cambios === 1 ? '' : 's'}` : ''}`);
+  if (cambios) await notify('update', post, post.assignees, `sumó ${cambios} cambio${cambios === 1 ? '' : 's'} pendiente${cambios === 1 ? '' : 's'} en “${post.title}”`);
+  return { post, nuevos, fotos: conFoto.length, cambios };
+}
+
+/* ---------- lo que llega reenviado desde WhatsApp (Compartir → Cronograma) ---------- */
+const CACHE_COMP = 'crono-compartido';
+const urlComp = (k) => new URL('__compartido/' + k, location.href.split(/[?#]/)[0]).href;
+async function leerCompartidos() {
+  if (!('caches' in window)) return [];
+  try {
+    const c = await caches.open(CACHE_COMP);
+    const r = await c.match(urlComp('lista'));
+    return r ? await r.json() : [];
+  } catch (e) { return []; }
+}
+async function guardarCompartido(item) {
+  try {
+    const c = await caches.open(CACHE_COMP);
+    const lista = await leerCompartidos();
+    lista.push(item);
+    await c.put(urlComp('lista'), new Response(JSON.stringify(lista), { headers: { 'Content-Type': 'application/json' } }));
+  } catch (e) { /* sin caché: se pierde */ }
+}
+async function borrarCompartidos() {
+  try { await caches.delete(CACHE_COMP); } catch (e) { /* nada */ }
+  S.compartidos = 0;
+}
+async function revisarCompartidos(abrir) {
+  const lista = await leerCompartidos();
+  S.compartidos = lista.length;
+  if (S.me) renderBanner();
+  if (abrir && lista.length) {
+    if (!puedeImportar()) { toast(store.canWrite ? 'Solo Javi puede sumar mensajes reenviados' : 'Primero entra con tu clave para guardar lo reenviado', 4000); return; }
+    await abrirCompartidos(lista);
+  }
+}
+function msgSuelto(texto, at, extra) {
+  const d = new Date(at);
+  return Object.assign({
+    id: 'sh' + Math.random().toString(36).slice(2, 8), at: d.toISOString(), dia: ymd(d),
+    hora: pad(d.getHours()) + ':' + pad(d.getMinutes()), autor: '', persona: null, manual: true,
+    texto: texto || '', adjunto: null, enlaces: ((texto || '').match(URLS) || []).map((u) => u.replace(/[),.]+$/, '')),
+    pide: false, aprueba: false, sistema: false, foto: null
+  }, extra || {});
+}
+async function abrirCompartidos(lista) {
+  const c = await caches.open(CACHE_COMP);
+  for (const it of lista) {
+    const files = [];
+    for (const f of it.files || []) {
+      const r = await c.match(urlComp(f.key));
+      if (!r) continue;
+      const blob = await r.blob();
+      files.push(new File([blob], f.name || f.key, { type: f.type || blob.type }));
+    }
+    it.archivos = files;
+  }
+  await abrirItems(lista, true);
+}
+// Arma la revisión con lo que llegó: textos (sueltos o copiados con autor y hora), fotos y audios
+async function abrirItems(lista, desdeCache) {
+  const msgs = [];
+  for (const it of lista) {
+    const texto = [it.title, it.text, it.url].filter((x) => x && String(x).trim()).join('\n').trim();
+    const deChat = texto ? W().parse(texto) : [];
+    let conTexto = null;
+    if (deChat.length) deChat.forEach((m) => msgs.push(m));                 // varios mensajes copiados con su autor y hora
+    else if (texto) { conTexto = msgSuelto(texto, it.at); msgs.push(conTexto); }
+    for (const file of it.archivos || []) {
+      if (/^audio\//.test(file.type) || /\.(opus|ogg|m4a|mp3|wav|aac)$/i.test(file.name)) {
+        msgs.push(msgSuelto('', it.at, { audio: file, trans: 'espera', adjunto: { kind: 'audio', name: '' } }));
+      } else if (conTexto && !conTexto.foto) {                                // foto con su texto: van juntos
+        conTexto.foto = { file, blobUrl: URL.createObjectURL(file) };
+      } else {
+        msgs.push(msgSuelto('', it.at, { foto: { file, blobUrl: URL.createObjectURL(file) }, adjunto: { kind: /^image\//.test(file.type) ? 'imagen' : 'documento', name: file.name } }));
+      }
+    }
+  }
+  if (!msgs.length) { if (desdeCache) await borrarCompartidos(); else toast('No encontré nada para importar'); return; }
+  msgs.sort((a, b) => a.at.localeCompare(b.at));
+  IMP = { paso: 2, texto: '', msgs: [], tramos: [], sinMapear: {}, compartido: true, desdeCache: !!desdeCache };
+  prepararImport(msgs);
+  openSheet(sheetOpen ? null : '', true); // si ya hay una hoja abierta, se reusa (cerrarla y abrir otra se pisan)
+  renderImport();
+  transcribirPendientes();
+}
+
+// iPhone no deja aparecer en "Compartir": se copia en WhatsApp y se pega aquí (texto y foto)
+async function pegarLoCopiado() {
+  const it = { at: nowISO(), text: '', archivos: [] };
+  try {
+    if (navigator.clipboard && navigator.clipboard.read) {
+      for (const item of await navigator.clipboard.read()) {
+        const img = item.types.find((t) => t.startsWith('image/'));
+        if (img) { const b = await item.getType(img); it.archivos.push(new File([b], `copiada-${Date.now()}.${img.split('/')[1] || 'png'}`, { type: img })); }
+        if (item.types.includes('text/plain')) it.text += (it.text ? '\n' : '') + await (await item.getType('text/plain')).text();
+      }
+    } else if (navigator.clipboard && navigator.clipboard.readText) it.text = await navigator.clipboard.readText();
+  } catch (e) { /* sin permiso: queda el campo para pegar a mano */ }
+  if (!it.text.trim() && !it.archivos.length) { toast('No hay nada copiado. En WhatsApp: mantén apretado el mensaje → Copiar.', 4500); return; }
+  if (W().parse(it.text).length && !it.archivos.length) { IMP.texto = it.text; const ta = $('#imp-texto'); if (ta) ta.value = it.text; leerConversacion(); return; }
+  await abrirItems([it], false);
+}
+async function elegirArchivosImport(files) {
+  if (!files.length) return;
+  await abrirItems([{ at: nowISO(), text: (($('#imp-texto') || {}).value || '').trim(), archivos: [...files] }], false);
+}
+
+/* ---------- transcribir audios (en el mismo teléfono, sin mandarlos a ningún lado) ---------- */
+const TRANS = { asr: null, progreso: 0, corriendo: false };
+async function transcriptor() {
+  if (!TRANS.asr) {
+    TRANS.asr = (async () => {
+      const T = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.6/dist/transformers.min.js');
+      T.env.allowLocalModels = false;
+      const vistos = {};
+      return T.pipeline('automatic-speech-recognition', 'Xenova/whisper-base', {
+        dtype: 'q8',
+        progress_callback: (p) => {
+          if (p.status !== 'progress' || !p.total) return;
+          vistos[p.file] = [p.loaded, p.total];
+          const v = Object.values(vistos);
+          const pr = Math.round(100 * v.reduce((a, x) => a + x[0], 0) / v.reduce((a, x) => a + x[1], 0));
+          if (pr !== TRANS.progreso) { TRANS.progreso = pr; const el = $('.audiost'); if (el && IMP) renderImport(); }
+        }
+      });
+    })();
+  }
+  try { return await TRANS.asr; } catch (e) { TRANS.asr = null; throw e; }
+}
+async function audioMono16k(file) {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const ctx = new AC({ sampleRate: 16000 });
+  try {
+    const ab = await ctx.decodeAudioData(await file.arrayBuffer());
+    if (ab.numberOfChannels < 2) return ab.getChannelData(0);
+    const a = ab.getChannelData(0), b = ab.getChannelData(1), out = new Float32Array(a.length);
+    for (let i = 0; i < a.length; i++) out[i] = (a[i] + b[i]) / 2;
+    return out;
+  } finally { if (ctx.close) ctx.close(); }
+}
+async function transcribirPendientes() {
+  if (TRANS.corriendo) return;
+  TRANS.corriendo = true;
+  try {
+    while (IMP) {
+      const m = IMP.msgs.find((x) => x.audio && x.trans === 'espera');
+      if (!m) break;
+      try {
+        m.trans = 'cargando'; renderImport();
+        const asr = await transcriptor();
+        m.trans = 'escuchando'; renderImport();
+        const r = await asr(await audioMono16k(m.audio), { language: 'spanish', task: 'transcribe', chunk_length_s: 30, stride_length_s: 5 });
+        if (!IMP || !IMP.msgs.includes(m)) break;
+        m.original = String((r && r.text) || '').trim();
+        filtrarMensaje(m);
+        m.usar = !!m.texto;
+        m.trans = 'listo';
+      } catch (e) {
+        console.warn('transcripción', e);
+        m.trans = 'error'; m.usar = true;
+      }
+      marcarRepetidos();
+      renderImport();
+    }
+  } finally { TRANS.corriendo = false; }
 }
 
 /* Pegar imágenes: dentro del editor van a la pieza; en la importación, al mensaje */
@@ -1578,7 +1917,25 @@ const ACTS = {
   },
   'import-open': () => { closeSheet(); setTimeout(openImport, 60); },
   'imp-leer': () => leerConversacion(),
-  'imp-volver': () => { if (IMP && IMP.paso === 2) { IMP.paso = 1; renderImport(); } else closeSheet(); },
+  'imp-volver': () => { if (IMP && IMP.paso === 2 && !IMP.compartido) { IMP.paso = 1; renderImport(); } else closeSheet(); },
+  'imp-autor': (el) => {
+    const m = IMP && IMP.msgs[+el.dataset.i]; if (!m) return;
+    syncImport();
+    m.persona = el.dataset.v;
+    localStorage.setItem('crono_ultimo_autor', m.persona);
+    IMP.msgs.forEach((x) => { if (x.manual && x !== m && !x.autorElegido) x.persona = m.persona; }); // el resto sigue al primero que se elige
+    m.autorElegido = true;
+    m.pendiente = m.pide && m.persona !== S.me.id && !m.yaPedido;
+    renderImport();
+  },
+  'imp-descartar': async () => {
+    if (!confirm('¿Descartar esto? No se guarda nada.')) return;
+    if (IMP && IMP.desdeCache) await borrarCompartidos();
+    IMP = null; closeSheet(); renderBanner();
+  },
+  'imp-pegar': () => pegarLoCopiado(),
+  'imp-abrir': () => { if (!puedeImportar()) { toast('Primero entra con tu clave'); return; } openImport(); },
+  'comp-revisar': () => revisarCompartidos(true),
   'imp-quitar-foto': (el, e) => { if (e) e.stopPropagation(); const m = IMP.msgs[+el.dataset.i]; if (m && m.foto) { URL.revokeObjectURL(m.foto.blobUrl); m.foto = null; renderImport(); } },
   'imp-todas-fotos': () => toast('Copia una foto (en el Drive, en WhatsApp o donde esté) y pégala con Ctrl+V o pegar: se va poniendo sola en el siguiente mensaje con foto.', 6000),
   'imp-ok': () => hacerImport(),
@@ -1607,7 +1964,11 @@ const ACTS = {
     } catch (e) { toast('No sirvió: ' + (e.message || e), 5000); el.disabled = false; }
   },
   'gh-forget': () => { store.clearToken(); toast('Clave borrada de este teléfono'); $('#gh-box').innerHTML = ghBoxHtml(); renderPushBox(); renderAll(); },
-  'switch-user': async () => { await disablePush().catch(() => {}); localStorage.removeItem('crono_me'); location.reload(); },
+  'switch-user': async () => {
+    await disablePush().catch(() => {});
+    if (S.me && claveDe(S.me.id)) localStorage.removeItem('crono_perfil_' + S.me.id); // al salir, la próxima vez vuelve a pedirla
+    localStorage.removeItem('crono_me'); location.reload();
+  },
   'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); },
   'push-off': async () => { await disablePush(); toast('Notificaciones desactivadas en este celular'); renderPushBox(); },
   'push-test': async () => {
@@ -1616,7 +1977,12 @@ const ACTS = {
   },
   'install-app': async () => { if (!deferredInstall) return; deferredInstall.prompt(); await deferredInstall.userChoice.catch(() => {}); deferredInstall = null; renderBanner(); },
   'hide-install': () => { localStorage.setItem('crono_hide_install', '1'); renderBanner(); },
-  'pick-me': (el) => { localStorage.setItem('crono_me', el.dataset.id); S.me = person(el.dataset.id); startApp(); },
+  'pick-me': (el) => {
+    const id = el.dataset.id;
+    if (!perfilAbierto(id)) { pedirClavePerfil(id); return; }
+    localStorage.setItem('crono_me', id); S.me = person(id); startApp();
+  },
+  'who-volver': () => showWho(),
   /* editor */
   'ed-status': (el) => { syncDraft(); ED.d.status = el.dataset.v; renderEditor(); },
   'ed-plat': (el) => { syncDraft(); const a = ED.d.platforms, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
@@ -1646,6 +2012,15 @@ const ACTS = {
   'ed-rmcheck': (el) => { syncDraft(); ED.d.checklist = ED.d.checklist.filter((c) => c.id !== el.dataset.id); renderEditor(); },
   'ed-mention': (el) => { const t = $('#e-comment'); t.value = (t.value + ' @' + el.dataset.v + ' ').trimStart(); t.focus(); },
   'ed-comment': () => addComment(),
+  'ed-avisos': async () => {
+    const p = ED && ED.old; if (!p || !requireWrite()) return;
+    syncDraft();
+    try {
+      const on = await cambiarAvisosPieza(p);
+      toast(on ? 'Te vamos a avisar de los cambios en esta pieza 🔔' : 'Avisos de esta pieza silenciados', 3200);
+      renderEditor(); renderHeader();
+    } catch (e) { /* ya avisado */ }
+  },
   'ed-save': () => saveEditor(),
   'ed-delete': async () => {
     const p = ED && ED.old; if (!p) return;
@@ -1665,6 +2040,10 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener('input', (e) => {
   if (e.target.id === 'q') { S.f.q = e.target.value; renderMain(); }
+  if (e.target.dataset && e.target.dataset.impTxt != null && IMP) {
+    const m = IMP.msgs[+e.target.dataset.impTxt];
+    if (m) { m.texto = e.target.value; m.original = m.original || e.target.value; m.pide = W().pideCambio(m.texto); m.charla = !m.texto.trim(); m.usar = !!m.texto.trim() || !!m.foto; }
+  }
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
 });
 document.addEventListener('change', (e) => {
@@ -1672,10 +2051,16 @@ document.addEventListener('change', (e) => {
   if (t.dataset && t.dataset.impFoto != null && t.files && t.files[0]) { ponerFoto(+t.dataset.impFoto, t.files[0]); return; }
   if (t.dataset && t.dataset.act === 'imp-usar') { IMP.msgs[+t.dataset.i].usar = t.checked; t.closest('.improw').classList.toggle('on', t.checked); return; }
   if (t.dataset && t.dataset.act === 'imp-pend') { IMP.msgs[+t.dataset.i].pendiente = t.checked; return; }
-  if (t.id === 'imp-destino') { syncImport(); renderImport(); return; }
+  if (t.dataset && t.dataset.impDestino != null) {
+    syncImport();
+    const tr = IMP.tramos[+t.dataset.impDestino];
+    if (tr) { tr.destino = t.value; tr.seguro = false; }
+    marcarRepetidos(); renderImport(); return;
+  }
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
+  else if (t.id === 'imp-archivos') { const fs = [...t.files]; t.value = ''; elegirArchivosImport(fs); }
 });
 /* Arrastrar y soltar en el tablero (escritorio) */
 document.addEventListener('dragstart', (e) => { const c = e.target.closest && e.target.closest('.card[draggable]'); if (c) e.dataTransfer.setData('text/plain', c.dataset.id); });
@@ -1708,6 +2093,36 @@ document.addEventListener('touchend', (e) => {
 }, { passive: true });
 
 /* ---------- arranque ---------- */
+// Perfiles con contraseña (Javi): se pide al elegirlo y queda recordada en este teléfono
+const huella = async (id, clave) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`neorigen-perfil:${id}:${clave}`)))].map((b) => b.toString(16).padStart(2, '0')).join('');
+window.Crono = { huella };
+const claveDe = (id) => (CFG.PERFIL_CLAVE || {})[id] || '';
+const perfilAbierto = (id) => { const h = claveDe(id); if (!h) return true; try { return localStorage.getItem('crono_perfil_' + id) === h; } catch (e) { return false; } };
+function pedirClavePerfil(id) {
+  const p = person(id);
+  const w = $('#who'); w.hidden = false; $('#app').hidden = true;
+  w.innerHTML = `<div class="who-in"><div class="logo">${marca()}</div><h1>${esc(p.name)}</h1><p class="q">Escribe tu contraseña</p>
+    <form class="who-pass" data-perfil="${esc(id)}">
+      <input class="field" id="perfil-pass" type="password" autocomplete="current-password" placeholder="Contraseña" autofocus>
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+    <p class="hint" id="perfil-err" style="margin-top:12px"></p>
+    <button class="btn ghost sm" data-act="who-volver" style="margin-top:8px">Volver</button></div>`;
+  setTimeout(() => { const i = $('#perfil-pass'); if (i) i.focus(); }, 60);
+}
+document.addEventListener('submit', async (e) => {
+  const f = e.target.closest && e.target.closest('form.who-pass');
+  if (!f) return;
+  e.preventDefault();
+  const id = f.dataset.perfil, i = $('#perfil-pass');
+  if (await huella(id, (i.value || '').trim()) === claveDe(id)) {
+    try { localStorage.setItem('crono_perfil_' + id, claveDe(id)); } catch (er) { /* sin espacio */ }
+    localStorage.setItem('crono_me', id); S.me = person(id); startApp();
+  } else {
+    $('#perfil-err').textContent = 'Esa no es la contraseña.';
+    i.value = ''; i.focus();
+  }
+});
 function showWho() {
   $('#app').hidden = true;
   const w = $('#who'); w.hidden = false;
@@ -1744,7 +2159,13 @@ async function startApp() {
   openFromHash();
   syncPushSub();
   pruneOld();
-  if (store.mode === 'github' && !store.canWrite && store.hayAcceso && store.hayAcceso()) setTimeout(pedirContrasena, 400);
+  const qs = new URLSearchParams(location.search);
+  const llegoTexto = qs.get('texto');
+  const llegoCompartido = qs.get('compartido') === '1' || !!llegoTexto;
+  if (llegoTexto) await guardarCompartido({ at: nowISO(), title: '', text: llegoTexto, url: '', files: [] });
+  if (llegoCompartido) history.replaceState(null, '', location.pathname + location.hash);
+  revisarCompartidos(llegoCompartido);
+  if (store.mode === 'github' && !store.canWrite && store.hayAcceso && store.hayAcceso() && !llegoCompartido) setTimeout(pedirContrasena, 400);
 }
 function openFromHash() {
   const m = location.hash.match(/post=([\w-]+)/);
@@ -1825,6 +2246,12 @@ function watchSaving() {
   document.addEventListener('visibilitychange', () => { if (document.hidden && store.flushNow) store.flushNow(); });
 }
 
+function quitarCarga() {
+  const c = document.getElementById('carga');
+  if (!c) return;
+  c.classList.add('fuera');
+  setTimeout(() => c.remove(), 400);
+}
 async function boot() {
   prepararActualizaciones();
   store = window.Store.create(CFG);
@@ -1841,7 +2268,8 @@ async function boot() {
   try { store.subscribe(debounce(reload, 500)); } catch (e) { /* sin actualización automática */ }
   document.addEventListener('visibilitychange', () => { if (!document.hidden && S.me) reload(); });
   const saved = localStorage.getItem('crono_me');
-  if (saved && byId(P, saved)) { S.me = byId(P, saved); startApp(); } else showWho();
+  if (saved && byId(P, saved) && perfilAbierto(saved)) { S.me = byId(P, saved); startApp(); } else showWho();
+  quitarCarga();
 }
 boot();
 })();

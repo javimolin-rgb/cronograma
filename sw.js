@@ -1,6 +1,6 @@
 /* Service worker: notificaciones y funcionamiento tipo app.
    Al cambiar VERSION, todas las apps instaladas se actualizan solas la próxima vez que se abren. */
-const VERSION = '2026.10.22-6';
+const VERSION = '2026.10.23-1';
 const CACHE = 'crono-' + VERSION;
 const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'store.js', 'zip.js', 'whatsapp.js', 'app.js', 'icon.svg', 'icon-192.png'];
 
@@ -20,10 +20,37 @@ self.addEventListener('message', (e) => {
   if (d.type === 'skip-waiting') self.skipWaiting();
 });
 
+/* Lo que llega con "Compartir → Cronograma" (texto, fotos, audios de WhatsApp).
+   Se guarda aquí mismo, en el teléfono, y la app lo abre para revisarlo antes de importarlo. */
+const CACHE_COMP = 'crono-compartido';
+const urlComp = (k) => new URL('__compartido/' + k, self.registration.scope).href;
+async function recibirCompartido(req) {
+  try {
+    const fd = await req.formData();
+    const c = await caches.open(CACHE_COMP);
+    const prev = await c.match(urlComp('lista'));
+    const lista = prev ? await prev.json() : [];
+    const t = Date.now();
+    const item = { at: new Date().toISOString(), title: String(fd.get('title') || ''), text: String(fd.get('text') || ''), url: String(fd.get('url') || ''), files: [] };
+    let n = 0;
+    for (const f of fd.getAll('archivos')) {
+      if (!f || typeof f === 'string') continue;
+      const key = `a-${t}-${n++}`;
+      await c.put(urlComp(key), new Response(f, { headers: { 'Content-Type': f.type || 'application/octet-stream' } }));
+      item.files.push({ key, name: f.name || key, type: f.type || '', size: f.size || 0 });
+    }
+    if (item.title || item.text || item.url || item.files.length) lista.push(item);
+    await c.put(urlComp('lista'), new Response(JSON.stringify(lista), { headers: { 'Content-Type': 'application/json' } }));
+  } catch (err) { /* si falla, igual se abre la app */ }
+  return Response.redirect(new URL('./?compartido=1', self.registration.scope).href, 303);
+}
+
 // Red primero (siempre la versión más nueva); si no hay internet, usa lo guardado.
 self.addEventListener('fetch', (e) => {
   const r = e.request;
-  if (r.method !== 'GET' || new URL(r.url).origin !== location.origin) return;
+  const u = new URL(r.url);
+  if (r.method === 'POST' && u.origin === location.origin && u.pathname.endsWith('/compartir')) { e.respondWith(recibirCompartido(r)); return; }
+  if (r.method !== 'GET' || u.origin !== location.origin) return;
   e.respondWith(
     fetch(r).then((res) => {
       const copy = res.clone();

@@ -155,6 +155,81 @@
     return sinMapear;
   }
 
+  /* ---------- filtro: deja solo lo técnico, dicho de forma objetiva ---------- */
+  const EMOJI = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{1F3FB}-\u{1F3FF}‍️⃣]/gu;
+  const ELOGIO = /\b(te pasaste|qu[ée] sec[oa]|incre[íi]ble|maravill|precios|lind[oa]s?\b|hermos|bell[oa]s?\b|genial|buen[íi]sim|excelente|espectacular|at[óo]mic|bac[áa]n|wow|guau|me encant|me fascin|me gust[aó](?: (?:mucho|harto|caleta))?|(?:est[áa]|qued[óo]|va) (?:quedando )?(?:muy |s[úu]per )?(?:bien|lind|incre[íi]ble|precios|bacan|hermos|ideal)|felicit|bravo|crack|lo m[áa]ximo|te embalaste|s[úu]per\b|top\b|amo\b|qu[ée] bueno|buen trabajo|impecable|lujo|filete|la raja|demasiado bueno)/i;
+  const GRACIAS = /\b(gracias|grax|gx|thanks|thx|te pasaste)\b/i;
+  const RISA = /\b(?:j[aeiou]){2,}j?\b|\bjsj\w*|\blol\b|\bxd\b/gi;
+  const RELLENO = /\b(porfa(?:vor)?|porfis|por favor|plis|pls|cachai|po|oye|ya)\b[,]?/gi;
+  const VOCATIVO = /^(?:(?:hola|holi|buen[oa]s(?: d[íi]as| tardes| noches)?|hey|ok(?:ey)?|ya|ok?)\b[\s,!.:-]*)*(?:(?:javi|javiera|maca|macarena|flavio|chiquill[oa]s|equipo)\b[\s,!.:-]*)?/i;
+  const PROMESA = /\b(te comento|te cuento|te aviso|lo reviso|lo veo|lo vemos|lo conversamos|cualquier cosa|estuve revisando|estoy revisando|ahora lo veo|despu[ée]s lo veo)\b/i;
+  const SOLO_OK = /^(ok|okey|oka|vale|dale|listo|si|sí|ya|bueno|perfecto|genial|de una)$/i;
+  const ABREV = [[/\bq\b/gi, 'que'], [/\bxq\b/gi, 'porque'], [/\bpq\b/gi, 'porque'], [/\btb\b/gi, 'también'], [/\btmb\b/gi, 'también'], [/\bx\s+favor\b/gi, 'por favor'], [/\bpa\b/gi, 'para'], [/\bk\b/gi, 'que']];
+
+  // ¿Esta frase trae información de trabajo? (un pedido, una pregunta, un dato)
+  const tieneContenido = (f) => PIDE.test(f) || INDICA.test(f) || /\?$/.test(f) ||
+    /\d|\b(foto|l[áa]mina|texto|copy|t[íi]tulo|logo|color|letra|fondo|portada|p[áa]gina|bot[óo]n|formulario|archivo|precio|fecha|imprenta|render|video|reel|carrusel|link|enlace)\b/i.test(f);
+
+  function objetivar(texto) {
+    let t = String(texto || '').replace(/[‎‏‪-‮﻿]/g, '').replace(EMOJI, ' ');
+    t = t.replace(/([a-záéíóúñ])\1{2,}/gi, '$1');            // "Guaaaauuuu" -> "Guau"
+    ABREV.forEach(([re, s]) => { t = t.replace(re, s); });
+    let aprueba = false;
+    const frases = [];
+    // Separa por frases (respetando las preguntas) y, dentro de cada una, por comas
+    (t.match(/[^.!?¡¿\n]+[.!?\n]*/g) || []).forEach((bruta) => {
+      const pregunta = /\?/.test(bruta);
+      const partes = bruta.replace(/[.!?\n]+$/g, '').split(/,\s*/).map((c) => {
+        let x = c.replace(RISA, ' ').replace(RELLENO, ' ').replace(/\s{2,}/g, ' ').trim();
+        x = x.replace(VOCATIVO, '').trim();
+        return x;
+      }).filter((x) => {
+        if (!x || x.length < 2) return false;
+        if (SOLO_OK.test(x)) return false;
+        if (PROMESA.test(x) && !/\d|\bfoto|l[áa]mina/i.test(x)) return false;
+        if (!tieneContenido(x) && APRUEBA.test(x)) { aprueba = true; return false; }
+        if (/\baprobad/i.test(x) && !PIDE.test(x)) { aprueba = true; return false; }
+        if (!tieneContenido(x) && (ELOGIO.test(x) || GRACIAS.test(x))) return false;
+        return true;
+      }).map((x) => x.replace(new RegExp('(?:\\s+y)?\\s*' + ELOGIO.source + '[\\wáéíóú]*', 'gi'), '').replace(/^y\s+/i, '')
+        .replace(/\b(funciona|funcionando|anda|andando)\s+perfect\w*/gi, '$1 correctamente').replace(/^esta\b/i, 'Está')
+        .replace(GRACIAS, '').replace(/\s{2,}/g, ' ').trim()).filter(Boolean);
+      if (!partes.length) return;
+      let f = partes.join(', ');
+      f = f.charAt(0).toUpperCase() + f.slice(1);
+      frases.push(pregunta ? '¿' + f.replace(/^¿/, '') + '?' : f + '.');
+    });
+    let out = frases.join(' ').replace(/\s+([.,?])/g, '$1').replace(/\.{2,}/g, '.').trim();
+    if (!out && aprueba) out = 'Aprobado.';
+    return { texto: out, charla: !out, aprueba };
+  }
+
+  // Palabras importantes de un texto, para comparar si dos mensajes hablan de lo mismo
+  const VACIAS = new Set('para como esta este esto pero porque cuando donde sobre entre desde hasta tiene tienen hacer puede quizas tambien solo todo todos todas cada otra otro otras otros mismo misma algo bien mejor mucho poco quiero creo seria ideal'.split(' '));
+  const sinTilde = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  function palabras(t) {
+    return [...new Set(sinTilde(String(t || '').toLowerCase()).split(/[^a-z0-9ñ]+/).filter((w) => w.length > 3 && !VACIAS.has(w)).map((w) => w.replace(/(es|s)$/, '')))];
+  }
+  function parecido(a, b) {
+    const A = palabras(a), B = new Set(palabras(b));
+    if (!A.length || !B.size) return 0;
+    const comunes = A.filter((w) => B.has(w)).length;
+    return comunes / Math.min(A.length, B.size);
+  }
+
+  // Corta la conversación en tramos: cuando pasan varias horas sin mensajes, suele ser otro tema
+  function tramos(msgs, horas) {
+    const lim = (horas || 5) * 3600e3;
+    let n = 0, prev = null;
+    msgs.forEach((m) => {
+      const t = new Date(m.at).getTime();
+      if (prev !== null && t - prev > lim) n++;
+      m.tramo = n;
+      prev = t;
+    });
+    return n + 1;
+  }
+
   const resumen = (msgs) => ({
     total: msgs.length,
     utiles: msgs.filter((m) => !m.sistema).length,
@@ -165,5 +240,8 @@
     hasta: msgs.length ? msgs[msgs.length - 1].dia : ''
   });
 
-  window.WhatsApp = { parse, mapearAutores, resumen };
+  // ¿Este mensaje pide un cambio? (sirve también para textos sueltos y audios transcritos)
+  const pideCambio = (t) => !!(t && (PIDE.test(t) || CORTESIA.test(t) || INDICA.test(t))) && t.length < 600;
+
+  window.WhatsApp = { parse, mapearAutores, resumen, objetivar, palabras, parecido, tramos, pideCambio, aprueba: (t) => APRUEBA.test(t || '') };
 })();

@@ -17,7 +17,7 @@ window.CRONO_CONFIG = {
     FILES: "archivos"
   },
 
-  // 2) Notificaciones push al celular (clave PÚBLICA). Ver LEEME.md
+  // 2) Notificaciones push al celular (clave PÚBLICA). Ver README.md
   PUSH: {
     VAPID_PUBLIC_KEY: "BFv9No2myL8rqHE1ch3ZuvVsZHPnlSjPG3UW5IBWV-AKPNZpJe06l5IAuYaGFnXUyoyiXe2nwHnQEI9_aHmbqlk"
   },
@@ -31,6 +31,12 @@ window.CRONO_CONFIG = {
 
   // Quién administra (deja preparada la entrada del equipo y ve las opciones avanzadas)
   ADMIN_PEOPLE: ["javi"],
+
+  // Perfiles que piden contraseña al elegirlos (aquí va su huella, no la contraseña).
+  // Para cambiarla: en la consola del navegador, await Crono.huella('javi', 'nueva-clave')
+  PERFIL_CLAVE: {
+    javi: "85cf6d2a77fcb75fbab867b2a30dd0b991d8e56e024f6a080286805a50ea6cd8"
+  },
 
   // Quién puede importar conversaciones de WhatsApp (el resto no ve el botón)
   IMPORT_PEOPLE: ["javi"],

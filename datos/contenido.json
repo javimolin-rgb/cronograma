@@ -2083,7 +2083,11 @@
      "push": 0
     }
    },
-   "createdAt": "2026-10-22T20:38:02.121Z"
+   "createdAt": "2026-10-22T20:38:02.121Z",
+   "silenciadas": [
+    "e-fotos-itahue"
+   ],
+   "seguidas": []
   }
  ],
  "push_subs": [

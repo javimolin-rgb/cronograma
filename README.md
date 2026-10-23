@@ -84,6 +84,15 @@ En iPhone, el **ícono** de la pantalla de inicio es lo único que no se renueva
   3. Para un audio: **Reenviar → Compartir → Guardar en Archivos**, y en la app **Fotos o audios**.
   - Opcional: un **Atajo** de iPhone que reciba texto y abra `https://javimolin-rgb.github.io/cronograma/?texto=` seguido del texto también funciona: aparece en *Compartir* y lo manda directo a revisión.
 
+**Importar el zip de una conversación.** En el **+** de abajo → **Importar zip de conversación**, y eliges el `.zip` que exporta WhatsApp (con fotos y audios; sirve también el fragmento recortado que sale de otra app, mientras sea un zip de exportación de WhatsApp). La app:
+
+- Lee el chat y deja cada foto junto a su mensaje (y la sube a la pieza); los audios los transcribe.
+- Separa la conversación por temas y reconoce de qué pieza habla cada uno; si es algo nuevo (*“el reel nuevo de…”*), propone **crear la pieza**, con el formato que nombraron.
+- **Actualiza el estado** según lo último que se dijo: si pidieron cambios → *Cambios*; si lo aprobaron → *Aprobado*; si dijeron que quedó publicado → *Publicado*; si mandaste una versión → *En revisión*. Una conversación más vieja que el último cambio de estado no lo hace retroceder, y una pieza publicada no vuelve atrás sola. Antes de importar se ve el estado propuesto y por qué, y se puede cambiar.
+- Los videos de más de 20 MB quedan desmarcados (mejor al Drive).
+
+Solo lo ve Javi: para Flavio y Maca, el **+** sigue creando una pieza nueva.
+
 **También se puede pegar** el chat exportado (*Exportar chat → Sin archivos*) en el mismo lugar (o en **Ajustes → Importar mensajes**).
 
 Al importar, siempre:

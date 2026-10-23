@@ -1303,9 +1303,15 @@ function candidatas(msgs) {
   });
   const peso = (w) => Math.log(1 + N / (df[w] || 1));
   const ahora = Date.now();
+  // Si nombran un formato (reel, carrusel…), las piezas de otro formato bajan mucho; si dicen "nuevo/otro", todo baja
+  const FMT = [[/\breels?\b/i, ['reel', 'video']], [/\bcarrusel/i, ['carrusel']], [/\b(stor(y|ies)|historias?)\b/i, ['story']], [/\bvideos? largo/i, ['video']],
+    [/\b(post|publicaci[óo]n)\b/i, ['post', 'carrusel']], [/\b(p[áa]gina|sitio|web|formulario|cotizador)\b/i, ['web']], [/\b(carpeta|impres|imprenta|folleto)/i, ['grafica', 'pdf']], [/\bbanner/i, ['banner']]];
+  const formatos = new Set(FMT.filter(([re]) => re.test(texto)).flatMap(([, f]) => f));
+  const pideNueva = /\b(nuev[oa]s?|otr[oa]s?)\s+(reel|carrusel|post|story|historia|video|pieza|publicaci[óo]n|l[áa]mina|banner)/i.test(texto) ||
+    /\b(reel|carrusel|post|story|video|pieza|publicaci[óo]n)\s+(?:\S+\s+){0,4}nuev[oa]\b/i.test(texto);
   const orden = W().palabras(texto);
   const pares = new Set(orden.slice(1).map((w, i) => orden[i] + ' ' + w));
-  return bolsa.map(({ p, tit, resto, extra }) => {
+  const lista = bolsa.map(({ p, tit, resto, extra }) => {
     // Título: cuenta qué parte del título se nombró (y si se nombró seguido, mejor)
     const total = tit.reduce((a, w) => a + peso(w), 0) || 1;
     const dicho = tit.filter((w) => dichas.has(w)).reduce((a, w) => a + peso(w), 0);
@@ -1313,10 +1319,14 @@ function candidatas(msgs) {
     tit.slice(1).forEach((w, i) => { if (pares.has(tit[i] + ' ' + w)) pts += 2 * (peso(w) + peso(tit[i])); });
     resto.forEach((w) => { if (dichas.has(w)) pts += 0.6 * peso(w); });
     extra.forEach((w) => { if (dichas.has(w)) pts += 0.3 * peso(w); });
+    if (pts && formatos.size && !formatos.has(p.format)) pts *= 0.35;
+    if (pts && pideNueva) pts *= 0.4;
     if (pts && ['diseno', 'revision', 'cambios', 'aprobado', 'idea'].includes(p.status)) pts *= 1.25; // lo que está en curso
     if (pts && ahora - new Date(p.updatedAt || 0).getTime() < 7 * 864e5) pts *= 1.1;                // y lo reciente
     return { post: p, pts };
   }).filter((x) => x.pts > 0).sort((a, b) => b.pts - a.pts);
+  lista.nueva = pideNueva;
+  return lista;
 }
 
 function openImport() {
@@ -1352,13 +1362,15 @@ function prepararImport(msgs) {
     const del = msgs.filter((m) => m.tramo === k && !m.sistema);
     const c = candidatas(del);
     const mejor = c[0] && c[0].pts >= 4 && (!c[1] || c[0].pts >= c[1].pts * 1.25) ? c[0].post : null;
-    tramos.push({ destino: mejor ? mejor.id : 'nuevo', seguro: !!mejor, cands: c.slice(0, 3).map((x) => x.post.id), titulo: '', proyecto: '' });
+    tramos.push({ destino: mejor ? mejor.id : 'nuevo', seguro: !!mejor, cands: c.slice(0, 3).map((x) => x.post.id), nueva: !!c.nueva, titulo: '', proyecto: '' });
   }
   // Tramos seguidos que hablan de lo mismo se juntan; uno sin pista se suma al anterior
   const mapa = [];
   tramos.forEach((t, k) => {
     const prev = mapa.length ? tramos[mapa[mapa.length - 1]] : null;
-    if (prev && (t.destino === prev.destino || (!t.seguro && prev.seguro && !IMP.compartido))) mapa.push(mapa[mapa.length - 1]);
+    // un tramo sin ninguna pista (p. ej. "y la foto 3 también") sigue al anterior; uno que habla de otra cosa, no
+    const sinPista = !t.seguro && !t.nueva && !t.cands.length;
+    if (prev && ((t.destino === prev.destino && t.destino !== 'nuevo') || (sinPista && prev.seguro && !IMP.compartido))) mapa.push(mapa[mapa.length - 1]);
     else mapa.push(k);
   });
   msgs.forEach((m) => { m.tramo = mapa[m.tramo]; });
@@ -1373,7 +1385,33 @@ function prepararImport(msgs) {
     t.proyecto = '';
   });
   marcarRepetidos();
+  IMP.tramos.forEach((t, k) => { if (t) sugerirEstado(t, k); });
   IMP.paso = 2;
+}
+
+// Qué estado debería tener la pieza según lo último que se dijo (en orden: el último hecho manda)
+function sugerirEstado(t, k) {
+  const del = IMP.msgs.filter((m) => m.tramo === k && m.usar && !m.sistema);
+  let est = null, at = null, motivo = '';
+  del.forEach((m) => {
+    const quien = person(m.persona || S.me.id).name, otro = m.persona && m.persona !== S.me.id;
+    if (W().publica(m.original || m.texto)) { est = 'publicado'; at = m.at; motivo = `${quien} dijo que quedó publicado`; }
+    else if (otro && m.pide) { est = 'cambios'; at = m.at; motivo = `${quien} pidió cambios`; }
+    else if (otro && m.aprueba) { est = 'aprobado'; at = m.at; motivo = `${quien} lo aprobó`; }
+    else if (!otro && (m.foto || m.adjunto) && est !== 'aprobado' && est !== 'publicado') { est = 'revision'; at = m.at; motivo = 'Mandaste una versión para revisar'; }
+  });
+  const post = t.destino !== 'nuevo' ? S.db.posts.find((p) => p.id === t.destino) : null;
+  if (post) {
+    // Solo si lo conversado es más nuevo que el último cambio de estado (un fragmento viejo no la hace retroceder)
+    const ultimo = post.statusChangedAt || post.updatedAt || post.createdAt || '';
+    if (!est || est === post.status || (at && ultimo && at <= ultimo)) { est = ''; motivo = ''; }
+    else if (post.status === 'publicado' && est !== 'publicado') {
+      // Lo publicado no retrocede solo: suele ser una pieza nueva parecida
+      motivo = `${motivo}, pero “${post.title}” ya está publicada. Si es otra pieza, elige “Crear una pieza nueva”; si de verdad hay que corregirla, elige el estado a mano`;
+      est = '';
+    }
+  } else if (!est || est === 'cambios') { est = 'diseno'; motivo = est === 'cambios' ? 'Es un pedido nuevo: queda en diseño' : ''; }
+  t.estado = est; t.estadoAt = at || nowISO(); t.motivo = motivo;
 }
 
 // Texto objetivo, si pide un cambio y si es pura conversación
@@ -1383,7 +1421,8 @@ function filtrarMensaje(m) {
   m.texto = o.texto;
   m.charla = o.charla;
   m.aprueba = !!(m.aprueba || o.aprueba);
-  m.pide = W().pideCambio(m.original) && !o.charla && !(o.aprueba && !W().pideCambio(o.texto));
+  // lo que escribe Javi describe su propio trabajo: no cuenta como cambio pedido
+  m.pide = W().pideCambio(m.original) && !o.charla && !(o.aprueba && !W().pideCambio(o.texto)) && m.persona !== S.me.id;
   m.pendiente = m.pide && m.persona !== S.me.id;
 }
 
@@ -1502,6 +1541,12 @@ function renderImport() {
         ${t.destino === 'nuevo' ? `<div class="row2" style="margin-top:8px">
           <input class="field" data-imp-titulo="${k}" placeholder="Título de la pieza" value="${esc(t.titulo)}">
           <input class="field" data-imp-proyecto="${k}" list="camps2" placeholder="Proyecto" value="${esc(t.proyecto)}"></div>` : ''}
+        <div class="estadorow"><span>Estado</span>
+          <select class="sel" data-imp-estado="${k}">
+            ${post ? `<option value=""${!t.estado ? ' selected' : ''}>Dejar en ${esc(statusOf(post.status).name)}</option>` : ''}
+            ${STATUSES.filter((x) => !post || x.id !== post.status).map((x) => `<option value="${x.id}"${t.estado === x.id ? ' selected' : ''}>${post ? 'Pasar a ' : ''}${esc(x.name)}</option>`).join('')}
+          </select></div>
+        ${t.motivo ? `<p class="hint">${t.estado ? `→ ${esc(statusOf(t.estado).name)}: ` : ''}${esc(t.motivo)}.</p>` : ''}
         <div class="cambios">
           <b>${cambios.length ? `${cambios.length} cambio${cambios.length === 1 ? '' : 's'} pedido${cambios.length === 1 ? '' : 's'}${cambios.length !== nuevos.length ? ` · ${nuevos.length} nuevo${nuevos.length === 1 ? '' : 's'}` : ''}` : (aprob ? 'Sin cambios: lo aprobaron ✅' : 'Sin cambios pedidos')}</b>
           ${cambios.length ? `<ol>${cambios.map(([m]) => `<li${m.yaPedido ? ' class="ya"' : ''}>${esc(m.texto || '(audio por transcribir)')}${m.yaPedido ? ` <small>(${esc(m.yaPedido)})</small>` : ''}</li>`).join('')}</ol>` : ''}
@@ -1546,7 +1591,7 @@ async function hacerImport() {
       toast('Espera a que terminen de transcribirse los audios', 3500); if (btn) btn.disabled = false; return;
     }
     const elegidos = IMP.msgs.filter((m) => m.usar && !m.repetido && (m.texto || m.foto));
-    if (!elegidos.length) { toast('No hay mensajes marcados'); if (btn) btn.disabled = false; return; }
+    if (!elegidos.length && !IMP.tramos.some((t) => t && t.estado && t.destino !== 'nuevo')) { toast('No hay mensajes marcados'); if (btn) btn.disabled = false; return; }
     const grupos = new Map();
     elegidos.forEach((m) => {
       const t = IMP.tramos[m.tramo] || IMP.tramos.find(Boolean);
@@ -1554,15 +1599,21 @@ async function hacerImport() {
       if (!grupos.has(clave)) grupos.set(clave, { t, msgs: [] });
       grupos.get(clave).msgs.push(m);
     });
-    let totM = 0, totF = 0, totC = 0, ultimo = null;
+    let totM = 0, totF = 0, totC = 0, totE = 0, totN = 0, ultimo = null;
+    // también los temas donde solo cambia el estado (sin mensajes nuevos que guardar)
+    IMP.tramos.forEach((t, k) => {
+      if (!t || !t.estado || t.destino === 'nuevo') return;
+      if (![...grupos.values()].some((g) => g.t === t)) grupos.set('estado:' + k, { t, msgs: [] });
+    });
     for (const { t, msgs } of grupos.values()) {
       const r = await importarEn(t, msgs);
-      totM += r.nuevos; totF += r.fotos; totC += r.cambios; ultimo = r.post;
+      totM += r.nuevos; totF += r.fotos; totC += r.cambios; totE += r.estado ? 1 : 0; totN += r.nueva ? 1 : 0; ultimo = r.post;
     }
     if (IMP.desdeCache) await borrarCompartidos();
     const varias = grupos.size > 1;
     IMP = null; closeSheet(); renderAll(); renderBanner();
-    toast(`Listo: ${totM} comentario${totM === 1 ? '' : 's'}, ${totC} cambio${totC === 1 ? '' : 's'} a pendientes y ${totF} archivo${totF === 1 ? '' : 's'}${varias ? ` en ${grupos.size} piezas` : ` en “${ultimo.title}”`}`, 4600);
+    const extra = [totE ? `${totE} estado${totE === 1 ? '' : 's'} actualizado${totE === 1 ? '' : 's'}` : '', totN ? `${totN} pieza${totN === 1 ? '' : 's'} nueva${totN === 1 ? '' : 's'}` : ''].filter(Boolean).join(', ');
+    toast(`Listo: ${totM} comentario${totM === 1 ? '' : 's'}, ${totC} cambio${totC === 1 ? '' : 's'} a pendientes y ${totF} archivo${totF === 1 ? '' : 's'}${varias ? ` en ${grupos.size} piezas` : ` en “${ultimo.title}”`}${extra ? ' · ' + extra : ''}`, 5200);
     if (!varias && ultimo) setTimeout(() => openEditor(ultimo.id), 350);
   } catch (e) {
     console.error(e); toast('No se pudo importar: ' + (e.message || e), 5000);
@@ -1575,8 +1626,10 @@ async function importarEn(t, elegidos) {
   if (t.destino === 'nuevo') {
     post = {
       id: uid(), title: (t.titulo || '').trim() || 'Pedido del equipo', caption: '', notes: '', hashtags: '',
-      campaign: (t.proyecto || '').trim(), date: elegidos[0].dia || today(), time: '', platforms: [], format: 'post',
+      campaign: (t.proyecto || '').trim(), date: elegidos[0].dia || today(), time: '',
       status: 'diseno', assignees: [...new Set(elegidos.map((m) => m.persona).filter(Boolean))],
+      format: formatoDe(elegidos.map((m) => m.original || m.texto).join(' ')),
+      platforms: /\b(reel|carrusel|story|historia|instagram|post)\b/i.test(elegidos.map((m) => m.original || m.texto).join(' ')) ? ['instagram'] : [],
       priority: 'normal', links: [], files: [], checklist: []
     };
     if (!post.assignees.includes(S.me.id)) post.assignees.push(S.me.id);
@@ -1616,9 +1669,25 @@ async function importarEn(t, elegidos) {
   }));
 
   post.updatedAt = nowISO(); post.updatedBy = S.me.id;
-  if (!viejo) Object.assign(post, { createdAt: nowISO(), createdBy: S.me.id, statusChangedAt: nowISO(), revisions: 0, publishedAt: null });
-  else Object.assign(post, { createdAt: viejo.createdAt, createdBy: viejo.createdBy, revisions: viejo.revisions || 0, statusChangedAt: viejo.statusChangedAt, publishedAt: viejo.publishedAt || null });
+  if (!viejo) {
+    if (t.estado) post.status = t.estado;
+    Object.assign(post, { createdAt: nowISO(), createdBy: S.me.id, statusChangedAt: t.estadoAt || nowISO(), revisions: post.status === 'cambios' ? 1 : 0, publishedAt: post.status === 'publicado' ? (t.estadoAt || nowISO()) : null });
+  } else {
+    Object.assign(post, { createdAt: viejo.createdAt, createdBy: viejo.createdBy, revisions: viejo.revisions || 0, statusChangedAt: viejo.statusChangedAt, publishedAt: viejo.publishedAt || null });
+    if (t.estado && t.estado !== viejo.status) {
+      post.status = t.estado;
+      post.statusChangedAt = t.estadoAt && t.estadoAt > (viejo.statusChangedAt || '') ? t.estadoAt : nowISO();
+      if (t.estado === 'cambios') post.revisions += 1;
+      post.publishedAt = t.estado === 'publicado' ? post.statusChangedAt : null;
+    }
+  }
   await save('posts', post);
+  const estadoCambio = viejo ? (viejo.status !== post.status) : false;
+  if (!viejo) await log(post, 'created', 'creó la pieza');
+  if (estadoCambio) {
+    await log(post, 'status', `movió de ${statusOf(viejo.status).name} a ${statusOf(post.status).name}`, { from: viejo.status, to: post.status });
+    await notify('status', post, post.assignees, `movió “${post.title}” a ${statusOf(post.status).name}`);
+  }
 
   // 4) los mensajes como comentarios, con su fecha y su autor
   const previos = idsImportados(post.id);
@@ -1637,7 +1706,55 @@ async function importarEn(t, elegidos) {
   }
   if (nuevos || cambios) await log(post, 'edit', `sumó ${nuevos} observaci${nuevos === 1 ? 'ón' : 'ones'}${cambios ? ` y ${cambios} pendiente${cambios === 1 ? '' : 's'}` : ''}`);
   if (cambios) await notify('update', post, post.assignees, `sumó ${cambios} cambio${cambios === 1 ? '' : 's'} pendiente${cambios === 1 ? '' : 's'} en “${post.title}”`);
-  return { post, nuevos, fotos: conFoto.length, cambios };
+  return { post, nuevos, fotos: conFoto.length, cambios, estado: estadoCambio, nueva: !viejo };
+}
+
+const formatoDe = (t) => [[/\breels?\b/i, 'reel'], [/\bcarrusel/i, 'carrusel'], [/\b(stor(y|ies)|historias?)\b/i, 'story'], [/\b(p[áa]gina|sitio|web|formulario)\b/i, 'web'],
+  [/\b(carpeta|impres|imprenta|folleto)/i, 'grafica'], [/\bbanner/i, 'banner'], [/\bvideo/i, 'video'], [/\bpdf\b/i, 'pdf']].find(([re]) => re.test(t || ''))?.[1] || 'post';
+
+/* ---------- el "+" de Javi: pieza nueva o importar ---------- */
+function openAgregar() {
+  openSheet(`<div class="ph"><h2>Agregar</h2><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button></div>
+    <div class="pb agregar">
+      <button class="opt2" data-act="new-pieza">${ic('plus', 22)}<span><b>Nueva pieza</b><small>Crear una pieza a mano</small></span></button>
+      <label class="opt2">${ic('folder', 22)}<span><b>Importar zip de conversación</b><small>El .zip exportado de WhatsApp (con fotos y audios). Actualiza el estado de las piezas o crea las que falten.</small></span>
+        <input type="file" id="zip-in" accept=".zip,application/zip,application/x-zip-compressed" hidden></label>
+      <button class="opt2" data-act="imp-abrir">${ic('msg', 22)}<span><b>Pegar mensajes</b><small>Texto copiado de WhatsApp o un chat exportado sin archivos</small></span></button>
+    </div>`);
+}
+
+// Abre el .zip, busca el chat y sus archivos, y deja todo listo para revisar
+async function importarZip(file) {
+  if (!file) return;
+  if (!puedeImportar()) { toast('Primero entra con tu clave'); return; }
+  toast('Abriendo la conversación…', 20000);
+  try {
+    const entradas = await window.Zip.read(file);
+    const txts = entradas.filter((e) => /\.txt$/i.test(e.name));
+    const chat = txts.find((e) => /chat|whatsapp/i.test(e.name)) || txts.sort((a, b) => b.size - a.size)[0];
+    if (!chat) { toast('Ese zip no trae el texto de la conversación (.txt)', 5000); return; }
+    const msgs = W().parse(await chat.text());
+    if (!msgs.length) { toast('No reconocí mensajes en esa conversación', 5000); return; }
+    const porNombre = new Map(entradas.map((e) => [e.name.toLowerCase(), e]));
+    const TIPO = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', heic: 'image/heic', mp4: 'video/mp4', mov: 'video/quicktime', '3gp': 'video/3gpp', opus: 'audio/ogg', ogg: 'audio/ogg', m4a: 'audio/mp4', mp3: 'audio/mpeg', aac: 'audio/aac', wav: 'audio/wav', pdf: 'application/pdf' };
+    let fotos = 0, audios = 0;
+    for (const m of msgs) {
+      const e = m.adjunto && m.adjunto.name && porNombre.get(m.adjunto.name.toLowerCase());
+      if (!e) continue;
+      const ext = (e.name.split('.').pop() || '').toLowerCase();
+      const f = new File([await e.blob(TIPO[ext])], e.name, { type: TIPO[ext] || '' });
+      if (m.adjunto.kind === 'audio') { m.audio = f; m.trans = 'espera'; audios++; }
+      else if (m.adjunto.kind === 'sticker' || m.adjunto.kind === 'contacto') continue;
+      else { m.foto = { file: f, blobUrl: URL.createObjectURL(f) }; fotos++; if (m.adjunto.kind === 'video' && f.size > 20e6) m.pesado = true; }
+    }
+    IMP = { paso: 2, texto: '', msgs: [], tramos: [], sinMapear: {}, compartido: false, zip: file.name };
+    prepararImport(msgs);
+    msgs.forEach((m) => { if (m.pesado) m.usar = false; }); // los videos muy pesados, mejor al Drive
+    openSheet(sheetOpen ? null : '', true);
+    renderImport();
+    toast(`${msgs.length} mensajes · ${fotos} archivo${fotos === 1 ? '' : 's'} · ${audios} audio${audios === 1 ? '' : 's'}`, 3000);
+    transcribirPendientes();
+  } catch (e) { console.error(e); toast('No se pudo abrir el zip: ' + (e.message || e), 5000); }
 }
 
 /* ---------- lo que llega reenviado desde WhatsApp (Compartir → Cronograma) ---------- */
@@ -1799,6 +1916,7 @@ async function transcribirPendientes() {
         m.trans = 'error'; m.usar = true;
       }
       marcarRepetidos();
+      IMP && IMP.tramos.forEach((t, k) => { if (t && !t.aMano) sugerirEstado(t, k); }); // un audio puede pedir cambios
       renderImport();
     }
   } finally { TRANS.corriendo = false; }
@@ -1852,7 +1970,11 @@ const ACTS = {
   'next-m': () => { S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() + 1, 1); renderMain(); },
   today: () => { const d = new Date(); d.setDate(1); S.cursor = d; S.sel = today(); renderMain(); },
   'pick-day': (el) => { S.sel = el.dataset.d; renderMain(); },
-  new: (el) => { if (requireWrite()) openEditor(null, { date: el.dataset.d }); },
+  new: (el) => {
+    if (!requireWrite()) return;
+    if (el.classList.contains('fab') && puedeImportar()) openAgregar(); else openEditor(null, { date: el.dataset.d });
+  },
+  'new-pieza': () => openEditor(null, {}),
   'open-post': (el) => openEditor(el.dataset.id),
   'status-menu': (el) => openStatusMenu(el.dataset.id),
   'set-status': async (el) => { closeSheet(); await changeStatus(el.dataset.id, el.dataset.v); },
@@ -1925,7 +2047,9 @@ const ACTS = {
     localStorage.setItem('crono_ultimo_autor', m.persona);
     IMP.msgs.forEach((x) => { if (x.manual && x !== m && !x.autorElegido) x.persona = m.persona; }); // el resto sigue al primero que se elige
     m.autorElegido = true;
-    m.pendiente = m.pide && m.persona !== S.me.id && !m.yaPedido;
+    m.pide = W().pideCambio(m.texto) && m.persona !== S.me.id;
+    m.pendiente = m.pide && !m.yaPedido;
+    IMP.tramos.forEach((t, k) => { if (t && !t.aMano) sugerirEstado(t, k); });
     renderImport();
   },
   'imp-descartar': async () => {
@@ -2042,24 +2166,35 @@ document.addEventListener('input', (e) => {
   if (e.target.id === 'q') { S.f.q = e.target.value; renderMain(); }
   if (e.target.dataset && e.target.dataset.impTxt != null && IMP) {
     const m = IMP.msgs[+e.target.dataset.impTxt];
-    if (m) { m.texto = e.target.value; m.original = m.original || e.target.value; m.pide = W().pideCambio(m.texto); m.charla = !m.texto.trim(); m.usar = !!m.texto.trim() || !!m.foto; }
+    if (m) { m.texto = e.target.value; m.original = m.original || e.target.value; m.pide = W().pideCambio(m.texto) && m.persona !== S.me.id; m.charla = !m.texto.trim(); m.usar = !!m.texto.trim() || !!m.foto; }
   }
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
 });
 document.addEventListener('change', (e) => {
   const t = e.target;
   if (t.dataset && t.dataset.impFoto != null && t.files && t.files[0]) { ponerFoto(+t.dataset.impFoto, t.files[0]); return; }
-  if (t.dataset && t.dataset.act === 'imp-usar') { IMP.msgs[+t.dataset.i].usar = t.checked; t.closest('.improw').classList.toggle('on', t.checked); return; }
+  if (t.dataset && t.dataset.act === 'imp-usar') {
+    const m = IMP.msgs[+t.dataset.i]; m.usar = t.checked;
+    const tr = IMP.tramos[m.tramo];
+    if (tr && !tr.aMano) { syncImport(); sugerirEstado(tr, m.tramo); renderImport(); } else t.closest('.improw').classList.toggle('on', t.checked);
+    return;
+  }
   if (t.dataset && t.dataset.act === 'imp-pend') { IMP.msgs[+t.dataset.i].pendiente = t.checked; return; }
   if (t.dataset && t.dataset.impDestino != null) {
     syncImport();
     const tr = IMP.tramos[+t.dataset.impDestino];
     if (tr) { tr.destino = t.value; tr.seguro = false; }
-    marcarRepetidos(); renderImport(); return;
+    marcarRepetidos(); sugerirEstado(tr, +t.dataset.impDestino); renderImport(); return;
+  }
+  if (t.dataset && t.dataset.impEstado != null) {
+    const tr = IMP.tramos[+t.dataset.impEstado];
+    if (tr) { tr.estado = t.value; tr.motivo = t.value ? 'elegido a mano' : ''; tr.aMano = true; }
+    renderImport(); return;
   }
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
+  else if (t.id === 'zip-in') { const f = t.files[0]; t.value = ''; importarZip(f); }
   else if (t.id === 'imp-archivos') { const fs = [...t.files]; t.value = ''; elegirArchivosImport(fs); }
 });
 /* Arrastrar y soltar en el tablero (escritorio) */

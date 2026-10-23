@@ -89,7 +89,7 @@ main{padding:0 var(--gut);max-width:100%}
 .badge{flex:none;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--c,var(--accent)) 16%,transparent);color:var(--c);font-size:0.71875rem;font-weight:700;border:0}
 .card .badge{--c:inherit}
 .cmeta{display:flex;flex-wrap:wrap;gap:4px 10px;color:var(--muted);font-size:0.78125rem;align-items:center}
-.cmeta .late,.late{color:var(--danger);font-weight:700;display:inline-flex;align-items:center;gap:3px}
+.cmeta .late{color:var(--danger);font-weight:700;display:inline-flex;align-items:center;gap:3px}
 .stuck{color:var(--warn);font-weight:700}
 .cfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:2px}
 .plats{display:flex;gap:4px;flex-wrap:wrap}
@@ -390,7 +390,6 @@ html{overscroll-behavior-y:none}
 /* fotos dentro de un comentario */
 .cmfotos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .cmfotos img{width:84px;height:84px;object-fit:cover;border-radius:10px;cursor:zoom-in}
-.viatag{font-style:normal;background:var(--surface2);border-radius:5px;padding:0 5px;font-size:0.65625rem;font-weight:700;color:var(--muted)}
 
 /* ===== Entrega vista como resultado (Flavio y Maca) ===== */
 .resfeed{display:flex;flex-direction:column;gap:16px}
@@ -462,3 +461,51 @@ html{overscroll-behavior-y:none}
   .tab:hover{color:var(--ink)}
   .carru-ar:hover{background:var(--surface)}
 }
+
+/* Pantalla de carga */
+#carga{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:var(--bg);transition:opacity .35s}
+#carga.fuera{opacity:0;pointer-events:none}
+.carga-in{display:flex;flex-direction:column;align-items:center;gap:16px;color:var(--muted);font-size:0.8125rem;font-weight:600}
+.carga-in .logo{width:68px;height:68px;border-radius:22px;padding:12px;animation:latido 1.6s ease-in-out infinite}
+.carga-barra{width:120px;height:4px;border-radius:2px;background:var(--surface2);overflow:hidden}
+.carga-barra i{display:block;width:40%;height:100%;border-radius:2px;background:var(--accent);animation:barrido 1.1s ease-in-out infinite}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(.94)}}
+@keyframes barrido{from{transform:translateX(-110%)}to{transform:translateX(280%)}}
+@media (prefers-reduced-motion:reduce){.carga-in .logo,.carga-barra i{animation:none}}
+
+/* Contraseña de perfil */
+.who-pass{display:flex;gap:8px;margin-top:4px}
+.who-pass .field{flex:1;min-width:0;text-align:center;font-size:1.0625rem}
+
+/* Avisos de una pieza */
+.phacts{display:flex;gap:6px}
+.iconbtn.avisos{color:var(--muted)}
+.iconbtn.avisos.on{color:var(--accent);background:var(--accent-soft)}
+
+/* Importar: temas, cambios detectados y reenvíos */
+#banner .demo.comp{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#banner .demo.comp span{display:inline-flex;align-items:center;gap:6px}
+.tramo{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.tramoh{background:var(--surface);border-radius:14px;padding:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
+.tramoh>small{color:var(--muted);font-size:0.71875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.tramoveredicto{font-size:0.90625rem;overflow-wrap:anywhere}
+.cambios{margin-top:4px;padding:10px 12px;border-radius:10px;background:var(--surface2);font-size:0.8125rem}
+.cambios ol{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.cambios li{overflow-wrap:anywhere}
+.cambios li.ya{color:var(--muted)}
+.imptag{font-style:normal;background:var(--surface2);border-radius:5px;padding:0 6px;font-size:0.65625rem;font-weight:700;color:var(--muted)}
+.imptag.cambio{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.imptag.ok{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.impcon small{flex-wrap:wrap}
+.improw.charla{opacity:.4}
+.improw.charla.on{opacity:1}
+.imptxt{min-height:64px;margin-top:6px;font-size:0.84375rem}
+.chips.quien{margin:4px 0 2px}
+.chips.quien .chip{padding:5px 10px;font-size:0.75rem}
+details.orig{margin-top:4px;font-size:0.71875rem;color:var(--muted)}
+details.orig summary{cursor:pointer}
+details.orig p{font-size:0.75rem;color:var(--muted)}
+.audiost{display:flex;align-items:center;gap:5px}
+.impfoto .ext{display:grid;place-items:center;height:70px;background:var(--surface2);font-weight:800;font-size:0.75rem}
+.impbtns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
+.impbtns .btn{flex:1 1 140px;cursor:pointer}

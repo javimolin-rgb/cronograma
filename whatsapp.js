@@ -22,6 +22,8 @@
 
   // Adjuntos: el que exporta con archivos y el que los omite
   const ADJUNTO = /<(?:adjunto|attached):\s*([^>]+)>/i;
+  // Android: "IMG-20261022-WA0003.jpg (archivo adjunto)"
+  const ADJUNTO2 = /([^\s<>:"/\\|?*]+\.[a-z0-9]{2,4})\s*\((?:archivo adjunto|file attached)\)/i;
   const OMITIDO = [
     [/imagen omitida|image omitted/i, 'imagen'],
     [/(?:^|\s)video omitido|video omitted/i, 'video'],
@@ -33,8 +35,8 @@
   ];
   const EXT_TIPO = {
     jpg: 'imagen', jpeg: 'imagen', png: 'imagen', webp: 'imagen', heic: 'imagen', gif: 'imagen',
-    mp4: 'video', mov: 'video', webm: 'video',
-    opus: 'audio', ogg: 'audio', m4a: 'audio', mp3: 'audio', wav: 'audio',
+    mp4: 'video', mov: 'video', webm: 'video', '3gp': 'video',
+    opus: 'audio', ogg: 'audio', m4a: 'audio', mp3: 'audio', wav: 'audio', aac: 'audio', amr: 'audio',
     pdf: 'documento', zip: 'documento', xlsx: 'documento', docx: 'documento', pptx: 'documento',
     ai: 'documento', psd: 'documento', indd: 'documento', vcf: 'contacto'
   };
@@ -47,6 +49,7 @@
   const INDICA = /\b(en vez de|en lugar de|mejor (?:poner|dejar|usar|con|sin)|va (?:primero|al final|antes|despu[ée]s|arriba|abajo)|sin (?:el|la|los|las)|m[áa]s (?:grande|chico|peque|arriba|abajo|corto|largo|claro|oscuro))\b/i;
   const APRUEBA = /\b(aprobad[ií]simo|aprobad[oa]|estamos ok|est[áa] (?:todo )?ok|todo ok|qued[óo] (?:perfecto|increíble)|me encanta|me encantó|perfect|d[áa]le|publ[íi]ca|subelo|súbelo|listo para (?:subir|publicar)|vamos con (?:ese|esa|ella|él))\b/i;
   const URL_RE = /https?:\/\/[^\s<>"']+/gi;
+  const PUBLICA = /\b(ya (?:est[áa] )?publicad[oa]|lo publiqu[ée]|la publiqu[ée]|qued[óo] publicad[oa]|ya (?:lo|la) sub[íi]|ya est[áa] (?:arriba|en el feed|en instagram)|est[áa] programad[oa]|qued[óo] programad[oa])\b/i;
 
   const limpio = (s) => String(s || '').replace(/[‎‏‪-‮﻿]/g, '').trim();
 
@@ -66,7 +69,7 @@
   }
 
   function tipoAdjunto(texto) {
-    const m = texto.match(ADJUNTO);
+    const m = texto.match(ADJUNTO) || texto.match(ADJUNTO2);
     if (m) {
       const nombre = m[1].trim();
       const ext = (nombre.split('.').pop() || '').toLowerCase();
@@ -108,7 +111,7 @@
       const adj = tipoAdjunto(x.texto);
       let texto = x.texto;
       if (adj) {
-        texto = texto.replace(ADJUNTO, '').replace(NOMBRE_DOC, '');
+        texto = texto.replace(ADJUNTO, '').replace(ADJUNTO2, '').replace(NOMBRE_DOC, '');
         OMITIDO.forEach(([re]) => { texto = texto.replace(re, ''); });
         texto = texto.replace(/[••]\s*\d+\s*(páginas?|hojas?|pages?)/i, '').replace(/\s{2,}/g, ' ').trim();
       }
@@ -243,5 +246,5 @@
   // ¿Este mensaje pide un cambio? (sirve también para textos sueltos y audios transcritos)
   const pideCambio = (t) => !!(t && (PIDE.test(t) || CORTESIA.test(t) || INDICA.test(t))) && t.length < 600;
 
-  window.WhatsApp = { parse, mapearAutores, resumen, objetivar, palabras, parecido, tramos, pideCambio, aprueba: (t) => APRUEBA.test(t || '') };
+  window.WhatsApp = { parse, mapearAutores, resumen, objetivar, palabras, parecido, tramos, pideCambio, aprueba: (t) => APRUEBA.test(t || ''), publica: (t) => PUBLICA.test(t || '') };
 })();

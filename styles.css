@@ -509,3 +509,15 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .impfoto .ext{display:grid;place-items:center;height:70px;background:var(--surface2);font-weight:800;font-size:0.75rem}
 .impbtns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
 .impbtns .btn{flex:1 1 140px;cursor:pointer}
+
+/* "+" de Javi y estado sugerido al importar */
+.agregar{display:flex;flex-direction:column;gap:10px}
+.opt2{display:flex;align-items:flex-start;gap:14px;padding:14px;border-radius:16px;background:var(--surface);box-shadow:var(--shadow);text-align:left;cursor:pointer;color:var(--ink)}
+.opt2>svg{flex:none;color:var(--accent);margin-top:2px}
+.opt2 span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.opt2 b{font-size:0.9375rem}
+.opt2 small{color:var(--muted);font-size:0.78125rem;line-height:1.35}
+.opt2:active{transform:scale(.99)}
+.estadorow{display:flex;align-items:center;gap:10px;margin-top:4px}
+.estadorow>span{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.estadorow .sel{flex:1;min-width:0}

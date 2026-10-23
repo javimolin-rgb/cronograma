@@ -168,8 +168,8 @@ const IC = {
   cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>',
   copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>'
 };
-// Marca de Neorigen: el volumen con su división en T
-const marca = () => '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" aria-hidden="true"><path d="M30 26 H70 L90 76 H10 Z"/><path d="M23.8 41.5 H76.2"/><path d="M47 41.5 V76"/></svg>';
+// Marca: un calendario con la división en T de Neorigen
+const marca = () => '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M18 27 H82 V80 H18 Z"/><path d="M18 42 H82"/><path d="M47 42 V80"/><path d="M33 18 V33"/><path d="M67 18 V33"/></svg>';
 const ic = (n, s = 20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n] || ''}</svg>`;
 
 /* ---------- apariencia y secciones (cada uno en su teléfono) ---------- */

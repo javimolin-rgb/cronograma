@@ -1477,6 +1477,13 @@
  ],
  "comments": [
   {
+   "id": "eb3b184b-3911-420a-9e8e-9bd0961d9d87",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "javi",
+   "text": "Primeras vistas  @Flavio  @Maca",
+   "createdAt": "2026-10-24T23:18:59.674Z"
+  },
+  {
    "id": "8929d0f1-d242-458b-b102-d7dd0511cce7",
    "postId": "e-fotos-itahue",
    "author": "maca",
@@ -2117,6 +2124,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "90240504-a64a-4af1-b3d7-e6ed87a47044",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-24T23:18:59.676Z"
+  },
   {
    "id": "de89505a-5c4e-4cba-acdb-43e11885fd51",
    "postId": "p-carrusel-procesos",
@@ -2810,6 +2827,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0c160ba2-c1da-403e-a682-952ab3048248",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "mention",
+   "text": "te mencionó en “Video 3D Huingan”: Primeras vistas  @Flavio  @Maca",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Video 3D Huingan”: Primeras vistas  @Flavio  @Maca",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-24T23:18:59.676Z"
+  },
+  {
+   "id": "43380e7c-5d1c-405b-8f85-d844a71604e0",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "mention",
+   "text": "te mencionó en “Video 3D Huingan”: Primeras vistas  @Flavio  @Maca",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Video 3D Huingan”: Primeras vistas  @Flavio  @Maca",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-24T23:18:59.676Z"
+  },
   {
    "id": "b364f4aa-b5e3-443a-8cfc-8ea693415240",
    "to": "maca",

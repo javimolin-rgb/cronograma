@@ -873,7 +873,7 @@
    "time": "",
    "date": "2026-10-22",
    "format": "carrusel",
-   "status": "cambios",
+   "status": "aprobado",
    "priority": "normal",
    "revisions": 1,
    "id": "e-fotos-itahue",
@@ -884,7 +884,320 @@
     "javi",
     "maca"
    ],
-   "files": [],
+   "files": [
+    {
+     "id": "cb7dda17-196f-43d4-a63f-8935d4930ed5",
+     "by": "javi",
+     "at": "2026-10-22T21:39:48.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-1",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-1-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-1-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-1-v1.jpg",
+     "sha": "52cdc83e529a0253ac7b4dee386122fe47ee4dce",
+     "type": "image/jpeg",
+     "size": 147520
+    },
+    {
+     "id": "f542d0f8-3be1-47bd-a68f-81e82269b6aa",
+     "by": "javi",
+     "at": "2026-10-22T21:39:49.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-2",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-2-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-2-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-2-v1.jpg",
+     "sha": "42e870df12e28222449529ef7f320ea60cba7525",
+     "type": "image/jpeg",
+     "size": 147658
+    },
+    {
+     "id": "9a9783fd-8a4b-4de1-ae7a-072e200a42d6",
+     "by": "javi",
+     "at": "2026-10-22T21:39:49.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-3",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-3-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-3-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-3-v1.jpg",
+     "sha": "62233bf6c80bc69000b0eff16509fde70b5643a7",
+     "type": "image/jpeg",
+     "size": 157125
+    },
+    {
+     "id": "0ad2a08f-ad10-4e52-bf3d-d7b97efa41c4",
+     "by": "javi",
+     "at": "2026-10-22T21:39:49.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-4",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-4-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-4-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-4-v1.jpg",
+     "sha": "e9aba367af39e4074be7176caa816e3b6e60cc69",
+     "type": "image/jpeg",
+     "size": 123106
+    },
+    {
+     "id": "18ce80db-4912-4c0f-8d6d-2ca134bf9887",
+     "by": "javi",
+     "at": "2026-10-22T21:39:49.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-5",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-5-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-5-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-5-v1.jpg",
+     "sha": "0905e683348a00ece653693938a3faf87f28b100",
+     "type": "image/jpeg",
+     "size": 85918
+    },
+    {
+     "id": "f8be6701-5b09-4eb6-8e19-2eda6ddf5ab5",
+     "by": "javi",
+     "at": "2026-10-22T21:42:34.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-6",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-6-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-6-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-6-v1.jpg",
+     "sha": "ddec29269794cac55fdb6e1dee8040a3c1baaf34",
+     "type": "image/jpeg",
+     "size": 131586
+    },
+    {
+     "id": "bbc98ba0-5eb0-4e84-ad7b-662269ddd1bc",
+     "by": "maca",
+     "at": "2026-10-22T21:48:53.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-7",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-7-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-7-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-7-v1.jpg",
+     "sha": "335e203e9cbc500d7b90e86be50feaa29de56525",
+     "type": "image/jpeg",
+     "size": 98836
+    },
+    {
+     "id": "568b8bde-32be-4d5b-ab66-f4798ffba8bc",
+     "by": "maca",
+     "at": "2026-10-22T21:49:23.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-8",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-8-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-8-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-8-v1.jpg",
+     "sha": "2f90a56f13be54ddcf59f2c0a34e204a3ccf8836",
+     "type": "image/jpeg",
+     "size": 110043
+    },
+    {
+     "id": "2ca6b6d9-a95a-4d7b-bd8f-dbfbb27fd8ce",
+     "by": "javi",
+     "at": "2026-10-22T21:58:54.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-9",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-9-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-9-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-9-v1.jpg",
+     "sha": "f4fa81d82a26a60de75dec7785c40b92acec8abd",
+     "type": "image/jpeg",
+     "size": 147466
+    },
+    {
+     "id": "93928c52-7815-4096-933d-0ca54150370b",
+     "by": "maca",
+     "at": "2026-10-22T23:23:59.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-10",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-10-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-10-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-10-v1.jpg",
+     "sha": "721443b68ea2ddefc47876e2148a97f1483f8fbe",
+     "type": "image/jpeg",
+     "size": 143256
+    },
+    {
+     "id": "47efa7f2-ef00-42da-8f15-5aee7ed1a718",
+     "by": "maca",
+     "at": "2026-10-22T23:24:37.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-11",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-11-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-11-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-11-v1.jpg",
+     "sha": "e4caa023310ba37484e81cdbcbe50f14a4f217da",
+     "type": "image/jpeg",
+     "size": 141852
+    },
+    {
+     "id": "c13ac04e-01d0-4688-9d56-be1fad77ab5d",
+     "by": "maca",
+     "at": "2026-10-22T23:31:23.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-12",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-12-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-12-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-12-v1.jpg",
+     "sha": "4811158f3ff3aeef817ca85999146931ce8e8b7a",
+     "type": "image/jpeg",
+     "size": 182649
+    },
+    {
+     "id": "5f10e4e0-9eba-47ec-a974-b08d11329323",
+     "by": "maca",
+     "at": "2026-10-22T23:33:42.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-13",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-13-v1.jpg",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-13-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-13-v1.jpg",
+     "sha": "0e3721ca8ff59390e28ed95a2ab14b069ec671d9",
+     "type": "image/jpeg",
+     "size": 155937
+    },
+    {
+     "id": "de93014c-6683-4b9a-b168-508de3b6c239",
+     "by": "javi",
+     "at": "2026-10-23T14:47:50.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-14",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-14-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-14-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-14-v1.mp4",
+     "sha": "802756e54eb88043b9d7c01847483ae2155973a3",
+     "type": "video/mp4",
+     "size": 1289336
+    },
+    {
+     "id": "68a61832-5178-4260-a450-be0c187d16e7",
+     "by": "javi",
+     "at": "2026-10-23T14:47:58.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-15",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-15-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-15-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-15-v1.mp4",
+     "sha": "76b1057a6fb653c4a242448a2018ba98a3b17aab",
+     "type": "video/mp4",
+     "size": 3032484
+    },
+    {
+     "id": "2649caa2-3c74-433e-aa42-f30b7dc4529c",
+     "by": "javi",
+     "at": "2026-10-23T16:07:40.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-16",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-16-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-16-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-16-v1.mp4",
+     "sha": "6ad717aff849cac2dc99d701414ce5a984e9ef81",
+     "type": "video/mp4",
+     "size": 1340840
+    },
+    {
+     "id": "dd0141b9-8634-4822-ab68-b204bffb287d",
+     "by": "javi",
+     "at": "2026-10-23T18:18:01.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-17",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-17-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-17-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-17-v1.mp4",
+     "sha": "ec8fe34325b7a3b25b312dba727c35d9780d140f",
+     "type": "video/mp4",
+     "size": 1345552
+    },
+    {
+     "id": "82b72b8e-f945-4b3f-83e2-c4c097615d53",
+     "by": "javi",
+     "at": "2026-10-23T18:18:06.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-18",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-18-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-18-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-18-v1.mp4",
+     "sha": "4a5664191fdaf6a7079384d722d90ade0c812593",
+     "type": "video/mp4",
+     "size": 2972331
+    },
+    {
+     "id": "69ad92c7-0718-4a95-80b8-b9cc7558ecef",
+     "by": "javi",
+     "at": "2026-10-23T18:24:12.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-19",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-19-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-19-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-19-v1.mp4",
+     "sha": "5e9ba53579051a233acf6b8de876b5fc7e58877c",
+     "type": "video/mp4",
+     "size": 1421227
+    },
+    {
+     "id": "cb0dfc3e-19de-4a51-a267-30b86e9fc96b",
+     "by": "javi",
+     "at": "2026-10-23T18:24:16.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-20",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-20-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-20-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-20-v1.mp4",
+     "sha": "91d8789a748d0bede9ea00733dad29c0af6f3012",
+     "type": "video/mp4",
+     "size": 3020959
+    },
+    {
+     "id": "f2663d71-fbeb-4b3a-a56e-6b6a61b1f611",
+     "by": "javi",
+     "at": "2026-10-23T20:23:09.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-21",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-21-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-21-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-21-v1.mp4",
+     "sha": "08c14d8891d8de334a53ae8ed8b65d0ec44efa30",
+     "type": "video/mp4",
+     "size": 1338410
+    },
+    {
+     "id": "a9d501ce-6438-42af-8093-9617515ac650",
+     "by": "javi",
+     "at": "2026-10-23T20:23:17.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-22",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-22-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-22-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-22-v1.mp4",
+     "sha": "931b60b0ef662258cc6f4dadb814c8e8224516bf",
+     "type": "video/mp4",
+     "size": 2913270
+    },
+    {
+     "id": "156927b0-9dbb-427b-819f-771574a27bef",
+     "by": "javi",
+     "at": "2026-10-23T21:04:05.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-23",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-23-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-23-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-23-v1.mp4",
+     "sha": "ffd2a56fd4d1b233cca24876071232f387cebb2e",
+     "type": "video/mp4",
+     "size": 1342715
+    },
+    {
+     "id": "d94d0398-c7aa-4922-b6d8-ea3b0be0519f",
+     "by": "javi",
+     "at": "2026-10-23T21:04:15.000Z",
+     "base": "edicion-de-fotos-de-obra-itahue-24",
+     "version": 1,
+     "name": "edicion-de-fotos-de-obra-itahue-24-v1.mp4",
+     "path": "archivos/instagram/edicion-de-fotos-de-obra-itahue-24-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/instagram/edicion-de-fotos-de-obra-itahue-24-v1.mp4",
+     "sha": "98b5579166f18e20e7b6aade27302fd5037bbf93",
+     "type": "video/mp4",
+     "size": 2925379
+    }
+   ],
    "links": [
     {
      "id": "e-fotos-itahue-l1",
@@ -932,13 +1245,43 @@
      "id": "e-fotos-itahue-k4",
      "text": "Sacar los palos del ventanal",
      "done": true
+    },
+    {
+     "id": "e37a1037-b9e1-4fba-bbdd-37d844d4544d",
+     "text": "Maca: ¿Con esta se pueden quitar los palos del fondo y menos piso? Sino la eliminas no más.",
+     "done": false
+    },
+    {
+     "id": "3532e9cd-8d94-4c6e-93af-9121e14ed7bc",
+     "text": "Maca: Como que me imagino que las fotos pasen así como tata tata, así como como un juego de foto y con esa con nosotros o conversemos o contactanos, no, lo que ha sid…",
+     "done": false
+    },
+    {
+     "id": "a7d182e9-7067-427a-a467-527842ca0837",
+     "text": "Maca: Es que dejaría un texto inicial potente y luego el CTA. Puedes jugar con las fotos para que aparezcas sin que necesiten texto.",
+     "done": false
+    },
+    {
+     "id": "51f64659-51e1-4110-b18b-238afc55683d",
+     "text": "Maca: Cambiemos por estos textos y estamos ok.",
+     "done": false
+    },
+    {
+     "id": "5eeb91a1-8408-4c3a-88ef-5e51676cf6a9",
+     "text": "Maca: Madera que toma forma. Cada corte con precisión ( foto sierra). Un proceso de construcción real. Logo. Conversemos ( en vez de cotiza con nosotros). Neorigen. C…",
+     "done": false
+    },
+    {
+     "id": "2b7fc1a7-1f5a-4b89-bcd9-0e7dce206941",
+     "text": "Maca: Por eso yo pensé que se podía ver bien sin texto, pero como que pareciera que le faltara algo, ahi señor, te me pasí en si a ella.",
+     "done": false
     }
    ],
    "createdAt": "2026-10-21T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-23T14:45:49.914Z",
+   "updatedAt": "2026-10-24T22:11:58.181Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-10-23T14:45:49.914Z",
+   "statusChangedAt": "2026-10-23T21:56:56.000Z",
    "publishedAt": null
   },
   {
@@ -1164,6 +1507,495 @@
  ],
  "comments": [
   {
+   "id": "8929d0f1-d242-458b-b102-d7dd0511cce7",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Aprobado.",
+   "createdAt": "2026-10-23T21:56:56.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T21:56_maca_ht8uda",
+   "fileIds": []
+  },
+  {
+   "id": "67f21f66-37c9-41ed-bad4-ce6f185e8551",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "¿Aprobado para subir?",
+   "createdAt": "2026-10-23T21:36:18.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T21:36_javi_e3g2s4",
+   "fileIds": []
+  },
+  {
+   "id": "ded48b7f-99bc-4946-9198-45d93325df6e",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "2 archivos de referencia.",
+   "createdAt": "2026-10-23T21:04:05.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T21:04_javi_0",
+   "impIds": [
+    "wa_2026-10-23T21:04_javi_0",
+    "wa_2026-10-23T21:04_javi_0"
+   ],
+   "fileIds": [
+    "156927b0-9dbb-427b-819f-771574a27bef",
+    "d94d0398-c7aa-4922-b6d8-ea3b0be0519f"
+   ]
+  },
+  {
+   "id": "85787b5e-6d25-45ba-9561-55e3e3c64896",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Por eso yo pensé que se podía ver bien sin texto, pero como que pareciera que le faltara algo, ahi señor, te me pasí en si a ella.",
+   "createdAt": "2026-10-23T20:39:17.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:39_maca_h9jrhh",
+   "fileIds": []
+  },
+  {
+   "id": "9cb4b9a4-6cf2-4bf9-a8a6-a4708a1c50b2",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Se lo saque por esto jajjaa.",
+   "createdAt": "2026-10-23T20:38:42.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:38_javi_bnf66z",
+   "fileIds": []
+  },
+  {
+   "id": "d1c3b1df-c70e-430d-bd11-7963064f42c3",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Por la paciencia de pasaste. ¿Qué opinas tú? Lo único que ahí ahora que me lo manda, me queda dando vueltas que debíse tener algo como algún texto en la primera imagen. Eso. ¿Qué opinas con respecto a eso? Si no le damos así no más.",
+   "createdAt": "2026-10-23T20:37:26.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:37_maca_t7d56s",
+   "fileIds": []
+  },
+  {
+   "id": "ee964e82-34c8-4d73-8f56-1acaf49e6587",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "2 archivos de referencia.",
+   "createdAt": "2026-10-23T20:23:09.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:23_javi_0",
+   "impIds": [
+    "wa_2026-10-23T20:23_javi_0",
+    "wa_2026-10-23T20:23_javi_0"
+   ],
+   "fileIds": [
+    "f2663d71-fbeb-4b3a-a56e-6b6a61b1f611",
+    "a9d501ce-6438-42af-8093-9617515ac650"
+   ]
+  },
+  {
+   "id": "c23e8b84-c505-485c-918e-60ca613bcce8",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Tal vez la primera imagen sin texto.",
+   "createdAt": "2026-10-23T20:06:07.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:06_maca_h2kqc3",
+   "fileIds": []
+  },
+  {
+   "id": "7adf2b44-98ca-4493-a50f-f75357a22a86",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Madera que toma forma. Cada corte con precisión ( foto sierra). Un proceso de construcción real. Logo. Conversemos ( en vez de cotiza con nosotros). Neorigen. Cl.",
+   "createdAt": "2026-10-23T20:05:22.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:05_maca_wywm08",
+   "fileIds": []
+  },
+  {
+   "id": "4a14882d-39fd-45f9-8b40-7b0d458d7ccf",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Cambiemos por estos textos y estamos ok.",
+   "createdAt": "2026-10-23T20:04:54.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:04_maca_1ylomz",
+   "fileIds": []
+  },
+  {
+   "id": "981fcb28-a3f7-41b3-a058-67c887ed6d34",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Ahora sí que si…. Una mezcla ….",
+   "createdAt": "2026-10-23T20:04:17.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:04_maca_kxo1eq",
+   "fileIds": []
+  },
+  {
+   "id": "aa72fcc3-be85-4ae4-a2ab-eb9564214dd0",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Perdona estaba full….",
+   "createdAt": "2026-10-23T20:03:56.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T20:03_maca_a7ff5m",
+   "fileIds": []
+  },
+  {
+   "id": "345c47f4-c7d5-4698-9cd0-726c326fc78b",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Opción B.",
+   "createdAt": "2026-10-23T18:24:12.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T18:24_javi_oqen55",
+   "impIds": [
+    "wa_2026-10-23T18:24_javi_oqen55",
+    "wa_2026-10-23T18:24_javi_oqen55"
+   ],
+   "fileIds": [
+    "69ad92c7-0718-4a95-80b8-b9cc7558ecef",
+    "cb0dfc3e-19de-4a51-a267-30b86e9fc96b"
+   ]
+  },
+  {
+   "id": "b9e7446e-37cf-4b61-814d-7210fe91c090",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Toda casa empieza por su estructura. En Neorigen cuidamos cada pieza, desde la madera hasta el último corte, porque lo que no se ve también construye tu casa. Así va tomando forma una de nuestras obras: estructura que enmarca el paisaje, vanos pensados para tener vista y precisión en cada detalle. Cotiza con nosotros en neorigen. Cl o escríbenos por mensaje directo. Conversemos tu proyecto. #Neorigen #CasasPrediseñadas #CasasSustentables #CasasDeMadera #ConstrucciónEnMadera.",
+   "createdAt": "2026-10-23T18:18:01.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T18:18_javi_7be726",
+   "impIds": [
+    "wa_2026-10-23T18:18_javi_7be726",
+    "wa_2026-10-23T18:18_javi_7be726"
+   ],
+   "fileIds": [
+    "dd0141b9-8634-4822-ab68-b204bffb287d",
+    "82b72b8e-f945-4b3f-83e2-c4c097615d53"
+   ]
+  },
+  {
+   "id": "60bff322-8d98-4223-92a5-699e69a35930",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Una música más “ power”.",
+   "createdAt": "2026-10-23T18:05:33.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T18:05_maca_q990ar",
+   "fileIds": []
+  },
+  {
+   "id": "7a5d84f0-1fa6-446c-ace2-3d5b194fcf69",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "INICIO. Antes de ver la casa terminada…. DESARROLLO. Una estructura de madera. Un proceso de construcción real. CIERRE. Así construimos en Neorigen.",
+   "createdAt": "2026-10-23T18:03:03.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T18:03_maca_8ogvw1",
+   "fileIds": []
+  },
+  {
+   "id": "2bde50f1-a5a0-46e8-adab-7a92e3e5ed85",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "¿Algo así dices?",
+   "createdAt": "2026-10-23T16:07:47.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T16:07_javi_875n3v",
+   "fileIds": []
+  },
+  {
+   "id": "d35e489e-4a43-4ff7-b443-dba0116c7918",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Toda casa empieza por su estructura. En Neorigen cuidamos cada pieza, desde la madera hasta el último corte, porque lo que no se ve también construye tu casa. Así va tomando forma una de nuestras obras: estructura que enmarca el paisaje, vanos pensados para tener vista y precisión en cada detalle. Cotiza con nosotros en neorigen. Cl o escríbenos por mensaje directo. Conversemos tu proyecto. #Neorigen #CasasPrediseñadas #CasasSustentables #CasasDeMadera #ConstrucciónEnMadera #ArquitecturaChile.",
+   "createdAt": "2026-10-23T16:07:40.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T16:07_javi_7be726",
+   "fileIds": [
+    "2649caa2-3c74-433e-aa42-f30b7dc4529c"
+   ]
+  },
+  {
+   "id": "1b4a5d71-cf6f-4944-88f2-202055c85134",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Es que dejaría un texto inicial potente y luego el CTA. Puedes jugar con las fotos para que aparezcas sin que necesiten texto.",
+   "createdAt": "2026-10-23T15:19:22.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T15:19_maca_9545e5",
+   "fileIds": []
+  },
+  {
+   "id": "820e317d-c999-4d42-bffa-a91bc5614ffb",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "¿Que le saque los textos dices tú?",
+   "createdAt": "2026-10-23T15:15:17.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T15:15_javi_2r6b4r",
+   "fileIds": []
+  },
+  {
+   "id": "750cc264-b739-4eac-a1af-0cc91f65bb2d",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "¿A qué te refieres con contenido?",
+   "createdAt": "2026-10-23T15:14:57.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T15:14_javi_ar7a9q",
+   "fileIds": []
+  },
+  {
+   "id": "77690b47-85bd-427e-b04b-1af22f7c4a87",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Javier. ¿Cómo está ahí? Pero parece que me mal expresé con el tema del contenido. Creo que el contenido como que nos suma mucho y no sepa dónde va. Entonces en el fondo la idea es cómo mostrar las estructuras, no sé, tal vez mandarse como una o dos frases más más potente tal vez estructuras de madera o algo así y en el fondo tal vez si quieres empezar con algo más que una casa como vamos más al tema emocional como el sueño el proyecto la idea o definitivamente saltárselo y al final nada de pronto una casa o pronto un hogar sino que el tiro con nosotros conversamos en esa misma imagen tal vez ve como andar y como algo un culturación como más directo nada porque como que en el fondo no hay tanto contenido y para que sume rapido me explico.",
+   "createdAt": "2026-10-23T15:10:52.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T15:10_maca_lnr755",
+   "fileIds": []
+  },
+  {
+   "id": "17b51fc0-f2b1-49b9-b4ac-9dbc706e1f4f",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Toda casa empieza por su estructura. En Neorigen cuidamos cada pieza, desde la madera hasta el último corte, porque lo que no se ve también construye tu casa. Así va tomando forma una de nuestras obras: estructura que enmarca el paisaje, vanos pensados para tener vista y precisión en cada detalle. Cotiza con nosotros en neorigen. Cl o escríbenos por mensaje directo. Conversemos tu proyecto. #Neorigen #CasasPrediseñadas #CasasSustentables #CasasDeMadera #ConstrucciónEnMadera #ArquitecturaChile.",
+   "createdAt": "2026-10-23T14:47:50.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T14:47_javi_7be726",
+   "impIds": [
+    "wa_2026-10-23T14:47_javi_7be726",
+    "wa_2026-10-23T14:47_javi_7be726"
+   ],
+   "fileIds": [
+    "de93014c-6683-4b9a-b168-508de3b6c239",
+    "68a61832-5178-4260-a450-be0c187d16e7"
+   ]
+  },
+  {
+   "id": "53ca3857-147d-4100-a67f-b29fc059ade1",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Como que me imagino que las fotos pasen así como tata tata, así como como un juego de foto y con esa con nosotros o conversemos o contactanos, no, lo que ha sido bueno ahí tendríamos que cambiar como lo que sale bajito.",
+   "createdAt": "2026-10-23T12:46:03.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T12:46_maca_ooxyit",
+   "fileIds": []
+  },
+  {
+   "id": "e960ff0c-291b-41df-a9ad-37bd812587ef",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Más dinámicos para que en el fondo se vea de una porque el fondo para la gente es como la pura madera acá. ¿Eh? Eso.",
+   "createdAt": "2026-10-23T12:45:29.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T12:45_maca_izvue7",
+   "fileIds": []
+  },
+  {
+   "id": "f41af576-58c7-425f-a497-5c7756089098",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Javier. ¿Cómo está? Buenas días. Hoy él dio una vuelta al post que me mandaste las fotos. Se me ocurre como para ponerle un poquito más de dinamismo, para que en el fondo la gente no haga scrolling, porque en el fondo como que no mucho el contenido de lo que sale en cada una de las laminas. Entonces no se tiene que un bidecto, sea, con las mismas imaginas y como un chote, poner como no sé, esa que la estructura toma en forma, no me acuerdo si cuál es exactamente y después contiza con nosotros una cosa así, contiza con la origen como muy curtido, como un llamado al tiro al contacto y como para mantenerse como activo más que este carrocer de tinka, no sé si me explico.",
+   "createdAt": "2026-10-23T12:45:10.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-23T12:45_maca_8vyx9t",
+   "fileIds": []
+  },
+  {
+   "id": "85846ae1-18d6-420a-9cc1-5dbd51eea83e",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "¿Qué es eso? Así que eso, déjame dar una vuelta como lo único que sería, como cambiaron un poquito algunas palabras, pero estamos listelos. También lo mismo que pasa abajo en la descripción, ahí también tenemos que ajustarlo a la palabra hogar y es que le tope. Pero no sé si es casa, déjame dar una vuelta que podría poner porque hogar a mí me genera como tengo un tema eso con la palabra hogar, déjame conversarlo con Flavio y casa creo que no es, déjame serlo, pero el resto está a la foto y todo así que un par de ajustes y lo podríamos publicar mañana si te parece, un besito. Que descansé.",
+   "createdAt": "2026-10-22T23:52:04.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T23:52_maca_wy18xq",
+   "fileIds": []
+  },
+  {
+   "id": "a0375964-6c90-48e8-b557-0b28f084077e",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Todo hogar empieza por su estructura. En Neorigen cuidamos cada pieza desde el esqueleto, porque lo que no se ve también construye tu casa. Cotiza en neorigen. Cl. #Neorigen #CasasPrediseñadas #CasasSustentables #CasasDeMadera #ConstrucciónEnMadera #ArquitecturaChile.",
+   "createdAt": "2026-10-22T23:46:25.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T23:46_javi_fih8ht",
+   "fileIds": []
+  },
+  {
+   "id": "820e7110-2b29-4172-a5c1-201f15af5542",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Hogar no. Había que sacar los plásticos negros de la ventana y de al lado de la casa.",
+   "createdAt": "2026-10-22T23:33:42.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T23:33_maca_psj6xq",
+   "fileIds": [
+    "5f10e4e0-9eba-47ec-a974-b08d11329323"
+   ]
+  },
+  {
+   "id": "45206c66-61de-4888-8d74-2b43cfd2213f",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "¿Estructura en madera que toma forma? ¿Algo así? Lo de pieza por pieza suena como “ artesanal”.",
+   "createdAt": "2026-10-22T23:31:23.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T23:31_maca_aojjwm",
+   "fileIds": [
+    "c13ac04e-01d0-4688-9d56-be1fad77ab5d"
+   ]
+  },
+  {
+   "id": "6e36eca7-0205-4cf7-9337-06717e143b37",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Esqueleto suena raro.",
+   "createdAt": "2026-10-22T23:24:37.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T23:24_maca_pm4a0f",
+   "fileIds": [
+    "47efa7f2-ef00-42da-8f15-5aee7ed1a718"
+   ]
+  },
+  {
+   "id": "9fd4a4f2-2d9a-4188-8ebf-34dd4179dbcb",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Cambiar palabra hogar. Si empezamos con esa imagen habría que sacar el palo que sostiene al ventanal. Sino se puede ponerla no como inicial.",
+   "createdAt": "2026-10-22T23:23:59.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T23:23_maca_z0gaah",
+   "fileIds": [
+    "93928c52-7815-4096-933d-0ca54150370b"
+   ]
+  },
+  {
+   "id": "4058bea2-7254-47f6-aaf3-37372317f37f",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Archivo de referencia.",
+   "createdAt": "2026-10-22T21:58:54.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:58_javi_0",
+   "fileIds": [
+    "2ca6b6d9-a95a-4d7b-bd8f-dbfbb27fd8ce"
+   ]
+  },
+  {
+   "id": "e47bf608-60bd-43f0-82e0-ddf2893c0c11",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Sisi eso si lo entendi.",
+   "createdAt": "2026-10-22T21:50:22.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:50_javi_at8af9",
+   "fileIds": []
+  },
+  {
+   "id": "728e6ef6-7566-4c2f-b7d5-201326dd2b48",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "Sí y sacar esos palos que sostienen en el ventanal.",
+   "createdAt": "2026-10-22T21:50:04.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:50_maca_pplihk",
+   "fileIds": []
+  },
+  {
+   "id": "de1e4131-10df-46e9-b432-dfc8db5feb24",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "¿Con menos piso te refieres a recortarla?",
+   "createdAt": "2026-10-22T21:49:30.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:49_javi_hj4lhu",
+   "fileIds": []
+  },
+  {
+   "id": "2a5b7c2a-f3c6-475b-bd26-345867783514",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "2 archivos de referencia.",
+   "createdAt": "2026-10-22T21:48:53.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:48_maca_0",
+   "impIds": [
+    "wa_2026-10-22T21:48_maca_0",
+    "wa_2026-10-22T21:49_maca_0"
+   ],
+   "fileIds": [
+    "bbc98ba0-5eb0-4e84-ad7b-662269ddd1bc",
+    "568b8bde-32be-4d5b-ab66-f4798ffba8bc"
+   ]
+  },
+  {
+   "id": "224949f2-65e6-4fe3-ac34-079b0f707949",
+   "postId": "e-fotos-itahue",
+   "author": "maca",
+   "text": "¿Con esta se pueden quitar los palos del fondo y menos piso? Sino la eliminas no más.",
+   "createdAt": "2026-10-22T21:48:16.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:48_maca_54lbqu",
+   "fileIds": []
+  },
+  {
+   "id": "13b3d75f-8e43-45c4-91f9-f0567a7acd90",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "¿Hoy probemos publicandoun poco mas tarde, te tinca? Tipo 8-9.",
+   "createdAt": "2026-10-22T21:47:47.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:47_javi_u3dkkm",
+   "fileIds": []
+  },
+  {
+   "id": "ff739d8d-49fc-4d5a-82a6-9e45829b11bd",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Está me faltaba.",
+   "createdAt": "2026-10-22T21:42:34.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:42_javi_h4cbty",
+   "fileIds": [
+    "f8be6701-5b09-4eb6-8e19-2eda6ddf5ab5"
+   ]
+  },
+  {
+   "id": "eff9fcca-0eda-4377-a1fb-48269bb44b32",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "Ahí las limpié. Avisame si alguna no te convence.",
+   "createdAt": "2026-10-22T21:40:20.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:40_javi_7tuv2y",
+   "fileIds": []
+  },
+  {
+   "id": "5866020f-2fed-4b02-b203-0001394c5b49",
+   "postId": "e-fotos-itahue",
+   "author": "javi",
+   "text": "5 archivos de referencia.",
+   "createdAt": "2026-10-22T21:39:48.000Z",
+   "via": "imp",
+   "impId": "wa_2026-10-22T21:39_javi_0",
+   "impIds": [
+    "wa_2026-10-22T21:39_javi_0",
+    "wa_2026-10-22T21:39_javi_0",
+    "wa_2026-10-22T21:39_javi_0",
+    "wa_2026-10-22T21:39_javi_0",
+    "wa_2026-10-22T21:39_javi_0"
+   ],
+   "fileIds": [
+    "cb7dda17-196f-43d4-a63f-8935d4930ed5",
+    "f542d0f8-3be1-47bd-a68f-81e82269b6aa",
+    "9a9783fd-8a4b-4de1-ae7a-072e200a42d6",
+    "0ad2a08f-ad10-4e52-bf3d-d7b97efa41c4",
+    "18ce80db-4912-4c0f-8d6d-2ca134bf9887"
+   ]
+  },
+  {
    "id": "1130b170-f6be-48bc-ab06-dcc91d741124",
    "postId": "e-fotos-itahue",
    "author": "flavio",
@@ -1315,6 +2147,29 @@
   }
  ],
  "activity": [
+  {
+   "id": "38b92cc2-bad3-4bbb-ab5b-b9e13c60f591",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "edit",
+   "text": "sumó 42 observaciones y 6 pendientes",
+   "meta": null,
+   "createdAt": "2026-10-24T22:11:58.192Z"
+  },
+  {
+   "id": "af2cd308-0ac8-46c8-b877-368d135fc2d7",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Cambios a Aprobado",
+   "meta": {
+    "from": "cambios",
+    "to": "aprobado"
+   },
+   "createdAt": "2026-10-24T22:11:58.182Z"
+  },
   {
    "id": "b4b78c79-767a-4628-af8b-a1be69efae00",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -1952,6 +2807,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b364f4aa-b5e3-443a-8cfc-8ea693415240",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e-fotos-itahue",
+   "type": "update",
+   "text": "sumó 6 cambios pendientes en “Edición de fotos de obra — Itahue”",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi sumó 6 cambios pendientes en “Edición de fotos de obra — Itahue”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-24T22:11:58.192Z"
+  },
+  {
+   "id": "cc07d940-f7a7-4bba-8cbf-6631aae81193",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e-fotos-itahue",
+   "type": "status",
+   "text": "movió “Edición de fotos de obra — Itahue” a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Edición de fotos de obra — Itahue” a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e-fotos-itahue",
+   "createdAt": "2026-10-24T22:11:58.182Z"
+  },
   {
    "id": "62a3e8b7-ab8f-4536-bc45-9fdf25173dce",
    "to": "flavio",

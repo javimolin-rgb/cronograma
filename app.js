@@ -1385,7 +1385,12 @@ function prepararImport(msgs) {
     t.proyecto = '';
   });
   marcarRepetidos();
-  IMP.tramos.forEach((t, k) => { if (t) sugerirEstado(t, k); });
+  IMP.tramos.forEach((t, k) => {
+    if (!t) return;
+    sugerirEstado(t, k);
+    // un tema donde nada se importa (saludos, "estoy afuera"…) no es una tarea
+    if (!msgs.some((m) => m.tramo === k && m.usar)) { t.descartado = true; t.auto = true; }
+  });
   IMP.paso = 2;
 }
 
@@ -1494,7 +1499,7 @@ function renderImport() {
   const camps = [...new Set(S.db.posts.map((p) => p.campaign).filter(Boolean))];
   const utiles = IMP.msgs.filter((m) => !m.sistema);
   const charla = utiles.filter((m) => m.charla && !m.foto && !m.audio && !(m.adjunto && m.adjunto.kind === 'imagen')).length;
-  const nTramos = IMP.tramos.filter(Boolean).length;
+  const nTramos = IMP.tramos.filter((t) => t && !t.descartado).length;
   const cambiosTot = utiles.filter((m) => m.pide && m.usar).length;
 
   const fila = (m, i) => {
@@ -1530,9 +1535,17 @@ function renderImport() {
     const aprob = del.some(([m]) => m.aprueba && m.usar && !m.pide);
     const fechas = del.map(([m]) => m.dia).filter(Boolean);
     const ops = [...new Set(t.cands.concat(piezas.map((p) => p.id)))].map((id) => S.db.posts.find((p) => p.id === id)).filter(Boolean);
+    const cab = `${nTramos > 1 ? `Tema ${IMP.tramos.slice(0, k + 1).filter(Boolean).length} · ` : ''}${del.length} mensaje${del.length === 1 ? '' : 's'}${!IMP.compartido && fechas.length ? ` · ${esc(fmtShort(fechas[0]))}${fechas[fechas.length - 1] !== fechas[0] ? ' al ' + esc(fmtShort(fechas[fechas.length - 1])) : ''}` : ''}`;
+    if (t.descartado) {
+      const muestra = (del.find(([m]) => m.original || m.texto) || [{}])[0];
+      return `<section class="tramo fuera"><div class="tramoh">
+        <div class="tramotop"><small>${cab}</small><button class="btn ghost sm" data-act="imp-restaurar" data-k="${k}">Restaurar</button></div>
+        <p class="hint">${t.auto ? 'Sin nada técnico' : 'Quitado'}: no se importa ni crea nada.${muestra && (muestra.original || muestra.texto) ? ` «${esc((muestra.original || muestra.texto).slice(0, 70))}${(muestra.original || muestra.texto).length > 70 ? '…' : ''}»` : ''}</p>
+      </div></section>`;
+    }
     return `<section class="tramo">
       <div class="tramoh">
-        <small>${nTramos > 1 ? `Tema ${IMP.tramos.slice(0, k + 1).filter(Boolean).length} · ` : ''}${del.length} mensaje${del.length === 1 ? '' : 's'}${!IMP.compartido && fechas.length ? ` · ${esc(fmtShort(fechas[0]))}${fechas[fechas.length - 1] !== fechas[0] ? ' al ' + esc(fmtShort(fechas[fechas.length - 1])) : ''}` : ''}</small>
+        <div class="tramotop"><small>${cab}</small><button class="btn ghost sm" data-act="imp-quitar-tema" data-k="${k}" title="No es una tarea: no importar este tema">${ic('trash', 15)} Quitar tema</button></div>
         <b class="tramoveredicto">${post ? `${t.seguro ? 'Es la misma pieza:' : 'Va a:'} “${esc(post.title)}”` : (t.cands.length ? 'Puede ser más de una pieza: elige (★ las más parecidas) o crea una nueva' : 'Contenido nuevo')}</b>
         <select class="sel" data-imp-destino="${k}">
           <option value="nuevo"${t.destino === 'nuevo' ? ' selected' : ''}>➕ Crear una pieza nueva</option>
@@ -1590,8 +1603,8 @@ async function hacerImport() {
     if (IMP.msgs.some((m) => m.usar && m.audio && ['espera', 'cargando', 'escuchando'].includes(m.trans) && !m.texto)) {
       toast('Espera a que terminen de transcribirse los audios', 3500); if (btn) btn.disabled = false; return;
     }
-    const elegidos = IMP.msgs.filter((m) => m.usar && !m.repetido && (m.texto || m.foto));
-    if (!elegidos.length && !IMP.tramos.some((t) => t && t.estado && t.destino !== 'nuevo')) { toast('No hay mensajes marcados'); if (btn) btn.disabled = false; return; }
+    const elegidos = IMP.msgs.filter((m) => m.usar && !m.repetido && (m.texto || m.foto) && !(IMP.tramos[m.tramo] || {}).descartado);
+    if (!elegidos.length && !IMP.tramos.some((t) => t && !t.descartado && t.estado && t.destino !== 'nuevo')) { toast('No hay mensajes marcados'); if (btn) btn.disabled = false; return; }
     const grupos = new Map();
     elegidos.forEach((m) => {
       const t = IMP.tramos[m.tramo] || IMP.tramos.find(Boolean);
@@ -1602,7 +1615,7 @@ async function hacerImport() {
     let totM = 0, totF = 0, totC = 0, totE = 0, totN = 0, ultimo = null;
     // también los temas donde solo cambia el estado (sin mensajes nuevos que guardar)
     IMP.tramos.forEach((t, k) => {
-      if (!t || !t.estado || t.destino === 'nuevo') return;
+      if (!t || t.descartado || !t.estado || t.destino === 'nuevo') return;
       if (![...grupos.values()].some((g) => g.t === t)) grupos.set('estado:' + k, { t, msgs: [] });
     });
     for (const { t, msgs } of grupos.values()) {
@@ -2050,6 +2063,21 @@ const ACTS = {
     m.pide = W().pideCambio(m.texto) && m.persona !== S.me.id;
     m.pendiente = m.pide && !m.yaPedido;
     IMP.tramos.forEach((t, k) => { if (t && !t.aMano) sugerirEstado(t, k); });
+    renderImport();
+  },
+  'imp-quitar-tema': (el) => {
+    const k = +el.dataset.k, t = IMP && IMP.tramos[k]; if (!t) return;
+    syncImport();
+    t.descartado = true; t.auto = false;
+    IMP.msgs.forEach((m) => { if (m.tramo === k) { m.usarAntes = m.usar; m.usar = false; } });
+    renderImport();
+  },
+  'imp-restaurar': (el) => {
+    const k = +el.dataset.k, t = IMP && IMP.tramos[k]; if (!t) return;
+    syncImport();
+    t.descartado = false;
+    IMP.msgs.forEach((m) => { if (m.tramo === k) m.usar = m.usarAntes !== undefined ? m.usarAntes : (!m.sistema && (!m.charla || !!m.foto || !!m.audio)); });
+    sugerirEstado(t, k);
     renderImport();
   },
   'imp-descartar': async () => {

@@ -164,8 +164,8 @@
   const GRACIAS = /\b(gracias|grax|gx|thanks|thx|te pasaste)\b/i;
   const RISA = /\b(?:j[aeiou]){2,}j?\b|\bjsj\w*|\blol\b|\bxd\b/gi;
   const RELLENO = /\b(porfa(?:vor)?|porfis|por favor|plis|pls|cachai|po|oye|ya)\b[,]?/gi;
-  const VOCATIVO = /^(?:(?:hola|holi|buen[oa]s(?: d[íi]as| tardes| noches)?|hey|ok(?:ey)?|ya|ok?)\b[\s,!.:-]*)*(?:(?:javi|javiera|maca|macarena|flavio|chiquill[oa]s|equipo)\b[\s,!.:-]*)?/i;
-  const PROMESA = /\b(te comento|te cuento|te aviso|lo reviso|lo veo|lo vemos|lo conversamos|cualquier cosa|estuve revisando|estoy revisando|ahora lo veo|despu[ée]s lo veo)\b/i;
+  const VOCATIVO = /^(?:(?:hol+[aie]+s?|buen[oa]s(?: d[íi]as| tardes| noches)?|hey|ok(?:ey)?|ya|ok?)\b[\s,!.:-]*)*(?:(?:javi|javiera|maca|macarena|flavio|chiquill[oa]s|equipo)\b[\s,!.:-]*)?/i;
+  const PROMESA = /\b(estoy (?:afuera|abajo|llegando|en camino|saliendo)|voy (?:en camino|saliendo|llegando)|(?:ya )?(?:llegu[ée]|llego)|ya voy|te llamo|me llamas|hablamos|nos vemos|te escribo|te mando (?:un )?audio|te comento|te cuento|te aviso|lo reviso|lo veo|lo vemos|lo conversamos|cualquier cosa|estuve revisando|estoy revisando|ahora lo veo|despu[ée]s lo veo)(?![\wáéíóúñ])/i;
   const SOLO_OK = /^(ok|okey|oka|vale|dale|listo|si|sí|ya|bueno|perfecto|genial|de una)$/i;
   const ABREV = [[/\bq\b/gi, 'que'], [/\bxq\b/gi, 'porque'], [/\bpq\b/gi, 'porque'], [/\btb\b/gi, 'también'], [/\btmb\b/gi, 'también'], [/\bx\s+favor\b/gi, 'por favor'], [/\bpa\b/gi, 'para'], [/\bk\b/gi, 'que']];
 

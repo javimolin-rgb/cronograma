@@ -56,7 +56,13 @@ function splitName(name) {
   base = base.replace(/[ _-]*(final|definitiv[oa]|ok)\s*$/i, '');
   return { base: slugify(base, 'archivo'), label: base.trim() || n, ext, version };
 }
-const fileSrc = (f) => f.blobUrl || f.url || '';
+// La copia local de un archivo recién subido vive solo en este equipo (nunca se guarda: en otro teléfono no abre)
+const LOCAL = new Map();
+function archivoSubido(obj) {
+  if (obj.blobUrl) { LOCAL.set(obj.id, obj.blobUrl); delete obj.blobUrl; }
+  return obj;
+}
+const fileSrc = (f) => LOCAL.get(f.id) || f.url || '';
 const extOf = (f) => (splitName(f.name).ext || (f.path || '').split('.').pop() || '').toLowerCase();
 const isImg = (f) => (f.type || '').startsWith('image/') || ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'svg'].includes(extOf(f));
 const isVideo = (f) => (f.type || '').startsWith('video/') || ['mp4', 'mov', 'webm', 'm4v'].includes(extOf(f));
@@ -215,6 +221,8 @@ const S = {
 let store, ED = null, sheetOpen = false, toastT;
 
 function normalize(db) {
+  // archivos que quedaron guardados con su copia local de otro equipo: se usa la dirección publicada
+  (db.posts || []).forEach((p) => (p.files || []).forEach((f) => { if (f.blobUrl) delete f.blobUrl; }));
   db.posts = (db.posts || []).map((p) => Object.assign({
     title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
@@ -1150,7 +1158,7 @@ async function onFiles(input) {
       const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
       const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
       const r = await store.upload(f, { dir: projectName(ed.d), name: nombre });
-      ed.d.files.push(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r));
+      ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r)));
     }
     catch (e) { console.error(e); toast(`No se pudo subir ${f.name}: ${e.message || e}`, 4000); }
     ed.uploading -= 1;
@@ -1460,6 +1468,9 @@ function candidatas(msgs) {
   const FMT = [[/\breels?\b/i, ['reel', 'video']], [/\bcarrusel/i, ['carrusel']], [/\b(stor(y|ies)|historias?)\b/i, ['story']], [/\bvideos? largo/i, ['video']],
     [/\b(post|publicaci[óo]n)\b/i, ['post', 'carrusel']], [/\b(p[áa]gina|sitio|web|formulario|cotizador)\b/i, ['web']], [/\b(carpeta|impres|imprenta|folleto)/i, ['grafica', 'pdf']], [/\bbanner/i, ['banner']]];
   const formatos = new Set(FMT.filter(([re]) => re.test(texto)).flatMap(([, f]) => f));
+  // si lo que se mandó son videos, es un reel o un video (no un carrusel de fotos)
+  const adj = msgs.filter((m) => m.adjunto && ['video', 'imagen'].includes(m.adjunto.kind));
+  if (adj.length && adj.filter((m) => m.adjunto.kind === 'video').length >= adj.length / 2) { formatos.add('reel'); formatos.add('video'); }
   const pideNueva = /\b(nuev[oa]s?|otr[oa]s?)\s+(reel|carrusel|post|story|historia|video|pieza|publicaci[óo]n|l[áa]mina|banner)/i.test(texto) ||
     /\b(reel|carrusel|post|story|video|pieza|publicaci[óo]n)\s+(?:\S+\s+){0,4}nuev[oa]\b/i.test(texto);
   const orden = W().palabras(texto);
@@ -1472,6 +1483,9 @@ function candidatas(msgs) {
     tit.slice(1).forEach((w, i) => { if (pares.has(tit[i] + ' ' + w)) pts += 2 * (peso(w) + peso(tit[i])); });
     resto.forEach((w) => { if (dichas.has(w)) pts += 0.6 * peso(w); });
     extra.forEach((w) => { if (dichas.has(w)) pts += 0.3 * peso(w); });
+    // si la pieza tiene una palabra propia (Itahue, Lingue, Ciprés…) y nadie la nombró, la coincidencia es más dudosa
+    const propias = tit.filter((w) => (df[w] || 0) <= 2);
+    if (pts && propias.length && !propias.some((w) => dichas.has(w))) pts *= 0.6;
     if (pts && formatos.size && !formatos.has(p.format)) pts *= 0.35;
     if (pts && pideNueva) pts *= 0.4;
     if (pts && ['diseno', 'revision', 'cambios', 'aprobado', 'idea'].includes(p.status)) pts *= 1.25; // lo que está en curso
@@ -1501,9 +1515,17 @@ function leerConversacion() {
 // Deja los mensajes listos: los filtra, los dice de forma objetiva y adivina a qué pieza van
 function prepararImport(msgs) {
   IMP.sinMapear = W().mapearAutores(msgs.filter((m) => !m.manual), P, CFG.WHATSAPP_ALIAS || {});
+  let previo = null;
   msgs.forEach((m) => {
     if (m.manual && !m.persona) m.persona = autorPorDefecto();
     filtrarMensaje(m);
+    // un "sí" que responde a "¿aprobado para subir?" es una aprobación
+    if (previo && previo.persona === S.me.id && m.persona && m.persona !== S.me.id && !m.pide &&
+        /\?\s*$/.test(previo.original || '') && /aprob|subir|public|est[áa] (?:bien|ok)|te tinca|lo dejo|as[íi]\??$|va\??$|ok\??$/i.test(previo.original || '') &&
+        /^\s*(s[íi]+|dale|ok(?:ey|a)?|listo|perfecto|de una|aprobad\w*|vamos)\b/i.test(m.original || '')) {
+      m.aprueba = true; m.charla = false; m.texto = m.texto || 'Aprobado.';
+    }
+    if (!m.sistema && (m.original || m.texto)) previo = m;
     m.usar = !m.sistema && (!m.charla || !!m.foto || !!m.audio || (m.adjunto && m.adjunto.kind === 'imagen'));
     if (m.foto === undefined) m.foto = null;
   });
@@ -1621,7 +1643,7 @@ function estadoAudio(m) {
   }
   const T = {
     espera: 'En cola para transcribir…',
-    cargando: `Preparando la transcripción${TRANS.progreso ? ' · ' + TRANS.progreso + '%' : ''} (la primera vez tarda un poco)…`,
+    cargando: TRANS.modeloListo ? 'Preparando el audio…' : `Preparando la transcripción${TRANS.progreso ? ' · ' + TRANS.progreso + '%' : ''} (la primera vez tarda un poco)…`,
     escuchando: 'Escuchando el audio…',
     listo: 'Audio transcrito',
     error: 'No se pudo transcribir aquí: escribe lo importante del audio.'
@@ -1860,7 +1882,7 @@ async function importarEn(t, elegidos) {
       id: uid(), title: (t.titulo || '').trim() || 'Pedido del equipo', caption: '', notes: '', hashtags: '',
       campaign: (t.proyecto || '').trim(), date: elegidos[0].dia || today(), time: '',
       status: 'diseno', assignees: [...new Set(elegidos.map((m) => m.persona).filter(Boolean))],
-      format: formatoDe(elegidos.map((m) => m.original || m.texto).join(' ')),
+      format: formatoDe(elegidos.map((m) => m.original || m.texto).join(' '), elegidos),
       platforms: /\b(reel|carrusel|story|historia|instagram|post)\b/i.test(elegidos.map((m) => m.original || m.texto).join(' ')) ? ['instagram'] : [],
       priority: 'normal', links: [], files: [], checklist: []
     };
@@ -1882,7 +1904,7 @@ async function importarEn(t, elegidos) {
     const ext = fotoTipo(m.foto).startsWith('image/') ? 'jpg' : (fotoNombre(m.foto).split('.').pop() || 'bin').toLowerCase();
     try {
       const r = await store.upload(await fotoArchivo(m.foto), { dir: projectName(post), name: `${base}-${n}-v1.${ext}` });
-      m.archivo = Object.assign({ id: uid(), by: m.persona || S.me.id, at: m.at, base: `${base}-${n}`, version: 1 }, r);
+      m.archivo = archivoSubido(Object.assign({ id: uid(), by: m.persona || S.me.id, at: m.at, base: `${base}-${n}`, version: 1 }, r));
       post.files.push(m.archivo);
     } catch (e) { toast('No se pudo subir un archivo: ' + (e.message || e), 4000); }
   }
@@ -1940,6 +1962,12 @@ async function importarEn(t, elegidos) {
       } else porGuardar.push({ soloFotos: true, author: autor, createdAt: m.at, hasta: m.at, fileIds: [m.archivo.id], impIds: [id] });
       continue;
     }
+    const ult = porGuardar[porGuardar.length - 1];
+    if (ult && !ult.soloFotos && ult.author === autor && ult.text === m.texto && new Date(m.at) - new Date(ult.createdAt) < 6 * 3600e3) {
+      if (m.archivo) ult.fileIds.push(m.archivo.id);   // el mismo texto mandado otra vez con otro archivo
+      ult.impIds.push(id);
+      continue;
+    }
     porGuardar.push({ author: autor, text: m.texto, createdAt: m.at, fileIds: m.archivo ? [m.archivo.id] : [], impIds: [id] });
   }
   let nuevos = 0;
@@ -1958,7 +1986,7 @@ async function importarEn(t, elegidos) {
   return { post, nuevos, fotos: conFoto.length, cambios, estado: estadoCambio, nueva: !viejo };
 }
 
-const formatoDe = (t) => [[/\breels?\b/i, 'reel'], [/\bcarrusel/i, 'carrusel'], [/\b(stor(y|ies)|historias?)\b/i, 'story'], [/\b(p[áa]gina|sitio|web|formulario)\b/i, 'web'],
+const formatoDe = (t, msgs) => (msgs && msgs.filter((m) => m.adjunto && m.adjunto.kind === 'video').length > (msgs || []).filter((m) => m.adjunto && m.adjunto.kind === 'imagen').length ? 'reel' : null) || [[/\breels?\b/i, 'reel'], [/\bcarrusel/i, 'carrusel'], [/\b(stor(y|ies)|historias?)\b/i, 'story'], [/\b(p[áa]gina|sitio|web|formulario)\b/i, 'web'],
   [/\b(carpeta|impres|imprenta|folleto)/i, 'grafica'], [/\bbanner/i, 'banner'], [/\bvideo/i, 'video'], [/\bpdf\b/i, 'pdf']].find(([re]) => re.test(t || ''))?.[1] || 'post';
 
 /* ---------- el "+" de Javi: pieza nueva o importar ---------- */
@@ -2127,26 +2155,44 @@ async function elegirArchivosImport(files) {
 }
 
 /* ---------- transcribir audios (en el mismo teléfono, sin mandarlos a ningún lado) ---------- */
-const TRANS = { asr: null, progreso: 0, corriendo: false };
-async function transcriptor() {
-  if (!TRANS.asr) {
-    TRANS.asr = (async () => {
-      const T = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.6/dist/transformers.min.js');
-      T.env.allowLocalModels = false;
-      const vistos = {};
-      return T.pipeline('automatic-speech-recognition', 'Xenova/whisper-base', {
-        dtype: 'q8',
-        progress_callback: (p) => {
-          if (p.status !== 'progress' || !p.total) return;
-          vistos[p.file] = [p.loaded, p.total];
-          const v = Object.values(vistos);
-          const pr = Math.round(100 * v.reduce((a, x) => a + x[0], 0) / v.reduce((a, x) => a + x[1], 0));
-          if (pr !== TRANS.progreso) { TRANS.progreso = pr; const el = $('.audiost'); if (el && IMP) renderImport(); }
-        }
-      });
-    })();
+// La transcripción corre en un worker (transcriptor.js): si corriera aquí, la página dejaría de responder mientras escucha
+const TRANS = { worker: null, progreso: 0, corriendo: false, n: 0, esperas: {} };
+function trabajador() {
+  if (!TRANS.worker) {
+    const w = new Worker('transcriptor.js', { type: 'module' });
+    w.onmessage = (e) => {
+      const d = e.data || {};
+      if (d.tipo === 'progreso') {
+        if (d.pct !== TRANS.progreso) { TRANS.progreso = d.pct; if (IMP && $('.audiost')) renderImport(); }
+        return;
+      }
+      const esp = TRANS.esperas[d.id];
+      if (!esp) return;
+      if (d.tipo === 'escuchando') { TRANS.modeloListo = true; if (esp.alEscuchar) esp.alEscuchar(); return; }
+      delete TRANS.esperas[d.id];
+      clearTimeout(esp.reloj);
+      if (d.tipo === 'listo') esp.ok(d.texto); else esp.mal(new Error(d.error || 'no se pudo transcribir'));
+    };
+    w.onerror = (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      const err = new Error((e && e.message) || 'no se pudo cargar el transcriptor');
+      Object.values(TRANS.esperas).forEach((x) => { clearTimeout(x.reloj); x.mal(err); });
+      TRANS.esperas = {};
+      w.terminate();
+      if (TRANS.worker === w) TRANS.worker = null;
+    };
+    TRANS.worker = w;
   }
-  try { return await TRANS.asr; } catch (e) { TRANS.asr = null; throw e; }
+  return TRANS.worker;
+}
+function transcribirEnFondo(audio, alEscuchar) {
+  return new Promise((ok, mal) => {
+    const id = ++TRANS.n;
+    const reloj = setTimeout(() => { if (TRANS.esperas[id]) { delete TRANS.esperas[id]; mal(new Error('tardó demasiado')); } }, 15 * 60e3);
+    TRANS.esperas[id] = { ok, mal, alEscuchar, reloj };
+    try { trabajador().postMessage({ id, audio }, [audio.buffer]); }
+    catch (e) { clearTimeout(reloj); delete TRANS.esperas[id]; mal(e); }
+  });
 }
 async function audioMono16k(file) {
   const AC = window.AudioContext || window.webkitAudioContext;
@@ -2168,12 +2214,10 @@ async function transcribirPendientes() {
       if (!m) break;
       try {
         m.trans = 'cargando'; renderImport();
-        const asr = await transcriptor();
-        m.trans = 'escuchando'; renderImport();
         const archivo = m.audio.entrada ? await m.audio.entrada.blob(m.audio.type) : m.audio;
-        const r = await asr(await audioMono16k(archivo), { language: 'spanish', task: 'transcribe', chunk_length_s: 30, stride_length_s: 5 });
+        const texto = await transcribirEnFondo(await audioMono16k(archivo), () => { m.trans = 'escuchando'; if (IMP) renderImport(); });
         if (!IMP || !IMP.msgs.includes(m)) break;
-        m.original = String((r && r.text) || '').trim();
+        m.original = texto;
         filtrarMensaje(m);
         m.usar = !!m.texto;
         m.trans = 'listo';

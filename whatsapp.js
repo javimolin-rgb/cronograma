@@ -208,7 +208,7 @@
   }
 
   // Palabras importantes de un texto, para comparar si dos mensajes hablan de lo mismo
-  const VACIAS = new Set('para como esta este esto pero porque cuando donde sobre entre desde hasta tiene tienen hacer puede quizas tambien solo todo todos todas cada otra otro otras otros mismo misma algo bien mejor mucho poco quiero creo seria ideal'.split(' '));
+  const VACIAS = new Set('para como esta este esto pero porque cuando donde sobre entre desde hasta tiene tienen hacer puede quizas tambien solo todo todos todas cada otra otro otras otros mismo misma algo bien mejor mucho poco quiero creo seria ideal tipo casa casas neorigen hola gracias muchas javi maca flavio ahora hoy'.split(' '));
   const sinTilde = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
   function palabras(t) {
     return [...new Set(sinTilde(String(t || '').toLowerCase()).split(/[^a-z0-9ñ]+/).filter((w) => w.length > 3 && !VACIAS.has(w)).map((w) => w.replace(/(es|s)$/, '')))];

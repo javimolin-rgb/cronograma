@@ -2283,10 +2283,10 @@
    "tipo": "pc",
    "instalada": true,
    "push": false,
-   "version": "2026.10.24-3",
+   "version": "2026.10.24-4",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-10-24T20:56:25.891Z"
+   "lastSeen": "2026-10-24T21:21:49.785Z"
   }
  ]
 }

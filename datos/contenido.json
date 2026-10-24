@@ -1473,35 +1473,6 @@
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-21T19:00:00.000Z",
    "publishedAt": "2026-10-21T19:00:00.000Z"
-  },
-  {
-   "id": "p-carrusel-procesos",
-   "title": "Carrusel de procesos constructivos",
-   "caption": "Contenido de proceso real, en la línea de las publicaciones antiguas que mandó Maca de referencia.",
-   "notes": "",
-   "hashtags": "",
-   "campaign": "Instagram",
-   "date": "2026-10-29",
-   "time": "",
-   "format": "carrusel",
-   "status": "idea",
-   "priority": "normal",
-   "revisions": 0,
-   "platforms": [
-    "instagram"
-   ],
-   "assignees": [
-    "javi"
-   ],
-   "files": [],
-   "links": [],
-   "checklist": [],
-   "createdAt": "2026-10-21T10:00:00.000Z",
-   "createdBy": "javi",
-   "updatedAt": "2026-10-29T19:00:00.000Z",
-   "updatedBy": "javi",
-   "statusChangedAt": "2026-10-29T19:00:00.000Z",
-   "publishedAt": null
   }
  ],
  "comments": [
@@ -2146,6 +2117,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "de89505a-5c4e-4cba-acdb-43e11885fd51",
+   "postId": "p-carrusel-procesos",
+   "postTitle": "Carrusel de procesos constructivos",
+   "actor": "javi",
+   "type": "deleted",
+   "text": "eliminó la pieza",
+   "meta": null,
+   "createdAt": "2026-10-24T22:13:13.673Z"
+  },
   {
    "id": "72f8637b-bc3d-4703-9e0e-0810d3b1ac89",
    "postId": "e-fotos-itahue",

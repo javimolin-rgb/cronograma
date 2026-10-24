@@ -94,42 +94,66 @@
   }
 
   /* ---------- leer un .zip (por ejemplo, un chat exportado de WhatsApp con sus fotos y audios) ---------- */
-  async function inflar(datos) {
-    if (typeof DecompressionStream !== 'function') throw new Error('este navegador no puede abrir archivos .zip comprimidos');
-    const s = new Blob([datos]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-    return new Uint8Array(await new Response(s).arrayBuffer());
-  }
+  // Lee el .zip por partes (sin cargarlo entero en memoria: en iPhone un chat con fotos y videos puede pesar cientos de MB)
+  const leer = async (blob, ini, fin) => new DataView(await blob.slice(ini, fin).arrayBuffer());
   async function readZip(blob) {
-    const buf = new Uint8Array(await blob.arrayBuffer());
-    const v = new DataView(buf.buffer);
+    const cola = Math.min(blob.size, 65557);
+    const t = await leer(blob, blob.size - cola, blob.size);
     // Fin del directorio central: se busca desde el final (puede tener un comentario)
     let fin = -1;
-    for (let i = buf.length - 22; i >= Math.max(0, buf.length - 65557); i--) {
-      if (v.getUint32(i, true) === 0x06054b50) { fin = i; break; }
+    for (let i = t.byteLength - 22; i >= 0; i--) {
+      if (t.getUint32(i, true) === 0x06054b50) { fin = i; break; }
     }
     if (fin < 0) throw new Error('no parece un archivo .zip');
-    const total = v.getUint16(fin + 10, true);
-    let p = v.getUint32(fin + 16, true);
+    let total = t.getUint16(fin + 10, true), cdTam = t.getUint32(fin + 12, true), cdIni = t.getUint32(fin + 16, true);
+    if (cdIni === 0xFFFFFFFF || total === 0xFFFF) {
+      // ZIP64 (archivos de más de 4 GB o más de 65.535 archivos)
+      const loc = fin - 20;
+      if (loc < 0 || t.getUint32(loc, true) !== 0x07064b50) throw new Error('zip demasiado grande');
+      const z = await leer(blob, Number(t.getBigUint64(loc + 8, true)), Number(t.getBigUint64(loc + 8, true)) + 56);
+      total = Number(z.getBigUint64(32, true)); cdTam = Number(z.getBigUint64(40, true)); cdIni = Number(z.getBigUint64(48, true));
+    }
+    const cd = await leer(blob, cdIni, cdIni + cdTam);
+    const bytes = new Uint8Array(cd.buffer);
     const utf8 = new TextDecoder('utf-8'), latin = new TextDecoder('latin1');
     const out = [];
-    for (let k = 0; k < total; k++) {
-      if (v.getUint32(p, true) !== 0x02014b50) break;
-      const flags = v.getUint16(p + 8, true), metodo = v.getUint16(p + 10, true);
-      const comp = v.getUint32(p + 20, true), tam = v.getUint32(p + 24, true);
-      const ln = v.getUint16(p + 28, true), le = v.getUint16(p + 30, true), lc = v.getUint16(p + 32, true);
-      const local = v.getUint32(p + 42, true);
-      const crudo = buf.subarray(p + 46, p + 46 + ln);
+    let p = 0;
+    for (let k = 0; k < total && p + 46 <= cd.byteLength; k++) {
+      if (cd.getUint32(p, true) !== 0x02014b50) break;
+      const flags = cd.getUint16(p + 8, true), metodo = cd.getUint16(p + 10, true);
+      let comp = cd.getUint32(p + 20, true), tam = cd.getUint32(p + 24, true);
+      const ln = cd.getUint16(p + 28, true), le = cd.getUint16(p + 30, true), lc = cd.getUint16(p + 32, true);
+      let local = cd.getUint32(p + 42, true);
+      const crudo = bytes.subarray(p + 46, p + 46 + ln);
       const nombre = (flags & 0x800) ? utf8.decode(crudo) : (/^[\x00-\x7f]*$/.test(latin.decode(crudo)) ? latin.decode(crudo) : utf8.decode(crudo));
+      // Tamaños de ZIP64 en el campo extra
+      let x = p + 46 + ln;
+      const xfin = x + le;
+      while (x + 4 <= xfin) {
+        const id = cd.getUint16(x, true), sz = cd.getUint16(x + 2, true);
+        if (id === 1) {
+          let q = x + 4;
+          if (tam === 0xFFFFFFFF) { tam = Number(cd.getBigUint64(q, true)); q += 8; }
+          if (comp === 0xFFFFFFFF) { comp = Number(cd.getBigUint64(q, true)); q += 8; }
+          if (local === 0xFFFFFFFF) { local = Number(cd.getBigUint64(q, true)); }
+        }
+        x += 4 + sz;
+      }
       p += 46 + ln + le + lc;
       if (nombre.endsWith('/') || /(^|\/)(__MACOSX|\.DS_Store)/.test(nombre)) continue;
-      const lnl = v.getUint16(local + 26, true), lel = v.getUint16(local + 28, true);
-      const ini = local + 30 + lnl + lel;
-      const datos = buf.subarray(ini, ini + comp);
       out.push({
         name: nombre.split('/').pop(), path: nombre, size: tam,
+        // El contenido se saca recién cuando se pide, y sin copiarlo entero si viene sin comprimir
         async blob(tipo) {
+          const h = await leer(blob, local, local + 30);
+          const ini = local + 30 + h.getUint16(26, true) + h.getUint16(28, true);
+          const datos = blob.slice(ini, ini + comp);
           if (metodo === 0) return new Blob([datos], { type: tipo || '' });
-          if (metodo === 8) return new Blob([await inflar(datos)], { type: tipo || '' });
+          if (metodo === 8) {
+            if (typeof DecompressionStream !== 'function') throw new Error('este navegador no puede abrir archivos .zip comprimidos');
+            const s = datos.stream().pipeThrough(new DecompressionStream('deflate-raw'));
+            return new Blob([await new Response(s).arrayBuffer()], { type: tipo || '' });
+          }
           throw new Error('compresión no soportada en ' + nombre);
         },
         async text() { return utf8.decode(new Uint8Array(await (await this.blob()).arrayBuffer())); }

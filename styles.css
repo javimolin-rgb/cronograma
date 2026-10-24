@@ -525,3 +525,17 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .tramotop>small{color:var(--muted);font-size:0.71875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .tramotop .btn.sm{padding:6px 10px;font-size:0.75rem;flex:none}
 .tramo.fuera .tramoh{opacity:.7;box-shadow:inset 0 0 0 1px var(--line);background:transparent}
+
+/* Cargando, encima de la hoja de importar */
+#impcarga{position:absolute;inset:0;z-index:5;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 88%,transparent);border-radius:inherit;padding:24px}
+.impcarga-in{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;max-width:300px}
+.impcarga-in b{font-size:1rem}
+.impcarga-in small{color:var(--muted);font-size:0.8125rem}
+.impcarga-in .nota{font-size:0.75rem;margin-top:6px}
+.giro{width:34px;height:34px;border-radius:50%;border:3px solid var(--surface2);border-top-color:var(--accent);animation:girar .9s linear infinite;margin-bottom:6px}
+@keyframes girar{to{transform:rotate(360deg)}}
+.impfoto img[data-thumb]:not([src]){display:block;height:80px;background:linear-gradient(90deg,var(--surface2),var(--line),var(--surface2));background-size:200% 100%;animation:brillo 1.2s linear infinite}
+@keyframes brillo{to{background-position:-200% 0}}
+.impaudios{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--surface);box-shadow:var(--shadow);font-size:0.8125rem}
+.impaudios span{display:inline-flex;align-items:center;gap:6px}
+.audiost .btn.sm{padding:5px 10px;font-size:0.75rem}

@@ -733,7 +733,7 @@ function openSheet(html, full) {
 function closeSheet(fromPop) {
   if (!sheetOpen) return;
   sheetOpen = false; ED = null;
-  if (IMP) { IMP.msgs.forEach((m) => { if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl); }); IMP = null; if (S.compartidos) setTimeout(renderBanner, 0); }
+  if (IMP) { IMP.msgs.forEach(soltarFoto); IMP = null; if (S.compartidos) setTimeout(renderBanner, 0); }
   $('#sheet').hidden = true; $('#panel').innerHTML = '';
   document.body.style.overflow = '';
   if (!fromPop) history.back();
@@ -1284,7 +1284,7 @@ const W = () => window.WhatsApp;
 const puedeImportar = () => (CFG.IMPORT_PEOPLE || []).includes(S.me.id) && store.canWrite;
 const hashCorto = (t) => { let h = 0; for (let i = 0; i < t.length; i++) { h = (h * 31 + t.charCodeAt(i)) | 0; } return Math.abs(h).toString(36); };
 const impId = (m) => 'wa_' + m.at.slice(0, 16) + '_' + (m.persona || m.autor || 'x').toLowerCase().slice(0, 6) + '_' + hashCorto((m.original || m.texto || '').slice(0, 60));
-const idsImportados = (postId) => new Set(S.db.comments.filter((c) => c.postId === postId).map((c) => c.impId || c.waId).filter(Boolean));
+const idsImportados = (postId) => new Set(S.db.comments.filter((c) => c.postId === postId).flatMap((c) => [c.impId || c.waId].concat(c.impIds || [])).filter(Boolean));
 const URLS = /https?:\/\/[^\s<>"']+/gi;
 
 // Puntaje de cada pieza según cuánto se parece a lo que dicen los mensajes.
@@ -1463,6 +1463,9 @@ function syncImport() {
 
 function estadoAudio(m) {
   if (!m.audio) return '';
+  if (m.trans === 'pendiente') {
+    return `<div class="audiost"><span class="hint">${ic('mic', 14)} Audio sin transcribir.</span><button class="btn ghost sm" data-act="imp-transcribir" data-i="${IMP.msgs.indexOf(m)}">Transcribir</button></div>`;
+  }
   const T = {
     espera: 'En cola para transcribir…',
     cargando: `Preparando la transcripción${TRANS.progreso ? ' · ' + TRANS.progreso + '%' : ''} (la primera vez tarda un poco)…`,
@@ -1519,7 +1522,7 @@ function renderImport() {
         ${m.adjunto && !['imagen', 'audio'].includes(m.adjunto.kind) && !m.foto ? `<p class="hint">📎 ${esc(m.adjunto.name || m.adjunto.kind)}${m.adjunto.name ? '' : ' (no viene en el texto)'}</p>` : ''}
         ${m.enlaces.length ? `<p class="hint">${m.enlaces.map((l) => `<a href="${esc(l)}" target="_blank" rel="noopener">${esc(l.slice(0, 44))}…</a>`).join('<br>')}</p>` : ''}
         ${foto ? (m.foto
-          ? `<div class="impfoto">${(m.foto.file.type || '').startsWith('image/') ? `<img src="${esc(m.foto.blobUrl)}" alt="">` : `<span class="ext">${esc((m.foto.file.name.split('.').pop() || 'archivo').toUpperCase())}</span>`}<button class="x" data-act="imp-quitar-foto" data-i="${i}">${ic('x', 14)}</button></div>`
+          ? `<div class="impfoto">${fotoTipo(m.foto).startsWith('image/') ? `<img data-thumb="${i}" alt=""${m.foto.thumb ? ` src="${esc(m.foto.thumb)}"` : ''}>` : `<span class="ext">${esc((fotoNombre(m.foto).split('.').pop() || 'archivo').toUpperCase())}${m.foto.size ? ' · ' + esc(prettySize(m.foto.size)) : ''}</span>`}<button class="x" data-act="imp-quitar-foto" data-i="${i}">${ic('x', 14)}</button></div>`
           : `<label class="impslot">${ic('image', 18)} Elegir foto<input type="file" accept="image/*" data-imp-foto="${i}" hidden></label>`) : ''}
         ${m.pide && m.persona !== S.me.id ? (m.yaPedido ? `<p class="hint">↺ Este cambio ${esc(m.yaPedido)}.</p>` : `<label class="imppend"><input type="checkbox" data-act="imp-pend" data-i="${i}"${m.pendiente ? ' checked' : ''}> Sumar a pendientes de la pieza</label>`) : ''}
       </div></div>`;
@@ -1573,6 +1576,11 @@ function renderImport() {
     <div class="pb" id="imp-pb">
       <div class="impres"><b>${cambiosTot} cambio${cambiosTot === 1 ? '' : 's'} detectado${cambiosTot === 1 ? '' : 's'}</b> en ${nTramos === 1 ? 'una pieza' : nTramos + ' temas'} · ${utiles.length} mensaje${utiles.length === 1 ? '' : 's'}${charla ? ` · ${charla} de pura conversación quedan fuera` : ''}</div>
       <p class="hint">Se guarda solo lo técnico, escrito de forma objetiva. Lo que escriban directo en la app no se toca.</p>
+      ${(() => {
+        const pend = IMP.msgs.filter((m) => m.audio && m.trans === 'pendiente' && !(IMP.tramos[m.tramo] || {}).descartado).length;
+        return pend ? `<div class="impaudios"><span>${ic('mic', 16)} ${pend} audio${pend === 1 ? '' : 's'} sin transcribir.</span><button class="btn ghost sm" data-act="imp-transcribir">Transcribir ${pend === 1 ? '' : 'todos'}</button></div>
+          <p class="hint">La transcripción se hace en este teléfono: la primera vez descarga unos 80 MB.${isIOS() ? ' En iPhone puede tardar y, con muchos audios, cerrar la app: si pasa, escribe lo importante a mano.' : ''} Puedes importar sin transcribirlos.</p>` : '';
+      })()}
       ${sin.length ? `<p class="hint">No reconocí a: ${sin.map(esc).join(', ')}. Sus mensajes quedarán a tu nombre.</p>` : ''}
       <datalist id="camps2">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
       ${bloques || '<p class="hint">No hay mensajes que importar.</p>'}
@@ -1580,14 +1588,65 @@ function renderImport() {
     <div class="pf">${IMP.compartido ? `<button class="btn ghost" data-act="imp-descartar">Descartar</button>` : `<button class="btn ghost" data-act="imp-todas-fotos">${ic('image', 16)} Pegar fotos</button>`}
       <button class="btn" data-act="imp-ok">Importar</button></div>`;
   if ($('#imp-pb')) $('#imp-pb').scrollTop = sc;
+  hacerMiniaturas();
+}
+
+/* Fotos de la importación: del zip se sacan recién cuando se usan, y en pantalla va una miniatura liviana
+   (en iPhone, abrir decenas de fotos en tamaño completo hace que Safari cierre la página) */
+const fotoTipo = (f) => ((f.file ? f.file.type : f.type) || '');
+const fotoNombre = (f) => ((f.file ? f.file.name : f.name) || 'archivo');
+async function fotoArchivo(f) {
+  if (f.file) return f.file;
+  const b = await f.entrada.blob(f.type);
+  return new File([b], f.name, { type: f.type || b.type });
+}
+function soltarFoto(m) {
+  if (!m || !m.foto) return;
+  if (m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl);
+  if (m.foto.thumb && m.foto.thumb !== m.foto.blobUrl) URL.revokeObjectURL(m.foto.thumb);
+}
+async function miniatura(blob) {
+  const url = URL.createObjectURL(blob);
+  try {
+    const img = new Image();
+    img.src = url;
+    await img.decode();
+    const r = Math.min(1, 320 / Math.max(img.naturalWidth || 1, img.naturalHeight || 1));
+    const c = document.createElement('canvas');
+    c.width = Math.max(1, Math.round(img.naturalWidth * r)); c.height = Math.max(1, Math.round(img.naturalHeight * r));
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+    img.src = '';
+    const b = await new Promise((res) => c.toBlob(res, 'image/jpeg', 0.72));
+    c.width = c.height = 0;
+    return b ? URL.createObjectURL(b) : '';
+  } finally { URL.revokeObjectURL(url); }
+}
+let haciendoMiniaturas = false;
+async function hacerMiniaturas() {
+  if (haciendoMiniaturas || !IMP) return;
+  haciendoMiniaturas = true;
+  try {
+    for (;;) {
+      const yo = IMP;
+      if (yo && yo.importando) break; // mientras sube, no se gasta memoria en miniaturas
+      const i = yo ? yo.msgs.findIndex((m) => m.foto && !m.foto.thumb && !m.foto.sinMini && fotoTipo(m.foto).startsWith('image/')) : -1;
+      if (i < 0) break;
+      const m = yo.msgs[i];
+      try { m.foto.thumb = await miniatura(m.foto.file || await m.foto.entrada.blob(m.foto.type)); }
+      catch (e) { m.foto.sinMini = true; }
+      if (IMP !== yo) break;
+      const el = document.querySelector(`img[data-thumb="${i}"]`);
+      if (el && m.foto.thumb) el.src = m.foto.thumb;
+    }
+  } finally { haciendoMiniaturas = false; }
 }
 
 // Recibe una imagen pegada o elegida y la deja junto a su mensaje
 function ponerFoto(i, file) {
   const m = IMP.msgs[i];
   if (!m) return;
-  if (m.foto && m.foto.blobUrl) URL.revokeObjectURL(m.foto.blobUrl);
-  m.foto = { file, blobUrl: URL.createObjectURL(file) };
+  soltarFoto(m);
+  m.foto = { file };
   m.usar = true;
   IMP.objetivoFoto = null;
   renderImport();
@@ -1598,6 +1657,7 @@ function siguienteSlot() {
 
 async function hacerImport() {
   syncImport();
+  if (IMP.importando) return;
   const btn = $('[data-act="imp-ok"]'); if (btn) btn.disabled = true;
   try {
     if (IMP.msgs.some((m) => m.usar && m.audio && ['espera', 'cargando', 'escuchando'].includes(m.trans) && !m.texto)) {
@@ -1618,7 +1678,13 @@ async function hacerImport() {
       if (!t || t.descartado || !t.estado || t.destino === 'nuevo') return;
       if (![...grupos.values()].some((g) => g.t === t)) grupos.set('estado:' + k, { t, msgs: [] });
     });
+    IMP.importando = true;
+    cargando('Importando…', 'Preparando');
+    await respirar();
+    let g = 0;
     for (const { t, msgs } of grupos.values()) {
+      g++;
+      IMP.etapa = grupos.size > 1 ? `Pieza ${g} de ${grupos.size}` : '';
       const r = await importarEn(t, msgs);
       totM += r.nuevos; totF += r.fotos; totC += r.cambios; totE += r.estado ? 1 : 0; totN += r.nueva ? 1 : 0; ultimo = r.post;
     }
@@ -1629,7 +1695,7 @@ async function hacerImport() {
     toast(`Listo: ${totM} comentario${totM === 1 ? '' : 's'}, ${totC} cambio${totC === 1 ? '' : 's'} a pendientes y ${totF} archivo${totF === 1 ? '' : 's'}${varias ? ` en ${grupos.size} piezas` : ` en “${ultimo.title}”`}${extra ? ' · ' + extra : ''}`, 5200);
     if (!varias && ultimo) setTimeout(() => openEditor(ultimo.id), 350);
   } catch (e) {
-    console.error(e); toast('No se pudo importar: ' + (e.message || e), 5000);
+    console.error(e); sinCargando(); if (IMP) IMP.importando = false; toast('No se pudo importar: ' + (e.message || e), 6000);
     if (btn) btn.disabled = false;
   }
 }
@@ -1656,12 +1722,13 @@ async function importarEn(t, elegidos) {
   const conFoto = elegidos.filter((m) => m.foto);
   for (let k = 0; k < conFoto.length; k++) {
     const m = conFoto[k];
-    toast(`Subiendo archivo ${k + 1} de ${conFoto.length}…`, 15000);
+    cargando('Importando…', `${IMP && IMP.etapa ? IMP.etapa + ' · ' : ''}Subiendo archivo ${k + 1} de ${conFoto.length}`);
+    await respirar();
     const base = slugify(post.title, 'foto').slice(0, 34).replace(/-+$/, '');
     const n = post.files.filter((f) => (f.base || '').startsWith(base)).length + 1;
-    const ext = (m.foto.file.type || '').startsWith('image/') ? 'jpg' : ((m.foto.file.name || '').split('.').pop() || 'bin').toLowerCase();
+    const ext = fotoTipo(m.foto).startsWith('image/') ? 'jpg' : (fotoNombre(m.foto).split('.').pop() || 'bin').toLowerCase();
     try {
-      const r = await store.upload(m.foto.file, { dir: projectName(post), name: `${base}-${n}-v1.${ext}` });
+      const r = await store.upload(await fotoArchivo(m.foto), { dir: projectName(post), name: `${base}-${n}-v1.${ext}` });
       m.archivo = Object.assign({ id: uid(), by: m.persona || S.me.id, at: m.at, base: `${base}-${n}`, version: 1 }, r);
       post.files.push(m.archivo);
     } catch (e) { toast('No se pudo subir un archivo: ' + (e.message || e), 4000); }
@@ -1703,19 +1770,35 @@ async function importarEn(t, elegidos) {
   }
 
   // 4) los mensajes como comentarios, con su fecha y su autor
+  cargando('Importando…', `${IMP && IMP.etapa ? IMP.etapa + ' · ' : ''}Guardando comentarios y pendientes`);
+  await respirar();
   const previos = idsImportados(post.id);
-  let nuevos = 0;
+  // Fotos seguidas de la misma persona, sin texto, van juntas en un solo comentario
+  const porGuardar = [];
   for (const m of elegidos) {
     const id = impId(m);
     if (previos.has(id)) continue;
-    const texto = m.texto || (m.foto ? 'Archivo de referencia.' : '');
-    if (!texto) continue;
+    const autor = m.persona || S.me.id;
+    if (!m.texto) {
+      if (!m.archivo) continue;
+      const ult = porGuardar[porGuardar.length - 1];
+      if (ult && ult.soloFotos && ult.author === autor && new Date(m.at) - new Date(ult.hasta) < 15 * 6e4) {
+        ult.fileIds.push(m.archivo.id); ult.impIds.push(id); ult.hasta = m.at;
+      } else porGuardar.push({ soloFotos: true, author: autor, createdAt: m.at, hasta: m.at, fileIds: [m.archivo.id], impIds: [id] });
+      continue;
+    }
+    porGuardar.push({ author: autor, text: m.texto, createdAt: m.at, fileIds: m.archivo ? [m.archivo.id] : [], impIds: [id] });
+  }
+  let nuevos = 0;
+  for (const c of porGuardar) {
+    const n = c.fileIds.length;
     await save('comments', {
-      id: uid(), postId: post.id, author: m.persona || S.me.id, text: texto,
-      createdAt: m.at, via: 'imp', impId: id,
-      fileIds: m.archivo ? [m.archivo.id] : []
+      id: uid(), postId: post.id, author: c.author,
+      text: c.soloFotos ? (n === 1 ? 'Archivo de referencia.' : `${n} archivos de referencia.`) : c.text,
+      createdAt: c.createdAt, via: 'imp', impId: c.impIds[0], impIds: c.impIds.length > 1 ? c.impIds : undefined,
+      fileIds: c.fileIds
     });
-    previos.add(id); nuevos++;
+    c.impIds.forEach((x) => previos.add(x)); nuevos++;
   }
   if (nuevos || cambios) await log(post, 'edit', `sumó ${nuevos} observaci${nuevos === 1 ? 'ón' : 'ones'}${cambios ? ` y ${cambios} pendiente${cambios === 1 ? '' : 's'}` : ''}`);
   if (cambios) await notify('update', post, post.assignees, `sumó ${cambios} cambio${cambios === 1 ? '' : 's'} pendiente${cambios === 1 ? '' : 's'} en “${post.title}”`);
@@ -1736,18 +1819,34 @@ function openAgregar() {
     </div>`);
 }
 
+/* Aviso de "cargando" encima de la hoja: puede tardar, pero siempre se ve que está trabajando */
+const respirar = () => new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0))); // deja que se pinte la pantalla
+function cargando(titulo, detalle) {
+  const panel = $('#panel'); if (!panel) return;
+  let c = $('#impcarga');
+  if (!c) { c = document.createElement('div'); c.id = 'impcarga'; c.setAttribute('role', 'status'); panel.appendChild(c); }
+  c.innerHTML = `<div class="impcarga-in"><span class="giro" aria-hidden="true"></span><b>${esc(titulo)}</b>${detalle ? `<small>${esc(detalle)}</small>` : ''}<small class="nota">Puede tardar un poco. No cierres la app.</small></div>`;
+}
+function sinCargando() { const c = $('#impcarga'); if (c) c.remove(); }
+
 // Abre el .zip, busca el chat y sus archivos, y deja todo listo para revisar
 async function importarZip(file) {
   if (!file) return;
   if (!puedeImportar()) { toast('Primero entra con tu clave'); return; }
-  toast('Abriendo la conversación…', 20000);
+  openSheet(`<div class="ph"><h2>Importar conversación</h2><span style="width:40px"></span></div><div class="pb" style="min-height:260px"></div>`, true);
+  cargando('Abriendo la conversación…', `${file.name} · ${prettySize(file.size)}`);
+  await respirar();
   try {
     const entradas = await window.Zip.read(file);
+    cargando('Leyendo los mensajes…', `${entradas.length} archivo${entradas.length === 1 ? '' : 's'} en el zip`);
+    await respirar();
     const txts = entradas.filter((e) => /\.txt$/i.test(e.name));
     const chat = txts.find((e) => /chat|whatsapp/i.test(e.name)) || txts.sort((a, b) => b.size - a.size)[0];
-    if (!chat) { toast('Ese zip no trae el texto de la conversación (.txt)', 5000); return; }
+    if (!chat) { sinCargando(); closeSheet(); toast('Ese zip no trae el texto de la conversación (.txt)', 5000); return; }
     const msgs = W().parse(await chat.text());
-    if (!msgs.length) { toast('No reconocí mensajes en esa conversación', 5000); return; }
+    if (!msgs.length) { sinCargando(); closeSheet(); toast('No reconocí mensajes en esa conversación', 5000); return; }
+    cargando('Ordenando por temas…', `${msgs.length} mensajes`);
+    await respirar();
     const porNombre = new Map(entradas.map((e) => [e.name.toLowerCase(), e]));
     const TIPO = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', heic: 'image/heic', mp4: 'video/mp4', mov: 'video/quicktime', '3gp': 'video/3gpp', opus: 'audio/ogg', ogg: 'audio/ogg', m4a: 'audio/mp4', mp3: 'audio/mpeg', aac: 'audio/aac', wav: 'audio/wav', pdf: 'application/pdf' };
     let fotos = 0, audios = 0;
@@ -1755,10 +1854,10 @@ async function importarZip(file) {
       const e = m.adjunto && m.adjunto.name && porNombre.get(m.adjunto.name.toLowerCase());
       if (!e) continue;
       const ext = (e.name.split('.').pop() || '').toLowerCase();
-      const f = new File([await e.blob(TIPO[ext])], e.name, { type: TIPO[ext] || '' });
-      if (m.adjunto.kind === 'audio') { m.audio = f; m.trans = 'espera'; audios++; }
+      const ref = { entrada: e, name: e.name, type: TIPO[ext] || '', size: e.size };
+      if (m.adjunto.kind === 'audio') { m.audio = ref; m.trans = 'pendiente'; audios++; }
       else if (m.adjunto.kind === 'sticker' || m.adjunto.kind === 'contacto') continue;
-      else { m.foto = { file: f, blobUrl: URL.createObjectURL(f) }; fotos++; if (m.adjunto.kind === 'video' && f.size > 20e6) m.pesado = true; }
+      else { m.foto = ref; fotos++; if (m.adjunto.kind === 'video' && e.size > 20e6) m.pesado = true; }
     }
     IMP = { paso: 2, texto: '', msgs: [], tramos: [], sinMapear: {}, compartido: false, zip: file.name };
     prepararImport(msgs);
@@ -1766,8 +1865,7 @@ async function importarZip(file) {
     openSheet(sheetOpen ? null : '', true);
     renderImport();
     toast(`${msgs.length} mensajes · ${fotos} archivo${fotos === 1 ? '' : 's'} · ${audios} audio${audios === 1 ? '' : 's'}`, 3000);
-    transcribirPendientes();
-  } catch (e) { console.error(e); toast('No se pudo abrir el zip: ' + (e.message || e), 5000); }
+  } catch (e) { console.error(e); sinCargando(); closeSheet(); toast('No se pudo abrir el zip: ' + (e.message || e), 6000); }
 }
 
 /* ---------- lo que llega reenviado desde WhatsApp (Compartir → Cronograma) ---------- */
@@ -1836,11 +1934,11 @@ async function abrirItems(lista, desdeCache) {
     else if (texto) { conTexto = msgSuelto(texto, it.at); msgs.push(conTexto); }
     for (const file of it.archivos || []) {
       if (/^audio\//.test(file.type) || /\.(opus|ogg|m4a|mp3|wav|aac)$/i.test(file.name)) {
-        msgs.push(msgSuelto('', it.at, { audio: file, trans: 'espera', adjunto: { kind: 'audio', name: '' } }));
+        msgs.push(msgSuelto('', it.at, { audio: file, trans: 'pendiente', adjunto: { kind: 'audio', name: '' } }));
       } else if (conTexto && !conTexto.foto) {                                // foto con su texto: van juntos
-        conTexto.foto = { file, blobUrl: URL.createObjectURL(file) };
+        conTexto.foto = { file };
       } else {
-        msgs.push(msgSuelto('', it.at, { foto: { file, blobUrl: URL.createObjectURL(file) }, adjunto: { kind: /^image\//.test(file.type) ? 'imagen' : 'documento', name: file.name } }));
+        msgs.push(msgSuelto('', it.at, { foto: { file }, adjunto: { kind: /^image\//.test(file.type) ? 'imagen' : 'documento', name: file.name } }));
       }
     }
   }
@@ -1850,7 +1948,8 @@ async function abrirItems(lista, desdeCache) {
   prepararImport(msgs);
   openSheet(sheetOpen ? null : '', true); // si ya hay una hoja abierta, se reusa (cerrarla y abrir otra se pisan)
   renderImport();
-  transcribirPendientes();
+  const audios = IMP.msgs.filter((m) => m.audio);
+  if (!isIOS() && audios.length && audios.length <= 3) { audios.forEach((m) => { m.trans = 'espera'; }); transcribirPendientes(); }
 }
 
 // iPhone no deja aparecer en "Compartir": se copia en WhatsApp y se pega aquí (texto y foto)
@@ -1918,7 +2017,8 @@ async function transcribirPendientes() {
         m.trans = 'cargando'; renderImport();
         const asr = await transcriptor();
         m.trans = 'escuchando'; renderImport();
-        const r = await asr(await audioMono16k(m.audio), { language: 'spanish', task: 'transcribe', chunk_length_s: 30, stride_length_s: 5 });
+        const archivo = m.audio.entrada ? await m.audio.entrada.blob(m.audio.type) : m.audio;
+        const r = await asr(await audioMono16k(archivo), { language: 'spanish', task: 'transcribe', chunk_length_s: 30, stride_length_s: 5 });
         if (!IMP || !IMP.msgs.includes(m)) break;
         m.original = String((r && r.text) || '').trim();
         filtrarMensaje(m);
@@ -2065,6 +2165,14 @@ const ACTS = {
     IMP.tramos.forEach((t, k) => { if (t && !t.aMano) sugerirEstado(t, k); });
     renderImport();
   },
+  'imp-transcribir': (el) => {
+    if (!IMP) return;
+    syncImport();
+    const uno = el.dataset.i != null ? IMP.msgs[+el.dataset.i] : null;
+    IMP.msgs.forEach((m) => { if (m.audio && m.trans === 'pendiente' && (!uno || m === uno) && !(IMP.tramos[m.tramo] || {}).descartado) m.trans = 'espera'; });
+    renderImport();
+    transcribirPendientes();
+  },
   'imp-quitar-tema': (el) => {
     const k = +el.dataset.k, t = IMP && IMP.tramos[k]; if (!t) return;
     syncImport();
@@ -2088,7 +2196,7 @@ const ACTS = {
   'imp-pegar': () => pegarLoCopiado(),
   'imp-abrir': () => { if (!puedeImportar()) { toast('Primero entra con tu clave'); return; } openImport(); },
   'comp-revisar': () => revisarCompartidos(true),
-  'imp-quitar-foto': (el, e) => { if (e) e.stopPropagation(); const m = IMP.msgs[+el.dataset.i]; if (m && m.foto) { URL.revokeObjectURL(m.foto.blobUrl); m.foto = null; renderImport(); } },
+  'imp-quitar-foto': (el, e) => { if (e) e.stopPropagation(); const m = IMP.msgs[+el.dataset.i]; if (m && m.foto) { soltarFoto(m); m.foto = null; renderImport(); } },
   'imp-todas-fotos': () => toast('Copia una foto (en el Drive, en WhatsApp o donde esté) y pégala con Ctrl+V o pegar: se va poniendo sola en el siguiente mensaje con foto.', 6000),
   'imp-ok': () => hacerImport(),
   'toggle-last': () => { S.lastOnly = !S.lastOnly; localStorage.setItem('crono_last_only', S.lastOnly ? '1' : '0'); renderMain(); },

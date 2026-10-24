@@ -90,6 +90,7 @@ En iPhone, el **ícono** de la pantalla de inicio es lo único que no se renueva
 - Separa la conversación por temas y reconoce de qué pieza habla cada uno; si es algo nuevo (*“el reel nuevo de…”*), propone **crear la pieza**, con el formato que nombraron.
 - **Actualiza el estado** según lo último que se dijo: si pidieron cambios → *Cambios*; si lo aprobaron → *Aprobado*; si dijeron que quedó publicado → *Publicado*; si mandaste una versión → *En revisión*. Una conversación más vieja que el último cambio de estado no lo hace retroceder, y una pieza publicada no vuelve atrás sola. Antes de importar se ve el estado propuesto y por qué, y se puede cambiar.
 - Los videos de más de 20 MB quedan desmarcados (mejor al Drive).
+- Cada tema tiene **Quitar tema** por si no es una tarea (se puede restaurar). Los temas sin nada técnico (*“estoy afuera”*, saludos) aparecen ya quitados.
 
 Solo lo ve Javi: para Flavio y Maca, el **+** sigue creando una pieza nueva.
 

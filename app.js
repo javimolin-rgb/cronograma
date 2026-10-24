@@ -752,6 +752,13 @@ function closeSheet(fromPop) {
 window.addEventListener('popstate', () => { if (sheetOpen) closeSheet(true); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { if (!$('#lightbox').hidden) $('#lightbox').hidden = true; else closeSheet(); } });
 
+// Foto en grande, con su botón para cerrar (en el celular no hay tecla Escape)
+function verFoto(src, nombre) {
+  const lb = $('#lightbox');
+  lb.innerHTML = `<button class="lbx" aria-label="Cerrar">${ic('x', 24)}</button><img src="${esc(src)}" alt="">${nombre ? `<a class="lbdl" href="${esc(src)}" download="${esc(nombre)}" target="_blank" rel="noopener">${ic('download', 18)} ${esc(nombre)}</a>` : ''}`;
+  lb.hidden = false;
+}
+
 function toast(msg, ms = 2600) {
   const t = $('#toast'); t.textContent = msg; t.classList.add('show');
   clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), ms);
@@ -2400,7 +2407,7 @@ const ACTS = {
   'toggle-project': (el) => { S.openProject = S.openProject === el.dataset.p ? '' : el.dataset.p; localStorage.setItem('crono_open_project', S.openProject); renderMain(); },
   'file-open': (el, e) => { if (e) e.stopPropagation(); openFilePreview(el.dataset.f); },
   'file-dl': (el, e) => { if (e) e.stopPropagation(); const h = findFile(el.dataset.f); if (h) downloadOne(h.file); },
-  'file-zoom': (el) => { const lb = $('#lightbox'); lb.innerHTML = `<img src="${esc(el.getAttribute('src'))}" alt="">`; lb.hidden = false; },
+  'file-zoom': (el) => verFoto(el.getAttribute('src')),
   'dl-piece': async (el, e) => { if (e) e.stopPropagation(); const p = S.db.posts.find((x) => x.id === el.dataset.id); if (p) await downloadZip(entriesOfPost(p, S.lastOnly), slugify(p.title, 'pieza')); },
   'dl-project': async (el, e) => { if (e) e.stopPropagation(); await downloadZip(entriesOfProject(el.dataset.p, S.lastOnly), slugify(el.dataset.p, 'proyecto')); },
   'dl-all': async () => {
@@ -2465,7 +2472,7 @@ const ACTS = {
   },
   'ed-view': (el) => {
     const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;
-    if (isImg(f)) { const lb = $('#lightbox'); lb.innerHTML = `<img src="${esc(fileSrc(f))}" alt=""><a class="lbdl" href="${esc(fileSrc(f))}" download="${esc(f.name)}" target="_blank" rel="noopener">${ic('download', 18)} ${esc(f.name)}</a>`; lb.hidden = false; }
+    if (isImg(f)) verFoto(fileSrc(f), f.name);
     else downloadOne(f);
   },
   'ed-addlink': () => {
@@ -2504,7 +2511,10 @@ const ACTS = {
   }
 };
 document.addEventListener('click', (e) => {
-  if (e.target.id === 'lightbox' || e.target.closest('#lightbox')) { $('#lightbox').hidden = true; return; }
+  if (e.target.closest && e.target.closest('#lightbox')) {
+    if (e.target.closest('.lbdl')) return; // descargar no cierra
+    $('#lightbox').hidden = true; return;
+  }
   const el = e.target.closest('[data-act]');
   if (!el) return;
   const fn = ACTS[el.dataset.act];

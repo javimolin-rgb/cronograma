@@ -539,3 +539,22 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .impaudios{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--surface);box-shadow:var(--shadow);font-size:0.8125rem}
 .impaudios span{display:inline-flex;align-items:center;gap:6px}
 .audiost .btn.sm{padding:5px 10px;font-size:0.75rem}
+
+/* Avisar para revisar */
+.avisobar{display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:10px 12px;border-radius:12px;background:var(--accent-soft);font-size:0.8125rem;font-weight:600}
+.avisobar>svg{flex:none;color:var(--accent)}
+.avisobar span{flex:1;min-width:0}
+#avisocapa{position:absolute;inset:0;z-index:6;display:flex;align-items:flex-end;background:rgba(10,12,20,.35);border-radius:inherit}
+.avisocaja{width:100%;max-height:90%;display:flex;flex-direction:column;background:var(--bg);border-radius:22px 22px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.18);animation:up .2s ease-out}
+.avisocaja .pb{overflow:auto}
+
+/* Dispositivos */
+.disp{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:var(--surface);box-shadow:var(--shadow);margin-bottom:8px}
+.disp.mio{box-shadow:inset 0 0 0 2px var(--accent)}
+.dispic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.dispt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.dispt b{font-size:0.875rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.dispt small{color:var(--muted);font-size:0.75rem}
+.dispgrupo{display:flex;align-items:center;gap:10px;margin:18px 2px 8px}
+.dispgrupo b{font-size:0.9375rem}
+.dispgrupo small{margin-left:auto;color:var(--muted);font-size:0.75rem}

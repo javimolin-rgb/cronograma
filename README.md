@@ -112,6 +112,14 @@ Lo que Flavio y Maca escriben directo en la app no se filtra ni se toca.
 
 Al elegir **Javi** en *¿Quién eres?* la app pide la contraseña. Queda recordada en ese teléfono hasta que se toque **Cambiar de persona**. Para cambiarla, se reemplaza la huella en `PERFIL_CLAVE`, dentro de `config.js` (la instrucción está ahí mismo).
 
+## Avisar para revisar (solo Javi)
+
+Al subir archivos a una pieza aparece *“Subiste N archivos. ¿Les avisas para que lo revisen?”* → **Avisar** (también está el botón de avión de papel abajo, en cualquier pieza). Eliges a quién (por defecto Flavio y Maca), escribes un mensaje si quieres y, si corresponde, la pieza pasa a **En revisión**. Al enviar se guarda la pieza y les llega una notificación directa *“Para revisar”* al celular y a la campana, aunque tengan apagados los avisos de “editan contenido”. La pantalla muestra a quién le llega al celular y a quién solo en la app (si no activó las notificaciones).
+
+## Dispositivos (solo Javi)
+
+**Ajustes → Equipo → Dispositivos** muestra qué teléfonos y computadores tienen la app, con qué persona, si está instalada en la pantalla de inicio o abierta en el navegador, si recibe notificaciones, cuándo se abrió por última vez y en qué versión. Cada dispositivo se anota solo al abrir la app (solo los que entraron con la clave). **Olvidar** saca uno de la lista y deja de mandarle notificaciones.
+
 ## Avisos de cada pieza
 
 Dentro de cada pieza, la **campana** de arriba activa o silencia los avisos de *esa* pieza: silenciada, no llega nada de ella (ni a la app ni al celular); activada, llegan los comentarios, cambios de estado, de fecha y de contenido aunque no estés etiquetado.

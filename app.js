@@ -155,6 +155,9 @@ const IC = {
   paperclip: '<path d="M21 11l-9 9a5 5 0 01-7-7l9-9a3 3 0 014 4l-9 9a1 1 0 01-2-2l8-8"/>',
   link: '<path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>',
   check: '<path d="M20 6L9 17l-5-5"/>',
+  phone: '<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',
+  monitor: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  send: '<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>',
   left: '<path d="M15 18l-6-6 6-6"/>',
   right: '<path d="M9 18l6-6-6-6"/>',
   msg: '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
@@ -207,7 +210,7 @@ const S = {
   conPrompts: localStorage.getItem('crono_prompts') === '1',
   openProject: localStorage.getItem('crono_open_project') || '',
   compartidos: 0,
-  db: { posts: [], comments: [], activity: [], notifications: [], prefs: [] }
+  db: { posts: [], comments: [], activity: [], notifications: [], prefs: [], push_subs: [], dispositivos: [] }
 };
 let store, ED = null, sheetOpen = false, toastT;
 
@@ -217,7 +220,7 @@ function normalize(db) {
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || []
   }));
-  ['comments', 'activity', 'notifications', 'prefs', 'push_subs'].forEach((t) => { db[t] = db[t] || []; });
+  ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos'].forEach((t) => { db[t] = db[t] || []; });
   return db;
 }
 
@@ -803,7 +806,7 @@ async function pushState() {
   return sub && Notification.permission === 'granted' ? 'on' : 'off';
 }
 async function registerSub(sub) {
-  await save('push_subs', { id: await subId(sub.endpoint), person: S.me.id, sub: sub.toJSON(), ua: navigator.userAgent.slice(0, 120), createdAt: nowISO() });
+  await save('push_subs', { id: await subId(sub.endpoint), person: S.me.id, device: idDispositivo(), sub: sub.toJSON(), ua: navigator.userAgent.slice(0, 120), createdAt: nowISO() });
 }
 async function enablePush() {
   const perm = await Notification.requestPermission();
@@ -825,6 +828,80 @@ async function syncPushSub() { // este celular pasa a ser de la persona que est�
     const sub = await currentSub(); if (sub) await registerSub(sub);
   } catch (e) { /* silencioso */ }
 }
+/* ---------- dispositivos: dónde está abierta la app y con qué persona ---------- */
+function idDispositivo() {
+  let id = '';
+  try { id = localStorage.getItem('crono_dispositivo') || ''; } catch (e) { /* sin acceso */ }
+  if (!id) { id = 'd_' + uid().replace(/-/g, '').slice(0, 16); try { localStorage.setItem('crono_dispositivo', id); } catch (e) { /* sin espacio */ } }
+  return id;
+}
+function describirDispositivo(ua) {
+  ua = ua || navigator.userAgent || '';
+  const tactil = typeof navigator !== 'undefined' && navigator.maxTouchPoints > 1;
+  let equipo = 'Computador', tipo = 'pc';
+  if (/iPhone/i.test(ua)) { equipo = 'iPhone'; tipo = 'cel'; }
+  else if (/iPad/i.test(ua) || (/Macintosh/i.test(ua) && tactil && ua === navigator.userAgent)) { equipo = 'iPad'; tipo = 'cel'; }
+  else if (/Android/i.test(ua)) {
+    const m = ua.match(/Android[^;)]*;\s*([^;)]+?)(?:\s+Build|\))/i);
+    equipo = m && !/^(K|wv|Linux)$/i.test(m[1].trim()) ? m[1].trim() : 'Android';
+    tipo = 'cel';
+  }
+  else if (/Macintosh|Mac OS X/i.test(ua)) equipo = 'Mac';
+  else if (/Windows/i.test(ua)) equipo = 'Windows';
+  else if (/Linux/i.test(ua)) equipo = 'Linux';
+  let navegador = /EdgA?\//.test(ua) ? 'Edge' : /CriOS|Chrome\//.test(ua) ? 'Chrome' : /FxiOS|Firefox\//.test(ua) ? 'Firefox' : /Safari\//.test(ua) ? 'Safari' : 'Navegador';
+  if (navegador === 'Navegador' && /iPhone|iPad|Macintosh/i.test(ua)) navegador = 'Safari'; // en los registros viejos el texto venía cortado
+  return { equipo, navegador, tipo };
+}
+// Cada teléfono o computador se anota solo (si puede escribir): persona, si está instalada y si recibe notificaciones
+async function registrarDispositivo() {
+  try {
+    if (store.mode !== 'github' || !store.canWrite || !S.me) return;
+    const id = idDispositivo();
+    const prev = S.db.dispositivos.find((d) => d.id === id);
+    let push = false;
+    try { push = pushSupported() && Notification.permission === 'granted' && !!(await currentSub()); } catch (e) { push = false; }
+    const d = describirDispositivo();
+    const datos = { id, person: S.me.id, equipo: d.equipo, navegador: d.navegador, tipo: d.tipo, instalada: isStandalone(), push, version: SW_VERSION || (prev && prev.version) || '', ua: navigator.userAgent.slice(0, 160) };
+    const cambio = !prev || ['person', 'equipo', 'navegador', 'instalada', 'push', 'version'].some((k) => prev[k] !== datos[k]);
+    const viejo = !prev || Date.now() - new Date(prev.lastSeen || 0).getTime() > 12 * 3600e3; // "visto por última vez", sin llenar de guardados
+    if (!cambio && !viejo) return;
+    await save('dispositivos', Object.assign({}, prev || {}, datos, { firstSeen: (prev && prev.firstSeen) || nowISO(), lastSeen: nowISO() }));
+  } catch (e) { /* no es importante */ }
+}
+// ¿Esta persona recibe notificaciones en algún celular?
+const recibeEnCelular = (pid) => S.db.push_subs.some((x) => x.person === pid);
+
+function openDispositivos() {
+  const mio = idDispositivo();
+  const conDisp = new Set(S.db.dispositivos.map((d) => d.id));
+  // notificaciones de antes de este registro: se muestran por su navegador
+  const sueltos = S.db.push_subs.filter((x) => !x.device || !conDisp.has(x.device)).map((x) => {
+    const d = describirDispositivo(x.ua);
+    return { id: 'push:' + x.id, subId: x.id, person: x.person, equipo: d.equipo, navegador: d.navegador, tipo: d.tipo, push: true, lastSeen: x.createdAt, viejo: true };
+  });
+  const todos = S.db.dispositivos.slice().concat(sueltos);
+  const fila = (d) => {
+    const subs = S.db.push_subs.filter((x) => x.device === d.id).length;
+    const push = d.push || subs > 0;
+    return `<div class="disp${d.id === mio ? ' mio' : ''}">
+      <span class="dispic">${ic(d.tipo === 'cel' ? 'phone' : 'monitor', 22)}</span>
+      <div class="dispt"><b>${esc(d.equipo)} · ${esc(d.navegador)}${d.id === mio ? ' <i class="imptag ok">este</i>' : ''}</b>
+        <small>${d.viejo ? 'Registrado al activar las notificaciones' : (d.instalada ? 'App instalada en la pantalla de inicio' : 'Abierta en el navegador')} · ${push ? '🔔 recibe notificaciones' : 'sin notificaciones'}</small>
+        <small>${d.lastSeen ? `${d.viejo ? 'Desde' : 'Visto'} ${esc(ago(d.lastSeen))}` : ''}${d.version ? ` · versión ${esc(d.version)}` : ''}</small></div>
+      ${d.id === mio ? '' : `<button class="iconbtn" data-act="disp-olvidar" data-id="${esc(d.id)}" aria-label="Olvidar este dispositivo" title="Olvidar (deja de recibir notificaciones)">${ic('trash', 17)}</button>`}
+    </div>`;
+  };
+  const grupos = P.map((x) => ({ p: x, ds: todos.filter((d) => d.person === x.id).sort((a, b) => String(b.lastSeen || '').localeCompare(String(a.lastSeen || ''))) }));
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="me" aria-label="Volver">${ic('left')}</button><h2>Dispositivos</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <p class="hint">Dónde está abierta la app, con qué persona y si recibe notificaciones. Se actualiza cada vez que alguien la abre.</p>
+      ${grupos.map(({ p, ds }) => `<div class="dispgrupo">${av(p.id, 'md')}<b>${esc(p.name)}</b><small>${ds.length} dispositivo${ds.length === 1 ? '' : 's'}</small></div>
+        ${ds.length ? ds.map(fila).join('') : '<p class="hint">Todavía ninguno.</p>'}`).join('')}
+      <p class="hint" style="margin-top:16px">Solo aparecen los que entraron con la clave: un teléfono en modo solo lectura no puede anotarse. “Olvidar” lo saca de la lista y deja de mandarle notificaciones (si se vuelve a abrir, aparece de nuevo).</p>
+    </div>`, true);
+}
+
 async function renderPushBox() {
   if (!$('#push-box')) return;
   const st = await pushState();
@@ -867,6 +944,9 @@ function openMe() {
           <label class="sw"><input type="checkbox" data-ev="${e.id}" data-ch="push"${pr.events[e.id].push && !e.appOnly ? ' checked' : ''}${e.appOnly ? ' disabled' : ''}><span></span></label>`).join('')}
       </div>
       <p class="hint">“App” = campana dentro de la aplicación. “Celular” = notificación del teléfono, incluso con la app cerrada.</p>
+      ${esAdmin() && store.mode === 'github' ? `<label class="lbl">Equipo</label>
+      <button class="btn ghost block" data-act="disp-ver">${ic('phone', 18)} Dispositivos <small style="margin-left:auto;color:var(--muted)">${S.db.dispositivos.length || S.db.push_subs.length}</small></button>
+      <p class="hint">Qué teléfonos y computadores tienen la app, con qué persona y si reciben notificaciones.</p>` : ''}
       ${puedeImportar() ? `<label class="lbl">Herramientas</label>
       <button class="btn ghost block" data-act="import-open">${ic('msg', 18)} Importar mensajes</button>
       <p class="hint">Reenvía desde WhatsApp (Compartir → Cronograma) o pega el chat: queda solo lo técnico, a nombre de quien lo dijo, con los cambios como pendientes.</p>` : ''}
@@ -978,6 +1058,7 @@ function renderEditor() {
 
     ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
+    ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
     <div class="files">${d.files.map((f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${isImg(f)
       ? `<img loading="lazy" alt="" src="${esc(fileSrc(f))}">`
       : `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
@@ -1016,6 +1097,7 @@ function renderEditor() {
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
   </div>
   <div class="pf">${old && esAdmin() ? `<button class="btn ghost" data-act="pr-open" data-id="${esc(d.id)}" aria-label="Prompt para la IA">${ic('copy', 18)}</button>` : ''}
+    ${esAdmin() && store.canWrite ? `<button class="btn ghost" data-act="aviso-abrir" aria-label="Avisar para revisar" title="Avisar para revisar">${ic('send', 18)}</button>` : ''}
     <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
   $('#panel').innerHTML = html;
   if ($('#pb')) $('#pb').scrollTop = sc;
@@ -1073,10 +1155,81 @@ async function onFiles(input) {
     catch (e) { console.error(e); toast(`No se pudo subir ${f.name}: ${e.message || e}`, 4000); }
     ed.uploading -= 1;
   }
+  ed.subidos = (ed.subidos || 0) + files.length;
   if (ED === ed) renderEditor();
   toast('Archivos listos');
 }
 
+
+/* ---------- avisar para revisar (Javi → Flavio y Maca) ---------- */
+function openAviso() {
+  if (!ED || !requireWrite()) return;
+  syncDraft();
+  const d = ED.d;
+  const otros = P.filter((x) => x.id !== S.me.id);
+  if (!ED.aviso) {
+    ED.aviso = {
+      para: otros.map((x) => x.id), // por defecto, a Flavio y a Maca
+      msg: '',
+      revision: ['idea', 'diseno', 'cambios'].includes(d.status)
+    };
+  }
+  const A = ED.aviso;
+  const panel = $('#panel');
+  let c = $('#avisocapa');
+  if (!c) { c = document.createElement('div'); c.id = 'avisocapa'; panel.appendChild(c); }
+  c.innerHTML = `<div class="avisocaja" role="dialog" aria-label="Avisar para revisar">
+    <div class="ph"><h2>Avisar para revisar</h2><button class="iconbtn" data-act="aviso-cerrar" aria-label="Cerrar">${ic('x')}</button></div>
+    <div class="pb">
+      <label class="lbl">A quién</label>
+      <div class="chips">${otros.map((x) => `<button class="person${A.para.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="aviso-para" data-v="${x.id}">${av(x.id)}${esc(x.name)}</button>`).join('')}</div>
+      <p class="hint">${otros.map((x) => `${esc(x.name)}: ${recibeEnCelular(x.id) ? 'le llega al celular 🔔' : 'solo lo verá en la campana de la app (no activó las notificaciones)'}`).join('<br>')}</p>
+      <label class="lbl">Mensaje <small>opcional</small></label>
+      <textarea class="area" id="aviso-msg" style="min-height:80px" placeholder="Ej. Subí la versión con los cambios de la foto 2">${esc(A.msg)}</textarea>
+      ${d.status !== 'revision' ? `<label class="imppend" style="color:var(--ink)"><input type="checkbox" id="aviso-rev"${A.revision ? ' checked' : ''}> Pasar la pieza a “En revisión”</label>` : ''}
+      <p class="hint">${ED.old ? 'Al enviar se guardan también los cambios de la pieza.' : 'Al enviar se crea la pieza.'} Este aviso llega aunque hayan apagado los avisos de “editan contenido”.</p>
+    </div>
+    <div class="pf"><button class="btn ghost" data-act="aviso-cerrar">Cancelar</button><button class="btn" data-act="aviso-enviar">${ic('send', 17)} Enviar aviso</button></div>
+  </div>`;
+}
+function syncAviso() {
+  if (!ED || !ED.aviso) return;
+  const m = $('#aviso-msg'), r = $('#aviso-rev');
+  if (m) ED.aviso.msg = m.value;
+  if (r) ED.aviso.revision = r.checked;
+}
+async function enviarAviso() {
+  if (!ED || !ED.aviso) return;
+  syncAviso();
+  const A = ED.aviso, d = ED.d;
+  if (!A.para.length) { toast('Elige a quién avisarle'); return; }
+  if (!d.title.trim()) { toast('Ponle un título a la pieza'); return; }
+  const btn = $('[data-act="aviso-enviar"]'); if (btn) btn.disabled = true;
+  try {
+    // 1) se guarda la pieza (con los archivos recién subidos) y, si se pidió, pasa a revisión
+    d.title = d.title.trim();
+    if (A.revision && d.status !== 'revision') d.status = 'revision';
+    A.para.forEach((x) => { if (!d.assignees.includes(x)) d.assignees.push(x); });
+    await commitPost(ED.old, d);
+    // 2) el aviso directo, al celular y a la campana
+    const msg = (A.msg || '').trim();
+    const nArch = ED.subidos || 0;
+    const que = nArch ? `subió ${nArch} archivo${nArch === 1 ? '' : 's'} en “${d.title}” para revisar` : `te pidió revisar “${d.title}”`;
+    for (const pid of A.para) {
+      await save('notifications', {
+        id: uid(), to: pid, from: S.me.id, postId: d.id, type: 'review',
+        text: que + (msg ? `: ${msg}` : ''), read: false, inApp: true, push: true,
+        title: 'Para revisar · ' + d.title.slice(0, 60), body: `${S.me.name}: ${msg || (nArch ? `subió ${nArch} archivo${nArch === 1 ? '' : 's'} nuevo${nArch === 1 ? '' : 's'}` : 'te pide revisar esta pieza')}`.slice(0, 180),
+        url: siteLink(d.id), createdAt: nowISO()
+      });
+    }
+    await log(d, 'review', `pidió revisión a ${A.para.map((x) => person(x).name).join(' y ')}`);
+    if (msg) await save('comments', { id: uid(), postId: d.id, author: S.me.id, text: msg, createdAt: nowISO() });
+    const nombres = A.para.map((x) => person(x).name).join(' y ');
+    closeSheet(); renderAll();
+    toast(`Aviso enviado a ${nombres} ✅`, 3500);
+  } catch (e) { if (btn) btn.disabled = false; /* ya avisado */ }
+}
 
 /* ---------- prompts para la IA (solo quien administra) ---------- */
 const TIPOS = [
@@ -2133,7 +2286,7 @@ const ACTS = {
     el.disabled = true;
     try {
       await store.entrarConContrasena(i.value);
-      closeSheet(); await reload(); renderAll();
+      closeSheet(); await reload(); renderAll(); registrarDispositivo();
       toast('Listo, ya puedes escribir ✅');
     } catch (e) { toast(String(e.message || e), 4000); el.disabled = false; i.select(); }
   },
@@ -2220,7 +2373,7 @@ const ACTS = {
       toast('Clave guardada. Ya puedes escribir.');
       $('#gh-box').innerHTML = ghBoxHtml();
       renderPushBox(); renderAll();
-      await reload();
+      await reload(); registrarDispositivo();
     } catch (e) { toast('No sirvió: ' + (e.message || e), 5000); el.disabled = false; }
   },
   'gh-forget': () => { store.clearToken(); toast('Clave borrada de este teléfono'); $('#gh-box').innerHTML = ghBoxHtml(); renderPushBox(); renderAll(); },
@@ -2229,8 +2382,19 @@ const ACTS = {
     if (S.me && claveDe(S.me.id)) localStorage.removeItem('crono_perfil_' + S.me.id); // al salir, la próxima vez vuelve a pedirla
     localStorage.removeItem('crono_me'); location.reload();
   },
-  'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); },
-  'push-off': async () => { await disablePush(); toast('Notificaciones desactivadas en este celular'); renderPushBox(); },
+  'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); registrarDispositivo(); },
+  'push-off': async () => { await disablePush(); toast('Notificaciones desactivadas en este celular'); renderPushBox(); registrarDispositivo(); },
+  'disp-ver': () => openDispositivos(),
+  'disp-olvidar': async (el) => {
+    const id = el.dataset.id;
+    if (!confirm('¿Olvidar este dispositivo? Deja de recibir notificaciones hasta que se vuelvan a activar en él.')) return;
+    if (id.startsWith('push:')) await removeRow('push_subs', id.slice(5));
+    else {
+      for (const x of S.db.push_subs.filter((y) => y.device === id)) await removeRow('push_subs', x.id);
+      await removeRow('dispositivos', id);
+    }
+    openDispositivos();
+  },
   'push-test': async () => {
     await save('notifications', { id: uid(), to: S.me.id, from: S.me.id, postId: null, type: 'test', text: 'probó las notificaciones', read: true, inApp: false, push: true, title: CFG.APP_NAME, body: 'Si ves esto, las notificaciones funcionan ✅', url: siteBase(), createdAt: nowISO() });
     toast('Enviada. Debería llegar en unos segundos.');
@@ -2272,6 +2436,10 @@ const ACTS = {
   'ed-rmcheck': (el) => { syncDraft(); ED.d.checklist = ED.d.checklist.filter((c) => c.id !== el.dataset.id); renderEditor(); },
   'ed-mention': (el) => { const t = $('#e-comment'); t.value = (t.value + ' @' + el.dataset.v + ' ').trimStart(); t.focus(); },
   'ed-comment': () => addComment(),
+  'aviso-abrir': () => openAviso(),
+  'aviso-cerrar': () => { syncAviso(); const c = $('#avisocapa'); if (c) c.remove(); },
+  'aviso-para': (el) => { syncAviso(); const a = ED.aviso.para, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); openAviso(); },
+  'aviso-enviar': () => enviarAviso(),
   'ed-avisos': async () => {
     const p = ED && ED.old; if (!p || !requireWrite()) return;
     syncDraft();
@@ -2430,6 +2598,7 @@ async function startApp() {
   openFromHash();
   syncPushSub();
   pruneOld();
+  setTimeout(registrarDispositivo, 2500); // después de saber la versión
   const qs = new URLSearchParams(location.search);
   const llegoTexto = qs.get('texto');
   const llegoCompartido = qs.get('compartido') === '1' || !!llegoTexto;
@@ -2451,7 +2620,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 async function reload() {
-  try { S.db = normalize(await store.load()); if (S.me) { renderAll(); if (ED && sheetOpen && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
+  try { S.db = normalize(await store.load()); if (S.me) { renderAll(); if (ED && sheetOpen && !$('#avisocapa') && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
   catch (e) { console.warn('No se pudo refrescar', e); }
 }
 /* ---------- mantenerse al día ---------- */

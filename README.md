@@ -86,7 +86,9 @@ En iPhone, el **ícono** de la pantalla de inicio es lo único que no se renueva
 
 **Importar el zip de una conversación.** En el **+** de abajo → **Importar zip de conversación**, y eliges el `.zip` que exporta WhatsApp (con fotos y audios; sirve también el fragmento recortado que sale de otra app, mientras sea un zip de exportación de WhatsApp). La app:
 
-- Lee el chat y deja cada foto junto a su mensaje (y la sube a la pieza); los audios los transcribe.
+- Lee el chat y deja cada foto junto a su mensaje (y la sube a la pieza). Las fotos seguidas sin texto quedan juntas en un solo comentario.
+- Abre el zip por partes y muestra miniaturas livianas, así no se cae en el iPhone aunque traiga muchas fotos o videos. Mientras abre e importa, se ve una pantalla de carga con el avance.
+- Los audios se transcriben **solo si tocas Transcribir** (la primera vez descarga unos 80 MB); se puede importar sin transcribirlos.
 - Separa la conversación por temas y reconoce de qué pieza habla cada uno; si es algo nuevo (*“el reel nuevo de…”*), propone **crear la pieza**, con el formato que nombraron.
 - **Actualiza el estado** según lo último que se dijo: si pidieron cambios → *Cambios*; si lo aprobaron → *Aprobado*; si dijeron que quedó publicado → *Publicado*; si mandaste una versión → *En revisión*. Una conversación más vieja que el último cambio de estado no lo hace retroceder, y una pieza publicada no vuelve atrás sola. Antes de importar se ve el estado propuesto y por qué, y se puede cambiar.
 - Los videos de más de 20 MB quedan desmarcados (mejor al Drive).

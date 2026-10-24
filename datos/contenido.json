@@ -873,7 +873,7 @@
    "time": "",
    "date": "2026-10-22",
    "format": "carrusel",
-   "status": "aprobado",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 1,
    "id": "e-fotos-itahue",
@@ -881,8 +881,7 @@
     "instagram"
    ],
    "assignees": [
-    "javi",
-    "maca"
+    "javi"
    ],
    "files": [
     {
@@ -1279,10 +1278,10 @@
    ],
    "createdAt": "2026-10-21T10:00:00.000Z",
    "createdBy": "javi",
-   "updatedAt": "2026-10-24T22:11:58.181Z",
+   "updatedAt": "2026-10-24T22:12:50.223Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-10-23T21:56:56.000Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-10-24T22:12:50.223Z",
+   "publishedAt": "2026-10-24T22:12:50.223Z"
   },
   {
    "id": "e-carpeta-1",
@@ -2147,6 +2146,29 @@
   }
  ],
  "activity": [
+  {
+   "id": "72f8637b-bc3d-4703-9e0e-0810d3b1ac89",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a Publicado",
+   "meta": {
+    "from": "aprobado",
+    "to": "publicado"
+   },
+   "createdAt": "2026-10-24T22:12:50.223Z"
+  },
+  {
+   "id": "5c4f9748-89c8-484d-b1f8-939b732c4aeb",
+   "postId": "e-fotos-itahue",
+   "postTitle": "Edición de fotos de obra — Itahue",
+   "actor": "javi",
+   "type": "untag",
+   "text": "quitó a Maca",
+   "meta": null,
+   "createdAt": "2026-10-24T22:12:50.223Z"
+  },
   {
    "id": "38b92cc2-bad3-4bbb-ab5b-b9e13c60f591",
    "postId": "e-fotos-itahue",

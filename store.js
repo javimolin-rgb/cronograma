@@ -10,7 +10,7 @@
    ============================================================ */
 (function () {
   'use strict';
-  const TABLES = ['posts', 'comments', 'activity', 'notifications', 'prefs', 'push_subs'];
+  const TABLES = ['posts', 'comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos'];
   const LS_KEY = 'crono_db_v1';
   const TOKEN_KEY = 'crono_gh_token';
   const API = 'https://api.github.com';

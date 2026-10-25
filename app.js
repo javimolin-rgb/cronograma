@@ -1074,12 +1074,19 @@ function renderEditor() {
     ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
-    <div class="files">${d.files.map((f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${isImg(f)
-      ? `<img loading="lazy" alt="" src="${esc(fileSrc(f))}">`
-      : `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
-      ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
-      <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`).join('')}
-      <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple accept="image/*,video/*,application/pdf,.psd,.ai,.fig,.zip"></label></div>`}
+    ${(() => {
+      // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
+      const { recientes, anteriores } = archivosEditor(d);
+      const tile = (f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${isImg(f)
+        ? `<img loading="lazy" alt="" src="${esc(fileSrc(f))}">`
+        : `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
+        ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
+        <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`;
+      return `<div class="files">${recientes.map(tile).join('')}
+        <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple accept="image/*,video/*,application/pdf,.psd,.ai,.fig,.zip"></label></div>
+        ${anteriores.length ? `<button class="vermas" data-act="ed-vermas">${ED.verAnteriores ? 'Ocultar' : 'Ver más'} · ${anteriores.length} archivo${anteriores.length === 1 ? '' : 's'} anterior${anteriores.length === 1 ? '' : 'es'} ${ic(ED.verAnteriores ? 'left' : 'right', 14)}</button>
+        ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
+    })()}`}
 
     <label class="lbl">Enlaces <small>Canva, Drive, Figma…</small></label>
     ${d.links.map((l) => `<div class="linkrow">${ic('link', 18)}<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a><button data-act="ed-rmlink" data-id="${esc(l.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
@@ -1116,6 +1123,22 @@ function renderEditor() {
     <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
   $('#panel').innerHTML = html;
   if ($('#pb')) $('#pb').scrollTop = sc;
+}
+
+// Archivos de la pieza: la última versión de cada uno (lo más nuevo primero, hasta 8) y el resto como "anteriores"
+function archivosEditor(d) {
+  const fecha = (f) => String(f.at || '');
+  const grupos = {};
+  (d.files || []).forEach((f) => { const b = f.base || splitName(f.name).base; (grupos[b] = grupos[b] || []).push(f); });
+  const ultimos = [], viejos = [];
+  Object.values(grupos).forEach((g) => {
+    g.sort((a, b) => ((b.version || splitName(b.name).version || 1) - (a.version || splitName(a.name).version || 1)) || fecha(b).localeCompare(fecha(a)));
+    ultimos.push(g[0]); viejos.push(...g.slice(1));
+  });
+  ultimos.sort((a, b) => fecha(b).localeCompare(fecha(a)));
+  viejos.sort((a, b) => fecha(b).localeCompare(fecha(a)));
+  const MAX = 8;
+  return { recientes: ultimos.slice(0, MAX), anteriores: ultimos.slice(MAX).concat(viejos) };
 }
 
 async function saveEditor() {
@@ -2487,6 +2510,7 @@ const ACTS = {
   'ed-rmcheck': (el) => { syncDraft(); ED.d.checklist = ED.d.checklist.filter((c) => c.id !== el.dataset.id); renderEditor(); },
   'ed-mention': (el) => { const t = $('#e-comment'); t.value = (t.value + ' @' + el.dataset.v + ' ').trimStart(); t.focus(); },
   'ed-comment': () => addComment(),
+  'ed-vermas': () => { syncDraft(); ED.verAnteriores = !ED.verAnteriores; renderEditor(); },
   'aviso-abrir': () => openAviso(),
   'aviso-cerrar': () => { syncAviso(); const c = $('#avisocapa'); if (c) c.remove(); },
   'aviso-para': (el) => { syncAviso(); const a = ED.aviso.para, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); openAviso(); },

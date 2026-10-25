@@ -1,25 +1,26 @@
 {
  "posts": [
   {
-   "id": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "title": "Video 3D Huingan",
    "caption": "",
    "notes": "",
    "hashtags": "",
    "campaign": "",
-   "date": "2026-10-28",
    "time": "",
+   "date": "2026-10-28",
+   "format": "story",
+   "status": "revision",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "platforms": [
     "instagram"
    ],
-   "format": "story",
-   "status": "diseno",
    "assignees": [
     "javi",
     "maca",
     "flavio"
    ],
-   "priority": "normal",
    "links": [],
    "files": [
     {
@@ -33,8 +34,7 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_der-v1.png",
      "sha": "f44072dd9fb384f91b819b376f4fa76de5b2dc28",
      "type": "image/jpeg",
-     "size": 133041,
-     "blobUrl": "blob:https://javimolin-rgb.github.io/0381987f-dfe2-4fff-8175-ea7591454a31"
+     "size": 133041
     },
     {
      "id": "8a7b085a-c011-43be-9ff5-cb9edf1a3426",
@@ -47,8 +47,7 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_izq-v1.png",
      "sha": "2e11005cddc467d20954550e77c77cf8a0b3873a",
      "type": "image/jpeg",
-     "size": 126526,
-     "blobUrl": "blob:https://javimolin-rgb.github.io/546ee6dc-bcdd-4ef6-859b-c8a13d3195d6"
+     "size": 126526
     },
     {
      "id": "a597ffda-4464-49bd-8f2c-9b60d3b8bb6f",
@@ -61,8 +60,7 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_izq_atras-v1.png",
      "sha": "60aaf810403d78e199df68d54e5d5480e64e646c",
      "type": "image/jpeg",
-     "size": 197955,
-     "blobUrl": "blob:https://javimolin-rgb.github.io/60affc55-9364-4863-ba10-197c08235e8e"
+     "size": 197955
     },
     {
      "id": "df5b54e0-99ab-4fbe-aaf5-7717a06f6328",
@@ -75,17 +73,67 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_der_atras-v1.png",
      "sha": "1a188d079a2dd6da7e7c92d16ec2f8ab338769cd",
      "type": "image/jpeg",
-     "size": 180597,
-     "blobUrl": "blob:https://javimolin-rgb.github.io/b1c0ae6f-8542-4890-98c4-d63cf07f6227"
+     "size": 180597
+    },
+    {
+     "id": "8074d7f5-fb8b-4f31-9449-81b8a50c6ede",
+     "by": "javi",
+     "at": "2026-10-25T17:10:29.515Z",
+     "base": "huingan_der_atras",
+     "version": 2,
+     "name": "huingan_der_atras-v2.png",
+     "path": "archivos/sin-proyecto/huingan_der_atras-v2.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_der_atras-v2.png",
+     "sha": "16662e84ad0876060880f15979106f8ece87b744",
+     "type": "image/jpeg",
+     "size": 186405
+    },
+    {
+     "id": "9a87e007-c909-459d-9005-84bec6ade616",
+     "by": "javi",
+     "at": "2026-10-25T17:10:31.837Z",
+     "base": "huingan_izq_atras",
+     "version": 2,
+     "name": "huingan_izq_atras-v2.png",
+     "path": "archivos/sin-proyecto/huingan_izq_atras-v2.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_izq_atras-v2.png",
+     "sha": "acabc7f1b7f8b5ef621c9ca79af9ce30269f630c",
+     "type": "image/jpeg",
+     "size": 200297
+    },
+    {
+     "id": "cc70285e-acaa-43f7-b548-709fa9885457",
+     "by": "javi",
+     "at": "2026-10-25T17:10:34.436Z",
+     "base": "huingan_der",
+     "version": 2,
+     "name": "huingan_der-v2.png",
+     "path": "archivos/sin-proyecto/huingan_der-v2.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_der-v2.png",
+     "sha": "795896392238d38e2f74ef82091ee178b27b2b8a",
+     "type": "image/jpeg",
+     "size": 134227
+    },
+    {
+     "id": "5f14c238-8a95-4924-83a9-8d9d5c29b323",
+     "by": "javi",
+     "at": "2026-10-25T17:10:37.209Z",
+     "base": "huingan_izq",
+     "version": 2,
+     "name": "huingan_izq-v2.png",
+     "path": "archivos/sin-proyecto/huingan_izq-v2.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/huingan_izq-v2.png",
+     "sha": "671ed6cde434e3d0e9fda6c2423da8a9b6dfde84",
+     "type": "image/jpeg",
+     "size": 130944
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-24T20:58:21.032Z",
+   "updatedAt": "2026-10-25T17:11:00.507Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-24T20:58:21.032Z",
-   "revisions": 0,
+   "statusChangedAt": "2026-10-25T17:11:00.507Z",
    "publishedAt": null
   },
   {
@@ -1477,6 +1525,13 @@
  ],
  "comments": [
   {
+   "id": "a2c3f691-d504-4573-b80a-026deed1dd4b",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "javi",
+   "text": "esta es la vista final del modelo huingán",
+   "createdAt": "2026-10-25T17:11:00.509Z"
+  },
+  {
    "id": "eb3b184b-3911-420a-9e8e-9bd0961d9d87",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "javi",
@@ -2124,6 +2179,39 @@
   }
  ],
  "activity": [
+  {
+   "id": "9ec54467-2eea-42a2-9078-44128d228df6",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-10-25T17:11:00.509Z"
+  },
+  {
+   "id": "bbe923be-4366-4ac3-b160-5f94a30dba7f",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-10-25T17:11:00.508Z"
+  },
+  {
+   "id": "5f15c75f-ac8a-4dcd-855a-1f899c28cfd5",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En diseño a En revisión",
+   "meta": {
+    "from": "diseno",
+    "to": "revision"
+   },
+   "createdAt": "2026-10-25T17:11:00.508Z"
+  },
   {
    "id": "90240504-a64a-4af1-b3d7-e6ed87a47044",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -2827,6 +2915,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "90d83f02-9a59-4b46-a8c6-43fb09b846b2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "review",
+   "text": "subió 4 archivos en “Video 3D Huingan” para revisar: esta es la vista final del modelo huingán",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Video 3D Huingan",
+   "body": "Javi: esta es la vista final del modelo huingán",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:11:00.509Z"
+  },
+  {
+   "id": "ec091f62-3b3f-4992-8496-9d004e683595",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "review",
+   "text": "subió 4 archivos en “Video 3D Huingan” para revisar: esta es la vista final del modelo huingán",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Video 3D Huingan",
+   "body": "Javi: esta es la vista final del modelo huingán",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:11:00.509Z"
+  },
+  {
+   "id": "e0d3015c-5a17-4ced-8645-d02267d3f00e",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:11:00.509Z"
+  },
+  {
+   "id": "9293c9fe-3a1f-4666-b761-0ca998a3fa8f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:11:00.509Z"
+  },
+  {
+   "id": "9c83cd18-fdea-4d10-b4f7-8bd2aee2e9db",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:11:00.508Z"
+  },
+  {
+   "id": "085111b8-fd7a-40d3-8199-2a35a7e11e38",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:11:00.508Z"
+  },
   {
    "id": "0c160ba2-c1da-403e-a682-952ab3048248",
    "to": "maca",

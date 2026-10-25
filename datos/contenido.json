@@ -1525,6 +1525,13 @@
  ],
  "comments": [
   {
+   "id": "6f0143c0-f37f-40d4-b7fd-106c46db745b",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "flavio",
+   "text": "Me gusta el ambiente playero.. Tal vez ver la casa desde un poco más cerca.. Pero no se bien que tanto se mueve el video.. Veamos!",
+   "createdAt": "2026-10-25T17:39:56.464Z"
+  },
+  {
    "id": "a2c3f691-d504-4573-b80a-026deed1dd4b",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "javi",
@@ -2179,6 +2186,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4a7f26d7-60f9-4076-9e2d-2d6341e1d9f7",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-25T17:39:56.466Z"
+  },
   {
    "id": "9ec54467-2eea-42a2-9078-44128d228df6",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -2915,6 +2932,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "04aecf82-4b1a-4220-bc2f-9c78f233d9c5",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: Me gusta el ambiente playero.. Tal vez ver la casa desde un poco más cerca.. Per…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Video 3D Huingan”: Me gusta el ambiente playero.. Tal vez ver la casa desde un poco más cerca.. Per…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:39:56.467Z"
+  },
+  {
+   "id": "4bb9d278-d9ce-4998-a1a7-0413a136b866",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: Me gusta el ambiente playero.. Tal vez ver la casa desde un poco más cerca.. Per…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Video 3D Huingan”: Me gusta el ambiente playero.. Tal vez ver la casa desde un poco más cerca.. Per…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-25T17:39:56.467Z"
+  },
   {
    "id": "90d83f02-9a59-4b46-a8c6-43fb09b846b2",
    "to": "maca",

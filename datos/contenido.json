@@ -3470,10 +3470,10 @@
    "tipo": "pc",
    "instalada": true,
    "push": false,
-   "version": "2026.10.24-5",
+   "version": "2026.10.25-1",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-10-24T23:51:53.324Z"
+   "lastSeen": "2026-10-25T21:01:31.193Z"
   }
  ]
 }

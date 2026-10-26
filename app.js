@@ -161,6 +161,8 @@ const IC = {
   paperclip: '<path d="M21 11l-9 9a5 5 0 01-7-7l9-9a3 3 0 014 4l-9 9a1 1 0 01-2-2l8-8"/>',
   link: '<path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>',
   check: '<path d="M20 6L9 17l-5-5"/>',
+  play: '<path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/>',
+  feed: '<rect x="3" y="3" width="18" height="12" rx="2"/><path d="M3 19h18M3 22h12"/>',
   phone: '<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',
   monitor: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
   send: '<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>',
@@ -188,7 +190,7 @@ const UI = Object.assign({ tema: 'auto', escala: 1, oculto: [] }, (() => {
 })());
 const TEMAS = [['auto', 'Según el sistema'], ['light', 'Claro'], ['dark', 'Oscuro']];
 const ESCALAS = [[0.9, 'Chica'], [1, 'Normal'], [1.15, 'Grande'], [1.3, 'Más grande']];
-const SECCIONES = [['calendar', 'Calendario'], ['list', 'Agenda'], ['board', 'Tablero'], ['files', 'Entregas'], ['dash', 'Panel']];
+const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Agenda'], ['board', 'Tablero'], ['files', 'Entregas'], ['dash', 'Panel']];
 function guardarUI() { try { localStorage.setItem(UI_KEY, JSON.stringify(UI)); } catch (e) { /* sin espacio */ } }
 function aplicarUI() {
   const r = document.documentElement;
@@ -215,6 +217,9 @@ const S = {
   lastOnly: localStorage.getItem('crono_last_only') !== '0',
   conPrompts: localStorage.getItem('crono_prompts') === '1',
   openProject: localStorage.getItem('crono_open_project') || '',
+  feedFiltro: localStorage.getItem('crono_feed') || 'todo',
+  feedAbiertos: {},  // piezas del feed con todos los comentarios a la vista
+  feedBorrador: {},  // lo que se está escribiendo en cada pieza del feed
   compartidos: 0,
   db: { posts: [], comments: [], activity: [], notifications: [], prefs: [], push_subs: [], dispositivos: [] }
 };
@@ -396,12 +401,12 @@ const filterCount = () => ['person', 'platform', 'status', 'format'].filter((k) 
 function card(p, o = {}) {
   const st = statusOf(p.status), t = today();
   const overdue = p.date && p.date < t && p.status !== 'publicado';
-  const img = p.files.find((f) => (f.type || '').startsWith('image/'));
+  const img = p.files.find((f) => (f.type || '').startsWith('image/')) || p.files.find(isVideo);
   const done = p.checklist.filter((c) => c.done).length;
   const nc = S.db.comments.filter((c) => c.postId === p.id).length;
   const when = p.date ? (o.noDate ? (p.time || '') : `${fmtShort(p.date)}${p.time ? ' · ' + p.time : ''}`) : 'Sin fecha';
   return `<article class="card${overdue ? ' overdue' : ''}" data-act="open-post" data-id="${esc(p.id)}"${o.drag ? ' draggable="true"' : ''} style="--c:${st.color}">
-    <div class="thumb">${img ? `<img loading="lazy" alt="" src="${esc(img.thumb || img.url)}">` : ic('image', 22)}</div>
+    <div class="thumb">${img ? (isVideo(img) ? miniMedia(img) : `<img loading="lazy" alt="" src="${esc(img.thumb || fileSrc(img))}">`) : ic('image', 22)}</div>
     <div class="cb">
       <div class="ctop"><h3>${p.priority === 'alta' ? '<i class="prio" title="Prioridad alta"></i>' : ''}${esc(p.title)}</h3>
         <button class="badge" data-act="status-menu" data-id="${esc(p.id)}">${esc(st.name)}</button></div>
@@ -468,9 +473,7 @@ function viewBoard() {
 /* ---------- vista: entregas (archivos) ---------- */
 function fileTile(f) {
   const src = fileSrc(f);
-  const thumb = isImg(f) && src
-    ? `<img loading="lazy" alt="" src="${esc(src)}">`
-    : `<span class="ext">${esc((extOf(f) || '?').slice(0, 4).toUpperCase())}</span>`;
+  const thumb = miniMedia(f) || `<span class="ext">${esc((extOf(f) || '?').slice(0, 4).toUpperCase())}</span>`;
   return `<div class="ftile" data-act="file-open" data-f="${esc(f.id)}">
     <div class="fthumb">${thumb}${f.version > 1 || f.versions > 1 ? `<i class="vtag">v${f.version}</i>` : ''}</div>
     <div class="fmeta"><b>${esc(f.name)}</b><small>${esc(prettySize(f.size))}${f.versions > 1 ? ` · ${f.versions} versiones` : ''}</small></div>
@@ -559,19 +562,79 @@ function openFilePreview(fid) {
       <button class="btn" data-act="file-dl" data-f="${esc(file.id)}">${ic('download', 18)} Descargar</button></div>`, true);
 }
 
+/* ---------- multimedia: vistas previas y galería a pantalla completa ---------- */
+// Foto, primer cuadro del video (con ▶) o null si no se puede mostrar
+function miniMedia(f) {
+  const src = fileSrc(f);
+  if (!src) return null;
+  if (isImg(f)) return `<img loading="lazy" alt="" src="${esc(src)}">`;
+  if (isVideo(f)) return `<video class="vprev" src="${esc(src)}#t=0.1" muted playsinline preload="metadata"></video><i class="playic">${ic('play', 18)}</i>`;
+  return null;
+}
+const esMedia = (f) => isImg(f) || isVideo(f);
+
+// Galería: se desliza con el dedo entre fotos y videos; flechas y teclado en el computador
+let GAL = null;
+function abrirGaleria(files, inicio) {
+  files = (files || []).filter(Boolean);
+  if (!files.length) return;
+  const i0 = Math.max(0, Math.min(files.length - 1, inicio || 0));
+  GAL = { files, i: i0 };
+  const lb = $('#lightbox');
+  lb.innerHTML = `<div class="gal">
+    <div class="galtrack">${files.map((f) => {
+      const src = fileSrc(f);
+      const m = isVideo(f) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>`
+        : isImg(f) ? `<img src="${esc(src)}" alt="">`
+        : `<div class="galdoc"><span class="ext">${esc((extOf(f) || 'archivo').toUpperCase())}</span><small>${esc(f.name || '')}</small></div>`;
+      return `<div class="galslide">${m}</div>`;
+    }).join('')}</div>
+    <button class="lbx" data-act="gal-cerrar" aria-label="Cerrar">${ic('x', 24)}</button>
+    ${files.length > 1 ? `<span class="galn">${i0 + 1} / ${files.length}</span>
+      <button class="galar prev" data-act="gal-mover" data-d="-1" aria-label="Anterior">${ic('left', 26)}</button>
+      <button class="galar next" data-act="gal-mover" data-d="1" aria-label="Siguiente">${ic('right', 26)}</button>` : ''}
+    <a class="lbdl" target="_blank" rel="noopener"></a>
+  </div>`;
+  lb.hidden = false;
+  const t = lb.querySelector('.galtrack');
+  requestAnimationFrame(() => { t.scrollLeft = i0 * t.clientWidth; galActualizar(i0); });
+}
+function galActualizar(i) {
+  if (!GAL) return;
+  GAL.i = i;
+  const lb = $('#lightbox'), f = GAL.files[i];
+  const n = lb.querySelector('.galn'); if (n) n.textContent = `${i + 1} / ${GAL.files.length}`;
+  const a = lb.querySelector('.lbdl');
+  if (a && f) { a.href = fileSrc(f); a.setAttribute('download', f.name || 'archivo'); a.innerHTML = `${ic('download', 18)} ${esc(f.name || 'Descargar')}`; }
+  // el video que sale de pantalla se pausa
+  lb.querySelectorAll('.galslide video').forEach((v, k) => { if (k !== i && !v.paused) v.pause(); });
+}
+function galMover(d) {
+  if (!GAL) return;
+  const t = $('#lightbox .galtrack'); if (!t) return;
+  const i = Math.max(0, Math.min(GAL.files.length - 1, GAL.i + d));
+  t.scrollTo({ left: i * t.clientWidth, behavior: 'smooth' });
+}
+function cerrarGaleria() {
+  const lb = $('#lightbox');
+  lb.hidden = true; lb.innerHTML = ''; GAL = null; // al vaciarla se detienen los videos
+}
+
 /* ---------- vista de resultado (lo que ven Flavio y Maca) ---------- */
 // Un archivo dentro del carrusel: foto, video o documento
-function slideHtml(f) {
+const CARRU = {}; // archivos de cada carrusel en pantalla, para abrirlos en la galería
+function slideHtml(f, i, id) {
   const src = fileSrc(f);
-  if (isImg(f)) return `<div class="slide"><img loading="lazy" alt="" src="${esc(src)}" data-act="file-zoom"></div>`;
-  if (isVideo(f)) return `<div class="slide"><video src="${esc(src)}" controls playsinline preload="metadata"></video></div>`;
+  if (isImg(f)) return `<div class="slide"><img loading="lazy" alt="" src="${esc(src)}" data-act="gal-carru" data-c="${esc(id)}" data-i="${i}"></div>`;
+  if (isVideo(f)) return `<div class="slide"><video src="${esc(src)}#t=0.1" controls playsinline preload="metadata"></video><button class="slidezoom" data-act="gal-carru" data-c="${esc(id)}" data-i="${i}" aria-label="Ver en grande">${ic('eye', 16)}</button></div>`;
   return `<div class="slide doc" data-act="file-open" data-f="${esc(f.id)}"><span class="ext">${esc((extOf(f) || 'archivo').toUpperCase())}</span><small>Tocar para abrir</small></div>`;
 }
 function carruselHtml(files, id) {
   if (!files.length) return '';
   const uno = files.length === 1;
+  CARRU[id] = files;
   return `<div class="carru${uno ? ' uno' : ''}" id="c-${esc(id)}">
-    <div class="carru-track">${files.map(slideHtml).join('')}</div>
+    <div class="carru-track">${files.map((f, i) => slideHtml(f, i, id)).join('')}</div>
     ${uno ? '' : `<button class="carru-ar prev" data-act="carru" data-d="-1" aria-label="Anterior">${ic('left', 20)}</button>
     <button class="carru-ar next" data-act="carru" data-d="1" aria-label="Siguiente">${ic('right', 20)}</button>
     <div class="carru-dots">${files.map((f, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</div>
@@ -606,6 +669,80 @@ function viewResultados() {
         </div>
       </div></article>`;
   }).join('')}</div>`;
+}
+
+/* ---------- vista: feed (como una publicación de Instagram, para revisar rápido) ---------- */
+// Lo último que pasó en una pieza: edición, archivo nuevo o comentario
+function ultimaActividad(p) {
+  let t = String(p.updatedAt || p.createdAt || '');
+  (p.files || []).forEach((f) => { if (String(f.at || '') > t) t = String(f.at); });
+  S.db.comments.forEach((c) => { if (c.postId === p.id && String(c.createdAt) > t) t = String(c.createdAt); });
+  return t;
+}
+const FEED_FILTROS = [['todo', 'Todo'], ['revisar', 'Por revisar'], ['aprobado', 'Aprobado'], ['publicado', 'Publicado']];
+function viewFeed() {
+  const f = S.feedFiltro;
+  const piezas = filtered()
+    .filter((p) => p.status !== 'idea' || p.files.length)
+    .filter((p) => f === 'todo' || (f === 'revisar' ? ['diseno', 'revision', 'cambios'].includes(p.status) : f === 'aprobado' ? ['aprobado', 'programado'].includes(p.status) : p.status === 'publicado'))
+    .map((p) => ({ p, t: ultimaActividad(p) }))
+    .sort((a, b) => b.t.localeCompare(a.t));
+  const head = `<div class="chips feedf">${FEED_FILTROS.map(([id, n]) => `<button class="chip${f === id ? ' on' : ''}" data-act="feed-filtro" data-v="${id}">${esc(n)}</button>`).join('')}</div>`;
+  if (!piezas.length) return head + emptyBox('Nada por aquí', 'Cuando haya piezas con archivos o comentarios, aparecen aquí, lo más nuevo primero.');
+  return head + `<div class="feed">${piezas.map(({ p, t }) => postHtml(p, t)).join('')}</div>`;
+}
+function postHtml(p, t) {
+  const st = statusOf(p.status);
+  const files = pieceFiles(p, true); // la versión más nueva de cada archivo
+  const coms = S.db.comments.filter((c) => c.postId === p.id).sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)));
+  const abiertos = S.feedAbiertos[p.id];
+  const vis = abiertos ? coms : coms.slice(-3);
+  const autor = person(p.updatedBy || p.createdBy);
+  const puedeAprobar = !['aprobado', 'programado', 'publicado'].includes(p.status);
+  const tags = (p.hashtags || '').trim();
+  return `<article class="post" style="--c:${st.color}">
+    <header class="posth">${av(autor.id, 'md')}
+      <div><b>${esc(p.title)}</b><small>${esc(autor.name)} · ${esc(ago(t))}${p.date ? ' · sale el ' + esc(fmtShort(p.date)) : ''}</small></div>
+      <span class="badge" style="--c:${st.color}">${esc(st.name)}</span></header>
+    <div class="postmedia">${files.length ? carruselHtml(files, 'f-' + p.id) : `<div class="postvacio">${ic('image', 30)}<small>Todavía sin archivos</small></div>`}</div>
+    <div class="postside">
+      <div class="postacts">
+        ${puedeAprobar ? `<button class="btn sm" data-act="feed-aprobar" data-id="${esc(p.id)}">${ic('check', 16)} Aprobar</button>
+        <button class="btn ghost sm" data-act="feed-cambios" data-id="${esc(p.id)}">Pedir cambios</button>` : `<span class="postok">${ic('check', 16)} ${esc(st.name)}</span>`}
+        <button class="btn ghost sm postabrir" data-act="open-post" data-id="${esc(p.id)}">Abrir</button>
+      </div>
+      ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
+      ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
+      <div class="postcoms">
+        ${coms.length > vis.length ? `<button class="lnk" data-act="feed-mas" data-id="${esc(p.id)}">Ver los ${coms.length} comentarios</button>` : ''}
+        ${vis.map((c) => {
+          const fotos = (c.fileIds || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
+          return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
+            ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(x) || ''}</span>`).join('')}</div>` : ''}
+            <small>${esc(ago(c.createdAt))}</small></div></div>`;
+        }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
+      </div>
+      <div class="postcompose">
+        <input class="field" data-feed-com="${esc(p.id)}" placeholder="${S.feedCambios === p.id ? '¿Qué cambiarías?' : 'Escribe un comentario…'}" value="${esc(S.feedBorrador[p.id] || '')}" autocomplete="off" enterkeyhint="send">
+        <button class="iconbtn" data-act="feed-enviar" data-id="${esc(p.id)}" aria-label="Enviar">${ic('send', 18)}</button>
+      </div>
+    </div>
+  </article>`;
+}
+async function feedEnviar(id) {
+  const p = S.db.posts.find((x) => x.id === id); if (!p || !requireWrite()) return;
+  const inp = document.querySelector(`[data-feed-com="${CSS.escape(id)}"]`);
+  const text = ((inp && inp.value) || S.feedBorrador[id] || '').trim();
+  if (!text) { if (inp) inp.focus(); return; }
+  if (inp) inp.disabled = true;
+  try {
+    await comentar(p, text);
+    if (S.feedCambios === id && p.status !== 'cambios') await changeStatus(id, 'cambios');
+    delete S.feedBorrador[id];
+    if (S.feedCambios === id) S.feedCambios = null;
+    renderMain();
+    toast('Comentario enviado');
+  } catch (e) { if (inp) inp.disabled = false; }
 }
 
 /* ---------- vista: panel de seguimiento ---------- */
@@ -702,15 +839,15 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const IC_TAB = { calendar: 'calendar', list: 'list', board: 'board', files: esAdmin() ? 'folder' : 'image', dash: 'chart' };
+  const IC_TAB = { feed: 'feed', calendar: 'calendar', list: 'list', board: 'board', files: esAdmin() ? 'folder' : 'image', dash: 'chart' };
   const T = visibles().map(([id, l]) => [id, l, IC_TAB[id]]);
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
-  const v = { calendar: viewCalendar, list: viewList, board: viewBoard, files: esAdmin() ? viewFiles : viewResultados, dash: viewDash }[S.view] || viewCalendar;
+  const v = { feed: viewFeed, calendar: viewCalendar, list: viewList, board: viewBoard, files: esAdmin() ? viewFiles : viewResultados, dash: viewDash }[S.view] || viewCalendar;
   const sy = window.scrollY;
   $('#main').innerHTML = v();
-  $('.fab').hidden = S.view === 'files' || S.view === 'dash'; // en estas vistas estorba
+  $('.fab').hidden = S.view === 'files' || S.view === 'dash' || S.view === 'feed'; // en estas vistas estorba
   renderBanner();
   window.scrollTo(0, sy);
 }
@@ -750,7 +887,12 @@ function closeSheet(fromPop) {
   if (!fromPop) history.back();
 }
 window.addEventListener('popstate', () => { if (sheetOpen) closeSheet(true); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { if (!$('#lightbox').hidden) $('#lightbox').hidden = true; else closeSheet(); } });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && e.target.dataset && e.target.dataset.feedCom != null) { e.preventDefault(); feedEnviar(e.target.dataset.feedCom); return; }
+  const lb = $('#lightbox');
+  if (!lb.hidden && GAL && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); galMover(e.key === 'ArrowRight' ? 1 : -1); return; }
+  if (e.key === 'Escape') { if (!lb.hidden) { if (GAL) cerrarGaleria(); else lb.hidden = true; } else closeSheet(); }
+});
 
 // Foto en grande, con su botón para cerrar (en el celular no hay tecla Escape)
 function verFoto(src, nombre) {
@@ -1077,9 +1219,8 @@ function renderEditor() {
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
       const { recientes, anteriores } = archivosEditor(d);
-      const tile = (f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${isImg(f)
-        ? `<img loading="lazy" alt="" src="${esc(fileSrc(f))}">`
-        : `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
+      const tile = (f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${miniMedia(f)
+        || `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
         ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
         <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`;
       return `<div class="files">${recientes.map(tile).join('')}
@@ -1112,7 +1253,7 @@ function renderEditor() {
     ${comments.map((c) => {
       const fotos = (c.fileIds || []).map((fid) => d.files.find((f) => f.id === fid)).filter(Boolean);
       return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}</small>${mentionHtml(c.text)}
-        ${fotos.length ? `<div class="cmfotos">${fotos.map((f) => `<img loading="lazy" alt="" src="${esc(fileSrc(f))}" data-act="ed-view" data-id="${esc(f.id)}">`).join('')}</div>` : ''}</div></div>`;
+        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(f) || ''}</span>`).join('')}</div>` : ''}</div></div>`;
     }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
@@ -1159,17 +1300,21 @@ async function saveEditor() {
   toast(wasNew ? 'Pieza creada' : 'Cambios guardados');
 }
 
-async function addComment() {
-  if (!requireWrite()) return;
-  syncDraft();
-  const text = (ED.comment || '').trim(); if (!text) return;
-  const p = ED.old; if (!p) return;
+// Comentario en una pieza (desde el editor o desde el feed), con sus avisos
+async function comentar(p, text) {
   await save('comments', { id: uid(), postId: p.id, author: S.me.id, text, createdAt: nowISO() });
   const ments = P.filter((x) => new RegExp('@' + x.name + '(?![\\p{L}])', 'iu').test(text)).map((x) => x.id);
   await log(p, 'comment', 'comentó');
   const snippet = text.length > 80 ? text.slice(0, 80) + '…' : text;
   await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`);
   await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`);
+}
+async function addComment() {
+  if (!requireWrite()) return;
+  syncDraft();
+  const text = (ED.comment || '').trim(); if (!text) return;
+  const p = ED.old; if (!p) return;
+  await comentar(p, text);
   ED.comment = '';
   renderEditor();
 }
@@ -2430,7 +2575,16 @@ const ACTS = {
   'toggle-project': (el) => { S.openProject = S.openProject === el.dataset.p ? '' : el.dataset.p; localStorage.setItem('crono_open_project', S.openProject); renderMain(); },
   'file-open': (el, e) => { if (e) e.stopPropagation(); openFilePreview(el.dataset.f); },
   'file-dl': (el, e) => { if (e) e.stopPropagation(); const h = findFile(el.dataset.f); if (h) downloadOne(h.file); },
-  'file-zoom': (el) => verFoto(el.getAttribute('src')),
+  'file-zoom': (el) => { const h = findFile(el.dataset.f); if (h) abrirGaleria([h.file]); else verFoto(el.getAttribute('src')); },
+  'gal-carru': (el, e) => { if (e) e.stopPropagation(); abrirGaleria(CARRU[el.dataset.c] || [], +el.dataset.i); },
+  'gal-com': (el, e) => {
+    if (e) e.stopPropagation();
+    const c = S.db.comments.find((x) => x.id === el.dataset.c); if (!c) return;
+    const post = (ED && ED.d && ED.d.id === c.postId) ? ED.d : S.db.posts.find((p) => p.id === c.postId);
+    abrirGaleria((c.fileIds || []).map((fid) => post && post.files.find((f) => f.id === fid)).filter(Boolean), +el.dataset.i);
+  },
+  'gal-mover': (el) => galMover(+el.dataset.d),
+  'gal-cerrar': () => cerrarGaleria(),
   'dl-piece': async (el, e) => { if (e) e.stopPropagation(); const p = S.db.posts.find((x) => x.id === el.dataset.id); if (p) await downloadZip(entriesOfPost(p, S.lastOnly), slugify(p.title, 'pieza')); },
   'dl-project': async (el, e) => { if (e) e.stopPropagation(); await downloadZip(entriesOfProject(el.dataset.p, S.lastOnly), slugify(el.dataset.p, 'proyecto')); },
   'dl-all': async () => {
@@ -2495,8 +2649,12 @@ const ACTS = {
   },
   'ed-view': (el) => {
     const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;
-    if (isImg(f)) verFoto(fileSrc(f), f.name);
-    else downloadOne(f);
+    if (!esMedia(f)) { downloadOne(f); return; }
+    // se desliza por los archivos en el mismo orden en que se ven
+    const { recientes, anteriores } = archivosEditor(ED.d);
+    const lista = recientes.concat(ED.verAnteriores ? anteriores : []).filter(esMedia);
+    const i = lista.findIndex((x) => x.id === f.id);
+    abrirGaleria(i >= 0 ? lista : [f], Math.max(0, i));
   },
   'ed-addlink': () => {
     syncDraft();
@@ -2510,6 +2668,15 @@ const ACTS = {
   'ed-rmcheck': (el) => { syncDraft(); ED.d.checklist = ED.d.checklist.filter((c) => c.id !== el.dataset.id); renderEditor(); },
   'ed-mention': (el) => { const t = $('#e-comment'); t.value = (t.value + ' @' + el.dataset.v + ' ').trimStart(); t.focus(); },
   'ed-comment': () => addComment(),
+  'feed-filtro': (el) => { S.feedFiltro = el.dataset.v; localStorage.setItem('crono_feed', S.feedFiltro); renderMain(); },
+  'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
+  'feed-enviar': (el) => feedEnviar(el.dataset.id),
+  'feed-aprobar': async (el) => { await changeStatus(el.dataset.id, 'aprobado'); },
+  'feed-cambios': (el) => {
+    S.feedCambios = el.dataset.id; renderMain();
+    const i = document.querySelector(`[data-feed-com="${CSS.escape(el.dataset.id)}"]`);
+    if (i) { i.focus(); toast('Escribe qué cambiarías: al enviarlo, la pieza pasa a “Cambios”', 3500); }
+  },
   'ed-vermas': () => { syncDraft(); ED.verAnteriores = !ED.verAnteriores; renderEditor(); },
   'aviso-abrir': () => openAviso(),
   'aviso-cerrar': () => { syncAviso(); const c = $('#avisocapa'); if (c) c.remove(); },
@@ -2536,8 +2703,12 @@ const ACTS = {
 };
 document.addEventListener('click', (e) => {
   if (e.target.closest && e.target.closest('#lightbox')) {
-    if (e.target.closest('.lbdl')) return; // descargar no cierra
-    $('#lightbox').hidden = true; return;
+    if (e.target.closest('.lbdl')) return;                                   // descargar no cierra
+    const b = e.target.closest('[data-act]');
+    if (b) { const fn = ACTS[b.dataset.act]; if (fn) fn(b, e); return; }     // flechas y X
+    if (e.target.closest('img,video,.galdoc')) return;                       // tocar la foto o el video no cierra
+    if ($('#lightbox .gal')) cerrarGaleria(); else $('#lightbox').hidden = true;
+    return;
   }
   const el = e.target.closest('[data-act]');
   if (!el) return;
@@ -2550,6 +2721,7 @@ document.addEventListener('input', (e) => {
     const m = IMP.msgs[+e.target.dataset.impTxt];
     if (m) { m.texto = e.target.value; m.original = m.original || e.target.value; m.pide = W().pideCambio(m.texto) && m.persona !== S.me.id; m.charla = !m.texto.trim(); m.usar = !!m.texto.trim() || !!m.foto; }
   }
+  if (e.target.dataset && e.target.dataset.feedCom != null) { S.feedBorrador[e.target.dataset.feedCom] = e.target.value; return; }
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
 });
 document.addEventListener('change', (e) => {
@@ -2591,6 +2763,7 @@ document.addEventListener('drop', (e) => {
 /* Puntitos y contador del carrusel */
 document.addEventListener('scroll', (e) => {
   const t = e.target;
+  if (t.classList && t.classList.contains('galtrack')) { galActualizar(Math.round(t.scrollLeft / Math.max(1, t.clientWidth))); return; }
   if (!t.classList || !t.classList.contains('carru-track')) return;
   const i = Math.round(t.scrollLeft / Math.max(1, t.clientWidth));
   const c = t.parentElement;
@@ -2698,7 +2871,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 async function reload() {
-  try { S.db = normalize(await store.load()); if (S.me) { renderAll(); if (ED && sheetOpen && !$('#avisocapa') && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
+  try { S.db = normalize(await store.load()); if (S.me) { if (!(document.activeElement && document.activeElement.matches('#main input,#main textarea'))) renderAll(); if (ED && sheetOpen && !$('#avisocapa') && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
   catch (e) { console.warn('No se pudo refrescar', e); }
 }
 /* ---------- mantenerse al día ---------- */

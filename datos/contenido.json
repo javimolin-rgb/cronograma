@@ -126,10 +126,23 @@
      "sha": "671ed6cde434e3d0e9fda6c2423da8a9b6dfde84",
      "type": "image/jpeg",
      "size": 130944
+    },
+    {
+     "id": "525451a2-d146-4be7-a662-a5cf96934896",
+     "by": "javi",
+     "at": "2026-10-26T12:31:15.462Z",
+     "base": "casa_huingan_s1",
+     "version": 1,
+     "name": "casa_huingan_s1-v1.mp4",
+     "path": "archivos/sin-proyecto/casa_huingan_s1-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/casa_huingan_s1-v1.mp4",
+     "sha": "4ccd6ca10b20d0361a88ccb12af741393827808a",
+     "type": "video/mp4",
+     "size": 17127894
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-25T17:11:00.507Z",
+   "updatedAt": "2026-10-26T12:31:30.960Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
@@ -2187,6 +2200,16 @@
  ],
  "activity": [
   {
+   "id": "c0e9b4b4-d8f8-4423-a7b4-76b4eaf0d00c",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-10-26T12:31:30.962Z"
+  },
+  {
    "id": "4a7f26d7-60f9-4076-9e2d-2d6341e1d9f7",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "postTitle": "Video 3D Huingan",
@@ -2932,6 +2955,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "81da4634-dc26-4e47-b54b-1be60933ac50",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-26T12:31:30.963Z"
+  },
+  {
+   "id": "88f7be75-9563-48da-ad6a-e70d5575852b",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-26T12:31:30.963Z"
+  },
   {
    "id": "04aecf82-4b1a-4220-bc2f-9c78f233d9c5",
    "to": "maca",

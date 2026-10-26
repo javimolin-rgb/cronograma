@@ -3437,6 +3437,19 @@
  ],
  "dispositivos": [
   {
+   "id": "d_f6c6518010fd48af",
+   "person": "flavio",
+   "equipo": "Mac",
+   "navegador": "Chrome",
+   "tipo": "pc",
+   "instalada": false,
+   "push": false,
+   "version": "2026.10.25-1",
+   "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+   "firstSeen": "2026-10-26T12:14:30.832Z",
+   "lastSeen": "2026-10-26T12:14:30.833Z"
+  },
+  {
    "id": "d_5888b1e332884189",
    "person": "flavio",
    "equipo": "Android",

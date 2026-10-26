@@ -13,6 +13,16 @@ Las entregas de agosto a octubre de 2026: diagnóstico y resumen de marca, cotiz
 - **Flavio y Maca** entran a **Entregas** y ven cada pieza terminada como resultado: el carrusel se desliza con el dedo, con su descripción, sus hashtags y los enlaces. Pueden comentar y descargar la versión final. No ven archivos sueltos, ni versiones, ni carpetas.
 - **Javi** ve en esa misma pestaña la carpeta completa: proyectos, piezas, todos los archivos, las versiones anteriores y las descargas en zip.
 
+## Feed: revisar rápido, como en Instagram
+
+La pestaña **Feed** muestra cada pieza como una publicación: la foto o el video en grande (se desliza entre archivos) y, al lado en el computador o debajo en el celular, el copy, los comentarios y un campo para comentar. Lo más nuevo (archivo, edición o comentario) aparece primero. Filtros: Todo, Por revisar, Aprobado y Publicado.
+
+Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambiar y, al enviarlo, la pieza pasa a *Cambios*).
+
+## Ver fotos y videos
+
+Tocar cualquier foto o video (en el feed, en una pieza, en un comentario) abre la galería a pantalla completa: se desliza con el dedo entre todos los archivos, los videos se reproducen ahí mismo, y tiene contador, X para cerrar y botón para descargar. En el computador, también con las flechas del teclado. Los videos muestran su primer cuadro con ▶ en vez de un ícono.
+
 ## Apariencia (cada uno en su teléfono)
 
 En **Ajustes → Apariencia**: colores (según el sistema, claro u oscuro), tamaño de la letra (cuatro tamaños) y qué secciones mostrar en la barra de abajo. Se guarda en ese dispositivo y no le cambia nada a los demás.

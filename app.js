@@ -1273,7 +1273,8 @@ function openEditor(id, preset = {}) {
 function syncDraft() {
   if (!ED || !$('#e-title')) return;
   const g = (i) => document.getElementById(i), d = ED.d;
-  d.title = g('e-title').value; d.date = g('e-date').value; d.time = g('e-time').value; d.format = g('e-format').value;
+  const val = (i) => { const e = g(i); return e ? e.value : ''; };
+  d.title = g('e-title').value; d.date = val('e-date'); d.time = val('e-time'); d.format = val('e-format') || d.format;
   d.caption = g('e-caption').value; d.hashtags = g('e-tags').value; d.notes = g('e-notes').value; d.campaign = g('e-camp').value;
   ED.comment = g('e-comment') ? g('e-comment').value : '';
   ED.newLink = { label: g('e-llabel').value, url: g('e-lurl').value };
@@ -1304,8 +1305,9 @@ function renderEditor() {
     <div class="chips scroll">${STATUSES.map((s) => `<button class="chip${d.status === s.id ? ' on' : ''}" style="--c:${s.color}" data-act="ed-status" data-v="${s.id}">${esc(s.name)}</button>`).join('')}</div>
     ${old ? `<div class="stage" style="--c:${st.color}"><i></i>${esc(statusOf(old.status).name)} desde ${ago(old.statusChangedAt || old.createdAt)}${isStalled(old) ? ' · <b class="stuck">estancada</b>' : ''}</div>` : ''}
 
-    <label class="lbl">Cuándo se publica</label>
-    <div class="row2"><input class="field" id="e-date" type="date" value="${esc(d.date || '')}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>
+    <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
+    <div class="row2"${d.date ? '' : ' hidden'}><input class="field" id="e-date" type="date" value="${esc(d.date || '')}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>
+    <div class="chips"><button class="chip${d.date ? '' : ' on'}" data-act="ed-sinfecha">${ic('check', 15)} Sin fecha límite</button></div>
 
     <label class="lbl">Plataformas</label>
     <div class="chips">${PLATFORMS.map((p) => `<button class="chip${d.platforms.includes(p.id) ? ' on' : ''}" style="--c:${p.color}" data-act="ed-plat" data-v="${p.id}">${esc(p.name)}</button>`).join('')}</div>
@@ -2758,6 +2760,13 @@ const ACTS = {
   'ed-status': (el) => { syncDraft(); ED.d.status = el.dataset.v; renderEditor(); },
   'ed-plat': (el) => { syncDraft(); const a = ED.d.platforms, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
   'ed-person': (el) => { syncDraft(); const a = ED.d.assignees, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
+  'ed-sinfecha': () => {
+    syncDraft();
+    const d = ED.d;
+    if (d.date) { d.date = ''; d.time = ''; }                       // queda como tarea pendiente, sin vencimiento
+    else d.date = (S.view === 'calendar' && S.sel) || today();
+    renderEditor();
+  },
   'ed-prio': () => { syncDraft(); ED.d.priority = ED.d.priority === 'alta' ? 'normal' : 'alta'; renderEditor(); },
   'ed-rmfile': (el) => {
     syncDraft();

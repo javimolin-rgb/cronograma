@@ -21,6 +21,12 @@ Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambi
 
 **Tipo de vista:** arriba a la derecha se cambia entre **Tarjetas** (la de trabajo), **Como en Instagram** (se ve igual que la publicación: la cuenta arriba, la imagen en 4:5 sobre negro y el copy debajo; en computador, la imagen a la izquierda y los comentarios a la derecha) y **Cuadrícula** (como el perfil de Instagram). La elección queda guardada en ese dispositivo.
 
+## Tareas sin fecha límite
+
+En cada pieza, debajo de *Cuándo se publica*, está el botón **Sin fecha límite**: al tocarlo se borra la fecha y la hora, y la pieza queda como pendiente sin vencimiento. Sirve para lo que hay que hacer pero no tiene día: pendientes, ideas, encargos.
+
+Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*, y en el **Tablero** según su estado (en el calendario no, porque no tienen día). No generan avisos de vencimiento. Para ponerle fecha después, se toca el mismo botón y vuelve a aparecer el día de hoy.
+
 ## Archivos por tandas
 
 Los archivos de una pieza se ordenan por **tandas**: lo que se subió de una vez queda junto, con su fecha y hora (“23 oct, 21:04 · 2 archivos”), y la tanda más nueva va arriba. Así lo último entregado —la versión final— es lo primero que se ve, tanto en Entregas como en el carrusel de la pieza.

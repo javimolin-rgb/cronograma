@@ -1622,6 +1622,13 @@
  ],
  "comments": [
   {
+   "id": "12611a57-3111-4673-9aa1-1ffab4b1e535",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "author": "javi",
+   "text": "Ya publicado!",
+   "createdAt": "2026-10-27T18:32:13.989Z"
+  },
+  {
    "id": "e-c1-c1",
    "postId": "e-c1",
    "author": "maca",
@@ -2473,6 +2480,16 @@
  ],
  "activity": [
   {
+   "id": "f9824f57-b388-475f-a92d-16a4eda1e97a",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "postTitle": "Cambio de modulo - Web Neorigen",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-27T18:32:13.993Z"
+  },
+  {
    "id": "59614ede-2be0-46e5-b7a6-114dfc44aba6",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "postTitle": "Pilotes",
@@ -3294,6 +3311,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "81c0385f-541c-4c33-bff2-039d0f7f323f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "type": "comment",
+   "text": "comentó en “Cambio de modulo - Web Neorigen”: Ya publicado!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Cambio de modulo - Web Neorigen”: Ya publicado!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "createdAt": "2026-10-27T18:32:13.994Z"
+  },
+  {
+   "id": "ffc43d1b-86d4-4951-888b-6fcf63516de1",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "type": "comment",
+   "text": "comentó en “Cambio de modulo - Web Neorigen”: Ya publicado!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Cambio de modulo - Web Neorigen”: Ya publicado!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "createdAt": "2026-10-27T18:32:13.994Z"
+  },
   {
    "id": "88365c0d-225a-4ab4-8f8f-627057fc0633",
    "to": "flavio",

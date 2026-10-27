@@ -134,6 +134,12 @@ Al subir archivos a una pieza aparece *“Subiste N archivos. ¿Les avisas para 
 
 Dentro de cada pieza, la **campana** de arriba activa o silencia los avisos de *esa* pieza: silenciada, no llega nada de ella (ni a la app ni al celular); activada, llegan los comentarios, cambios de estado, de fecha y de contenido aunque no estés etiquetado.
 
+## Javi se entera de todo (solo Javi)
+
+Cada **comentario, pieza nueva o cambio** que hagan Flavio o Maca le llega a Javi, esté o no etiquetada. Llega **un aviso por acción**, con el resumen de lo que pasó (“en «X»: la movió a Aprobado; cambió la fecha a 5 nov”), y también al celular. Se apaga desde Ajustes, en el interruptor **“Todo lo que haga el equipo”**, que solo ella ve. Las piezas silenciadas desde su campana quedan fuera igual.
+
+Quién lo recibe se define en `SUPERVISA`, dentro de `config.js`.
+
 ## Dónde queda cada cosa
 
 | Qué | Dónde |

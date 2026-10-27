@@ -267,11 +267,13 @@ const EVENTS = [
   { id: 'status', label: 'Cambia el estado de mis piezas', hint: 'Ej. pasa a “Aprobado” o “Cambios”' },
   { id: 'reschedule', label: 'Cambia la fecha de mis piezas', hint: 'Reprogramaciones' },
   { id: 'update', label: 'Editan contenido o archivos', hint: 'Copy, archivos, enlaces, formato…' },
-  { id: 'deadline', label: 'Vencimientos (hoy / atrasadas)', hint: 'Se muestran dentro de la app', appOnly: true }
+  { id: 'deadline', label: 'Vencimientos (hoy / atrasadas)', hint: 'Se muestran dentro de la app', appOnly: true },
+  { id: 'supervision', label: 'Todo lo que haga el equipo', hint: 'Cada comentario, pieza nueva o cambio de los demás', soloSuper: true }
 ];
 const DEFAULT_EV = {
   tagged: { app: 1, push: 1 }, mention: { app: 1, push: 1 }, comment: { app: 1, push: 0 },
-  status: { app: 1, push: 0 }, reschedule: { app: 1, push: 1 }, update: { app: 1, push: 0 }, deadline: { app: 1, push: 0 }
+  status: { app: 1, push: 0 }, reschedule: { app: 1, push: 1 }, update: { app: 1, push: 0 }, deadline: { app: 1, push: 0 },
+  supervision: { app: 1, push: 1 }
 };
 function prefsOf(pid) {
   const p = S.db.prefs.find((x) => x.id === pid) || {};
@@ -299,10 +301,31 @@ async function cambiarAvisosPieza(post) {
 const siteBase = () => CFG.SITE_URL || (location.origin + location.pathname);
 const siteLink = (id) => `${siteBase()}#post=${id}`;
 
+// Quién recibe aviso de todo lo que hacen los demás
+const supervisores = () => (CFG.SUPERVISA || []).filter((id) => id && id !== S.me.id && byId(P, id));
+
+// Un solo aviso por acción, con el resumen de lo que pasó
+async function notifySuper(post, texto) {
+  for (const pid of supervisores()) {
+    if (post && silenciada(pid, post.id)) continue;
+    const ev = prefsOf(pid).events.supervision;
+    if (!ev || (!ev.app && !ev.push)) continue;
+    try {
+      await save('notifications', {
+        id: uid(), to: pid, from: S.me.id, postId: post ? post.id : null, type: 'supervision', text: texto, read: false,
+        inApp: !!ev.app, push: !!ev.push,
+        title: CFG.APP_NAME, body: `${S.me.name} ${texto}`.slice(0, 180), url: post ? siteLink(post.id) : siteBase(),
+        createdAt: nowISO()
+      });
+    } catch (e) { /* ya avisado */ }
+  }
+}
+
 async function notify(type, post, targets, text) {
   // quienes siguen la pieza también se enteran; quienes la silenciaron, no
   const seguidores = ['comment', 'status', 'reschedule', 'update'].includes(type) ? P.filter((x) => sigue(x.id, post.id)).map((x) => x.id) : [];
-  const set = [...new Set(targets.concat(seguidores))].filter((id) => id && id !== S.me.id && !silenciada(id, post.id));
+  const sup = supervisores(); // reciben su propio resumen, no un aviso por cada cosa
+  const set = [...new Set(targets.concat(seguidores))].filter((id) => id && id !== S.me.id && !silenciada(id, post.id) && !sup.includes(id));
   for (const pid of set) {
     const ev = prefsOf(pid).events[type];
     if (!ev || (!ev.app && !ev.push)) continue;
@@ -340,24 +363,29 @@ async function commitPost(old, p) {
   if (isNew) {
     await log(p, 'created', 'creó la pieza');
     await notify('tagged', p, p.assignees, `te etiquetó en “${p.title}”`);
+    await notifySuper(p, `creó la pieza “${p.title}”`);
     return;
   }
+  const resumen = [];
   const added = p.assignees.filter((x) => !old.assignees.includes(x));
   const removed = old.assignees.filter((x) => !p.assignees.includes(x));
   const keep = p.assignees.filter((x) => old.assignees.includes(x));
   if (added.length) {
     await log(p, 'tag', `etiquetó a ${added.map((a) => person(a).name).join(', ')}`);
     await notify('tagged', p, added, `te etiquetó en “${p.title}”`);
+    resumen.push(`etiquetó a ${added.map((a) => person(a).name).join(', ')}`);
   }
   if (removed.length) await log(p, 'untag', `quitó a ${removed.map((a) => person(a).name).join(', ')}`);
   if (old.status !== p.status) {
     await log(p, 'status', `movió de ${statusOf(old.status).name} a ${statusOf(p.status).name}`, { from: old.status, to: p.status });
     await notify('status', p, keep, `movió “${p.title}” a ${statusOf(p.status).name}`);
+    resumen.push(`la movió a ${statusOf(p.status).name}`);
   }
   if ((old.date || '') !== (p.date || '')) {
     const nd = p.date ? fmtShort(p.date) : 'sin fecha';
     await log(p, 'reschedule', `cambió la fecha ${old.date ? 'de ' + fmtShort(old.date) + ' ' : ''}a ${nd}`, { from: old.date, to: p.date });
     await notify('reschedule', p, keep, `cambió la fecha de “${p.title}” a ${nd}`);
+    resumen.push(`cambió la fecha a ${nd}`);
   }
   const changed = CONTENT_FIELDS.filter((k) => !sameJ(old[k], p[k]));
   const ckChanged = !sameJ(old.checklist, p.checklist);
@@ -365,7 +393,9 @@ async function commitPost(old, p) {
     const labels = changed.concat(ckChanged ? ['checklist'] : []).map((k) => FIELD_LABEL[k]).join(', ');
     await log(p, 'edit', `editó ${labels}`);
     if (changed.length) await notify('update', p, keep, `editó “${p.title}” (${changed.map((k) => FIELD_LABEL[k]).join(', ')})`);
+    resumen.push(`editó ${labels}`);
   }
+  if (resumen.length) await notifySuper(p, `en “${p.title}”: ${resumen.join('; ')}`);
 }
 
 async function changeStatus(id, status) {
@@ -1096,7 +1126,7 @@ function openMe() {
       </div>
       <label class="lbl">Avisarme cuando…<small>App · Celular</small></label>
       <div class="sgrid"><span></span><span class="h">App</span><span class="h">Celular</span>
-        ${EVENTS.map((e) => `<div class="n">${esc(e.label)}<small>${esc(e.hint)}</small></div>
+        ${EVENTS.filter((e) => !e.soloSuper || (CFG.SUPERVISA || []).includes(S.me.id)).map((e) => `<div class="n">${esc(e.label)}<small>${esc(e.hint)}</small></div>
           <label class="sw"><input type="checkbox" data-ev="${e.id}" data-ch="app"${pr.events[e.id].app ? ' checked' : ''}><span></span></label>
           <label class="sw"><input type="checkbox" data-ev="${e.id}" data-ch="push"${pr.events[e.id].push && !e.appOnly ? ' checked' : ''}${e.appOnly ? ' disabled' : ''}><span></span></label>`).join('')}
       </div>
@@ -1308,6 +1338,7 @@ async function comentar(p, text) {
   const snippet = text.length > 80 ? text.slice(0, 80) + '…' : text;
   await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`);
   await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`);
+  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`);
 }
 async function addComment() {
   if (!requireWrite()) return;
@@ -2696,6 +2727,7 @@ const ACTS = {
     const p = ED && ED.old; if (!p) return;
     if (!confirm(`¿Eliminar “${p.title}”? Esta acción no se puede deshacer.`)) return;
     await log(p, 'deleted', 'eliminó la pieza');
+    await notifySuper(p, `eliminó la pieza “${p.title}”`);
     for (const c of S.db.comments.filter((x) => x.postId === p.id)) await removeRow('comments', c.id);
     await removeRow('posts', p.id);
     closeSheet(); renderAll(); toast('Pieza eliminada');

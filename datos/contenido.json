@@ -1,6 +1,86 @@
 {
  "posts": [
   {
+   "id": "309f771f-1276-4384-95ed-3e597aac5756",
+   "title": "Opciones foto portada web",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "",
+   "time": "",
+   "platforms": [],
+   "format": "web",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [
+    {
+     "id": "747f32af-bf93-4c6d-a51b-2d887d17f829",
+     "by": "javi",
+     "at": "2026-10-27T20:46:20.550Z",
+     "base": "terraza-moderna-entre-bosque-y-montanas-2",
+     "version": 1,
+     "name": "terraza-moderna-entre-bosque-y-montanas-2-v1.png",
+     "path": "archivos/sin-proyecto/terraza-moderna-entre-bosque-y-montanas-2-v1.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/terraza-moderna-entre-bosque-y-montanas-2-v1.png",
+     "sha": "d62e28a87e6e90dd48e3025b625a703eb661365b",
+     "type": "image/jpeg",
+     "size": 394948
+    },
+    {
+     "id": "41bd5c6b-70bf-4a40-a6fb-74c1d7003600",
+     "by": "javi",
+     "at": "2026-10-27T20:46:23.596Z",
+     "base": "casa-moderna-con-terraza-y-montana-1",
+     "version": 1,
+     "name": "casa-moderna-con-terraza-y-montana-1-v1.png",
+     "path": "archivos/sin-proyecto/casa-moderna-con-terraza-y-montana-1-v1.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/casa-moderna-con-terraza-y-montana-1-v1.png",
+     "sha": "911e48115756c486cdfe05542db5f4a6844e373d",
+     "type": "image/jpeg",
+     "size": 369849
+    },
+    {
+     "id": "90134c1a-05ff-4105-8e88-185c2ccbdc71",
+     "by": "javi",
+     "at": "2026-10-27T20:46:26.908Z",
+     "base": "casa-moderna-entre-bosque-y-montanas",
+     "version": 1,
+     "name": "casa-moderna-entre-bosque-y-montanas-v1.png",
+     "path": "archivos/sin-proyecto/casa-moderna-entre-bosque-y-montanas-v1.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/casa-moderna-entre-bosque-y-montanas-v1.png",
+     "sha": "fff0a1bb1a7f7f70306d281d1b3582f1b78697b9",
+     "type": "image/jpeg",
+     "size": 378004
+    },
+    {
+     "id": "5d75b429-384d-445e-b6ec-6204290b8f90",
+     "by": "javi",
+     "at": "2026-10-27T20:46:29.186Z",
+     "base": "casa-moderna-entre-montanas-y-bosque",
+     "version": 1,
+     "name": "casa-moderna-entre-montanas-y-bosque-v1.png",
+     "path": "archivos/sin-proyecto/casa-moderna-entre-montanas-y-bosque-v1.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/casa-moderna-entre-montanas-y-bosque-v1.png",
+     "sha": "7748265a59a8608f208c2533aa5e358c35d42bf7",
+     "type": "image/jpeg",
+     "size": 380466
+    }
+   ],
+   "checklist": [],
+   "updatedAt": "2026-10-27T20:46:36.715Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-10-27T20:46:36.715Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-10-27T20:46:36.715Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "id": "aa409560-033d-4424-b548-ce59905530cd",
    "title": "Pilotes",
    "caption": "",
@@ -2479,6 +2559,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "02faf6d2-9be3-4f01-9d41-94e43bd6006e",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-10-27T20:46:36.716Z"
+  },
   {
    "id": "f9824f57-b388-475f-a92d-16a4eda1e97a",
    "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",

@@ -1,6 +1,53 @@
 {
  "posts": [
   {
+   "id": "aa409560-033d-4424-b548-ce59905530cd",
+   "title": "Pilotes",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-10-31",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [
+    {
+     "id": "1ceb44be-7be5-476b-81c8-348653d37ab3",
+     "by": "javi",
+     "at": "2026-10-27T16:47:37.569Z",
+     "base": "neorigen-pilotes-reel-1080x1920",
+     "version": 1,
+     "name": "neorigen-pilotes-reel-1080x1920-v1.mp4",
+     "path": "archivos/sin-proyecto/neorigen-pilotes-reel-1080x1920-v1-2.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/neorigen-pilotes-reel-1080x1920-v1-2.mp4",
+     "sha": "b3f648e66174f9d0392483fdfbf3c03514c9a37b",
+     "type": "video/mp4",
+     "size": 4649088
+    }
+   ],
+   "checklist": [
+    {
+     "id": "125af346-62f7-4f57-9f20-9edf477139c4",
+     "text": "Agregar voz en off (en proceso)",
+     "done": false
+    }
+   ],
+   "updatedAt": "2026-10-27T16:47:56.617Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-10-27T16:47:56.617Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-10-27T16:47:56.617Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "title": "Cambio de modulo - Web Neorigen",
    "caption": "Cambiar Casas x aislación en pagina de inicio Neorigen.cl. Gracias!",
    "notes": "",
@@ -2425,6 +2472,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "59614ede-2be0-46e5-b7a6-114dfc44aba6",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-10-27T16:47:56.617Z"
+  },
   {
    "id": "63af24e3-53ab-40d8-ab0c-689fb26e4f1f",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",

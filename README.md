@@ -19,6 +19,8 @@ La pestaña **Feed** muestra cada pieza como una publicación: la foto o el vide
 
 Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambiar y, al enviarlo, la pieza pasa a *Cambios*).
 
+**Tipo de vista:** arriba a la derecha se cambia entre **Tarjetas** (la de trabajo), **Como en Instagram** (se ve igual que la publicación: la cuenta arriba, la imagen en 4:5 sobre negro y el copy debajo; en computador, la imagen a la izquierda y los comentarios a la derecha) y **Cuadrícula** (como el perfil de Instagram). La elección queda guardada en ese dispositivo.
+
 ## Ver fotos y videos
 
 Tocar cualquier foto o video (en el feed, en una pieza, en un comentario) abre la galería a pantalla completa: se desliza con el dedo entre todos los archivos, los videos se reproducen ahí mismo, y tiene contador, X para cerrar y botón para descargar. En el computador, también con las flechas del teclado. Los videos muestran su primer cuadro con ▶ en vez de un ícono.

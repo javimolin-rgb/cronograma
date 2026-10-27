@@ -218,6 +218,7 @@ const S = {
   conPrompts: localStorage.getItem('crono_prompts') === '1',
   openProject: localStorage.getItem('crono_open_project') || '',
   feedFiltro: localStorage.getItem('crono_feed') || 'todo',
+  feedVista: localStorage.getItem('crono_feed_vista') || 'tarjetas',
   feedAbiertos: {},  // piezas del feed con todos los comentarios a la vista
   feedBorrador: {},  // lo que se está escribiendo en cada pieza del feed
   compartidos: 0,
@@ -710,6 +711,8 @@ function ultimaActividad(p) {
   return t;
 }
 const FEED_FILTROS = [['todo', 'Todo'], ['revisar', 'Por revisar'], ['aprobado', 'Aprobado'], ['publicado', 'Publicado']];
+// Cómo se ve el feed: tarjeta de trabajo, como se verá publicado, o cuadrícula
+const FEED_VISTAS = [['tarjetas', 'Tarjetas', 'list'], ['ig', 'Como en Instagram', 'image'], ['grid', 'Cuadrícula', 'board']];
 function viewFeed() {
   const f = S.feedFiltro;
   const piezas = filtered()
@@ -717,9 +720,27 @@ function viewFeed() {
     .filter((p) => f === 'todo' || (f === 'revisar' ? ['diseno', 'revision', 'cambios'].includes(p.status) : f === 'aprobado' ? ['aprobado', 'programado'].includes(p.status) : p.status === 'publicado'))
     .map((p) => ({ p, t: ultimaActividad(p) }))
     .sort((a, b) => b.t.localeCompare(a.t));
-  const head = `<div class="chips feedf">${FEED_FILTROS.map(([id, n]) => `<button class="chip${f === id ? ' on' : ''}" data-act="feed-filtro" data-v="${id}">${esc(n)}</button>`).join('')}</div>`;
+  const head = `<div class="feedtop">
+      <div class="chips feedf">${FEED_FILTROS.map(([id, n]) => `<button class="chip${f === id ? ' on' : ''}" data-act="feed-filtro" data-v="${id}">${esc(n)}</button>`).join('')}</div>
+      <div class="vistasel" role="group" aria-label="Tipo de vista">${FEED_VISTAS.map(([id, n, i]) => `<button class="vbtn${S.feedVista === id ? ' on' : ''}" data-act="feed-vista" data-v="${id}" title="${esc(n)}" aria-label="${esc(n)}">${ic(i, 17)}</button>`).join('')}</div>
+    </div>`;
   if (!piezas.length) return head + emptyBox('Nada por aquí', 'Cuando haya piezas con archivos o comentarios, aparecen aquí, lo más nuevo primero.');
-  return head + `<div class="feed">${piezas.map(({ p, t }) => postHtml(p, t)).join('')}</div>`;
+  if (S.feedVista === 'grid') return head + gridHtml(piezas);
+  return head + `<div class="feed v-${esc(S.feedVista)}">${piezas.map(({ p, t }) => postHtml(p, t)).join('')}</div>`;
+}
+
+// Cuadrícula tipo perfil de Instagram
+function gridHtml(piezas) {
+  return `<div class="iggrid">${piezas.map(({ p }) => {
+    const files = pieceFiles(p, true).filter(esMedia);
+    const st = statusOf(p.status);
+    const coms = S.db.comments.filter((c) => c.postId === p.id).length;
+    return `<button class="igcell" data-act="open-post" data-id="${esc(p.id)}" style="--c:${st.color}" title="${esc(p.title)}">
+      ${files.length ? (miniMedia(files[0]) || '') : `<span class="igvacia">${ic('image', 24)}</span>`}
+      ${files.length > 1 ? `<i class="igmulti">${ic('copy', 13)}</i>` : ''}
+      <span class="igpie"><b>${esc(p.title)}</b><small>${esc(st.name)}${coms ? ' · ' + coms + ' com.' : ''}</small></span>
+    </button>`;
+  }).join('')}</div>`;
 }
 function postHtml(p, t) {
   const st = statusOf(p.status);
@@ -730,9 +751,10 @@ function postHtml(p, t) {
   const autor = person(p.updatedBy || p.createdBy);
   const puedeAprobar = !['aprobado', 'programado', 'publicado'].includes(p.status);
   const tags = (p.hashtags || '').trim();
+  const ig = S.feedVista === 'ig';
   return `<article class="post" style="--c:${st.color}">
-    <header class="posth">${av(autor.id, 'md')}
-      <div><b>${esc(p.title)}</b><small>${esc(autor.name)} · ${esc(ago(t))}${p.date ? ' · sale el ' + esc(fmtShort(p.date)) : ''}</small></div>
+    <header class="posth">${ig ? `<span class="logo sm">${marca()}</span>` : av(autor.id, 'md')}
+      <div><b>${ig ? esc(CFG.CUENTA || CFG.APP_NAME) : esc(p.title)}</b><small>${ig ? esc(p.title) : `${esc(autor.name)} · ${esc(ago(t))}${p.date ? ' · sale el ' + esc(fmtShort(p.date)) : ''}`}</small></div>
       <span class="badge" style="--c:${st.color}">${esc(st.name)}</span></header>
     <div class="postmedia">${files.length ? carruselHtml(files, 'f-' + p.id) : `<div class="postvacio">${ic('image', 30)}<small>Todavía sin archivos</small></div>`}</div>
     <div class="postside">
@@ -2700,6 +2722,7 @@ const ACTS = {
   'ed-mention': (el) => { const t = $('#e-comment'); t.value = (t.value + ' @' + el.dataset.v + ' ').trimStart(); t.focus(); },
   'ed-comment': () => addComment(),
   'feed-filtro': (el) => { S.feedFiltro = el.dataset.v; localStorage.setItem('crono_feed', S.feedFiltro); renderMain(); },
+  'feed-vista': (el) => { S.feedVista = el.dataset.v; localStorage.setItem('crono_feed_vista', S.feedVista); renderMain(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),
   'feed-aprobar': async (el) => { await changeStatus(el.dataset.id, 'aprobado'); },

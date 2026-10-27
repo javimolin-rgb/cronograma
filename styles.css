@@ -288,7 +288,7 @@ details.hist summary{cursor:pointer;font-weight:700;font-size:0.84375rem;padding
 .who-card .av{width:60px;height:60px;font-size:1.625rem}
 
 #lightbox{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.92);display:grid;place-items:center;padding:12px}
-#lightbox img{max-width:100%;max-height:100%;border-radius:8px}
+#lightbox img{max-width:100%;width:auto;height:auto;max-height:calc(100dvh - 24px);object-fit:contain;border-radius:8px}
 #toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + var(--safe-b) + 90px);transform:translate(-50%,20px);z-index:100;background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:14px;font-weight:600;font-size:0.875rem;opacity:0;pointer-events:none;transition:.2s;max-width:calc(100% - 28px);text-align:center}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 
@@ -575,10 +575,10 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 
 /* Galería a pantalla completa */
 #lightbox .gal{position:fixed;inset:0;background:#000}
-.galtrack{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.galtrack{display:flex;width:100%;height:100dvh;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .galtrack::-webkit-scrollbar{display:none}
-.galslide{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always;display:grid;place-items:center;padding:calc(64px + env(safe-area-inset-top,0px)) 0 calc(76px + var(--safe-b))}
-.galslide img,.galslide video{max-width:100%;max-height:100%;object-fit:contain;display:block;border-radius:0}
+.galslide{flex:0 0 100%;height:100dvh;scroll-snap-align:center;scroll-snap-stop:always;display:grid;place-items:center;padding:calc(64px + env(safe-area-inset-top,0px)) 0 calc(76px + var(--safe-b));--alto-libre:calc(100dvh - 140px - env(safe-area-inset-top,0px) - var(--safe-b))}
+#lightbox .galslide img,#lightbox .galslide video{max-width:100%;width:auto;height:auto;max-height:var(--alto-libre);object-fit:contain;display:block;border-radius:0}
 .galdoc{display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff}
 .galdoc .ext{font-size:2rem;font-weight:800}
 .galn{position:fixed;top:calc(22px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);color:#fff;font-size:0.875rem;font-weight:700;background:rgba(255,255,255,.14);padding:5px 12px;border-radius:999px}
@@ -619,3 +619,45 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
   .postside{grid-column:2;grid-row:2;min-height:0;overflow:auto}
   .postcompose{position:sticky;bottom:0;background:var(--surface)}
 }
+
+/* ===== Selector de tipo de vista del feed ===== */
+.feedtop{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap}
+.feedtop .feedf{margin:0;flex:1;min-width:0}
+.vistasel{display:flex;gap:2px;padding:3px;border-radius:12px;background:var(--surface2);box-shadow:inset 0 0 0 1px var(--line);flex:none}
+.vbtn{width:34px;height:30px;border-radius:9px;display:grid;place-items:center;color:var(--muted)}
+.vbtn.on{background:var(--surface);color:var(--accent);box-shadow:0 1px 3px rgba(20,16,40,.14)}
+
+/* ===== Feed como se verá publicado ===== */
+.logo.sm{width:32px;height:32px;border-radius:10px}
+.feed.v-ig .post{border-radius:14px}
+.feed.v-ig .posth{padding:10px 12px}
+.feed.v-ig .posth b{font-size:0.875rem;font-weight:800}
+.feed.v-ig .posth small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.feed.v-ig .postmedia .carru{background:#000}
+.feed.v-ig .postmedia .slide{aspect-ratio:4/5;min-height:0;max-height:min(78dvh,640px)}
+.feed.v-ig .postmedia .slide img,.feed.v-ig .postmedia .slide video{width:100%;height:100%;max-height:100%;object-fit:contain;background:#000}
+.feed.v-ig .postmedia .slide.doc{aspect-ratio:auto;padding:40px 16px}
+.feed.v-ig .post .copy{font-size:0.9375rem;line-height:1.45}
+.feed.v-ig .postacts{order:2}
+.feed.v-ig .postside{gap:9px}
+@media (min-width:760px){
+  .feed.v-ig .post{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,1fr);grid-template-rows:auto 1fr;max-height:min(86dvh,780px)}
+  .feed.v-ig .posth{grid-column:2;grid-row:1;border-bottom:1px solid var(--line)}
+  .feed.v-ig .postmedia{grid-column:1;grid-row:1 / span 2;background:#000;display:flex;align-items:center;min-height:0}
+  .feed.v-ig .postmedia .carru{width:100%}
+  .feed.v-ig .postmedia .slide{aspect-ratio:auto;height:100%;max-height:min(86dvh,780px)}
+  .feed.v-ig .postside{grid-column:2;grid-row:2;min-height:0;overflow:auto}
+}
+
+/* ===== Cuadrícula tipo perfil ===== */
+.iggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,112px),1fr));gap:3px}
+.igcell{position:relative;aspect-ratio:4/5;background:var(--surface2);overflow:hidden;border-radius:4px;display:block;text-align:left}
+.igcell img,.igcell video{width:100%;height:100%;object-fit:cover;display:block}
+.igcell .playic{position:absolute;top:7px;right:7px;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+.igcell .igvacia{display:grid;place-items:center;width:100%;height:100%;color:var(--muted)}
+.igmulti{position:absolute;top:7px;right:7px;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+.igpie{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 6px;color:#fff;
+  background:linear-gradient(to top,rgba(0,0,0,.78),transparent);border-bottom:3px solid var(--c)}
+.igpie b{display:block;font-size:0.75rem;font-weight:700;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.igpie small{font-size:0.6875rem;opacity:.85}
+@media (min-width:900px){ .iggrid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px} }

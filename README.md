@@ -21,6 +21,12 @@ Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambi
 
 **Tipo de vista:** arriba a la derecha se cambia entre **Tarjetas** (la de trabajo), **Como en Instagram** (se ve igual que la publicación: la cuenta arriba, la imagen en 4:5 sobre negro y el copy debajo; en computador, la imagen a la izquierda y los comentarios a la derecha) y **Cuadrícula** (como el perfil de Instagram). La elección queda guardada en ese dispositivo.
 
+## Archivos por tandas
+
+Los archivos de una pieza se ordenan por **tandas**: lo que se subió de una vez queda junto, con su fecha y hora (“23 oct, 21:04 · 2 archivos”), y la tanda más nueva va arriba. Así lo último entregado —la versión final— es lo primero que se ve, tanto en Entregas como en el carrusel de la pieza.
+
+Cuando un archivo se sube varias veces con el mismo nombre, la app lo guarda como **versiones** del mismo archivo: se muestra la última y las anteriores quedan detrás de *Ver más*.
+
 ## Ver fotos y videos
 
 Tocar cualquier foto o video (en el feed, en una pieza, en un comentario) abre la galería a pantalla completa: se desliza con el dedo entre todos los archivos, los videos se reproducen ahí mismo, y tiene contador, X para cerrar y botón para descargar. En el computador, también con las flechas del teclado. Los videos muestran su primer cuadro con ▶ en vez de un ícono.
@@ -132,6 +138,10 @@ Al subir archivos a una pieza aparece *“Subiste N archivos. ¿Les avisas para 
 
 **Ajustes → Equipo → Dispositivos** muestra qué teléfonos y computadores tienen la app, con qué persona, si está instalada en la pantalla de inicio o abierta en el navegador, si recibe notificaciones, cuándo se abrió por última vez y en qué versión. Cada dispositivo se anota solo al abrir la app (solo los que entraron con la clave). **Olvidar** saca uno de la lista y deja de mandarle notificaciones.
 
+## El número rojo de la campana
+
+El número de la campana cuenta los avisos sin leer y los vencimientos cercanos. **Se apaga al abrir el aviso que lo gatilló**: al abrir la campana o al entrar a la pieza avisada. Los vencimientos no vuelven a contar hasta que esa pieza cambie de verdad (otra fecha, otro estado o una edición nueva); ahí sí vuelve a avisar.
+
 ## Avisos de cada pieza
 
 Dentro de cada pieza, la **campana** de arriba activa o silencia los avisos de *esa* pieza: silenciada, no llega nada de ella (ni a la app ni al celular); activada, llegan los comentarios, cambios de estado, de fecha y de contenido aunque no estés etiquetado.
@@ -142,23 +152,11 @@ Cada **comentario, pieza nueva o cambio** que hagan Flavio o Maca le llega a Jav
 
 Quién lo recibe se define en `SUPERVISA`, dentro de `config.js`.
 
-## Rendimiento de Instagram (solo Javi)
+## Ver la publicación ya publicada
 
-En el **Panel** aparece cómo le fue a cada publicación —alcance, reproducciones, me gusta, guardados, compartidos e interacciones—, y dentro de cada pieza publicada aparece el bloque **“Cómo le fue”**. Solo lo ve quien esté en `ADMIN_PEOPLE`.
+Si en una pieza guardas el **enlace de la publicación de Instagram** (en *Enlaces*), aparece el bloque **Publicado**: al tocar *Ver la publicación* se abre ahí mismo, dentro de la app, tal como quedó en Instagram —con su carrusel, su copy y su cuenta de me gusta—. También lo ven Flavio y Maca en la vista de resultado.
 
-**El token nunca pasa por la página ni por el teléfono.** Lo guarda GitHub en los secretos del repositorio y lo usa una vez al día el flujo `.github/workflows/instagram.yml`, que deja los números en `datos/instagram.json`. La app solo lee ese archivo.
-
-Para conectarla (una vez):
-
-1. La cuenta de Instagram tiene que ser **profesional** (Empresa o Creador): en Instagram, *Configuración → Tipo de cuenta y herramientas*.
-2. Entra a **developers.facebook.com** con la cuenta que administra el Instagram → *Mis aplicaciones* → **Crear aplicación** → agrega el producto **Instagram**.
-3. En *Configuración de la API con inicio de sesión de Instagram*, conecta **@neorigen_chile** y **genera un token de acceso** con los permisos `instagram_business_basic` e `instagram_business_manage_insights`.
-4. Copia ese token y pégalo en GitHub: **Settings → Secrets and variables → Actions → New repository secret**, con el nombre `IG_TOKEN`. (Si tu cuenta está conectada a través de una página de Facebook, agrega también `IG_USER_ID` con el id de la cuenta de Instagram.)
-5. Para probar sin esperar al día siguiente: **Actions → Rendimiento de Instagram → Run workflow**.
-
-El token dura unos 60 días. Cuando venza, el flujo falla avisando que hay que generar uno nuevo y reemplazar el secreto.
-
-Dos cosas que conviene saber: la app empareja cada publicación con su pieza por el **enlace de Instagram** que tengas guardado en ella (y si no hay enlace, por la fecha, siempre que ese día haya salido una sola); y como el repositorio es público, los números quedan en un archivo que cualquiera con el link podría abrir, aunque dentro de la app solo los veas tú.
+No hace falta conectar ninguna cuenta ni crear claves: Instagram deja mostrar así cualquier publicación pública. Si el navegador bloquea el contenido de Instagram (pasa con algunos bloqueadores), el bloque queda en blanco y al lado está el enlace para abrirla en Instagram.
 
 ## Dónde queda cada cosa
 

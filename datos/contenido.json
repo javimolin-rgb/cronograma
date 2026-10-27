@@ -4012,10 +4012,10 @@
    "tipo": "pc",
    "instalada": false,
    "push": false,
-   "version": "2026.10.26-1",
+   "version": "2026.10.26-3",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-26T12:14:30.832Z",
-   "lastSeen": "2026-10-26T14:26:05.343Z"
+   "lastSeen": "2026-10-27T17:44:14.073Z"
   },
   {
    "id": "d_5888b1e332884189",

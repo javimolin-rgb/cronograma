@@ -46,7 +46,7 @@
    "time": "",
    "date": "2026-10-28",
    "format": "story",
-   "status": "revision",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 0,
    "id": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -179,11 +179,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-26T12:31:30.960Z",
+   "updatedAt": "2026-10-27T16:30:44.191Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-25T17:11:00.507Z",
+   "statusChangedAt": "2026-10-27T16:30:44.191Z",
    "publishedAt": null
   },
   {
@@ -2426,6 +2426,19 @@
  ],
  "activity": [
   {
+   "id": "63af24e3-53ab-40d8-ab0c-689fb26e4f1f",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a En diseño",
+   "meta": {
+    "from": "revision",
+    "to": "diseno"
+   },
+   "createdAt": "2026-10-27T16:30:44.191Z"
+  },
+  {
    "id": "618d7acf-983c-46f3-a051-1b357d07f20c",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "postTitle": "Video 3D Huingan",
@@ -3224,6 +3237,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "88365c0d-225a-4ab4-8f8f-627057fc0633",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-27T16:30:44.192Z"
+  },
+  {
+   "id": "3b0d7431-ef35-475e-b0d0-0f62734013dc",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-27T16:30:44.192Z"
+  },
   {
    "id": "a37786d2-1823-45fa-8638-5b41c5beafe9",
    "to": "flavio",

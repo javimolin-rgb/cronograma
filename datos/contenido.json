@@ -1,25 +1,26 @@
 {
  "posts": [
   {
-   "id": "ec3bd573-ce00-4354-8349-7c18087e12ed",
    "title": "Cambio de modulo - Web Neorigen",
    "caption": "Cambiar Casas x aislación en pagina de inicio Neorigen.cl. Gracias!",
    "notes": "",
    "hashtags": "",
    "campaign": "",
-   "date": "2026-10-26",
    "time": "",
+   "date": "2026-10-26",
+   "format": "web",
+   "status": "publicado",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "ec3bd573-ce00-4354-8349-7c18087e12ed",
    "platforms": [
     "web"
    ],
-   "format": "web",
-   "status": "idea",
    "assignees": [
     "flavio",
     "maca",
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "394ecac4-d811-4b7f-b2cc-114ee6847614",
@@ -29,13 +30,12 @@
    ],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-10-26T15:08:02.520Z",
-   "updatedBy": "flavio",
+   "updatedAt": "2026-10-27T16:09:58.926Z",
+   "updatedBy": "javi",
    "createdAt": "2026-10-26T15:08:02.520Z",
    "createdBy": "flavio",
-   "statusChangedAt": "2026-10-26T15:08:02.520Z",
-   "revisions": 0,
-   "publishedAt": null
+   "statusChangedAt": "2026-10-27T16:09:58.926Z",
+   "publishedAt": "2026-10-27T16:09:58.926Z"
   },
   {
    "title": "Video 3D Huingan",
@@ -2244,6 +2244,19 @@
  ],
  "activity": [
   {
+   "id": "f0015069-5a91-4435-8419-8d761d391962",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "postTitle": "Cambio de modulo - Web Neorigen",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a Publicado",
+   "meta": {
+    "from": "idea",
+    "to": "publicado"
+   },
+   "createdAt": "2026-10-27T16:09:58.927Z"
+  },
+  {
    "id": "d291a210-191a-4086-ae03-38f3b7afbe05",
    "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
    "postTitle": "Cambio de modulo - Web Neorigen",
@@ -3019,6 +3032,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b0942d6e-4360-4e91-899e-0c9da2c98437",
+   "to": "maca",
+   "from": "javi",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "type": "status",
+   "text": "movió “Cambio de modulo - Web Neorigen” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Cambio de modulo - Web Neorigen” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "createdAt": "2026-10-27T16:09:58.928Z"
+  },
+  {
+   "id": "23ecaab3-eb2f-4d1e-b853-5fe02bab9e23",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "type": "status",
+   "text": "movió “Cambio de modulo - Web Neorigen” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Cambio de modulo - Web Neorigen” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=ec3bd573-ce00-4354-8349-7c18087e12ed",
+   "createdAt": "2026-10-27T16:09:58.927Z"
+  },
   {
    "id": "d33b4ee8-be79-4146-8e11-61d54a9e67e9",
    "to": "javi",

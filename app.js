@@ -146,6 +146,7 @@ async function downloadZip(entries, zipName) {
 }
 
 const IC = {
+  heart: '<path d="M20.8 6.6a5 5 0 00-7.1 0L12 8.3l-1.7-1.7a5 5 0 10-7.1 7.1L12 22l8.8-8.3a5 5 0 000-7.1z"/>',
   calendar: '<rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/>',
   list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
   board: '<rect x="3" y="3" width="7" height="18" rx="2"/><rect x="14" y="3" width="7" height="11" rx="2"/>',
@@ -797,6 +798,110 @@ async function feedEnviar(id) {
   } catch (e) { if (inp) inp.disabled = false; }
 }
 
+/* ---------- rendimiento en Instagram (solo quien administra) ---------- */
+let IG = null, IGpidiendo = false;
+const igCodigo = (url) => (String(url || '').match(/\/(?:p|reel|reels|tv)\/([\w-]+)/) || [])[1] || '';
+async function cargarIG() {
+  if (IG || IGpidiendo || !esAdmin()) return;
+  IGpidiendo = true;
+  const rutas = ['datos/instagram.json?t=' + Date.now()];
+  if (store.rawUrl) rutas.push(store.rawUrl('datos/instagram.json') + '?t=' + Date.now());
+  for (const u of rutas) {
+    try {
+      const r = await fetch(u, { cache: 'no-store' });
+      if (r.ok) { const j = await r.json(); if (j && j.medios) { IG = j; break; } }
+    } catch (e) { /* probamos la siguiente */ }
+  }
+  IGpidiendo = false;
+  if (IG && S.me && S.view === 'dash') renderMain();
+}
+// Busca la publicación de Instagram que corresponde a una pieza
+function igDePieza(p) {
+  if (!IG || !IG.medios || !IG.medios.length) return null;
+  const codigos = (p.links || []).map((l) => igCodigo(l.url)).filter(Boolean);
+  if (codigos.length) {
+    const m = IG.medios.find((x) => codigos.includes(igCodigo(x.permalink)));
+    if (m) return m;
+  }
+  // Si no hay enlace, vale la fecha: solo cuando ese día hubo una sola publicación
+  const dia = p.publishedAt ? ymd(new Date(p.publishedAt)) : (p.status === 'publicado' ? p.date : '');
+  if (!dia) return null;
+  const mismos = IG.medios.filter((x) => ymd(new Date(x.fecha)) === dia);
+  return mismos.length === 1 ? mismos[0] : null;
+}
+const igNum = (n) => (n == null ? '—' : n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace('.', ',') + 'k' : String(n));
+const igInteracciones = (m) => m.interacciones != null ? m.interacciones
+  : ['likes', 'comentarios', 'guardados', 'compartidos'].reduce((a, k) => a + (Number(m[k]) || 0), 0);
+function igMiniatura(m, p) {
+  const propio = p && pieceFiles(p, true).find(esMedia);
+  if (propio) return miniMedia(propio) || '';
+  return m.miniatura ? `<img loading="lazy" alt="" src="${esc(m.miniatura)}">` : `<span class="igvacia">${ic('image', 20)}</span>`;
+}
+function igFila(m) {
+  const p = S.db.posts.find((x) => igDePieza(x) === m);
+  const vistas = m.vistas != null ? m.vistas : m.alcance;
+  return `<div class="igrow">
+    <span class="igmini">${igMiniatura(m, p)}</span>
+    <div class="igt">
+      <b>${esc(p ? p.title : (m.copy || '').split('\n')[0].slice(0, 46) || 'Publicación')}</b>
+      <small>${esc(fmtShort(ymd(new Date(m.fecha))))} · ${esc(m.tipo === 'REEL' ? 'Reel' : m.tipo === 'CAROUSEL_ALBUM' ? 'Carrusel' : m.tipo === 'VIDEO' ? 'Video' : 'Foto')}${p ? '' : ' · sin pieza'}</small>
+    </div>
+    <div class="ignums">
+      <span title="Alcance">${ic('eye', 13)} ${esc(igNum(vistas))}</span>
+      <span title="Me gusta">${ic('heart', 13)} ${esc(igNum(m.likes))}</span>
+      <span title="Interacciones">${ic('check', 13)} ${esc(igNum(igInteracciones(m)))}</span>
+    </div>
+    <a class="igver" href="${esc(m.permalink || '#')}" target="_blank" rel="noopener" aria-label="Ver en Instagram">${ic('link', 15)}</a>
+  </div>`;
+}
+function igPanel() {
+  if (!esAdmin()) return '';
+  if (!IG) {
+    return `<div class="box"><h3>Rendimiento en Instagram</h3>
+      <p class="hint">Todavía no hay datos. Cuando conectes la cuenta, esto se llena solo una vez al día (los pasos están en el README del repositorio).</p></div>`;
+  }
+  const c = IG.cuenta || {}, r = IG.resumen30 || {};
+  const medios = (IG.medios || []).slice().sort((a, b) => String(b.fecha).localeCompare(String(a.fecha)));
+  const top = medios.slice().sort((a, b) => (b.alcance || b.vistas || 0) - (a.alcance || a.vistas || 0)).slice(0, 3);
+  const n = Math.max(1, medios.length);
+  const prom = {
+    alcance: Math.round(medios.reduce((a, m) => a + (m.alcance || m.vistas || 0), 0) / n),
+    inter: Math.round(medios.reduce((a, m) => a + igInteracciones(m), 0) / n)
+  };
+  return `<div class="box igbox">
+    <h3>Rendimiento en Instagram <small>@${esc(c.usuario || '')} · ${esc(ago(IG.actualizado))}</small></h3>
+    <div class="kpis igk">
+      <div class="kpi"><small>Seguidores</small><b>${esc(igNum(c.seguidores))}</b></div>
+      <div class="kpi"><small>Publicaciones</small><b>${esc(igNum(c.publicaciones))}</b></div>
+      <div class="kpi"><small>Alcance promedio</small><b>${esc(igNum(prom.alcance))}</b><span>por publicación</span></div>
+      <div class="kpi"><small>Interacciones promedio</small><b>${esc(igNum(prom.inter))}</b><span>por publicación</span></div>
+      ${r.alcance ? `<div class="kpi"><small>Alcance 30 días</small><b>${esc(igNum(r.alcance))}</b></div>` : ''}
+      ${r.seguidores_nuevos ? `<div class="kpi"><small>Seguidores nuevos</small><b>+${esc(igNum(r.seguidores_nuevos))}</b><span>30 días</span></div>` : ''}
+    </div>
+    ${top.length ? `<label class="lbl">Lo que mejor funcionó</label><div class="iglist">${top.map(igFila).join('')}</div>` : ''}
+    <label class="lbl">Últimas publicaciones</label>
+    <div class="iglist">${medios.slice(0, 12).map(igFila).join('')}</div>
+    <p class="hint">Los números los trae GitHub una vez al día desde la cuenta conectada. Solo los ves tú.</p>
+  </div>`;
+}
+// Bloque compacto dentro de una pieza
+function igDePiezaHtml(p) {
+  if (!esAdmin() || !IG) return '';
+  const m = igDePieza(p);
+  if (!m) return '';
+  const vistas = m.vistas != null ? m.vistas : m.alcance;
+  return `<label class="lbl">Cómo le fue <small>en Instagram</small></label>
+    <div class="track igtrack">
+      <div><span>${m.vistas != null ? 'Reproducciones' : 'Alcance'}</span><b>${esc(igNum(vistas))}</b></div>
+      <div><span>Me gusta</span><b>${esc(igNum(m.likes))}</b></div>
+      <div><span>Comentarios</span><b>${esc(igNum(m.comentarios))}</b></div>
+      <div><span>Guardados</span><b>${esc(igNum(m.guardados))}</b></div>
+      <div><span>Compartidos</span><b>${esc(igNum(m.compartidos))}</b></div>
+      <div><span>Interacciones</span><b>${esc(igNum(igInteracciones(m)))}</b></div>
+    </div>
+    <p class="hint"><a href="${esc(m.permalink || '#')}" target="_blank" rel="noopener">Ver la publicación en Instagram</a> · actualizado ${esc(ago(IG.actualizado))}</p>`;
+}
+
 /* ---------- vista: panel de seguimiento ---------- */
 const bars = (rows) => { const max = Math.max(1, ...rows.map((r) => r.n)); return `<div class="bars">${rows.map((r) => `<div class="bar"><span class="bl">${esc(r.label)}</span><div class="bt"><i style="width:${(r.n / max) * 100}%;background:${r.color}"></i></div><b>${r.n}</b></div>`).join('')}</div>`; };
 const miniRow = (p, extra) => `<div class="minirow" data-act="open-post" data-id="${esc(p.id)}"><span class="av md" style="--c:${statusOf(p.status).color}">${esc(statusOf(p.status).name[0])}</span><div class="t"><b>${esc(p.title)}</b><small>${esc(extra)}</small></div>${p.assignees.slice(0, 3).map((a) => av(a, 'sm')).join('')}</div>`;
@@ -858,6 +963,8 @@ function viewDash() {
       <div class="bar" style="grid-template-columns:1fr auto"><span class="bl">Sin responsable</span><b>${unassigned.length}</b></div>
       <div class="bar" style="grid-template-columns:1fr auto"><span class="bl">En revisión+ sin archivo adjunto</span><b>${noFile.length}</b></div>
     </div></div>
+
+  ${igPanel()}
 
   <div class="box"><h3>Actividad reciente</h3>
     ${acts.length ? `<ul class="feed">${acts.map((a) => `<li ${S.db.posts.some((p) => p.id === a.postId) ? `data-act="open-post" data-id="${esc(a.postId)}"` : ''}>${av(a.actor, 'md')}<div><b>${esc(person(a.actor).name)}</b> ${esc(a.text)} <b>“${esc(a.postTitle)}”</b><small>${ago(a.createdAt)}</small></div></li>`).join('')}</ul>` : '<small style="color:var(--muted)">Todavía no hay actividad.</small>'}</div>`;
@@ -1299,6 +1406,7 @@ function renderEditor() {
       <div><span>Rondas de cambios</span><b>${old.revisions || 0}</b></div>
       <div><span>Publicación</span><b>${old.publishedAt ? (old.date && ymd(new Date(old.publishedAt)) > old.date ? 'Tarde · ' : 'A tiempo · ') + fmtShort(ymd(new Date(old.publishedAt))) : 'Pendiente'}</b></div>
     </div>
+    ${igDePiezaHtml(old)}
     <details class="hist"><summary>Historial de cambios (${acts.length})</summary><ul>${acts.map((a) => `<li>${av(a.actor, 'sm')} <b>${esc(person(a.actor).name)}</b> ${esc(a.text)}<br><small>${ago(a.createdAt)}</small></li>`).join('') || '<li><small>Sin movimientos</small></li>'}</ul></details>
 
     <label class="lbl">Comentarios <small>${comments.length}</small></label>
@@ -2903,6 +3011,7 @@ async function startApp() {
   renderAll();
   openFromHash();
   syncPushSub();
+  cargarIG();
   pruneOld();
   setTimeout(registrarDispositivo, 2500); // después de saber la versión
   const qs = new URLSearchParams(location.search);

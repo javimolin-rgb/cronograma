@@ -142,6 +142,24 @@ Cada **comentario, pieza nueva o cambio** que hagan Flavio o Maca le llega a Jav
 
 Quién lo recibe se define en `SUPERVISA`, dentro de `config.js`.
 
+## Rendimiento de Instagram (solo Javi)
+
+En el **Panel** aparece cómo le fue a cada publicación —alcance, reproducciones, me gusta, guardados, compartidos e interacciones—, y dentro de cada pieza publicada aparece el bloque **“Cómo le fue”**. Solo lo ve quien esté en `ADMIN_PEOPLE`.
+
+**El token nunca pasa por la página ni por el teléfono.** Lo guarda GitHub en los secretos del repositorio y lo usa una vez al día el flujo `.github/workflows/instagram.yml`, que deja los números en `datos/instagram.json`. La app solo lee ese archivo.
+
+Para conectarla (una vez):
+
+1. La cuenta de Instagram tiene que ser **profesional** (Empresa o Creador): en Instagram, *Configuración → Tipo de cuenta y herramientas*.
+2. Entra a **developers.facebook.com** con la cuenta que administra el Instagram → *Mis aplicaciones* → **Crear aplicación** → agrega el producto **Instagram**.
+3. En *Configuración de la API con inicio de sesión de Instagram*, conecta **@neorigen_chile** y **genera un token de acceso** con los permisos `instagram_business_basic` e `instagram_business_manage_insights`.
+4. Copia ese token y pégalo en GitHub: **Settings → Secrets and variables → Actions → New repository secret**, con el nombre `IG_TOKEN`. (Si tu cuenta está conectada a través de una página de Facebook, agrega también `IG_USER_ID` con el id de la cuenta de Instagram.)
+5. Para probar sin esperar al día siguiente: **Actions → Rendimiento de Instagram → Run workflow**.
+
+El token dura unos 60 días. Cuando venza, el flujo falla avisando que hay que generar uno nuevo y reemplazar el secreto.
+
+Dos cosas que conviene saber: la app empareja cada publicación con su pieza por el **enlace de Instagram** que tengas guardado en ella (y si no hay enlace, por la fecha, siempre que ese día haya salido una sola); y como el repositorio es público, los números quedan en un archivo que cualquiera con el link podría abrir, aunque dentro de la app solo los veas tú.
+
 ## Dónde queda cada cosa
 
 | Qué | Dónde |

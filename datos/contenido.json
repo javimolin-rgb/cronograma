@@ -372,6 +372,20 @@
      "sha": "c79cac333aa6291e0fbf92e43facc499a11b494f",
      "type": "video/mp4",
      "size": 6894617
+    },
+    {
+     "id": "c7bd0c9a-5842-4fb1-b4ab-9e0db79a4430",
+     "by": "javi",
+     "at": "2026-10-28T23:55:51.000Z",
+     "base": "reel-casa-huingan-editable",
+     "version": 1,
+     "name": "reel-casa-huingan-editable-v1.zip",
+     "path": "archivos/sin-proyecto/reel-casa-huingan-editable-v1.zip",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/reel-casa-huingan-editable-v1.zip",
+     "sha": "281c312686cb1ea6858d70ac89e05424fe16123f",
+     "shaOrigen": "281c312686cb1ea6858d70ac89e05424fe16123f",
+     "type": "application/zip",
+     "size": 7110775
     }
    ],
    "checklist": [],

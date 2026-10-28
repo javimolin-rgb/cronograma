@@ -25,7 +25,7 @@ Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambi
 
 Además de fotos y videos, una pieza puede llevar una **página interactiva**: por ejemplo, el reel de Casa Huingán con sus cinco pistas de música para que el cliente las compare sin salir de la app.
 
-**Para subirla:** el interactivo viene en un **.zip con un `index.html` adentro** (y al lado sus videos, audios e imágenes). Se sube con el mismo botón **Subir** de los archivos de la pieza: si el .zip trae un index.html, la app lo reconoce, descomprime su contenido en el repositorio y lo deja como interactivo en vez de guardar el .zip tal cual. El nombre lo toma del `<title>` de la página. Después hay que tocar **Guardar cambios**, como con cualquier archivo.
+**Para subirla:** el interactivo viene en un **.zip con un `index.html` adentro** (y al lado sus videos, audios e imágenes). Dentro de la pieza, bajo el título *Interactivo*, está el botón **Subir un interactivo (.zip)** —también funciona el botón de archivos de siempre, o soltar el .zip encima en el computador—. La app descomprime su contenido en el repositorio y lo deja como interactivo en vez de guardar el .zip tal cual; el nombre lo toma del `<title>` de la página. Después hay que tocar **Guardar cambios**, como con cualquier archivo.
 
 **Para actualizarla:** se toca **Actualizar** en la tarjeta del interactivo y se elige el **.zip completo nuevo**. No se duplica: se reemplaza lo que cambió, se borra lo que el zip nuevo ya no trae, y la versión sube a 2, 3… Los archivos que siguen iguales (el video, por ejemplo) no se vuelven a subir, así que actualizar solo los textos es cuestión de segundos.
 
@@ -58,6 +58,12 @@ Cada uno corrige **solo lo suyo**: los comentarios de Flavio los edita Flavio, l
 En cada pieza, debajo de *Cuándo se publica*, está el botón **Sin fecha límite**: al tocarlo se borra la fecha y la hora, y la pieza queda como pendiente sin vencimiento. Sirve para lo que hay que hacer pero no tiene día: pendientes, ideas, encargos.
 
 Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*, y en el **Tablero** según su estado (en el calendario no, porque no tienen día). No generan avisos de vencimiento. Para ponerle fecha después, se toca el mismo botón y vuelve a aparecer el día de hoy.
+
+## Archivos pesados
+
+Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Un **video de más de 24 MB se comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio, y se sube esa copia. Tarda lo que dura el video, y mientras tanto se ve el avance.
+
+Si ese aparato no puede comprimir (pasa en navegadores viejos), la app lo dice y no sube nada a medias. Un truco que funciona siempre: mandarse el video por WhatsApp y subir esa copia, que viene comprimida.
 
 ## Archivos por tandas
 

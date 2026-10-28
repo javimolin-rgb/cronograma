@@ -355,7 +355,77 @@
    "createdBy": "javi",
    "statusChangedAt": "2026-10-28T21:03:55.283Z",
    "publishedAt": null,
-   "artefactos": []
+   "artefactos": [
+    {
+     "id": "8df9f5ff-4766-424a-83f6-755557777225",
+     "base": "musica-reel-casa-huingan",
+     "nombre": "Música Reel Casa Huingán",
+     "carpeta": "archivos/sin-proyecto/musica-reel-casa-huingan",
+     "index": "index.html",
+     "origen": "https://claude.ai/artifact/9Y7shx8p5r2kYRGLkmSgNG",
+     "archivos": [
+      {
+       "ruta": "0_actual.mp3",
+       "sha": "6a7a2f8e59198c35af6e0bb19c3a763f05d420f8",
+       "size": 1111725
+      },
+      {
+       "ruta": "a_acustica.mp3",
+       "sha": "80abe7764f044714a6afffb66c03d38c77ae38b9",
+       "size": 1111725
+      },
+      {
+       "ruta": "b_piano_cine.mp3",
+       "sha": "f92c34e68cd38b46d0c99214c1048e94e149b31d",
+       "size": 1111725
+      },
+      {
+       "ruta": "c_house_organico.mp3",
+       "sha": "da06fe1813b9b6f5ad18eb4ac786f368dd6bfcc9",
+       "size": 1111725
+      },
+      {
+       "ruta": "d_lofi.mp3",
+       "sha": "65c1defee9a5535117f3576b28b12d2eff49e1e9",
+       "size": 1111725
+      },
+      {
+       "ruta": "e_lujo.mp3",
+       "sha": "b86e86ab6919f6441a5940f459945f0974f17ef4",
+       "size": 1111725
+      },
+      {
+       "ruta": "f_natural.mp3",
+       "sha": "13f03ba99213d7f6dcdb94e950b5228f7e29eb57",
+       "size": 1111725
+      },
+      {
+       "ruta": "g_elite.mp3",
+       "sha": "03472e2fc54a6749b0322f14b80cd87e238f50c1",
+       "size": 1111725
+      },
+      {
+       "ruta": "h_minimal.mp3",
+       "sha": "5dd5dfe7d4a34e0b79768de0ff8f62517e26ae3a",
+       "size": 1111725
+      },
+      {
+       "ruta": "index.html",
+       "sha": "57f7652029e4c615682b57dbbc1e1391a88900c9",
+       "size": 12069
+      },
+      {
+       "ruta": "video.mp4",
+       "sha": "1bf8433622e5d119a0b04e0a55e8465bb5b79d3b",
+       "size": 10910910
+      }
+     ],
+     "size": 20928504,
+     "version": 2,
+     "by": "javi",
+     "at": "2026-10-28T22:43:40.000Z"
+    }
+   ]
   },
   {
    "id": "e-diagnostico",

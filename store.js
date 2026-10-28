@@ -300,10 +300,19 @@
     },
 
     /* --- escritura --- */
+    // Lo que subió otra persona (o yo desde otro aparato) después de que copié la pieza
+    // no se pisa al guardar: los interactivos nuevos se conservan.
+    fusionar(t, previo, nuevo) {
+      if (t !== 'posts' || !previo || !Array.isArray(previo.artefactos) || !previo.artefactos.length) return nuevo;
+      const mios = Array.isArray(nuevo.artefactos) ? nuevo.artefactos : [];
+      const ids = new Set(mios.map((x) => x && x.id));
+      const faltan = previo.artefactos.filter((x) => x && !ids.has(x.id) && String(x.at || '') > String(nuevo.updatedAt || ''));
+      return faltan.length ? Object.assign({}, nuevo, { artefactos: mios.concat(faltan) }) : nuevo;
+    },
     async put(t, o) {
       const a = this.db[t];
       const i = a.findIndex((x) => x.id === o.id);
-      if (i >= 0) a[i] = clone(o); else a.unshift(clone(o));
+      if (i >= 0) { o = this.fusionar(t, a[i], o); a[i] = clone(o); } else a.unshift(clone(o));
       if (!this.token) throw new Error('modo solo lectura');
       this.dirty.add(t + ':' + o.id);
       this.gone.delete(t + ':' + o.id);
@@ -348,7 +357,7 @@
       Object.keys(mine).forEach((t) => {
         mine[t].forEach((row) => {
           const a = this.db[t], i = a.findIndex((x) => x.id === row.id);
-          if (i >= 0) a[i] = row; else a.unshift(row);
+          if (i >= 0) a[i] = this.fusionar(t, a[i], row); else a.unshift(row);
         });
       });
       gone.forEach((k) => {
@@ -390,8 +399,16 @@
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
       const max = 24 * 1024 * 1024;
       const small = await resize(file, 1800, 0.84);
-      const blob = small || file;
-      if (blob.size > max) throw new Error('pesa más de 24 MB; súbelo a Drive y pega el enlace');
+      let blob = small || file;
+      // Una foto que sigue pesando demasiado se achica un poco más, hasta que entre
+      if (blob.size > max && /^image\//.test(file.type || '')) {
+        for (const [lado, calidad] of [[1600, 0.78], [1280, 0.72], [1024, 0.66]]) {
+          const otra = await resize(file, lado, calidad);
+          if (otra && otra.size < blob.size) blob = otra;
+          if (blob.size <= max) break;
+        }
+      }
+      if (blob.size > max) throw new Error('pesa más de 24 MB y no se pudo achicar; súbelo a Drive y pega el enlace');
       const dir = this.cfg.files + '/' + slug(opts.dir, 'general');
       const name = safeFileName(opts.name || file.name);
       const path = await this.freePath(dir, name);

@@ -1522,8 +1522,15 @@ function renderEditor() {
         ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
     })()}`}
 
-    ${ED.art ? `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}…</span></div>` : artefactoHtml(d, true)}
-    ${puedeArtefactos() && !ED.art && !artefactosDe(d).length ? '<p class="hint">¿Tienes una página interactiva (un .zip con su index.html)? Súbela con el botón de archivos y se abre aquí dentro.</p>' : ''}
+    ${ED.comprimiendo ? `<div class="avisobar"><span id="comprimiendo">Comprimiendo “${esc(ED.comprimiendo.nombre)}”… ${Math.round((ED.comprimiendo.pct || 0) * 100)}%</span></div>` : ''}
+    ${(() => {
+      if (ED.art) return `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}…</span></div>`;
+      const tarjetas = artefactoHtml(d, true);
+      if (!puedeArtefactos()) return tarjetas;
+      return `${tarjetas || `<label class="lbl">Interactivo <small>una página para probar opciones</small></label>`}
+        <label class="btn ghost sm arteup arteadd">${ic('plus', 16)} ${artefactosDe(d).length ? 'Subir otro interactivo' : 'Subir un interactivo (.zip)'}<input type="file" accept=".zip,application/zip" data-art-nuevo="1"></label>
+        <p class="hint">Un .zip con su <b>index.html</b> adentro: lo que entrega Claude al descargar un artefacto. Si subes otra vez el mismo, se actualiza en vez de repetirse.</p>`;
+    })()}
 
     ${publicadoHtml(d)}
 
@@ -1688,6 +1695,71 @@ async function addComment() {
   renderEditor();
 }
 
+/* Si un video pesa más de lo que GitHub aguanta de una, se vuelve a grabar más liviano
+   aquí mismo: se reproduce sin que se oiga, se dibuja en un lienzo más chico y se graba.
+   Tarda lo que dura el video. Si algo no se puede (o se perdería el audio), no se toca. */
+const LIMITE_SUBIDA = 24 * 1024 * 1024;
+const esVideoArchivo = (f) => /^video\//.test(f.type || '') || /\.(mp4|mov|m4v|webm)$/i.test(f.name || '');
+async function comprimirVideo(file, objetivo, alAvanzar) {
+  if (typeof MediaRecorder !== 'function') return null;
+  const v = document.createElement('video');
+  v.preload = 'auto'; v.playsInline = true; v.muted = false;
+  v.src = URL.createObjectURL(file);
+  const limpiar = () => { try { URL.revokeObjectURL(v.src); } catch (e) { /* nada */ } };
+  try {
+    await new Promise((ok, mal) => { v.onloadedmetadata = ok; v.onerror = () => mal(new Error('no se pudo leer el video')); });
+    const dur = v.duration || 0;
+    if (!dur || !isFinite(dur) || !v.videoWidth) throw new Error('video sin duración');
+    const r = Math.min(1, 1080 / Math.max(v.videoWidth, v.videoHeight));
+    const c = document.createElement('canvas');
+    c.width = Math.max(2, Math.round(v.videoWidth * r / 2) * 2);
+    c.height = Math.max(2, Math.round(v.videoHeight * r / 2) * 2);
+    const ctx = c.getContext('2d');
+    const stream = c.captureStream(30);
+    // El audio se desvía a la grabación: no se escucha por el parlante, pero no se pierde.
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) throw new Error('este navegador no puede llevarse el audio');
+    const actx = new AC();
+    try { await actx.resume(); } catch (e) { /* sigue igual */ }
+    const destino = actx.createMediaStreamDestination();
+    actx.createMediaElementSource(v).connect(destino);
+    destino.stream.getAudioTracks().forEach((t) => stream.addTrack(t));
+    const tipo = ['video/mp4;codecs=avc1.4d002a,mp4a.40.2', 'video/mp4', 'video/webm;codecs=vp9,opus', 'video/webm']
+      .find((m) => { try { return MediaRecorder.isTypeSupported(m); } catch (e) { return false; } }) || '';
+    const bits = Math.max(900000, Math.min(6000000, Math.round(((objetivo - 96000 * dur / 8) * 8) / dur)));
+    const rec = new MediaRecorder(stream, Object.assign({ videoBitsPerSecond: bits, audioBitsPerSecond: 96000 }, tipo ? { mimeType: tipo } : {}));
+    const trozos = [];
+    rec.ondataavailable = (e) => { if (e.data && e.data.size) trozos.push(e.data); };
+    const listo = new Promise((ok) => { rec.onstop = ok; });
+    rec.start(600);
+    await v.play();
+    await new Promise((ok) => {
+      let ultimo = 0;
+      const paso = () => {
+        if (v.ended || v.paused) return ok();
+        ctx.drawImage(v, 0, 0, c.width, c.height);
+        if (alAvanzar && v.currentTime - ultimo > 0.4) { ultimo = v.currentTime; alAvanzar(Math.min(0.99, v.currentTime / dur)); }
+        if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(paso); else requestAnimationFrame(paso);
+      };
+      v.onended = ok;
+      paso();
+    });
+    rec.stop();
+    await listo;
+    try { actx.close(); } catch (e) { /* nada */ }
+    limpiar();
+    const salida = tipo.startsWith('video/mp4') ? 'video/mp4' : 'video/webm';
+    const blob = new Blob(trozos, { type: salida });
+    if (!blob.size || blob.size >= file.size) return null;
+    const nombre = (file.name || 'video').replace(/\.[^.]+$/, '') + (salida === 'video/mp4' ? '.mp4' : '.webm');
+    return new File([blob], nombre, { type: salida });
+  } catch (e) {
+    limpiar();
+    console.warn('no se pudo comprimir', e);
+    return null;
+  }
+}
+
 async function onArtFile(input) {
   const ed = ED; if (!ed) return;
   syncDraft();
@@ -1707,11 +1779,22 @@ async function onFiles(input) {
   for (const f of files) {
     try {
       if (!(await subirArtefacto(f))) {
-      const info = splitName(f.name);
+      let archivo = f;
+      if (f.size > LIMITE_SUBIDA && esVideoArchivo(f)) {
+        ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
+        toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo (dura lo que dura el video)`, 8000);
+        const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (p) => {
+          if (ed.comprimiendo) { ed.comprimiendo.pct = p; const b = $('#comprimiendo'); if (b) b.textContent = `Comprimiendo “${f.name}”… ${Math.round(p * 100)}%`; }
+        });
+        ed.comprimiendo = null; renderEditor();
+        if (chico) { toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000); archivo = chico; }
+        else toast(`No se pudo comprimir “${f.name}” en este aparato. Mándatelo por WhatsApp y sube esa copia, que viene más liviana.`, 8000);
+      }
+      const info = splitName(archivo.name);
       const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
       const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
       const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
-      const r = await store.upload(f, { dir: projectName(ed.d), name: nombre });
+      const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
       ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r)));
       }
     }
@@ -3190,7 +3273,7 @@ document.addEventListener('change', (e) => {
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
-  else if (t.dataset && t.dataset.art) onArtFile(t);
+  else if (t.dataset && (t.dataset.art || t.dataset.artNuevo)) onArtFile(t);
   else if (t.dataset && t.dataset.arteurl) {
     const a = ((ED && ED.d.artefactos) || []).find((x) => x.id === t.dataset.arteurl);
     if (a) { a.origen = normUrl(t.value) || ''; toast('Enlace anotado · guarda la pieza'); }

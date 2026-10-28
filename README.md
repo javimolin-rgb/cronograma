@@ -21,6 +21,14 @@ Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambi
 
 **Tipo de vista:** arriba a la derecha se cambia entre **Tarjetas** (la de trabajo), **Como en Instagram** (se ve igual que la publicación: la cuenta arriba, la imagen en 4:5 sobre negro y el copy debajo; en computador, la imagen a la izquierda y los comentarios a la derecha) y **Cuadrícula** (como el perfil de Instagram). La elección queda guardada en ese dispositivo.
 
+## Corregir un comentario
+
+Debajo de cada comentario propio está **Editar**: se corrige el texto y se guarda. En el feed, el mismo *Editar* abre la pieza con ese comentario listo para arreglar.
+
+El comentario corregido queda marcado como **corregido**, y con **“Cómo decía antes”** cualquiera del equipo puede ver las versiones anteriores, con la fecha y quién las cambió (se guardan las últimas 20). Nada se pierde ni se reescribe a escondidas.
+
+Quien administra (`ADMIN_PEOPLE`) puede corregir cualquier comentario, incluidos los importados de WhatsApp; Flavio y Maca, solo los suyos.
+
 ## Tareas sin fecha límite
 
 En cada pieza, debajo de *Cuándo se publica*, está el botón **Sin fecha límite**: al tocarlo se borra la fecha y la hora, y la pieza queda como pendiente sin vencimiento. Sirve para lo que hay que hacer pero no tiene día: pendientes, ideas, encargos.

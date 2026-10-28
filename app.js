@@ -793,7 +793,7 @@ function postHtml(p, t) {
           const fotos = (c.fileIds || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
           return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
             ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(x) || ''}</span>`).join('')}</div>` : ''}
-            <small>${esc(ago(c.createdAt))}</small></div></div>`;
+            <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}</small></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
       </div>
       <div class="postcompose">
@@ -1306,7 +1306,7 @@ function openEditor(id, preset = {}) {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], priority: 'normal', links: [], files: [], checklist: []
   };
-  ED = { old, d, comment: '', newLink: { label: '', url: '' }, newCheck: '', uploading: 0 };
+  ED = { old, d, comment: '', newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
   renderEditor();
 }
@@ -1405,8 +1405,20 @@ function renderEditor() {
     <label class="lbl">Comentarios <small>${comments.length}</small></label>
     ${comments.map((c) => {
       const fotos = (c.fileIds || []).map((fid) => d.files.find((f) => f.id === fid)).filter(Boolean);
-      return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}</small>${mentionHtml(c.text)}
-        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(f) || ''}</span>`).join('')}</div>` : ''}</div></div>`;
+      if (ED.editando === c.id) {
+        return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · corrigiendo</small>
+          <textarea class="area" id="c-edit" style="min-height:76px">${esc(c.text || '')}</textarea>
+          <div class="cmacts"><button class="btn ghost sm" data-act="cm-cancelar">Cancelar</button><button class="btn sm" data-act="cm-guardar" data-id="${esc(c.id)}">Guardar</button></div></div></div>`;
+      }
+      const vers = (c.versiones || []).length;
+      return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}${c.editedAt ? ' · corregido' : ''}</small>${mentionHtml(c.text)}
+        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(f) || ''}</span>`).join('')}</div>` : ''}
+        ${puedeEditarComentario(c) || vers ? `<div class="cmacts">
+          ${puedeEditarComentario(c) ? `<button class="lnk" data-act="cm-editar" data-id="${esc(c.id)}">Editar</button>` : ''}
+          ${vers ? `<button class="lnk" data-act="cm-versiones" data-id="${esc(c.id)}">${ED.versionesDe === c.id ? 'Ocultar' : 'Cómo decía antes'} (${vers})</button>` : ''}
+        </div>` : ''}
+        ${ED.versionesDe === c.id ? `<div class="cmvers">${(c.versiones || []).slice().reverse().map((v) => `<div><small>Hasta ${esc(ago(v.hasta))}${v.by ? ' · lo cambió ' + esc(person(v.by).name) : ''}</small>${mentionHtml(v.text)}</div>`).join('')}</div>` : ''}
+      </div></div>`;
     }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
@@ -1463,6 +1475,25 @@ async function comentar(p, text) {
   await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`);
   await notifySuper(p, `comentó en “${p.title}”: ${snippet}`);
 }
+// Los comentarios se pueden corregir: el texto anterior se guarda para poder mirarlo.
+const puedeEditarComentario = (c) => store.canWrite && (c.author === S.me.id || esAdmin());
+async function guardarComentario(id, texto) {
+  const c = S.db.comments.find((x) => x.id === id);
+  if (!c || !puedeEditarComentario(c)) return;
+  texto = String(texto || '').trim();
+  if (!texto || texto === (c.text || '')) { ED.editando = null; renderEditor(); return; }
+  const versiones = (c.versiones || []).concat([{ text: c.text || '', hasta: nowISO(), by: S.me.id }]).slice(-20);
+  await save('comments', Object.assign({}, c, { text: texto, versiones, editedAt: nowISO(), editedBy: S.me.id }));
+  const p = S.db.posts.find((x) => x.id === c.postId);
+  if (p) {
+    await log(p, 'comment', 'corrigió un comentario');
+    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${texto.length > 80 ? texto.slice(0, 80) + '…' : texto}`);
+  }
+  ED.editando = null;
+  renderEditor();
+  toast('Comentario corregido');
+}
+
 async function addComment() {
   if (!requireWrite()) return;
   syncDraft();
@@ -2837,6 +2868,18 @@ const ACTS = {
   'ed-rmcheck': (el) => { syncDraft(); ED.d.checklist = ED.d.checklist.filter((c) => c.id !== el.dataset.id); renderEditor(); },
   'ed-mention': (el) => { const t = $('#e-comment'); t.value = (t.value + ' @' + el.dataset.v + ' ').trimStart(); t.focus(); },
   'ed-comment': () => addComment(),
+  'cm-editar': (el) => { if (!requireWrite()) return; syncDraft(); ED.editando = el.dataset.id; ED.versionesDe = null; renderEditor(); setTimeout(() => { const t = $('#c-edit'); if (t) { t.focus(); t.setSelectionRange(t.value.length, t.value.length); } }, 60); },
+  'cm-cancelar': () => { ED.editando = null; renderEditor(); },
+  'cm-abrir': (el) => {   // desde el feed: abre la pieza con ese comentario listo para corregir
+    if (!requireWrite()) return;
+    openEditor(el.dataset.p);
+    if (!ED) return;
+    ED.editando = el.dataset.id;
+    renderEditor();
+    setTimeout(() => { const t = $('#c-edit'); if (t) { t.scrollIntoView({ block: 'center' }); t.focus(); t.setSelectionRange(t.value.length, t.value.length); } }, 120);
+  },
+  'cm-guardar': async (el) => { const t = $('#c-edit'); await guardarComentario(el.dataset.id, t ? t.value : ''); },
+  'cm-versiones': (el) => { syncDraft(); ED.versionesDe = ED.versionesDe === el.dataset.id ? null : el.dataset.id; renderEditor(); },
   'feed-filtro': (el) => { S.feedFiltro = el.dataset.v; localStorage.setItem('crono_feed', S.feedFiltro); renderMain(); },
   'feed-vista': (el) => { S.feedVista = el.dataset.v; localStorage.setItem('crono_feed_vista', S.feedVista); renderMain(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },

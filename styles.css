@@ -388,6 +388,13 @@ html{overscroll-behavior-y:none}
 .imppend input{width:17px;height:17px;accent-color:var(--warn)}
 
 /* fotos dentro de un comentario */
+.cmacts{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:7px}
+.cmacts .lnk{font-size:0.75rem;font-weight:700;text-decoration:none;color:var(--muted)}
+.cmacts .lnk:hover{color:var(--accent);text-decoration:underline}
+.cm .bubble .area{margin:2px 0 0;min-height:76px;font-size:0.875rem}
+.cmvers{margin-top:8px;border-top:1px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:8px}
+.cmvers>div{background:var(--surface2);border-radius:12px;padding:7px 10px;color:var(--muted)}
+.cmvers small{display:block;font-size:0.6875rem;margin-bottom:2px;opacity:.9}
 .cmfotos{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .cmfotos img{width:84px;height:84px;object-fit:cover;border-radius:10px;cursor:zoom-in}
 

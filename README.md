@@ -27,6 +27,10 @@ Además de fotos y videos, una pieza puede llevar una **página interactiva**: p
 
 **Para subirla:** el interactivo viene en un **.zip con un `index.html` adentro** (y al lado sus videos, audios e imágenes). Dentro de la pieza, bajo el título *Interactivo*, está el botón **Subir un interactivo (.zip)** —también funciona el botón de archivos de siempre, o soltar el .zip encima en el computador—. La app descomprime su contenido en el repositorio y lo deja como interactivo en vez de guardar el .zip tal cual; el nombre lo toma del `<title>` de la página. Después hay que tocar **Guardar cambios**, como con cualquier archivo.
 
+**Si la subida se corta** (se cae la señal, se bloquea el teléfono, se cierra la app), no queda nada a medias: el `index.html` se sube **al final**, así que el interactivo que ya estaba sigue funcionando igual. En la pieza aparece el aviso rojo diciendo en qué archivo se cortó, y **Reintentar** retoma desde ahí: lo que ya había llegado no se vuelve a subir. Mientras sube, la app pide que el teléfono no se duerma y muestra cuántos MB van.
+
+Antes de empezar una subida grande (más de 60 MB) la app avisa cuánto pesa y cuántos archivos son, para que sepas que va a tardar. Cada archivo suelto tiene que pesar menos de 24 MB: si uno se pasa, no se sube nada y la app dice cuál es.
+
 **Para actualizarla:** se toca **Actualizar** en la tarjeta del interactivo y se elige el **.zip completo nuevo**. No se duplica: se reemplaza lo que cambió, se borra lo que el zip nuevo ya no trae, y la versión sube a 2, 3… Los archivos que siguen iguales (el video, por ejemplo) no se vuelven a subir, así que actualizar solo los textos es cuestión de segundos.
 
 **Cómo se ve:** la pieza queda marcada como **Interactivo** (en las tarjetas, en el feed y en la vista de resultado) y cualquiera del equipo puede tocar **Abrir** para usarla a pantalla completa dentro de la app.

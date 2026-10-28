@@ -880,6 +880,10 @@ async function leerArtefacto(file) {
   return index ? { entradas, index } : null;
 }
 // Sube (o actualiza) el interactivo: solo viaja lo que cambió, y lo que ya no está se borra.
+// Mientras dura una subida larga, el teléfono no se duerme (si el navegador lo permite)
+async function mantenerDespierto() {
+  try { return navigator.wakeLock ? await navigator.wakeLock.request('screen') : null; } catch (e) { return null; }
+}
 async function subirArtefacto(file, prev) {
   const ed = ED; if (!ed) return false;
   const art = await leerArtefacto(file);
@@ -896,17 +900,35 @@ async function subirArtefacto(file, prev) {
   const carpeta = (existente && existente.carpeta) || `${(store.cfg && store.cfg.files) || 'archivos'}/${slugify(projectName(ed.d), 'general')}/${base}`;
   const previos = (existente && existente.archivos) || [];
   const mapa = {}; previos.forEach((x) => { mapa[x.ruta] = x; });
+
+  // El index.html se deja para el final: si la subida se corta, el interactivo que ya estaba sigue funcionando
+  const entradas = art.entradas.filter((x) => x !== art.index).concat([art.index]);
+  const grandes = entradas.filter((x) => (x.e.size || 0) > LIMITE_SUBIDA);
+  if (grandes.length) {
+    anotarFallo(file, `“${grandes[0].ruta}” pesa ${prettySize(grandes[0].e.size)} y GitHub no acepta tanto de una. Hay que achicarlo (o partirlo) antes de armar el .zip.`);
+    renderEditor();
+    toast(`No subí nada: “${grandes[0].ruta}” pesa demasiado`, 6000);
+    return true;
+  }
+  const bytesTotal = entradas.reduce((a, x) => a + (x.e.size || 0), 0);
+  if (bytesTotal > 60 * 1024 * 1024 &&
+      !confirm(`“${nombre}” son ${prettySize(bytesTotal)} en ${entradas.length} archivos.\n\nSubirlo puede tardar varios minutos: deja la app abierta y el teléfono despierto. Si se corta, lo retomas con “Reintentar” y solo sube lo que falte.\n\n¿Lo subimos?`)) return true;
+
+  const despierto = await mantenerDespierto();
   const archivos = [];
-  let n = 0, subidos = 0;
-  ed.art = { nombre, total: art.entradas.length, hecho: 0 };
+  let n = 0, subidos = 0, bytes = 0;
+  ed.art = { nombre, total: entradas.length, hecho: 0, bytes: 0, bytesTotal };
   renderEditor();
   try {
-    for (const it of art.entradas) {
-      ed.art.hecho = ++n; renderEditor();
+    for (const it of entradas) {
+      ed.art.hecho = ++n; ed.art.bytes = bytes; renderEditor();
       const blob = await it.e.blob();
       const sha = await shaGit(blob);
       const antes = mapa[it.ruta];
-      if (antes && antes.sha === sha) { archivos.push(antes); continue; }     // igualito: no se vuelve a subir
+      // Puede estar subido de un intento anterior aunque la ficha no lo sepa: se pregunta al repositorio
+      const yaEsta = (antes && antes.sha === sha) || (!antes && (await store.shaDe(`${carpeta}/${it.ruta}`)) === sha);
+      bytes += blob.size;
+      if (yaEsta) { archivos.push(antes || { ruta: it.ruta, sha, size: blob.size }); continue; }
       const r = await store.putPath(`${carpeta}/${it.ruta}`, blob, `Cronograma: ${nombre}`, antes && antes.sha);
       archivos.push({ ruta: it.ruta, sha: r.sha, size: blob.size });
       subidos++;
@@ -915,9 +937,14 @@ async function subirArtefacto(file, prev) {
       if (!archivos.some((a) => a.ruta === x.ruta)) await store.deleteFile(`${carpeta}/${x.ruta}`, x.sha);
     }
   } catch (e) {
-    ed.art = null; renderEditor();
-    toast('No se pudo subir el interactivo: ' + (e.message || e), 5000);
+    console.error(e);
+    ed.art = null;
+    anotarFallo(file, `se cortó en “${entradas[Math.max(0, n - 1)].ruta}” (${n - 1} de ${entradas.length} listos): ${(e && e.message) || e}`);
+    renderEditor();
+    toast(`“${nombre}” quedó a medias. Toca Reintentar: sigue donde iba.`, 7000);
     return true;
+  } finally {
+    try { if (despierto) await despierto.release(); } catch (e) { /* nada */ }
   }
   const entrada = {
     id: (existente && existente.id) || uid(), base, nombre, carpeta, index: 'index.html', archivos,
@@ -928,11 +955,13 @@ async function subirArtefacto(file, prev) {
   const lista = ed.d.artefactos || (ed.d.artefactos = []);
   const i = lista.findIndex((x) => x.id === entrada.id || x.base === entrada.base);
   if (i >= 0) lista[i] = entrada; else lista.push(entrada);
+  ed.fallos = (ed.fallos || []).filter((x) => x.nombre !== file.name);
   ed.art = null;
   renderEditor();
   toast(`${existente ? `“${nombre}” actualizado: ${subidos || 'ningún'} archivo${subidos === 1 ? '' : 's'} nuevo${subidos === 1 ? '' : 's'}` : `“${nombre}” listo`} · guarda la pieza para dejarlo`, 5000);
   return true;
 }
+
 const arteSrc = (a) => `${a.carpeta}/${a.index || 'index.html'}`.split('/').map(encodeURIComponent).join('/');
 // Se abre a pantalla completa y aislado: la página de adentro no puede tocar nada de la app.
 function abrirArtefacto(postId, artId) {
@@ -1530,7 +1559,7 @@ function renderEditor() {
 
     ${ED.comprimiendo ? `<div class="avisobar"><span id="comprimiendo">Comprimiendo “${esc(ED.comprimiendo.nombre)}”… ${Math.round((ED.comprimiendo.pct || 0) * 100)}%</span></div>` : ''}
     ${(() => {
-      if (ED.art) return `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}…</span></div>`;
+      if (ED.art) return `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}${ED.art.bytesTotal ? ` · ${esc(prettySize(ED.art.bytes))} de ${esc(prettySize(ED.art.bytesTotal))}` : ''}…<br><small>Deja la app abierta hasta que termine.</small></span></div>`;
       const tarjetas = artefactoHtml(d, true);
       if (!puedeArtefactos()) return tarjetas;
       return `${tarjetas || `<label class="lbl">Interactivo <small>una página para probar opciones</small></label>`}
@@ -1783,6 +1812,12 @@ async function onFiles(input) {
   const files = [...input.files]; input.value = '';
   await subirArchivos(files);
 }
+// Deja anotado un archivo que no quedó subido, para que se vea en la pieza y se pueda reintentar
+function anotarFallo(file, motivo) {
+  const ed = ED; if (!ed) return;
+  ed.fallos = (ed.fallos || []).filter((x) => x.nombre !== file.name)
+    .concat([{ id: uid(), nombre: file.name, size: file.size, file, motivo }]);
+}
 /* Sube la lista y deja anotado, bien a la vista, lo que no se pudo subir:
    así nunca se da por subido algo que en realidad no quedó. */
 async function subirArchivos(files) {
@@ -1818,10 +1853,7 @@ async function subirArchivos(files) {
     catch (e) {
       console.error(e);
       const pesado = f.size > LIMITE_SUBIDA;
-      ed.fallos = (ed.fallos || []).concat([{
-        id: uid(), nombre: f.name, size: f.size, file: f,
-        motivo: pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar en este aparato` : ((e && e.message) || String(e))
-      }]);
+      anotarFallo(f, pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar en este aparato` : ((e && e.message) || String(e)));
       toast(`“${f.name}” NO se subió: ${pesado ? 'pesa demasiado' : (e.message || e)}`, 6000);
     }
     ed.uploading -= 1;

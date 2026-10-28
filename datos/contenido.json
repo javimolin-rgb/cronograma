@@ -9,13 +9,15 @@
    "time": "",
    "date": "",
    "format": "web",
-   "status": "idea",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "id": "309f771f-1276-4384-95ed-3e597aac5756",
    "platforms": [],
    "assignees": [
-    "javi"
+    "javi",
+    "flavio",
+    "maca"
    ],
    "links": [],
    "files": [
@@ -70,14 +72,27 @@
      "sha": "7748265a59a8608f208c2533aa5e358c35d42bf7",
      "type": "image/jpeg",
      "size": 380466
+    },
+    {
+     "id": "92b8acbc-20b9-43e5-bb48-79d4b5232eaa",
+     "by": "javi",
+     "at": "2026-10-28T15:39:38.926Z",
+     "base": "captura-de-pantalla-2026-10-28-a-las-12.39.15",
+     "version": 1,
+     "name": "captura-de-pantalla-2026-10-28-a-las-12.39.15-v1.png",
+     "path": "archivos/sin-proyecto/captura-de-pantalla-2026-10-28-a-las-12.39.15-v1.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/captura-de-pantalla-2026-10-28-a-las-12.39.15-v1.png",
+     "sha": "3c9dc08402fb68bade77653cda58f30ec441e0f0",
+     "type": "image/jpeg",
+     "size": 223664
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-28T15:03:10.748Z",
+   "updatedAt": "2026-10-28T15:41:01.429Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T20:46:36.715Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-27T20:46:36.715Z",
+   "statusChangedAt": "2026-10-28T15:41:01.429Z",
    "publishedAt": null
   },
   {
@@ -1717,6 +1732,13 @@
  ],
  "comments": [
   {
+   "id": "ff7449f6-f546-40dc-b317-7cd510d103c5",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "javi",
+   "text": "Así queda la página con la foto 3, guarde los cambios pero no he publicado, me avisan si está okay para publicar (lo de abajo de la derecha de casa roble se lo dejé hasta que me den el okay para no borrarlo en caso de que prefieran igual la foto anterior)",
+   "createdAt": "2026-10-28T15:41:01.431Z"
+  },
+  {
    "id": "bdfcb7bd-87df-4ccd-9e09-575b39b24c98",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
@@ -2629,6 +2651,49 @@
   }
  ],
  "activity": [
+  {
+   "id": "73731f9b-1906-4ae6-afe6-b07921147cbe",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-10-28T15:41:01.431Z"
+  },
+  {
+   "id": "4f0275b6-bdd2-41d4-906b-90d7ed4593a4",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-10-28T15:41:01.431Z"
+  },
+  {
+   "id": "faf705ae-7dee-402e-8f84-d808bfbc1593",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a En revisión",
+   "meta": {
+    "from": "idea",
+    "to": "revision"
+   },
+   "createdAt": "2026-10-28T15:41:01.430Z"
+  },
+  {
+   "id": "79cde39e-60ec-4e59-ac73-6dcff7669d7c",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Flavio, Maca",
+   "meta": null,
+   "createdAt": "2026-10-28T15:41:01.430Z"
+  },
   {
    "id": "e95d14d3-50ef-422f-8a68-584aa5d090a5",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
@@ -3574,6 +3639,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "17ea0982-1760-44a2-8389-949e91dd3ffc",
+   "to": "maca",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "review",
+   "text": "subió 1 archivo en “Opciones foto portada web” para revisar: Así queda la página con la foto 3, guarde los cambios pero no he publicado, me avisan si está okay para publicar (lo de abajo de la derecha de casa roble se lo dejé hasta que me den el okay para no borrarlo en caso de que prefieran igual la foto anterior)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Opciones foto portada web",
+   "body": "Javi: Así queda la página con la foto 3, guarde los cambios pero no he publicado, me avisan si está okay para publicar (lo de abajo de la derecha de casa roble se lo dejé hasta que",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-10-28T15:41:01.431Z"
+  },
+  {
+   "id": "087f7ac3-c465-4428-9a1e-1e53efdb2fb2",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "review",
+   "text": "subió 1 archivo en “Opciones foto portada web” para revisar: Así queda la página con la foto 3, guarde los cambios pero no he publicado, me avisan si está okay para publicar (lo de abajo de la derecha de casa roble se lo dejé hasta que me den el okay para no borrarlo en caso de que prefieran igual la foto anterior)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Opciones foto portada web",
+   "body": "Javi: Así queda la página con la foto 3, guarde los cambios pero no he publicado, me avisan si está okay para publicar (lo de abajo de la derecha de casa roble se lo dejé hasta que",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-10-28T15:41:01.431Z"
+  },
+  {
+   "id": "df485d43-9823-42e9-a430-2cfddf84acd5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "tagged",
+   "text": "te etiquetó en “Opciones foto portada web”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Opciones foto portada web”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-10-28T15:41:01.430Z"
+  },
+  {
+   "id": "327b6c65-2d15-4cee-8b48-fa725a650191",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "tagged",
+   "text": "te etiquetó en “Opciones foto portada web”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Opciones foto portada web”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-10-28T15:41:01.430Z"
+  },
   {
    "id": "e545857a-51e0-4ae6-964e-2367f6145ab0",
    "to": "flavio",

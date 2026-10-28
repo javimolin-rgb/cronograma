@@ -1702,6 +1702,13 @@
  ],
  "comments": [
   {
+   "id": "06a9d6e7-a768-44d6-aeaa-23df7266ff46",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "javi",
+   "text": "@Flavio Perfecto, lo cambio y subo otra version! estoy probando este con locucuón también",
+   "createdAt": "2026-10-28T15:03:44.372Z"
+  },
+  {
    "id": "21af76ed-12e0-4106-a5f0-44be1ccee04b",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "flavio",
@@ -2581,6 +2588,16 @@
  ],
  "activity": [
   {
+   "id": "baa54ddf-5929-4b82-a946-33d881af4602",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-28T15:03:44.373Z"
+  },
+  {
    "id": "0092dab3-299a-4e03-9a54-0d0619411e31",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "postTitle": "Video 3D Huingan",
@@ -3452,6 +3469,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6aca0cfb-27ce-4837-9904-71faa2768352",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "mention",
+   "text": "te mencionó en “Pilotes”: @Flavio Perfecto, lo cambio y subo otra version! estoy probando este con locucuó…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Pilotes”: @Flavio Perfecto, lo cambio y subo otra version! estoy probando este con locucuó…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-28T15:03:44.373Z"
+  },
   {
    "id": "8ae76d4e-e671-499f-8662-e742589c9270",
    "to": "maca",

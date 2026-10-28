@@ -1702,6 +1702,13 @@
  ],
  "comments": [
   {
+   "id": "6957b17d-5c0b-4113-8dc2-b1654dac0afc",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "javi",
+   "text": "@Flavio Idealmente hoy! se esta terminando de renderizar",
+   "createdAt": "2026-10-28T15:13:55.068Z"
+  },
+  {
    "id": "06a9d6e7-a768-44d6-aeaa-23df7266ff46",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
@@ -2588,6 +2595,16 @@
  ],
  "activity": [
   {
+   "id": "ee80a4e7-bc1e-4174-89bf-e51798ed2d83",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-28T15:13:55.069Z"
+  },
+  {
    "id": "baa54ddf-5929-4b82-a946-33d881af4602",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "postTitle": "Pilotes",
@@ -3469,6 +3486,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cf3e56da-ad4c-4965-8987-59fe61e4ceb4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: @Flavio Idealmente hoy! se esta terminando de renderizar",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Video 3D Huingan”: @Flavio Idealmente hoy! se esta terminando de renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T15:13:55.070Z"
+  },
+  {
+   "id": "1e1b675f-ad79-4ecd-9e53-08add636ecc9",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "mention",
+   "text": "te mencionó en “Video 3D Huingan”: @Flavio Idealmente hoy! se esta terminando de renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Video 3D Huingan”: @Flavio Idealmente hoy! se esta terminando de renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T15:13:55.070Z"
+  },
   {
    "id": "6aca0cfb-27ce-4837-9904-71faa2768352",
    "to": "flavio",

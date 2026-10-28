@@ -31,7 +31,7 @@ Además de fotos y videos, una pieza puede llevar una **página interactiva**: p
 
 **Cómo se ve:** la pieza queda marcada como **Interactivo** (en las tarjetas, en el feed y en la vista de resultado) y cualquiera del equipo puede tocar **Abrir** para usarla a pantalla completa dentro de la app.
 
-**El enlace del original:** en la tarjeta se puede guardar el enlace de donde salió el interactivo (por ejemplo el artefacto en Claude). Sirve para volver a él cuando haya que exportar una versión nueva, pero **no se actualiza solo**: Claude no deja que sus artefactos se muestren dentro de otra página ni que se descarguen sin la sesión de uno, así que el contenido vive siempre en el repositorio. El camino corto para actualizar es: en Claude, descargar el .zip → soltarlo sobre la pieza (o *Actualizar*) → *Guardar cambios*.
+**El enlace del original (solo lo ve quien administra):** en la tarjeta se puede guardar el enlace de donde salió el interactivo (por ejemplo el artefacto en Claude). Flavio y Maca no lo ven —a ellos les queda el botón *Abrir* y nada más—, y cualquier enlace a Claude que se pegue en *Enlaces* también queda oculto para ellos, porque sin la cuenta de Javi no les serviría. Sirve para volver a él cuando haya que exportar una versión nueva, pero **no se actualiza solo**: Claude no deja que sus artefactos se muestren dentro de otra página ni que se descarguen sin la sesión de uno, así que el contenido vive siempre en el repositorio. El camino corto para actualizar es: en Claude, descargar el .zip → soltarlo sobre la pieza (o *Actualizar*) → *Guardar cambios*.
 
 Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a la clave de la app (si guarda algo “recordado”, como la última pista elegida, no lo va a recordar). Cada archivo puede pesar hasta 24 MB, y como todo queda en el repositorio, conviene no dejar interactivos que ya no se usan: **Quitar** borra también sus archivos.
 
@@ -63,7 +63,9 @@ Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*
 
 Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Un **video de más de 24 MB se comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio, y se sube esa copia. Tarda lo que dura el video, y mientras tanto se ve el avance.
 
-Si ese aparato no puede comprimir (pasa en navegadores viejos), la app lo dice y no sube nada a medias. Un truco que funciona siempre: mandarse el video por WhatsApp y subir esa copia, que viene comprimida.
+**Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 25 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
+
+Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 
 ## Archivos por tandas
 

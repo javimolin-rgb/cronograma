@@ -745,7 +745,7 @@ function viewResultados() {
         ${artefactoHtml(p, false)}
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
         ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
-        ${(p.links || []).length ? `<div class="flinks">${p.links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
+        ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
         ${publicadoHtml(p)}
         <div class="resacts">
           <button class="btn ghost sm" data-act="open-post" data-id="${esc(p.id)}">${ic('msg', 15)} Comentar</button>
@@ -966,6 +966,8 @@ function artefactoHtml(p, conAcciones) {
 const igCodigo = (url) => (String(url || '').match(/\/(?:p|reel|reels|tv)\/([\w-]+)/) || [])[1] || '';
 const igEnlaces = (p) => (p.links || []).map((l) => ({ l, code: igCodigo(l.url) })).filter((x) => x.code && /instagram\.com/i.test(x.l.url));
 // Se carga recién cuando la tocan: así la app no le pide nada a Instagram por su cuenta.
+// Los enlaces a Claude son de trabajo interno: no le sirven a Flavio ni a Maca
+const linksVisibles = (p) => (p.links || []).filter((l) => esAdmin() || !/claude\.(ai|site)\b/i.test(l.url || ''));
 function publicadoHtml(p) {
   const hits = igEnlaces(p);
   if (!hits.length) return '';
@@ -1508,6 +1510,10 @@ function renderEditor() {
 
     ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
+    ${(ED.fallos || []).length ? `<div class="avisobar mal">${ic('alert', 18)}
+      <span><b>${ED.fallos.length} archivo${ED.fallos.length === 1 ? ' no se subió' : 's no se subieron'}</b><br>${ED.fallos.map((x) => `${esc(x.nombre)} · ${esc(x.motivo)}`).join('<br>')}</span>
+      <button class="btn sm" data-act="ed-reintentar">Reintentar</button>
+      <button class="iconbtn" data-act="ed-fallo-ok" aria-label="Entendido">${ic('x', 16)}</button></div>` : ''}
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
@@ -1535,7 +1541,7 @@ function renderEditor() {
     ${publicadoHtml(d)}
 
     <label class="lbl">Enlaces <small>Canva, Drive, Figma…</small></label>
-    ${d.links.map((l) => `<div class="linkrow">${ic('link', 18)}<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a><button data-act="ed-rmlink" data-id="${esc(l.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
+    ${linksVisibles(d).map((l) => `<div class="linkrow">${ic('link', 18)}<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a><button data-act="ed-rmlink" data-id="${esc(l.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
     <div class="addrow"><input class="field" id="e-llabel" placeholder="Nombre" value="${esc(ED.newLink.label)}" style="flex:1"><input class="field" id="e-lurl" inputmode="url" placeholder="https://…" value="${esc(ED.newLink.url)}" style="flex:2"><button class="btn sm" data-act="ed-addlink">${ic('plus', 16)}</button></div>
 
     <label class="lbl">Checklist <small>${d.checklist.filter((c) => c.done).length}/${d.checklist.length}</small></label>
@@ -1614,6 +1620,10 @@ async function saveEditor() {
   syncDraft();
   const d = ED.d;
   if (!d.title.trim()) { toast('Ponle un título a la pieza'); const t = $('#e-title'); if (t) t.focus(); return; }
+  if ((ED.fallos || []).length) {
+    const lista = ED.fallos.map((x) => `• ${x.nombre} (${prettySize(x.size)})`).join('\n');
+    if (!confirm(`Ojo: estos archivos NO se subieron y no van a quedar en la pieza:\n\n${lista}\n\n¿Guardar igual?`)) return;
+  }
   d.title = d.title.trim();
   const nu = normUrl(ED.newLink.url);
   if (nu) d.links.push({ id: uid(), label: ED.newLink.label.trim(), url: nu });
@@ -1770,40 +1780,55 @@ async function onArtFile(input) {
   if (!ok) toast('Ese .zip no trae un index.html, así que no es una página interactiva', 5000);
 }
 async function onFiles(input) {
+  const files = [...input.files]; input.value = '';
+  await subirArchivos(files);
+}
+/* Sube la lista y deja anotado, bien a la vista, lo que no se pudo subir:
+   así nunca se da por subido algo que en realidad no quedó. */
+async function subirArchivos(files) {
   const ed = ED; if (!ed) return;
   syncDraft();
-  const files = [...input.files]; input.value = '';
-  if (!files.length) return;
+  if (!files || !files.length) return;
   ed.uploading += files.length; renderEditor();
   toast(`Subiendo ${files.length} archivo${files.length > 1 ? 's' : ''}…`, 10000);
+  let bien = 0;
   for (const f of files) {
+    ed.fallos = (ed.fallos || []).filter((x) => x.nombre !== f.name);   // al reintentar, se borra el aviso anterior
     try {
       if (!(await subirArtefacto(f))) {
-      let archivo = f;
-      if (f.size > LIMITE_SUBIDA && esVideoArchivo(f)) {
-        ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
-        toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo (dura lo que dura el video)`, 8000);
-        const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (p) => {
-          if (ed.comprimiendo) { ed.comprimiendo.pct = p; const b = $('#comprimiendo'); if (b) b.textContent = `Comprimiendo “${f.name}”… ${Math.round(p * 100)}%`; }
-        });
-        ed.comprimiendo = null; renderEditor();
-        if (chico) { toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000); archivo = chico; }
-        else toast(`No se pudo comprimir “${f.name}” en este aparato. Mándatelo por WhatsApp y sube esa copia, que viene más liviana.`, 8000);
+        let archivo = f;
+        if (f.size > LIMITE_SUBIDA && esVideoArchivo(f)) {
+          ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
+          toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo (dura lo que dura el video)`, 8000);
+          const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (pc) => {
+            if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Comprimiendo “${f.name}”… ${Math.round(pc * 100)}%`; }
+          });
+          ed.comprimiendo = null; renderEditor();
+          if (chico) { toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000); archivo = chico; }
+        }
+        const info = splitName(archivo.name);
+        const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
+        const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
+        const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
+        const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
+        ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r)));
       }
-      const info = splitName(archivo.name);
-      const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
-      const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
-      const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
-      const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
-      ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r)));
-      }
+      bien++;
     }
-    catch (e) { console.error(e); toast(`No se pudo subir ${f.name}: ${e.message || e}`, 4000); }
+    catch (e) {
+      console.error(e);
+      const pesado = f.size > LIMITE_SUBIDA;
+      ed.fallos = (ed.fallos || []).concat([{
+        id: uid(), nombre: f.name, size: f.size, file: f,
+        motivo: pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar en este aparato` : ((e && e.message) || String(e))
+      }]);
+      toast(`“${f.name}” NO se subió: ${pesado ? 'pesa demasiado' : (e.message || e)}`, 6000);
+    }
     ed.uploading -= 1;
   }
-  ed.subidos = (ed.subidos || 0) + files.length;
+  ed.subidos = (ed.subidos || 0) + bien;
   if (ED === ed) renderEditor();
-  toast('Archivos listos');
+  if (bien) toast((ed.fallos || []).length ? `Subí ${bien} de ${files.length}. Mira el aviso rojo.` : 'Archivos listos');
 }
 
 
@@ -3215,6 +3240,13 @@ const ACTS = {
       renderEditor(); renderHeader();
     } catch (e) { /* ya avisado */ }
   },
+  'ed-reintentar': async () => {
+    if (!ED) return;
+    const otra = (ED.fallos || []).map((x) => x.file).filter(Boolean);
+    if (!otra.length) { ED.fallos = []; renderEditor(); return; }
+    await subirArchivos(otra);
+  },
+  'ed-fallo-ok': () => { if (!ED) return; ED.fallos = []; renderEditor(); },
   'ed-save': () => saveEditor(),
   'ed-delete': async () => {
     const p = ED && ED.old; if (!p) return;

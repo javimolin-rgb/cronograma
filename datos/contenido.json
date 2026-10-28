@@ -3523,7 +3523,7 @@
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "type": "mention",
    "text": "te mencionó en “Pilotes”: @Flavio Perfecto, lo cambio y subo otra version! estoy probando este con locucuó…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

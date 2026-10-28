@@ -21,6 +21,18 @@ Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambi
 
 **Tipo de vista:** arriba a la derecha se cambia entre **Tarjetas** (la de trabajo), **Como en Instagram** (se ve igual que la publicación: la cuenta arriba, la imagen en 4:5 sobre negro y el copy debajo; en computador, la imagen a la izquierda y los comentarios a la derecha) y **Cuadrícula** (como el perfil de Instagram). La elección queda guardada en ese dispositivo.
 
+## Interactivos (los sube Javi)
+
+Además de fotos y videos, una pieza puede llevar una **página interactiva**: por ejemplo, el reel de Casa Huingán con sus cinco pistas de música para que el cliente las compare sin salir de la app.
+
+**Para subirla:** el interactivo viene en un **.zip con un `index.html` adentro** (y al lado sus videos, audios e imágenes). Se sube con el mismo botón **Subir** de los archivos de la pieza: si el .zip trae un index.html, la app lo reconoce, descomprime su contenido en el repositorio y lo deja como interactivo en vez de guardar el .zip tal cual. El nombre lo toma del `<title>` de la página. Después hay que tocar **Guardar cambios**, como con cualquier archivo.
+
+**Para actualizarla:** se toca **Actualizar** en la tarjeta del interactivo y se elige el **.zip completo nuevo**. No se duplica: se reemplaza lo que cambió, se borra lo que el zip nuevo ya no trae, y la versión sube a 2, 3… Los archivos que siguen iguales (el video, por ejemplo) no se vuelven a subir, así que actualizar solo los textos es cuestión de segundos.
+
+**Cómo se ve:** la pieza queda marcada como **Interactivo** (en las tarjetas, en el feed y en la vista de resultado) y cualquiera del equipo puede tocar **Abrir** para usarla a pantalla completa dentro de la app.
+
+Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a la clave de la app (si guarda algo “recordado”, como la última pista elegida, no lo va a recordar). Cada archivo puede pesar hasta 24 MB, y como todo queda en el repositorio, conviene no dejar interactivos que ya no se usan: **Quitar** borra también sus archivos.
+
 ## Nombrar una foto o un video en un comentario
 
 Debajo del cuadro de comentario, en cada pieza, están las miniaturas de sus fotos y videos: al tocar una (o varias) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es. Es la forma de decir “en esta saquemos la camioneta” sin tener que explicarlo. Si solo marcas archivos y no escribes nada, igual se puede enviar.

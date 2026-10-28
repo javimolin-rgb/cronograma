@@ -252,7 +252,7 @@ function normalize(db) {
   db.posts = (db.posts || []).map((p) => Object.assign({
     title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
-    platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || []
+    platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || []
   }));
   ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos'].forEach((t) => { db[t] = db[t] || []; });
   return db;
@@ -371,8 +371,8 @@ async function notify(type, post, targets, text) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', checklist: 'checklist' };
-const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', checklist: 'checklist', artefactos: 'interactivo' };
+const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'artefactos'];
 const sameJ = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 
 async function commitPost(old, p) {
@@ -468,7 +468,7 @@ function card(p, o = {}) {
   return `<article class="card${overdue ? ' overdue' : ''}" data-act="open-post" data-id="${esc(p.id)}"${o.drag ? ' draggable="true"' : ''} style="--c:${st.color}">
     <div class="thumb">${img ? (isVideo(img) ? miniMedia(img) : `<img loading="lazy" alt="" src="${esc(img.thumb || fileSrc(img))}">`) : ic('image', 22)}</div>
     <div class="cb">
-      <div class="ctop"><h3>${p.priority === 'alta' ? '<i class="prio" title="Prioridad alta"></i>' : ''}${esc(p.title)}</h3>
+      <div class="ctop"><h3>${p.priority === 'alta' ? '<i class="prio" title="Prioridad alta"></i>' : ''}${esc(p.title)}${hayArtefacto(p) ? ` <i class="intchip">${ic('play', 11)} Interactivo</i>` : ''}</h3>
         <button class="badge" data-act="status-menu" data-id="${esc(p.id)}">${esc(st.name)}</button></div>
       <div class="cmeta">${overdue ? `<b class="late">${ic('alert', 13)} Atrasada</b>` : ''}${when ? `<span>${esc(when)}</span>` : ''}<span>${esc(formatName(p.format))}</span>${isStalled(p) ? '<b class="stuck">Estancada</b>' : ''}</div>
       <div class="cfoot"><div class="plats">${p.platforms.map(platBadge).join('')}</div>
@@ -716,11 +716,12 @@ function viewResultados() {
       <header>
         <div><h3>${esc(p.title)}</h3>
           <small>${p.date ? esc(cap(fmtLong(p.date))) : 'Sin fecha'}${p.time ? ' · ' + esc(p.time) : ''} · ${esc(formatName(p.format))}</small></div>
-        <span class="badge" style="--c:${st.color}">${esc(st.name)}</span>
+        ${hayArtefacto(p) ? `<i class="intchip">${ic('play', 11)} Interactivo</i>` : ''}<span class="badge" style="--c:${st.color}">${esc(st.name)}</span>
       </header>
       ${carruselHtml(files, p.id)}
       <div class="resbody">
         <div class="plats">${p.platforms.map(platBadge).join('')}</div>
+        ${artefactoHtml(p, false)}
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
         ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
         ${(p.links || []).length ? `<div class="flinks">${p.links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
@@ -786,7 +787,7 @@ function postHtml(p, t) {
   return `<article class="post" style="--c:${st.color}">
     <header class="posth">${ig ? `<span class="logo sm">${marca()}</span>` : av(autor.id, 'md')}
       <div><b>${ig ? esc(CFG.CUENTA || CFG.APP_NAME) : esc(p.title)}</b><small>${ig ? esc(p.title) : `${esc(autor.name)} · ${esc(ago(t))}${p.date ? ' · sale el ' + esc(fmtShort(p.date)) : ''}`}</small></div>
-      <span class="badge" style="--c:${st.color}">${esc(st.name)}</span></header>
+      ${hayArtefacto(p) ? `<i class="intchip">${ic('play', 11)} Interactivo</i>` : ''}<span class="badge" style="--c:${st.color}">${esc(st.name)}</span></header>
     <div class="postmedia">${files.length ? carruselHtml(files, 'f-' + p.id) : `<div class="postvacio">${ic('image', 30)}<small>Todavía sin archivos</small></div>`}</div>
     <div class="postside">
       <div class="postacts">
@@ -794,6 +795,7 @@ function postHtml(p, t) {
         <button class="btn ghost sm" data-act="feed-cambios" data-id="${esc(p.id)}">Pedir cambios</button>` : `<span class="postok">${ic('check', 16)} ${esc(st.name)}</span>`}
         <button class="btn ghost sm postabrir" data-act="open-post" data-id="${esc(p.id)}">Abrir</button>
       </div>
+      ${artefactoHtml(p, false)}
       ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
       ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
       <div class="postcoms">
@@ -827,6 +829,111 @@ async function feedEnviar(id) {
     renderMain();
     toast('Comentario enviado');
   } catch (e) { if (inp) inp.disabled = false; }
+}
+
+/* ---------- interactivos: una página que se sube en un .zip y se abre dentro de la app ---------- */
+const artefactosDe = (p) => (p && p.artefactos) || [];
+const hayArtefacto = (p) => artefactosDe(p).length > 0;
+const puedeArtefactos = () => esAdmin() && store.canWrite && typeof store.putPath === 'function';
+// El sha de GitHub es el de git: con él se sabe qué archivo no cambió y no hace falta volver a subirlo.
+async function shaGit(blob) {
+  const datos = new Uint8Array(await blob.arrayBuffer());
+  const cab = new TextEncoder().encode(`blob ${datos.length}\0`);
+  const todo = new Uint8Array(cab.length + datos.length);
+  todo.set(cab); todo.set(datos, cab.length);
+  const h = await crypto.subtle.digest('SHA-1', todo);
+  return [...new Uint8Array(h)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+// ¿Este .zip es una página interactiva? Lo es si adentro hay un index.html.
+async function leerArtefacto(file) {
+  if (!/\.zip$/i.test(file.name || '') || !window.Zip) return null;
+  let lista;
+  try { lista = await Zip.read(file); } catch (e) { return null; }
+  if (!lista.length) return null;
+  const partes = lista.map((x) => x.path.split('/'));
+  const raiz = partes[0][0];
+  const quitar = partes.every((x) => x.length > 1 && x[0] === raiz) ? 1 : 0;   // viene todo dentro de una carpeta
+  const entradas = lista.map((x) => ({ ruta: x.path.split('/').slice(quitar).join('/'), e: x }))
+    .filter((x) => x.ruta && !/(^|\/)[._]/.test(x.ruta));
+  const index = entradas.find((x) => x.ruta.toLowerCase() === 'index.html');
+  return index ? { entradas, index } : null;
+}
+// Sube (o actualiza) el interactivo: solo viaja lo que cambió, y lo que ya no está se borra.
+async function subirArtefacto(file, prev) {
+  const ed = ED; if (!ed) return false;
+  const art = await leerArtefacto(file);
+  if (!art) return false;
+  if (!puedeArtefactos()) { toast('Los interactivos los sube quien administra'); return true; }
+  let nombre = splitName(file.name).label || file.name;
+  try {
+    const html = await art.index.e.text();
+    const m = html.match(/<title[^>]*>([^<]{1,80})<\/title>/i);
+    if (m && m[1].trim()) nombre = m[1].trim();
+  } catch (e) { /* nos quedamos con el nombre del archivo */ }
+  const base = (prev && prev.base) || slugify(nombre, 'interactivo');
+  const carpeta = `${(store.cfg && store.cfg.files) || 'archivos'}/${slugify(projectName(ed.d), 'general')}/${base}`;
+  const previos = (prev && prev.archivos) || [];
+  const mapa = {}; previos.forEach((x) => { mapa[x.ruta] = x; });
+  const archivos = [];
+  let n = 0, subidos = 0;
+  ed.art = { nombre, total: art.entradas.length, hecho: 0 };
+  renderEditor();
+  try {
+    for (const it of art.entradas) {
+      ed.art.hecho = ++n; renderEditor();
+      const blob = await it.e.blob();
+      const sha = await shaGit(blob);
+      const antes = mapa[it.ruta];
+      if (antes && antes.sha === sha) { archivos.push(antes); continue; }     // igualito: no se vuelve a subir
+      const r = await store.putPath(`${carpeta}/${it.ruta}`, blob, `Cronograma: ${nombre}`, antes && antes.sha);
+      archivos.push({ ruta: it.ruta, sha: r.sha, size: blob.size });
+      subidos++;
+    }
+    for (const x of previos) {                                               // lo que el zip nuevo ya no trae
+      if (!archivos.some((a) => a.ruta === x.ruta)) await store.deleteFile(`${carpeta}/${x.ruta}`, x.sha);
+    }
+  } catch (e) {
+    ed.art = null; renderEditor();
+    toast('No se pudo subir el interactivo: ' + (e.message || e), 5000);
+    return true;
+  }
+  const entrada = {
+    id: (prev && prev.id) || uid(), base, nombre, carpeta, index: 'index.html', archivos,
+    size: archivos.reduce((a, x) => a + (x.size || 0), 0),
+    version: prev ? (prev.version || 1) + 1 : 1, by: S.me.id, at: nowISO()
+  };
+  const lista = ed.d.artefactos || (ed.d.artefactos = []);
+  const i = lista.findIndex((x) => x.id === entrada.id || x.base === entrada.base);
+  if (i >= 0) lista[i] = entrada; else lista.push(entrada);
+  ed.art = null;
+  renderEditor();
+  toast(`${prev || i >= 0 ? `“${nombre}” actualizado: ${subidos || 'ningún'} archivo${subidos === 1 ? '' : 's'} nuevo${subidos === 1 ? '' : 's'}` : `“${nombre}” listo`} · guarda la pieza para dejarlo`, 5000);
+  return true;
+}
+const arteSrc = (a) => `${a.carpeta}/${a.index || 'index.html'}`.split('/').map(encodeURIComponent).join('/');
+// Se abre a pantalla completa y aislado: la página de adentro no puede tocar nada de la app.
+function abrirArtefacto(postId, artId) {
+  const p = (ED && ED.d && ED.d.id === postId) ? ED.d : S.db.posts.find((x) => x.id === postId);
+  const a = artefactosDe(p).find((x) => x.id === artId);
+  if (!a) { toast('Ese interactivo ya no está'); return; }
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button>
+      <h2>${esc(a.nombre)}</h2><span style="width:40px"></span></div>
+    <div class="pb arte"><iframe class="artefr" src="${esc(arteSrc(a))}" title="${esc(a.nombre)}"
+      sandbox="allow-scripts allow-popups allow-forms allow-presentation allow-downloads"></iframe></div>`, true);
+  const panel = $('#panel'); if (panel) panel.classList.add('ancho');   // los interactivos lucen más anchos
+}
+// Tarjeta que se ve en la pieza, en el feed y en la vista de resultado
+function artefactoHtml(p, conAcciones) {
+  const lista = artefactosDe(p);
+  if (!lista.length) return '';
+  return `<label class="lbl">Interactivo <small>se abre aquí mismo</small></label>
+    ${lista.map((a) => `<div class="arteca">
+      <span class="arteic">${ic('play', 20)}</span>
+      <div class="artet"><b>${esc(a.nombre)}</b><small>${esc(prettySize(a.size))} · ${a.archivos.length} archivo${a.archivos.length === 1 ? '' : 's'}${a.version > 1 ? ` · versión ${a.version}` : ''} · ${esc(ago(a.at))}</small></div>
+      <button class="btn sm" data-act="arte-abrir" data-p="${esc(p.id)}" data-id="${esc(a.id)}">Abrir</button>
+      ${conAcciones && puedeArtefactos() ? `<label class="btn ghost sm arteup">Actualizar<input type="file" accept=".zip,application/zip" data-art="${esc(a.id)}"></label>
+      <button class="iconbtn danger" data-act="arte-quitar" data-id="${esc(a.id)}" aria-label="Quitar">${ic('trash', 17)}</button>` : ''}
+    </div>`).join('')}`;
 }
 
 /* ---------- ver lo que ya está publicado ---------- */
@@ -1390,6 +1497,9 @@ function renderEditor() {
         ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
     })()}`}
 
+    ${ED.art ? `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}…</span></div>` : artefactoHtml(d, true)}
+    ${puedeArtefactos() && !ED.art && !artefactosDe(d).length ? '<p class="hint">¿Tienes una página interactiva (un .zip con su index.html)? Súbela con el botón de archivos y se abre aquí dentro.</p>' : ''}
+
     ${publicadoHtml(d)}
 
     <label class="lbl">Enlaces <small>Canva, Drive, Figma…</small></label>
@@ -1553,6 +1663,15 @@ async function addComment() {
   renderEditor();
 }
 
+async function onArtFile(input) {
+  const ed = ED; if (!ed) return;
+  syncDraft();
+  const f = input.files[0]; input.value = '';
+  if (!f) return;
+  const prev = (ed.d.artefactos || []).find((x) => x.id === input.dataset.art);
+  const ok = await subirArtefacto(f, prev);
+  if (!ok) toast('Ese .zip no trae un index.html, así que no es una página interactiva', 5000);
+}
 async function onFiles(input) {
   const ed = ED; if (!ed) return;
   syncDraft();
@@ -1562,12 +1681,14 @@ async function onFiles(input) {
   toast(`Subiendo ${files.length} archivo${files.length > 1 ? 's' : ''}…`, 10000);
   for (const f of files) {
     try {
+      if (!(await subirArtefacto(f))) {
       const info = splitName(f.name);
       const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
       const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
       const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
       const r = await store.upload(f, { dir: projectName(ed.d), name: nombre });
       ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r)));
+      }
     }
     catch (e) { console.error(e); toast(`No se pudo subir ${f.name}: ${e.message || e}`, 4000); }
     ed.uploading -= 1;
@@ -2698,6 +2819,20 @@ const ACTS = {
   'status-menu': (el) => openStatusMenu(el.dataset.id),
   'set-status': async (el) => { closeSheet(); await changeStatus(el.dataset.id, el.dataset.v); },
   bell: () => openBell(),
+  'arte-abrir': (el) => abrirArtefacto(el.dataset.p, el.dataset.id),
+  'arte-quitar': async (el) => {
+    if (!ED || !puedeArtefactos()) return;
+    const lista = ED.d.artefactos || [];
+    const i = lista.findIndex((x) => x.id === el.dataset.id);
+    if (i < 0) return;
+    const a = lista[i];
+    if (!confirm(`¿Quitar “${a.nombre}”? Se borran también sus archivos.`)) return;
+    syncDraft();
+    lista.splice(i, 1);
+    renderEditor();
+    for (const x of a.archivos || []) await store.deleteFile(`${a.carpeta}/${x.ruta}`, x.sha);
+    toast('Interactivo quitado');
+  },
   'ver-publicado': (el) => {
     const caja = el.closest('.pub'); if (!caja) return;
     const url = 'https://www.instagram.com/p/' + encodeURIComponent(caja.dataset.code || '') + '/';
@@ -3027,6 +3162,7 @@ document.addEventListener('change', (e) => {
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
+  else if (t.dataset && t.dataset.art) onArtFile(t);
   else if (t.id === 'zip-in') { const f = t.files[0]; t.value = ''; importarZip(f); }
   else if (t.id === 'imp-archivos') { const fs = [...t.files]; t.value = ''; elegirArchivosImport(fs); }
 });

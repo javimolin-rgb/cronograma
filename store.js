@@ -432,6 +432,33 @@
       }
       return dir + '/' + Date.now() + '-' + name;
     },
+    /* Artefactos: carpetas completas que se reemplazan al actualizarlas.
+       A diferencia de upload(), aquí la ruta es exacta: si ya había algo, se reemplaza. */
+    async shaDe(path) {
+      try {
+        const r = await fetch(`${this.contentsUrl(path)}?ref=${encodeURIComponent(this.cfg.branch)}`, { headers: this.headers(), cache: 'no-store' });
+        if (!r.ok) return '';
+        const j = await r.json();
+        return j.sha || '';
+      } catch (e) { return ''; }
+    },
+    async putPath(path, blob, mensaje, shaPrevio) {
+      if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
+      if (blob.size > 24 * 1024 * 1024) throw new Error('“' + path.split('/').pop() + '” pesa más de 24 MB');
+      const body = { message: mensaje || ('Cronograma: ' + path), content: await toBase64(blob), branch: this.cfg.branch };
+      const sha = shaPrevio || await this.shaDe(path);
+      if (sha) body.sha = sha;
+      const r = await fetch(this.contentsUrl(path), {
+        method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, this.headers()), body: JSON.stringify(body)
+      });
+      if (!r.ok) {
+        let msg = 'error ' + r.status;
+        try { const e = await r.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
+        throw new Error(msg);
+      }
+      const j = await r.json();
+      return { path, url: this.rawUrl(path), sha: j.content && j.content.sha, size: blob.size };
+    },
     async deleteFile(path, sha) {
       if (!this.token || !path) return;
       let s = sha;

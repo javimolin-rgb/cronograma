@@ -81,21 +81,22 @@
    "publishedAt": null
   },
   {
-   "id": "aa409560-033d-4424-b548-ce59905530cd",
    "title": "Pilotes",
    "caption": "",
    "notes": "",
    "hashtags": "",
    "campaign": "",
-   "date": "2026-10-31",
    "time": "",
-   "platforms": [],
+   "date": "2026-10-31",
    "format": "post",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "aa409560-033d-4424-b548-ce59905530cd",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [
     {
@@ -119,12 +120,11 @@
      "done": false
     }
    ],
-   "updatedAt": "2026-10-27T16:47:56.617Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-10-28T14:55:59.464Z",
+   "updatedBy": "flavio",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-10-27T16:47:56.617Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {

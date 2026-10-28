@@ -667,9 +667,30 @@ function galActualizar(i) {
   const n = lb.querySelector('.galn'); if (n) n.textContent = `${i + 1} / ${GAL.files.length}`;
   const a = lb.querySelector('.lbdl');
   if (a && f) { a.href = fileSrc(f); a.setAttribute('download', f.name || 'archivo'); a.innerHTML = `${ic('download', 18)} ${esc(f.name || 'Descargar')}`; }
-  // el video que sale de pantalla se pausa
-  lb.querySelectorAll('.galslide video').forEach((v, k) => { if (k !== i && !v.paused) v.pause(); });
+  // el que sale de pantalla se pausa; el que queda a la vista se reproduce con sonido
+  // (se recorren las láminas, no los videos: entre medio puede haber fotos)
+  lb.querySelectorAll('.galslide').forEach((lam, k) => {
+    const v = lam.querySelector('video'); if (!v) return;
+    if (k !== i) { if (!v.paused) v.pause(); return; }
+    v.muted = false; v.volume = 1;
+    const p = v.play();
+    if (p && p.catch) p.catch(() => { /* el navegador prefiere que lo toque: quedan los controles */ });
+  });
 }
+/* Aviso "sin sonido": algunos archivos vienen sin pista de audio (un render, por ejemplo)
+   y así queda claro que es el archivo y no la app. */
+function marcarSinSonido(v) {
+  if (!(v instanceof HTMLVideoElement) || v.classList.contains('vprev')) return;
+  const at = v.audioTracks;
+  let sin = (at && typeof at.length === 'number' && at.length === 0) || v.mozHasAudio === false;
+  // Segunda oportunidad: si ya lleva más de un segundo sonando y no decodificó nada de audio, es que no trae.
+  if (!sin && v.webkitAudioDecodedByteCount === 0 && !v.paused && v.currentTime > 1.2) sin = true;
+  if (!sin) return;
+  const caja = v.closest('.galslide, .slide, .preview');
+  if (caja) caja.classList.add('sinson');
+}
+document.addEventListener('loadedmetadata', (e) => marcarSinSonido(e.target), true);
+document.addEventListener('timeupdate', (e) => marcarSinSonido(e.target), true);
 function galMover(d) {
   if (!GAL) return;
   const t = $('#lightbox .galtrack'); if (!t) return;

@@ -693,6 +693,10 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .arteup input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:0}
 .intchip{display:inline-flex;align-items:center;gap:3px;flex:none;font-size:0.625rem;font-weight:800;font-style:normal;letter-spacing:.03em;text-transform:uppercase;
   padding:3px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent);vertical-align:middle}
+.sinson{position:relative}
+.sinson::after{content:"sin sonido";position:absolute;top:10px;left:10px;z-index:3;pointer-events:none;
+  font-size:0.6875rem;font-weight:700;letter-spacing:.03em;color:#fff;background:rgba(20,16,40,.66);
+  border-radius:999px;padding:3px 9px;backdrop-filter:blur(4px)}
 .panel.ancho{max-width:min(1100px,96vw)}
 .pb.arte{padding:0;display:flex;min-height:0}
 .artefr{flex:1;width:100%;border:0;background:var(--surface);min-height:60dvh}

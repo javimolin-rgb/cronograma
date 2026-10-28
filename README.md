@@ -69,6 +69,10 @@ Cuando un archivo se sube varias veces con el mismo nombre, la app lo guarda com
 
 Tocar cualquier foto o video (en el feed, en una pieza, en un comentario) abre la galería a pantalla completa: se desliza con el dedo entre todos los archivos, los videos se reproducen ahí mismo, y tiene contador, X para cerrar y botón para descargar. En el computador, también con las flechas del teclado. Los videos muestran su primer cuadro con ▶ en vez de un ícono.
 
+**Con sonido:** los videos nunca van silenciados. Al abrir uno en grande empieza a reproducirse solo, con audio; en el feed y en los carruseles tienen sus controles y suenan al darles play. Si un archivo no trae pista de audio (pasa con los renders), sale el aviso **“sin sonido”** encima, para que quede claro que es el archivo y no la app.
+
+En iPhone, ojo con el **interruptor de silencio** del costado: con el teléfono en silencio, Safari no deja que suene el video dentro de la app aunque esté todo bien.
+
 ## Apariencia (cada uno en su teléfono)
 
 En **Ajustes → Apariencia**: colores (según el sistema, claro u oscuro), tamaño de la letra (cuatro tamaños) y qué secciones mostrar en la barra de abajo. Se guarda en ese dispositivo y no le cambia nada a los demás.

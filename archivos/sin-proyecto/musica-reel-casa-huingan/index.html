@@ -4,174 +4,235 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300&family=IBM+Plex+Mono:wght@500&family=Work+Sans:wght@400;500&display=swap">
 <style>
-  /* Layout: el reel a la izquierda como un teléfono, las pistas a la derecha como una lista para elegir; en móvil se apilan. */
+  /* Layout: el reel como teléfono y al lado los controles; en móvil, uno bajo el otro. */
   :root {
-    --azul: #011E2F;          /* fondo, Azul Origen */
-    --azul-2: #0A2A3D;        /* superficie levemente más clara */
-    --niebla: #F1F4F3;        /* texto */
-    --niebla-2: #B9C4C7;      /* texto secundario */
-    --madera: #A9764A;        /* filete y selección */
-    --amarillo: #FFEDA0;      /* acento puntual */
-    --linea: rgba(241,244,243,.16);
-    --display: "Fraunces", Georgia, serif;
-    --body: "Work Sans", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --azul: #011E2F; --azul-2: #0B2C40; --niebla: #F1F4F3; --niebla-2: #A9B7BB;
+    --madera: #A9764A; --amarillo: #FFEDA0; --linea: rgba(241,244,243,.18);
+    --display: "Fraunces", Georgia, serif; --body: "Work Sans", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
     color-scheme: dark;
   }
   * { box-sizing: border-box; }
-  body { background: var(--azul); color: var(--niebla); font: 400 16px/1.5 var(--body);
-    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-    padding-block: 32px 48px; }
-  .wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 28px; }
-  header { display: grid; gap: 10px; }
-  .rotulo { font: 500 13px/1 var(--mono); letter-spacing: .08em; color: var(--niebla-2); }
-  h1 { font: 300 clamp(36px, 6vw, 56px)/1.05 var(--display); margin: 0; text-wrap: balance; }
-  .filete { width: 64px; height: 4px; background: var(--madera); }
-  header p { margin: 0; color: var(--niebla-2); max-width: 62ch; }
-
-  .main { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 32px; align-items: start; }
-  @media (max-width: 760px) { .main { grid-template-columns: minmax(0, 1fr); } }
-  .tel { position: relative; width: 100%; max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 16;
-    border-radius: 18px; overflow: hidden; border: 1px solid var(--linea); background: #000; }
+  body { background: var(--azul); color: var(--niebla); font: 400 15px/1.4 var(--body);
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 40px; }
+  .wrap { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 36px; align-items: start; }
+  @media (max-width: 720px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
+  .tel { position: relative; width: 100%; max-width: 320px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--linea); background: #000; }
   .tel video { width: 100%; height: 100%; display: block; object-fit: cover; }
-  .tel button.play { position: absolute; inset: 0; border: 0; background: rgba(1,30,47,.35); color: var(--niebla);
-    font: 500 15px/1 var(--mono); letter-spacing: .06em; cursor: pointer; display: grid; place-items: center; }
-  .tel button.play span { padding: 14px 20px; border-radius: 4px; background: var(--azul); border: 1px solid var(--linea); }
-  .barra { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; max-width: 340px; margin: 12px auto 0; }
-  .barra button { font: 500 13px/1 var(--mono); letter-spacing: .06em; color: var(--azul); background: var(--niebla);
-    border: 0; border-radius: 4px; padding: 10px 12px; cursor: pointer; min-width: 92px; }
-  .barra input { width: 100%; accent-color: var(--madera); }
-  .barra output { font: 500 13px/1 var(--mono); color: var(--niebla-2); font-variant-numeric: tabular-nums; }
-
-  .pistas { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-  .pista { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; padding: 16px 18px; border-radius: 6px;
-    border: 1px solid var(--linea); background: transparent; color: inherit; text-align: left; width: 100%; cursor: pointer;
-    font: inherit; }
-  .pista:hover { background: var(--azul-2); }
-  .pista:focus-visible { outline: 2px solid var(--amarillo); outline-offset: 2px; }
-  .pista[aria-pressed="true"] { background: var(--azul-2); border-color: var(--madera); box-shadow: inset 4px 0 0 var(--madera); }
-  .letra { font: 500 15px/28px var(--mono); text-align: center; border-radius: 4px; border: 1px solid var(--linea); height: 28px; }
-  .pista[aria-pressed="true"] .letra { background: var(--madera); border-color: var(--madera); color: var(--azul); }
-  .pista b { display: block; font: 300 26px/1.15 var(--display); }
-  .pista small { display: block; margin-top: 6px; color: var(--niebla-2); font-size: 14px; }
-  .pista .ficha { display: block; margin-top: 8px; font: 500 12px/1.4 var(--mono); letter-spacing: .05em; color: var(--niebla-2); }
-  .tag { display: inline-block; margin-left: 8px; padding: 3px 7px; border-radius: 3px; font: 500 11px/1 var(--mono);
-    letter-spacing: .06em; vertical-align: middle; background: var(--amarillo); color: var(--azul); }
-  .nota { color: var(--niebla-2); font-size: 14px; max-width: 70ch; margin: 0; }
+  .tel .play { position: absolute; inset: 0; border: 0; background: rgba(1,30,47,.3); cursor: pointer; display: grid; place-items: center; }
+  .tel .play span { width: 72px; height: 72px; border-radius: 50%; background: var(--niebla); color: var(--azul); display: grid; place-items: center; font-size: 26px; padding-left: 5px; }
+  input[type=range] { width: 100%; max-width: 320px; display: block; margin: 12px auto 0; accent-color: var(--madera); }
+  .panel { display: grid; gap: 22px; }
+  h1 { font: 300 34px/1.05 var(--display); margin: 0; }
+  .lbl { font: 500 12px/1 var(--mono); letter-spacing: .08em; color: var(--niebla-2); margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font: 500 15px/1 var(--body); color: var(--niebla); background: transparent; border: 1px solid var(--linea); border-radius: 999px;
+    padding: 11px 16px; cursor: pointer; }
+  .chip:hover { background: var(--azul-2); }
+  .chip[aria-pressed="true"] { background: var(--niebla); color: var(--azul); border-color: var(--niebla); }
+  .chip.ref { color: var(--niebla-2); border-style: dashed; }
+  .chip.ref[aria-pressed="true"] { color: var(--azul); }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--amarillo); outline-offset: 2px; }
+  .switch { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font: 500 15px/1 var(--body); background: none; border: 0; color: var(--niebla); padding: 0; }
+  .switch i { width: 46px; height: 26px; border-radius: 13px; background: var(--linea); position: relative; transition: background .15s; }
+  .switch i::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--niebla); transition: left .15s; }
+  .switch[aria-checked="true"] i { background: var(--madera); }
+  .switch[aria-checked="true"] i::after { left: 23px; }
+  .dl { justify-self: start; font: 500 14px/1 var(--mono); letter-spacing: .05em; color: var(--azul); background: var(--amarillo); border: 0; border-radius: 4px;
+    padding: 15px 20px; cursor: pointer; min-width: 240px; text-align: left; }
+  .dl[disabled] { opacity: .75; cursor: progress; }
+  .estado { font-size: 13px; color: var(--niebla-2); min-height: 1.4em; margin-top: -12px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
 <div class="wrap">
-  <header>
-    <span class="rotulo">REEL MODELO DE LA SEMANA · CASA HUINGÁN</span>
-    <h1>¿Con qué música va?</h1>
-    <div class="filete"></div>
-    <p>Mismo video, misma voz en off y mismos efectos. Solo cambia la música: dale play y cambia de pista sin detener el video para compararlas en el mismo momento.</p>
-  </header>
-
-  <div class="main">
-    <div>
-      <div class="tel">
-        <video id="v" src="video.mp4" playsinline muted preload="auto"></video>
-        <button class="play" id="bigplay" type="button"><span>▶ REPRODUCIR CON SONIDO</span></button>
-      </div>
-      <div class="barra">
-        <button type="button" id="pp">▶ PLAY</button>
-        <input type="range" id="pos" min="0" max="46" step="0.05" value="0" aria-label="Posición en el video">
-        <output id="tc">0,0 s</output>
-      </div>
+  <div>
+    <div class="tel">
+      <video id="v" src="video.mp4" playsinline muted preload="auto"></video>
+      <button class="play" id="play" type="button" aria-label="Reproducir"><span>▶</span></button>
     </div>
-
-    <ul class="pistas" id="lista">
-      <li><button class="pista" type="button" data-src="a_acustica.mp3" aria-pressed="true">
-        <span class="letra">A</span>
-        <span><b>Acústica luminosa</b>
-          <small>Guitarra acústica en fingerpicking, contrabajo, palmas y shaker; arpa en la planta. Cálida y cercana, de casa con familia.</small>
-          <span class="ficha">SOL MAYOR · 96 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="b_piano_cine.mp3" aria-pressed="false">
-        <span class="letra">B</span>
-        <span><b>Piano cinematográfico</b>
-          <small>Piano en ostinato con cello, violín y un pulso grave; toms y golpe cuando el dron sube. La más emotiva, acompaña bien la voz.</small>
-          <span class="ficha">LA MENOR · 76 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="c_house_organico.mp3" aria-pressed="false">
-        <span class="letra">C</span>
-        <span><b>House orgánico</b>
-          <small>Bombo 4x4 suave, sub bajo con bombeo, piano en contratiempo y xilófono. La más moderna, estilo reel de arquitectura.</small>
-          <span class="ficha">FA MENOR · 118 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="d_lofi.mp3" aria-pressed="false">
-        <span class="letra">D</span>
-        <span><b>Lo-fi cálido</b>
-          <small>Piano con efecto de cinta, bajo eléctrico, batería con swing, guitarra limpia y crujido de vinilo. Relajada pero con ritmo.</small>
-          <span class="ficha">RE DÓRICO · 82 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="e_lujo.mp3" aria-pressed="false">
-        <span class="letra">E</span>
-        <span><b>Lujo sereno</b>
-          <small>Piano grave y espaciado con melodía de pocas notas, cuerdas largas, sub bajo y chasquidos. Sobria y cara, como un video de propiedad premium.</small>
-          <span class="ficha">TEMA LUJOSO · DO MENOR · 84 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="f_natural.mp3" aria-pressed="false">
-        <span class="letra">F</span>
-        <span><b>Natural</b>
-          <small>Arpa en arpegios, flauta, cello y oleaje de fondo (la casa está frente al mar); percusión de manos muy suave. Calma y luz.</small>
-          <span class="ficha">TEMA NATURAL · RE MAYOR · 88 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="g_elite.mp3" aria-pressed="false">
-        <span class="letra">G</span>
-        <span><b>Élite</b>
-          <small>Orquestal moderno: cello en staccato, cornos, contrabajo, toms y golpes en la subida y la vuelta. Imponente, de marca de prestigio.</small>
-          <span class="ficha">TEMA ÉLITE · RE MENOR · 100 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="h_minimal.mp3" aria-pressed="false">
-        <span class="letra">H</span>
-        <span><b>Minimalista nórdico</b>
-          <small>Una célula de piano que se repite, armonio de fondo, clics y bombo seco. Limpia y contemporánea, como el diseño escandinavo.</small>
-          <span class="ficha">TEMA MINIMALISTA · LA MENOR · 112 BPM</span></span></button></li>
-      <li><button class="pista" type="button" data-src="0_actual.mp3" aria-pressed="false">
-        <span class="letra">0</span>
-        <span><b>La actual <span class="tag">REFERENCIA</span></b>
-          <small>El loop sintetizado de Casa Lingue, para comparar.</small>
-          <span class="ficha">RE MAYOR · 100 BPM</span></span></button></li>
-    </ul>
+    <input type="range" id="pos" min="0" max="46" step="0.05" value="0" aria-label="Posición">
   </div>
 
-  <p class="nota">Todas siguen las mismas secciones del video: entran con el título, crecen cuando el dron sube a la cenital, se vacían en la planta para leer y cierran con un acorde en "Llave en mano". Instrumentos sampleados de tonejs-instruments (VSCO 2, Iowa, Karoryfer, CC BY 3.0) y percusión sintetizada; sin canciones con derechos.</p>
+  <div class="panel">
+    <h1>Casa Huingán</h1>
+    <div>
+      <div class="lbl">MÚSICA</div>
+      <div class="chips" id="chips">
+        <button class="chip" type="button" data-k="e_lujo" aria-pressed="true">Lujo</button>
+        <button class="chip" type="button" data-k="g_elite" aria-pressed="false">Élite</button>
+        <button class="chip" type="button" data-k="f_natural" aria-pressed="false">Natural</button>
+        <button class="chip" type="button" data-k="b_piano_cine" aria-pressed="false">Piano cine</button>
+        <button class="chip" type="button" data-k="a_acustica" aria-pressed="false">Acústica</button>
+        <button class="chip" type="button" data-k="c_house_organico" aria-pressed="false">House</button>
+        <button class="chip" type="button" data-k="h_minimal" aria-pressed="false">Minimal</button>
+        <button class="chip" type="button" data-k="d_lofi" aria-pressed="false">Lo-fi</button>
+        <button class="chip ref" type="button" data-k="0_actual" aria-pressed="false">Original</button>
+      </div>
+    </div>
+    <button class="switch" id="voz" type="button" role="switch" aria-checked="true"><i></i>Voz en off</button>
+    <button class="dl" id="dl" type="button">↓ DESCARGAR MP4</button>
+    <div class="estado" id="estado" aria-live="polite"></div>
+  </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/mp4box@0.5.2/dist/mp4box.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.3/build/mp4-muxer.js"></script>
 <script>
-  const v = document.getElementById("v"), pp = document.getElementById("pp"), big = document.getElementById("bigplay");
-  const pos = document.getElementById("pos"), tc = document.getElementById("tc");
-  const botones = [...document.querySelectorAll(".pista")];
-  const audios = {};
-  botones.forEach(b => { const a = new Audio(b.dataset.src); a.preload = "auto"; audios[b.dataset.src] = a; });
-  let actual = botones.find(b => b.getAttribute("aria-pressed") === "true").dataset.src;
-  const A = () => audios[actual];
-  const fmt = t => t.toFixed(1).replace(".", ",") + " s";
+// Une un MP4 de video (H.264, sin audio) con un audio AAC (.m4a) en un MP4 nuevo, sin recomprimir.
+// Funciona en el navegador (globales MP4Box y Mp4Muxer) y en Node (para probar).
+(function (root) {
+  function demux(MP4Box, buf) {
+    return new Promise((resolve, reject) => {
+      const f = MP4Box.createFile();
+      const out = { samples: [] };
+      f.onError = reject;
+      f.onReady = info => {
+        const tr = info.tracks[0];
+        out.info = tr;
+        const trak = f.getTrackById(tr.id);
+        const entry = trak.mdia.minf.stbl.stsd.entries[0];
+        if (entry.avcC) {
+          const DS = MP4Box.DataStream || root.DataStream;
+          const ds = new DS(undefined, 0, DS.BIG_ENDIAN);
+          entry.avcC.write(ds);
+          out.description = new Uint8Array(ds.buffer, 8);   // sin la cabecera de la caja
+        } else if (entry.esds) {
+          out.description = entry.esds.esd.descs[0].descs[0].data;
+        }
+        f.setExtractionOptions(tr.id, null, { nbSamples: 1e9 });
+        f.start();
+      };
+      f.onSamples = (id, user, s) => { out.samples.push(...s); };
+      const ab = buf.buffer ? buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength) : buf;
+      ab.fileStart = 0;
+      f.appendBuffer(ab);
+      f.flush();
+      setTimeout(() => resolve(out), 0);
+    });
+  }
 
+  async function unir(MP4Box, Mp4Muxer, videoBuf, audioBuf, onProgress) {
+    const v = await demux(MP4Box, videoBuf);
+    const a = await demux(MP4Box, audioBuf);
+    const vt = v.info, at = a.info;
+    const muxer = new Mp4Muxer.Muxer({
+      target: new Mp4Muxer.ArrayBufferTarget(),
+      video: { codec: "avc", width: vt.video.width, height: vt.video.height, frameRate: 30 },
+      audio: { codec: "aac", numberOfChannels: at.audio.channel_count, sampleRate: at.audio.sample_rate },
+      fastStart: "in-memory",
+      firstTimestampBehavior: "offset",
+    });
+    const vMeta = { decoderConfig: { codec: vt.codec, codedWidth: vt.video.width, codedHeight: vt.video.height, description: v.description } };
+    const aMeta = { decoderConfig: { codec: at.codec, numberOfChannels: at.audio.channel_count, sampleRate: at.audio.sample_rate, description: a.description } };
+    const vs = v.samples, as = a.samples;
+    const c0 = Math.min(...vs.slice(0, 30).map(s => s.cts));   // 0 si el video no tiene B-frames
+    const vEnd = Math.max(...vs.map(s => (s.cts + s.duration) / s.timescale)) - c0 / vs[0].timescale;
+    // intercalar por tiempo de decodificación
+    let i = 0, j = 0, n = 0;
+    const total = vs.length + as.length;
+    while (i < vs.length || j < as.length) {
+      const tv = i < vs.length ? vs[i].dts / vs[i].timescale : Infinity;
+      const ta = j < as.length ? as[j].dts / as[j].timescale : Infinity;
+      if (tv <= ta) {
+        const s = vs[i++];
+        muxer.addVideoChunkRaw(new Uint8Array(s.data), s.is_sync ? "key" : "delta", (s.cts - c0) / s.timescale * 1e6,
+          s.duration / s.timescale * 1e6, i === 1 ? vMeta : undefined, (s.cts - s.dts) / s.timescale * 1e6);
+      } else {
+        const s = as[j++];
+        if (s.cts / s.timescale < vEnd) {
+          muxer.addAudioChunkRaw(new Uint8Array(s.data), "key", s.cts / s.timescale * 1e6, s.duration / s.timescale * 1e6,
+            j === 1 ? aMeta : undefined);
+        }
+      }
+      if (onProgress && ++n % 200 === 0) onProgress(n / total);
+    }
+    muxer.finalize();
+    return muxer.target.buffer;
+  }
+
+  root.unirVideoAudio = unir;
+  if (typeof module !== "undefined") module.exports = { unir };
+})(typeof window !== "undefined" ? window : globalThis);
+
+</script>
+<script>
+  const PARTES = 10;
+  const NOMBRES = { e_lujo: "Lujo", g_elite: "Elite", f_natural: "Natural", b_piano_cine: "Piano", a_acustica: "Acustica",
+    c_house_organico: "House", h_minimal: "Minimal", d_lofi: "Lofi", "0_actual": "Original" };
+  const v = document.getElementById("v"), playB = document.getElementById("play"), pos = document.getElementById("pos");
+  const vozB = document.getElementById("voz"), dl = document.getElementById("dl"), estado = document.getElementById("estado");
+  const chips = [...document.querySelectorAll(".chip")];
+  let tema = "e_lujo", conVoz = true;
+  const audios = {};
+  const archivo = () => `audio/${tema}_${conVoz ? "voz" : "sinvoz"}.mp4`;
+  function audio() {
+    const f = archivo();
+    if (!audios[f]) { audios[f] = new Audio(f); audios[f].preload = "auto"; }
+    return audios[f];
+  }
+  audio();
   function sync(force) {
-    const a = A();
+    const a = audio();
     if (force || Math.abs(a.currentTime - v.currentTime) > 0.12) { try { a.currentTime = v.currentTime; } catch (e) {} }
   }
-  async function play() {
-    sync(true);
-    try { await Promise.all([v.play(), A().play()]); } catch (e) {}
-    big.hidden = true; pp.textContent = "❚❚ PAUSA";
-  }
-  function pause() { v.pause(); Object.values(audios).forEach(a => a.pause()); pp.textContent = "▶ PLAY"; }
-  pp.addEventListener("click", () => v.paused ? play() : pause());
-  big.addEventListener("click", play);
+  function pausarTodo() { Object.values(audios).forEach(a => a.pause()); }
+  async function play() { sync(true); try { await Promise.all([v.play(), audio().play()]); } catch (e) {} playB.hidden = true; }
+  function pause() { v.pause(); pausarTodo(); playB.hidden = false; }
+  playB.addEventListener("click", play);
   v.addEventListener("click", () => v.paused ? play() : pause());
-  v.addEventListener("ended", () => { pause(); big.hidden = false; v.currentTime = 0; });
-  v.addEventListener("timeupdate", () => { pos.value = v.currentTime; tc.textContent = fmt(v.currentTime); if (!v.paused) sync(false); });
+  v.addEventListener("ended", () => { pause(); v.currentTime = 0; });
   v.addEventListener("loadedmetadata", () => { pos.max = v.duration.toFixed(2); });
-  pos.addEventListener("input", () => { v.currentTime = +pos.value; sync(true); tc.textContent = fmt(+pos.value); });
-
-  botones.forEach(b => b.addEventListener("click", () => {
+  v.addEventListener("timeupdate", () => { pos.value = v.currentTime; if (!v.paused) sync(false); });
+  pos.addEventListener("input", () => { v.currentTime = +pos.value; sync(true); });
+  function cambiar() {
     const corriendo = !v.paused;
-    A().pause();
-    botones.forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
-    actual = b.dataset.src;
-    try { localStorage.setItem("huingan-pista", actual); } catch (e) {}
-    sync(true);
-    if (corriendo) A().play().catch(() => {});
-    else if (v.currentTime === 0) play();
+    pausarTodo(); sync(true);
+    if (corriendo) audio().play().catch(() => {});
+  }
+  chips.forEach(c => c.addEventListener("click", () => {
+    chips.forEach(x => x.setAttribute("aria-pressed", x === c ? "true" : "false"));
+    tema = c.dataset.k; cambiar();
+    if (v.paused) play();
   }));
+  vozB.addEventListener("click", () => { conVoz = !conVoz; vozB.setAttribute("aria-checked", String(conVoz)); cambiar(); });
+
+  // descarga: video en alta + la pista elegida, unidos sin recomprimir
+  let videoHQ = null, downloads = null;
+  (async () => {
+    try { downloads = await window.claude?.use?.("downloads"); } catch (e) {}
+    if (!downloads) { dl.disabled = true; dl.textContent = "DESCARGA NO DISPONIBLE AQUÍ"; }
+  })();
+  async function bajarVideo() {
+    if (videoHQ) return videoHQ;
+    const trozos = [];
+    for (let i = 0; i < PARTES; i++) {
+      estado.textContent = `Preparando video… ${Math.round(i / PARTES * 90)} %`;
+      const r = await fetch(`hq/parte_${String(i).padStart(2, "0")}.mp4`);
+      if (!r.ok) throw new Error("parte " + i);
+      trozos.push(new Uint8Array(await r.arrayBuffer()));
+    }
+    const total = trozos.reduce((s, t) => s + t.length, 0), out = new Uint8Array(total);
+    let o = 0; for (const t of trozos) { out.set(t, o); o += t.length; }
+    return (videoHQ = out);
+  }
+  dl.addEventListener("click", async () => {
+    if (!downloads || dl.disabled) return;
+    dl.disabled = true;
+    const nombre = `Reel_Casa_Huingan_${NOMBRES[tema]}_${conVoz ? "con" : "sin"}_voz.mp4`;
+    try {
+      const vb = await bajarVideo();
+      estado.textContent = "Uniendo audio…";
+      const ab = new Uint8Array(await (await fetch(archivo())).arrayBuffer());
+      const mp4 = await window.unirVideoAudio(MP4Box, Mp4Muxer, vb.slice(0), ab);
+      estado.textContent = "Listo. Confirma la descarga.";
+      await downloads.save({ filename: nombre, data: new Blob([mp4], { type: "video/mp4" }) });
+      estado.textContent = "Descargado: " + nombre;
+    } catch (e) {
+      const c = e && e.code;
+      estado.textContent = c === "declined" ? "Descarga cancelada." : c === "rate_limited" ? "Hay otra descarga abierta; intenta en un momento." : "No se pudo preparar la descarga.";
+    } finally { dl.disabled = false; }
+  });
 </script>
 
 </body></html>

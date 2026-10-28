@@ -4655,10 +4655,10 @@
    "tipo": "pc",
    "instalada": false,
    "push": false,
-   "version": "2026.10.28-2",
+   "version": "2026.10.28-4",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-26T14:26:12.501Z",
-   "lastSeen": "2026-10-28T15:26:04.853Z"
+   "lastSeen": "2026-10-28T20:38:49.700Z"
   },
   {
    "id": "d_f6c6518010fd48af",

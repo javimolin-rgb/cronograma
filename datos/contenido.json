@@ -196,7 +196,7 @@
   },
   {
    "title": "Video 3D Huingan",
-   "caption": "",
+   "caption": "Casa Huingán, nuestro modelo de la semana, en un recorrido 3D 🌿\n\nSu planta mariposa pone un dormitorio en cada ala, cada uno con su baño, y deja al centro un amplio estar comedor con cocina integrada y lavadero. Ideal para dos parejas, para recibir a la familia o a los amigos.\n\n2 dormitorios y 2 baños en un piso: 73,8 m² útiles y 37,9 m² de terrazas.\n\nDoble altura que parte en 2,20 m y llega a los 6 m en su punto más alto, grandes ventanales termopanel con marco de PVC y chiflonera de entrada con doble puerta.\n\nEstrategias sustentables: aislación eficiente en muros, pisos y cielos; fachada exterior ventilada; ventanas termopanel y construcción sobre pilotes. Autogeneración eléctrica con paneles solares, a pedido.\n\nEntrega llave en mano.\n\nCotiza o descarga la ficha técnica en neorigen.cl\n\n#Neorigen #CasaHuingan #CasasPrediseñadas #CasasSustentables #ArquitecturaSustentable #LlaveEnMano #ViveLoNatural #Render3D #CasasChile\n",
    "notes": "",
    "hashtags": "",
    "campaign": "",
@@ -349,7 +349,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-28T21:03:55.283Z",
+   "updatedAt": "2026-10-28T21:04:43.042Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
@@ -2672,6 +2672,16 @@
  ],
  "activity": [
   {
+   "id": "dc5b3ab5-3121-4def-89cd-451eef5cd3ea",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-10-28T21:04:43.042Z"
+  },
+  {
    "id": "ff594335-7fa7-4bae-9559-373624448058",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "postTitle": "Video 3D Huingan",
@@ -3692,6 +3702,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c74605b4-8ac9-4166-88e9-0e8b41b6d955",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:04:43.043Z"
+  },
+  {
+   "id": "83b16438-9074-4840-8e0f-980ac230dad8",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:04:43.043Z"
+  },
   {
    "id": "e3a2bc82-c3bb-446a-b02f-47fe76c0b811",
    "to": "maca",

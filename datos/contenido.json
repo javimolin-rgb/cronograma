@@ -1702,6 +1702,13 @@
  ],
  "comments": [
   {
+   "id": "a5f5e274-d137-4995-8470-f926bb2015c4",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "flavio",
+   "text": "@Javi  en la ultima imagen en vez de pudrición cambiar x Degradación el resto OK por mi parte! Muchas gracias!  @Maca",
+   "createdAt": "2026-10-28T14:55:51.913Z"
+  },
+  {
    "id": "2b00a18b-7c5f-423b-bcc2-9a0faf37565a",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "flavio",
@@ -2567,6 +2574,16 @@
  ],
  "activity": [
   {
+   "id": "8ccb67ac-74a0-4d12-8e46-3df10f7be606",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-28T14:55:51.913Z"
+  },
+  {
    "id": "e5826f7a-d2cb-45b7-a83c-91a637eba86d",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "postTitle": "Opciones foto portada web",
@@ -3418,6 +3435,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "61cfe7e0-c8a9-4b07-ad76-601f1b7be5b9",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "supervision",
+   "text": "comentó en “Pilotes”: @Javi  en la ultima imagen en vez de pudrición cambiar x Degradación el resto OK…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Pilotes”: @Javi  en la ultima imagen en vez de pudrición cambiar x Degradación el resto OK…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-28T14:55:51.914Z"
+  },
+  {
+   "id": "184560e1-93e1-4c52-ba42-f774e934b1de",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "mention",
+   "text": "te mencionó en “Pilotes”: @Javi  en la ultima imagen en vez de pudrición cambiar x Degradación el resto OK…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio te mencionó en “Pilotes”: @Javi  en la ultima imagen en vez de pudrición cambiar x Degradación el resto OK…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-28T14:55:51.914Z"
+  },
   {
    "id": "f490b7c7-c6e5-40c2-895b-34eafdfe2487",
    "to": "javi",

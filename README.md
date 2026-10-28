@@ -21,6 +21,16 @@ Desde ahí mismo se puede **Aprobar** o **Pedir cambios** (se escribe qué cambi
 
 **Tipo de vista:** arriba a la derecha se cambia entre **Tarjetas** (la de trabajo), **Como en Instagram** (se ve igual que la publicación: la cuenta arriba, la imagen en 4:5 sobre negro y el copy debajo; en computador, la imagen a la izquierda y los comentarios a la derecha) y **Cuadrícula** (como el perfil de Instagram). La elección queda guardada en ese dispositivo.
 
+## Nombrar una foto o un video en un comentario
+
+Debajo del cuadro de comentario, en cada pieza, están las miniaturas de sus fotos y videos: al tocar una (o varias) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es. Es la forma de decir “en esta saquemos la camioneta” sin tener que explicarlo. Si solo marcas archivos y no escribes nada, igual se puede enviar.
+
+## Pulgar arriba o abajo
+
+Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acuerdo” sin escribir. Se toca una vez para ponerlo y otra para sacarlo, y al pasar el dedo (o el mouse) sobre el número se ve quién lo puso. Están tanto en la pieza como en el feed.
+
+A quien escribió el comentario le llega el aviso **dentro de la app** (en la campana), sin sonar el teléfono. Se puede apagar en Ajustes, en *“Pulgar en mis comentarios”*.
+
 ## Corregir un comentario
 
 Debajo de cada comentario propio está **Editar**: se corrige el texto y se guarda. En el feed, el mismo *Editar* abre la pieza con ese comentario listo para arreglar.
@@ -168,7 +178,9 @@ El número de la campana cuenta los avisos sin leer y los vencimientos cercanos.
 
 ## Avisos de cada pieza
 
-Dentro de cada pieza, la **campana** de arriba activa o silencia los avisos de *esa* pieza: silenciada, no llega nada de ella (ni a la app ni al celular); activada, llegan los comentarios, cambios de estado, de fecha y de contenido aunque no estés etiquetado.
+Dentro de cada pieza, la **campana** de arriba activa o silencia los avisos de *esa* pieza: silenciada, no llegan sus comentarios ni sus cambios; activada, llegan aunque no estés etiquetado.
+
+**Una excepción, siempre:** si te **mencionan** (@tu-nombre) o te **etiquetan** en una pieza, el aviso llega igual, esté silenciada o no, y aunque además recibas el resumen de todo lo que hace el equipo. Nombrarte a ti es directo y no se pierde. Para no avisar dos veces de lo mismo, a quien ya recibió el aviso directo no le llega después el resumen.
 
 ## Javi se entera de todo (solo Javi)
 

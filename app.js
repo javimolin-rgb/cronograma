@@ -289,12 +289,13 @@ const EVENTS = [
   { id: 'reschedule', label: 'Cambia la fecha de mis piezas', hint: 'Reprogramaciones' },
   { id: 'update', label: 'Editan contenido o archivos', hint: 'Copy, archivos, enlaces, formato…' },
   { id: 'deadline', label: 'Vencimientos (hoy / atrasadas)', hint: 'Se muestran dentro de la app', appOnly: true },
+  { id: 'reaccion', label: 'Pulgar en mis comentarios', hint: 'Cuando alguien marca 👍 o 👎 en algo que escribiste' },
   { id: 'supervision', label: 'Todo lo que haga el equipo', hint: 'Cada comentario, pieza nueva o cambio de los demás', soloSuper: true }
 ];
 const DEFAULT_EV = {
   tagged: { app: 1, push: 1 }, mention: { app: 1, push: 1 }, comment: { app: 1, push: 0 },
   status: { app: 1, push: 0 }, reschedule: { app: 1, push: 1 }, update: { app: 1, push: 0 }, deadline: { app: 1, push: 0 },
-  supervision: { app: 1, push: 1 }
+  reaccion: { app: 1, push: 0 }, supervision: { app: 1, push: 1 }
 };
 function prefsOf(pid) {
   const p = S.db.prefs.find((x) => x.id === pid) || {};
@@ -326,9 +327,10 @@ const siteLink = (id) => `${siteBase()}#post=${id}`;
 const supervisores = () => (CFG.SUPERVISA || []).filter((id) => id && id !== S.me.id && byId(P, id));
 
 // Un solo aviso por acción, con el resumen de lo que pasó
-async function notifySuper(post, texto) {
+async function notifySuper(post, texto, yaAvisados) {
   for (const pid of supervisores()) {
     if (post && silenciada(pid, post.id)) continue;
+    if (yaAvisados && yaAvisados.includes(pid)) continue;   // ya le llegó el aviso directo de lo mismo
     const ev = prefsOf(pid).events.supervision;
     if (!ev || (!ev.app && !ev.push)) continue;
     try {
@@ -346,10 +348,16 @@ async function notify(type, post, targets, text) {
   // quienes siguen la pieza también se enteran; quienes la silenciaron, no
   const seguidores = ['comment', 'status', 'reschedule', 'update'].includes(type) ? P.filter((x) => sigue(x.id, post.id)).map((x) => x.id) : [];
   const sup = supervisores(); // reciben su propio resumen, no un aviso por cada cosa
-  const set = [...new Set(targets.concat(seguidores))].filter((id) => id && id !== S.me.id && !silenciada(id, post.id) && !sup.includes(id));
+  // Si te nombran a ti (te etiquetan o te mencionan), el aviso llega igual: aunque
+  // hayas silenciado esa pieza y aunque además recibas el resumen de todo.
+  const directo = type === 'tagged' || type === 'mention';
+  const set = [...new Set(targets.concat(seguidores))]
+    .filter((id) => id && id !== S.me.id && (directo || (!silenciada(id, post.id) && !sup.includes(id))));
+  const avisados = [];
   for (const pid of set) {
     const ev = prefsOf(pid).events[type];
     if (!ev || (!ev.app && !ev.push)) continue;
+    avisados.push(pid);
     try {
       await save('notifications', {
         id: uid(), to: pid, from: S.me.id, postId: post.id, type, text, read: false,
@@ -359,6 +367,7 @@ async function notify(type, post, targets, text) {
       });
     } catch (e) { /* ya avisado */ }
   }
+  return avisados;
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
@@ -383,17 +392,17 @@ async function commitPost(old, p) {
 
   if (isNew) {
     await log(p, 'created', 'creó la pieza');
-    await notify('tagged', p, p.assignees, `te etiquetó en “${p.title}”`);
-    await notifySuper(p, `creó la pieza “${p.title}”`);
+    const av = await notify('tagged', p, p.assignees, `te etiquetó en “${p.title}”`);
+    await notifySuper(p, `creó la pieza “${p.title}”`, av);
     return;
   }
-  const resumen = [];
+  const resumen = [], avisados = [];
   const added = p.assignees.filter((x) => !old.assignees.includes(x));
   const removed = old.assignees.filter((x) => !p.assignees.includes(x));
   const keep = p.assignees.filter((x) => old.assignees.includes(x));
   if (added.length) {
     await log(p, 'tag', `etiquetó a ${added.map((a) => person(a).name).join(', ')}`);
-    await notify('tagged', p, added, `te etiquetó en “${p.title}”`);
+    avisados.push(...await notify('tagged', p, added, `te etiquetó en “${p.title}”`));
     resumen.push(`etiquetó a ${added.map((a) => person(a).name).join(', ')}`);
   }
   if (removed.length) await log(p, 'untag', `quitó a ${removed.map((a) => person(a).name).join(', ')}`);
@@ -416,7 +425,7 @@ async function commitPost(old, p) {
     if (changed.length) await notify('update', p, keep, `editó “${p.title}” (${changed.map((k) => FIELD_LABEL[k]).join(', ')})`);
     resumen.push(`editó ${labels}`);
   }
-  if (resumen.length) await notifySuper(p, `en “${p.title}”: ${resumen.join('; ')}`);
+  if (resumen.length) await notifySuper(p, `en “${p.title}”: ${resumen.join('; ')}`, avisados);
 }
 
 async function changeStatus(id, status) {
@@ -793,7 +802,8 @@ function postHtml(p, t) {
           const fotos = (c.fileIds || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
           return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
             ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(x) || ''}</span>`).join('')}</div>` : ''}
-            <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}</small></div></div>`;
+            <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}</small>
+            <div class="cmacts">${reacHtml(c, p.id)}</div></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
       </div>
       <div class="postcompose">
@@ -1306,7 +1316,7 @@ function openEditor(id, preset = {}) {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], priority: 'normal', links: [], files: [], checklist: []
   };
-  ED = { old, d, comment: '', newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
+  ED = { old, d, comment: '', comFiles: [], newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
   renderEditor();
 }
@@ -1413,14 +1423,22 @@ function renderEditor() {
       const vers = (c.versiones || []).length;
       return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}${c.editedAt ? ' · corregido' : ''}</small>${mentionHtml(c.text)}
         ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(f) || ''}</span>`).join('')}</div>` : ''}
-        ${puedeEditarComentario(c) || vers ? `<div class="cmacts">
+        <div class="cmacts">
+          ${reacHtml(c, d.id)}
           ${puedeEditarComentario(c) ? `<button class="lnk" data-act="cm-editar" data-id="${esc(c.id)}">Editar</button>` : ''}
           ${vers ? `<button class="lnk" data-act="cm-versiones" data-id="${esc(c.id)}">${ED.versionesDe === c.id ? 'Ocultar' : 'Cómo decía antes'} (${vers})</button>` : ''}
-        </div>` : ''}
+        </div>
         ${ED.versionesDe === c.id ? `<div class="cmvers">${(c.versiones || []).slice().reverse().map((v) => `<div><small>Hasta ${esc(ago(v.hasta))}${v.by ? ' · lo cambió ' + esc(person(v.by).name) : ''}</small>${mentionHtml(v.text)}</div>`).join('')}</div>` : ''}
       </div></div>`;
     }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
+      ${(() => {
+        const media = pieceFiles(d, true).filter(esMedia);
+        if (!media.length) return '';
+        const sel = ED.comFiles || [];
+        return `<div class="commedia">${media.map((f) => `<button class="cmpick${sel.includes(f.id) ? ' on' : ''}" data-act="cm-media" data-f="${esc(f.id)}" aria-label="${esc(f.name)}" title="${esc(f.name)}">${miniMedia(f) || ''}<i class="tick">${ic('check', 14)}</i></button>`).join('')}</div>
+        <p class="hint">${sel.length ? `Hablando de ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : 'Toca una foto o un video para decir de cuál estás hablando.'}</p>`;
+      })()}
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
   </div>
@@ -1466,15 +1484,44 @@ async function saveEditor() {
 }
 
 // Comentario en una pieza (desde el editor o desde el feed), con sus avisos
-async function comentar(p, text) {
-  await save('comments', { id: uid(), postId: p.id, author: S.me.id, text, createdAt: nowISO() });
+async function comentar(p, text, fileIds) {
+  const fids = (fileIds || []).filter(Boolean);
+  await save('comments', { id: uid(), postId: p.id, author: S.me.id, text, fileIds: fids, createdAt: nowISO() });
   const ments = P.filter((x) => new RegExp('@' + x.name + '(?![\\p{L}])', 'iu').test(text)).map((x) => x.id);
   await log(p, 'comment', 'comentó');
-  const snippet = text.length > 80 ? text.slice(0, 80) + '…' : text;
-  await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`);
-  await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`);
-  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`);
+  const corto = text.length > 80 ? text.slice(0, 80) + '…' : text;
+  const snippet = corto || (fids.length > 1 ? `marcó ${fids.length} archivos` : 'marcó un archivo');
+  const avisados = await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`);
+  avisados.push(...await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`));
+  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados);
 }
+/* Pulgar arriba o abajo en un comentario: sirve para decir "lo leí / de acuerdo" sin escribir nada. */
+function reacHtml(c, postId) {
+  const R = c.reacciones || {};
+  const quienes = (v) => Object.keys(R).filter((k) => R[k] === v);
+  const btn = (v, cara) => {
+    const gente = quienes(v);
+    const titulo = gente.length ? gente.map((k) => person(k).name).join(', ') : (v === 'up' ? 'De acuerdo / lo leí' : 'No me convence');
+    return `<button class="reac${R[S.me.id] === v ? ' on' : ''}" data-act="cm-reac" data-id="${esc(c.id)}" data-p="${esc(postId || c.postId || '')}" data-v="${v}" title="${esc(titulo)}" aria-label="${esc(titulo)}">${cara}${gente.length ? ' ' + gente.length : ''}</button>`;
+  };
+  return btn('up', '👍') + btn('down', '👎');
+}
+async function avisarReaccion(c, v) {
+  if (!c.author || c.author === S.me.id) return;
+  const ev = prefsOf(c.author).events.reaccion;
+  if (!ev || (!ev.app && !ev.push)) return;
+  const p = S.db.posts.find((x) => x.id === c.postId);
+  const corto = (c.text || '').trim().slice(0, 60);
+  const texto = `le puso ${v === 'up' ? '👍' : '👎'} a tu comentario${p ? ` en “${p.title}”` : ''}${corto ? `: ${corto}` : ''}`;
+  try {
+    await save('notifications', {
+      id: uid(), to: c.author, from: S.me.id, postId: c.postId || null, type: 'reaccion', text: texto, read: false,
+      inApp: !!ev.app, push: !!ev.push, title: CFG.APP_NAME, body: `${S.me.name} ${texto}`.slice(0, 180),
+      url: p ? siteLink(p.id) : siteBase(), createdAt: nowISO()
+    });
+  } catch (e) { /* ya avisado */ }
+}
+
 // Los comentarios se pueden corregir: el texto anterior se guarda para poder mirarlo.
 const puedeEditarComentario = (c) => store.canWrite && (c.author === S.me.id || esAdmin());
 async function guardarComentario(id, texto) {
@@ -1497,10 +1544,12 @@ async function guardarComentario(id, texto) {
 async function addComment() {
   if (!requireWrite()) return;
   syncDraft();
-  const text = (ED.comment || '').trim(); if (!text) return;
+  const text = (ED.comment || '').trim();
+  const fids = (ED.comFiles || []).filter((id) => (ED.d.files || []).some((f) => f.id === id));
+  if (!text && !fids.length) return;
   const p = ED.old; if (!p) return;
-  await comentar(p, text);
-  ED.comment = '';
+  await comentar(p, text, fids);
+  ED.comment = ''; ED.comFiles = [];
   renderEditor();
 }
 
@@ -2870,6 +2919,22 @@ const ACTS = {
   'ed-comment': () => addComment(),
   'cm-editar': (el) => { if (!requireWrite()) return; syncDraft(); ED.editando = el.dataset.id; ED.versionesDe = null; renderEditor(); setTimeout(() => { const t = $('#c-edit'); if (t) { t.focus(); t.setSelectionRange(t.value.length, t.value.length); } }, 60); },
   'cm-cancelar': () => { ED.editando = null; renderEditor(); },
+  'cm-media': (el) => {
+    syncDraft();
+    const id = el.dataset.f, sel = ED.comFiles || (ED.comFiles = []);
+    const i = sel.indexOf(id);
+    if (i >= 0) sel.splice(i, 1); else sel.push(id);
+    renderEditor();
+  },
+  'cm-reac': async (el) => {
+    if (!requireWrite()) return;
+    const c = S.db.comments.find((x) => x.id === el.dataset.id); if (!c) return;
+    const R = Object.assign({}, c.reacciones || {});
+    if (R[S.me.id] === el.dataset.v) delete R[S.me.id]; else R[S.me.id] = el.dataset.v;
+    await save('comments', Object.assign({}, c, { reacciones: R }));
+    if (R[S.me.id]) await avisarReaccion(c, R[S.me.id]);
+    if (ED && sheetOpen) { syncDraft(); renderEditor(); } else renderMain();
+  },
   'cm-abrir': (el) => {   // desde el feed: abre la pieza con ese comentario listo para corregir
     if (!requireWrite()) return;
     openEditor(el.dataset.p);

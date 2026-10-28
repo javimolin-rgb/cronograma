@@ -1763,7 +1763,10 @@
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "flavio",
    "text": "@Javi  me gusta la N°3 (si hay que elegir una), la ultima (4) no me gusta nada.\nGracias!",
-   "createdAt": "2026-10-28T14:50:25.409Z"
+   "createdAt": "2026-10-28T14:50:25.409Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "12611a57-3111-4673-9aa1-1ffab4b1e535",
@@ -3568,6 +3571,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3e8af700-0191-46a1-b9bc-374f4ca9bc0c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Opciones foto portada web”: @Javi  me gusta la N°3 (si hay que elegir una), la ultima (4",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi le puso 👍 a tu comentario en “Opciones foto portada web”: @Javi  me gusta la N°3 (si hay que elegir una), la ultima (4",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-10-28T15:33:39.542Z"
+  },
   {
    "id": "a801eb9b-b27b-4dc9-b4bb-558996c25e46",
    "to": "maca",

@@ -3510,7 +3510,7 @@
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "type": "supervision",
    "text": "comentó en “Pilotes”: @Javi OK con locución sería genial, avisanos cuando lo subas! Gracias!",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

@@ -349,63 +349,13 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-28T22:00:09.546Z",
+   "updatedAt": "2026-10-28T22:06:55.098Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-10-28T21:03:55.283Z",
    "publishedAt": null,
-   "artefactos": [
-    {
-     "id": "8bd76d77-0627-4248-b3ed-2022fa3315e5",
-     "base": "musica-reel-casa-huingan",
-     "nombre": "Música Reel Casa Huingán",
-     "carpeta": "archivos/sin-proyecto/musica-reel-casa-huingan",
-     "index": "index.html",
-     "origen": "https://claude.ai/artifact/9Y7shx8p5r2kYRGLkmSgNG",
-     "archivos": [
-      {
-       "ruta": "0_actual.mp3",
-       "sha": "6a7a2f8e59198c35af6e0bb19c3a763f05d420f8",
-       "size": 1111725
-      },
-      {
-       "ruta": "a_acustica.mp3",
-       "sha": "80abe7764f044714a6afffb66c03d38c77ae38b9",
-       "size": 1111725
-      },
-      {
-       "ruta": "b_piano_cine.mp3",
-       "sha": "f92c34e68cd38b46d0c99214c1048e94e149b31d",
-       "size": 1111725
-      },
-      {
-       "ruta": "c_house_organico.mp3",
-       "sha": "da06fe1813b9b6f5ad18eb4ac786f368dd6bfcc9",
-       "size": 1111725
-      },
-      {
-       "ruta": "d_lofi.mp3",
-       "sha": "65c1defee9a5535117f3576b28b12d2eff49e1e9",
-       "size": 1111725
-      },
-      {
-       "ruta": "index.html",
-       "sha": "db547a4af11316151a6316f10b6140ab34f87d7f",
-       "size": 10418
-      },
-      {
-       "ruta": "video.mp4",
-       "sha": "1bf8433622e5d119a0b04e0a55e8465bb5b79d3b",
-       "size": 10910910
-      }
-     ],
-     "size": 16479953,
-     "version": 1,
-     "by": "javi",
-     "at": "2026-10-28T22:06:23.000Z"
-    }
-   ]
+   "artefactos": []
   },
   {
    "id": "e-diagnostico",

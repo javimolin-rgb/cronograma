@@ -1,0 +1,157 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Música Reel Casa Huingán</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300&family=IBM+Plex+Mono:wght@500&family=Work+Sans:wght@400;500&display=swap">
+<style>
+  /* Layout: el reel a la izquierda como un teléfono, las pistas a la derecha como una lista para elegir; en móvil se apilan. */
+  :root {
+    --azul: #011E2F;          /* fondo, Azul Origen */
+    --azul-2: #0A2A3D;        /* superficie levemente más clara */
+    --niebla: #F1F4F3;        /* texto */
+    --niebla-2: #B9C4C7;      /* texto secundario */
+    --madera: #A9764A;        /* filete y selección */
+    --amarillo: #FFEDA0;      /* acento puntual */
+    --linea: rgba(241,244,243,.16);
+    --display: "Fraunces", Georgia, serif;
+    --body: "Work Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--azul); color: var(--niebla); font: 400 16px/1.5 var(--body);
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 32px 48px; }
+  .wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 28px; }
+  header { display: grid; gap: 10px; }
+  .rotulo { font: 500 13px/1 var(--mono); letter-spacing: .08em; color: var(--niebla-2); }
+  h1 { font: 300 clamp(36px, 6vw, 56px)/1.05 var(--display); margin: 0; text-wrap: balance; }
+  .filete { width: 64px; height: 4px; background: var(--madera); }
+  header p { margin: 0; color: var(--niebla-2); max-width: 62ch; }
+
+  .main { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 32px; align-items: start; }
+  @media (max-width: 760px) { .main { grid-template-columns: minmax(0, 1fr); } }
+  .tel { position: relative; width: 100%; max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 16;
+    border-radius: 18px; overflow: hidden; border: 1px solid var(--linea); background: #000; }
+  .tel video { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .tel button.play { position: absolute; inset: 0; border: 0; background: rgba(1,30,47,.35); color: var(--niebla);
+    font: 500 15px/1 var(--mono); letter-spacing: .06em; cursor: pointer; display: grid; place-items: center; }
+  .tel button.play span { padding: 14px 20px; border-radius: 4px; background: var(--azul); border: 1px solid var(--linea); }
+  .barra { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; max-width: 340px; margin: 12px auto 0; }
+  .barra button { font: 500 13px/1 var(--mono); letter-spacing: .06em; color: var(--azul); background: var(--niebla);
+    border: 0; border-radius: 4px; padding: 10px 12px; cursor: pointer; min-width: 92px; }
+  .barra input { width: 100%; accent-color: var(--madera); }
+  .barra output { font: 500 13px/1 var(--mono); color: var(--niebla-2); font-variant-numeric: tabular-nums; }
+
+  .pistas { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .pista { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; padding: 16px 18px; border-radius: 6px;
+    border: 1px solid var(--linea); background: transparent; color: inherit; text-align: left; width: 100%; cursor: pointer;
+    font: inherit; }
+  .pista:hover { background: var(--azul-2); }
+  .pista:focus-visible { outline: 2px solid var(--amarillo); outline-offset: 2px; }
+  .pista[aria-pressed="true"] { background: var(--azul-2); border-color: var(--madera); box-shadow: inset 4px 0 0 var(--madera); }
+  .letra { font: 500 15px/28px var(--mono); text-align: center; border-radius: 4px; border: 1px solid var(--linea); height: 28px; }
+  .pista[aria-pressed="true"] .letra { background: var(--madera); border-color: var(--madera); color: var(--azul); }
+  .pista b { display: block; font: 300 26px/1.15 var(--display); }
+  .pista small { display: block; margin-top: 6px; color: var(--niebla-2); font-size: 14px; }
+  .pista .ficha { display: block; margin-top: 8px; font: 500 12px/1.4 var(--mono); letter-spacing: .05em; color: var(--niebla-2); }
+  .tag { display: inline-block; margin-left: 8px; padding: 3px 7px; border-radius: 3px; font: 500 11px/1 var(--mono);
+    letter-spacing: .06em; vertical-align: middle; background: var(--amarillo); color: var(--azul); }
+  .nota { color: var(--niebla-2); font-size: 14px; max-width: 70ch; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="rotulo">REEL MODELO DE LA SEMANA · CASA HUINGÁN</span>
+    <h1>¿Con qué música va?</h1>
+    <div class="filete"></div>
+    <p>Mismo video, misma voz en off y mismos efectos. Solo cambia la música: dale play y cambia de pista sin detener el video para compararlas en el mismo momento.</p>
+  </header>
+
+  <div class="main">
+    <div>
+      <div class="tel">
+        <video id="v" src="video.mp4" playsinline muted preload="auto"></video>
+        <button class="play" id="bigplay" type="button"><span>▶ REPRODUCIR CON SONIDO</span></button>
+      </div>
+      <div class="barra">
+        <button type="button" id="pp">▶ PLAY</button>
+        <input type="range" id="pos" min="0" max="46" step="0.05" value="0" aria-label="Posición en el video">
+        <output id="tc">0,0 s</output>
+      </div>
+    </div>
+
+    <ul class="pistas" id="lista">
+      <li><button class="pista" type="button" data-src="a_acustica.mp3" aria-pressed="true">
+        <span class="letra">A</span>
+        <span><b>Acústica luminosa</b>
+          <small>Guitarra acústica en fingerpicking, contrabajo, palmas y shaker; arpa en la planta. Cálida y cercana, de casa con familia.</small>
+          <span class="ficha">SOL MAYOR · 96 BPM</span></span></button></li>
+      <li><button class="pista" type="button" data-src="b_piano_cine.mp3" aria-pressed="false">
+        <span class="letra">B</span>
+        <span><b>Piano cinematográfico</b>
+          <small>Piano en ostinato con cello, violín y un pulso grave; toms y golpe cuando el dron sube. La más emotiva, acompaña bien la voz.</small>
+          <span class="ficha">LA MENOR · 76 BPM</span></span></button></li>
+      <li><button class="pista" type="button" data-src="c_house_organico.mp3" aria-pressed="false">
+        <span class="letra">C</span>
+        <span><b>House orgánico</b>
+          <small>Bombo 4x4 suave, sub bajo con bombeo, piano en contratiempo y xilófono. La más moderna, estilo reel de arquitectura.</small>
+          <span class="ficha">FA MENOR · 118 BPM</span></span></button></li>
+      <li><button class="pista" type="button" data-src="d_lofi.mp3" aria-pressed="false">
+        <span class="letra">D</span>
+        <span><b>Lo-fi cálido</b>
+          <small>Piano con efecto de cinta, bajo eléctrico, batería con swing, guitarra limpia y crujido de vinilo. Relajada pero con ritmo.</small>
+          <span class="ficha">RE DÓRICO · 82 BPM</span></span></button></li>
+      <li><button class="pista" type="button" data-src="0_actual.mp3" aria-pressed="false">
+        <span class="letra">0</span>
+        <span><b>La actual <span class="tag">REFERENCIA</span></b>
+          <small>El loop sintetizado de Casa Lingue, para comparar.</small>
+          <span class="ficha">RE MAYOR · 100 BPM</span></span></button></li>
+    </ul>
+  </div>
+
+  <p class="nota">Todas siguen las mismas secciones del video: entran con el título, crecen cuando el dron sube a la cenital, se vacían en la planta para leer y cierran con un acorde en "Llave en mano". Instrumentos sampleados de tonejs-instruments (VSCO 2, Iowa, Karoryfer, CC BY 3.0) y percusión sintetizada; sin canciones con derechos.</p>
+</div>
+
+<script>
+  const v = document.getElementById("v"), pp = document.getElementById("pp"), big = document.getElementById("bigplay");
+  const pos = document.getElementById("pos"), tc = document.getElementById("tc");
+  const botones = [...document.querySelectorAll(".pista")];
+  const audios = {};
+  botones.forEach(b => { const a = new Audio(b.dataset.src); a.preload = "auto"; audios[b.dataset.src] = a; });
+  let actual = botones.find(b => b.getAttribute("aria-pressed") === "true").dataset.src;
+  const A = () => audios[actual];
+  const fmt = t => t.toFixed(1).replace(".", ",") + " s";
+
+  function sync(force) {
+    const a = A();
+    if (force || Math.abs(a.currentTime - v.currentTime) > 0.12) { try { a.currentTime = v.currentTime; } catch (e) {} }
+  }
+  async function play() {
+    sync(true);
+    try { await Promise.all([v.play(), A().play()]); } catch (e) {}
+    big.hidden = true; pp.textContent = "❚❚ PAUSA";
+  }
+  function pause() { v.pause(); Object.values(audios).forEach(a => a.pause()); pp.textContent = "▶ PLAY"; }
+  pp.addEventListener("click", () => v.paused ? play() : pause());
+  big.addEventListener("click", play);
+  v.addEventListener("click", () => v.paused ? play() : pause());
+  v.addEventListener("ended", () => { pause(); big.hidden = false; v.currentTime = 0; });
+  v.addEventListener("timeupdate", () => { pos.value = v.currentTime; tc.textContent = fmt(v.currentTime); if (!v.paused) sync(false); });
+  v.addEventListener("loadedmetadata", () => { pos.max = v.duration.toFixed(2); });
+  pos.addEventListener("input", () => { v.currentTime = +pos.value; sync(true); tc.textContent = fmt(+pos.value); });
+
+  botones.forEach(b => b.addEventListener("click", () => {
+    const corriendo = !v.paused;
+    A().pause();
+    botones.forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+    actual = b.dataset.src;
+    try { localStorage.setItem("huingan-pista", actual); } catch (e) {}
+    sync(true);
+    if (corriendo) A().play().catch(() => {});
+    else if (v.currentTime === 0) play();
+  }));
+</script>
+
+</body></html>

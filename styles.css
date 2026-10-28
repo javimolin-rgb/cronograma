@@ -686,6 +686,9 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .artet{flex:1;min-width:120px}
 .artet b{display:block;font-size:0.875rem;font-weight:800;line-height:1.25}
 .artet small{color:var(--muted);font-size:0.6875rem}
+.arteorig{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.arteorig a{font-size:0.75rem;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:4px}
+.arteorig .field{flex:1;min-width:180px;font-size:0.8125rem;padding:7px 10px}
 .arteup{position:relative;overflow:hidden}
 .arteup input{position:absolute;inset:0;opacity:0;cursor:pointer;font-size:0}
 .intchip{display:inline-flex;align-items:center;gap:3px;flex:none;font-size:0.625rem;font-weight:800;font-style:normal;letter-spacing:.03em;text-transform:uppercase;

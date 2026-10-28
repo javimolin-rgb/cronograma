@@ -31,6 +31,8 @@ Además de fotos y videos, una pieza puede llevar una **página interactiva**: p
 
 **Cómo se ve:** la pieza queda marcada como **Interactivo** (en las tarjetas, en el feed y en la vista de resultado) y cualquiera del equipo puede tocar **Abrir** para usarla a pantalla completa dentro de la app.
 
+**El enlace del original:** en la tarjeta se puede guardar el enlace de donde salió el interactivo (por ejemplo el artefacto en Claude). Sirve para volver a él cuando haya que exportar una versión nueva, pero **no se actualiza solo**: Claude no deja que sus artefactos se muestren dentro de otra página ni que se descarguen sin la sesión de uno, así que el contenido vive siempre en el repositorio. El camino corto para actualizar es: en Claude, descargar el .zip → soltarlo sobre la pieza (o *Actualizar*) → *Guardar cambios*.
+
 Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a la clave de la app (si guarda algo “recordado”, como la última pista elegida, no lo va a recordar). Cada archivo puede pesar hasta 24 MB, y como todo queda en el repositorio, conviene no dejar interactivos que ya no se usan: **Quitar** borra también sus archivos.
 
 ## Nombrar una foto o un video en un comentario

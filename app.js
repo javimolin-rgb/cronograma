@@ -870,9 +870,10 @@ async function subirArtefacto(file, prev) {
     const m = html.match(/<title[^>]*>([^<]{1,80})<\/title>/i);
     if (m && m[1].trim()) nombre = m[1].trim();
   } catch (e) { /* nos quedamos con el nombre del archivo */ }
-  const base = (prev && prev.base) || slugify(nombre, 'interactivo');
-  const carpeta = `${(store.cfg && store.cfg.files) || 'archivos'}/${slugify(projectName(ed.d), 'general')}/${base}`;
-  const previos = (prev && prev.archivos) || [];
+  const existente = prev || (ed.d.artefactos || []).find((x) => x.base === slugify(nombre, 'interactivo'));
+  const base = (existente && existente.base) || slugify(nombre, 'interactivo');
+  const carpeta = (existente && existente.carpeta) || `${(store.cfg && store.cfg.files) || 'archivos'}/${slugify(projectName(ed.d), 'general')}/${base}`;
+  const previos = (existente && existente.archivos) || [];
   const mapa = {}; previos.forEach((x) => { mapa[x.ruta] = x; });
   const archivos = [];
   let n = 0, subidos = 0;
@@ -898,16 +899,17 @@ async function subirArtefacto(file, prev) {
     return true;
   }
   const entrada = {
-    id: (prev && prev.id) || uid(), base, nombre, carpeta, index: 'index.html', archivos,
+    id: (existente && existente.id) || uid(), base, nombre, carpeta, index: 'index.html', archivos,
+    origen: (existente && existente.origen) || '',
     size: archivos.reduce((a, x) => a + (x.size || 0), 0),
-    version: prev ? (prev.version || 1) + 1 : 1, by: S.me.id, at: nowISO()
+    version: existente ? (existente.version || 1) + 1 : 1, by: S.me.id, at: nowISO()
   };
   const lista = ed.d.artefactos || (ed.d.artefactos = []);
   const i = lista.findIndex((x) => x.id === entrada.id || x.base === entrada.base);
   if (i >= 0) lista[i] = entrada; else lista.push(entrada);
   ed.art = null;
   renderEditor();
-  toast(`${prev || i >= 0 ? `“${nombre}” actualizado: ${subidos || 'ningún'} archivo${subidos === 1 ? '' : 's'} nuevo${subidos === 1 ? '' : 's'}` : `“${nombre}” listo`} · guarda la pieza para dejarlo`, 5000);
+  toast(`${existente ? `“${nombre}” actualizado: ${subidos || 'ningún'} archivo${subidos === 1 ? '' : 's'} nuevo${subidos === 1 ? '' : 's'}` : `“${nombre}” listo`} · guarda la pieza para dejarlo`, 5000);
   return true;
 }
 const arteSrc = (a) => `${a.carpeta}/${a.index || 'index.html'}`.split('/').map(encodeURIComponent).join('/');
@@ -932,7 +934,9 @@ function artefactoHtml(p, conAcciones) {
       <div class="artet"><b>${esc(a.nombre)}</b><small>${esc(prettySize(a.size))} · ${a.archivos.length} archivo${a.archivos.length === 1 ? '' : 's'}${a.version > 1 ? ` · versión ${a.version}` : ''} · ${esc(ago(a.at))}</small></div>
       <button class="btn sm" data-act="arte-abrir" data-p="${esc(p.id)}" data-id="${esc(a.id)}">Abrir</button>
       ${conAcciones && puedeArtefactos() ? `<label class="btn ghost sm arteup">Actualizar<input type="file" accept=".zip,application/zip" data-art="${esc(a.id)}"></label>
-      <button class="iconbtn danger" data-act="arte-quitar" data-id="${esc(a.id)}" aria-label="Quitar">${ic('trash', 17)}</button>` : ''}
+      <button class="iconbtn danger" data-act="arte-quitar" data-id="${esc(a.id)}" aria-label="Quitar">${ic('trash', 17)}</button>
+      <div class="arteorig">${a.origen ? `<a href="${esc(a.origen)}" target="_blank" rel="noopener">${ic('link', 14)} Abrir el original</a>` : ''}
+        <input class="field" data-arteurl="${esc(a.id)}" placeholder="Enlace del original (para volver a exportarlo)" value="${esc(a.origen || '')}"></div>` : ''}
     </div>`).join('')}`;
 }
 
@@ -2795,12 +2799,15 @@ document.addEventListener('paste', (e) => {
   pegarImagenes(imgs.map((f, n) => new File([f], f.name && f.name !== 'image.png' ? f.name : `pegada-${Date.now()}-${n + 1}.png`, { type: f.type })));
 });
 document.addEventListener('dragover', (e) => { if (sheetOpen && e.dataTransfer && [...e.dataTransfer.types].includes('Files')) e.preventDefault(); });
-document.addEventListener('drop', (e) => {
+document.addEventListener('drop', async (e) => {
   if (!sheetOpen || !e.dataTransfer || !e.dataTransfer.files.length) return;
-  const imgs = [...e.dataTransfer.files].filter((f) => /^image\//.test(f.type));
-  if (!imgs.length) return;
+  const todo = [...e.dataTransfer.files];
+  const zips = ED && puedeArtefactos() ? todo.filter((f) => /\.zip$/i.test(f.name || '')) : [];
+  const imgs = todo.filter((f) => /^image\//.test(f.type));
+  if (!imgs.length && !zips.length) return;
   e.preventDefault();
-  pegarImagenes(imgs);
+  for (const z of zips) { if (!(await subirArtefacto(z))) toast('Ese .zip no trae un index.html', 4000); }
+  if (imgs.length) pegarImagenes(imgs);
 });
 
 /* ---------- acciones (clicks) ---------- */
@@ -3163,6 +3170,10 @@ document.addEventListener('change', (e) => {
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
   else if (t.dataset && t.dataset.art) onArtFile(t);
+  else if (t.dataset && t.dataset.arteurl) {
+    const a = ((ED && ED.d.artefactos) || []).find((x) => x.id === t.dataset.arteurl);
+    if (a) { a.origen = normUrl(t.value) || ''; toast('Enlace anotado · guarda la pieza'); }
+  }
   else if (t.id === 'zip-in') { const f = t.files[0]; t.value = ''; importarZip(f); }
   else if (t.id === 'imp-archivos') { const fs = [...t.files]; t.value = ''; elegirArchivosImport(fs); }
 });

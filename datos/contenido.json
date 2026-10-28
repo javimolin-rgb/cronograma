@@ -1702,6 +1702,13 @@
  ],
  "comments": [
   {
+   "id": "2b00a18b-7c5f-423b-bcc2-9a0faf37565a",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "flavio",
+   "text": "@Javi  me gusta la N°3 (si hay que elegir una), la ultima (4) no me gusta nada.\nGracias!",
+   "createdAt": "2026-10-28T14:50:25.409Z"
+  },
+  {
    "id": "12611a57-3111-4673-9aa1-1ffab4b1e535",
    "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
    "author": "javi",
@@ -2560,6 +2567,16 @@
  ],
  "activity": [
   {
+   "id": "e5826f7a-d2cb-45b7-a83c-91a637eba86d",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-28T14:50:25.410Z"
+  },
+  {
    "id": "02faf6d2-9be3-4f01-9d41-94e43bd6006e",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "postTitle": "Opciones foto portada web",
@@ -3401,6 +3418,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f490b7c7-c6e5-40c2-895b-34eafdfe2487",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "supervision",
+   "text": "comentó en “Opciones foto portada web”: @Javi  me gusta la N°3 (si hay que elegir una), la ultima (4) no me gusta nada.\n…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Opciones foto portada web”: @Javi  me gusta la N°3 (si hay que elegir una), la ultima (4) no me gusta nada.\n…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-10-28T14:50:25.411Z"
+  },
   {
    "id": "81c0385f-541c-4c33-bff2-039d0f7f323f",
    "to": "maca",

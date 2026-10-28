@@ -968,6 +968,11 @@ function renderBanner() {
   else if (!store.canWrite) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para escribir, ${store.hayAcceso && store.hayAcceso() ? `<button class="lnk" data-act="acc-pedir">escribe tu clave</button>` : 'pídele la clave a Javi'}.</div>`);
   else if (store.caducada) out.push(`<div class="demo"><b>La clave dejó de servir.</b> Pídele una nueva a Javi.</div>`);
   if (S.compartidos && puedeImportar() && !(IMP && IMP.compartido)) out.push(`<div class="demo comp"><span>${ic('share', 16)} <b>${S.compartidos} reenvío${S.compartidos === 1 ? '' : 's'}</b> esperando revisión.</span><button class="btn sm" data-act="comp-revisar">Revisar</button></div>`);
+  if (avisoPush && !pushOculto()) {
+    out.push(avisoPush === 'blocked'
+      ? `<div class="demo install"><span>🔕 <b>Este dispositivo tiene las notificaciones bloqueadas.</b> Actívalas en los ajustes del teléfono, en Cronograma → Notificaciones.</span><button class="iconbtn" data-act="hide-push" aria-label="Ocultar">${ic('x', 16)}</button></div>`
+      : `<div class="demo install"><span>🔔 <b>No estás recibiendo avisos en este dispositivo.</b></span><button class="btn sm" data-act="push-on">Activar</button><button class="iconbtn" data-act="hide-push" aria-label="Ocultar">${ic('x', 16)}</button></div>`);
+  }
   if (!isStandalone() && !localStorage.getItem('crono_hide_install')) {
     const how = deferredInstall ? `<button class="btn sm" data-act="install-app">Instalar</button>`
       : isIOS() ? 'Toca <b>Compartir</b> y luego <b>“Agregar a pantalla de inicio”</b>.' : 'Menú del navegador (⋮) → <b>“Instalar app”</b> o “Agregar a pantalla de inicio”.';
@@ -1090,8 +1095,43 @@ async function disablePush() {
 async function syncPushSub() { // este celular pasa a ser de la persona que está usando la app
   try {
     if (store.mode !== 'github' || !store.canWrite || !pushSupported() || Notification.permission !== 'granted') return;
-    const sub = await currentSub(); if (sub) await registerSub(sub);
+    const reg = await navigator.serviceWorker.ready;
+    let sub = await reg.pushManager.getSubscription();
+    // Al borrar y volver a instalar la app, la suscripción se pierde. Con el permiso ya dado se rehace sola.
+    if (!sub) { try { sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToU8(CFG.PUSH.VAPID_PUBLIC_KEY) }); } catch (e) { sub = null; } }
+    if (!sub) return;
+    const id = await subId(sub.endpoint);
+    const prev = S.db.push_subs.find((x) => x.id === id);
+    if (!prev || prev.person !== S.me.id) await registerSub(sub);
   } catch (e) { /* silencioso */ }
+}
+/* Si la app está instalada y este aparato no está recibiendo nada, se avisa arriba:
+   es lo que pasa al reinstalarla, porque el permiso se borra con la app. */
+let avisoPush = '';
+const pushOculto = () => { try { return Date.now() - Number(localStorage.getItem('crono_hide_push') || 0) < 7 * 864e5; } catch (e) { return false; } };
+async function revisarPush() {
+  avisoPush = '';
+  try {
+    if (S.me && store.mode === 'github' && store.canWrite && pushSupported() && isStandalone()) {
+      const st = await pushState();
+      if (st === 'off' || st === 'blocked') avisoPush = st;
+    }
+  } catch (e) { /* si no se puede saber, no se avisa */ }
+  if (S.me) renderBanner();
+}
+// Las suscripciones que el envío marcó como vencidas (el celular ya no existe) se borran solas
+async function limpiarSubsMuertas() {
+  try {
+    if (store.mode !== 'github' || !store.canWrite || !S.db.push_subs.length) return;
+    const rutas = ['datos/avisos-enviados.json?t=' + Date.now()];
+    if (store.rawUrl) rutas.push(store.rawUrl('datos/avisos-enviados.json') + '?t=' + Date.now());
+    let muertos = null;
+    for (const u of rutas) {
+      try { const r = await fetch(u, { cache: 'no-store' }); if (r.ok) { const j = await r.json(); if (j) { muertos = j.muertos || []; break; } } } catch (e) { /* la siguiente */ }
+    }
+    if (!muertos || !muertos.length) return;
+    for (const x of S.db.push_subs.filter((y) => muertos.includes(y.id))) await removeRow('push_subs', x.id);
+  } catch (e) { /* no es importante */ }
 }
 /* ---------- dispositivos: dónde está abierta la app y con qué persona ---------- */
 function idDispositivo() {
@@ -2731,7 +2771,8 @@ const ACTS = {
     if (S.me && claveDe(S.me.id)) localStorage.removeItem('crono_perfil_' + S.me.id); // al salir, la próxima vez vuelve a pedirla
     localStorage.removeItem('crono_me'); location.reload();
   },
-  'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); registrarDispositivo(); },
+  'push-on': async (el) => { el.disabled = true; try { if (await enablePush()) toast('Notificaciones activadas'); } catch (e) { console.error(e); toast('No se pudo activar: ' + (e.message || e)); } renderPushBox(); registrarDispositivo(); revisarPush(); },
+  'hide-push': () => { try { localStorage.setItem('crono_hide_push', String(Date.now())); } catch (e) { /* sin espacio */ } avisoPush = ''; renderBanner(); },
   'push-off': async () => { await disablePush(); toast('Notificaciones desactivadas en este celular'); renderPushBox(); registrarDispositivo(); },
   'disp-ver': () => openDispositivos(),
   'disp-olvidar': async (el) => {
@@ -2977,7 +3018,8 @@ async function startApp() {
   S.f.mine = false;
   renderAll();
   openFromHash();
-  syncPushSub();
+  syncPushSub().then(revisarPush);
+  limpiarSubsMuertas();
   pruneOld();
   setTimeout(registrarDispositivo, 2500); // después de saber la versión
   const qs = new URLSearchParams(location.search);

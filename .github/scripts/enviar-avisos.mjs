@@ -19,6 +19,9 @@ const leer = (f, x) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } 
 const db = leer(DATOS, {});
 const registro = leer(REGISTRO, { enviados: [] });
 const yaEnviado = new Set(registro.enviados || []);
+// Celulares que ya no existen (la app se borró o la suscripción venció): no se les insiste,
+// y la app los saca solos de la lista la próxima vez que alguien la abre.
+const muertos = new Set(registro.muertos || []);
 
 const corte = Date.now() - DIAS * 864e5;
 const pendientes = (db.notifications || []).filter((n) =>
@@ -30,7 +33,7 @@ const subs = db.push_subs || [];
 let enviados = 0, fallidos = 0;
 
 for (const n of pendientes) {
-  const destinos = subs.filter((s) => s.person === n.to && s.sub);
+  const destinos = subs.filter((s) => s.person === n.to && s.sub && !muertos.has(s.id));
   const carga = JSON.stringify({
     title: n.title || 'Cronograma',
     body: n.body || n.text || '',
@@ -40,11 +43,20 @@ for (const n of pendientes) {
   });
   for (const s of destinos) {
     try { await webpush.sendNotification(s.sub, carga); enviados++; }
-    catch (e) { fallidos++; console.log('No se pudo enviar a', n.to, e.statusCode || e.message); }
+    catch (e) {
+      const codigo = e.statusCode || 0;
+      if (codigo === 404 || codigo === 410) { muertos.add(s.id); console.log('Suscripción vencida de', n.to, '— se borrará de la lista'); }
+      else { fallidos++; console.log('No se pudo enviar a', n.to, codigo || e.message); }
+    }
   }
   yaEnviado.add(n.id);
 }
 
 const lista = [...yaEnviado].slice(-MAX_REGISTRO);
-fs.writeFileSync(REGISTRO, JSON.stringify({ enviados: lista }, null, 1) + '\n');
-console.log(`Avisos procesados: ${pendientes.length} · notificaciones enviadas: ${enviados} · fallidas: ${fallidos}`);
+fs.writeFileSync(REGISTRO, JSON.stringify({ enviados: lista, muertos: [...muertos].slice(-200) }, null, 1) + '\n');
+console.log(`Avisos procesados: ${pendientes.length} · notificaciones enviadas: ${enviados} · fallidas: ${fallidos} · suscripciones vencidas: ${muertos.size}`);
+
+// Si nadie quedó para recibir un aviso, conviene verlo en el registro del flujo
+for (const n of pendientes) {
+  if (!subs.some((s) => s.person === n.to && s.sub && !muertos.has(s.id))) console.log(`Aviso para ${n.to}: no tiene ningún celular con notificaciones activas.`);
+}

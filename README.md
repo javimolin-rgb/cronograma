@@ -88,6 +88,16 @@ En **Settings → Secrets and variables → Actions**, tres secretos: `VAPID_PUB
 - **iPhone (iOS 16.4+):** abrir en **Safari** → Compartir → **Agregar a pantalla de inicio**. Las notificaciones solo funcionan abriéndola desde ese ícono.
 - **Android:** abrir en Chrome → **Instalar** en el aviso de arriba.
 
+## Si no te llegan las notificaciones al celular
+
+El aviso se guarda siempre (la campana dentro de la app), pero para que suene el teléfono ese aparato tiene que estar **suscrito**. Lo primero: abrir la app desde el ícono de la pantalla de inicio y mirar **Ajustes**; ahí dice si este celular las tiene activas, y con *Enviarme una de prueba* se comprueba en el momento.
+
+Lo que más pasa: **se borró y se volvió a instalar la app**. iOS borra con ella el permiso y la suscripción, así que hay que volver a tocar *Activar en este celular* aunque antes funcionara. Para que no pase inadvertido, cuando la app está instalada y este aparato no está recibiendo nada, aparece un aviso arriba con el botón **Activar** (se puede ocultar y vuelve a la semana).
+
+Si el permiso sigue dado pero la suscripción se perdió, la app la rehace sola al abrirla. Y cuando el envío descubre que un celular ya no existe (el servidor responde que la suscripción venció), queda anotado y se borra solo de la lista, para que *Dispositivos* no muestre celulares que en realidad no reciben nada.
+
+Si en el teléfono están bloqueadas: **Ajustes del iPhone → Cronograma → Notificaciones → Permitir**.
+
 ## Cómo se mantiene al día
 
 La app se actualiza sola: cada vez que se abre revisa si hay una versión nueva y, si la hay, se recarga con los cambios. En **Ajustes** aparece el número de versión y un botón **Buscar actualización** para forzarla al instante.

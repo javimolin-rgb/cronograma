@@ -37,7 +37,7 @@ Debajo de cada comentario propio está **Editar**: se corrige el texto y se guar
 
 El comentario corregido queda marcado como **corregido**, y con **“Cómo decía antes”** cualquiera del equipo puede ver las versiones anteriores, con la fecha y quién las cambió (se guardan las últimas 20). Nada se pierde ni se reescribe a escondidas.
 
-Quien administra (`ADMIN_PEOPLE`) puede corregir cualquier comentario, incluidos los importados de WhatsApp; Flavio y Maca, solo los suyos.
+Cada uno corrige **solo lo suyo**: los comentarios de Flavio los edita Flavio, los de Maca los edita Maca. Nadie puede reescribir lo que escribió otro, ni siquiera quien administra.
 
 ## Tareas sin fecha límite
 

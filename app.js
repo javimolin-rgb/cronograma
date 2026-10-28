@@ -1523,7 +1523,7 @@ async function avisarReaccion(c, v) {
 }
 
 // Los comentarios se pueden corregir: el texto anterior se guarda para poder mirarlo.
-const puedeEditarComentario = (c) => store.canWrite && (c.author === S.me.id || esAdmin());
+const puedeEditarComentario = (c) => store.canWrite && c.author === S.me.id;
 async function guardarComentario(id, texto) {
   const c = S.db.comments.find((x) => x.id === id);
   if (!c || !puedeEditarComentario(c)) return;

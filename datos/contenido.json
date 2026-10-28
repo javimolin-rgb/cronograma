@@ -4203,6 +4203,21 @@
  ],
  "push_subs": [
   {
+   "id": "ps_ffc3b0d3c6d5c0aea9fb7fc5f59bfe7b",
+   "person": "javi",
+   "device": "d_005f1d53f0f34e1a",
+   "sub": {
+    "endpoint": "https://fcm.googleapis.com/fcm/send/fKsbnO4Fnx4:APA91bFS1sKys7pDGBAonfR1cLpUlttRNCwjMaW7hFMLBQLL48OSgPNn23fEleHCa3OE0SXkx2r7E03nXnbvVzNfU3XR9uPLG7WjP-k-GGwdP_9K_GF6U9JmhJSVrGZ5hMJdLV2xKYx1",
+    "expirationTime": null,
+    "keys": {
+     "p256dh": "BKOnSmCCND_uiDeYIdT2C44peTmsLOjh7FXLp9Q41Ohr7b_H_wnERMNTL6tshNDyDYjbeTzWrEuzYWhzN7ptmGY",
+     "auth": "Mt38TEiBd2wnA1BQ0dStOw"
+    }
+   },
+   "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+   "createdAt": "2026-10-28T15:13:22.703Z"
+  },
+  {
    "id": "ps_5b4a8274a827a1b71d1158dfcc33fa0d",
    "person": "flavio",
    "device": "d_5888b1e332884189",
@@ -4331,11 +4346,11 @@
    "navegador": "Chrome",
    "tipo": "pc",
    "instalada": false,
-   "push": false,
-   "version": "2026.10.27-2",
+   "push": true,
+   "version": "2026.10.28-1",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-10-27T20:45:40.700Z"
+   "lastSeen": "2026-10-28T15:13:23.191Z"
   }
  ]
 }

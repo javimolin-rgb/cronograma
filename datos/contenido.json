@@ -4556,6 +4556,14 @@
     "deadline": {
      "app": 1,
      "push": 0
+    },
+    "reaccion": {
+     "app": 1,
+     "push": 1
+    },
+    "supervision": {
+     "app": 1,
+     "push": 1
     }
    },
    "createdAt": "2026-10-22T20:38:02.121Z",

@@ -71,6 +71,26 @@ Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achic
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 
+## Que el repositorio no se llene
+
+Todo vive en el repositorio, así que la app cuida el espacio sola:
+
+- **Las fotos se guardan en el formato más liviano** que el navegador sepa escribir (normalmente **WebP**, que pesa como la mitad de un JPEG igual de bueno) y achicadas a 1800 px. En las pruebas, una foto de 180 KB quedó en 106 KB sin que se note.
+- **No se guarda dos veces lo mismo.** Antes de subir, la app compara el contenido con lo que ya está: si ese archivo exacto ya existe —en esta pieza o en otra— no lo vuelve a subir, lo enlaza. Al quitar un archivo que otra pieza también usa, solo se saca de la pieza, no se borra.
+- **Los videos de más de 24 MB se comprimen** antes de subirse (ver más arriba).
+
+### Espacio (solo Javi)
+
+En **Entregas → Espacio** se ve cuánto ocupa todo y qué se puede soltar, en tres grupos:
+
+| Grupo | Qué es |
+|---|---|
+| Versiones anteriores | Lo que quedó atrás al subir una versión nueva. Se conserva siempre la última de cada archivo. |
+| Archivos sueltos | Están en el repositorio pero ninguna pieza los usa: sobras de subidas que no terminaron. |
+| Repetidos | El mismo contenido guardado dos veces. Se deja una copia y las piezas apuntan a ella. |
+
+Cada grupo se suelta por separado, con su confirmación y el peso que libera. Ojo: eso libera el sitio publicado, pero el historial de GitHub sigue guardando lo que hubo (es así por diseño).
+
 ## Archivos por tandas
 
 Los archivos de una pieza se ordenan por **tandas**: lo que se subió de una vez queda junto, con su fecha y hora (“23 oct, 21:04 · 2 archivos”), y la tanda más nueva va arriba. Así lo último entregado —la versión final— es lo primero que se ve, tanto en Entregas como en el carrusel de la pieza.

@@ -546,7 +546,8 @@ function viewFiles() {
   const head = `<div class="fhead">
       <div class="chips"><button class="chip${S.lastOnly ? ' on' : ''}" data-act="toggle-last">${ic('check', 15)} Solo última versión</button>
       <button class="chip${S.conPrompts ? ' on' : ''}" data-act="toggle-prompts">${ic('copy', 15)} Con prompt para IA</button>
-      <button class="btn ghost sm" data-act="dl-all">${ic('download', 16)} Todo</button></div>
+      <button class="btn ghost sm" data-act="dl-all">${ic('download', 16)} Todo</button>
+      <button class="btn ghost sm" data-act="espacio">${ic('folder', 15)} Espacio</button></div>
       <small>${groups.length} proyecto${groups.length === 1 ? '' : 's'} · ${totalFiles} archivo${totalFiles === 1 ? '' : 's'}</small></div>`;
   if (!groups.length) return head + emptyBox('Todavía no hay entregas', 'Cada pieza con archivos o enlaces aparece aquí, agrupada por proyecto.');
   const body = groups.map((g) => {
@@ -850,6 +851,73 @@ async function feedEnviar(id) {
     renderMain();
     toast('Comentario enviado');
   } catch (e) { if (inp) inp.disabled = false; }
+}
+
+/* ---------- espacio: qué ocupa el repositorio y qué se puede soltar (solo quien administra) ---------- */
+let ESPACIO = null;
+async function analizarEspacio() {
+  const dir = (store.cfg && store.cfg.files) || 'archivos';
+  const arbol = (await store.arbol()).filter((x) => x.path.startsWith(dir + '/'));
+  const porPath = new Map(arbol.map((x) => [x.path, x]));
+  const enUso = new Set(), viejas = [];
+  S.db.posts.forEach((p) => {
+    Object.values(filesOf(p)).forEach((lista) => {
+      lista.forEach((f, i) => {
+        if (!f.path) return;
+        if (i === 0) enUso.add(f.path); else viejas.push({ path: f.path, id: f.id, post: p, sha: f.sha, name: f.name });
+      });
+    });
+    (p.artefactos || []).forEach((a) => (a.archivos || []).forEach((x) => enUso.add(`${a.carpeta}/${x.ruta}`)));
+  });
+  const viejasReales = viejas.filter((v) => !enUso.has(v.path) && porPath.has(v.path));
+  const conocidos = new Set(viejasReales.map((v) => v.path));
+  const sueltos = arbol.filter((x) => !enUso.has(x.path) && !conocidos.has(x.path));
+  // mismo contenido guardado dos veces en rutas distintas
+  const porSha = {};
+  arbol.forEach((x) => { (porSha[x.sha] = porSha[x.sha] || []).push(x); });
+  const duplicados = Object.values(porSha).filter((g) => g.length > 1);
+  const peso = (lista) => lista.reduce((a, x) => a + ((porPath.get(x.path) || x).size || 0), 0);
+  return {
+    total: arbol.reduce((a, x) => a + x.size, 0), archivos: arbol.length,
+    viejas: viejasReales, pesoViejas: peso(viejasReales),
+    sueltos, pesoSueltos: peso(sueltos),
+    duplicados, pesoDuplicados: duplicados.reduce((a, g) => a + g.slice(1).reduce((b, x) => b + x.size, 0), 0)
+  };
+}
+async function abrirEspacio() {
+  if (!esAdmin()) return;
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Espacio</h2><span style="width:40px"></span></div>
+    <div class="pb"><p class="hint">Mirando lo que hay guardado…</p></div>`, true);
+  try { ESPACIO = await analizarEspacio(); } catch (e) { closeSheet(); toast('No se pudo revisar: ' + (e.message || e), 5000); return; }
+  renderEspacio();
+}
+function renderEspacio(estado) {
+  const E = ESPACIO; if (!E) return;
+  const grupo = (titulo, n, bytes, nota, accion, etiqueta) => `<div class="espgrupo">
+    <div><b>${esc(titulo)}</b><small>${n ? `${n} archivo${n === 1 ? '' : 's'} · ${esc(prettySize(bytes))}` : 'nada que soltar'}</small>
+      <p class="hint">${nota}</p></div>
+    ${n ? `<button class="btn ghost sm" data-act="${accion}">${esc(etiqueta)}</button>` : ''}</div>`;
+  $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Espacio</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <div class="kpis"><div class="kpi"><small>Guardado en total</small><b>${esc(prettySize(E.total))}</b><span>${E.archivos} archivos</span></div>
+        <div class="kpi"><small>Se podría soltar</small><b>${esc(prettySize(E.pesoViejas + E.pesoSueltos + E.pesoDuplicados))}</b></div></div>
+      ${estado ? `<div class="avisobar">${ic('send', 18)}<span>${esc(estado)}</span></div>` : ''}
+      ${grupo('Versiones anteriores', E.viejas.length, E.pesoViejas, 'Archivos que quedaron atrás cuando subiste una versión nueva. Se queda siempre la última de cada uno.', 'esp-viejas', 'Soltar')}
+      ${grupo('Archivos sueltos', E.sueltos.length, E.pesoSueltos, 'Están en el repositorio pero ninguna pieza los usa: sobras de subidas que no terminaron.', 'esp-sueltos', 'Soltar')}
+      ${grupo('Repetidos', E.duplicados.length, E.pesoDuplicados, 'El mismo contenido guardado más de una vez. Se deja una copia y las piezas apuntan a ella.', 'esp-dupes', 'Unir')}
+      <p class="hint">Lo que se suelta se borra del repositorio y no se puede deshacer desde aquí (queda en el historial de GitHub).</p>
+    </div>`;
+}
+async function soltarArchivos(lista, texto, alTerminar) {
+  let n = 0;
+  for (const x of lista) {
+    renderEspacio(`${texto}: ${++n} de ${lista.length}…`);
+    try { await store.deleteFile(x.path, x.sha); } catch (e) { console.warn('no se pudo borrar', x.path, e); }
+  }
+  if (alTerminar) await alTerminar();
+  ESPACIO = await analizarEspacio();
+  renderEspacio();
+  toast(`Listo: ${n} archivo${n === 1 ? '' : 's'} menos`, 4000);
 }
 
 /* ---------- interactivos: una página que se sube en un .zip y se abre dentro de la app ---------- */
@@ -1812,6 +1880,19 @@ async function onFiles(input) {
   const files = [...input.files]; input.value = '';
   await subirArchivos(files);
 }
+/* Antes de subir algo se mira si ese mismo contenido ya está guardado: así no se repite
+   el mismo archivo en el repositorio (pasa harto con lo que llega por WhatsApp dos veces). */
+function archivoConSha(sha) {
+  if (!sha) return null;
+  const buscar = (lista) => (lista || []).find((x) => x && x.path && (x.shaOrigen === sha || x.sha === sha));
+  if (ED) { const propio = buscar(ED.d.files); if (propio) return { f: propio, misma: true }; }
+  for (const p of S.db.posts) {
+    if (ED && p.id === ED.d.id) continue;
+    const f = buscar(p.files);
+    if (f) return { f, misma: false, post: p };
+  }
+  return null;
+}
 // Deja anotado un archivo que no quedó subido, para que se vea en la pieza y se pueda reintentar
 function anotarFallo(file, motivo) {
   const ed = ED; if (!ed) return;
@@ -1826,7 +1907,7 @@ async function subirArchivos(files) {
   if (!files || !files.length) return;
   ed.uploading += files.length; renderEditor();
   toast(`Subiendo ${files.length} archivo${files.length > 1 ? 's' : ''}…`, 10000);
-  let bien = 0;
+  let bien = 0, repetidos = 0;
   for (const f of files) {
     ed.fallos = (ed.fallos || []).filter((x) => x.nombre !== f.name);   // al reintentar, se borra el aviso anterior
     try {
@@ -1845,8 +1926,20 @@ async function subirArchivos(files) {
         const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
         const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
         const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
-        const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
-        ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version }, r)));
+        const shaOrigen = await shaGit(archivo).catch(() => '');
+        const gemelo = archivoConSha(shaOrigen);
+        if (gemelo && gemelo.misma) {                       // ya está en esta misma pieza: no se duplica
+          repetidos++;
+        } else if (gemelo) {
+          repetidos++;                                // está en otra pieza: se apunta al mismo archivo
+          ed.d.files.push(archivoSubido(Object.assign({}, gemelo.f, {
+            id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, name: nombre, shaOrigen
+          })));
+          toast(`“${f.name}” ya estaba guardado en “${gemelo.post ? gemelo.post.title : 'otra pieza'}”: lo enlacé sin volver a subirlo`, 5000);
+        } else {
+          const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
+          ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen }, r)));
+        }
       }
       bien++;
     }
@@ -1860,7 +1953,10 @@ async function subirArchivos(files) {
   }
   ed.subidos = (ed.subidos || 0) + bien;
   if (ED === ed) renderEditor();
-  if (bien) toast((ed.fallos || []).length ? `Subí ${bien} de ${files.length}. Mira el aviso rojo.` : 'Archivos listos');
+  if (bien) {
+    const extra = repetidos ? ` · ${repetidos} ya estaba${repetidos === 1 ? '' : 'n'} guardado${repetidos === 1 ? '' : 's'}, no se repitió` : '';
+    toast((ed.fallos || []).length ? `Subí ${bien} de ${files.length}. Mira el aviso rojo.` : `Archivos listos${extra}`, repetidos ? 5000 : 3000);
+  }
 }
 
 
@@ -2987,6 +3083,43 @@ const ACTS = {
   'status-menu': (el) => openStatusMenu(el.dataset.id),
   'set-status': async (el) => { closeSheet(); await changeStatus(el.dataset.id, el.dataset.v); },
   bell: () => openBell(),
+  espacio: () => abrirEspacio(),
+  'esp-viejas': async () => {
+    const E = ESPACIO; if (!E || !E.viejas.length) return;
+    if (!confirm(`¿Soltar ${E.viejas.length} versiones anteriores (${prettySize(E.pesoViejas)})?\n\nSe queda la última versión de cada archivo.`)) return;
+    const porPost = new Map();
+    E.viejas.forEach((v) => { const l = porPost.get(v.post.id) || []; l.push(v.id); porPost.set(v.post.id, l); });
+    await soltarArchivos(E.viejas, 'Soltando versiones', async () => {
+      for (const [pid, ids] of porPost) {
+        const p = S.db.posts.find((x) => x.id === pid); if (!p) continue;
+        p.files = (p.files || []).filter((f) => !ids.includes(f.id));
+        await save('posts', p);
+      }
+    });
+  },
+  'esp-sueltos': async () => {
+    const E = ESPACIO; if (!E || !E.sueltos.length) return;
+    if (!confirm(`¿Soltar ${E.sueltos.length} archivos sueltos (${prettySize(E.pesoSueltos)})?\n\nNinguna pieza los está usando.`)) return;
+    await soltarArchivos(E.sueltos, 'Soltando sueltos');
+  },
+  'esp-dupes': async () => {
+    const E = ESPACIO; if (!E || !E.duplicados.length) return;
+    if (!confirm(`¿Unir ${E.duplicados.length} repetidos (${prettySize(E.pesoDuplicados)})?\n\nSe deja una copia de cada uno y las piezas apuntan a esa.`)) return;
+    const sobran = [];
+    const tocados = new Set();
+    E.duplicados.forEach((g) => {
+      const queda = g[0];
+      g.slice(1).forEach((otro) => {
+        S.db.posts.forEach((p) => (p.files || []).forEach((f) => {
+          if (f.path === otro.path) { f.path = queda.path; f.url = store.rawUrl ? store.rawUrl(queda.path) : f.url; f.sha = queda.sha; tocados.add(p.id); }
+        }));
+        sobran.push(otro);
+      });
+    });
+    await soltarArchivos(sobran, 'Uniendo repetidos', async () => {
+      for (const pid of tocados) { const p = S.db.posts.find((x) => x.id === pid); if (p) await save('posts', p); }
+    });
+  },
   'arte-abrir': (el) => abrirArtefacto(el.dataset.p, el.dataset.id),
   'arte-quitar': async (el) => {
     if (!ED || !puedeArtefactos()) return;
@@ -3197,7 +3330,9 @@ const ACTS = {
     const f = ED.d.files.find((x) => x.id === el.dataset.id);
     ED.d.files = ED.d.files.filter((x) => x.id !== el.dataset.id);
     renderEditor();
-    if (f && f.path && store.deleteFile) store.deleteFile(f.path, f.sha).catch(() => {});
+    // si otra pieza (o una versión anterior) apunta al mismo archivo, solo se saca de aquí
+    const compartido = f && S.db.posts.some((p) => (p.files || []).some((x) => x.id !== f.id && x.path === f.path));
+    if (f && f.path && !compartido && store.deleteFile) store.deleteFile(f.path, f.sha).catch(() => {});
   },
   'ed-view': (el) => {
     const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;

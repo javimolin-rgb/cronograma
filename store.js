@@ -45,22 +45,31 @@
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   /* ---------- utilidades de archivos ---------- */
-  // Achica una imagen grande para no llenar el repositorio
+  // Achica una imagen y la guarda en el formato más liviano que el navegador sepa escribir
+  // (WebP suele pesar la mitad que un JPEG igual de bueno). Si no se gana nada, se deja tal cual.
   function resize(file, max, quality) {
     return new Promise((resolve) => {
       if (!file.type || !file.type.startsWith('image/') || file.type === 'image/svg+xml' ||
           typeof createImageBitmap !== 'function') return resolve(null);
-      createImageBitmap(file).then((bmp) => {
-        if (Math.max(bmp.width, bmp.height) <= max && file.size < 900000) return resolve(null);
+      if (file.size < 120000 && /webp/.test(file.type)) return resolve(null);   // ya es chica y ya es webp
+      createImageBitmap(file).then(async (bmp) => {
         const r = Math.min(1, max / Math.max(bmp.width, bmp.height));
         const c = document.createElement('canvas');
         c.width = Math.max(1, Math.round(bmp.width * r));
         c.height = Math.max(1, Math.round(bmp.height * r));
         c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
-        c.toBlob((b) => resolve(b && b.size < file.size ? b : null), 'image/jpeg', quality);
+        const opciones = [];
+        for (const tipo of ['image/webp', 'image/jpeg']) {
+          const b = await new Promise((ok) => c.toBlob(ok, tipo, quality));
+          if (b && b.type === tipo) opciones.push(b);        // si el navegador no sabe webp devuelve otra cosa
+        }
+        opciones.sort((a, b) => a.size - b.size);
+        const mejor = opciones[0];
+        resolve(mejor && mejor.size < file.size * 0.92 ? mejor : null);
       }).catch(() => resolve(null));
     });
   }
+  const EXT_TIPO = { 'image/webp': 'webp', 'image/jpeg': 'jpg', 'image/png': 'png' };
   const readDataUrl = (blob) => new Promise((res, rej) => {
     const fr = new FileReader();
     fr.onload = () => res(fr.result);
@@ -410,7 +419,9 @@
       }
       if (blob.size > max) throw new Error('pesa más de 24 MB y no se pudo achicar; súbelo a Drive y pega el enlace');
       const dir = this.cfg.files + '/' + slug(opts.dir, 'general');
-      const name = safeFileName(opts.name || file.name);
+      let name = safeFileName(opts.name || file.name);
+      const extNueva = blob !== file && EXT_TIPO[blob.type];
+      if (extNueva) name = name.replace(/\.[^.]+$/, '') + '.' + extNueva;   // se guardó en otro formato
       const path = await this.freePath(dir, name);
       const body = {
         message: 'Cronograma: ' + path,
@@ -427,11 +438,11 @@
       }
       const j = await r.json();
       return {
-        name: opts.name || file.name,
+        name,
         path,
         url: this.rawUrl(path),
         sha: j.content && j.content.sha,
-        type: small ? 'image/jpeg' : (file.type || 'application/octet-stream'),
+        type: blob !== file ? blob.type : (file.type || 'application/octet-stream'),
         size: blob.size,
         blobUrl: URL.createObjectURL(blob) // para verlo al instante, antes de que GitHub lo publique
       };
@@ -475,6 +486,14 @@
       }
       const j = await r.json();
       return { path, url: this.rawUrl(path), sha: j.content && j.content.sha, size: blob.size };
+    },
+    // Todo lo que hay guardado en el repositorio, en una sola consulta (para la limpieza)
+    async arbol() {
+      const c = this.cfg;
+      const r = await fetch(`${API}/repos/${c.owner}/${c.repo}/git/trees/${encodeURIComponent(c.branch)}?recursive=1`, { headers: this.headers(), cache: 'no-store' });
+      if (!r.ok) throw new Error('no se pudo mirar el repositorio (error ' + r.status + ')');
+      const j = await r.json();
+      return (j.tree || []).filter((x) => x.type === 'blob').map((x) => ({ path: x.path, sha: x.sha, size: x.size || 0 }));
     },
     async deleteFile(path, sha) {
       if (!this.token || !path) return;

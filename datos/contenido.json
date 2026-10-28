@@ -1728,7 +1728,10 @@
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "flavio",
    "text": "@Javi OK con locución sería genial, avisanos cuando lo subas! Gracias!",
-   "createdAt": "2026-10-28T15:20:29.575Z"
+   "createdAt": "2026-10-28T15:20:29.575Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "6957b17d-5c0b-4113-8dc2-b1654dac0afc",
@@ -3571,6 +3574,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e545857a-51e0-4ae6-964e-2367f6145ab0",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Pilotes”: @Javi OK con locución sería genial, avisanos cuando lo subas",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi le puso 👍 a tu comentario en “Pilotes”: @Javi OK con locución sería genial, avisanos cuando lo subas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-28T15:34:00.055Z"
+  },
   {
    "id": "3e8af700-0191-46a1-b9bc-374f4ca9bc0c",
    "to": "flavio",

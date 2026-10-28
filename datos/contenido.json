@@ -203,7 +203,7 @@
    "time": "",
    "date": "2026-10-28",
    "format": "story",
-   "status": "diseno",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "id": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -333,14 +333,27 @@
      "sha": "4ccd6ca10b20d0361a88ccb12af741393827808a",
      "type": "video/mp4",
      "size": 17127894
+    },
+    {
+     "id": "6e34f811-448b-43d9-a9a7-57ad0ef19e6d",
+     "by": "javi",
+     "at": "2026-10-28T21:03:19.122Z",
+     "base": "portada_reel_casa_huingan",
+     "version": 1,
+     "name": "portada_reel_casa_huingan-v1.png",
+     "path": "archivos/sin-proyecto/portada_reel_casa_huingan-v1.png",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/portada_reel_casa_huingan-v1.png",
+     "sha": "75809f3a17b4cf10aebcbd3f56cfbf6883ac880d",
+     "type": "image/jpeg",
+     "size": 234783
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-27T16:30:44.191Z",
+   "updatedAt": "2026-10-28T21:03:55.283Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-27T16:30:44.191Z",
+   "statusChangedAt": "2026-10-28T21:03:55.283Z",
    "publishedAt": null
   },
   {
@@ -1732,6 +1745,13 @@
  ],
  "comments": [
   {
+   "id": "77a2ddee-6892-49d8-bab4-9063c86e65ec",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "javi",
+   "text": "Acá subo video de huingán con voz ia, sin voz y portada",
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
    "id": "ff7449f6-f546-40dc-b317-7cd510d103c5",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "javi",
@@ -2651,6 +2671,39 @@
   }
  ],
  "activity": [
+  {
+   "id": "ff594335-7fa7-4bae-9559-373624448058",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
+   "id": "ea20b04e-6e50-4d3f-85a3-c6e64d12540b",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
+   "id": "2ec1ab49-d76d-4178-8eb8-889b187c50ea",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En diseño a En revisión",
+   "meta": {
+    "from": "diseno",
+    "to": "revision"
+   },
+   "createdAt": "2026-10-28T21:03:55.284Z"
+  },
   {
    "id": "73731f9b-1906-4ae6-afe6-b07921147cbe",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
@@ -3639,6 +3692,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e3a2bc82-c3bb-446a-b02f-47fe76c0b811",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "review",
+   "text": "subió 3 archivos en “Video 3D Huingan” para revisar: Acá subo video de huingán con voz ia, sin voz y portada",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Video 3D Huingan",
+   "body": "Javi: Acá subo video de huingán con voz ia, sin voz y portada",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
+   "id": "712c1e4a-a2f4-4466-82e5-7f7fc7bdcc87",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "review",
+   "text": "subió 3 archivos en “Video 3D Huingan” para revisar: Acá subo video de huingán con voz ia, sin voz y portada",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Video 3D Huingan",
+   "body": "Javi: Acá subo video de huingán con voz ia, sin voz y portada",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
+   "id": "c45b66da-f3a0-41c2-bf77-d5a0d6458308",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
+   "id": "0aa24939-1398-40d3-b91d-2922fd8b2a99",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:03:55.285Z"
+  },
+  {
+   "id": "09d95581-cb22-4570-bd56-f99367b2b66e",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:03:55.284Z"
+  },
+  {
+   "id": "834bde6c-b3bf-48ea-8bd1-dab4d7531143",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-28T21:03:55.284Z"
+  },
   {
    "id": "17ea0982-1760-44a2-8389-949e91dd3ffc",
    "to": "maca",

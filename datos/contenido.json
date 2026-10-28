@@ -1,21 +1,22 @@
 {
  "posts": [
   {
-   "id": "309f771f-1276-4384-95ed-3e597aac5756",
    "title": "Opciones foto portada web",
    "caption": "",
    "notes": "",
    "hashtags": "",
    "campaign": "",
-   "date": "",
    "time": "",
-   "platforms": [],
+   "date": "",
    "format": "web",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "309f771f-1276-4384-95ed-3e597aac5756",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [
     {
@@ -72,12 +73,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-27T20:46:36.715Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-10-28T14:56:07.817Z",
+   "updatedBy": "flavio",
    "createdAt": "2026-10-27T20:46:36.715Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-10-27T20:46:36.715Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {

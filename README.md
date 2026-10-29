@@ -49,6 +49,12 @@ Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acu
 
 A quien escribió el comentario le llega el aviso **dentro de la app** (en la campana), sin sonar el teléfono. Se puede apagar en Ajustes, en *“Pulgar en mis comentarios”*.
 
+## Avisar de un cambio de copy
+
+Igual que al subir archivos: apenas cambias el **copy**, el **título** o los **hashtags** de una pieza ya guardada, aparece la barra *“Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?”* con el botón **Avisar**.
+
+Ese aviso guarda la pieza, puede pasarla a *En revisión* y manda una notificación directa —al celular y a la campana— que dice qué cambió: “cambió el copy en «Pilotes» para revisar”, o “subió 2 archivos y cambió el copy…” si hiciste las dos cosas. Llega aunque tengan apagados los avisos de “editan contenido”. Las notas internas no cuentan: son tuyas.
+
 ## Versiones del copy y los textos
 
 Cada vez que se guarda una pieza, lo que decían antes el **título**, el **copy**, los **hashtags** y las **notas internas** queda guardado. Debajo de cada uno aparece **“Cómo decía antes (N)”**: al tocarlo se despliegan las versiones anteriores, con la fecha hasta la que estuvieron y quién las cambió, y cada una trae **“Volver a este”** para recuperarla en el editor (después hay que guardar la pieza, como siempre).

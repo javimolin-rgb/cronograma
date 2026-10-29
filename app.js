@@ -375,6 +375,14 @@ const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', n
 const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'artefactos'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
 const TEXT_FIELDS = ['title', 'caption', 'hashtags', 'notes'];
+// De esos, los que vale la pena avisarle al equipo (las notas son internas)
+const AVISO_TEXTOS = ['caption', 'title', 'hashtags'];
+const NOMBRE_TEXTO = { caption: 'el copy', title: 'el título', hashtags: 'los hashtags', notes: 'las notas' };
+function textosCambiados(viejo, nuevo) {
+  if (!viejo || !nuevo) return [];
+  return AVISO_TEXTOS.filter((k) => String(viejo[k] || '').trim() !== String(nuevo[k] || '').trim());
+}
+const listaY = (arr) => arr.length < 2 ? (arr[0] || '') : arr.slice(0, -1).join(', ') + ' y ' + arr[arr.length - 1];
 const sameJ = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 
 async function commitPost(old, p) {
@@ -1629,6 +1637,7 @@ function renderEditor() {
     ${historialTextoHtml(d, 'caption')}
     <label class="lbl">Hashtags</label><input class="field" id="e-tags" placeholder="#marca #campaña" value="${esc(d.hashtags)}">
     ${historialTextoHtml(d, 'hashtags')}
+    ${old && esAdmin() && store.canWrite ? `<div class="avisobar" id="aviso-texto"${textosCambiados(old, d).length ? '' : ' hidden'}>${ic('send', 18)}<span>Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
     <label class="lbl">Campaña / pilar</label><input class="field" id="e-camp" list="camps" placeholder="Ej. Lanzamiento, Educativo…" value="${esc(d.campaign || '')}">
     <datalist id="camps">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
 
@@ -2041,12 +2050,16 @@ async function enviarAviso() {
     // 2) el aviso directo, al celular y a la campana
     const msg = (A.msg || '').trim();
     const nArch = ED.subidos || 0;
-    const que = nArch ? `subió ${nArch} archivo${nArch === 1 ? '' : 's'} en “${d.title}” para revisar` : `te pidió revisar “${d.title}”`;
+    const cambios = textosCambiados(ED.old, d).map((k) => NOMBRE_TEXTO[k]);
+    const partes = [];
+    if (nArch) partes.push(`subió ${nArch} archivo${nArch === 1 ? '' : 's'}`);
+    if (cambios.length) partes.push(`cambió ${listaY(cambios)}`);
+    const que = partes.length ? `${listaY(partes)} en “${d.title}” para revisar` : `te pidió revisar “${d.title}”`;
     for (const pid of A.para) {
       await save('notifications', {
         id: uid(), to: pid, from: S.me.id, postId: d.id, type: 'review',
         text: que + (msg ? `: ${msg}` : ''), read: false, inApp: true, push: true,
-        title: 'Para revisar · ' + d.title.slice(0, 60), body: `${S.me.name}: ${msg || (nArch ? `subió ${nArch} archivo${nArch === 1 ? '' : 's'} nuevo${nArch === 1 ? '' : 's'}` : 'te pide revisar esta pieza')}`.slice(0, 180),
+        title: 'Para revisar · ' + d.title.slice(0, 60), body: `${S.me.name}: ${msg || (partes.length ? listaY(partes) : 'te pide revisar esta pieza')}`.slice(0, 180),
         url: siteLink(d.id), createdAt: nowISO()
       });
     }
@@ -3486,6 +3499,10 @@ document.addEventListener('input', (e) => {
   }
   if (e.target.dataset && e.target.dataset.feedCom != null) { S.feedBorrador[e.target.dataset.feedCom] = e.target.value; return; }
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
+  if (ED && ED.old && /^e-(caption|title|tags)$/.test(e.target.id || '')) {
+    const bar = $('#aviso-texto');
+    if (bar) { syncDraft(); bar.hidden = !textosCambiados(ED.old, ED.d).length; }
+  }
 });
 document.addEventListener('change', (e) => {
   const t = e.target;

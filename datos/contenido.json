@@ -1856,6 +1856,14 @@
  ],
  "comments": [
   {
+   "id": "1a9a07e2-e873-46dc-aad2-b54e7a7ca5ff",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "javi",
+   "text": "@Maca  te dejo el guion para que lo corrijas antes de grabar todas las partes\nGUION VOZ EN OFF – REEL CASA HUINGÁN\n\n1. Hay casas pensadas para estar juntos… sin renunciar a tu propio espacio.\n\n2. Amplia, luminosa, y toda en un solo nivel.\n\n3. Adentro, el techo se eleva hasta los cuatro metros y medio, y la luz lo llena todo.\n\n4. Pensada para cuidar su entorno… y a quienes la habitan.\n\n5. Su planta mariposa lo cambia todo: un dormitorio en cada ala, y la vida en común al centro.\n\n6. Ideal para dos parejas, para recibir a la familia, o a los amigos.\n\n7. Cada uno con su privacidad. Y todos, alrededor de la misma mesa.\n\n8. Casa Huingán. Para compartir lo que de verdad importa.\n\n9. Descúbrela en neorigen.cl",
+   "fileIds": [],
+   "createdAt": "2026-10-29T15:25:31.121Z"
+  },
+  {
    "id": "b6f19016-910a-49e9-9ec5-377fb599bb6a",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "maca",
@@ -2790,6 +2798,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "39f1f628-ad77-492e-9ed6-a2dea92d3dee",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-29T15:25:31.126Z"
+  },
   {
    "id": "d0b4b8e4-79fe-4811-a0dd-e039b3310433",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -3851,6 +3869,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1c062513-e436-49cf-b748-30963e78a4de",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: @Maca  te dejo el guion para que lo corrijas antes de grabar todas las partes\nGU…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Video 3D Huingan”: @Maca  te dejo el guion para que lo corrijas antes de grabar todas las partes\nGU…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T15:25:31.128Z"
+  },
+  {
+   "id": "20847e9a-adcb-4f11-b8d4-64478f730f29",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "mention",
+   "text": "te mencionó en “Video 3D Huingan”: @Maca  te dejo el guion para que lo corrijas antes de grabar todas las partes\nGU…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Video 3D Huingan”: @Maca  te dejo el guion para que lo corrijas antes de grabar todas las partes\nGU…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T15:25:31.128Z"
+  },
   {
    "id": "4ea2c0d9-a256-40c4-ab48-e5c8f0af3e1b",
    "to": "flavio",

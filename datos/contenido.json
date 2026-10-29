@@ -400,10 +400,24 @@
      "sha": "e584d68265e25f2a4ab9804afc5273be8163c30b",
      "type": "video/quicktime",
      "size": 5560375
+    },
+    {
+     "id": "ce5ea203-115f-48ca-8620-c31067c13ba9",
+     "by": "javi",
+     "at": "2026-10-29T22:08:57.103Z",
+     "base": "b96e50ea-cddf-47d8-bc61-2b2a0274bf5b",
+     "version": 1,
+     "shaOrigen": "e4f7d7ff8b87941757f96399b93b91eb84a1dc01",
+     "name": "b96e50ea-cddf-47d8-bc61-2b2a0274bf5b-v1.mp4",
+     "path": "archivos/sin-proyecto/b96e50ea-cddf-47d8-bc61-2b2a0274bf5b-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/b96e50ea-cddf-47d8-bc61-2b2a0274bf5b-v1.mp4",
+     "sha": "e4f7d7ff8b87941757f96399b93b91eb84a1dc01",
+     "type": "video/mp4",
+     "size": 5561079
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-29T21:56:16.648Z",
+   "updatedAt": "2026-10-29T22:08:59.717Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
@@ -2876,6 +2890,26 @@
  ],
  "activity": [
   {
+   "id": "f7efdfd1-5b84-4153-a251-40fa0928d360",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-10-29T22:08:59.721Z"
+  },
+  {
+   "id": "4aeffa5e-7b94-4fe6-8106-2faa9d1f95ce",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-10-29T22:08:59.719Z"
+  },
+  {
    "id": "feb719d4-3beb-489d-af7f-83f145f2bcf9",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "postTitle": "Video 3D Huingan",
@@ -4046,6 +4080,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9abb2e7d-8367-4726-9c17-ab50296e471a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "review",
+   "text": "subió 1 archivo en “Video 3D Huingan” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Video 3D Huingan",
+   "body": "Javi: subió 1 archivo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T22:08:59.721Z"
+  },
+  {
+   "id": "b40caa67-b62a-42cb-9d62-4b0265c56881",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "review",
+   "text": "subió 1 archivo en “Video 3D Huingan” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Video 3D Huingan",
+   "body": "Javi: subió 1 archivo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T22:08:59.721Z"
+  },
+  {
+   "id": "6f6d165f-3d5f-4942-8d94-6d9b09a62de6",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T22:08:59.720Z"
+  },
+  {
+   "id": "8a1a6302-2ffe-4a7e-8912-8c9966d31371",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T22:08:59.720Z"
+  },
   {
    "id": "94b075a0-b62f-408e-8f55-f089f51cba2d",
    "to": "maca",

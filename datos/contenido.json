@@ -4153,7 +4153,7 @@
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "type": "mention",
    "text": "te mencionó en “Video 3D Huingan”: Aprobado¡¡ Muchas gracias  @Javi  @Maca",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

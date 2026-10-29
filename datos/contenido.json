@@ -1856,6 +1856,14 @@
  ],
  "comments": [
   {
+   "id": "4ef9aff0-f025-4df9-a40f-08bc00c190ac",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "maca",
+   "text": "Super Javi!!! Vamos por esa locución!! 👏🙌",
+   "fileIds": [],
+   "createdAt": "2026-10-29T16:19:51.489Z"
+  },
+  {
    "id": "1a9a07e2-e873-46dc-aad2-b54e7a7ca5ff",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "javi",
@@ -2798,6 +2806,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "de9724c7-70b5-4933-b698-bb2b35225e67",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-29T16:19:51.500Z"
+  },
   {
    "id": "39f1f628-ad77-492e-9ed6-a2dea92d3dee",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -3869,6 +3887,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2d111583-52ee-45ad-85d3-cfd0be7e5b5b",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: Super Javi!!! Vamos por esa locución!! 👏🙌",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Video 3D Huingan”: Super Javi!!! Vamos por esa locución!! 👏🙌",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T16:19:51.501Z"
+  },
   {
    "id": "1c062513-e436-49cf-b748-30963e78a4de",
    "to": "flavio",

@@ -327,9 +327,10 @@ const siteLink = (id) => `${siteBase()}#post=${id}`;
 const supervisores = () => (CFG.SUPERVISA || []).filter((id) => id && id !== S.me.id && byId(P, id));
 
 // Un solo aviso por acción, con el resumen de lo que pasó
-async function notifySuper(post, texto, yaAvisados) {
+async function notifySuper(post, texto, yaAvisados, opts) {
   for (const pid of supervisores()) {
-    if (post && silenciada(pid, post.id)) continue;
+    // Los comentarios le llegan siempre a quien supervisa, aunque haya silenciado la pieza
+    if (post && silenciada(pid, post.id) && !(opts && opts.siempre)) continue;
     if (yaAvisados && yaAvisados.includes(pid)) continue;   // ya le llegó el aviso directo de lo mismo
     const ev = prefsOf(pid).events.supervision;
     if (!ev || (!ev.app && !ev.push)) continue;
@@ -1742,7 +1743,7 @@ async function comentar(p, text, fileIds) {
   const snippet = corto || (fids.length > 1 ? `marcó ${fids.length} archivos` : 'marcó un archivo');
   const avisados = await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`);
   avisados.push(...await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`));
-  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados);
+  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados, { siempre: true });
 }
 /* Pulgar arriba o abajo en un comentario: sirve para decir "lo leí / de acuerdo" sin escribir nada. */
 function reacHtml(c, postId) {
@@ -1783,7 +1784,7 @@ async function guardarComentario(id, texto) {
   const p = S.db.posts.find((x) => x.id === c.postId);
   if (p) {
     await log(p, 'comment', 'corrigió un comentario');
-    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${texto.length > 80 ? texto.slice(0, 80) + '…' : texto}`);
+    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${texto.length > 80 ? texto.slice(0, 80) + '…' : texto}`, null, { siempre: true });
   }
   ED.editando = null;
   renderEditor();

@@ -1900,6 +1900,14 @@
  ],
  "comments": [
   {
+   "id": "f6803574-645e-4bf3-8d4c-d490707a598a",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "flavio",
+   "text": "@Javi  lo vimos con la Maca y nos gusta sin audio y sin subtítulos, dejar solamente una buena música, la gráfica se explica sola! Muchas gracias!",
+   "fileIds": [],
+   "createdAt": "2026-10-29T22:47:23.970Z"
+  },
+  {
    "id": "b420ca41-0804-40ac-8869-f4deb01e412f",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "flavio",
@@ -2897,6 +2905,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "9d0375db-9dae-43e0-9747-c63898746f6d",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-29T22:47:23.972Z"
+  },
   {
    "id": "7f24c102-787b-4299-a9d1-421240a3d0fb",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -4098,6 +4116,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f78a47a2-7fc5-4a15-89f3-ff5be1d19340",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "comment",
+   "text": "comentó en “Pilotes”: @Javi  lo vimos con la Maca y nos gusta sin audio y sin subtítulos, dejar solame…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Pilotes”: @Javi  lo vimos con la Maca y nos gusta sin audio y sin subtítulos, dejar solame…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-29T22:47:23.972Z"
+  },
+  {
+   "id": "c1223d5a-6768-4629-a970-d75eb793ce3c",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "mention",
+   "text": "te mencionó en “Pilotes”: @Javi  lo vimos con la Maca y nos gusta sin audio y sin subtítulos, dejar solame…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio te mencionó en “Pilotes”: @Javi  lo vimos con la Maca y nos gusta sin audio y sin subtítulos, dejar solame…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-29T22:47:23.972Z"
+  },
   {
    "id": "dce47e23-2485-4685-8aee-7e7630f16018",
    "to": "javi",

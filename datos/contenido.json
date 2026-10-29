@@ -4138,7 +4138,7 @@
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "type": "mention",
    "text": "te mencionó en “Pilotes”: @Javi  lo vimos con la Maca y nos gusta sin audio y sin subtítulos, dejar solame…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

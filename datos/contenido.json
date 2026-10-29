@@ -1865,6 +1865,14 @@
  ],
  "comments": [
   {
+   "id": "4253c2da-cd13-4e9e-9b73-d8793bdfee49",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "maca",
+   "text": "Texto ok, solo modificar mesa larga , por otro adjetivo calificativo porque después hablas de conversaciones que se alargan. \nPregunta…,es pertinente agregar al final un conversemos ?",
+   "fileIds": [],
+   "createdAt": "2026-10-29T19:17:36.924Z"
+  },
+  {
    "id": "d059d692-b6f5-4256-9cb2-5490d3548e6a",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "javi",
@@ -2830,6 +2838,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "476d8476-113a-42dd-9502-bbc986d592a0",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-29T19:17:36.932Z"
+  },
   {
    "id": "b5990077-35cb-412b-9a59-c33e8ba6c511",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -3941,6 +3959,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "77ed60b8-b76b-4a31-a741-fbe166dc78ab",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: Texto ok, solo modificar mesa larga , por otro adjetivo calificativo porque desp…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Video 3D Huingan”: Texto ok, solo modificar mesa larga , por otro adjetivo calificativo porque desp…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T19:17:36.933Z"
+  },
   {
    "id": "29880e2e-7e12-4c91-941f-b8460de39efb",
    "to": "maca",

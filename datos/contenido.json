@@ -1875,8 +1875,17 @@
    "id": "5d008d56-3966-4b76-b48f-6888b6e77dc8",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "javi",
-   "text": "Texto descriptivo actualizado",
-   "createdAt": "2026-10-29T21:54:06.246Z"
+   "text": "Texto descriptivo actualizado.\nSí, conviene sumar el \"Conversemos\": es cercano, va con el tono de la descripción y deja una puerta abierta además del link.",
+   "createdAt": "2026-10-29T21:54:06.246Z",
+   "versiones": [
+    {
+     "text": "Texto descriptivo actualizado",
+     "hasta": "2026-10-29T21:54:43.541Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-10-29T21:54:43.541Z",
+   "editedBy": "javi"
   },
   {
    "id": "4253c2da-cd13-4e9e-9b73-d8793bdfee49",
@@ -2852,6 +2861,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "74900795-dd41-4aef-824d-5a70525770ba",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-10-29T21:54:43.543Z"
+  },
   {
    "id": "ee2a4c44-6c32-4d13-bbe7-40ca2882b74f",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",

@@ -252,7 +252,7 @@ function normalize(db) {
   db.posts = (db.posts || []).map((p) => Object.assign({
     title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
-    platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || []
+    platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || []
   }));
   ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos'].forEach((t) => { db[t] = db[t] || []; });
   return db;
@@ -373,6 +373,8 @@ async function notify(type, post, targets, text) {
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
 const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', checklist: 'checklist', artefactos: 'interactivo' };
 const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'artefactos'];
+// Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
+const TEXT_FIELDS = ['title', 'caption', 'hashtags', 'notes'];
 const sameJ = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 
 async function commitPost(old, p) {
@@ -386,6 +388,14 @@ async function commitPost(old, p) {
       p.statusChangedAt = at;
       if (p.status === 'cambios') p.revisions += 1;
       p.publishedAt = p.status === 'publicado' ? at : null;
+    }
+  }
+  if (old) {
+    const cambios = TEXT_FIELDS.filter((k) => String(old[k] || '') !== String(p[k] || ''));
+    if (cambios.length) {
+      p.versionesTexto = (p.versionesTexto || [])
+        .concat(cambios.map((k) => ({ id: uid(), campo: k, text: old[k] || '', hasta: at, by: me })))
+        .slice(-40);
     }
   }
   await save('posts', p);
@@ -1547,9 +1557,23 @@ function openEditor(id, preset = {}) {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], priority: 'normal', links: [], files: [], checklist: []
   };
-  ED = { old, d, comment: '', comFiles: [], newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
+  ED = { old, d, comment: '', comFiles: [], verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
   renderEditor();
+}
+// “Cómo decía antes”: las versiones anteriores de un texto, con quién lo cambió y cuándo
+function historialTextoHtml(d, campo) {
+  const vs = (d.versionesTexto || []).filter((v) => v.campo === campo);
+  if (!vs.length) return '';
+  const abierto = ED.verTexto === campo;
+  return `<div class="verstexto">
+    <button class="lnk" data-act="ed-vertexto" data-campo="${esc(campo)}">${abierto ? 'Ocultar' : 'Cómo decía antes'} (${vs.length})</button>
+    ${abierto ? `<div class="cmvers">${vs.slice().reverse().map((v) => `<div>
+      <small>Hasta ${esc(ago(v.hasta))}${v.by ? ' · lo cambió ' + esc(person(v.by).name) : ''}</small>
+      ${v.text ? mentionHtml(v.text) : '<p><i>(estaba vacío)</i></p>'}
+      ${store.canWrite ? `<button class="lnk" data-act="ed-recuperar" data-id="${esc(v.id)}">Volver a este</button>` : ''}
+    </div>`).join('')}</div>` : ''}
+  </div>`;
 }
 function syncDraft() {
   if (!ED || !$('#e-title')) return;
@@ -1581,6 +1605,7 @@ function renderEditor() {
     ${old ? `<div class="phacts">${(() => { const on = recibeAvisos(S.me.id, old); return `<button class="iconbtn avisos${on ? ' on' : ''}" data-act="ed-avisos" aria-label="${on ? 'Silenciar avisos de esta pieza' : 'Activar avisos de esta pieza'}" title="${on ? 'Recibes avisos de esta pieza' : 'Avisos de esta pieza apagados'}">${ic(on ? 'bell' : 'bellOff')}</button>`; })()}<button class="iconbtn danger" data-act="ed-delete" aria-label="Eliminar">${ic('trash')}</button></div>` : '<span style="width:40px"></span>'}</div>
   <div class="pb" id="pb">
     <input id="e-title" class="title-in" placeholder="Título de la pieza" value="${esc(d.title)}" autocomplete="off">
+    ${historialTextoHtml(d, 'title')}
 
     <label class="lbl">Estado</label>
     <div class="chips scroll">${STATUSES.map((s) => `<button class="chip${d.status === s.id ? ' on' : ''}" style="--c:${s.color}" data-act="ed-status" data-v="${s.id}">${esc(s.name)}</button>`).join('')}</div>
@@ -1601,7 +1626,9 @@ function renderEditor() {
 
     <label class="lbl">Copy / texto <small id="e-count">${d.caption.length} caracteres</small></label>
     <textarea class="area" id="e-caption" placeholder="Texto de la publicación…">${esc(d.caption)}</textarea>
+    ${historialTextoHtml(d, 'caption')}
     <label class="lbl">Hashtags</label><input class="field" id="e-tags" placeholder="#marca #campaña" value="${esc(d.hashtags)}">
+    ${historialTextoHtml(d, 'hashtags')}
     <label class="lbl">Campaña / pilar</label><input class="field" id="e-camp" list="camps" placeholder="Ej. Lanzamiento, Educativo…" value="${esc(d.campaign || '')}">
     <datalist id="camps">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
 
@@ -1646,6 +1673,7 @@ function renderEditor() {
     <div class="addrow"><input class="field" id="e-newck" placeholder="Ej. Revisar ortografía" value="${esc(ED.newCheck)}"><button class="btn sm" data-act="ed-addcheck">${ic('plus', 16)}</button></div>
 
     <label class="lbl">Notas internas</label><textarea class="area" id="e-notes" style="min-height:80px" placeholder="Referencias, indicaciones…">${esc(d.notes)}</textarea>
+    ${historialTextoHtml(d, 'notes')}
 
     ${old ? `
     <label class="lbl">Seguimiento</label>
@@ -3357,6 +3385,17 @@ const ACTS = {
   'ed-comment': () => addComment(),
   'cm-editar': (el) => { if (!requireWrite()) return; syncDraft(); ED.editando = el.dataset.id; ED.versionesDe = null; renderEditor(); setTimeout(() => { const t = $('#c-edit'); if (t) { t.focus(); t.setSelectionRange(t.value.length, t.value.length); } }, 60); },
   'cm-cancelar': () => { ED.editando = null; renderEditor(); },
+  'ed-vertexto': (el) => { syncDraft(); ED.verTexto = ED.verTexto === el.dataset.campo ? null : el.dataset.campo; renderEditor(); },
+  'ed-recuperar': (el) => {
+    if (!requireWrite()) return;
+    syncDraft();
+    const v = (ED.d.versionesTexto || []).find((x) => x.id === el.dataset.id);
+    if (!v) return;
+    ED.d[v.campo] = v.text || '';
+    ED.verTexto = null;
+    renderEditor();
+    toast('Listo, volvió a decir eso · guarda la pieza para dejarlo', 4000);
+  },
   'cm-media': (el) => {
     syncDraft();
     const id = el.dataset.f, sel = ED.comFiles || (ED.comFiles = []);

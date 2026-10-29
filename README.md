@@ -49,6 +49,12 @@ Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acu
 
 A quien escribió el comentario le llega el aviso **dentro de la app** (en la campana), sin sonar el teléfono. Se puede apagar en Ajustes, en *“Pulgar en mis comentarios”*.
 
+## Versiones del copy y los textos
+
+Cada vez que se guarda una pieza, lo que decían antes el **título**, el **copy**, los **hashtags** y las **notas internas** queda guardado. Debajo de cada uno aparece **“Cómo decía antes (N)”**: al tocarlo se despliegan las versiones anteriores, con la fecha hasta la que estuvieron y quién las cambió, y cada una trae **“Volver a este”** para recuperarla en el editor (después hay que guardar la pieza, como siempre).
+
+Se guardan las últimas 40 versiones de la pieza y solo ocupan texto, así que no pesan nada. Sirve para cuando el cliente pide volver al copy de antes, o para comparar dos redacciones sin tener que acordarse.
+
 ## Corregir un comentario
 
 Debajo de cada comentario propio está **Editar**: se corrige el texto y se guarda. En el feed, el mismo *Editar* abre la pieza con ese comentario listo para arreglar.

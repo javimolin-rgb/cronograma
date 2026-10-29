@@ -767,6 +767,7 @@ function viewResultados() {
         ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
         ${publicadoHtml(p)}
         <div class="resacts">
+          ${textoPublicacion(p) ? `<button class="btn ghost sm" data-act="copiar-texto" data-id="${esc(p.id)}">${ic('copy', 15)} Copiar texto</button>` : ''}
           <button class="btn ghost sm" data-act="open-post" data-id="${esc(p.id)}">${ic('msg', 15)} Comentar</button>
           ${files.length ? `<button class="btn ghost sm" data-act="dl-final" data-id="${esc(p.id)}">${ic('download', 15)} Descargar</button>` : ''}
         </div>
@@ -1569,6 +1570,11 @@ function openEditor(id, preset = {}) {
   openSheet('', true);
   renderEditor();
 }
+// Lo que se pega en Instagram: el copy y, debajo, los hashtags
+function textoPublicacion(p) {
+  const copy = (p.caption || '').trim(), tags = (p.hashtags || '').trim();
+  return copy && tags ? `${copy}\n\n${tags}` : (copy || tags);
+}
 // “Cómo decía antes”: las versiones anteriores de un texto, con quién lo cambió y cuándo
 function historialTextoHtml(d, campo) {
   const vs = (d.versionesTexto || []).filter((v) => v.campo === campo);
@@ -1632,7 +1638,8 @@ function renderEditor() {
     <label class="lbl">Etiquetar <small>reciben un aviso al guardar</small></label>
     <div class="chips">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}">${av(x.id)}${esc(x.name)}</button>`).join('')}</div>
 
-    <label class="lbl">Copy / texto <small id="e-count">${d.caption.length} caracteres</small></label>
+    <label class="lbl">Copy / texto <small id="e-count">${d.caption.length} caracteres</small>
+      <span class="lblacts"><button class="lnk" data-act="ed-sel-copy">Seleccionar todo</button><button class="lnk" data-act="ed-copiar-copy">${ic('copy', 13)} Copiar</button></span></label>
     <textarea class="area" id="e-caption" placeholder="Texto de la publicación…">${esc(d.caption)}</textarea>
     ${historialTextoHtml(d, 'caption')}
     <label class="lbl">Hashtags</label><input class="field" id="e-tags" placeholder="#marca #campaña" value="${esc(d.hashtags)}">
@@ -1843,7 +1850,41 @@ async function addComment() {
    aquí mismo: se reproduce sin que se oiga, se dibuja en un lienzo más chico y se graba.
    Tarda lo que dura el video. Si algo no se puede (o se perdería el audio), no se toca. */
 const LIMITE_SUBIDA = 24 * 1024 * 1024;
-const esVideoArchivo = (f) => /^video\//.test(f.type || '') || /\.(mp4|mov|m4v|webm)$/i.test(f.name || '');
+const esVideoArchivo = (f) => /^video\//.test(f.type || '') || /\.(mp4|mov|m4v|webm|3gp|avi|mkv)$/i.test(f.name || '');
+// Duración y tamaño de un video, sin descargarlo entero
+function datosVideo(file) {
+  return new Promise((ok) => {
+    const v = document.createElement('video');
+    const url = URL.createObjectURL(file);
+    const cerrar = (r) => { try { URL.revokeObjectURL(url); } catch (e) { /* nada */ } ok(r); };
+    v.preload = 'metadata'; v.muted = true; v.playsInline = true;
+    v.onloadedmetadata = () => cerrar({ dur: v.duration || 0, w: v.videoWidth || 0, h: v.videoHeight || 0 });
+    v.onerror = () => cerrar(null);
+    setTimeout(() => cerrar(null), 8000);
+    v.src = url;
+  });
+}
+/* ¿Vale la pena volver a grabarlo más liviano? Solo si de verdad se gana:
+   lo que no entra, lo que viene en 4K, o lo que trae mucho más dato del necesario. */
+async function convieneComprimir(file) {
+  if (!esVideoArchivo(file)) return false;
+  if (file.size > LIMITE_SUBIDA) return true;
+  if (file.size < 6 * 1024 * 1024) return false;          // chico: ya está bien
+  const m = await datosVideo(file);
+  if (!m || !m.dur) return false;
+  const bits = (file.size * 8) / m.dur;
+  return Math.max(m.w, m.h) > 1920 || bits > 4500000;     // 4K, o más de ~4,5 Mbps
+}
+/* El teléfono entrega los archivos con nombres inservibles (un UUID, IMG_1234…).
+   Se les pone el nombre de la pieza para poder reconocerlos después. */
+const NOMBRE_INUTIL = /^(?:[0-9a-f]{8}-[0-9a-f-]{20,}|img[_-]?\d+|image|imagen|video|movie|fullsizerender|photo|foto|untitled|sin[_-]?titulo|[0-9]{6,})$/i;
+function nombreUtil(file, pieza, n) {
+  const info = splitName(file.name || '');
+  if (!NOMBRE_INUTIL.test(info.label.trim())) return info.base;
+  const base = slugify(pieza.title || 'archivo', 'archivo');
+  const hermanos = (pieza.files || []).filter((x) => (x.base || '').startsWith(base)).length;
+  return `${base}-${hermanos + (n || 0) + 1}`;
+}
 async function comprimirVideo(file, objetivo, alAvanzar) {
   if (typeof MediaRecorder !== 'function') return null;
   const v = document.createElement('video');
@@ -1950,7 +1991,7 @@ async function subirArchivos(files) {
     try {
       if (!(await subirArtefacto(f))) {
         let archivo = f;
-        if (f.size > LIMITE_SUBIDA && esVideoArchivo(f)) {
+        if (await convieneComprimir(f)) {
           ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
           toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo (dura lo que dura el video)`, 8000);
           const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (pc) => {
@@ -1960,9 +2001,16 @@ async function subirArchivos(files) {
           if (chico) { toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000); archivo = chico; }
         }
         const info = splitName(archivo.name);
+        info.base = nombreUtil(archivo, ed.d, bien);
         const previas = (ed.d.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
         const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
         const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
+        if (esVideoArchivo(f)) {
+          const m = await datosVideo(f);
+          const parecido = m && m.dur && (ed.d.files || []).find((x) => x.dur && Math.abs(x.dur - m.dur) < 0.4 && x.w === m.w);
+          if (parecido && !confirm(`Parece el mismo video que ya está en la pieza:\n\n“${parecido.name}” · ${Math.round(m.dur)} s · ${m.w}×${m.h}\n\n¿Lo subo igual?`)) { ed.uploading -= 1; continue; }
+          if (m) f.__video = m;
+        }
         const shaOrigen = await shaGit(archivo).catch(() => '');
         const gemelo = archivoConSha(shaOrigen);
         if (gemelo && gemelo.misma) {                       // ya está en esta misma pieza: no se duplica
@@ -1975,7 +2023,9 @@ async function subirArchivos(files) {
           toast(`“${f.name}” ya estaba guardado en “${gemelo.post ? gemelo.post.title : 'otra pieza'}”: lo enlacé sin volver a subirlo`, 5000);
         } else {
           const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
-          ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen }, r)));
+          const extra = f.__video ? { dur: f.__video.dur, w: f.__video.w, h: f.__video.h } : {};
+          ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen }, extra, r)));
+          if (r.size && f.size && r.size < f.size * 0.9) toast(`“${f.name}” quedó en ${prettySize(r.size)} (venía con ${prettySize(f.size)})`, 4000);
         }
       }
       bien++;
@@ -3398,6 +3448,19 @@ const ACTS = {
   'ed-comment': () => addComment(),
   'cm-editar': (el) => { if (!requireWrite()) return; syncDraft(); ED.editando = el.dataset.id; ED.versionesDe = null; renderEditor(); setTimeout(() => { const t = $('#c-edit'); if (t) { t.focus(); t.setSelectionRange(t.value.length, t.value.length); } }, 60); },
   'cm-cancelar': () => { ED.editando = null; renderEditor(); },
+  'ed-sel-copy': () => { const t = $('#e-caption'); if (!t) return; t.focus(); t.setSelectionRange(0, t.value.length); },
+  'ed-copiar-copy': async () => {
+    syncDraft();
+    const txt = textoPublicacion(ED.d);
+    if (!txt) { toast('Todavía no hay texto'); return; }
+    toast(await copiarTexto(txt) ? `Copiado · ${txt.length} caracteres${(ED.d.hashtags || '').trim() ? ' (con los hashtags)' : ''}` : 'No se pudo copiar; selecciona el texto a mano', 3500);
+  },
+  'copiar-texto': async (el, e) => {
+    if (e) e.stopPropagation();
+    const p = S.db.posts.find((x) => x.id === el.dataset.id); if (!p) return;
+    const txt = textoPublicacion(p);
+    toast(await copiarTexto(txt) ? `Copiado · ${txt.length} caracteres` : 'No se pudo copiar', 3000);
+  },
   'ed-vertexto': (el) => { syncDraft(); ED.verTexto = ED.verTexto === el.dataset.campo ? null : el.dataset.campo; renderEditor(); },
   'ed-recuperar': (el) => {
     if (!requireWrite()) return;

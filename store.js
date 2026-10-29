@@ -45,29 +45,45 @@
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   /* ---------- utilidades de archivos ---------- */
+  // ¿Es una foto? En el teléfono a veces llega sin "type", así que también se mira el nombre
+  const esFoto = (f) => /^image\//.test(f.type || '') || /\.(jpe?g|png|heic|heif|webp|avif|gif|bmp|tiff?)$/i.test(f.name || '');
+  // Abre la foto para poder achicarla. createImageBitmap es lo más rápido, pero en iPhone
+  // se atora con las fotos muy grandes: ahí se usa <img>, que Safari sabe manejar.
+  async function abrirFoto(file) {
+    try {
+      const bmp = await createImageBitmap(file);
+      if (bmp && bmp.width) return { w: bmp.width, h: bmp.height, dibujar: (ctx, w, h) => ctx.drawImage(bmp, 0, 0, w, h), cerrar: () => { try { bmp.close(); } catch (e) { /* nada */ } } };
+    } catch (e) { /* probamos con <img> */ }
+    const url = URL.createObjectURL(file);
+    try {
+      const img = await new Promise((ok, mal) => { const i = new Image(); i.onload = () => ok(i); i.onerror = mal; i.src = url; });
+      if (img.decode) { try { await img.decode(); } catch (e) { /* ya está cargada */ } }
+      if (!img.naturalWidth) throw new Error('sin tamaño');
+      return { w: img.naturalWidth, h: img.naturalHeight, dibujar: (ctx, w, h) => ctx.drawImage(img, 0, 0, w, h), cerrar: () => URL.revokeObjectURL(url) };
+    } catch (e) { URL.revokeObjectURL(url); return null; }
+  }
   // Achica una imagen y la guarda en el formato más liviano que el navegador sepa escribir
   // (WebP suele pesar la mitad que un JPEG igual de bueno). Si no se gana nada, se deja tal cual.
-  function resize(file, max, quality) {
-    return new Promise((resolve) => {
-      if (!file.type || !file.type.startsWith('image/') || file.type === 'image/svg+xml' ||
-          typeof createImageBitmap !== 'function') return resolve(null);
-      if (file.size < 120000 && /webp/.test(file.type)) return resolve(null);   // ya es chica y ya es webp
-      createImageBitmap(file).then(async (bmp) => {
-        const r = Math.min(1, max / Math.max(bmp.width, bmp.height));
-        const c = document.createElement('canvas');
-        c.width = Math.max(1, Math.round(bmp.width * r));
-        c.height = Math.max(1, Math.round(bmp.height * r));
-        c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
-        const opciones = [];
-        for (const tipo of ['image/webp', 'image/jpeg']) {
-          const b = await new Promise((ok) => c.toBlob(ok, tipo, quality));
-          if (b && b.type === tipo) opciones.push(b);        // si el navegador no sabe webp devuelve otra cosa
-        }
-        opciones.sort((a, b) => a.size - b.size);
-        const mejor = opciones[0];
-        resolve(mejor && mejor.size < file.size * 0.92 ? mejor : null);
-      }).catch(() => resolve(null));
-    });
+  async function resize(file, max, quality) {
+    if (!esFoto(file) || file.type === 'image/svg+xml' || typeof document === 'undefined') return null;
+    if (file.size < 120000 && /webp/.test(file.type || '')) return null;      // ya es chica y ya es webp
+    const foto = await abrirFoto(file);
+    if (!foto) return null;
+    try {
+      const r = Math.min(1, max / Math.max(foto.w, foto.h));
+      const c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(foto.w * r));
+      c.height = Math.max(1, Math.round(foto.h * r));
+      foto.dibujar(c.getContext('2d'), c.width, c.height);
+      const opciones = [];
+      for (const tipo of ['image/webp', 'image/jpeg']) {
+        const b = await new Promise((ok) => c.toBlob(ok, tipo, quality));
+        if (b && b.type === tipo && b.size) opciones.push(b);   // si el navegador no sabe webp devuelve otra cosa
+      }
+      opciones.sort((a, b) => a.size - b.size);
+      const mejor = opciones[0];
+      return mejor && mejor.size < file.size * 0.92 ? mejor : null;
+    } catch (e) { return null; } finally { foto.cerrar(); }
   }
   const EXT_TIPO = { 'image/webp': 'webp', 'image/jpeg': 'jpg', 'image/png': 'png' };
   const readDataUrl = (blob) => new Promise((res, rej) => {
@@ -410,7 +426,7 @@
       const small = await resize(file, 1800, 0.84);
       let blob = small || file;
       // Una foto que sigue pesando demasiado se achica un poco más, hasta que entre
-      if (blob.size > max && /^image\//.test(file.type || '')) {
+      if (blob.size > max && esFoto(file)) {
         for (const [lado, calidad] of [[1600, 0.78], [1280, 0.72], [1024, 0.66]]) {
           const otra = await resize(file, lado, calidad);
           if (otra && otra.size < blob.size) blob = otra;

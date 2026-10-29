@@ -49,6 +49,12 @@ Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acu
 
 A quien escribió el comentario le llega el aviso **dentro de la app** (en la campana), sin sonar el teléfono. Se puede apagar en Ajustes, en *“Pulgar en mis comentarios”*.
 
+## Copiar el copy de una pieza
+
+Junto a *Copy / texto* hay dos atajos: **Copiar**, que se lleva el copy y los hashtags juntos, listos para pegar en Instagram (te dice cuántos caracteres), y **Seleccionar todo**, para reemplazarlo de una sin pelear con el dedo.
+
+En la vista de resultado, cada entrega tiene **Copiar texto**: así Flavio o Maca se llevan el texto sin tener que abrir la pieza ni seleccionar a mano.
+
 ## Avisar de un cambio de copy
 
 Igual que al subir archivos: apenas cambias el **copy**, el **título** o los **hashtags** de una pieza ya guardada, aparece la barra *“Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?”* con el botón **Avisar**.
@@ -87,9 +93,11 @@ Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp
 
 Todo vive en el repositorio, así que la app cuida el espacio sola:
 
-- **Las fotos se guardan en el formato más liviano** que el navegador sepa escribir (normalmente **WebP**, que pesa como la mitad de un JPEG igual de bueno) y achicadas a 1800 px. En las pruebas, una foto de 180 KB quedó en 106 KB sin que se note.
+- **Las fotos se guardan en el formato más liviano** que el navegador sepa escribir (normalmente **WebP**, que pesa como la mitad de un JPEG igual de bueno) y achicadas a 1800 px. En las pruebas, una foto de 180 KB quedó en 106 KB sin que se note. Funciona igual desde el teléfono: si la foto viene sin tipo (pasa en iPhone) se reconoce por el nombre, y si es tan grande que Safari no la puede abrir de una, se abre de la otra forma en vez de rendirse.
 - **No se guarda dos veces lo mismo.** Antes de subir, la app compara el contenido con lo que ya está: si ese archivo exacto ya existe —en esta pieza o en otra— no lo vuelve a subir, lo enlaza. Al quitar un archivo que otra pieza también usa, solo se saca de la pieza, no se borra.
-- **Los videos de más de 24 MB se comprimen** antes de subirse (ver más arriba).
+- **Los videos se comprimen cuando conviene**, no solo cuando no entran: si vienen en 4K o con mucho más dato del necesario (más de ~4,5 Mbps), se vuelven a grabar más livianos. Un video que ya está bien no se toca, para no perder calidad por nada.
+- **Los nombres del teléfono se arreglan solos.** iOS entrega los archivos como `0232b0d2-556c-…mov`; la app los guarda con el nombre de la pieza (`video-3d-huingan-1`) para poder reconocerlos después.
+- **Si subes un video que parece el mismo** que ya está en la pieza (igual duración y tamaño), la app pregunta antes de repetirlo.
 
 ### Espacio (solo Javi)
 

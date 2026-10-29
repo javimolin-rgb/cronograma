@@ -392,6 +392,9 @@ html{overscroll-behavior-y:none}
 .cmacts .lnk{font-size:0.75rem;font-weight:700;text-decoration:none;color:var(--muted)}
 .cmacts .lnk:hover{color:var(--accent);text-decoration:underline}
 .cm .bubble .area{margin:2px 0 0;min-height:76px;font-size:0.875rem}
+.lblacts{display:inline-flex;gap:12px;margin-left:auto}
+.lblacts .lnk{display:inline-flex;align-items:center;gap:4px;font-size:0.6875rem;font-weight:800;text-transform:none;letter-spacing:0;color:var(--accent);text-decoration:none}
+.lblacts .lnk:hover{text-decoration:underline}
 .verstexto{margin:-4px 0 8px}
 .verstexto>.lnk{font-size:0.75rem;font-weight:700;color:var(--muted);text-decoration:none}
 .verstexto>.lnk:hover{color:var(--accent);text-decoration:underline}

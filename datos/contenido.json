@@ -1856,6 +1856,14 @@
  ],
  "comments": [
   {
+   "id": "b6f19016-910a-49e9-9ec5-377fb599bb6a",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "author": "maca",
+   "text": "Hola Javi, nos gustó mucho el vídeo. En relación a la descripción de la voz en off nos parece muy acorde a lo que queremos transmitir, pero no nos gusta que sea IA. Tienes posibilidad de voz más natural o de persona real? \nEl texto de bajada  porfavor que no sea tan descriptivo como inmobiliaria tradicional . Incorporar elementos que transmitan experiencia y bienestar, siguiendo la línea Neorigen. . Invitarlos a que El detalle que lo busquen en la web. Sacar palabras como PVC y tanto detalle. La casa Huingan tiene una altura Max. De 4.5 mts , dar a entender que es mucho más q una doble altura .",
+   "fileIds": [],
+   "createdAt": "2026-10-29T13:07:05.917Z"
+  },
+  {
    "id": "77a2ddee-6892-49d8-bab4-9063c86e65ec",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
    "author": "javi",
@@ -2782,6 +2790,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d0b4b8e4-79fe-4811-a0dd-e039b3310433",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-10-29T13:07:05.925Z"
+  },
   {
    "id": "aa085269-c89b-44f5-aa5c-81d8ebc13213",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -3833,6 +3851,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4ea2c0d9-a256-40c4-ab48-e5c8f0af3e1b",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "comment",
+   "text": "comentó en “Video 3D Huingan”: Hola Javi, nos gustó mucho el vídeo. En relación a la descripción de la voz en o…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Video 3D Huingan”: Hola Javi, nos gustó mucho el vídeo. En relación a la descripción de la voz en o…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-29T13:07:05.928Z"
+  },
   {
    "id": "027dd4a1-69e7-4e73-946c-136472387d42",
    "to": "flavio",

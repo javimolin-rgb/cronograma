@@ -174,6 +174,7 @@ const IC = {
   bellOff: '<path d="M13.7 21a2 2 0 01-3.4 0M18.6 13A17 17 0 0118 8M6.3 6.3A6 6 0 006 8c0 7-3 9-3 9h14M18 8a6 6 0 00-9.3-5M1 1l22 22"/>',
   mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 17v5M8 22h8"/>',
   share: '<path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/>',
+  refresh: '<path d="M20.5 12a8.5 8.5 0 11-2.6-6.1M20.8 3.4v5.2h-5.2"/>',
   search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
   sliders: '<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
   x: '<path d="M18 6L6 18M6 6l12 12"/>',
@@ -3623,6 +3624,76 @@ document.addEventListener('scroll', (e) => {
 
 /* Deslizar para cambiar de mes */
 let tx = 0, ty = 0;
+/* Deslizar hacia abajo para actualizar, como en las apps del teléfono */
+(function tirarParaActualizar() {
+  const UMBRAL = 70, TOPE = 110;
+  let y0 = 0, x0 = 0, tirando = false, dist = 0, ocupado = false, caja = null;
+  function el() {
+    if (!caja) {
+      caja = document.createElement('div');
+      caja.id = 'refresco';
+      caja.innerHTML = `<i>${ic('refresh', 19)}</i>`;
+      document.body.appendChild(caja);
+    }
+    return caja;
+  }
+  function mover(d, listo) {
+    const c = el();
+    c.style.transform = `translate(-50%, ${Math.min(d, TOPE)}px)`;
+    c.style.opacity = String(Math.min(1, d / 36));
+    c.querySelector('i').style.transform = `rotate(${Math.round(d * 3)}deg)`;
+    c.classList.toggle('listo', !!listo);
+  }
+  function esconder() {
+    const c = el();
+    c.style.transition = 'transform .25s ease, opacity .25s ease';
+    c.style.transform = 'translate(-50%, -60px)';
+    c.style.opacity = '0';
+    setTimeout(() => { c.style.transition = ''; c.classList.remove('girando', 'listo'); }, 280);
+  }
+  async function refrescar() {
+    if (ocupado) return;
+    ocupado = true;
+    const c = el();
+    c.classList.add('girando'); c.classList.remove('listo');
+    c.style.transform = `translate(-50%, ${UMBRAL}px)`; c.style.opacity = '1';
+    c.querySelector('i').style.transform = '';
+    try {
+      if (store.pending && store.pending() && store.flushNow) await store.flushNow();  // primero sube lo mío
+      await reload();                                                                  // después trae lo del equipo
+      if (SW_REG) SW_REG.update().catch(() => { /* ya se mirará después */ });          // y de paso busca versión nueva
+      toast('Al día', 1800);
+    } catch (e) { toast('No se pudo actualizar: ' + ((e && e.message) || e), 4000); }
+    ocupado = false;
+    esconder();
+  }
+  const bloqueado = (t) => !S.me || sheetOpen || !$('#lightbox').hidden ||
+    (t && t.closest && t.closest('#sheet, #lightbox, .cards, .board, .carru, .galtrack, .commedia, input, textarea, select'));
+  document.addEventListener('touchstart', (e) => {
+    y0 = 0;
+    if (ocupado || e.touches.length !== 1 || bloqueado(e.target) || window.scrollY > 0) return;
+    y0 = e.touches[0].clientY; x0 = e.touches[0].clientX; tirando = false; dist = 0;
+  }, { passive: true });
+  document.addEventListener('touchmove', (e) => {
+    if (!y0 || ocupado) return;
+    const dy = e.touches[0].clientY - y0, dx = Math.abs(e.touches[0].clientX - x0);
+    if (!tirando && (dy <= 2 || dx > dy)) { y0 = 0; return; }   // es un scroll normal o un deslizamiento de lado
+    if (window.scrollY > 0) { y0 = 0; esconder(); return; }
+    tirando = true;
+    dist = Math.min(TOPE, dy * 0.55);
+    mover(dist, dist >= UMBRAL);
+    if (e.cancelable) e.preventDefault();
+  }, { passive: false });
+  const soltar = () => {
+    if (!tirando) { y0 = 0; return; }
+    const pasa = dist >= UMBRAL;
+    tirando = false; y0 = 0;
+    if (pasa) refrescar(); else esconder();
+  };
+  document.addEventListener('touchend', soltar, { passive: true });
+  document.addEventListener('touchcancel', soltar, { passive: true });
+})();
+
 document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
 document.addEventListener('touchend', (e) => {
   if (S.view !== 'calendar' || sheetOpen || !e.target.closest || !e.target.closest('#calgrid')) return;

@@ -186,6 +186,12 @@ Si el permiso sigue dado pero la suscripción se perdió, la app la rehace sola 
 
 Si en el teléfono están bloqueadas: **Ajustes del iPhone → Cronograma → Notificaciones → Permitir**.
 
+## Deslizar para actualizar
+
+En el celular, estando arriba del todo, se **tira la pantalla hacia abajo** y aparece el círculo con la flecha: al soltarlo la app sube lo que estuviera pendiente, trae lo último del equipo y de paso mira si hay una versión nueva. Cuando termina dice *“Al día”*.
+
+Si la página está desplazada, el gesto sigue siendo un scroll normal; tampoco se activa dentro de una hoja abierta, del visor de fotos ni de un carrusel.
+
 ## Cómo se mantiene al día
 
 La app se actualiza sola: cada vez que se abre revisa si hay una versión nueva y, si la hay, se recarga con los cambios. En **Ajustes** aparece el número de versión y un botón **Buscar actualización** para forzarla al instante.

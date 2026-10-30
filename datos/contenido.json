@@ -1913,8 +1913,17 @@
    "id": "bea30cfc-26f4-4863-933f-e2ea26ec540b",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
-   "text": "Texto descriptivo",
-   "createdAt": "2026-10-30T18:17:46.369Z"
+   "text": "Texto descriptivo y video actualizados",
+   "createdAt": "2026-10-30T18:17:46.369Z",
+   "versiones": [
+    {
+     "text": "Texto descriptivo",
+     "hasta": "2026-10-30T18:18:15.712Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-10-30T18:18:15.712Z",
+   "editedBy": "javi"
   },
   {
    "id": "f6803574-645e-4bf3-8d4c-d490707a598a",
@@ -2922,6 +2931,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "669c0b10-93f0-4044-a1c1-7e254ec23cae",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-10-30T18:18:15.712Z"
+  },
   {
    "id": "6464900b-d10f-4795-b024-809a3cf29da3",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",

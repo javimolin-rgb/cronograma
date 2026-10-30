@@ -230,7 +230,7 @@
    "time": "",
    "date": "2026-10-28",
    "format": "story",
-   "status": "revision",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "id": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -444,12 +444,12 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-29T22:08:59.717Z",
+   "updatedAt": "2026-10-30T21:09:13.103Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-28T21:03:55.283Z",
-   "publishedAt": null,
+   "statusChangedAt": "2026-10-30T21:09:13.103Z",
+   "publishedAt": "2026-10-30T21:09:13.103Z",
    "artefactos": [
     {
      "id": "8df9f5ff-4766-424a-83f6-755557777225",
@@ -2949,6 +2949,19 @@
  ],
  "activity": [
   {
+   "id": "f6be9e3c-a684-4d41-b701-b40d36826098",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Publicado",
+   "meta": {
+    "from": "revision",
+    "to": "publicado"
+   },
+   "createdAt": "2026-10-30T21:09:13.104Z"
+  },
+  {
    "id": "01892eda-0f15-43f2-a463-94973c261ee4",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "postTitle": "Pilotes",
@@ -4212,6 +4225,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "334792fc-e4eb-4cea-98b3-bf6f087b7c0f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-30T21:09:13.104Z"
+  },
+  {
+   "id": "328cc71b-7d4f-45e5-80d0-74b7e9fbab97",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "status",
+   "text": "movió “Video 3D Huingan” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Video 3D Huingan” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-10-30T21:09:13.104Z"
+  },
   {
    "id": "e48a09f4-d225-4adc-a17d-305c1f3b21f2",
    "to": "maca",

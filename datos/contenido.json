@@ -97,12 +97,12 @@
   },
   {
    "title": "Pilotes",
-   "caption": "",
+   "caption": "Tu casa empieza bajo tierra.\n\nAntes de la primera tabla hay una decisión que después ya no se ve: sobre qué se apoya la casa.\n\nEn Neorigen construimos sobre pilotes de hormigón armado, cada uno confinado en un tubo de PVC. Bajan hasta el suelo firme, así la casa se nivela en terrenos con pendiente sin grandes movimientos de tierra.\n\nBajo el piso queda aire que circula. El agua de lluvia pasa por debajo, la estructura se mantiene lejos de la humedad y llega menos frío al piso.\n\nMenor intervención, más durabilidad.\n\n¿Conversamos sobre tu proyecto? Cotiza en neorigen.cl\n\n#Neorigen #ViveLoNatural #CasasPrediseñadas #ConstrucciónSustentable #Pilotes",
    "notes": "",
    "hashtags": "",
    "campaign": "",
    "time": "",
-   "date": "2026-10-31",
+   "date": "2026-11-01",
    "format": "post",
    "status": "revision",
    "priority": "normal",
@@ -150,12 +150,22 @@
      "done": true
     }
    ],
-   "updatedAt": "2026-10-28T15:22:57.866Z",
+   "updatedAt": "2026-10-30T18:17:46.367Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-10-28T15:22:57.866Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "f116b1e6-71aa-4d78-b1f1-c3a0199f887b",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-10-30T18:17:46.367Z",
+     "by": "javi"
+    }
+   ]
   },
   {
    "title": "Cambio de modulo - Web Neorigen",
@@ -1900,6 +1910,13 @@
  ],
  "comments": [
   {
+   "id": "bea30cfc-26f4-4863-933f-e2ea26ec540b",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "javi",
+   "text": "Texto descriptivo",
+   "createdAt": "2026-10-30T18:17:46.369Z"
+  },
+  {
    "id": "f6803574-645e-4bf3-8d4c-d490707a598a",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "flavio",
@@ -2905,6 +2922,39 @@
   }
  ],
  "activity": [
+  {
+   "id": "6464900b-d10f-4795-b024-809a3cf29da3",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "3a7c04e9-56c1-4200-bf71-2f43d1f810b2",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "8c1e6c65-e770-4509-8156-9b61e04d924d",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 31 oct a 1 nov",
+   "meta": {
+    "from": "2026-10-31",
+    "to": "2026-11-01"
+   },
+   "createdAt": "2026-10-30T18:17:46.367Z"
+  },
   {
    "id": "9d0375db-9dae-43e0-9747-c63898746f6d",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
@@ -4116,6 +4166,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "166db74d-486d-420a-8ff3-fdd623c09f2f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "review",
+   "text": "cambió el copy en “Pilotes” para revisar: Texto descriptivo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Pilotes",
+   "body": "Javi: Texto descriptivo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "983bab6a-a57c-416b-a68c-e17d38012f54",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "review",
+   "text": "cambió el copy en “Pilotes” para revisar: Texto descriptivo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Pilotes",
+   "body": "Javi: Texto descriptivo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "52f27856-b316-4b68-9938-fded3490991e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "update",
+   "text": "editó “Pilotes” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Pilotes” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "65a8d0e9-1b82-42dc-9ad5-b784902f73bd",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "update",
+   "text": "editó “Pilotes” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Pilotes” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "2d53f48a-65dd-4af8-a6d2-727538c4c065",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Pilotes” a 1 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Pilotes” a 1 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
+  {
+   "id": "c98e60a2-bd97-431d-bd55-e624b366a521",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Pilotes” a 1 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Pilotes” a 1 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-10-30T18:17:46.368Z"
+  },
   {
    "id": "f78a47a2-7fc5-4a15-89f3-ff5be1d19340",
    "to": "maca",

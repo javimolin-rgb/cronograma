@@ -104,7 +104,7 @@
    "time": "",
    "date": "2026-11-01",
    "format": "post",
-   "status": "revision",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "id": "aa409560-033d-4424-b548-ce59905530cd",
@@ -235,12 +235,12 @@
      "done": true
     }
    ],
-   "updatedAt": "2026-11-01T22:39:33.330Z",
+   "updatedAt": "2026-11-01T22:42:51.463Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-28T15:22:57.866Z",
-   "publishedAt": null,
+   "statusChangedAt": "2026-11-01T22:42:51.463Z",
+   "publishedAt": "2026-11-01T22:42:51.463Z",
    "artefactos": [],
    "versionesTexto": [
     {
@@ -3077,6 +3077,19 @@
  ],
  "activity": [
   {
+   "id": "9f9f636f-c4f6-4364-8739-e7fd26772060",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Publicado",
+   "meta": {
+    "from": "revision",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-01T22:42:51.463Z"
+  },
+  {
    "id": "fb8523dd-26b5-498d-94c6-2d835262552b",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "postTitle": "Pilotes",
@@ -4463,6 +4476,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "53cdb1d1-246e-4345-8913-c22112942876",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "status",
+   "text": "movió “Pilotes” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Pilotes” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:42:51.465Z"
+  },
+  {
+   "id": "26e8b870-4da5-42dd-8701-21f4e688d16d",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "status",
+   "text": "movió “Pilotes” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Pilotes” a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:42:51.464Z"
+  },
   {
    "id": "37875471-9c90-4ee7-b0f0-095f04fee04f",
    "to": "javi",

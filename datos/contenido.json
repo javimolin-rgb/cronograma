@@ -192,6 +192,23 @@
      "sha": "c2d11975b95af80b7e74400fa8ded88901fcf333",
      "type": "video/mp4",
      "size": 4768731
+    },
+    {
+     "id": "449a035c-9fcd-40bc-8c81-ba910039355f",
+     "by": "javi",
+     "at": "2026-11-01T22:11:16.122Z",
+     "base": "neorigen_reel_pilotes_preview_musica_nueva",
+     "version": 1,
+     "shaOrigen": "ade515c4d6d1f8cbdd14d45e5732cdb090867cb7",
+     "dur": 44,
+     "w": 1080,
+     "h": 1920,
+     "name": "neorigen_reel_pilotes_preview_musica_nueva-v1.mp4",
+     "path": "archivos/sin-proyecto/neorigen_reel_pilotes_preview_musica_nueva-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/neorigen_reel_pilotes_preview_musica_nueva-v1.mp4",
+     "sha": "ade515c4d6d1f8cbdd14d45e5732cdb090867cb7",
+     "type": "video/mp4",
+     "size": 7223179
     }
    ],
    "checklist": [
@@ -201,8 +218,8 @@
      "done": true
     }
    ],
-   "updatedAt": "2026-11-01T22:07:13.522Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-01T22:11:25.869Z",
+   "updatedBy": "javi",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-10-28T15:22:57.866Z",
@@ -2998,6 +3015,16 @@
  ],
  "activity": [
   {
+   "id": "75761f5d-f273-4f06-9777-744c801471d8",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-01T22:11:25.872Z"
+  },
+  {
    "id": "650f1bd1-61d3-46e2-965b-81398b8117ad",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "postTitle": "Pilotes",
@@ -4304,6 +4331,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f57a362e-c8b9-4821-a47c-1076dbf9556e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "update",
+   "text": "editó “Pilotes” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Pilotes” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:11:25.872Z"
+  },
+  {
+   "id": "86ddbdff-ee51-44b7-a783-8625327fbb46",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "update",
+   "text": "editó “Pilotes” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Pilotes” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:11:25.872Z"
+  },
   {
    "id": "636f7781-11ac-475b-8316-afad7cddf3c5",
    "to": "javi",

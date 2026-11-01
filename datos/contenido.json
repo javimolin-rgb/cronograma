@@ -1978,6 +1978,14 @@
  ],
  "comments": [
   {
+   "id": "180ada7c-bd2d-4ced-b77c-ab2b480a378a",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "javi",
+   "text": "@Maca porque me marcó que no tengo derechos para usarla",
+   "fileIds": [],
+   "createdAt": "2026-11-01T22:11:52.089Z"
+  },
+  {
    "id": "c238dce8-e033-4ed2-8561-ced91991f28c",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "maca",
@@ -3014,6 +3022,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "08c84342-d4f3-49bd-ae20-333ad990f4c9",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-01T22:11:52.098Z"
+  },
   {
    "id": "75761f5d-f273-4f06-9777-744c801471d8",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
@@ -4331,6 +4349,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "35b5c2a5-b471-4cb8-a95d-2530e8f48589",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "comment",
+   "text": "comentó en “Pilotes”: @Maca porque me marcó que no tengo derechos para usarla",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Pilotes”: @Maca porque me marcó que no tengo derechos para usarla",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:11:52.098Z"
+  },
+  {
+   "id": "2f187992-392f-448c-9a4c-e70008687d07",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "mention",
+   "text": "te mencionó en “Pilotes”: @Maca porque me marcó que no tengo derechos para usarla",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Pilotes”: @Maca porque me marcó que no tengo derechos para usarla",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:11:52.098Z"
+  },
   {
    "id": "f57a362e-c8b9-4821-a47c-1076dbf9556e",
    "to": "maca",

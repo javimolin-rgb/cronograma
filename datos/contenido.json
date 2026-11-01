@@ -1995,6 +1995,16 @@
  ],
  "comments": [
   {
+   "id": "ccecd95f-c542-42f4-a113-41000f78e32a",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "javi",
+   "text": "@Maca me avisas",
+   "fileIds": [
+    "449a035c-9fcd-40bc-8c81-ba910039355f"
+   ],
+   "createdAt": "2026-11-01T22:15:25.952Z"
+  },
+  {
    "id": "180ada7c-bd2d-4ced-b77c-ab2b480a378a",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
@@ -3039,6 +3049,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "90595468-2823-4b3c-a78a-2e4b8f528eaf",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-01T22:15:25.953Z"
+  },
   {
    "id": "dc8fa38d-2cf2-4517-be08-3a66d4bc8166",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
@@ -4386,6 +4406,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "bd2fe7fc-65af-4afd-8d58-7a9dd230b6c0",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "comment",
+   "text": "comentó en “Pilotes”: @Maca me avisas",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Pilotes”: @Maca me avisas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:15:25.953Z"
+  },
+  {
+   "id": "98f3fddc-d85c-4905-be12-47d4fae71187",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "mention",
+   "text": "te mencionó en “Pilotes”: @Maca me avisas",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Pilotes”: @Maca me avisas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:15:25.953Z"
+  },
   {
    "id": "7fe5ab3d-4e0a-4b2a-9f7c-05632a6a90f9",
    "to": "maca",

@@ -1995,6 +1995,14 @@
  ],
  "comments": [
   {
+   "id": "57c38972-4d94-4a90-a885-fb854a64a370",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "maca",
+   "text": "Ok, aprobada",
+   "fileIds": [],
+   "createdAt": "2026-11-01T22:25:33.261Z"
+  },
+  {
    "id": "ccecd95f-c542-42f4-a113-41000f78e32a",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
@@ -3049,6 +3057,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "40010c4d-530d-40cf-a782-ed7e64946eb4",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-01T22:25:33.269Z"
+  },
   {
    "id": "90595468-2823-4b3c-a78a-2e4b8f528eaf",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
@@ -4406,6 +4424,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a6dd4fc6-e340-4385-9162-00ae5b951ea9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "supervision",
+   "text": "comentó en “Pilotes”: Ok, aprobada",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Pilotes”: Ok, aprobada",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:25:33.272Z"
+  },
+  {
+   "id": "e1d7dc72-7e1e-4db9-879d-22428572e3ab",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "comment",
+   "text": "comentó en “Pilotes”: Ok, aprobada",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Pilotes”: Ok, aprobada",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:25:33.271Z"
+  },
   {
    "id": "bd2fe7fc-65af-4afd-8d58-7a9dd230b6c0",
    "to": "flavio",

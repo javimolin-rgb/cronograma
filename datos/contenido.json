@@ -1995,6 +1995,14 @@
  ],
  "comments": [
   {
+   "id": "6fde1c6f-887d-4d48-ac05-029bc3e6ea60",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "maca",
+   "text": "La segunda sólo música . Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-01T22:39:31.667Z"
+  },
+  {
    "id": "e8566967-b1d3-4bef-a3e8-3b226451abea",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
@@ -3068,6 +3076,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "fb8523dd-26b5-498d-94c6-2d835262552b",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-01T22:39:31.676Z"
+  },
   {
    "id": "4018dd8b-e664-448e-9c13-4f8da6f25a74",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
@@ -4445,6 +4463,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "37875471-9c90-4ee7-b0f0-095f04fee04f",
+   "to": "javi",
+   "from": "maca",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "supervision",
+   "text": "comentó en “Pilotes”: La segunda sólo música . Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Pilotes”: La segunda sólo música . Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:39:31.679Z"
+  },
+  {
+   "id": "dc1ba703-5a6f-4684-9df5-fc92b4276834",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "comment",
+   "text": "comentó en “Pilotes”: La segunda sólo música . Gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Pilotes”: La segunda sólo música . Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T22:39:31.678Z"
+  },
   {
    "id": "516a84d4-64d8-4ae3-ac79-9d0f274ac834",
    "to": "flavio",

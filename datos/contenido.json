@@ -4311,7 +4311,7 @@
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "type": "supervision",
    "text": "comentó en “Pilotes”: Hola, porque cambiaste la música? Era sólo disminuir el volumen de los efectos e…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

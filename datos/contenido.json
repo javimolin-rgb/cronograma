@@ -158,6 +158,40 @@
      "sha": "e894974b5561d458e2fe3110ba25abc9ec93f1ea",
      "type": "video/mp4",
      "size": 7139322
+    },
+    {
+     "id": "32af9054-e7f0-4bc0-ae4d-f6969681f9b1",
+     "by": "javi",
+     "at": "2026-11-01T17:57:20.859Z",
+     "base": "pilotes-b",
+     "version": 1,
+     "shaOrigen": "79c003b7954c3e6c833280290e303cc2204201c3",
+     "dur": 44,
+     "w": 1080,
+     "h": 1920,
+     "name": "pilotes-b-v1.mp4",
+     "path": "archivos/sin-proyecto/pilotes-b-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/pilotes-b-v1.mp4",
+     "sha": "79c003b7954c3e6c833280290e303cc2204201c3",
+     "type": "video/mp4",
+     "size": 4770230
+    },
+    {
+     "id": "ad27e812-fda5-4d51-aa9d-ee5ded657bf2",
+     "by": "javi",
+     "at": "2026-11-01T17:57:26.730Z",
+     "base": "pilotes-a",
+     "version": 1,
+     "shaOrigen": "c2d11975b95af80b7e74400fa8ded88901fcf333",
+     "dur": 44,
+     "w": 1080,
+     "h": 1920,
+     "name": "pilotes-a-v1.mp4",
+     "path": "archivos/sin-proyecto/pilotes-a-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/pilotes-a-v1.mp4",
+     "sha": "c2d11975b95af80b7e74400fa8ded88901fcf333",
+     "type": "video/mp4",
+     "size": 4768731
     }
    ],
    "checklist": [
@@ -167,7 +201,7 @@
      "done": true
     }
    ],
-   "updatedAt": "2026-10-30T18:18:30.416Z",
+   "updatedAt": "2026-11-01T17:58:14.875Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
@@ -1927,6 +1961,13 @@
  ],
  "comments": [
   {
+   "id": "60283309-0180-4064-90d4-b55d35a05237",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "author": "javi",
+   "text": "Deje subida dos opciones de los videos que me dejaste por whatsapp, comentame si el que es solo musica o el que lleva sonidos especiales mas bajitos.",
+   "createdAt": "2026-11-01T17:58:14.877Z"
+  },
+  {
    "id": "bea30cfc-26f4-4863-933f-e2ea26ec540b",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "javi",
@@ -2948,6 +2989,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "5c8bfc42-3713-4792-adee-1169457ca16b",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-01T17:58:14.877Z"
+  },
+  {
+   "id": "3cb267b7-92f7-4640-bd5b-bbdd68db2d07",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-01T17:58:14.876Z"
+  },
   {
    "id": "f6be9e3c-a684-4d41-b701-b40d36826098",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -4225,6 +4286,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "29202064-66c2-40a0-bd91-143b897fe2e2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "review",
+   "text": "subió 2 archivos en “Pilotes” para revisar: Deje subida dos opciones de los videos que me dejaste por whatsapp, comentame si el que es solo musica o el que lleva sonidos especiales mas bajitos.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Pilotes",
+   "body": "Javi: Deje subida dos opciones de los videos que me dejaste por whatsapp, comentame si el que es solo musica o el que lleva sonidos especiales mas bajitos.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T17:58:14.877Z"
+  },
+  {
+   "id": "76c3317c-ff92-4368-a24e-af4fbec14a15",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "review",
+   "text": "subió 2 archivos en “Pilotes” para revisar: Deje subida dos opciones de los videos que me dejaste por whatsapp, comentame si el que es solo musica o el que lleva sonidos especiales mas bajitos.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Pilotes",
+   "body": "Javi: Deje subida dos opciones de los videos que me dejaste por whatsapp, comentame si el que es solo musica o el que lleva sonidos especiales mas bajitos.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T17:58:14.877Z"
+  },
+  {
+   "id": "7e2c3b3c-d826-4036-8520-fa11f680f0f7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "update",
+   "text": "editó “Pilotes” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Pilotes” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T17:58:14.877Z"
+  },
+  {
+   "id": "c2a6fdd7-6f54-45f3-904c-53619fd7da70",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "type": "update",
+   "text": "editó “Pilotes” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Pilotes” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=aa409560-033d-4424-b548-ce59905530cd",
+   "createdAt": "2026-11-01T17:58:14.877Z"
+  },
   {
    "id": "334792fc-e4eb-4cea-98b3-bf6f087b7c0f",
    "to": "flavio",

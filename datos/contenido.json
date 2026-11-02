@@ -6999,6 +6999,18 @@
  ],
  "recursos": [
   {
+   "id": "810ae31c-7055-47d9-8b0b-61d05fe4ce76",
+   "cat": "musica",
+   "name": "neorigen_madera_completa.wav",
+   "path": "archivos/marca-musica/neorigen_madera_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_madera_completa.wav",
+   "sha": "a3ce7a8e8012ce3505677f9b319eb8d19949963b",
+   "type": "audio/wav",
+   "size": 13593702,
+   "by": "javi",
+   "at": "2026-11-02T20:22:45.841Z"
+  },
+  {
    "id": "72371e99-d8ca-4b8d-8e63-fefc69a0b2e9",
    "cat": "musica",
    "name": "neorigen_cimientos_completa.wav",

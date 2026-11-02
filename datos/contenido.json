@@ -1,35 +1,55 @@
 {
  "posts": [
   {
-   "id": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "title": "Casa Peumo",
    "caption": "Recorramos nuestro modelo de la semana, Casa Peumo ❄️\n\n2 dormitorios y 2 baños en dos pisos, con doble altura en las zonas comunes: 87,3 m² útiles y 37,86 m² de terrazas. Suite en el segundo piso, plazo de obra estimado de 7 meses y entrega llave en mano.\n\nCotiza en neorigen.cl\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables \n",
    "notes": "",
    "hashtags": "",
    "campaign": "",
-   "date": "2026-11-03",
    "time": "",
+   "date": "2026-11-03",
+   "format": "story",
+   "status": "revision",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "platforms": [
     "instagram"
    ],
-   "format": "story",
-   "status": "idea",
    "assignees": [
     "javi",
     "maca",
     "flavio"
    ],
-   "priority": "normal",
    "links": [],
-   "files": [],
+   "files": [
+    {
+     "id": "b3002a83-28c7-486e-8e46-13d23e0aa656",
+     "by": "javi",
+     "at": "2026-11-02T16:03:46.967Z",
+     "base": "reel_casa_peumo",
+     "version": 1,
+     "shaOrigen": "c5a942aa9f7c1d87a921437b5d8786d56c9e8ccc",
+     "dur": 49.566667,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_peumo-v1.mp4",
+     "path": "archivos/sin-proyecto/reel_casa_peumo-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/reel_casa_peumo-v1.mp4",
+     "sha": "c5a942aa9f7c1d87a921437b5d8786d56c9e8ccc",
+     "type": "video/mp4",
+     "size": 6766762
+    }
+   ],
    "checklist": [],
-   "updatedAt": "2026-11-02T15:54:25.786Z",
+   "updatedAt": "2026-11-02T16:03:53.424Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-02T15:54:25.786Z",
-   "revisions": 0,
-   "publishedAt": null
+   "statusChangedAt": "2026-11-02T16:03:53.424Z",
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": []
   },
   {
    "title": "Opciones foto portada web",
@@ -3108,6 +3128,39 @@
  ],
  "activity": [
   {
+   "id": "bb2a505c-ffe8-4711-8a1b-e3749867861c",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-02T16:03:53.427Z"
+  },
+  {
+   "id": "64eed5f1-f82f-444f-a29c-7a14e4379f97",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-02T16:03:53.426Z"
+  },
+  {
+   "id": "d253f993-b40f-404b-a264-e2fbb84cef4a",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a En revisión",
+   "meta": {
+    "from": "idea",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-02T16:03:53.425Z"
+  },
+  {
    "id": "a11b6efd-8b00-4b5e-af45-d3ffddfb7de2",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -4517,6 +4570,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6c8b440b-6c0c-434b-84a8-766c6b34c193",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Peumo” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Casa Peumo",
+   "body": "Javi: subió 1 archivo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T16:03:53.427Z"
+  },
+  {
+   "id": "73168ca6-c1ae-4c5a-ac7f-1dc17cdcb9b1",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Peumo” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Casa Peumo",
+   "body": "Javi: subió 1 archivo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T16:03:53.427Z"
+  },
+  {
+   "id": "5d421778-cf2b-4a1b-9cdd-388f193d8a11",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T16:03:53.427Z"
+  },
+  {
+   "id": "e6c721c7-05dc-4b07-a6ea-acd82d17eec9",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T16:03:53.426Z"
+  },
+  {
+   "id": "ee443487-976d-49ed-b4f0-48e81c0b8f88",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "status",
+   "text": "movió “Casa Peumo” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Casa Peumo” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T16:03:53.426Z"
+  },
+  {
+   "id": "8b971b20-f6da-4522-b2c3-f55bd61fd2f6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "status",
+   "text": "movió “Casa Peumo” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Casa Peumo” a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T16:03:53.425Z"
+  },
   {
    "id": "1fe8d8a2-eab6-4231-8b9f-0aa246229fa7",
    "to": "flavio",

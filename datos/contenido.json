@@ -2046,6 +2046,16 @@
  ],
  "comments": [
   {
+   "id": "4e88fe5d-5196-4bef-bfdc-4d04fe380918",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "javi",
+   "text": "@Flavio Así quedaría, me avisas si está okay para publicar. también confirmame si los datos de abajo a la derecha los sacamos o los cambiamos (no se cual es el modelo de teno)",
+   "fileIds": [
+    "0271f50d-3a86-4f67-a02f-2b4e6f263f08"
+   ],
+   "createdAt": "2026-11-02T18:45:20.479Z"
+  },
+  {
    "id": "fc3512c9-d5ce-4576-943e-bf3fe86f0a8b",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "flavio",
@@ -3137,6 +3147,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d12c138e-e0c1-4486-acd7-544e8596e89a",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-02T18:45:20.481Z"
+  },
   {
    "id": "2b1e475a-69ea-4650-af17-4e77f7e072dc",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
@@ -4590,6 +4610,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "05446252-8814-4385-97c5-697d205ab3f0",
+   "to": "maca",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "comment",
+   "text": "comentó en “Opciones foto portada web”: @Flavio Así quedaría, me avisas si está okay para publicar. también confirmame s…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Opciones foto portada web”: @Flavio Así quedaría, me avisas si está okay para publicar. también confirmame s…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-02T18:45:20.484Z"
+  },
+  {
+   "id": "f1ccacb8-badd-45f5-9e8b-b700c1ff565c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "mention",
+   "text": "te mencionó en “Opciones foto portada web”: @Flavio Así quedaría, me avisas si está okay para publicar. también confirmame s…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Opciones foto portada web”: @Flavio Así quedaría, me avisas si está okay para publicar. también confirmame s…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-02T18:45:20.484Z"
+  },
   {
    "id": "11eb07ea-81f3-4826-acb2-ecb95447a36e",
    "to": "maca",

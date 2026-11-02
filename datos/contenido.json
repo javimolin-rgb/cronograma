@@ -6997,5 +6997,162 @@
    "lastSeen": "2026-11-02T20:36:35.134Z"
   }
  ],
- "recursos": []
+ "recursos": [
+  {
+   "id": "15087cd6-e65a-423f-b571-93108f2c300c",
+   "cat": "musica",
+   "name": "neorigen_terraza_completa.wav",
+   "path": "archivos/marca-musica/neorigen_terraza_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_terraza_completa.wav",
+   "sha": "ea68cf03e2dacde7236fff12e623c498c28c4663",
+   "type": "audio/wav",
+   "size": 13115178,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:50.213Z"
+  },
+  {
+   "id": "678552db-e37e-48a9-94d1-087cd800f7d2",
+   "cat": "musica",
+   "name": "neorigen_terraza_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_terraza_completa-2.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_terraza_completa-2.mp3",
+   "sha": "4767613fe63ec455cea448316d9294390ebb2d9a",
+   "type": "audio/mpeg",
+   "size": 1824045,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:42.529Z"
+  },
+  {
+   "id": "84da8065-e426-488e-b9e4-6bd78a824b47",
+   "cat": "musica",
+   "name": "neorigen_pino_completa.wav",
+   "path": "archivos/marca-musica/neorigen_pino_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_pino_completa.wav",
+   "sha": "3a34a5dac1373dd7cba7a9fc6affb5252f9bd2f5",
+   "type": "audio/wav",
+   "size": 14387844,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:38.440Z"
+  },
+  {
+   "id": "03525ca4-2800-439c-b1e9-2c48bee7b28e",
+   "cat": "musica",
+   "name": "neorigen_pino_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_pino_completa-2.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_pino_completa-2.mp3",
+   "sha": "65ffd22b4f8a0144b0facba324f092aae75ed6b6",
+   "type": "audio/mpeg",
+   "size": 2000685,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:30.445Z"
+  },
+  {
+   "id": "b1f21ad5-79b3-4aa3-9951-8f41076d74d1",
+   "cat": "musica",
+   "name": "neorigen_origen_completa.wav",
+   "path": "archivos/marca-musica/neorigen_origen_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_origen_completa.wav",
+   "sha": "3fff387caa7c946e8d5d3d09e663848c8d118b47",
+   "type": "audio/wav",
+   "size": 11520102,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:26.458Z"
+  },
+  {
+   "id": "855268da-d130-423d-a8ea-cd83f00bd4ea",
+   "cat": "musica",
+   "name": "neorigen_origen_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_origen_completa.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_origen_completa.mp3",
+   "sha": "2f354899ef215ff1848081aa9a63c02da57a2108",
+   "type": "audio/mpeg",
+   "size": 1602285,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:19.048Z"
+  },
+  {
+   "id": "13ed42e7-0e6b-40d5-b18e-cc3d837fb536",
+   "cat": "musica",
+   "name": "neorigen_niebla_completa.wav",
+   "path": "archivos/marca-musica/neorigen_niebla_completa-2.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_niebla_completa-2.wav",
+   "sha": "1f1c014ffeaedce5bd124a0569d96f6a65e1df7a",
+   "type": "audio/wav",
+   "size": 12260670,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:16.013Z"
+  },
+  {
+   "id": "e7561647-7e64-436d-88a6-f49fb5601d4e",
+   "cat": "musica",
+   "name": "neorigen_niebla_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_niebla_completa.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_niebla_completa.mp3",
+   "sha": "510d2e91c8633434ebcb47ceefffd392548a2bf1",
+   "type": "audio/mpeg",
+   "size": 1705005,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:07.410Z"
+  },
+  {
+   "id": "5ee08832-2d26-4c44-ac93-2650d002a1a9",
+   "cat": "musica",
+   "name": "neorigen_madera_completa.wav",
+   "path": "archivos/marca-musica/neorigen_madera_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_madera_completa.wav",
+   "sha": "a3ce7a8e8012ce3505677f9b319eb8d19949963b",
+   "type": "audio/wav",
+   "size": 13593702,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:08:04.240Z"
+  },
+  {
+   "id": "e0b3d04a-4f35-48c9-a4e2-dd27bdbf41a4",
+   "cat": "musica",
+   "name": "neorigen_madera_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_madera_completa.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_madera_completa.mp3",
+   "sha": "c9a1fab785399d40443f57749334f5a6050aed8b",
+   "type": "audio/mpeg",
+   "size": 1890285,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:07:55.426Z"
+  },
+  {
+   "id": "8bccbdfe-f11c-4f00-9486-34a205c26876",
+   "cat": "musica",
+   "name": "neorigen_cimientos_completa.wav",
+   "path": "archivos/marca-musica/neorigen_cimientos_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_cimientos_completa.wav",
+   "sha": "4f21671398e5c6339f1ae7ec3d17ee1e67ad0c12",
+   "type": "audio/wav",
+   "size": 10577556,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:07:52.200Z"
+  },
+  {
+   "id": "e21f2a9d-8038-4bba-9dce-5bee66f8f851",
+   "cat": "musica",
+   "name": "neorigen_cimientos_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_cimientos_completa-2.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_cimientos_completa-2.mp3",
+   "sha": "0d464ba88a64e3b31fdbc65bc73ec0d473b7b3e1",
+   "type": "audio/mpeg",
+   "size": 1471725,
+   "libre": false,
+   "by": "javi",
+   "at": "2026-11-02T22:07:41.994Z"
+  }
+ ]
 }

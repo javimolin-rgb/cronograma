@@ -439,6 +439,33 @@
     },
 
     /* --- archivos --- */
+    // Sube el contenido a una ruta. Avisa el avance (fetch no sabe hacerlo, XMLHttpRequest sí)
+    // y reintenta cuando GitHub dice que la rama se movió por otra escritura al mismo tiempo.
+    async putContenido(path, body, alAvanzar, intento = 0) {
+      const url = this.contentsUrl(path);
+      const cab = Object.assign({ 'Content-Type': 'application/json' }, this.headers());
+      const r = await new Promise((ok) => {
+        const x = new XMLHttpRequest();
+        x.open('PUT', url, true);
+        Object.keys(cab).forEach((k) => x.setRequestHeader(k, cab[k]));
+        if (alAvanzar && x.upload) x.upload.onprogress = (e) => { if (e.lengthComputable) alAvanzar(e.loaded / e.total); };
+        x.onload = () => ok({ status: x.status, texto: x.responseText });
+        x.onerror = () => ok({ status: 0, texto: '' });
+        x.ontimeout = () => ok({ status: 0, texto: '' });
+        x.send(JSON.stringify(body));
+      });
+      if (r.status >= 200 && r.status < 300) { try { return JSON.parse(r.texto); } catch (e) { return {}; } }
+      let msg = r.status ? 'error ' + r.status : 'se cortó la conexión';
+      try { const e = JSON.parse(r.texto); if (e && e.message) msg = e.message; } catch (e) { /* sin detalle */ }
+      // "is at X but expected Y" = alguien más escribió en el repositorio en el mismo momento
+      const choque = r.status === 409 || r.status === 422 || /but expected|is at /i.test(msg);
+      if ((choque || r.status === 0 || r.status >= 500) && intento < 4) {
+        await sleep(700 + intento * 900);
+        return this.putContenido(path, body, alAvanzar, intento + 1);
+      }
+      if (choque) throw new Error('otra persona (o tu otro dispositivo) guardó al mismo tiempo; vuelve a intentar');
+      throw new Error(msg);
+    },
     async upload(file, opts = {}) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
       const max = 24 * 1024 * 1024;
@@ -458,20 +485,11 @@
       const extNueva = blob !== file && EXT_TIPO[blob.type];
       if (extNueva) name = name.replace(/\.[^.]+$/, '') + '.' + extNueva;   // se guardó en otro formato
       const path = await this.freePath(dir, name);
-      const body = {
+      const j = await this.putContenido(path, {
         message: 'Cronograma: ' + path,
         content: await toBase64(blob),
         branch: this.cfg.branch
-      };
-      const r = await fetch(this.contentsUrl(path), {
-        method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, this.headers()), body: JSON.stringify(body)
-      });
-      if (!r.ok) {
-        let msg = 'error ' + r.status;
-        try { const e = await r.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
-        throw new Error(msg);
-      }
-      const j = await r.json();
+      }, opts.onProgreso);
       return {
         name,
         path,
@@ -505,21 +523,13 @@
         return j.sha || '';
       } catch (e) { return ''; }
     },
-    async putPath(path, blob, mensaje, shaPrevio) {
+    async putPath(path, blob, mensaje, shaPrevio, alAvanzar) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
       if (blob.size > 24 * 1024 * 1024) throw new Error('“' + path.split('/').pop() + '” pesa más de 24 MB');
       const body = { message: mensaje || ('Cronograma: ' + path), content: await toBase64(blob), branch: this.cfg.branch };
       const sha = shaPrevio || await this.shaDe(path);
       if (sha) body.sha = sha;
-      const r = await fetch(this.contentsUrl(path), {
-        method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, this.headers()), body: JSON.stringify(body)
-      });
-      if (!r.ok) {
-        let msg = 'error ' + r.status;
-        try { const e = await r.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
-        throw new Error(msg);
-      }
-      const j = await r.json();
+      const j = await this.putContenido(path, body, alAvanzar);
       return { path, url: this.rawUrl(path), sha: j.content && j.content.sha, size: blob.size };
     },
     // Todo lo que hay guardado en el repositorio, en una sola consulta (para la limpieza)

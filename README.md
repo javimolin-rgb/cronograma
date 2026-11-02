@@ -87,6 +87,8 @@ Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achic
 
 Cuando el computador no deja leer el archivo (pasa si se eligió mientras todavía se descargaba, o si está en iCloud/Drive sin bajar), la app lo intenta una segunda vez sola y, si tampoco, lo dice con esas palabras en vez de un error técnico.
 
+Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o tú desde dos aparatos) guardan al mismo tiempo, la app reintenta sola en vez de fallar con un error de GitHub.
+
 **Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 25 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
@@ -95,11 +97,18 @@ Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp
 
 La pestaña **Marca** guarda lo que la marca usa todo el tiempo y no pertenece a ninguna pieza: el **manual**, los **logos**, las **tipografías**, la **música**, **plantillas** y lo que haga falta.
 
-- **Sube Javi**, ven y descargan todos. Flavio y Maca no pueden subir ni quitar.
+- **Sube Javi**, ven y escuchan todos. Flavio y Maca no pueden subir ni quitar.
 - Cada archivo cae solo en su carpeta según lo que sea (un .ttf a Tipografías, un .mp3 a Música, un PDF al Manual…). Si antes eliges una carpeta en los chips de arriba, va a esa.
-- Las fotos se achican y se guardan en WebP igual que en las piezas, y un video pesado se comprime antes de subir.
-- Cada archivo tiene **descargar**, **copiar enlace** (la dirección pública, para mandársela a una imprenta o pegarla en otro lado) y, para Javi, **quitar**.
+- **El mismo material en varios formatos es una sola ficha.** `neorigen_pino_completa.wav` y `.mp3` se muestran juntos, con el peso de cada uno; al descargar, Javi elige en qué formato.
+- **Reproductor para todo:** al tocar un archivo se abre a pantalla completa y se pasa de uno a otro deslizando — fotos, videos y también **audios**, con su reproductor y el nombre de la pista.
+- **Renombrar y mover:** el botón de ajustes de cada ficha deja cambiar el nombre (se lo cambia a todos sus formatos), moverla de carpeta, copiar su enlace o quitarla.
+- **Ver y escuchar sí, descargar solo con permiso.** Flavio y Maca pueden abrir y escuchar todo, pero el botón de descargar aparece únicamente en lo que Javi marcó como libre; en el resto les sale un botón para **pedírselo**, que le llega como aviso. (El repositorio es público, así que es un acuerdo del equipo, no un candado.)
+- Mientras sube, cada archivo muestra su **barra de avance** con el porcentaje.
 - Se guardan en `archivos/marca-<carpeta>/` y cuentan como archivos en uso, así que la limpieza de *Espacio* nunca los toca.
+
+### Usar un recurso de marca en una pieza
+
+Dentro de una pieza, en **De Marca**, se eligen los recursos que esa publicación usa: la pista de música, el logo, la tipografía. No se copian —quedan apuntados al archivo de Marca—, así que no ocupan espacio de nuevo y se ven como fichas en la pieza, en el feed y en la vista de resultado. Al tocarlas se abren en el reproductor.
 
 ## Que el repositorio no se llene
 

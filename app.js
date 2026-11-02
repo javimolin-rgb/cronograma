@@ -256,7 +256,7 @@ function normalize(db) {
   db.posts = (db.posts || []).map((p) => Object.assign({
     title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
-    platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || []
+    platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
   ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos'].forEach((t) => { db[t] = db[t] || []; });
   return db;
@@ -375,8 +375,8 @@ async function notify(type, post, targets, text) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', checklist: 'checklist', artefactos: 'interactivo' };
-const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'artefactos'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
+const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'artefactos', 'marca'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
 const TEXT_FIELDS = ['title', 'caption', 'hashtags', 'notes'];
 // De esos, los que vale la pena avisarle al equipo (las notas son internas)
@@ -670,6 +670,8 @@ function abrirGaleria(files, inicio) {
       const src = fileSrc(f);
       const m = isVideo(f) ? `<video src="${esc(src)}" controls playsinline preload="metadata"></video>`
         : isImg(f) ? `<img src="${esc(src)}" alt="">`
+        : esAudio(f) ? `<div class="galaudio"><span class="disco">${ic('music', 34)}</span><b>${esc(f.name || '')}</b>
+            <audio src="${esc(src)}" controls preload="metadata" controlslist="nodownload"></audio></div>`
         : `<div class="galdoc"><span class="ext">${esc((extOf(f) || 'archivo').toUpperCase())}</span><small>${esc(f.name || '')}</small></div>`;
       return `<div class="galslide">${m}</div>`;
     }).join('')}</div>
@@ -689,11 +691,16 @@ function galActualizar(i) {
   const lb = $('#lightbox'), f = GAL.files[i];
   const n = lb.querySelector('.galn'); if (n) n.textContent = `${i + 1} / ${GAL.files.length}`;
   const a = lb.querySelector('.lbdl');
-  if (a && f) { a.href = fileSrc(f); a.setAttribute('download', f.name || 'archivo'); a.innerHTML = `${ic('download', 18)} ${esc(f.name || 'Descargar')}`; }
+  if (a && f) {
+    // los archivos de Marca solo se bajan si Javi los liberó; lo de las piezas, siempre
+    const libre = esAdmin() || !(S.db.recursos || []).some((x) => x.id === f.id && !x.libre);
+    a.hidden = !libre;
+    if (libre) { a.href = fileSrc(f); a.setAttribute('download', f.name || 'archivo'); a.innerHTML = `${ic('download', 18)} ${esc(f.name || 'Descargar')}`; }
+  }
   // el que sale de pantalla se pausa; el que queda a la vista se reproduce con sonido
   // (se recorren las láminas, no los videos: entre medio puede haber fotos)
   lb.querySelectorAll('.galslide').forEach((lam, k) => {
-    const v = lam.querySelector('video'); if (!v) return;
+    const v = lam.querySelector('video, audio'); if (!v) return;
     if (k !== i) { if (!v.paused) v.pause(); return; }
     v.muted = false; v.volume = 1;
     const p = v.play();
@@ -766,6 +773,7 @@ function viewResultados() {
       <div class="resbody">
         <div class="plats">${p.platforms.map(platBadge).join('')}</div>
         ${artefactoHtml(p, false)}
+        ${marcaEnPiezaHtml(p, false)}
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
         ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
         ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
@@ -841,6 +849,7 @@ function postHtml(p, t) {
         <button class="btn ghost sm postabrir" data-act="open-post" data-id="${esc(p.id)}">Abrir</button>
       </div>
       ${artefactoHtml(p, false)}
+      ${marcaEnPiezaHtml(p, false)}
       ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
       ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
       <div class="postcoms">
@@ -1098,6 +1107,24 @@ function publicadoHtml(p) {
       <a class="lnk" href="${esc(l.url)}" target="_blank" rel="noopener">Abrir en Instagram</a></div>`).join('')}`;
 }
 
+/* ---------- barra de avance de las subidas ---------- */
+function colaHtml(cola) {
+  if (!cola || !cola.length) return '';
+  return `<div class="cola">${cola.map((c, i) => `<div class="colafila${c.listo ? ' ok' : ''}">
+    <span class="colan">${esc(c.nombre)}</span>
+    <i class="colabar"><b id="colab-${i}" style="width:${Math.round((c.pct || 0) * 100)}%"></b></i>
+    <small id="colat-${i}">${esc(c.estado || Math.round((c.pct || 0) * 100) + '%')}</small>
+  </div>`).join('')}</div>`;
+}
+function pintarCola(cola) {
+  (cola || []).forEach((c, i) => {
+    const b = document.getElementById('colab-' + i), t = document.getElementById('colat-' + i);
+    if (b) b.style.width = Math.round((c.pct || 0) * 100) + '%';
+    if (t) t.textContent = c.estado || (Math.round((c.pct || 0) * 100) + '%');
+  });
+}
+const esAudio = (f) => /^audio\//.test(f.type || '') || /\.(mp3|wav|m4a|aac|ogg|aiff?|flac)$/i.test(f.name || '');
+
 /* ---------- Marca: la nube de recursos del equipo (manual, logos, música…) ---------- */
 const CATS_MARCA = [
   ['logos', 'Logos', 'image'], ['manual', 'Manual', 'folder'], ['tipografias', 'Tipografías', 'list'],
@@ -1115,6 +1142,28 @@ function catDe(file) {
   return 'otros';
 }
 const recursos = () => (S.db.recursos || []).slice().sort((a, b) => String(b.at || '').localeCompare(String(a.at || '')));
+// Para mostrar primero el formato que se puede escuchar o ver de una
+const RANGO = ['mp3', 'm4a', 'ogg', 'webp', 'png', 'jpg', 'jpeg', 'svg', 'mp4', 'pdf', 'wav', 'aiff', 'aif', 'flac'];
+const rangoDe = (r) => { const i = RANGO.indexOf((extOf(r) || '').toLowerCase()); return i < 0 ? 99 : i; };
+/* El mismo material en dos formatos (neorigen_pino.wav y .mp3) es una sola cosa con dos archivos */
+function gruposMarca(lista) {
+  const m = new Map();
+  lista.forEach((r) => {
+    const info = splitName(r.name);
+    const k = (r.cat || 'otros') + '/' + slugify(info.base, 'x');
+    const g = m.get(k) || { id: k, titulo: info.label || r.name, cat: r.cat || 'otros', items: [], at: r.at || '' };
+    g.items.push(r);
+    if (String(r.at || '') > String(g.at)) g.at = r.at || '';
+    m.set(k, g);
+  });
+  return [...m.values()].map((g) => {
+    g.items.sort((a, b) => rangoDe(a) - rangoDe(b));
+    g.principal = g.items[0];
+    g.size = g.items.reduce((a, x) => a + (x.size || 0), 0);
+    g.libre = g.items.some((x) => x.libre);
+    return g;
+  }).sort((a, b) => String(b.at).localeCompare(String(a.at)));
+}
 function viewMarca() {
   const todos = recursos();
   const cat = S.marcaCat || 'todos';
@@ -1126,53 +1175,116 @@ function viewMarca() {
     .map(([id, n]) => `<button class="chip${cat === id ? ' on' : ''}" data-act="marca-cat" data-v="${id}">${esc(n)}${id !== 'todos' && cuenta(id) ? ` <b>${cuenta(id)}</b>` : ''}</button>`).join('');
   const head = `<div class="fhead"><div class="chips scroll">${chips}</div>
     <small>${todos.length} archivo${todos.length === 1 ? '' : 's'}${peso ? ' · ' + esc(prettySize(peso)) : ''}</small></div>
-    ${S.marcaSubiendo ? `<div class="avisobar">${ic('send', 18)}<span>Subiendo…</span></div>` : ''}
+    ${colaHtml(S.marcaCola)}
     ${puede ? `<label class="btn ghost sm arteup arteadd">${ic('plus', 16)} Subir a ${cat === 'todos' ? 'Marca' : nombreCat(cat)}<input type="file" multiple data-marca-file="1"></label>
       <p class="hint">Lo que suba acá lo ve todo el equipo: manual, logos, tipografías, música, plantillas. ${cat === 'todos' ? 'Cada archivo se guarda en la carpeta que le corresponde según lo que sea.' : `Va a quedar en ${nombreCat(cat)}.`}</p>` : ''}`;
   if (!lista.length) {
     return head + `<div class="empty"><b>${cat === 'todos' ? 'Todavía no hay nada aquí' : 'Nada en ' + esc(nombreCat(cat))}</b>${puede ? 'Sube el manual, los logos, las tipografías y la música que usa la marca.' : 'Javi todavía no ha subido recursos de marca.'}</div>`;
   }
-  return head + `<div class="recursos">${lista.map((r) => {
+  const grupos = gruposMarca(lista);
+  const media = grupos.map((g) => g.principal).filter(esMediaOAudio);
+  return head + `<div class="recursos">${grupos.map((g) => {
+    const r = g.principal;
     const mini = esMedia(r) ? miniMedia(r) : '';
+    const puedeBajar = esAdmin() || g.libre;
+    const i = media.indexOf(r);
     return `<div class="recurso">
-      <button class="recthumb" data-act="marca-ver" data-id="${esc(r.id)}" aria-label="Ver ${esc(r.name)}">
-        ${mini || `<span class="ext">${esc((extOf(r) || '?').slice(0, 4).toUpperCase())}</span>`}</button>
-      <div class="rect"><b>${esc(r.name)}</b><small>${esc(nombreCat(r.cat))} · ${esc(prettySize(r.size))} · ${esc(ago(r.at))}</small></div>
+      <button class="recthumb" data-act="marca-ver" data-id="${esc(r.id)}" data-i="${i}" aria-label="${esAudio(r) ? 'Escuchar' : 'Ver'} ${esc(g.titulo)}">
+        ${mini || `<span class="ext">${esAudio(r) ? ic('music', 20) : esc((extOf(r) || '?').slice(0, 4).toUpperCase())}</span>`}
+        ${esAudio(r) || isVideo(r) ? `<i class="playic">${ic('play', 16)}</i>` : ''}</button>
+      <div class="rect"><b>${esc(g.titulo)}</b>
+        <small>${esc(nombreCat(g.cat))} · ${g.items.map((x) => `${esc((extOf(x) || '').toUpperCase())} ${esc(prettySize(x.size))}`).join(' · ')} · ${esc(ago(g.at))}${!esAdmin() && !g.libre ? ' · solo para ver' : ''}</small></div>
       <div class="recacts">
-        <button class="iconbtn" data-act="marca-bajar" data-id="${esc(r.id)}" aria-label="Descargar" title="Descargar">${ic('download', 17)}</button>
-        <button class="iconbtn" data-act="marca-enlace" data-id="${esc(r.id)}" aria-label="Copiar enlace" title="Copiar enlace">${ic('link', 17)}</button>
-        ${puede ? `<button class="iconbtn danger" data-act="marca-quitar" data-id="${esc(r.id)}" aria-label="Quitar" title="Quitar">${ic('trash', 17)}</button>` : ''}
+        ${puedeBajar ? `<button class="iconbtn" data-act="marca-bajar" data-id="${esc(r.id)}" data-g="${esc(g.id)}" aria-label="Descargar" title="Descargar">${ic('download', 17)}</button>` : ''}
+        ${esAdmin() ? `<button class="iconbtn" data-act="marca-menu" data-g="${esc(g.id)}" aria-label="Más" title="Más">${ic('sliders', 17)}</button>`
+          : `<button class="iconbtn" data-act="marca-pedir" data-id="${esc(r.id)}" aria-label="Pedir el archivo" title="Pedirle el archivo a Javi">${ic('send', 16)}</button>`}
       </div></div>`;
   }).join('')}</div>`;
+}
+const esMediaOAudio = (f) => esMedia(f) || esAudio(f);
+// Todos los archivos de Marca que se pueden ver o escuchar, para pasar de uno a otro en el reproductor
+function mediaMarca() {
+  const cat = S.marcaCat || 'todos';
+  const lista = recursos().filter((r) => cat === 'todos' || (r.cat || 'otros') === cat);
+  return gruposMarca(lista).map((g) => g.principal).filter(esMediaOAudio);
 }
 async function subirAMarca(input) {
   const files = [...input.files]; input.value = '';
   if (!files.length || !esAdmin() || !requireWrite()) return;
-  S.marcaSubiendo = true; renderMain();
-  let n = 0;
-  for (const f of files) {
+  const cola = S.marcaCola = files.map((f) => ({ nombre: f.name, pct: 0, estado: 'en espera' }));
+  renderMain();
+  const nuevos = [];
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i], c = cola[i];
     try {
       const cat = (S.marcaCat && S.marcaCat !== 'todos') ? S.marcaCat : catDe(f);
       let archivo = f;
       if (await convieneComprimir(f)) {
-        toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo…`, 8000);
-        const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8);
+        c.estado = 'comprimiendo…'; pintarCola(cola);
+        const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (p) => { c.pct = p * 0.4; pintarCola(cola); });
         if (chico) archivo = chico;
       }
-      const r = await store.upload(archivo, { dir: 'marca-' + cat, name: archivo.name });
-      await save('recursos', {
-        id: uid(), cat, name: r.name || archivo.name, path: r.path, url: r.url, sha: r.sha,
-        type: r.type || archivo.type || '', size: r.size || archivo.size, by: S.me.id, at: nowISO()
+      c.estado = ''; c.pct = 0; pintarCola(cola);
+      const r = await store.upload(archivo, {
+        dir: 'marca-' + cat, name: archivo.name,
+        onProgreso: (p) => { c.pct = p; c.estado = p >= 1 ? 'guardando…' : ''; pintarCola(cola); }
       });
-      n++;
+      c.pct = 1; c.listo = true; c.estado = 'listo'; pintarCola(cola);
+      nuevos.push({
+        id: uid(), cat, name: r.name || archivo.name, path: r.path, url: r.url, sha: r.sha,
+        type: r.type || archivo.type || '', size: r.size || archivo.size, libre: false, by: S.me.id, at: nowISO()
+      });
     } catch (e) {
       console.error(e);
-      toast(`“${f.name}” no se pudo subir: ${(e && e.message) || e}`, 6000);
+      c.estado = 'no se pudo'; c.pct = 0; pintarCola(cola);
+      toast(`“${f.name}” no se pudo subir: ${(e && e.message) || e}`, 7000);
     }
   }
-  S.marcaSubiendo = false;
+  // las fichas se guardan al final: así no chocan con las subidas de los archivos
+  for (const r of nuevos) await save('recursos', r);
+  setTimeout(() => { S.marcaCola = []; if (S.view === 'marca') renderMain(); }, 1200);
   renderMain();
-  if (n) toast(`${n} archivo${n === 1 ? '' : 's'} en Marca`, 3000);
+  if (nuevos.length) toast(`${nuevos.length} archivo${nuevos.length === 1 ? '' : 's'} en Marca`, 3000);
+}
+const grupoPorId = (gid) => gruposMarca(recursos()).find((g) => g.id === gid);
+const recursoPorId = (id) => (S.db.recursos || []).find((x) => x.id === id);
+/* Mencionar archivos de Marca en una pieza: no se copian, se apuntan */
+const marcaDe = (p) => ((p && p.marca) || []).map(recursoPorId).filter(Boolean);
+function marcaEnPiezaHtml(p, editable) {
+  const usados = marcaDe(p);
+  if (!usados.length && !editable) return '';
+  return `<label class="lbl">De Marca <small>lo que usa esta pieza</small></label>
+    <div class="chips">${usados.map((r) => `<button class="chip marcachip" data-act="marca-abrir" data-id="${esc(r.id)}">${esAudio(r) ? ic('music', 13) : ic('marca', 13)} ${esc(splitName(r.name).label || r.name)}${editable ? `<i data-act="marca-quitar-pieza" data-id="${esc(r.id)}" aria-label="Quitar">${ic('x', 12)}</i>` : ''}</button>`).join('')}
+      ${editable ? `<button class="chip" data-act="marca-elegir">${ic('plus', 14)} Usar de Marca</button>` : ''}</div>
+    ${editable && ED.verMarca ? `<div class="marcapick">${gruposMarca(recursos()).map((g) => {
+      const ya = (p.marca || []).includes(g.principal.id);
+      return `<button class="picked${ya ? ' on' : ''}" data-act="marca-usar" data-id="${esc(g.principal.id)}">
+        <span>${esAudio(g.principal) ? ic('music', 15) : ic('paperclip', 15)}</span>
+        <b>${esc(g.titulo)}</b><small>${esc(nombreCat(g.cat))}</small>${ya ? ic('check', 15) : ''}</button>`;
+    }).join('') || '<p class="hint">Todavía no hay nada en Marca.</p>'}</div>` : ''}`;
+}
+
+// Menú de un recurso (solo quien administra): renombrar, permitir descarga, enlace, quitar
+function menuRecurso(gid) {
+  const g = grupoPorId(gid); if (!g) return;
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>${esc(g.titulo)}</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <div class="track"><div><span>Carpeta</span><b>${esc(nombreCat(g.cat))}</b></div>
+        <div><span>Formatos</span><b>${g.items.map((x) => esc((extOf(x) || '').toUpperCase())).join(' · ')}</b></div>
+        <div><span>Peso</span><b>${esc(prettySize(g.size))}</b></div>
+        <div><span>Descarga</span><b>${g.libre ? 'libre para el equipo' : 'solo tú'}</b></div></div>
+      <label class="lbl">Nombre <small>se le cambia a todos los formatos</small></label>
+      <input class="field" id="rec-nombre" value="${esc(g.titulo)}">
+      <label class="lbl">Carpeta</label>
+      <div class="chips">${CATS_MARCA.map(([c, n]) => `<button class="chip${g.cat === c ? ' on' : ''}" data-act="rec-cat" data-g="${esc(g.id)}" data-v="${c}">${esc(n)}</button>`).join('')}</div>
+      <label class="imppend" style="color:var(--ink);margin-top:14px"><input type="checkbox" id="rec-libre"${g.libre ? ' checked' : ''}> Dejar que Flavio y Maca lo descarguen</label>
+      <p class="hint">Sin esto lo pueden ver y escuchar, pero no bajar: les aparece un botón para pedírtelo. Ojo: el repositorio es público, así que es un acuerdo del equipo, no un candado.</p>
+      <label class="lbl">Archivos</label>
+      <div class="vlist">${g.items.map((x) => `<button class="vrow" data-act="marca-bajar-uno" data-id="${esc(x.id)}"><b>${esc((extOf(x) || '').toUpperCase())}</b><span>${esc(x.name)}</span><small>${esc(prettySize(x.size))}</small></button>`).join('')}</div>
+      <button class="btn ghost sm" data-act="marca-enlace" data-id="${esc(g.principal.id)}" style="margin-top:12px">${ic('link', 15)} Copiar enlace</button>
+    </div>
+    <div class="pf"><button class="btn ghost danger" data-act="marca-quitar" data-g="${esc(g.id)}">${ic('trash', 17)} Quitar</button>
+      <button class="btn" data-act="rec-guardar" data-g="${esc(g.id)}">Guardar</button></div>`, true);
 }
 
 /* ---------- vista: panel de seguimiento ---------- */
@@ -1750,6 +1862,7 @@ function renderEditor() {
         ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
     })()}`}
 
+    ${colaHtml(ED.cola)}
     ${ED.comprimiendo ? `<div class="avisobar"><span id="comprimiendo">Comprimiendo “${esc(ED.comprimiendo.nombre)}”… ${Math.round((ED.comprimiendo.pct || 0) * 100)}%</span></div>` : ''}
     ${(() => {
       if (ED.art) return `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}${ED.art.bytesTotal ? ` · ${esc(prettySize(ED.art.bytes))} de ${esc(prettySize(ED.art.bytesTotal))}` : ''}…<br><small>Deja la app abierta hasta que termine.</small></span></div>`;
@@ -1759,6 +1872,8 @@ function renderEditor() {
         <label class="btn ghost sm arteup arteadd">${ic('plus', 16)} ${artefactosDe(d).length ? 'Subir otro interactivo' : 'Subir un interactivo (.zip)'}<input type="file" accept=".zip,application/zip" data-art-nuevo="1"></label>
         <p class="hint">Un .zip con su <b>index.html</b> adentro: lo que entrega Claude al descargar un artefacto. Si subes otra vez el mismo, se actualiza en vez de repetirse.</p>`;
     })()}
+
+    ${marcaEnPiezaHtml(d, esAdmin() && store.canWrite)}
 
     ${publicadoHtml(d)}
 
@@ -2104,14 +2219,18 @@ async function subirArchivos(files) {
           })));
           toast(`“${f.name}” ya estaba guardado en “${gemelo.post ? gemelo.post.title : 'otra pieza'}”: lo enlacé sin volver a subirlo`, 5000);
         } else {
+          const cola = ed.cola = [{ nombre: f.name, pct: 0, estado: '' }];
+          renderEditor();
+          const avance = { onProgreso: (p) => { cola[0].pct = p; cola[0].estado = p >= 1 ? 'guardando…' : ''; pintarCola(cola); } };
           let r;
-          try { r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre }); }
+          try { r = await store.upload(archivo, Object.assign({ dir: projectName(ed.d), name: nombre }, avance)); }
           catch (e1) {
             if (!/leer el archivo|no está donde estaba/i.test((e1 && e1.message) || '')) throw e1;
             toast(`“${f.name}” no se dejó leer; lo intento otra vez…`, 3000);   // suele pasar si recién se descargaba
             await new Promise((ok) => setTimeout(ok, 2500));
-            r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
+            r = await store.upload(archivo, Object.assign({ dir: projectName(ed.d), name: nombre }, avance));
           }
+          ed.cola = [];
           const extra = f.__video ? { dur: f.__video.dur, w: f.__video.w, h: f.__video.h } : {};
           ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen }, extra, r)));
           if (r.size && f.size && r.size < f.size * 0.9) toast(`“${f.name}” quedó en ${prettySize(r.size)} (venía con ${prettySize(f.size)})`, 4000);
@@ -3268,12 +3387,76 @@ const ACTS = {
   espacio: () => abrirEspacio(),
   'marca-cat': (el) => { S.marcaCat = el.dataset.v; renderMain(); },
   'marca-ver': (el) => {
-    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
-    if (esMedia(r)) { abrirGaleria([r], 0); return; }
+    const r = recursoPorId(el.dataset.id); if (!r) return;
+    if (esMediaOAudio(r)) { const lista = mediaMarca(); abrirGaleria(lista, Math.max(0, +el.dataset.i || lista.indexOf(r))); return; }
     if (isPdf(r) && r.path) { window.open(r.path.split('/').map(encodeURIComponent).join('/'), '_blank', 'noopener'); return; }
-    downloadOne(r);
+    if (esAdmin() || r.libre) downloadOne(r); else toast('Ese archivo es solo para ver', 3000);
   },
-  'marca-bajar': (el) => { const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (r) downloadOne(r); },
+  'marca-abrir': (el) => {
+    const r = recursoPorId(el.dataset.id); if (!r) return;
+    if (esMediaOAudio(r)) { abrirGaleria([r], 0); return; }
+    if (isPdf(r) && r.path) { window.open(r.path.split('/').map(encodeURIComponent).join('/'), '_blank', 'noopener'); return; }
+    if (esAdmin() || r.libre) downloadOne(r);
+  },
+  'marca-elegir': () => { if (!ED) return; syncDraft(); ED.verMarca = !ED.verMarca; renderEditor(); },
+  'marca-usar': (el) => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const lista = ED.d.marca || (ED.d.marca = []);
+    const i = lista.indexOf(el.dataset.id);
+    if (i >= 0) lista.splice(i, 1); else lista.push(el.dataset.id);
+    renderEditor();
+  },
+  'marca-quitar-pieza': (el, e) => {
+    if (e) e.stopPropagation();
+    if (!ED) return;
+    syncDraft();
+    ED.d.marca = (ED.d.marca || []).filter((x) => x !== el.dataset.id);
+    renderEditor();
+  },
+  'marca-menu': (el) => { if (esAdmin()) menuRecurso(el.dataset.g); },
+  'marca-pedir': async (el) => {
+    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
+    if (!requireWrite()) return;
+    for (const pid of (CFG.ADMIN_PEOPLE || ['javi'])) {
+      if (pid === S.me.id) continue;
+      await save('notifications', {
+        id: uid(), to: pid, from: S.me.id, postId: null, type: 'review',
+        text: `te pidió el archivo “${r.name}” de Marca`, read: false, inApp: true, push: true,
+        title: 'Piden un archivo de Marca', body: `${S.me.name} necesita “${r.name}”`.slice(0, 180),
+        url: siteBase(), createdAt: nowISO()
+      });
+    }
+    toast('Listo, le avisé a Javi', 3500);
+  },
+  'rec-cat': (el) => {
+    const g = grupoPorId(el.dataset.g); if (!g || !esAdmin()) return;
+    g.items.forEach((x) => { x.cat = el.dataset.v; });
+    menuRecurso(el.dataset.v + el.dataset.g.slice(el.dataset.g.indexOf('/')));
+  },
+  'rec-guardar': async (el) => {
+    const g = grupoPorId(el.dataset.g); if (!g || !requireWrite()) return;
+    const n = $('#rec-nombre'), l = $('#rec-libre');
+    const nombre = ((n && n.value) || g.titulo).trim();
+    const libre = !!(l && l.checked);
+    for (const x of g.items) {
+      const ext = extOf(x);
+      await save('recursos', Object.assign({}, x, { name: nombre ? `${nombre}${ext ? '.' + ext : ''}` : x.name, cat: x.cat, libre }));
+    }
+    closeSheet(); renderMain();
+    toast('Guardado');
+  },
+  'marca-bajar': (el) => {
+    const g = el.dataset.g ? grupoPorId(el.dataset.g) : null;
+    const uno = recursoPorId(el.dataset.id);
+    const items = (g ? g.items : (uno ? [uno] : [])).filter((x) => esAdmin() || x.libre);
+    if (!items.length) { toast('Ese archivo es solo para ver; pídeselo a Javi con el botón de al lado', 4000); return; }
+    if (items.length === 1) { downloadOne(items[0]); return; }
+    openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>¿En qué formato?</h2><span style="width:40px"></span></div>
+      <div class="pb"><div class="vlist">${items.map((x) => `<button class="vrow" data-act="marca-bajar-uno" data-id="${esc(x.id)}"><b>${esc((extOf(x) || '').toUpperCase())}</b><span>${esc(x.name)}</span><small>${esc(prettySize(x.size))}</small></button>`).join('')}</div>
+      <p class="hint">“${esc(g ? g.titulo : '')}” está guardado en ${items.length} formatos.</p></div>`);
+  },
+  'marca-bajar-uno': (el) => { const r = recursoPorId(el.dataset.id); closeSheet(); if (r) downloadOne(r); },
   'marca-enlace': async (el) => {
     const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
     const base = (CFG.SITE_URL || (location.origin + location.pathname)).replace(/\/?$/, '/');
@@ -3281,11 +3464,13 @@ const ACTS = {
   },
   'marca-quitar': async (el) => {
     if (!esAdmin() || !requireWrite()) return;
-    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
-    if (!confirm(`¿Quitar “${r.name}” de Marca?`)) return;
-    await removeRow('recursos', r.id);
-    renderMain();
-    if (r.path && store.deleteFile) store.deleteFile(r.path, r.sha).catch(() => {});
+    const g = el.dataset.g ? grupoPorId(el.dataset.g) : null;
+    const items = g ? g.items : [recursoPorId(el.dataset.id)].filter(Boolean);
+    if (!items.length) return;
+    if (!confirm(`¿Quitar “${g ? g.titulo : items[0].name}” de Marca?${items.length > 1 ? `\n\nSon ${items.length} archivos (${items.map((x) => (extOf(x) || '').toUpperCase()).join(', ')}).` : ''}`)) return;
+    for (const x of items) await removeRow('recursos', x.id);
+    closeSheet(); renderMain();
+    for (const x of items) { if (x.path && store.deleteFile) store.deleteFile(x.path, x.sha).catch(() => {}); }
     toast('Quitado de Marca');
   },
   'esp-viejas': async () => {

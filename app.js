@@ -175,6 +175,8 @@ const IC = {
   mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0014 0M12 17v5M8 22h8"/>',
   share: '<path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/>',
   refresh: '<path d="M20.5 12a8.5 8.5 0 11-2.6-6.1M20.8 3.4v5.2h-5.2"/>',
+  marca: '<path d="M12 3.2l2.5 5.4 5.9.8-4.3 4.1 1.1 5.9-5.2-2.9-5.2 2.9 1.1-5.9L3.6 9.4l5.9-.8z"/>',
+  music: '<path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.6"/><circle cx="17.5" cy="16" r="2.6"/>',
   search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
   sliders: '<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
   x: '<path d="M18 6L6 18M6 6l12 12"/>',
@@ -211,7 +213,7 @@ const UI = Object.assign({ tema: 'auto', escala: 1, oculto: [] }, (() => {
 })());
 const TEMAS = [['auto', 'Según el sistema'], ['light', 'Claro'], ['dark', 'Oscuro']];
 const ESCALAS = [[0.9, 'Chica'], [1, 'Normal'], [1.15, 'Grande'], [1.3, 'Más grande']];
-const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Agenda'], ['board', 'Tablero'], ['files', 'Entregas'], ['dash', 'Panel']];
+const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Agenda'], ['board', 'Tablero'], ['files', 'Entregas'], ['marca', 'Marca'], ['dash', 'Panel']];
 function guardarUI() { try { localStorage.setItem(UI_KEY, JSON.stringify(UI)); } catch (e) { /* sin espacio */ } }
 function aplicarUI() {
   const r = document.documentElement;
@@ -250,6 +252,7 @@ let store, ED = null, sheetOpen = false, toastT;
 function normalize(db) {
   // archivos que quedaron guardados con su copia local de otro equipo: se usa la dirección publicada
   (db.posts || []).forEach((p) => (p.files || []).forEach((f) => { if (f.blobUrl) delete f.blobUrl; }));
+  db.recursos = db.recursos || [];
   db.posts = (db.posts || []).map((p) => Object.assign({
     title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
@@ -889,6 +892,7 @@ async function analizarEspacio() {
     });
     (p.artefactos || []).forEach((a) => (a.archivos || []).forEach((x) => enUso.add(`${a.carpeta}/${x.ruta}`)));
   });
+  (S.db.recursos || []).forEach((r) => { if (r.path) enUso.add(r.path); });   // los de Marca también están en uso
   const viejasReales = viejas.filter((v) => !enUso.has(v.path) && porPath.has(v.path));
   const conocidos = new Set(viejasReales.map((v) => v.path));
   const sueltos = arbol.filter((x) => !enUso.has(x.path) && !conocidos.has(x.path));
@@ -1094,6 +1098,83 @@ function publicadoHtml(p) {
       <a class="lnk" href="${esc(l.url)}" target="_blank" rel="noopener">Abrir en Instagram</a></div>`).join('')}`;
 }
 
+/* ---------- Marca: la nube de recursos del equipo (manual, logos, música…) ---------- */
+const CATS_MARCA = [
+  ['logos', 'Logos', 'image'], ['manual', 'Manual', 'folder'], ['tipografias', 'Tipografías', 'list'],
+  ['musica', 'Música', 'music'], ['fotos', 'Fotos', 'image'], ['plantillas', 'Plantillas', 'copy'], ['otros', 'Otros', 'paperclip']
+];
+const nombreCat = (c) => (CATS_MARCA.find((x) => x[0] === c) || ['otros', 'Otros'])[1];
+function catDe(file) {
+  const n = (file.name || '').toLowerCase(), e = (n.split('.').pop() || '');
+  if (/^(ttf|otf|woff2?|eot)$/.test(e)) return 'tipografias';
+  if (/^(mp3|wav|m4a|aac|aiff?|ogg)$/.test(e)) return 'musica';
+  if (/manual|brandbook|identidad|guia|guía/.test(n) || e === 'pdf') return 'manual';
+  if (/logo|isotipo|imagotipo|logotipo/.test(n)) return 'logos';
+  if (/^(psd|ai|indd|fig|sketch|zip|key|pptx?|docx?)$/.test(e)) return 'plantillas';
+  if (/^(jpe?g|png|webp|gif|avif|svg|heic|mp4|mov)$/.test(e)) return 'fotos';
+  return 'otros';
+}
+const recursos = () => (S.db.recursos || []).slice().sort((a, b) => String(b.at || '').localeCompare(String(a.at || '')));
+function viewMarca() {
+  const todos = recursos();
+  const cat = S.marcaCat || 'todos';
+  const lista = cat === 'todos' ? todos : todos.filter((r) => (r.cat || 'otros') === cat);
+  const cuenta = (c) => todos.filter((r) => (r.cat || 'otros') === c).length;
+  const peso = todos.reduce((a, r) => a + (r.size || 0), 0);
+  const puede = esAdmin() && store.canWrite;
+  const chips = [['todos', 'Todo', 'folder']].concat(CATS_MARCA.filter((c) => cuenta(c[0]) || cat === c[0] || puede))
+    .map(([id, n]) => `<button class="chip${cat === id ? ' on' : ''}" data-act="marca-cat" data-v="${id}">${esc(n)}${id !== 'todos' && cuenta(id) ? ` <b>${cuenta(id)}</b>` : ''}</button>`).join('');
+  const head = `<div class="fhead"><div class="chips scroll">${chips}</div>
+    <small>${todos.length} archivo${todos.length === 1 ? '' : 's'}${peso ? ' · ' + esc(prettySize(peso)) : ''}</small></div>
+    ${S.marcaSubiendo ? `<div class="avisobar">${ic('send', 18)}<span>Subiendo…</span></div>` : ''}
+    ${puede ? `<label class="btn ghost sm arteup arteadd">${ic('plus', 16)} Subir a ${cat === 'todos' ? 'Marca' : nombreCat(cat)}<input type="file" multiple data-marca-file="1"></label>
+      <p class="hint">Lo que suba acá lo ve todo el equipo: manual, logos, tipografías, música, plantillas. ${cat === 'todos' ? 'Cada archivo se guarda en la carpeta que le corresponde según lo que sea.' : `Va a quedar en ${nombreCat(cat)}.`}</p>` : ''}`;
+  if (!lista.length) {
+    return head + `<div class="empty"><b>${cat === 'todos' ? 'Todavía no hay nada aquí' : 'Nada en ' + esc(nombreCat(cat))}</b>${puede ? 'Sube el manual, los logos, las tipografías y la música que usa la marca.' : 'Javi todavía no ha subido recursos de marca.'}</div>`;
+  }
+  return head + `<div class="recursos">${lista.map((r) => {
+    const mini = esMedia(r) ? miniMedia(r) : '';
+    return `<div class="recurso">
+      <button class="recthumb" data-act="marca-ver" data-id="${esc(r.id)}" aria-label="Ver ${esc(r.name)}">
+        ${mini || `<span class="ext">${esc((extOf(r) || '?').slice(0, 4).toUpperCase())}</span>`}</button>
+      <div class="rect"><b>${esc(r.name)}</b><small>${esc(nombreCat(r.cat))} · ${esc(prettySize(r.size))} · ${esc(ago(r.at))}</small></div>
+      <div class="recacts">
+        <button class="iconbtn" data-act="marca-bajar" data-id="${esc(r.id)}" aria-label="Descargar" title="Descargar">${ic('download', 17)}</button>
+        <button class="iconbtn" data-act="marca-enlace" data-id="${esc(r.id)}" aria-label="Copiar enlace" title="Copiar enlace">${ic('link', 17)}</button>
+        ${puede ? `<button class="iconbtn danger" data-act="marca-quitar" data-id="${esc(r.id)}" aria-label="Quitar" title="Quitar">${ic('trash', 17)}</button>` : ''}
+      </div></div>`;
+  }).join('')}</div>`;
+}
+async function subirAMarca(input) {
+  const files = [...input.files]; input.value = '';
+  if (!files.length || !esAdmin() || !requireWrite()) return;
+  S.marcaSubiendo = true; renderMain();
+  let n = 0;
+  for (const f of files) {
+    try {
+      const cat = (S.marcaCat && S.marcaCat !== 'todos') ? S.marcaCat : catDe(f);
+      let archivo = f;
+      if (await convieneComprimir(f)) {
+        toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo…`, 8000);
+        const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8);
+        if (chico) archivo = chico;
+      }
+      const r = await store.upload(archivo, { dir: 'marca-' + cat, name: archivo.name });
+      await save('recursos', {
+        id: uid(), cat, name: r.name || archivo.name, path: r.path, url: r.url, sha: r.sha,
+        type: r.type || archivo.type || '', size: r.size || archivo.size, by: S.me.id, at: nowISO()
+      });
+      n++;
+    } catch (e) {
+      console.error(e);
+      toast(`“${f.name}” no se pudo subir: ${(e && e.message) || e}`, 6000);
+    }
+  }
+  S.marcaSubiendo = false;
+  renderMain();
+  if (n) toast(`${n} archivo${n === 1 ? '' : 's'} en Marca`, 3000);
+}
+
 /* ---------- vista: panel de seguimiento ---------- */
 const bars = (rows) => { const max = Math.max(1, ...rows.map((r) => r.n)); return `<div class="bars">${rows.map((r) => `<div class="bar"><span class="bl">${esc(r.label)}</span><div class="bt"><i style="width:${(r.n / max) * 100}%;background:${r.color}"></i></div><b>${r.n}</b></div>`).join('')}</div>`; };
 const miniRow = (p, extra) => `<div class="minirow" data-act="open-post" data-id="${esc(p.id)}"><span class="av md" style="--c:${statusOf(p.status).color}">${esc(statusOf(p.status).name[0])}</span><div class="t"><b>${esc(p.title)}</b><small>${esc(extra)}</small></div>${p.assignees.slice(0, 3).map((a) => av(a, 'sm')).join('')}</div>`;
@@ -1199,7 +1280,7 @@ function renderHeader() {
 }
 function renderToolbar() {
   const tb = $('#toolbar');
-  if (S.view === 'dash') { tb.hidden = true; return; }
+  if (S.view === 'dash' || S.view === 'marca') { tb.hidden = true; return; }
   tb.hidden = false;
   const fc = filterCount();
   tb.innerHTML = `<label class="search">${ic('search', 18)}<input id="q" type="search" placeholder="Buscar piezas…" value="${esc(S.f.q)}" autocomplete="off"></label>
@@ -1207,15 +1288,15 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const IC_TAB = { feed: 'feed', calendar: 'calendar', list: 'list', board: 'board', files: esAdmin() ? 'folder' : 'image', dash: 'chart' };
+  const IC_TAB = { feed: 'feed', calendar: 'calendar', list: 'list', board: 'board', files: esAdmin() ? 'folder' : 'image', marca: 'marca', dash: 'chart' };
   const T = visibles().map(([id, l]) => [id, l, IC_TAB[id]]);
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
-  const v = { feed: viewFeed, calendar: viewCalendar, list: viewList, board: viewBoard, files: esAdmin() ? viewFiles : viewResultados, dash: viewDash }[S.view] || viewCalendar;
+  const v = { feed: viewFeed, calendar: viewCalendar, list: viewList, board: viewBoard, files: esAdmin() ? viewFiles : viewResultados, marca: viewMarca, dash: viewDash }[S.view] || viewCalendar;
   const sy = window.scrollY;
   $('#main').innerHTML = v();
-  $('.fab').hidden = S.view === 'files' || S.view === 'dash' || S.view === 'feed'; // en estas vistas estorba
+  $('.fab').hidden = ['files', 'dash', 'feed', 'marca'].includes(S.view); // en estas vistas estorba
   renderBanner();
   window.scrollTo(0, sy);
 }
@@ -3185,6 +3266,28 @@ const ACTS = {
   'set-status': async (el) => { closeSheet(); await changeStatus(el.dataset.id, el.dataset.v); },
   bell: () => openBell(),
   espacio: () => abrirEspacio(),
+  'marca-cat': (el) => { S.marcaCat = el.dataset.v; renderMain(); },
+  'marca-ver': (el) => {
+    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
+    if (esMedia(r)) { abrirGaleria([r], 0); return; }
+    if (isPdf(r) && r.path) { window.open(r.path.split('/').map(encodeURIComponent).join('/'), '_blank', 'noopener'); return; }
+    downloadOne(r);
+  },
+  'marca-bajar': (el) => { const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (r) downloadOne(r); },
+  'marca-enlace': async (el) => {
+    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
+    const base = (CFG.SITE_URL || (location.origin + location.pathname)).replace(/\/?$/, '/');
+    toast(await copiarTexto(base + (r.path || '')) ? 'Enlace copiado' : 'No se pudo copiar', 3000);
+  },
+  'marca-quitar': async (el) => {
+    if (!esAdmin() || !requireWrite()) return;
+    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
+    if (!confirm(`¿Quitar “${r.name}” de Marca?`)) return;
+    await removeRow('recursos', r.id);
+    renderMain();
+    if (r.path && store.deleteFile) store.deleteFile(r.path, r.sha).catch(() => {});
+    toast('Quitado de Marca');
+  },
   'esp-viejas': async () => {
     const E = ESPACIO; if (!E || !E.viejas.length) return;
     if (!confirm(`¿Soltar ${E.viejas.length} versiones anteriores (${prettySize(E.pesoViejas)})?\n\nSe queda la última versión de cada archivo.`)) return;
@@ -3601,6 +3704,7 @@ document.addEventListener('change', (e) => {
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
+  else if (t.dataset && t.dataset.marcaFile) subirAMarca(t);
   else if (t.dataset && (t.dataset.art || t.dataset.artNuevo)) onArtFile(t);
   else if (t.dataset && t.dataset.arteurl) {
     const a = ((ED && ED.d.artefactos) || []).find((x) => x.id === t.dataset.arteurl);

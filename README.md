@@ -91,6 +91,16 @@ Cuando el computador no deja leer el archivo (pasa si se eligió mientras todav�
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 
+## Marca: la nube de recursos
+
+La pestaña **Marca** guarda lo que la marca usa todo el tiempo y no pertenece a ninguna pieza: el **manual**, los **logos**, las **tipografías**, la **música**, **plantillas** y lo que haga falta.
+
+- **Sube Javi**, ven y descargan todos. Flavio y Maca no pueden subir ni quitar.
+- Cada archivo cae solo en su carpeta según lo que sea (un .ttf a Tipografías, un .mp3 a Música, un PDF al Manual…). Si antes eliges una carpeta en los chips de arriba, va a esa.
+- Las fotos se achican y se guardan en WebP igual que en las piezas, y un video pesado se comprime antes de subir.
+- Cada archivo tiene **descargar**, **copiar enlace** (la dirección pública, para mandársela a una imprenta o pegarla en otro lado) y, para Javi, **quitar**.
+- Se guardan en `archivos/marca-<carpeta>/` y cuentan como archivos en uso, así que la limpieza de *Espacio* nunca los toca.
+
 ## Que el repositorio no se llene
 
 Todo vive en el repositorio, así que la app cuida el espacio sola:

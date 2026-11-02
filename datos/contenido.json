@@ -1,6 +1,37 @@
 {
  "posts": [
   {
+   "id": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "title": "Casa Peumo",
+   "caption": "Recorramos nuestro modelo de la semana, Casa Peumo ❄️\n\n2 dormitorios y 2 baños en dos pisos, con doble altura en las zonas comunes: 87,3 m² útiles y 37,86 m² de terrazas. Suite en el segundo piso, plazo de obra estimado de 7 meses y entrega llave en mano.\n\nCotiza en neorigen.cl\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables \n",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-11-03",
+   "time": "",
+   "platforms": [
+    "instagram"
+   ],
+   "format": "story",
+   "status": "idea",
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "updatedAt": "2026-11-02T15:54:25.786Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-02T15:54:25.786Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-02T15:54:25.786Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "title": "Opciones foto portada web",
    "caption": "",
    "notes": "",
@@ -3077,6 +3108,16 @@
  ],
  "activity": [
   {
+   "id": "a11b6efd-8b00-4b5e-af45-d3ffddfb7de2",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-02T15:54:25.787Z"
+  },
+  {
    "id": "9f9f636f-c4f6-4364-8739-e7fd26772060",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "postTitle": "Pilotes",
@@ -4476,6 +4517,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1fe8d8a2-eab6-4231-8b9f-0aa246229fa7",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "tagged",
+   "text": "te etiquetó en “Casa Peumo”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Casa Peumo”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T15:54:25.789Z"
+  },
+  {
+   "id": "f62a540a-4767-48b8-8d3c-cc8e29d69b08",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "tagged",
+   "text": "te etiquetó en “Casa Peumo”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Casa Peumo”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-02T15:54:25.788Z"
+  },
   {
    "id": "53cdb1d1-246e-4345-8913-c22112942876",
    "to": "maca",

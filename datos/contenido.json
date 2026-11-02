@@ -2046,6 +2046,16 @@
  ],
  "comments": [
   {
+   "id": "fc3512c9-d5ce-4576-943e-bf3fe86f0a8b",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "flavio",
+   "text": "@Javi me refería a esta, parece que era la 4.. perdona!!",
+   "fileIds": [
+    "90134c1a-05ff-4105-8e88-185c2ccbdc71"
+   ],
+   "createdAt": "2026-11-02T17:32:34.883Z"
+  },
+  {
    "id": "6fde1c6f-887d-4d48-ac05-029bc3e6ea60",
    "postId": "aa409560-033d-4424-b548-ce59905530cd",
    "author": "maca",
@@ -3127,6 +3137,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "2b1e475a-69ea-4650-af17-4e77f7e072dc",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-02T17:32:34.885Z"
+  },
   {
    "id": "bb2a505c-ffe8-4711-8a1b-e3749867861c",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -4570,6 +4590,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "11eb07ea-81f3-4826-acb2-ecb95447a36e",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "comment",
+   "text": "comentó en “Opciones foto portada web”: @Javi me refería a esta, parece que era la 4.. perdona!!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Opciones foto portada web”: @Javi me refería a esta, parece que era la 4.. perdona!!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-02T17:32:34.886Z"
+  },
+  {
+   "id": "af03fc5b-932c-4ca7-af79-884f0386a0ee",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "mention",
+   "text": "te mencionó en “Opciones foto portada web”: @Javi me refería a esta, parece que era la 4.. perdona!!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio te mencionó en “Opciones foto portada web”: @Javi me refería a esta, parece que era la 4.. perdona!!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-02T17:32:34.886Z"
+  },
   {
    "id": "6c8b440b-6c0c-434b-84a8-766c6b34c193",
    "to": "maca",

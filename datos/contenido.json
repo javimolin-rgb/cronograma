@@ -6991,10 +6991,11 @@
    "tipo": "pc",
    "instalada": true,
    "push": true,
-   "version": "2026.11.02-1",
+   "version": "2026.11.02-2",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-02T16:01:27.768Z"
+   "lastSeen": "2026-11-02T20:16:33.326Z"
   }
- ]
+ ],
+ "recursos": []
 }

@@ -49,6 +49,12 @@ Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acu
 
 A quien escribió el comentario le llega el aviso **dentro de la app** (en la campana), sin sonar el teléfono. Se puede apagar en Ajustes, en *“Pulgar en mis comentarios”*.
 
+## Piezas: agenda y tablero en la misma pestaña
+
+**Agenda** y **Tablero** dejaron de ser dos pestañas: ahora son una sola, **Piezas**, con un conmutador arriba para pasar de una a otra. *Agenda* ordena por fecha (atrasadas, hoy, mañana, esta semana, más adelante, sin fecha); *Tablero* ordena por estado, con las columnas que se arrastran. El buscador y los filtros sirven igual en las dos, y la app recuerda con cuál estabas.
+
+Así la barra de abajo quedó en seis pestañas: Feed, Calendario, Piezas, Entregas, Marca y Panel.
+
 ## Compartir con enlace directo (solo Javi)
 
 En cada pieza —desde el botón de compartir del editor, del feed o de la vista de resultado— se abre la lista de lo que se puede mandar:

@@ -213,7 +213,9 @@ const UI = Object.assign({ tema: 'auto', escala: 1, oculto: [] }, (() => {
 })());
 const TEMAS = [['auto', 'Según el sistema'], ['light', 'Claro'], ['dark', 'Oscuro']];
 const ESCALAS = [[0.9, 'Chica'], [1, 'Normal'], [1.15, 'Grande'], [1.3, 'Más grande']];
-const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Agenda'], ['board', 'Tablero'], ['files', 'Entregas'], ['marca', 'Marca'], ['dash', 'Panel']];
+const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Piezas'], ['files', 'Entregas'], ['marca', 'Marca'], ['dash', 'Panel']];
+// Dentro de Piezas se cambia entre la agenda (por fecha) y el tablero (por estado)
+const PIEZAS_VISTAS = [['agenda', 'Agenda', 'list'], ['tablero', 'Tablero', 'board']];
 function guardarUI() { try { localStorage.setItem(UI_KEY, JSON.stringify(UI)); } catch (e) { /* sin espacio */ } }
 function aplicarUI() {
   const r = document.documentElement;
@@ -223,6 +225,7 @@ function aplicarUI() {
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta && color) meta.setAttribute('content', UI.tema === 'auto' ? '#1F2A44' : color);
 }
+if (UI.oculto.includes('board')) { UI.oculto = UI.oculto.filter((x) => x !== 'board' && x !== 'list'); guardarUI(); }   // antes eran dos pestañas
 const visibles = () => SECCIONES.filter(([id]) => !UI.oculto.includes(id));
 function asegurarVista() {
   const v = visibles();
@@ -232,7 +235,8 @@ function asegurarVista() {
 /* ---------- estado ---------- */
 const S = {
   me: null,
-  view: localStorage.getItem('crono_view') || 'calendar',
+  view: (localStorage.getItem('crono_view') === 'board' ? 'list' : localStorage.getItem('crono_view')) || 'calendar',
+  piezasVista: (localStorage.getItem('crono_piezas_vista') || (localStorage.getItem('crono_view') === 'board' ? 'tablero' : 'agenda')),
   cursor: (() => { const d = new Date(); d.setDate(1); return d; })(),
   sel: today(),
   f: { q: '', person: '', platform: '', status: '', format: '', mine: false },
@@ -525,6 +529,13 @@ function viewCalendar() {
     <div class="list">${dayPosts.length ? dayPosts.map((p) => card(p, { noDate: true })).join('') : emptyBox('Día libre', 'No hay piezas para este día.', S.sel)}</div>`;
 }
 
+// Agenda y Tablero viven juntos: arriba se elige con qué ojos mirar las piezas
+function viewPiezas() {
+  const sel = `<div class="feedtop piezastop">
+    <div class="vistasel" role="group" aria-label="Cómo ver las piezas">${PIEZAS_VISTAS.map(([id, n, i]) => `<button class="vbtn${S.piezasVista === id ? ' on' : ''}" data-act="piezas-vista" data-v="${id}" title="${esc(n)}" aria-label="${esc(n)}">${ic(i, 17)}<span>${esc(n)}</span></button>`).join('')}</div>
+  </div>`;
+  return sel + (S.piezasVista === 'tablero' ? viewBoard() : viewList());
+}
 function viewList() {
   const t = today(), ps = filtered().sort(sortPosts);
   const g = { late: [], today: [], tomorrow: [], week: [], later: [], nodate: [], done: [] };
@@ -1403,12 +1414,12 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const IC_TAB = { feed: 'feed', calendar: 'calendar', list: 'list', board: 'board', files: esAdmin() ? 'folder' : 'image', marca: 'marca', dash: 'chart' };
+  const IC_TAB = { feed: 'feed', calendar: 'calendar', list: S.piezasVista === 'tablero' ? 'board' : 'list', files: esAdmin() ? 'folder' : 'image', marca: 'marca', dash: 'chart' };
   const T = visibles().map(([id, l]) => [id, l, IC_TAB[id]]);
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
-  const v = { feed: viewFeed, calendar: viewCalendar, list: viewList, board: viewBoard, files: esAdmin() ? viewFiles : viewResultados, marca: viewMarca, dash: viewDash }[S.view] || viewCalendar;
+  const v = { feed: viewFeed, calendar: viewCalendar, list: viewPiezas, files: esAdmin() ? viewFiles : viewResultados, marca: viewMarca, dash: viewDash }[S.view] || viewCalendar;
   const sy = window.scrollY;
   $('#main').innerHTML = v();
   $('.fab').hidden = ['files', 'dash', 'feed', 'marca'].includes(S.view); // en estas vistas estorba
@@ -3852,6 +3863,7 @@ const ACTS = {
   'cm-versiones': (el) => { syncDraft(); ED.versionesDe = ED.versionesDe === el.dataset.id ? null : el.dataset.id; renderEditor(); },
   'feed-filtro': (el) => { S.feedFiltro = el.dataset.v; localStorage.setItem('crono_feed', S.feedFiltro); renderMain(); },
   'feed-vista': (el) => { S.feedVista = el.dataset.v; localStorage.setItem('crono_feed_vista', S.feedVista); renderMain(); window.scrollTo(0, 0); },
+  'piezas-vista': (el) => { S.piezasVista = el.dataset.v; localStorage.setItem('crono_piezas_vista', S.piezasVista); renderAll(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),
   'feed-aprobar': async (el) => { await changeStatus(el.dataset.id, 'aprobado'); },

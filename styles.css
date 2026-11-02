@@ -406,6 +406,10 @@ html{overscroll-behavior-y:none}
 .recacts .iconbtn{width:34px;height:34px}
 @media (min-width:700px){ .recursos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))} }
 
+.piezastop{justify-content:flex-end;margin-bottom:10px}
+.piezastop .vbtn{width:auto;padding:0 12px;gap:6px;display:flex;align-items:center}
+.piezastop .vbtn span{font-size:0.75rem;font-weight:700}
+
 /* ===== Compartir ===== */
 .vlist.compartir .vrow{align-items:center;gap:11px}
 .vlist.compartir .vrow>span:nth-child(2){flex:1;min-width:0;text-align:left;display:block}

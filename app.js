@@ -2023,7 +2023,14 @@ async function subirArchivos(files) {
           })));
           toast(`“${f.name}” ya estaba guardado en “${gemelo.post ? gemelo.post.title : 'otra pieza'}”: lo enlacé sin volver a subirlo`, 5000);
         } else {
-          const r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
+          let r;
+          try { r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre }); }
+          catch (e1) {
+            if (!/leer el archivo|no está donde estaba/i.test((e1 && e1.message) || '')) throw e1;
+            toast(`“${f.name}” no se dejó leer; lo intento otra vez…`, 3000);   // suele pasar si recién se descargaba
+            await new Promise((ok) => setTimeout(ok, 2500));
+            r = await store.upload(archivo, { dir: projectName(ed.d), name: nombre });
+          }
           const extra = f.__video ? { dur: f.__video.dur, w: f.__video.w, h: f.__video.h } : {};
           ed.d.files.push(archivoSubido(Object.assign({ id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen }, extra, r)));
           if (r.size && f.size && r.size < f.size * 0.9) toast(`“${f.name}” quedó en ${prettySize(r.size)} (venía con ${prettySize(f.size)})`, 4000);
@@ -2034,8 +2041,10 @@ async function subirArchivos(files) {
     catch (e) {
       console.error(e);
       const pesado = f.size > LIMITE_SUBIDA;
-      anotarFallo(f, pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar en este aparato` : ((e && e.message) || String(e)));
-      toast(`“${f.name}” NO se subió: ${pesado ? 'pesa demasiado' : (e.message || e)}`, 6000);
+      const motivo = pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar en este aparato`
+        : ((e && e.message) || (e && e.type === 'error' ? 'el computador no dejó leer el archivo' : String(e)));
+      anotarFallo(f, motivo);
+      toast(`“${f.name}” NO se subió: ${motivo}`, 7000);
     }
     ed.uploading -= 1;
   }

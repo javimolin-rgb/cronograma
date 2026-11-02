@@ -86,15 +86,34 @@
     } catch (e) { return null; } finally { foto.cerrar(); }
   }
   const EXT_TIPO = { 'image/webp': 'webp', 'image/jpeg': 'jpg', 'image/png': 'png' };
+  // Cuando el computador no deja leer un archivo, conviene decir por qué y no "[object ProgressEvent]"
+  function errorDeLectura(e) {
+    const n = (e && e.name) || (e && e.target && e.target.error && e.target.error.name) || '';
+    if (/NotFound/i.test(n)) return new Error('el archivo ya no está donde estaba: ¿lo moviste o lo borraste?');
+    if (/NotReadable|Security|NotAllowed/i.test(n)) return new Error('el computador no dejó leer el archivo. Si lo acabas de descargar, espera a que termine; si está en iCloud o Drive, ábrelo una vez para bajarlo y vuelve a intentar');
+    return new Error('no se pudo leer el archivo' + (n ? ' (' + n + ')' : ''));
+  }
   const readDataUrl = (blob) => new Promise((res, rej) => {
     const fr = new FileReader();
     fr.onload = () => res(fr.result);
-    fr.onerror = rej;
+    fr.onerror = () => rej(errorDeLectura(fr.error));
     fr.readAsDataURL(blob);
   });
+  const binABase64 = (datos) => {
+    let bin = '', paso = 0x8000;
+    for (let i = 0; i < datos.length; i += paso) bin += String.fromCharCode.apply(null, datos.subarray(i, i + paso));
+    return btoa(bin);
+  };
   async function toBase64(blob) {
+    // La vía moderna aguanta mejor los archivos grandes; si no está, se usa FileReader
+    if (blob.arrayBuffer) {
+      try { return binABase64(new Uint8Array(await blob.arrayBuffer())); }
+      catch (e) {
+        if (/not read|permission|denied|NotFound/i.test((e && (e.name + ' ' + e.message)) || '')) throw errorDeLectura(e);
+      }
+    }
     const d = await readDataUrl(blob);
-    return d.slice(d.indexOf(',') + 1);
+    return String(d).slice(String(d).indexOf(',') + 1);
   }
   const utf8ToB64 = (s) => {
     const bytes = new TextEncoder().encode(s);

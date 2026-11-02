@@ -85,6 +85,8 @@ Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*
 
 Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Un **video de más de 24 MB se comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio, y se sube esa copia. Tarda lo que dura el video, y mientras tanto se ve el avance.
 
+Cuando el computador no deja leer el archivo (pasa si se eligió mientras todavía se descargaba, o si está en iCloud/Drive sin bajar), la app lo intenta una segunda vez sola y, si tampoco, lo dice con esas palabras en vez de un error técnico.
+
 **Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 25 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.

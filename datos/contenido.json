@@ -6997,5 +6997,18 @@
    "lastSeen": "2026-11-02T20:16:33.326Z"
   }
  ],
- "recursos": []
+ "recursos": [
+  {
+   "id": "cdf9648a-3f38-4ddb-9fb4-af5579db971a",
+   "cat": "musica",
+   "name": "neorigen_cimientos_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_cimientos_completa.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_cimientos_completa.mp3",
+   "sha": "0d464ba88a64e3b31fdbc65bc73ec0d473b7b3e1",
+   "type": "audio/mpeg",
+   "size": 1471725,
+   "by": "javi",
+   "at": "2026-11-02T20:22:18.624Z"
+  }
+ ]
 }

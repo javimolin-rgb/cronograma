@@ -6997,42 +6997,5 @@
    "lastSeen": "2026-11-02T20:36:35.134Z"
   }
  ],
- "recursos": [
-  {
-   "id": "810ae31c-7055-47d9-8b0b-61d05fe4ce76",
-   "cat": "musica",
-   "name": "neorigen_madera_completa.wav",
-   "path": "archivos/marca-musica/neorigen_madera_completa.wav",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_madera_completa.wav",
-   "sha": "a3ce7a8e8012ce3505677f9b319eb8d19949963b",
-   "type": "audio/wav",
-   "size": 13593702,
-   "by": "javi",
-   "at": "2026-11-02T20:22:45.841Z"
-  },
-  {
-   "id": "72371e99-d8ca-4b8d-8e63-fefc69a0b2e9",
-   "cat": "musica",
-   "name": "neorigen_cimientos_completa.wav",
-   "path": "archivos/marca-musica/neorigen_cimientos_completa.wav",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_cimientos_completa.wav",
-   "sha": "4f21671398e5c6339f1ae7ec3d17ee1e67ad0c12",
-   "type": "audio/wav",
-   "size": 10577556,
-   "by": "javi",
-   "at": "2026-11-02T20:22:29.993Z"
-  },
-  {
-   "id": "cdf9648a-3f38-4ddb-9fb4-af5579db971a",
-   "cat": "musica",
-   "name": "neorigen_cimientos_completa.mp3",
-   "path": "archivos/marca-musica/neorigen_cimientos_completa.mp3",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_cimientos_completa.mp3",
-   "sha": "0d464ba88a64e3b31fdbc65bc73ec0d473b7b3e1",
-   "type": "audio/mpeg",
-   "size": 1471725,
-   "by": "javi",
-   "at": "2026-11-02T20:22:18.624Z"
-  }
- ]
+ "recursos": []
 }

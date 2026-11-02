@@ -6999,6 +6999,18 @@
  ],
  "recursos": [
   {
+   "id": "f613664a-c650-4387-bd40-1586f5f62339",
+   "cat": "musica",
+   "name": "neorigen_terraza_completa.mp3",
+   "path": "archivos/marca-musica/neorigen_terraza_completa.mp3",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_terraza_completa.mp3",
+   "sha": "4767613fe63ec455cea448316d9294390ebb2d9a",
+   "type": "audio/mpeg",
+   "size": 1824045,
+   "by": "javi",
+   "at": "2026-11-02T20:23:36.413Z"
+  },
+  {
    "id": "907239c2-74eb-4baf-9dbc-f1b0c43e0055",
    "cat": "musica",
    "name": "neorigen_pino_completa.wav",

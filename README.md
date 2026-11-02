@@ -49,6 +49,22 @@ Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acu
 
 A quien escribió el comentario le llega el aviso **dentro de la app** (en la campana), sin sonar el teléfono. Se puede apagar en Ajustes, en *“Pulgar en mis comentarios”*.
 
+## Compartir con enlace directo (solo Javi)
+
+En cada pieza —desde el botón de compartir del editor, del feed o de la vista de resultado— se abre la lista de lo que se puede mandar:
+
+| Qué | Para qué sirve |
+|---|---|
+| **La pieza** | Abre el cronograma en esa pieza. Para Flavio y Maca. |
+| **El texto** | Copia el copy con los hashtags. |
+| **Cada archivo** | Enlace directo al archivo: lo abre cualquiera, sin entrar al cronograma ni tener la clave. |
+| **El interactivo** | El enlace de la página interactiva, que se abre sola. |
+| **Lo que usa de Marca** | El logo o la pista que la pieza tiene mencionados. |
+
+En el teléfono se abre el menú de compartir de siempre (WhatsApp, correo, AirDrop); en el computador, si el navegador no lo tiene, el enlace queda copiado. Los archivos sueltos y los de Marca también se comparten desde su propia ficha.
+
+Para alguien de fuera del equipo conviene mandar el **enlace del archivo**, no el de la pieza: va directo a lo que quieres mostrar.
+
 ## Copiar el copy de una pieza
 
 Junto a *Copy / texto* hay dos atajos: **Copiar**, que se lleva el copy y los hashtags juntos, listos para pegar en Instagram (te dice cuántos caracteres), y **Seleccionar todo**, para reemplazarlo de una sin pelear con el dedo.

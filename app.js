@@ -642,7 +642,8 @@ function openFilePreview(fid) {
       </div>
       ${esAdmin() && all.length > 1 ? `<label class="lbl">Otras versiones</label><div class="vlist">${all.map((v) => `<button class="vrow${v.id === file.id ? ' on' : ''}" data-act="file-open" data-f="${esc(v.id)}"><b>v${v.version}</b><span>${esc(v.name)}</span><small>${esc(prettySize(v.size))}</small></button>`).join('')}</div>` : ''}
     </div>
-    <div class="pf"><button class="btn ghost" data-act="open-post" data-id="${esc(post.id)}">Ver pieza</button>
+    <div class="pf">${esAdmin() ? `<button class="btn ghost" data-act="file-compartir" data-f="${esc(file.id)}" aria-label="Compartir enlace" title="Compartir enlace">${ic('share', 18)}</button>` : ''}
+      <button class="btn ghost" data-act="open-post" data-id="${esc(post.id)}">Ver pieza</button>
       <button class="btn" data-act="file-dl" data-f="${esc(file.id)}">${ic('download', 18)} Descargar</button></div>`, true);
 }
 
@@ -780,6 +781,7 @@ function viewResultados() {
         ${publicadoHtml(p)}
         <div class="resacts">
           ${textoPublicacion(p) ? `<button class="btn ghost sm" data-act="copiar-texto" data-id="${esc(p.id)}">${ic('copy', 15)} Copiar texto</button>` : ''}
+          ${esAdmin() ? `<button class="btn ghost sm" data-act="compartir-pieza" data-id="${esc(p.id)}">${ic('share', 15)} Compartir</button>` : ''}
           <button class="btn ghost sm" data-act="open-post" data-id="${esc(p.id)}">${ic('msg', 15)} Comentar</button>
           ${files.length ? `<button class="btn ghost sm" data-act="dl-final" data-id="${esc(p.id)}">${ic('download', 15)} Descargar</button>` : ''}
         </div>
@@ -847,6 +849,7 @@ function postHtml(p, t) {
         ${puedeAprobar ? `<button class="btn sm" data-act="feed-aprobar" data-id="${esc(p.id)}">${ic('check', 16)} Aprobar</button>
         <button class="btn ghost sm" data-act="feed-cambios" data-id="${esc(p.id)}">Pedir cambios</button>` : `<span class="postok">${ic('check', 16)} ${esc(st.name)}</span>`}
         <button class="btn ghost sm postabrir" data-act="open-post" data-id="${esc(p.id)}">Abrir</button>
+        ${esAdmin() ? `<button class="iconbtn" data-act="compartir-pieza" data-id="${esc(p.id)}" aria-label="Compartir" title="Compartir">${ic('share', 16)}</button>` : ''}
       </div>
       ${artefactoHtml(p, false)}
       ${marcaEnPiezaHtml(p, false)}
@@ -1764,6 +1767,47 @@ function openEditor(id, preset = {}) {
   openSheet('', true);
   renderEditor();
 }
+/* Compartir con enlace directo: en el teléfono abre el menú de compartir de siempre
+   (WhatsApp, correo…), y si el navegador no lo tiene, copia el enlace. */
+async function compartir(url, titulo, texto) {
+  const datos = { url, title: titulo || CFG.APP_NAME };
+  if (texto) datos.text = texto;
+  if (navigator.share) {
+    try { await navigator.share(datos); return true; }
+    catch (e) { if (e && e.name === 'AbortError') return true; }
+  }
+  const ok = await copiarTexto(texto ? `${texto}\n${url}` : url);
+  toast(ok ? 'Enlace copiado' : 'No se pudo copiar; mantén apretado el enlace', 3500);
+  return ok;
+}
+const urlPublica = (ruta) => (siteBase().replace(/\/?$/, '/')) + String(ruta || '').split('/').map(encodeURIComponent).join('/');
+const urlArchivo = (f) => f && (f.path ? urlPublica(f.path) : (f.url || ''));
+/* Todo lo que se puede compartir de una pieza: ella misma, su texto, sus archivos, su interactivo */
+function cosasDeLaPieza(p) {
+  const out = [{ que: 'La pieza', titulo: p.title, det: 'Se abre en el cronograma, en esta misma pieza', url: siteLink(p.id), icono: 'link' }];
+  const t = textoPublicacion(p);
+  if (t) out.push({ que: 'El texto', det: `${t.length} caracteres, con los hashtags`, texto: t, icono: 'copy' });
+  pieceFiles(p, true).forEach((f) => out.push({ que: f.name, det: `${prettySize(f.size)} · enlace directo al archivo`, url: urlArchivo(f), icono: esMedia(f) ? 'image' : 'paperclip' }));
+  artefactosDe(p).forEach((a) => out.push({ que: a.nombre, det: 'La página interactiva, se abre sola', url: urlPublica(`${a.carpeta}/${a.index || 'index.html'}`), icono: 'play' }));
+  marcaDe(p).forEach((r) => out.push({ que: r.name, det: 'Archivo de Marca', url: urlArchivo(r), icono: 'marca' }));
+  return out;
+}
+function compartirPieza(id) {
+  const p = (ED && ED.d && ED.d.id === id) ? ED.d : S.db.posts.find((x) => x.id === id);
+  if (!p) return;
+  const cosas = cosasDeLaPieza(p);
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Compartir</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <p class="hint">Elige qué mandar. El enlace de un archivo lo abre cualquiera, sin entrar al cronograma.</p>
+      <div class="vlist compartir">${cosas.map((c, i) => `<button class="vrow" data-act="comp-uno" data-i="${i}" data-id="${esc(p.id)}">
+        <span class="compic">${ic(c.icono, 17)}</span>
+        <span><b>${esc(c.que)}</b><small>${esc(c.det)}</small></span>
+        ${ic('share', 16)}</button>`).join('')}</div>
+    </div>`, true);
+  COMPARTIR = { id: p.id, cosas };
+}
+let COMPARTIR = null;
+
 // Lo que se pega en Instagram: el copy y, debajo, los hashtags
 function textoPublicacion(p) {
   const copy = (p.caption || '').trim(), tags = (p.hashtags || '').trim();
@@ -1928,7 +1972,8 @@ function renderEditor() {
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
   </div>
-  <div class="pf">${old && esAdmin() ? `<button class="btn ghost" data-act="pr-open" data-id="${esc(d.id)}" aria-label="Prompt para la IA">${ic('copy', 18)}</button>` : ''}
+  <div class="pf">${old && esAdmin() ? `<button class="btn ghost" data-act="compartir-pieza" data-id="${esc(d.id)}" aria-label="Compartir" title="Compartir con enlace">${ic('share', 18)}</button>
+    <button class="btn ghost" data-act="pr-open" data-id="${esc(d.id)}" aria-label="Prompt para la IA">${ic('copy', 18)}</button>` : ''}
     ${esAdmin() && store.canWrite ? `<button class="btn ghost" data-act="aviso-abrir" aria-label="Avisar para revisar" title="Avisar para revisar">${ic('send', 18)}</button>` : ''}
     <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
   $('#panel').innerHTML = html;
@@ -3458,9 +3503,12 @@ const ACTS = {
   },
   'marca-bajar-uno': (el) => { const r = recursoPorId(el.dataset.id); closeSheet(); if (r) downloadOne(r); },
   'marca-enlace': async (el) => {
-    const r = (S.db.recursos || []).find((x) => x.id === el.dataset.id); if (!r) return;
-    const base = (CFG.SITE_URL || (location.origin + location.pathname)).replace(/\/?$/, '/');
-    toast(await copiarTexto(base + (r.path || '')) ? 'Enlace copiado' : 'No se pudo copiar', 3000);
+    const r = recursoPorId(el.dataset.id); if (!r) return;
+    await compartir(urlArchivo(r), r.name);
+  },
+  'file-compartir': async (el) => {
+    const hit = findFile(el.dataset.f); if (!hit) return;
+    await compartir(urlArchivo(hit.file), hit.file.name);
   },
   'marca-quitar': async (el) => {
     if (!esAdmin() || !requireWrite()) return;
@@ -3752,6 +3800,12 @@ const ACTS = {
     const txt = textoPublicacion(ED.d);
     if (!txt) { toast('Todavía no hay texto'); return; }
     toast(await copiarTexto(txt) ? `Copiado · ${txt.length} caracteres${(ED.d.hashtags || '').trim() ? ' (con los hashtags)' : ''}` : 'No se pudo copiar; selecciona el texto a mano', 3500);
+  },
+  'compartir-pieza': (el, e) => { if (e) e.stopPropagation(); if (esAdmin()) compartirPieza(el.dataset.id); },
+  'comp-uno': async (el) => {
+    const c = COMPARTIR && COMPARTIR.cosas[+el.dataset.i]; if (!c) return;
+    if (c.texto && !c.url) { toast(await copiarTexto(c.texto) ? `Copiado · ${c.texto.length} caracteres` : 'No se pudo copiar', 3000); return; }
+    await compartir(c.url, c.titulo || c.que, '');
   },
   'copiar-texto': async (el, e) => {
     if (e) e.stopPropagation();

@@ -406,6 +406,13 @@ html{overscroll-behavior-y:none}
 .recacts .iconbtn{width:34px;height:34px}
 @media (min-width:700px){ .recursos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))} }
 
+/* ===== Compartir ===== */
+.vlist.compartir .vrow{align-items:center;gap:11px}
+.vlist.compartir .vrow>span:nth-child(2){flex:1;min-width:0;text-align:left;display:block}
+.vlist.compartir b{display:block;font-size:0.875rem;font-weight:700;overflow-wrap:anywhere}
+.vlist.compartir small{display:block;color:var(--muted);font-size:0.6875rem;font-weight:600}
+.compic{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+
 /* ===== Avance de las subidas ===== */
 .cola{display:flex;flex-direction:column;gap:7px;margin:0 0 12px}
 .colafila{display:flex;align-items:center;gap:9px;font-size:0.75rem;font-weight:700}

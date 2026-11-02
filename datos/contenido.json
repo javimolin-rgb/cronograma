@@ -1,6 +1,33 @@
 {
  "posts": [
   {
+   "id": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "title": "Casa Ciprés",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-12-15",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "updatedAt": "2026-11-02T23:06:55.027Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-02T23:06:55.027Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-02T23:06:55.027Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "title": "Casa Coihue",
    "caption": "",
@@ -3298,6 +3325,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "441c1e6e-4c10-4a3b-8b5a-24fc8e6e3cf1",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "postTitle": "Casa Ciprés",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-02T23:06:55.027Z"
+  },
   {
    "id": "b4ad9dfc-30a5-486e-85b7-d02bd36b6d13",
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",

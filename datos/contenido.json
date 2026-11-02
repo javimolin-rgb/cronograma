@@ -1,6 +1,33 @@
 {
  "posts": [
   {
+   "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "title": "Casa Maitén",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-12-01",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "updatedAt": "2026-11-02T23:06:32.432Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-02T23:06:32.432Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-02T23:06:32.432Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "title": "Casa Roble",
    "caption": "",
@@ -3244,6 +3271,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b6932544-5850-4832-bd52-a694cdb15db8",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-02T23:06:32.432Z"
+  },
   {
    "id": "4227b9d0-7691-4912-b680-781db7e02ccd",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",

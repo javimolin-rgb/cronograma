@@ -6999,6 +6999,18 @@
  ],
  "recursos": [
   {
+   "id": "04d60e37-082d-4394-adc4-cf4a94fd4f0b",
+   "cat": "musica",
+   "name": "neorigen_origen_completa.wav",
+   "path": "archivos/marca-musica/neorigen_origen_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_origen_completa.wav",
+   "sha": "3fff387caa7c946e8d5d3d09e663848c8d118b47",
+   "type": "audio/wav",
+   "size": 11520102,
+   "by": "javi",
+   "at": "2026-11-02T20:23:14.323Z"
+  },
+  {
    "id": "be5c5769-a741-40db-bc79-827f2fd664f2",
    "cat": "musica",
    "name": "neorigen_niebla_completa.wav",

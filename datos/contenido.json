@@ -1,6 +1,33 @@
 {
  "posts": [
   {
+   "id": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "title": "Casa Boldo",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-11-11",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "updatedAt": "2026-11-02T23:05:35.732Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-02T23:05:35.732Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-02T23:05:35.732Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "title": "Casa Peumo",
    "caption": "Recorramos nuestro modelo de la semana, Casa Peumo ❄️\n\n2 dormitorios y 2 baños en dos pisos, con doble altura en las zonas comunes: 87,3 m² útiles y 37,86 m² de terrazas. Suite en el segundo piso, plazo de obra estimado de 7 meses y entrega llave en mano.\n\nCotiza en neorigen.cl\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables \n",
    "notes": "",
@@ -3163,6 +3190,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "18666d4e-fa33-4601-9bd6-ee185153d431",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-02T23:05:35.732Z"
+  },
   {
    "id": "9b54eb38-2a97-4bda-8343-b008ab2a2672",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",

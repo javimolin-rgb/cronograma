@@ -6999,30 +6999,6 @@
  ],
  "recursos": [
   {
-   "id": "907239c2-74eb-4baf-9dbc-f1b0c43e0055",
-   "cat": "musica",
-   "name": "neorigen_pino_completa.wav",
-   "path": "archivos/marca-musica/neorigen_pino_completa.wav",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_pino_completa.wav",
-   "sha": "3a34a5dac1373dd7cba7a9fc6affb5252f9bd2f5",
-   "type": "audio/wav",
-   "size": 14387844,
-   "by": "javi",
-   "at": "2026-11-02T20:23:32.755Z"
-  },
-  {
-   "id": "0ca0eb90-1597-4065-963c-6b618e4ca3a9",
-   "cat": "musica",
-   "name": "neorigen_pino_completa.mp3",
-   "path": "archivos/marca-musica/neorigen_pino_completa.mp3",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_pino_completa.mp3",
-   "sha": "65ffd22b4f8a0144b0facba324f092aae75ed6b6",
-   "type": "audio/mpeg",
-   "size": 2000685,
-   "by": "javi",
-   "at": "2026-11-02T20:23:18.712Z"
-  },
-  {
    "id": "04d60e37-082d-4394-adc4-cf4a94fd4f0b",
    "cat": "musica",
    "name": "neorigen_origen_completa.wav",

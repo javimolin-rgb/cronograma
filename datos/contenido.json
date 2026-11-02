@@ -6999,42 +6999,6 @@
  ],
  "recursos": [
   {
-   "id": "04d60e37-082d-4394-adc4-cf4a94fd4f0b",
-   "cat": "musica",
-   "name": "neorigen_origen_completa.wav",
-   "path": "archivos/marca-musica/neorigen_origen_completa.wav",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_origen_completa.wav",
-   "sha": "3fff387caa7c946e8d5d3d09e663848c8d118b47",
-   "type": "audio/wav",
-   "size": 11520102,
-   "by": "javi",
-   "at": "2026-11-02T20:23:14.323Z"
-  },
-  {
-   "id": "be5c5769-a741-40db-bc79-827f2fd664f2",
-   "cat": "musica",
-   "name": "neorigen_niebla_completa.wav",
-   "path": "archivos/marca-musica/neorigen_niebla_completa.wav",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_niebla_completa.wav",
-   "sha": "1f1c014ffeaedce5bd124a0569d96f6a65e1df7a",
-   "type": "audio/wav",
-   "size": 12260670,
-   "by": "javi",
-   "at": "2026-11-02T20:22:58.643Z"
-  },
-  {
-   "id": "27da8280-16e0-43cd-af9a-3e25be8d0492",
-   "cat": "musica",
-   "name": "neorigen_niebla_completa.mp3",
-   "path": "archivos/marca-musica/neorigen_niebla_completa.mp3",
-   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_niebla_completa.mp3",
-   "sha": "510d2e91c8633434ebcb47ceefffd392548a2bf1",
-   "type": "audio/mpeg",
-   "size": 1705005,
-   "by": "javi",
-   "at": "2026-11-02T20:22:49.415Z"
-  },
-  {
    "id": "810ae31c-7055-47d9-8b0b-61d05fe4ce76",
    "cat": "musica",
    "name": "neorigen_madera_completa.wav",

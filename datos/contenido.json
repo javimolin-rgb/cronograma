@@ -4612,7 +4612,7 @@
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "type": "mention",
    "text": "te mencionó en “Opciones foto portada web”: @Javi me refería a esta, parece que era la 4.. perdona!!",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

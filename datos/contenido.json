@@ -1,6 +1,33 @@
 {
  "posts": [
   {
+   "id": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "title": "Casa Mañío",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-11-17",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "updatedAt": "2026-11-02T23:05:48.447Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-02T23:05:48.447Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-02T23:05:48.447Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31",
    "title": "Casa Boldo",
    "caption": "",
@@ -3190,6 +3217,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "0839ad86-14e7-42f7-9c46-f50401bbcd41",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-02T23:05:48.448Z"
+  },
   {
    "id": "18666d4e-fa33-4601-9bd6-ee185153d431",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

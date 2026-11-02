@@ -136,15 +136,31 @@
      "sha": "3c9dc08402fb68bade77653cda58f30ec441e0f0",
      "type": "image/jpeg",
      "size": 223664
+    },
+    {
+     "id": "0271f50d-3a86-4f67-a02f-2b4e6f263f08",
+     "by": "javi",
+     "at": "2026-11-02T18:43:05.314Z",
+     "base": "captura-de-pantalla-2026-11-02-a-las-15.42.43",
+     "version": 1,
+     "shaOrigen": "3602524d7e5650593ec268b0f80d70c65de5a53e",
+     "name": "captura-de-pantalla-2026-11-02-a-las-15.42.43-v1.webp",
+     "path": "archivos/sin-proyecto/captura-de-pantalla-2026-11-02-a-las-15.42.43-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/captura-de-pantalla-2026-11-02-a-las-15.42.43-v1.webp",
+     "sha": "ea61d5f849a3d4bc4d8011bbe8b6c6cf76130c2a",
+     "type": "image/webp",
+     "size": 192310
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-28T15:41:01.429Z",
+   "updatedAt": "2026-11-02T18:45:25.732Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T20:46:36.715Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-10-28T15:41:01.429Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": []
   },
   {
    "title": "Pilotes",
@@ -3148,6 +3164,16 @@
  ],
  "activity": [
   {
+   "id": "9b54eb38-2a97-4bda-8343-b008ab2a2672",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-02T18:45:25.741Z"
+  },
+  {
    "id": "d12c138e-e0c1-4486-acd7-544e8596e89a",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "postTitle": "Opciones foto portada web",
@@ -4610,6 +4636,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "830b9ae7-00ee-4aaa-a4b7-ae136e6fcd21",
+   "to": "maca",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "update",
+   "text": "editó “Opciones foto portada web” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Opciones foto portada web” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-02T18:45:25.741Z"
+  },
+  {
+   "id": "e73d2f89-1a23-429f-80a0-ce4545611091",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "update",
+   "text": "editó “Opciones foto portada web” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Opciones foto portada web” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-02T18:45:25.741Z"
+  },
   {
    "id": "05446252-8814-4385-97c5-697d205ab3f0",
    "to": "maca",

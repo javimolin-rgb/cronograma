@@ -1,6 +1,33 @@
 {
  "posts": [
   {
+   "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "title": "Casa Coihue",
+   "caption": "",
+   "notes": "",
+   "hashtags": "",
+   "campaign": "",
+   "date": "2026-12-09",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "idea",
+   "assignees": [
+    "javi"
+   ],
+   "priority": "normal",
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "updatedAt": "2026-11-02T23:06:44.081Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-02T23:06:44.081Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-02T23:06:44.081Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "title": "Casa Maitén",
    "caption": "",
@@ -3271,6 +3298,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b4ad9dfc-30a5-486e-85b7-d02bd36b6d13",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-02T23:06:44.081Z"
+  },
   {
    "id": "b6932544-5850-4832-bd52-a694cdb15db8",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",

@@ -6999,6 +6999,18 @@
  ],
  "recursos": [
   {
+   "id": "907239c2-74eb-4baf-9dbc-f1b0c43e0055",
+   "cat": "musica",
+   "name": "neorigen_pino_completa.wav",
+   "path": "archivos/marca-musica/neorigen_pino_completa.wav",
+   "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/marca-musica/neorigen_pino_completa.wav",
+   "sha": "3a34a5dac1373dd7cba7a9fc6affb5252f9bd2f5",
+   "type": "audio/wav",
+   "size": 14387844,
+   "by": "javi",
+   "at": "2026-11-02T20:23:32.755Z"
+  },
+  {
    "id": "0ca0eb90-1597-4065-963c-6b618e4ca3a9",
    "cat": "musica",
    "name": "neorigen_pino_completa.mp3",

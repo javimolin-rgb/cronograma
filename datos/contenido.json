@@ -185,12 +185,13 @@
    "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "platforms": [],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:38:53.322Z",
+   "updatedAt": "2026-11-03T14:39:50.963Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
@@ -289,13 +290,12 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "platforms": [],
    "assignees": [
-    "javi",
-    "maca"
+    "javi"
    ],
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:47.553Z",
+   "updatedAt": "2026-11-03T14:38:27.421Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -3820,14 +3820,14 @@
  ],
  "activity": [
   {
-   "id": "df91483b-6865-4bf9-a56e-216fcaab65ed",
-   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "postTitle": "Casa Maitén",
+   "id": "4ed0e41d-fc77-455d-a136-890ed6149cb4",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
    "actor": "javi",
    "type": "tag",
    "text": "etiquetó a Maca",
    "meta": null,
-   "createdAt": "2026-11-03T14:39:47.553Z"
+   "createdAt": "2026-11-03T14:39:50.963Z"
   },
   {
    "id": "80f3777e-e769-4290-87f7-ffa93bc41211",
@@ -5503,19 +5503,19 @@
  ],
  "notifications": [
   {
-   "id": "41963df1-797a-4dd2-a676-8bd74b1dea86",
+   "id": "40b18eec-6ab3-423d-bf53-5b91945e3e2b",
    "to": "maca",
    "from": "javi",
-   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "type": "tagged",
-   "text": "te etiquetó en “Casa Maitén”",
+   "text": "te etiquetó en “Casa Coihue”",
    "read": false,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",
-   "body": "Javi te etiquetó en “Casa Maitén”",
-   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-03T14:39:47.553Z"
+   "body": "Javi te etiquetó en “Casa Coihue”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "createdAt": "2026-11-03T14:39:50.963Z"
   },
   {
    "id": "df727f2b-7f10-482a-8838-ead0cab317a4",

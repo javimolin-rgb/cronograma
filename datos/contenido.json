@@ -2224,6 +2224,14 @@
  ],
  "comments": [
   {
+   "id": "ad136968-d67c-45bd-83ba-bef159fec08c",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Hola Javi! Por favor envíame el texto escrito para poder modificarlo. \nTambién si se puede dejar el render con más calidez, más “anaranjado”, menos azul , que sea nieve con luz( sol) \nTe mando audio por interno",
+   "fileIds": [],
+   "createdAt": "2026-11-03T12:17:39.674Z"
+  },
+  {
    "id": "4e88fe5d-5196-4bef-bfdc-4d04fe380918",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "javi",
@@ -3325,6 +3333,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f9edaea7-288e-4ce3-9878-59a4f8bd4ce2",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T12:17:39.684Z"
+  },
   {
    "id": "441c1e6e-4c10-4a3b-8b5a-24fc8e6e3cf1",
    "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
@@ -4858,6 +4876,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9bf656e5-be62-48b7-a2c7-cb222fc1fb7c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Hola Javi! Por favor envíame el texto escrito para poder modificarlo. \nTambién s…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Hola Javi! Por favor envíame el texto escrito para poder modificarlo. \nTambién s…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T12:17:39.687Z"
+  },
+  {
+   "id": "eebc6031-c976-4b84-95fa-e1504dbfbebe",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Hola Javi! Por favor envíame el texto escrito para poder modificarlo. \nTambién s…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Hola Javi! Por favor envíame el texto escrito para poder modificarlo. \nTambién s…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T12:17:39.686Z"
+  },
   {
    "id": "830b9ae7-00ee-4aaa-a4b7-ae136e6fcd21",
    "to": "maca",

@@ -3673,8 +3673,17 @@
    "id": "cbbb78ec-1e3f-489b-946b-de3a11978920",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
-   "text": "Video con voz de hombre y portada subidos",
-   "createdAt": "2026-11-03T20:53:55.010Z"
+   "text": "@Maca  Video con voz de hombre y portada subidos",
+   "createdAt": "2026-11-03T20:53:55.010Z",
+   "versiones": [
+    {
+     "text": "Video con voz de hombre y portada subidos",
+     "hasta": "2026-11-03T21:15:15.709Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-11-03T21:15:15.709Z",
+   "editedBy": "javi"
   },
   {
    "id": "d087d098-d58e-4391-93ce-54eecae711bd",
@@ -4880,6 +4889,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "cb352bc3-828c-447f-854d-074d0eddc28d",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-11-03T21:15:15.709Z"
+  },
   {
    "id": "a7955526-76af-4bbe-a577-865ad44185fc",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",

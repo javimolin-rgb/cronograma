@@ -3555,7 +3555,10 @@
    "author": "maca",
    "text": "Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo combina diseño y eficiencia para disfrutar la naturaleza durante todo el año.\n\nSus grandes ventanales conectan el interior con el bosque. Afuera, la nieve. Adentro, la calidez de una casa bien resuelta.\n\nEn sus dos pisos, una distribución funcional que combina privacidad y espacios para compartir.\n\nDos dormitorios y dos baños, con una cocina integrada que conecta la vida cotidiana.\n\nCasa Peumo. Arquitectura y funcionalidad para mejorar la forma de vivir.\n\nConoce Casa Peumo y conversemos sobre tu proyecto en neorigen.cl.",
    "fileIds": [],
-   "createdAt": "2026-11-03T17:22:18.472Z"
+   "createdAt": "2026-11-03T17:22:18.472Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "01c6c975-58a1-40e2-b530-e23d2859c2be",
@@ -6952,6 +6955,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "fa8a0535-cfb4-4d6b-9380-93c830f283ee",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Peumo”: Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo com",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi le puso 👍 a tu comentario en “Casa Peumo”: Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo com",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T17:41:18.412Z"
+  },
   {
    "id": "f9e7d4a8-0d15-41e9-af7e-b5e7fd0dcca3",
    "to": "javi",

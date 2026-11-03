@@ -1519,7 +1519,7 @@
   },
   {
    "title": "Casa Peumo",
-   "caption": "Recorramos nuestro modelo de la semana, Casa Peumo ❄️\n\n2 dormitorios y 2 baños en dos pisos, con doble altura en las zonas comunes: 87,3 m² útiles y 37,86 m² de terrazas. Suite en el segundo piso, plazo de obra estimado de 7 meses y entrega llave en mano.\n\nCotiza en neorigen.cl\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables \n",
+   "caption": "Recorramos nuestro modelo de la semana: Casa Peumo\n\nUna casa de dos pisos, con 2 dormitorios y 2 baños, que destaca por una doble altura de proporciones excepcionales en sus espacios comunes, potenciando la amplitud y la luminosidad.\n\nCuenta con 87,3 m² útiles y 37,86 m² de terrazas. En el segundo piso se encuentra el dormitorio principal en suite.\n\nPlazo de construcción estimado: 7 meses. Entrega llave en mano, terminada y lista para disfrutar.\n\n¿Te interesa este modelo? Cotiza en nuestro sitio web.\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables",
    "notes": "",
    "hashtags": "",
    "guion": "Hay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse en ellos, con espacio para todos. \nSu ventanal sube de piso a techo: el bosque no se mira, se vive desde adentro. Pensada para el frío: que afuera nieve, y adentro siempre se esté tibio. \nArriba, una suite que es solo tuya. Abajo, la cocina, la mesa y la estufa encendida. Y un dormitorio aparte, para los niños o las visitas. \nDos pisos: el descanso por un lado, el día a día por otro. Ideal para una familia. Casa Peumo. \nUn refugio para volver a lo esencial. Cotízala en neorigen.cl.",
@@ -1627,8 +1627,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-03T21:24:33.001Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-03T22:21:23.571Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T16:03:53.424Z",
@@ -1640,6 +1640,13 @@
      "campo": "guion",
      "text": "",
      "hasta": "2026-11-03T14:28:50.048Z",
+     "by": "javi"
+    },
+    {
+     "id": "a4b1eca0-d8c6-4f36-b085-514b4b1d00cb",
+     "campo": "caption",
+     "text": "Recorramos nuestro modelo de la semana, Casa Peumo ❄️\n\n2 dormitorios y 2 baños en dos pisos, con doble altura en las zonas comunes: 87,3 m² útiles y 37,86 m² de terrazas. Suite en el segundo piso, plazo de obra estimado de 7 meses y entrega llave en mano.\n\nCotiza en neorigen.cl\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables \n",
+     "hasta": "2026-11-03T22:21:23.571Z",
      "by": "javi"
     }
    ],
@@ -4975,6 +4982,16 @@
  ],
  "activity": [
   {
+   "id": "fdf07407-ee9d-4cf6-8bfb-79261ce70a88",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-11-03T22:21:23.575Z"
+  },
+  {
    "id": "93d0a148-4602-411f-aab0-8f3f5f151b58",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -7530,6 +7547,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9cfd205e-1cb2-4e92-a337-32ce0069e73d",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:21:23.578Z"
+  },
+  {
+   "id": "6aa94942-55a6-4549-a0bd-243d9081f7ad",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:21:23.578Z"
+  },
   {
    "id": "aafee66b-44a1-41fd-97bf-3c1bbd77d203",
    "to": "javi",

@@ -1,6 +1,67 @@
 {
  "posts": [
   {
+   "id": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "title": "Reel de prueba y subida de modelos",
+   "caption": "Con el reel de prueba de huingan no nos fue muy bien. Quieren que lo agregue al perfil de todos modos? Y si si, quieren que dejemos todos los modelos en el feed? (Además de historias destacadas) Necesito saber esto último para saber si la historia del render dejemos Peumo la subo al feed igual. ",
+   "notes": "",
+   "hashtags": "",
+   "guion": "",
+   "guionTabla": null,
+   "campaign": "",
+   "date": "2026-11-03",
+   "time": "",
+   "platforms": [],
+   "format": "post",
+   "status": "estructura",
+   "assignees": [
+    "javi",
+    "maca",
+    "flavio"
+   ],
+   "inicio": "",
+   "priority": "alta",
+   "links": [],
+   "files": [
+    {
+     "id": "ba934d6f-9ddd-45ee-8552-1e8c6daca32f",
+     "by": "javi",
+     "at": "2026-11-03T19:17:13.606Z",
+     "base": "archivo-1",
+     "version": 1,
+     "shaOrigen": "9e64f0ca4937cd3881f25e82b6c75f61006ea0c5",
+     "name": "archivo-1-v1.jpg",
+     "path": "archivos/sin-proyecto/archivo-1-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/archivo-1-v1.jpg",
+     "sha": "1c0b6ffa842350690264815d45bd85a3ce1588d5",
+     "type": "image/jpeg",
+     "size": 181828
+    },
+    {
+     "id": "34f1a183-ffa9-4ea1-ac07-65e272f7d2db",
+     "by": "javi",
+     "at": "2026-11-03T19:17:16.479Z",
+     "base": "archivo-3",
+     "version": 1,
+     "shaOrigen": "74551fe657139386744e6721129de96d5b3eb604",
+     "name": "archivo-3-v1.jpg",
+     "path": "archivos/sin-proyecto/archivo-3-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/sin-proyecto/archivo-3-v1.jpg",
+     "sha": "d71f50ed981ba51b1fabf82ce7bb887ec9090322",
+     "type": "image/jpeg",
+     "size": 181604
+    }
+   ],
+   "checklist": [],
+   "updatedAt": "2026-11-03T19:19:07.045Z",
+   "updatedBy": "javi",
+   "createdAt": "2026-11-03T19:19:07.045Z",
+   "createdBy": "javi",
+   "statusChangedAt": "2026-11-03T19:19:07.045Z",
+   "revisions": 0,
+   "publishedAt": null
+  },
+  {
    "title": "Una casa para todas las edades",
    "caption": "Una casa no es solo para hoy. Contamos con modelos compatibles con accesibilidad universal y podemos incorporar adaptaciones específicas si las necesitas, para que la casa acompañe a toda la familia en cada etapa. Envíaselo a quien está pensando en una casa para todos.\n\n#Neorigen #CasasPrediseñadas #AccesibilidadUniversal #CasaFamiliar #DiseñoInclusivo #CasaParaTodaLaVida #CasaSustentable #ConstruirEnChile",
    "notes": "Reel · mini documental · 35 s · busca envíos\n\nIdea. Contar que hay modelos compatibles con accesibilidad universal a través de una escena familiar de tres generaciones, no de una lista técnica. Le habla al núcleo de la audiencia (35–44 años), que piensa a la vez en sus hijos y en sus padres. Es un tema que el feed nunca ha tocado y que se envía al hermano o hermana con quien se conversa \"lo de los papás\".\n\nImagen. Planos tipo documental, luz natural, cámara al hombro: auto que llega, una persona mayor que entra a la casa sin escalones, niños corriendo por la terraza, mesa larga al final del día. Si se graba con una familia real, con su autorización escrita; si no, con renders animados del repo 3D.\n\nFuente. Preguntas frecuentes: \"¿Las casas pueden adaptarse a accesibilidad universal?\"; distribución y etapas de la vida en el blog Inspiración y Estilo de Vida Neorigen; visión \"vivir bien debe ser posible para todos\" en Quiénes somos.",
@@ -3550,6 +3611,13 @@
  ],
  "comments": [
   {
+   "id": "c0a2adef-82b6-4f5a-a15a-79583ae27014",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "author": "javi",
+   "text": "Revisar dudas",
+   "createdAt": "2026-11-03T19:19:07.050Z"
+  },
+  {
    "id": "27f7f036-0e33-4510-8b9f-fa0d7a3b4238",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4704,6 +4772,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "ddc37397-65e2-40c1-98e9-81f39b874a14",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "postTitle": "Reel de prueba y subida de modelos",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T19:19:07.050Z"
+  },
+  {
+   "id": "37b7dfb6-bcf2-4a69-a31d-7c0cc8d895da",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "postTitle": "Reel de prueba y subida de modelos",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-03T19:19:07.048Z"
+  },
   {
    "id": "30c6e0ea-9981-4f25-9f80-e14a028b5a76",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -6955,6 +7043,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "edaf0b50-8173-48b8-a041-d8963519c006",
+   "to": "maca",
+   "from": "javi",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "review",
+   "text": "subió 2 archivos en “Reel de prueba y subida de modelos” para revisar: Revisar dudas",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Reel de prueba y subida de modelos",
+   "body": "Javi: Revisar dudas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T19:19:07.050Z"
+  },
+  {
+   "id": "0f936e65-1071-4e85-bbaf-f57211407867",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "tagged",
+   "text": "te etiquetó en “Reel de prueba y subida de modelos”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Reel de prueba y subida de modelos”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T19:19:07.049Z"
+  },
+  {
+   "id": "c98c74ef-0676-4a2c-b787-d72ce25896cc",
+   "to": "maca",
+   "from": "javi",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "tagged",
+   "text": "te etiquetó en “Reel de prueba y subida de modelos”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Reel de prueba y subida de modelos”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T19:19:07.049Z"
+  },
   {
    "id": "bb5a336d-f2a0-471f-a89d-621b98c6bd15",
    "to": "maca",

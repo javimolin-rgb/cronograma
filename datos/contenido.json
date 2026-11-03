@@ -802,7 +802,7 @@
   },
   {
    "title": "¿Son prefabricadas?",
-   "caption": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción tradicional, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
+   "caption": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción n en obra, calidad y eficiencia, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? E \nCompártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
    "notes": "Reel · respuesta a comentario · 25 s · busca envíos\n\nIdea. Responder en video la duda más repetida, con el formato de respuesta a comentario de Instagram. Si hay un comentario o DM real con esa pregunta, se usa su sticker; si no, se abre con un rótulo \"Nos preguntan:\" y nunca se inventa un comentario. Aclara la diferencia de la marca sin sonar a defensa.\n\nImagen. Toma de obra con la estructura en pie (galería: 02 · Estructura), luego un modelo terminado en su paisaje. Cámara en mano, sin estabilizar demasiado.\n\nFuente. Preguntas frecuentes: \"¿Las casas son prefabricadas?\", \"¿Qué es Neorigen?\" y plazo de construcción.",
    "hashtags": "",
    "guion": "",
@@ -872,11 +872,19 @@
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "ebff5ff0-5ebb-4ae2-9a5d-6245f28437d5",
+     "campo": "caption",
+     "text": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción tradicional, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
+     "hasta": "2026-11-03T20:42:11.195Z",
+     "by": "maca"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T20:30:46.421Z",
+   "updatedAt": "2026-11-03T20:42:11.195Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T19:56:48.554Z",
    "publishedAt": null
@@ -4835,6 +4843,16 @@
  ],
  "activity": [
   {
+   "id": "1056f96c-7e2d-490f-bdc9-b70feaf5cc00",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-11-03T20:42:11.203Z"
+  },
+  {
    "id": "8b954e96-8662-45e0-97c0-94c1ccbe541d",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -7227,6 +7245,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1a9e6a65-695d-412a-9662-b48255287b7f",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "en “¿Son prefabricadas?”: editó copy",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca en “¿Son prefabricadas?”: editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-03T20:42:11.206Z"
+  },
   {
    "id": "4d132232-b6e7-4661-b96c-cc22cc32487d",
    "to": "maca",

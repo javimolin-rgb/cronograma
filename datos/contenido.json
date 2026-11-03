@@ -1647,14 +1647,17 @@
   },
   {
    "title": "Opciones foto portada web",
-   "caption": "",
+   "caption": "OK Publica por favor ",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": null,
    "campaign": "",
    "time": "",
    "date": "",
+   "inicio": "",
    "format": "web",
-   "status": "revision",
+   "status": "aprobado",
    "priority": "normal",
    "revisions": 0,
    "id": "309f771f-1276-4384-95ed-3e597aac5756",
@@ -1747,14 +1750,23 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-02T18:45:25.732Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-03T21:49:01.852Z",
+   "updatedBy": "flavio",
    "createdAt": "2026-10-27T20:46:36.715Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-10-28T15:41:01.429Z",
+   "statusChangedAt": "2026-11-03T21:49:01.852Z",
    "publishedAt": null,
    "artefactos": [],
-   "versionesTexto": []
+   "versionesTexto": [
+    {
+     "id": "670971fd-a6e3-413a-89a8-59d2b0862183",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T21:49:01.852Z",
+     "by": "flavio"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Pilotes",
@@ -3670,6 +3682,14 @@
  ],
  "comments": [
   {
+   "id": "ec78283b-8f36-4c25-9423-4abb36b02599",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "flavio",
+   "text": "@Javi  esta OK, publicar por favor.. muchas gracias!",
+   "fileIds": [],
+   "createdAt": "2026-11-03T21:48:59.901Z"
+  },
+  {
    "id": "6f007ca4-b530-4747-9b55-5e4a7b3b1220",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -4914,6 +4934,39 @@
   }
  ],
  "activity": [
+  {
+   "id": "6ead899c-7de9-4d84-a45e-f501bad67508",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-11-03T21:49:01.854Z"
+  },
+  {
+   "id": "b65af7a6-eb2a-4a22-864b-5b13041f0033",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "flavio",
+   "type": "status",
+   "text": "movió de En revisión a Aprobado",
+   "meta": {
+    "from": "revision",
+    "to": "aprobado"
+   },
+   "createdAt": "2026-11-03T21:49:01.852Z"
+  },
+  {
+   "id": "660daf5a-2c00-48a1-86b4-9ffaa321c7d9",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T21:48:59.903Z"
+  },
   {
    "id": "261c85f8-2c7d-45fc-8a2f-f4baee14192e",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7387,6 +7440,81 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a0ef704f-78b6-48af-a9a2-c92d2ebe106b",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "supervision",
+   "text": "en “Opciones foto portada web”: la movió a Aprobado; editó copy",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio en “Opciones foto portada web”: la movió a Aprobado; editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:49:01.854Z"
+  },
+  {
+   "id": "9a057608-724a-43d7-8538-cc2db995e184",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "update",
+   "text": "editó “Opciones foto portada web” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio editó “Opciones foto portada web” (copy)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:49:01.854Z"
+  },
+  {
+   "id": "f6b1c04d-dade-4fc8-8f59-4954121944d3",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "status",
+   "text": "movió “Opciones foto portada web” a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio movió “Opciones foto portada web” a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:49:01.853Z"
+  },
+  {
+   "id": "270e158f-df47-4560-aef0-26754b7221c2",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "comment",
+   "text": "comentó en “Opciones foto portada web”: @Javi  esta OK, publicar por favor.. muchas gracias!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Opciones foto portada web”: @Javi  esta OK, publicar por favor.. muchas gracias!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:48:59.904Z"
+  },
+  {
+   "id": "1cfa18b1-055f-4f20-ac36-13319b76b740",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "mention",
+   "text": "te mencionó en “Opciones foto portada web”: @Javi  esta OK, publicar por favor.. muchas gracias!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio te mencionó en “Opciones foto portada web”: @Javi  esta OK, publicar por favor.. muchas gracias!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:48:59.904Z"
+  },
   {
    "id": "bc519f98-aee2-4e80-acdd-0fb705f27d7d",
    "to": "flavio",

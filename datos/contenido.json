@@ -7441,6 +7441,36 @@
  ],
  "notifications": [
   {
+   "id": "f92cace0-565f-4500-8720-e8eaa4971d06",
+   "to": "maca",
+   "from": "javi",
+   "postId": null,
+   "type": "mensaje",
+   "text": "te avisó: Notificación de prueba, avísenme si les llega",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Javi · Cronograma de contenido",
+   "body": "Notificación de prueba, avísenme si les llega",
+   "url": "https://javimolin-rgb.github.io/cronograma/",
+   "createdAt": "2026-11-03T21:51:34.607Z"
+  },
+  {
+   "id": "d59e5556-7cb8-4f2f-83b5-65b117b9716a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": null,
+   "type": "mensaje",
+   "text": "te avisó: Notificación de prueba, avísenme si les llega",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Javi · Cronograma de contenido",
+   "body": "Notificación de prueba, avísenme si les llega",
+   "url": "https://javimolin-rgb.github.io/cronograma/",
+   "createdAt": "2026-11-03T21:51:34.606Z"
+  },
+  {
    "id": "7a4e6483-215a-4934-affc-6206b3450f45",
    "to": "javi",
    "from": "javi",

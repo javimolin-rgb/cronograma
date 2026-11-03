@@ -3673,9 +3673,18 @@
    "id": "6f007ca4-b530-4747-9b55-5e4a7b3b1220",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
-   "text": "@Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+   "text": "@Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo. las voces mas realistas son de pago",
    "fileIds": [],
-   "createdAt": "2026-11-03T21:34:29.415Z"
+   "createdAt": "2026-11-03T21:34:29.415Z",
+   "versiones": [
+    {
+     "text": "@Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+     "hasta": "2026-11-03T21:38:10.009Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-11-03T21:38:10.009Z",
+   "editedBy": "javi"
   },
   {
    "id": "ec2c2033-7a2a-4e06-ab58-778321f2bf4f",
@@ -4905,6 +4914,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "261c85f8-2c7d-45fc-8a2f-f4baee14192e",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-11-03T21:38:10.009Z"
+  },
   {
    "id": "562423a7-5329-4b7c-a248-e7c165a52c16",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",

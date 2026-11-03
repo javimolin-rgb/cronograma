@@ -10389,10 +10389,10 @@
    "tipo": "cel",
    "instalada": true,
    "push": true,
-   "version": "2026.11.03-6",
+   "version": "2026.11.03-8",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-11-03T18:21:22.854Z",
-   "lastSeen": "2026-11-03T18:21:50.407Z"
+   "lastSeen": "2026-11-03T20:03:53.049Z"
   },
   {
    "id": "d_b27bedff18f84af3",

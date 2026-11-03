@@ -3717,6 +3717,16 @@
  ],
  "comments": [
   {
+   "id": "66f11f12-1793-4f4a-beb1-638fba91d98a",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "javi",
+   "text": "@Maca en https://elevenlabs.io/",
+   "fileIds": [
+    "9f9d8c81-aaaf-4478-938b-81f5a29b3166"
+   ],
+   "createdAt": "2026-11-03T22:39:18.283Z"
+  },
+  {
    "id": "1beb232a-f7ce-4da5-8eec-7c7cabbccbaa",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -5024,6 +5034,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "75e5f152-7fdf-4962-9612-52c089044bbf",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T22:39:18.285Z"
+  },
   {
    "id": "3ab2da3f-9e54-468e-b060-cad14e1f17ff",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7630,6 +7650,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "efb632c1-48a3-45f9-8821-a4201e1b6c03",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: @Maca en https://elevenlabs.io/",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Casa Peumo”: @Maca en https://elevenlabs.io/",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:39:18.286Z"
+  },
+  {
+   "id": "9fb5fcc9-644b-40f0-abea-6f9f0f8d3d3d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "mention",
+   "text": "te mencionó en “Casa Peumo”: @Maca en https://elevenlabs.io/",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Casa Peumo”: @Maca en https://elevenlabs.io/",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:39:18.286Z"
+  },
   {
    "id": "926c6fcf-2473-4335-8126-9c7a807d78ab",
    "to": "flavio",

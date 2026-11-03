@@ -319,7 +319,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-12-17",
+   "date": "2026-11-19",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -352,7 +352,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:34:23.849Z",
+   "updatedAt": "2026-11-03T15:36:09.112Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4694,6 +4694,19 @@
  ],
  "activity": [
   {
+   "id": "ae0f4b24-19d9-426b-b56b-03c768367387",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 17 dic a 19 nov",
+   "meta": {
+    "from": "2026-12-17",
+    "to": "2026-11-19"
+   },
+   "createdAt": "2026-11-03T15:36:09.113Z"
+  },
+  {
    "id": "a7a897b8-e2e4-48b4-b01d-53f53e87ad6d",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -6895,6 +6908,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9b26f41b-670c-4e8a-87c0-ca2cd5969278",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Aire nuevo sin abrir la ventana” a 19 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Aire nuevo sin abrir la ventana” a 19 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-03T15:36:09.113Z"
+  },
   {
    "id": "0dc34685-9e9c-49cb-98f4-84d2cc1629b3",
    "to": "maca",

@@ -227,7 +227,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "",
+   "date": "2026-12-27",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -260,7 +260,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:18.183Z",
+   "updatedAt": "2026-11-03T15:35:01.097Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4694,6 +4694,19 @@
  ],
  "activity": [
   {
+   "id": "7c6d1bd0-0b80-4989-8ac0-743f9e742ffe",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha a 27 dic",
+   "meta": {
+    "from": "",
+    "to": "2026-12-27"
+   },
+   "createdAt": "2026-11-03T15:35:01.097Z"
+  },
+  {
    "id": "dc0aaeb3-f795-4287-8f77-676a3f4bee67",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -6869,6 +6882,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8ae1cf0e-2184-438f-b8e6-fbd06ec62bfd",
+   "to": "maca",
+   "from": "javi",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Del primer mensaje a la obra, en 6 pasos” a 27 dic",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Del primer mensaje a la obra, en 6 pasos” a 27 dic",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-03T15:35:01.097Z"
+  },
   {
    "id": "4866a3bb-f746-4914-9aec-32d18c742375",
    "to": "maca",

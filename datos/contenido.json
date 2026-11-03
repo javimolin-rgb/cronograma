@@ -4917,7 +4917,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "mention",
    "text": "te mencionó en “Casa Peumo”: @Maca \nHay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",
@@ -7245,10 +7245,10 @@
    "tipo": "cel",
    "instalada": false,
    "push": false,
-   "version": "2026.11.03-1",
+   "version": "2026.11.03-2",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-10-27T13:55:14.271Z",
-   "lastSeen": "2026-11-03T12:12:05.232Z"
+   "lastSeen": "2026-11-03T13:56:01.137Z"
   },
   {
    "id": "d_de13ec30979548c8",

@@ -546,7 +546,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-17",
+   "date": "",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -579,7 +579,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:28.288Z",
+   "updatedAt": "2026-11-03T15:31:02.641Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "9e9e928e-11d3-41ce-9c2a-4558f5481d39",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 17 nov a sin fecha",
+   "meta": {
+    "from": "2026-11-17",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:31:02.641Z"
+  },
+  {
    "id": "ce209ea3-df01-4946-959a-670ddd06fec9",
    "postId": "30efd072-8377-4a3a-96f6-e2a60dab643d",
    "postTitle": "El muro que guarda el sol",
@@ -6655,6 +6668,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0343c5d5-a9bb-4f2c-b092-47a30b6e1bc6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Un domingo en el refugio” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Un domingo en el refugio” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-03T15:31:02.642Z"
+  },
   {
    "id": "2a93358f-440e-4c37-9f4d-2d44d8104dd4",
    "to": "maca",

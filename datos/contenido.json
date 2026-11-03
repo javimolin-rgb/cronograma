@@ -887,7 +887,7 @@
      ]
     ]
    },
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-12-15",
    "inicio": "",
@@ -903,7 +903,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:17.504Z",
+   "updatedAt": "2026-11-03T15:32:24.895Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:55.027Z",
    "createdBy": "javi",
@@ -991,7 +991,7 @@
      ]
     ]
    },
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-12-09",
    "inicio": "",
@@ -1008,7 +1008,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:50.963Z",
+   "updatedAt": "2026-11-03T15:32:22.958Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
@@ -4683,6 +4683,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "e275082a-057a-4799-9211-1de4c8246d06",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "postTitle": "Casa Ciprés",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Ciprés” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:24.895Z"
+  },
+  {
+   "id": "61470d20-1252-4332-b235-26eceb43d92c",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Coihue” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:22.958Z"
+  },
   {
    "id": "0879abbe-37d1-4435-ad67-46610302f006",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",

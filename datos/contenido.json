@@ -7410,7 +7410,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "supervision",
    "text": "en “¿Son prefabricadas?”: editó copy",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

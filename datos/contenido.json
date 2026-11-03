@@ -10843,6 +10843,20 @@
  ],
  "push_subs": [
   {
+   "id": "ps_45bad16a0e7ecf0e4ffbe117f84b79aa",
+   "person": "javi",
+   "device": "d_2b2f195d9860411a",
+   "sub": {
+    "endpoint": "https://web.push.apple.com/QC13ckPXxCg7UeHQl1DUj3pL5PhDQ_S3JCtC-mWKnhD0l8Xo4rtvNmHWbJsRLEASGP8OsR3jYdqmyqoItoXT9Du5rgeUWD9WQGEKYic85nQ6I3J3Mneuu5LN7UHpE_7DwMltC29RCu1u5G_FgVfft3REZGW08wB6XXsCjvQDjg8",
+    "keys": {
+     "p256dh": "BN1R0fRR_TVU5Kb_RKSzn9F2aXblAav_N9H5wDMFhr6xDjlYmks7OrKLZfF7fCBFRHf6Y2OKHsGkS61jvTs7218",
+     "auth": "7pmyOZ7dq4o7-L0Lo7_VTg"
+    }
+   },
+   "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15",
+   "createdAt": "2026-11-03T21:48:55.924Z"
+  },
+  {
    "id": "ps_59bc4edd0d1bbfa8aed77a9286a1a236",
    "person": "flavio",
    "device": "d_2b2f195d9860411a",

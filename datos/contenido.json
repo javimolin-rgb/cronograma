@@ -784,7 +784,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-10",
+   "date": "2026-11-08",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -812,7 +812,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:17.544Z",
+   "updatedAt": "2026-11-03T15:30:23.588Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "68c4e663-c194-4042-a2fa-6865a97b66a4",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 10 nov a 8 nov",
+   "meta": {
+    "from": "2026-11-10",
+    "to": "2026-11-08"
+   },
+   "createdAt": "2026-11-03T15:30:23.589Z"
+  },
+  {
    "id": "30c34e7a-8b0b-4340-8378-9f813094a20a",
    "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
    "postTitle": "Una casa para todas las edades",
@@ -6616,6 +6629,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "92745e01-a97b-484c-991c-be9d6076a34d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "reschedule",
+   "text": "cambió la fecha de “¿Son prefabricadas?” a 8 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “¿Son prefabricadas?” a 8 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-03T15:30:23.589Z"
+  },
   {
    "id": "f93bd676-59f6-41b8-a476-44ab475e27e2",
    "to": "maca",

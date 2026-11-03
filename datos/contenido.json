@@ -209,7 +209,7 @@
    "time": "",
    "date": "2026-11-11",
    "inicio": "",
-   "format": "post",
+   "format": "story",
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
@@ -221,7 +221,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:36:53.883Z",
+   "updatedAt": "2026-11-03T14:37:04.763Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -3430,6 +3430,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c0d6609d-d7d6-454d-b6dc-991691fad09e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó formato",
+   "meta": null,
+   "createdAt": "2026-11-03T14:37:04.763Z"
+  },
   {
    "id": "b9c3694a-2612-40be-a127-7be2ad817d29",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

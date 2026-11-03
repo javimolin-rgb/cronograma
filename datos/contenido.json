@@ -74,7 +74,7 @@
    "time": "",
    "date": "2026-12-15",
    "inicio": "",
-   "format": "post",
+   "format": "story",
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
@@ -86,7 +86,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:12.143Z",
+   "updatedAt": "2026-11-03T14:39:17.504Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:55.027Z",
    "createdBy": "javi",
@@ -3815,6 +3815,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "06b82d50-374b-4b55-87d2-d1569d071a18",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "postTitle": "Casa Ciprés",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó formato",
+   "meta": null,
+   "createdAt": "2026-11-03T14:39:17.505Z"
+  },
   {
    "id": "70d1a445-99bc-4b6b-a79d-3e70cbb32cf3",
    "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",

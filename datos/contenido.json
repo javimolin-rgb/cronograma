@@ -9931,6 +9931,21 @@
  ],
  "push_subs": [
   {
+   "id": "ps_9b926362d6ae7dabefd79dfe1bdf525e",
+   "person": "maca",
+   "device": "d_fc2173f476a44c41",
+   "sub": {
+    "endpoint": "https://web.push.apple.com/QE1nqg7zQ6Ayebav5QKU2bSvZfJwu5jgBupQCI-a1H0fD2lggBMlwQPQP9xPG9KD53HmFUtns1hMiihp60VW8RxRp2C5wChIzAKUhGav7J6mY9VYj7k929PKP3yUUnk9JCztNpCMT-m4jJjX_9LsBS1QChQr_bvMpMIq58zfQgI",
+    "expirationTime": null,
+    "keys": {
+     "p256dh": "BGgOSB3D5zY_EKZWfKe6M9-VK2f9O3fpCk4QUeClYtm9owIwNpoY9sOinLXqFvshCO9Kd5ReFTexYkV5I4HPieI",
+     "auth": "i9WrGkqJ0X7MEUNTpPKXLQ"
+    }
+   },
+   "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Mobile/15",
+   "createdAt": "2026-11-03T18:21:50.374Z"
+  },
+  {
    "id": "ps_bf4f30bf6805e51967603b253a47928c",
    "person": "javi",
    "device": "d_2b2f195d9860411a",
@@ -10024,11 +10039,11 @@
    "navegador": "Safari",
    "tipo": "cel",
    "instalada": true,
-   "push": false,
+   "push": true,
    "version": "2026.11.03-6",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-11-03T18:21:22.854Z",
-   "lastSeen": "2026-11-03T18:21:22.854Z"
+   "lastSeen": "2026-11-03T18:21:50.407Z"
   },
   {
    "id": "d_b27bedff18f84af3",

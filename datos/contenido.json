@@ -1,31 +1,108 @@
 {
  "posts": [
   {
-   "id": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
    "title": "Casa Ciprés",
-   "caption": "",
+   "caption": "Casa Ciprés, nuestro modelo más nuevo 🌅\n\nUna casa que mira en una sola dirección: hacia el horizonte. Su techo a un agua arranca bajo y se levanta hacia la vista, y todo el espacio crece en la dirección en que miras.\n\nSobre pilotes, se posa en la arena sin cambiarle la forma al lugar. Un refugio frente al mar, o esa segunda casa para desconectarse.\n\n2 dormitorios, 2 baños y 95 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaCipres #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": {
+    "cols": [
+     "#",
+     "Momento",
+     "En pantalla (rótulo · titular · bajada)",
+     "Voz"
+    ],
+    "filas": [
+     [
+      "1",
+      "Apertura",
+      "NUEVO MODELO · Casa Ciprés · Abierta al horizonte.",
+      "Nuestra casa más nueva mira en una sola dirección: hacia el horizonte."
+     ],
+     [
+      "2",
+      "Superficie",
+      "SUPERFICIE ÚTIL · 95 m² · 2 dormitorios y 2 baños",
+      "Espacio para dos, o para recibir a quienes quieras."
+     ],
+     [
+      "3",
+      "Techo",
+      "TECHO A UN AGUA · Se levanta hacia la vista · Bajo atrás, alto adelante",
+      "Su techo arranca bajo y se levanta, abriéndose hacia el paisaje."
+     ],
+     [
+      "4",
+      "Pilotes",
+      "VIVE LO NATURAL · Sobre pilotes · Sin intervenir el terreno",
+      "Se posa en la arena sin cambiarle la forma al lugar."
+     ],
+     [
+      "5",
+      "Interior",
+      "INTERIOR · Luz de frente · El espacio crece hacia la vista",
+      "Adentro, todo crece en la misma dirección en que miras."
+     ],
+     [
+      "6",
+      "Dormitorios",
+      "DORMITORIOS · 2 dormitorios · Y 2 baños",
+      "Un refugio frente al mar, o esa segunda casa para desconectarse."
+     ],
+     [
+      "7",
+      "Planta",
+      "PLANTA DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
+      "Atardeceres largos, la terraza, y nada más que el sonido del mar."
+     ],
+     [
+      "8",
+      "Cierre",
+      "Llave en mano · Plazo estimado: 7 meses",
+      "Casa Ciprés. Abierta al horizonte."
+     ],
+     [
+      "9",
+      "Llamado",
+      "DESCUBRE MÁS EN NEORIGEN.CL",
+      "Descúbrela en neorigen.cl"
+     ]
+    ]
+   },
    "campaign": "",
-   "date": "2026-12-15",
    "time": "",
-   "platforms": [],
+   "date": "2026-12-15",
+   "inicio": "",
    "format": "post",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-02T23:06:55.027Z",
+   "updatedAt": "2026-11-03T14:39:12.143Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:55.027Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T23:06:55.027Z",
-   "revisions": 0,
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "5e8378cb-40d9-4efb-9aaf-65391d0fadde",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T14:39:12.143Z",
+     "by": "javi"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Casa Coihue",
@@ -3738,6 +3815,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "70d1a445-99bc-4b6b-a79d-3e70cbb32cf3",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "postTitle": "Casa Ciprés",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-03T14:39:12.144Z"
+  },
   {
    "id": "2ab4ef82-2d8d-43ee-90a3-77990fd74730",
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",

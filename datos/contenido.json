@@ -28,31 +28,108 @@
    "publishedAt": null
   },
   {
-   "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "title": "Casa Coihue",
-   "caption": "",
+   "caption": "Casa Coihue, nuestro modelo de la semana 🌾\n\nEn el campo, todo se extiende, y esta casa también. Larga y baja, sigue la línea del trigal en vez de cortarla, y su fachada vidriada convierte el paisaje en el fondo de cada día.\n\nPara quienes eligieron dejar la ciudad sin dejar de hacer lo que aman.\n\n3 dormitorios, 3 baños y 167 m² útiles: nuestro modelo más grande, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaCoihue #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": {
+    "cols": [
+     "#",
+     "Momento",
+     "En pantalla (rótulo · titular · bajada)",
+     "Voz"
+    ],
+    "filas": [
+     [
+      "1",
+      "Apertura",
+      "MODELO DE LA SEMANA · Casa Coihue · Horizontal como el campo.",
+      "En el campo, todo se extiende… y esta casa también."
+     ],
+     [
+      "2",
+      "Superficie",
+      "SUPERFICIE ÚTIL · 167 m² · El modelo más grande de los 9",
+      "Larga y baja, sigue la línea del trigal en vez de cortarla."
+     ],
+     [
+      "3",
+      "Fachada",
+      "FACHADA VIDRIADA · De punta a punta · El paisaje como fondo",
+      "El paisaje se vuelve el fondo de cada día."
+     ],
+     [
+      "4",
+      "Sustentable",
+      "VIVE LO NATURAL · Confort todo el año · Diseño sustentable de origen.",
+      "Se integra al entorno, como una franja más del campo."
+     ],
+     [
+      "5",
+      "Dormitorios",
+      "DORMITORIOS · 3 dormitorios · Y 3 baños",
+      "Cada uno con su baño, y su propio rincón de calma."
+     ],
+     [
+      "6",
+      "Escritorio",
+      "ESCRITORIO · Espacio para trabajar · Mirando el campo",
+      "Y un lugar para trabajar con el horizonte enfrente."
+     ],
+     [
+      "7",
+      "Planta",
+      "PLANTA DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
+      "Para quienes eligieron dejar la ciudad, sin dejar de hacer lo que aman."
+     ],
+     [
+      "8",
+      "Cierre",
+      "Llave en mano · Plazo estimado: 10 meses",
+      "Casa Coihue. El campo, a tu medida."
+     ],
+     [
+      "9",
+      "Llamado",
+      "DESCUBRE MÁS EN NEORIGEN.CL",
+      "Descúbrela en neorigen.cl"
+     ]
+    ]
+   },
    "campaign": "",
-   "date": "2026-12-09",
    "time": "",
-   "platforms": [],
-   "format": "post",
+   "date": "2026-12-09",
+   "inicio": "",
+   "format": "story",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-02T23:06:44.081Z",
+   "updatedAt": "2026-11-03T14:38:53.322Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T23:06:44.081Z",
-   "revisions": 0,
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "472a6ca1-1afe-4501-b443-b3c97ae9376f",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T14:38:53.322Z",
+     "by": "javi"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Casa Maitén",
@@ -3661,6 +3738,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "2ab4ef82-2d8d-43ee-90a3-77990fd74730",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, la tabla del guión, formato",
+   "meta": null,
+   "createdAt": "2026-11-03T14:38:53.323Z"
+  },
   {
    "id": "fd9545b6-28f3-41cd-bb9d-577963691bfa",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",

@@ -319,7 +319,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-24",
+   "date": "",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -352,7 +352,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:42.660Z",
+   "updatedAt": "2026-11-03T15:31:14.640Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "71d1ada3-bd14-442e-aaf5-be2a6a6745d8",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 24 nov a sin fecha",
+   "meta": {
+    "from": "2026-11-24",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:31:14.641Z"
+  },
+  {
    "id": "da69ae19-398a-422d-b0a1-0626e13a7ccb",
    "postId": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
    "postTitle": "La casa que respira",
@@ -6694,6 +6707,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a4d3fabe-7c4f-4dfa-a8a8-2b834b5e6a71",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Aire nuevo sin abrir la ventana” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Aire nuevo sin abrir la ventana” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-03T15:31:14.641Z"
+  },
   {
    "id": "3f243229-bbb9-482f-a29a-d3c3c0699162",
    "to": "maca",

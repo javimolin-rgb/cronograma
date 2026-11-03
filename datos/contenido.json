@@ -418,7 +418,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -434,7 +435,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:35.374Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4679,6 +4680,16 @@
  ],
  "activity": [
   {
+   "id": "57094aa5-8927-447d-842f-5c12c8d62b3c",
+   "postId": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
+   "postTitle": "La casa que respira",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:35.374Z"
+  },
+  {
    "id": "653ea957-a45e-45fa-a2c2-037651cc9242",
    "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "postTitle": "Cómo se arma el precio de tu casa",
@@ -6561,6 +6572,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7c67f025-1f9a-4ed4-b010-58a8486ffd46",
+   "to": "maca",
+   "from": "javi",
+   "postId": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
+   "type": "tagged",
+   "text": "te etiquetó en “La casa que respira”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “La casa que respira”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
+   "createdAt": "2026-11-03T15:29:35.375Z"
+  },
   {
    "id": "5fad8a65-819e-49bb-a4e4-5c4677970e60",
    "to": "maca",

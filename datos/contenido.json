@@ -3682,6 +3682,14 @@
  ],
  "comments": [
   {
+   "id": "ca79d357-1995-4395-b1c3-a39b93e64dc2",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "flavio",
+   "text": "MUCHAS GRACIAS  @Javi !!!",
+   "fileIds": [],
+   "createdAt": "2026-11-03T22:06:16.152Z"
+  },
+  {
    "id": "999974ca-21b8-438e-9925-f808f308d24b",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4958,6 +4966,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "0a57493a-9824-46ed-b85c-9afac7adbb33",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T22:06:16.154Z"
+  },
   {
    "id": "3a8a7d3f-2a55-4afc-815e-01c70217b931",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7494,6 +7512,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2195bd5a-48e7-49c5-a1b8-9b2b3fd0f38a",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "comment",
+   "text": "comentó en “Opciones foto portada web”: MUCHAS GRACIAS  @Javi !!!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Flavio comentó en “Opciones foto portada web”: MUCHAS GRACIAS  @Javi !!!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T22:06:16.154Z"
+  },
+  {
+   "id": "cd1adb47-95f9-4bbb-9dea-9548765e3081",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "mention",
+   "text": "te mencionó en “Opciones foto portada web”: MUCHAS GRACIAS  @Javi !!!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Flavio te mencionó en “Opciones foto portada web”: MUCHAS GRACIAS  @Javi !!!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T22:06:16.154Z"
+  },
   {
    "id": "9427a84a-b732-4312-86fa-81d6da9c0376",
    "to": "javi",

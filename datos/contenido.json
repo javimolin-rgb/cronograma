@@ -786,7 +786,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -802,7 +803,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:17.544Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4674,6 +4675,16 @@
  ],
  "activity": [
   {
+   "id": "b3a6c4ed-9f66-4c49-9e7e-947c160fff8e",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:17.545Z"
+  },
+  {
    "id": "85979c05-1b44-4c8d-a77a-0a01a86dbd5b",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -6506,6 +6517,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "fe4c773d-824c-4048-873a-72c69cd0b761",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "tagged",
+   "text": "te etiquetó en “¿Son prefabricadas?”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “¿Son prefabricadas?”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-03T15:29:17.546Z"
+  },
   {
    "id": "fd06ac69-4671-465c-8700-29a3fac9c05a",
    "to": "maca",

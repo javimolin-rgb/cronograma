@@ -826,7 +826,7 @@
      [
       "8–13 s",
       "Detalle de manos trabajando",
-      "Construcción tradicional, de calidad y eficiencia",
+      "Construcción en obra, calidad y eficiencia",
       "Crece en el mismo lugar donde vas a despertar cada mañana."
      ],
      [
@@ -873,8 +873,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T19:56:48.554Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-03T20:30:46.421Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T19:56:48.554Z",
    "publishedAt": null
   },
@@ -4829,6 +4829,16 @@
  ],
  "activity": [
   {
+   "id": "8b954e96-8662-45e0-97c0-94c1ccbe541d",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-03T20:30:46.425Z"
+  },
+  {
    "id": "5a12cb3d-9566-4e5a-b238-021fe44c41a3",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -7211,6 +7221,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3e3cd533-91af-46c0-b7d1-5444d1b1e487",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "en “¿Son prefabricadas?”: editó la tabla del guión",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca en “¿Son prefabricadas?”: editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-03T20:30:46.428Z"
+  },
   {
    "id": "ee2363e4-c241-4435-af00-240afa136990",
    "to": "javi",

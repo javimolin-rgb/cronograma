@@ -65,7 +65,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -91,7 +92,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.448Z",
+   "updatedAt": "2026-11-03T15:29:53.022Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4683,6 +4684,16 @@
  ],
  "activity": [
   {
+   "id": "30c34e7a-8b0b-4340-8378-9f813094a20a",
+   "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
+   "postTitle": "Una casa para todas las edades",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:53.022Z"
+  },
+  {
    "id": "f9919f80-8baf-4e12-9be3-1b9e9701040d",
    "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
    "postTitle": "¿Qué casa calza con tu familia?",
@@ -6605,6 +6616,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f93bd676-59f6-41b8-a476-44ab475e27e2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
+   "type": "tagged",
+   "text": "te etiquetó en “Una casa para todas las edades”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Una casa para todas las edades”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
+   "createdAt": "2026-11-03T15:29:53.022Z"
+  },
   {
    "id": "41a72dc2-c621-41ad-b722-35a420273800",
    "to": "maca",

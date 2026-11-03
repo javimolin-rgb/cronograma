@@ -638,7 +638,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-14",
+   "date": "",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -671,7 +671,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:24.963Z",
+   "updatedAt": "2026-11-03T15:30:58.412Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "ce209ea3-df01-4946-959a-670ddd06fec9",
+   "postId": "30efd072-8377-4a3a-96f6-e2a60dab643d",
+   "postTitle": "El muro que guarda el sol",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 14 nov a sin fecha",
+   "meta": {
+    "from": "2026-11-14",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:30:58.412Z"
+  },
+  {
    "id": "7ba2a9b1-9f54-4098-be4d-fc3ac84ada5c",
    "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
    "postTitle": "Tu terreno no tiene luz ni alcantarillado",
@@ -6642,6 +6655,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2a93358f-440e-4c37-9f4d-2d44d8104dd4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "30efd072-8377-4a3a-96f6-e2a60dab643d",
+   "type": "reschedule",
+   "text": "cambió la fecha de “El muro que guarda el sol” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “El muro que guarda el sol” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=30efd072-8377-4a3a-96f6-e2a60dab643d",
+   "createdAt": "2026-11-03T15:30:58.412Z"
+  },
   {
    "id": "44968a4b-3225-401d-9b4f-1bf28e482d27",
    "to": "maca",

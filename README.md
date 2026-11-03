@@ -67,6 +67,16 @@ El **Calendario** también tiene su conmutador arriba, con tres maneras de mirar
 
 En las tres, tocar una pieza la abre. Las piezas **sin fecha** aparecen al final de Gantt y de Línea, como chips, para que no se pierdan.
 
+### Campañas: renombrar y mover
+
+Cuando las piezas tienen **campaña**, la carta Gantt las agrupa y cada grupo se maneja entero:
+
+- Tocar el **nombre del grupo** abre su menú: cuántas piezas tiene, desde cuándo hasta cuándo, la lista para saltar a cualquiera, y el **nombre**. Cambiarlo ahí se lo cambia **a todas sus piezas de una vez**, sin ir una por una. También está **“quitársela a todas”**, que las deja sin campaña sin borrar nada.
+- En el computador, cada pieza se **arrastra** desde su nombre hasta el grupo donde va (el grupo se ilumina al pasar por encima).
+- En el teléfono, cada fila tiene un botón de **carpeta**: abre la lista de campañas, con *Sin campaña* y un casillero para crear una nueva ahí mismo.
+
+Flavio y Maca ven los grupos, pero no pueden renombrarlos ni mover piezas.
+
 ### De cuándo a cuándo va una barra
 
 Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se publica.

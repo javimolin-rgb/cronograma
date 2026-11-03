@@ -598,17 +598,21 @@ function viewGantt() {
   const grupos = new Map();
   const hayCamp = filas.some((x) => (x.p.campaign || '').trim());
   filas.forEach((x) => {
-    const k = hayCamp ? ((x.p.campaign || '').trim() || 'Sin campaña') : '';
+    const k = hayCamp ? ((x.p.campaign || '').trim() || SIN_CAMP) : '';
     (grupos.get(k) || grupos.set(k, []).get(k)).push(x);
   });
+  const puede = esAdmin() && store.canWrite;
   const fila = ({ p, r }) => {
     const d0 = Math.max(0, diffDays(r.ini, ini));
     const d1 = Math.min(dias - 1, diffDays(r.fin, ini));
     const st = statusOf(p.status);
     const corta = diffDays(r.ini, ini) < 0, larga = diffDays(r.fin, ini) > dias - 1;
-    return `<div class="gfila">
-      <button class="getq" data-act="open-post" data-id="${esc(p.id)}" title="${esc(p.title)}">
-        <i style="--c:${st.color}"></i><span><b>${esc(p.title)}</b><small>${esc(fmtShort(p.date))}${p.assignees.length ? ' · ' + esc(p.assignees.map((a) => person(a).name.split(' ')[0]).join(', ')) : ''}</small></span></button>
+    return `<div class="gfila"${puede ? ' draggable="true"' : ''} data-id="${esc(p.id)}">
+      <div class="getq">
+        <button class="getqb" data-act="open-post" data-id="${esc(p.id)}" title="${esc(p.title)}">
+          <i style="--c:${st.color}"></i><span><b>${esc(p.title)}</b><small>${esc(fmtShort(p.date))}${p.assignees.length ? ' · ' + esc(p.assignees.map((a) => person(a).name.split(' ')[0]).join(', ')) : ''}</small></span></button>
+        ${puede ? `<button class="iconbtn gcampb" data-act="camp-pieza" data-id="${esc(p.id)}" aria-label="Cambiar de campaña" title="Cambiar de campaña">${ic('folder', 15)}</button>` : ''}
+      </div>
       <div class="gpista">${marcaHoy}
         <button class="gbar${r.estimado ? ' est' : ''}${corta ? ' corta-ini' : ''}${larga ? ' corta-fin' : ''}" style="--d:${d0};--w:${Math.max(1, d1 - d0 + 1)};--c:${st.color}"
           data-act="open-post" data-id="${esc(p.id)}" title="${esc(p.title)} · ${esc(fmtShort(r.ini))} a ${esc(fmtShort(r.fin))}${r.estimado ? ' (calculado)' : ''}">
@@ -616,7 +620,13 @@ function viewGantt() {
       </div></div>`;
   };
   const cuerpo = [...grupos.entries()].map(([k, arr]) => (k
-    ? `<div class="gfila gcamp"><div class="getq gesq">${esc(k)}</div><div class="gpista">${marcaHoy}</div></div>` : '') + arr.map(fila).join('')).join('');
+    ? `<div class="ggrupo" data-camp="${esc(k === SIN_CAMP ? '' : k)}">
+        <div class="gfila gcamp"><div class="getq gesq">${puede
+          ? `<button class="gcampnom" data-act="camp-menu" data-camp="${esc(k === SIN_CAMP ? '' : k)}">${esc(k)} <b>${arr.length}</b></button>`
+          : `${esc(k)} <b>${arr.length}</b>`}</div><div class="gpista">${marcaHoy}</div></div>
+        ${arr.map(fila).join('')}</div>`
+    : arr.map(fila).join('')
+  )).join('');
   return cab + `<div class="gantt" id="gantt" data-hoy="${offHoy}">
       <div class="gcont" style="--dias:${dias}">
         <div class="gfila gmeses"><div class="getq gesq">Pieza</div><div class="gpista">${meses}</div></div>
@@ -635,6 +645,68 @@ function ubicarGantt() {
   if (!(off >= 0)) return;
   const dia = parseFloat(getComputedStyle(g).getPropertyValue('--dia')) || 26;
   g.scrollLeft = Math.max(0, off * dia - dia * 3);
+}
+
+/* ---------- Campañas: cambiarles el nombre de una vez y mover piezas entre ellas ---------- */
+const SIN_CAMP = 'Sin campaña';
+const campanas = () => [...new Set(S.db.posts.map((p) => (p.campaign || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+const piezasDeCampana = (c) => S.db.posts.filter((p) => (p.campaign || '').trim() === String(c || '').trim());
+// Guarda sin hacer ruido: cambiar la etiqueta de un grupo no es un cambio de contenido que avisar
+async function guardarCampana(post, campana) {
+  await save('posts', Object.assign({}, post, { campaign: campana, updatedAt: nowISO(), updatedBy: S.me.id }));
+}
+async function renombrarCampana(viejo, nuevo) {
+  const piezas = piezasDeCampana(viejo);
+  if (!piezas.length) return 0;
+  for (const p of piezas) await guardarCampana(p, nuevo);
+  return piezas.length;
+}
+// Mover una pieza de campaña (arrastrándola o desde su menú)
+async function moverDeCampana(id, campana) {
+  const p = S.db.posts.find((x) => x.id === id);
+  if (!p || !requireWrite()) return;
+  const antes = (p.campaign || '').trim(), ahora = String(campana || '').trim();
+  if (antes === ahora) return;
+  await guardarCampana(p, ahora);
+  await log(p, 'edit', ahora ? `movió “${p.title}” a la campaña ${ahora}` : `sacó “${p.title}” de la campaña ${antes}`);
+  renderMain();
+  toast(ahora ? `“${p.title}” → ${ahora}` : `“${p.title}” quedó sin campaña`, 3000);
+}
+// El menú de una campaña: nombre para todas sus piezas, o sacárselo a todas
+function menuCampana(nombre) {
+  if (!esAdmin()) return;
+  const piezas = piezasDeCampana(nombre);
+  const conFecha = piezas.filter((p) => p.date).map((p) => p.date).sort();
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>${esc(nombre || SIN_CAMP)}</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <div class="track">
+        <div><span>Piezas</span><b>${piezas.length}</b></div>
+        <div><span>Desde</span><b>${conFecha.length ? esc(fmtShort(conFecha[0])) : '—'}</b></div>
+        <div><span>Hasta</span><b>${conFecha.length ? esc(fmtShort(conFecha[conFecha.length - 1])) : '—'}</b></div>
+      </div>
+      ${nombre ? `<label class="lbl">Nombre <small>se le cambia a las ${piezas.length}</small></label>
+        <input class="field" id="camp-nombre" value="${esc(nombre)}">` : '<p class="hint">Estas piezas todavía no tienen campaña. Arrástralas a una, o usa el botón de carpeta de cada una.</p>'}
+      <label class="lbl">Las piezas</label>
+      <div class="vlist">${piezas.slice(0, 40).map((p) => `<button class="vrow" data-act="open-post" data-id="${esc(p.id)}"><b>${esc(p.date ? fmtShort(p.date) : 'sin fecha')}</b><span>${esc(p.title)}</span><small>${esc(formatName(p.format))}</small></button>`).join('')}</div>
+    </div>
+    <div class="pf">${nombre ? `<button class="btn ghost danger" data-act="camp-quitar" data-camp="${esc(nombre)}">${ic('x', 17)} Quitársela a todas</button>
+      <button class="btn" data-act="camp-guardar" data-camp="${esc(nombre)}">Guardar</button>` : '<button class="btn block" data-act="sheet-close">Listo</button>'}</div>`, true);
+}
+// ¿En qué campaña va esta pieza?
+function elegirCampana(id) {
+  const p = S.db.posts.find((x) => x.id === id); if (!p || !esAdmin()) return;
+  const actual = (p.campaign || '').trim();
+  const lista = campanas();
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Campaña</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <p class="hint" style="margin-top:0">${esc(p.title)}</p>
+      <div class="vlist">
+        ${lista.map((c) => `<button class="vrow${c === actual ? ' on' : ''}" data-act="camp-poner" data-id="${esc(p.id)}" data-camp="${esc(c)}"><b>${ic('folder', 16)}</b><span>${esc(c)}</span><small>${piezasDeCampana(c).length}</small>${c === actual ? ic('check', 16) : ''}</button>`).join('')}
+        <button class="vrow${actual ? '' : ' on'}" data-act="camp-poner" data-id="${esc(p.id)}" data-camp=""><b>${ic('x', 16)}</b><span>${SIN_CAMP}</span>${actual ? '' : ic('check', 16)}</button>
+      </div>
+      <label class="lbl">Una campaña nueva</label>
+      <div class="addrow"><input class="field" id="camp-nueva" placeholder="Ej. Verano 2027" autocomplete="off"><button class="btn sm" data-act="camp-nueva" data-id="${esc(p.id)}">${ic('plus', 16)}</button></div>
+    </div>`, true);
 }
 
 /* ---------- línea: el cronograma que baja ---------- */
@@ -4534,6 +4606,35 @@ const ACTS = {
     else d.date = (S.view === 'calendar' && S.sel) || today();
     renderEditor();
   },
+  'camp-menu': (el) => menuCampana(el.dataset.camp),
+  'camp-pieza': (el) => elegirCampana(el.dataset.id),
+  'camp-poner': async (el) => { closeSheet(); await moverDeCampana(el.dataset.id, el.dataset.camp); },
+  'camp-nueva': async (el) => {
+    const i = $('#camp-nueva'), nombre = ((i && i.value) || '').trim();
+    if (!nombre) { toast('Ponle un nombre a la campaña'); if (i) i.focus(); return; }
+    closeSheet();
+    await moverDeCampana(el.dataset.id, nombre);
+  },
+  'camp-guardar': async (el) => {
+    if (!requireWrite()) return;
+    const i = $('#camp-nombre'), nombre = ((i && i.value) || '').trim();
+    const viejo = el.dataset.camp;
+    if (!nombre) { toast('Ponle un nombre a la campaña'); if (i) i.focus(); return; }
+    closeSheet();
+    if (nombre === viejo) return;
+    const n = await renombrarCampana(viejo, nombre);
+    renderMain();
+    toast(`${n} pieza${n === 1 ? '' : 's'} ahora en “${nombre}”`, 3500);
+  },
+  'camp-quitar': async (el) => {
+    if (!requireWrite()) return;
+    const viejo = el.dataset.camp, n = piezasDeCampana(viejo).length;
+    if (!confirm(`¿Quitarle la campaña “${viejo}” a ${n} pieza${n === 1 ? '' : 's'}?\n\nLas piezas no se borran: quedan sin campaña.`)) return;
+    closeSheet();
+    await renombrarCampana(viejo, '');
+    renderMain();
+    toast(`${n} pieza${n === 1 ? '' : 's'} sin campaña`, 3500);
+  },
   'doc-usar': (el) => {
     if (!DOC) return;
     const lista = el.dataset.ctx === '1' ? DOC.contexto : DOC.piezas;
@@ -4794,13 +4895,24 @@ document.addEventListener('change', (e) => {
   else if (t.id === 'imp-archivos') { const fs = [...t.files]; t.value = ''; elegirArchivosImport(fs); }
 });
 /* Arrastrar y soltar en el tablero (escritorio) */
-document.addEventListener('dragstart', (e) => { const c = e.target.closest && e.target.closest('.card[draggable]'); if (c) e.dataTransfer.setData('text/plain', c.dataset.id); });
-document.addEventListener('dragover', (e) => { const col = e.target.closest && e.target.closest('.col'); if (col) { e.preventDefault(); col.classList.add('over'); } });
-document.addEventListener('dragleave', (e) => { const col = e.target.closest && e.target.closest('.col'); if (col) col.classList.remove('over'); });
+const alSoltar = (e, sel) => (e.target.closest && e.target.closest(sel)) || null;
+document.addEventListener('dragstart', (e) => {
+  const c = alSoltar(e, '.card[draggable]') || alSoltar(e, '.gfila[draggable]');
+  if (c) { e.dataTransfer.setData('text/plain', c.dataset.id); c.classList.add('llevando'); }
+});
+document.addEventListener('dragend', (e) => { const c = alSoltar(e, '.llevando'); if (c) c.classList.remove('llevando'); });
+document.addEventListener('dragover', (e) => {
+  const z = alSoltar(e, '.col') || alSoltar(e, '.ggrupo');
+  if (z) { e.preventDefault(); z.classList.add('over'); }
+});
+document.addEventListener('dragleave', (e) => { const z = alSoltar(e, '.col') || alSoltar(e, '.ggrupo'); if (z && !z.contains(e.relatedTarget)) z.classList.remove('over'); });
 document.addEventListener('drop', (e) => {
-  const col = e.target.closest && e.target.closest('.col'); if (!col) return;
-  e.preventDefault(); col.classList.remove('over');
-  const id = e.dataTransfer.getData('text/plain'); if (id) changeStatus(id, col.dataset.status);
+  const col = alSoltar(e, '.col'), grupo = alSoltar(e, '.ggrupo');
+  const z = col || grupo; if (!z) return;
+  e.preventDefault(); z.classList.remove('over');
+  const id = e.dataTransfer.getData('text/plain'); if (!id) return;
+  if (col) changeStatus(id, col.dataset.status);
+  else moverDeCampana(id, grupo.dataset.camp);
 });
 /* Puntitos y contador del carrusel */
 document.addEventListener('scroll', (e) => {

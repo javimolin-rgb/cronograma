@@ -319,7 +319,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "",
+   "date": "2026-12-17",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -352,7 +352,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:14.640Z",
+   "updatedAt": "2026-11-03T15:34:23.849Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4694,6 +4694,19 @@
  ],
  "activity": [
   {
+   "id": "dc0aaeb3-f795-4287-8f77-676a3f4bee67",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha a 17 dic",
+   "meta": {
+    "from": "",
+    "to": "2026-12-17"
+   },
+   "createdAt": "2026-11-03T15:34:23.850Z"
+  },
+  {
    "id": "b8340866-6e22-4c82-9fe6-2aeee7198d90",
    "postId": "ec3bd573-ce00-4354-8349-7c18087e12ed",
    "postTitle": "Cambio de modulo - Web Neorigen",
@@ -6856,6 +6869,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4866a3bb-f746-4914-9aec-32d18c742375",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Aire nuevo sin abrir la ventana” a 17 dic",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Aire nuevo sin abrir la ventana” a 17 dic",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-03T15:34:23.850Z"
+  },
   {
    "id": "7879b2d6-8e51-4802-a7fd-892a937cab5a",
    "to": "maca",

@@ -136,31 +136,108 @@
    "publishedAt": null
   },
   {
-   "id": "03b2da82-2617-417b-8081-df3dadaefb31",
    "title": "Casa Boldo",
-   "caption": "",
+   "caption": "Casa Boldo, nuestro modelo de la semana 🌿\n\nHay casas que miran a todas partes; esta mira a un solo lugar. Larga y serena, toda la casa se orienta hacia el agua y su ventanal enmarca el lago como una pintura.\n\nCuatro dormitorios repartidos en dos pisos, para la familia grande que se junta todas las vacaciones.\n\n4 dormitorios, 2 baños y 96,6 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaBoldo #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": {
+    "cols": [
+     "#",
+     "Momento",
+     "En pantalla (rótulo · titular · bajada)",
+     "Voz"
+    ],
+    "filas": [
+     [
+      "1",
+      "Apertura",
+      "MODELO DE LA SEMANA · Casa Boldo · Toda la casa mira al lago.",
+      "Hay casas que miran a todas partes… esta mira a un solo lugar."
+     ],
+     [
+      "2",
+      "Superficie",
+      "SUPERFICIE ÚTIL · 96,6 m² · 4 dormitorios y 2 baños",
+      "Larga y serena, toda la casa se orienta hacia el agua."
+     ],
+     [
+      "3",
+      "Ventanal",
+      "FRENTE VIDRIADO · Orientado al lago · El paisaje como protagonista",
+      "El ventanal enmarca el lago como si fuera una pintura."
+     ],
+     [
+      "4",
+      "Techo",
+      "VIVE LO NATURAL · Pendiente pronunciada · La lluvia y la nieve escurren solas",
+      "Llueva o nieve, adentro todo sigue en calma."
+     ],
+     [
+      "5",
+      "1er piso",
+      "1ER PISO · 2 dormitorios y 1 baño · Una distribución muy práctica",
+      "Cuatro dormitorios, para que cada uno tenga su espacio."
+     ],
+     [
+      "6",
+      "2do piso",
+      "2DO PISO · 2 dormitorios y 1 baño · Espacio para todos",
+      "Ideal para una familia grande, de esas que se juntan todas las vacaciones."
+     ],
+     [
+      "7",
+      "Planta",
+      "PLANTAS DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
+      "Y al final del día, todos frente al mismo paisaje."
+     ],
+     [
+      "8",
+      "Cierre",
+      "Llave en mano · Plazo estimado: 8 meses",
+      "Casa Boldo. La vida, mirando al lago."
+     ],
+     [
+      "9",
+      "Llamado",
+      "DESCUBRE MÁS EN NEORIGEN.CL",
+      "Descúbrela en neorigen.cl"
+     ]
+    ]
+   },
    "campaign": "",
-   "date": "2026-11-11",
    "time": "",
-   "platforms": [],
+   "date": "2026-11-11",
+   "inicio": "",
    "format": "post",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-02T23:05:35.732Z",
+   "updatedAt": "2026-11-03T14:36:53.883Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T23:05:35.732Z",
-   "revisions": 0,
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "9b5483ac-42d1-4e26-b1c9-cc3aa0fc7af6",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T14:36:53.883Z",
+     "by": "javi"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Casa Peumo",
@@ -3353,6 +3430,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b9c3694a-2612-40be-a127-7be2ad817d29",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-03T14:36:53.884Z"
+  },
   {
    "id": "6fa7bcb6-29ad-4c64-889c-6c045883ae84",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",

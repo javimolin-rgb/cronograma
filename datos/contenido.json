@@ -3682,6 +3682,14 @@
  ],
  "comments": [
   {
+   "id": "a45bb816-aada-40b7-963d-c941847c6644",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "author": "javi",
+   "text": "Publicado!",
+   "fileIds": [],
+   "createdAt": "2026-11-03T21:53:24.053Z"
+  },
+  {
    "id": "ec78283b-8f36-4c25-9423-4abb36b02599",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "flavio",
@@ -4934,6 +4942,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "08ccd23e-ff42-4c4d-87bb-aa590b4c4ea5",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "postTitle": "Opciones foto portada web",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T21:53:24.056Z"
+  },
   {
    "id": "6ead899c-7de9-4d84-a45e-f501bad67508",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
@@ -7440,6 +7458,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "512c2d4d-5c49-4089-bf6d-45fa99cda35a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "comment",
+   "text": "comentó en “Opciones foto portada web”: Publicado!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Opciones foto portada web”: Publicado!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:53:24.056Z"
+  },
+  {
+   "id": "ea937224-1078-4886-9f89-38247a26e348",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "309f771f-1276-4384-95ed-3e597aac5756",
+   "type": "comment",
+   "text": "comentó en “Opciones foto portada web”: Publicado!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Opciones foto portada web”: Publicado!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=309f771f-1276-4384-95ed-3e597aac5756",
+   "createdAt": "2026-11-03T21:53:24.056Z"
+  },
   {
    "id": "f92cace0-565f-4500-8720-e8eaa4971d06",
    "to": "maca",

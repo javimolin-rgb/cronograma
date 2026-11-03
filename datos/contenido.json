@@ -1096,7 +1096,7 @@
      ]
     ]
    },
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-12-01",
    "inicio": "",
@@ -1112,7 +1112,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:38:27.421Z",
+   "updatedAt": "2026-11-03T15:32:21.535Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -1200,7 +1200,7 @@
      ]
     ]
    },
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-11-25",
    "inicio": "",
@@ -1217,7 +1217,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:44.042Z",
+   "updatedAt": "2026-11-03T15:32:19.447Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -4683,6 +4683,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "0879abbe-37d1-4435-ad67-46610302f006",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Maitén” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:21.535Z"
+  },
+  {
+   "id": "74272679-d2bc-460d-a68c-75f1cd295474",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Roble” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:19.448Z"
+  },
   {
    "id": "26bcb4f4-3675-44a0-b2f7-14a1ac0d04e2",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",

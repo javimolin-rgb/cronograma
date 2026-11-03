@@ -216,6 +216,8 @@ const ESCALAS = [[0.9, 'Chica'], [1, 'Normal'], [1.15, 'Grande'], [1.3, 'Más gr
 const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Piezas'], ['files', 'Entregas'], ['marca', 'Marca'], ['dash', 'Panel']];
 // Dentro de Piezas se cambia entre la agenda (por fecha) y el tablero (por estado)
 const PIEZAS_VISTAS = [['agenda', 'Agenda', 'list'], ['tablero', 'Tablero', 'board']];
+// Dentro de Calendario: el mes de siempre, la carta Gantt y la línea que baja
+const CAL_VISTAS = [['mes', 'Mes', 'calendar'], ['gantt', 'Gantt', 'chart'], ['linea', 'Línea', 'list']];
 function guardarUI() { try { localStorage.setItem(UI_KEY, JSON.stringify(UI)); } catch (e) { /* sin espacio */ } }
 function aplicarUI() {
   const r = document.documentElement;
@@ -237,6 +239,7 @@ const S = {
   me: null,
   view: (localStorage.getItem('crono_view') === 'board' ? 'list' : localStorage.getItem('crono_view')) || 'calendar',
   piezasVista: (localStorage.getItem('crono_piezas_vista') || (localStorage.getItem('crono_view') === 'board' ? 'tablero' : 'agenda')),
+  calVista: localStorage.getItem('crono_cal_vista') || 'mes',
   cursor: (() => { const d = new Date(); d.setDate(1); return d; })(),
   sel: today(),
   f: { q: '', person: '', platform: '', status: '', format: '', mine: false },
@@ -261,7 +264,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
+    title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -384,8 +387,8 @@ async function notify(type, post, targets, text) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
-const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'artefactos', 'marca'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
+const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
 const TEXT_FIELDS = ['title', 'caption', 'hashtags', 'notes'];
 // De esos, los que vale la pena avisarle al equipo (las notas son internas)
@@ -508,7 +511,19 @@ function card(p, o = {}) {
 }
 const emptyBox = (title, sub, day) => `<div class="empty"><b>${esc(title)}</b>${esc(sub)}<div style="margin-top:14px"><button class="btn sm" data-act="new"${day ? ` data-d="${day}"` : ''}>${ic('plus', 16)} Nueva pieza</button></div></div>`;
 
+/* El calendario se mira de tres maneras: el mes de siempre, la carta Gantt y la línea que baja */
 function viewCalendar() {
+  const sel = `<div class="feedtop piezastop">
+    <div class="vistasel" role="group" aria-label="Cómo ver el calendario">${CAL_VISTAS.map(([id, n, i]) => `<button class="vbtn${S.calVista === id ? ' on' : ''}" data-act="cal-vista" data-v="${id}" title="${esc(n)}" aria-label="${esc(n)}">${ic(i, 17)}<span>${esc(n)}</span></button>`).join('')}</div>
+  </div>`;
+  return sel + (S.calVista === 'gantt' ? viewGantt() : S.calVista === 'linea' ? viewLinea() : viewMes());
+}
+const calNav = (titulo, sub) => `<div class="calhead"><h2>${esc(titulo)}${sub ? ` <small>${esc(sub)}</small>` : ''}</h2><div class="nav">
+    <button class="chip" data-act="today">Hoy</button>
+    <button class="iconbtn" data-act="prev-m" aria-label="Antes">${ic('left')}</button>
+    <button class="iconbtn" data-act="next-m" aria-label="Después">${ic('right')}</button></div></div>`;
+
+function viewMes() {
   const c = S.cursor, y = c.getFullYear(), m = c.getMonth();
   const startDow = (new Date(y, m, 1).getDay() + 6) % 7;
   const nDays = new Date(y, m + 1, 0).getDate();
@@ -524,14 +539,128 @@ function viewCalendar() {
     cells += `<button class="cell${key === t ? ' today' : ''}${key === S.sel ? ' sel' : ''}" data-act="pick-day" data-d="${key}"><span class="n">${d}</span><div class="dots">${dots}</div></button>`;
   }
   const dayPosts = (map[S.sel] || []).sort(sortPosts);
-  return `<div class="calhead"><h2>${MONTHS[m]} ${y}</h2><div class="nav">
-      <button class="chip" data-act="today">Hoy</button>
-      <button class="iconbtn" data-act="prev-m" aria-label="Mes anterior">${ic('left')}</button>
-      <button class="iconbtn" data-act="next-m" aria-label="Mes siguiente">${ic('right')}</button></div></div>
-    <div class="dow">${['L', 'M', 'X', 'J', 'V', 'S', 'D'].map((x) => `<span>${x}</span>`).join('')}</div>
+  return calNav(`${cap(MONTHS[m])} ${y}`) +
+    `<div class="dow">${['L', 'M', 'X', 'J', 'V', 'S', 'D'].map((x) => `<span>${x}</span>`).join('')}</div>
     <div class="calgrid" id="calgrid">${cells}</div>
     <div class="dayhead"><h3>${cap(fmtLong(S.sel))}</h3><small>${dayPosts.length} pieza${dayPosts.length === 1 ? '' : 's'}</small></div>
     <div class="list">${dayPosts.length ? dayPosts.map((p) => card(p, { noDate: true })).join('') : emptyBox('Día libre', 'No hay piezas para este día.', S.sel)}</div>`;
+}
+
+/* ---------- carta Gantt ---------- */
+const GANTT_DIAS = 84;        // doce semanas a la vista
+const GANTT_ANTES = 7;        // cuánto dura el trabajo de una pieza cuando ella no lo dice
+/* De cuándo a cuándo va una pieza. Si no puso “se trabaja desde”, se calcula:
+   una semana antes de publicar, o desde el día en que la creó si es más cerca. */
+function tramo(p) {
+  const fin = p.date || '';
+  if (!fin) return null;
+  if (p.inicio && p.inicio <= fin) return { ini: p.inicio, fin, estimado: false };
+  const creada = (p.createdAt || '').slice(0, 10);
+  let ini = addDays(fin, -GANTT_ANTES);
+  if (creada && creada > ini) ini = creada > fin ? fin : creada;
+  return { ini, fin, estimado: true };
+}
+function rangoGantt() {
+  const c = S.cursor;
+  const primero = new Date(c.getFullYear(), c.getMonth(), 1);
+  const dow = (primero.getDay() + 6) % 7;                 // el lunes de esa semana
+  return { ini: ymd(new Date(c.getFullYear(), c.getMonth(), 1 - dow)), dias: GANTT_DIAS };
+}
+function viewGantt() {
+  const { ini, dias } = rangoGantt();
+  const fin = addDays(ini, dias - 1), t = today();
+  const todas = filtered();
+  const filas = todas.filter((p) => p.date).map((p) => ({ p, r: tramo(p) }))
+    .filter((x) => x.r && x.r.fin >= ini && x.r.ini <= fin)
+    .sort((a, b) => (a.r.ini + a.p.date + a.p.title).localeCompare(b.r.ini + b.p.date + b.p.title));
+  const sinFecha = todas.filter((p) => !p.date);
+  const cab = calNav(`${cap(MS[parseYmd(ini).getMonth()])} — ${cap(MS[parseYmd(fin).getMonth()])} ${parseYmd(fin).getFullYear()}`, '12 semanas');
+  if (!filas.length) {
+    return cab + emptyBox('Nada en estas doce semanas', 'Muévete de mes con las flechas, o quítale filtros a la búsqueda.') + sinFechaHtml(sinFecha);
+  }
+  // cabecera: los meses arriba y los días abajo
+  let meses = '', dcel = '';
+  let bloque = { m: -1, n: 0 };
+  for (let i = 0; i < dias; i++) {
+    const f = parseYmd(addDays(ini, i)), dow = f.getDay(), key = ymd(f);
+    if (f.getMonth() !== bloque.m) {
+      if (bloque.n) meses += `<span style="--n:${bloque.n}">${cap(MONTHS[bloque.m])}</span>`;
+      bloque = { m: f.getMonth(), n: 0 };
+    }
+    bloque.n++;
+    dcel += `<span class="gdia${dow === 0 || dow === 6 ? ' fin' : ''}${key === t ? ' hoy' : ''}">${f.getDate()}</span>`;
+  }
+  if (bloque.n) meses += `<span style="--n:${bloque.n}">${cap(MONTHS[bloque.m])}</span>`;
+  const offHoy = t >= ini && t <= fin ? diffDays(t, ini) : -1;
+  const marcaHoy = offHoy >= 0 ? `<i class="ghoy" style="--d:${offHoy}"></i>` : '';
+  // una fila por pieza, agrupadas por campaña cuando las hay
+  const grupos = new Map();
+  const hayCamp = filas.some((x) => (x.p.campaign || '').trim());
+  filas.forEach((x) => {
+    const k = hayCamp ? ((x.p.campaign || '').trim() || 'Sin campaña') : '';
+    (grupos.get(k) || grupos.set(k, []).get(k)).push(x);
+  });
+  const fila = ({ p, r }) => {
+    const d0 = Math.max(0, diffDays(r.ini, ini));
+    const d1 = Math.min(dias - 1, diffDays(r.fin, ini));
+    const st = statusOf(p.status);
+    const corta = diffDays(r.ini, ini) < 0, larga = diffDays(r.fin, ini) > dias - 1;
+    return `<div class="gfila">
+      <button class="getq" data-act="open-post" data-id="${esc(p.id)}" title="${esc(p.title)}">
+        <i style="--c:${st.color}"></i><span><b>${esc(p.title)}</b><small>${esc(fmtShort(p.date))}${p.assignees.length ? ' · ' + esc(p.assignees.map((a) => person(a).name.split(' ')[0]).join(', ')) : ''}</small></span></button>
+      <div class="gpista">${marcaHoy}
+        <button class="gbar${r.estimado ? ' est' : ''}${corta ? ' corta-ini' : ''}${larga ? ' corta-fin' : ''}" style="--d:${d0};--w:${Math.max(1, d1 - d0 + 1)};--c:${st.color}"
+          data-act="open-post" data-id="${esc(p.id)}" title="${esc(p.title)} · ${esc(fmtShort(r.ini))} a ${esc(fmtShort(r.fin))}${r.estimado ? ' (calculado)' : ''}">
+          <span>${esc(p.title)}</span></button>
+      </div></div>`;
+  };
+  const cuerpo = [...grupos.entries()].map(([k, arr]) => (k
+    ? `<div class="gfila gcamp"><div class="getq gesq">${esc(k)}</div><div class="gpista">${marcaHoy}</div></div>` : '') + arr.map(fila).join('')).join('');
+  return cab + `<div class="gantt" id="gantt" data-hoy="${offHoy}">
+      <div class="gcont" style="--dias:${dias}">
+        <div class="gfila gmeses"><div class="getq gesq">Pieza</div><div class="gpista">${meses}</div></div>
+        <div class="gfila gdias"><div class="getq gesq"></div><div class="gpista">${dcel}</div></div>
+        ${cuerpo}
+      </div></div>
+    <p class="hint">Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se publica. Las <b>rayadas</b> son un cálculo (una semana antes, o desde que la creaste): para fijarla, pon <b>“se trabaja desde”</b> dentro de la pieza.</p>`
+    + sinFechaHtml(sinFecha);
+}
+const sinFechaHtml = (arr) => (arr.length ? `<section class="group"><h3>Sin fecha <b>${arr.length}</b></h3>
+  <div class="chips">${arr.map((p) => `<button class="chip" style="--c:${statusOf(p.status).color}" data-act="open-post" data-id="${esc(p.id)}">${esc(p.title)}</button>`).join('')}</div></section>` : '');
+// Deja la carta Gantt mirando el día de hoy en cuanto se dibuja
+function ubicarGantt() {
+  const g = document.getElementById('gantt'); if (!g) return;
+  const off = +g.dataset.hoy;
+  if (!(off >= 0)) return;
+  const dia = parseFloat(getComputedStyle(g).getPropertyValue('--dia')) || 26;
+  g.scrollLeft = Math.max(0, off * dia - dia * 3);
+}
+
+/* ---------- línea: el cronograma que baja ---------- */
+function viewLinea() {
+  const c = S.cursor, desde = `${c.getFullYear()}-${pad(c.getMonth() + 1)}-01`, t = today();
+  const todas = filtered();
+  const ps = todas.filter((p) => p.date && p.date >= desde).sort(sortPosts);
+  const atras = todas.filter((p) => p.date && p.date < desde).length;
+  const cab = calNav(`Desde ${MONTHS[c.getMonth()]} ${c.getFullYear()}`, atras ? `${atras} más atrás` : '');
+  if (!ps.length) return cab + emptyBox('Nada de aquí en adelante', 'Vuelve a meses anteriores con las flechas, o crea una pieza nueva.') + sinFechaHtml(todas.filter((p) => !p.date));
+  const dias = [];
+  ps.forEach((p) => {
+    const ult = dias[dias.length - 1];
+    if (ult && ult.d === p.date) ult.ps.push(p); else dias.push({ d: p.date, ps: [p] });
+  });
+  let mes = '', html = '';
+  dias.forEach(({ d, ps: arr }) => {
+    const f = parseYmd(d), mk = `${f.getFullYear()}-${f.getMonth()}`;
+    if (mk !== mes) { html += `${mes ? '</div></section>' : ''}<section class="lmes"><h3>${cap(MONTHS[f.getMonth()])} <small>${f.getFullYear()}</small></h3><div class="ldias">`; mes = mk; }
+    const cuando = d === t ? 'hoy' : d === addDays(t, 1) ? 'mañana' : d < t ? 'ya pasó' : `en ${diffDays(d, t)} día${diffDays(d, t) === 1 ? '' : 's'}`;
+    html += `<div class="ldia${d === t ? ' hoy' : ''}${d < t ? ' pasado' : ''}">
+      <div class="lfecha"><b>${f.getDate()}</b><small>${DAYS[f.getDay()].slice(0, 3)}</small><em>${esc(cuando)}</em></div>
+      <div class="lcards">${arr.map((p) => card(p, { noDate: true })).join('')}</div>
+    </div>`;
+  });
+  if (mes) html += '</div></section>';
+  return cab + `<div class="linea">${html}</div>` + sinFechaHtml(todas.filter((p) => !p.date));
 }
 
 // Agenda y Tablero viven juntos: arriba se elige con qué ojos mirar las piezas
@@ -1579,7 +1708,7 @@ function renderToolbar() {
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
-  const IC_TAB = { feed: 'feed', calendar: 'calendar', list: S.piezasVista === 'tablero' ? 'board' : 'list', files: esAdmin() ? 'folder' : 'image', marca: 'marca', dash: 'chart' };
+  const IC_TAB = { feed: 'feed', calendar: (CAL_VISTAS.find((x) => x[0] === S.calVista) || CAL_VISTAS[0])[2], list: S.piezasVista === 'tablero' ? 'board' : 'list', files: esAdmin() ? 'folder' : 'image', marca: 'marca', dash: 'chart' };
   const T = visibles().map(([id, l]) => [id, l, IC_TAB[id]]);
   $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
@@ -1588,6 +1717,7 @@ function renderMain() {
   const sy = window.scrollY;
   $('#main').innerHTML = v();
   $('.fab').hidden = ['files', 'dash', 'feed', 'marca'].includes(S.view); // en estas vistas estorba
+  if (S.view === 'calendar' && S.calVista === 'gantt') ubicarGantt();
   renderBanner();
   window.scrollTo(0, sy);
 }
@@ -1937,7 +2067,7 @@ function openEditor(id, preset = {}) {
   if (old) marcarVisto(old.id);
   const d = old ? clone(old) : {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
-    platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], priority: 'normal', links: [], files: [], checklist: []
+    platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], inicio: '', priority: 'normal', links: [], files: [], checklist: []
   };
   ED = { old, d, comment: '', comFiles: [], verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
@@ -2008,6 +2138,8 @@ function syncDraft() {
   const g = (i) => document.getElementById(i), d = ED.d;
   const val = (i) => { const e = g(i); return e ? e.value : ''; };
   d.title = g('e-title').value; d.date = val('e-date'); d.time = val('e-time'); d.format = val('e-format') || d.format;
+  if (g('e-inicio')) d.inicio = val('e-inicio');
+  if (!d.date || (d.inicio && d.inicio > d.date)) d.inicio = d.date ? d.date : '';
   d.caption = g('e-caption').value; d.hashtags = g('e-tags').value; d.notes = g('e-notes').value; d.campaign = g('e-camp').value;
   ED.comment = g('e-comment') ? g('e-comment').value : '';
   ED.newLink = { label: g('e-llabel').value, url: g('e-lurl').value };
@@ -2042,6 +2174,8 @@ function renderEditor() {
     <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
     <div class="row2"${d.date ? '' : ' hidden'}><input class="field" id="e-date" type="date" value="${esc(d.date || '')}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>
     <div class="chips"><button class="chip${d.date ? '' : ' on'}" data-act="ed-sinfecha">${ic('check', 15)} Sin fecha límite</button></div>
+    ${d.date ? `<label class="lbl">Se trabaja desde <small>opcional, es donde empieza su barra en la carta Gantt</small></label>
+      <input class="field" id="e-inicio" type="date" value="${esc(d.inicio || '')}" max="${esc(d.date)}">` : ''}
 
     <label class="lbl">Plataformas</label>
     <div class="chips">${PLATFORMS.map((p) => `<button class="chip${d.platforms.includes(p.id) ? ' on' : ''}" style="--c:${p.color}" data-act="ed-plat" data-v="${p.id}">${esc(p.name)}</button>`).join('')}</div>
@@ -3983,7 +4117,7 @@ const ACTS = {
   'ed-sinfecha': () => {
     syncDraft();
     const d = ED.d;
-    if (d.date) { d.date = ''; d.time = ''; }                       // queda como tarea pendiente, sin vencimiento
+    if (d.date) { d.date = ''; d.time = ''; d.inicio = ''; }                       // queda como tarea pendiente, sin vencimiento
     else d.date = (S.view === 'calendar' && S.sel) || today();
     renderEditor();
   },
@@ -4078,6 +4212,10 @@ const ACTS = {
   'cm-versiones': (el) => { syncDraft(); ED.versionesDe = ED.versionesDe === el.dataset.id ? null : el.dataset.id; renderEditor(); },
   'feed-filtro': (el) => { S.feedFiltro = el.dataset.v; localStorage.setItem('crono_feed', S.feedFiltro); renderMain(); },
   'feed-vista': (el) => { S.feedVista = el.dataset.v; localStorage.setItem('crono_feed_vista', S.feedVista); renderMain(); window.scrollTo(0, 0); },
+  'cal-vista': (el) => {
+    S.calVista = el.dataset.v; localStorage.setItem('crono_cal_vista', S.calVista);
+    renderAll(); window.scrollTo(0, 0);
+  },
   'piezas-vista': (el) => { S.piezasVista = el.dataset.v; localStorage.setItem('crono_piezas_vista', S.piezasVista); renderAll(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),

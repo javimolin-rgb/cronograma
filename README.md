@@ -1,6 +1,6 @@
 # Cronograma de contenido — app del equipo Neorigen
 
-Calendario, agenda, tablero, entregas y panel de seguimiento. Se instala en la pantalla de inicio como una app, con el ícono y los colores de Neorigen, y avisa con notificaciones del celular cuando te etiquetan o mencionan.
+Calendario (mes, carta Gantt y línea), piezas, entregas y panel de seguimiento. Se instala en la pantalla de inicio como una app, con el ícono y los colores de Neorigen, y avisa con notificaciones del celular cuando te etiquetan o mencionan.
 
 Funciona sin servicios externos ni cuentas aparte: los datos y los archivos viven junto a la página y quedan enlazados para siempre.
 
@@ -54,6 +54,26 @@ A quien escribió el comentario le llega el aviso **dentro de la app** (en la ca
 **Agenda** y **Tablero** dejaron de ser dos pestañas: ahora son una sola, **Piezas**, con un conmutador arriba para pasar de una a otra. *Agenda* ordena por fecha (atrasadas, hoy, mañana, esta semana, más adelante, sin fecha); *Tablero* ordena por estado, con las columnas que se arrastran. El buscador y los filtros sirven igual en las dos, y la app recuerda con cuál estabas.
 
 Así la barra de abajo quedó en seis pestañas: Feed, Calendario, Piezas, Entregas, Marca y Panel.
+
+## Calendario: mes, carta Gantt y línea
+
+El **Calendario** también tiene su conmutador arriba, con tres maneras de mirar lo mismo. Las flechas y el botón **Hoy** mueven las tres, y la app recuerda cuál estabas usando.
+
+| Vista | Qué muestra |
+|---|---|
+| **Mes** | La cuadrícula de siempre, con los puntitos de cada día y las piezas del día elegido abajo. |
+| **Gantt** | Doce semanas seguidas, una barra por pieza, de corrido hacia el lado. Se arrastra con el dedo; la columna de los títulos queda fija y una línea marca el día de hoy (se abre ahí puesta). Los fines de semana van sombreados y, si hay campañas, las piezas se agrupan por campaña. |
+| **Línea** | El cronograma que baja: mes a mes y día a día, con las tarjetas completas al lado de cada fecha y cuánto falta (“hoy”, “en 8 días”, “ya pasó”). |
+
+En las tres, tocar una pieza la abre. Las piezas **sin fecha** aparecen al final de Gantt y de Línea, como chips, para que no se pierdan.
+
+### De cuándo a cuándo va una barra
+
+Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se publica.
+
+- Dentro de la pieza hay un campo nuevo, **“se trabaja desde”**, para fijar ese comienzo.
+- Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
+
 
 ## Compartir con enlace directo (solo Javi)
 

@@ -116,6 +116,55 @@ main{padding:0 var(--gut);max-width:100%}
 .dayhead{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px}
 .dayhead h3{font-size:1rem;font-weight:800}
 .dayhead small{color:var(--muted)}
+.calhead h2 small{font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:none}
+
+/* Carta Gantt: la izquierda queda fija y los días se corren con el dedo */
+.gantt{--dia:26px;--etq:132px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;border-radius:14px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);padding:6px 0 8px}
+.gcont{min-width:calc(var(--etq) + var(--dia) * var(--dias))}
+.gfila{display:flex;align-items:stretch}
+.getq{position:sticky;left:0;z-index:3;flex:none;width:var(--etq);display:flex;align-items:center;gap:7px;padding:6px 8px 6px 10px;text-align:left;background:var(--surface);min-width:0}
+.getq i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--c)}
+.getq span{min-width:0}
+.getq b{display:block;font-size:0.78125rem;font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.getq small{display:block;font-size:0.625rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gpista{position:relative;flex:1;min-width:calc(var(--dia) * var(--dias));height:34px;
+  background:repeating-linear-gradient(to right,transparent 0 calc(var(--dia)*5),color-mix(in srgb,var(--ink) 4%,transparent) calc(var(--dia)*5) calc(var(--dia)*7)),
+  repeating-linear-gradient(to right,var(--line) 0 1px,transparent 1px calc(var(--dia)*7))}
+.gmeses .gpista,.gdias .gpista{height:auto;background:none}
+.gmeses{position:sticky;top:0;z-index:4;background:var(--surface)}
+.gmeses .getq{font-size:0.6875rem;font-weight:700;color:var(--muted)}
+.gmeses .gpista span{display:inline-block;width:calc(var(--dia) * var(--n));font-size:0.6875rem;font-weight:800;padding:2px 0 2px 4px;color:var(--muted);box-shadow:inset 1px 0 0 var(--line);white-space:nowrap;overflow:hidden}
+.gdias .gpista{display:flex}
+.gdia{flex:none;width:var(--dia);text-align:center;font-size:0.5625rem;font-weight:700;color:var(--muted);padding:1px 0 3px}
+.gdia.fin{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+.gdia.hoy{background:var(--accent);color:var(--accent-ink);border-radius:6px}
+.gcamp .getq{font-size:0.6875rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.gcamp .gpista{height:22px;background:none}
+.ghoy{position:absolute;left:calc(var(--d) * var(--dia));top:0;bottom:0;width:2px;background:var(--accent);opacity:.5;pointer-events:none}
+.gbar{position:absolute;top:5px;height:24px;left:calc(var(--d) * var(--dia) + 2px);width:calc(var(--w) * var(--dia) - 4px);
+  border-radius:8px;background:color-mix(in srgb,var(--c) 24%,var(--surface));color:var(--ink);display:flex;align-items:center;padding:0 7px 0 9px;overflow:hidden;
+  box-shadow:inset 3px 0 0 var(--c),0 1px 2px rgba(0,0,0,.08)}
+.gbar span{font-size:0.6875rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gbar.est{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 26%,var(--surface)) 0 5px,color-mix(in srgb,var(--c) 9%,var(--surface)) 5px 10px)}
+.gbar.corta-ini{border-top-left-radius:2px;border-bottom-left-radius:2px}
+.gbar.corta-fin{border-top-right-radius:2px;border-bottom-right-radius:2px}
+
+/* Línea: el cronograma que baja */
+.lmes{margin:14px 0 4px}
+.lmes h3{font-size:0.9375rem;font-weight:800;text-transform:capitalize;margin-bottom:8px;position:sticky;top:0;z-index:2;background:var(--bg);padding:6px 2px}
+.lmes h3 small{color:var(--muted);font-weight:600}
+.ldias{display:flex;flex-direction:column;gap:14px;border-left:2px solid var(--line);margin-left:9px}
+.ldia{position:relative;display:flex;gap:8px;align-items:flex-start;padding-left:13px}
+.ldia::before{content:"";position:absolute;left:-6px;top:12px;width:12px;height:12px;border-radius:50%;background:var(--surface);box-shadow:inset 0 0 0 2px var(--line)}
+.ldia.hoy::before{background:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.ldia.pasado{opacity:.72}
+.lfecha{flex:none;width:48px;text-align:center;padding-top:4px}
+.lfecha b{display:block;font-size:1.0625rem;font-weight:800;line-height:1}
+.lfecha small{display:block;font-size:0.625rem;color:var(--muted);text-transform:uppercase;font-weight:700}
+.lfecha em{display:block;font-size:0.5625rem;color:var(--muted);font-style:normal;margin-top:2px}
+.ldia.hoy .lfecha b{color:var(--accent)}
+.lcards{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+@media (min-width:700px){ .gantt{--dia:30px;--etq:170px} }
 
 /* ===== Agenda ===== */
 .group{margin-bottom:20px}

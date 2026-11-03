@@ -784,7 +784,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-08",
+   "date": "2026-11-05",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -812,7 +812,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:30:23.588Z",
+   "updatedAt": "2026-11-03T15:35:45.582Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4694,6 +4694,19 @@
  ],
  "activity": [
   {
+   "id": "a7a897b8-e2e4-48b4-b01d-53f53e87ad6d",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 8 nov a 5 nov",
+   "meta": {
+    "from": "2026-11-08",
+    "to": "2026-11-05"
+   },
+   "createdAt": "2026-11-03T15:35:45.583Z"
+  },
+  {
    "id": "7c6d1bd0-0b80-4989-8ac0-743f9e742ffe",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -6882,6 +6895,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0dc34685-9e9c-49cb-98f4-84d2cc1629b3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "reschedule",
+   "text": "cambió la fecha de “¿Son prefabricadas?” a 5 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “¿Son prefabricadas?” a 5 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-03T15:35:45.583Z"
+  },
   {
    "id": "8ae1cf0e-2184-438f-b8e6-fbd06ec62bfd",
    "to": "maca",

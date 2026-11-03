@@ -197,7 +197,17 @@
     again: false,
     onChange: null,
 
-    get canWrite() { return !!this.token; },
+    get canWrite() { return !!this.token && !this.caducada; },
+    /* GitHub contesta 401 "Bad credentials" cuando la llave venció, la revocaron o la
+       cambiaron. Pasa a media subida, así que conviene decirlo en claro una sola vez. */
+    revisarLlave(status, msg) {
+      if (!this.token) return msg;                 // sin llave no hay nada que caducar: es solo lectura
+      const mala = status === 401 || /bad credentials|requires authentication|token expired/i.test(String(msg || ''));
+      if (!mala) return msg;
+      this.caducada = true;
+      if (this.onChange) { try { this.onChange(); } catch (e) { /* nada */ } }
+      return 'tu llave de GitHub ya no sirve (venció, la revocaron o la cambiaste)';
+    },
 
     /* --- llave --- */
     loadToken() { try { this.token = localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { this.token = ''; } },
@@ -261,6 +271,8 @@
     },
     // Escribe la contraseña una vez y este teléfono queda listo para siempre
     async entrarConContrasena(pass) {
+      // si este teléfono ya tenía una llave (ahora vencida), el sobre nuevo todavía no se leyó
+      if (!this.hayAcceso()) await this.buscarAcceso();
       if (!this.hayAcceso()) throw new Error('todavía no hay una entrada preparada');
       let clave = '';
       try { clave = await descifrar(String(pass || ''), this.acceso); }
@@ -434,7 +446,8 @@
       }
       let msg = 'error ' + r.status;
       try { const e = await r.json(); if (e.message) msg = e.message; } catch (e) { /* sin detalle */ }
-      if (r.status === 401 || r.status === 403) { this.caducada = true; msg = 'la clave de acceso ya no sirve'; }
+      if (r.status === 403) { this.caducada = true; msg = 'esa llave ya no tiene permiso para guardar aquí'; }
+      msg = this.revisarLlave(r.status, msg);
       throw new Error(msg);
     },
 
@@ -464,7 +477,7 @@
         return this.putContenido(path, body, alAvanzar, intento + 1);
       }
       if (choque) throw new Error('otra persona (o tu otro dispositivo) guardó al mismo tiempo; vuelve a intentar');
-      throw new Error(msg);
+      throw new Error(this.revisarLlave(r.status, msg));
     },
     async upload(file, opts = {}) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');

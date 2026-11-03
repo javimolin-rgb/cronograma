@@ -2038,8 +2038,12 @@ function renderBanner() {
   const out = [];
   if (S.offline) out.push(`<div class="demo"><b>Sin conexión</b> · Se está usando una copia de prueba de este teléfono: lo que escribas aquí no le llega al equipo.</div>`);
   if (store.mode === 'local' && !S.offline) out.push(`<div class="demo"><b>Modo de prueba:</b> lo que hagas aquí solo queda en este dispositivo.</div>`);
-  else if (!store.canWrite) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para escribir, ${store.hayAcceso && store.hayAcceso() ? `<button class="lnk" data-act="acc-pedir">escribe tu clave</button>` : 'pídele la clave a Javi'}.</div>`);
-  else if (store.caducada) out.push(`<div class="demo"><b>La clave dejó de servir.</b> Pídele una nueva a Javi.</div>`);
+  else if (!store.canWrite && !store.caducada) out.push(`<div class="demo"><b>Solo lectura:</b> puedes ver y descargar todo. Para escribir, ${store.hayAcceso && store.hayAcceso() ? `<button class="lnk" data-act="acc-pedir">escribe tu clave</button>` : 'pídele la clave a Javi'}.</div>`);
+  if (store.caducada) {
+    out.push(esAdmin()
+      ? `<div class="demo mal"><span>🔑 <b>Tu llave de GitHub dejó de servir.</b> Venció, la revocaste o la cambiaste: hasta que pegues una nueva, nada de lo que hagas se guarda ni se sube.</span><button class="btn sm" data-act="llave-nueva">Cambiar la llave</button></div>`
+      : `<div class="demo mal"><span>🔑 <b>La clave dejó de servir.</b> Pídele una nueva a Javi: por ahora puedes mirar, pero no guardar.</span></div>`);
+  }
   if (S.compartidos && puedeImportar() && !(IMP && IMP.compartido)) out.push(`<div class="demo comp"><span>${ic('share', 16)} <b>${S.compartidos} reenvío${S.compartidos === 1 ? '' : 's'}</b> esperando revisión.</span><button class="btn sm" data-act="comp-revisar">Revisar</button></div>`);
   if (avisoPush && !pushOculto()) {
     out.push(avisoPush === 'blocked'
@@ -2567,6 +2571,7 @@ function renderEditor() {
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
     ${(ED.fallos || []).length ? `<div class="avisobar mal">${ic('alert', 18)}
       <span><b>${ED.fallos.length} archivo${ED.fallos.length === 1 ? ' no se subió' : 's no se subieron'}</b><br>${ED.fallos.map((x) => `${esc(x.nombre)} · ${esc(x.motivo)}`).join('<br>')}</span>
+      ${store.caducada && esAdmin() ? `<button class="btn sm" data-act="llave-nueva">Cambiar la llave</button>` : ''}
       <button class="btn sm" data-act="ed-reintentar">Reintentar</button>
       <button class="iconbtn" data-act="ed-fallo-ok" aria-label="Entendido">${ic('x', 16)}</button></div>` : ''}
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
@@ -4527,6 +4532,14 @@ const ACTS = {
   },
   'buscar-update': (el) => buscarActualizacion(el),
   'acc-pedir': () => pedirContrasena(),
+  'llave-nueva': () => {
+    openMe();
+    setTimeout(() => {
+      const i = $('#gh-token');
+      if (i) { i.scrollIntoView({ block: 'center' }); i.focus(); }
+      else toast('Entra a Ajustes y pega tu llave nueva', 4000);
+    }, 200);
+  },
   'acc-entrar': async (el) => {
     const i = $('#acc-pass'); if (!i) return;
     el.disabled = true;

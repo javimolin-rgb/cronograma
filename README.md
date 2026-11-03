@@ -85,6 +85,24 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 - Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
 
 
+## Cuando la llave de GitHub deja de servir
+
+Las llaves de GitHub (`github_pat_…`) **vencen**, y también se pueden revocar o cambiar. Cuando pasa, GitHub contesta *“Bad credentials”* y **no se guarda ni se sube nada**, aunque la app se vea normal.
+
+Ahora la app lo dice en claro:
+
+- Lo detecta tanto al **subir archivos** como al guardar datos (antes solo al guardar), y lo traduce: *“tu llave de GitHub ya no sirve (venció, la revocaron o la cambiaste)”*.
+- Aparece un cartel arriba. A Javi le dice qué pasó y le pone el botón **Cambiar la llave**, que abre Ajustes con el casillero listo; a Flavio y Maca les dice que le pidan una nueva a Javi.
+- El archivo que no se subió queda con su botón **Reintentar** en la pieza: al pegar la llave nueva, se reintenta y se sube.
+- Mientras tanto la app queda en solo lectura, para no hacer creer que algo se guardó.
+
+**Cómo renovarla (Javi):**
+
+1. En GitHub: *Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token*. Repositorio: `javimolin-rgb/cronograma`. Permisos: **Contents: Read and write** (y *Metadata: Read*, que viene solo). Vencimiento: el más largo que ofrezca, y anotar la fecha.
+2. En la app: **Ajustes → tu clave larga**, pegarla y *Guardar*.
+3. En el mismo Ajustes, en la entrada del equipo, volver a poner la clave simple y tocar **Cambiar**: eso vuelve a guardar la llave nueva para Flavio y Maca.
+4. Ellos, la próxima vez que abran, escriben esa clave simple una vez y siguen como siempre.
+
 ## Avisar al equipo sin subir ni cambiar nada
 
 Para decir cosas como *“las publicaciones de noviembre ya están todas subidas”*, Javi tiene **Avisar al equipo**: en **+ → Avisar al equipo**, y también en el botón **Avisar** de la campana.

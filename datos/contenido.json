@@ -3530,6 +3530,14 @@
  ],
  "comments": [
   {
+   "id": "7629c633-2c8d-4832-a12b-83c5c28db245",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Gracias por el ajuste de color. Ok",
+   "fileIds": [],
+   "createdAt": "2026-11-03T15:17:16.699Z"
+  },
+  {
    "id": "4694aaa8-5934-4f15-afd9-a18136ebd1ca",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -4654,6 +4662,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "06002c80-e586-4bff-8197-40399cb6669f",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T15:17:16.704Z"
+  },
   {
    "id": "651219a1-5acf-49a4-9a67-30081c9cf57b",
    "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
@@ -6467,6 +6485,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ebe4064b-a957-4add-b2bf-0e865f87dcae",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Gracias por el ajuste de color. Ok",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Gracias por el ajuste de color. Ok",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T15:17:16.706Z"
+  },
+  {
+   "id": "0e445299-dbeb-42bd-9c3d-efdc2bb3d884",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Gracias por el ajuste de color. Ok",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Gracias por el ajuste de color. Ok",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T15:17:16.706Z"
+  },
   {
    "id": "4ed4ec23-b554-4f2d-86c8-973ff8c8274a",
    "to": "flavio",

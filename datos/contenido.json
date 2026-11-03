@@ -1641,9 +1641,12 @@
    "caption": "Tu casa empieza bajo tierra.\n\nAntes de la primera tabla hay una decisión que después ya no se ve: sobre qué se apoya la casa.\n\nEn Neorigen construimos sobre pilotes de hormigón armado, cada uno confinado en un tubo de PVC. Bajan hasta el suelo firme, así la casa se nivela en terrenos con pendiente sin grandes movimientos de tierra.\n\nBajo el piso queda aire que circula. El agua de lluvia pasa por debajo, la estructura se mantiene lejos de la humedad y llega menos frío al piso.\n\nMenor intervención, más durabilidad.\n\n¿Conversamos sobre tu proyecto? Cotiza en neorigen.cl\n\n#Neorigen #ViveLoNatural #CasasPrediseñadas #ConstrucciónSustentable #Pilotes",
    "notes": "",
    "hashtags": "",
-   "campaign": "",
+   "guion": "",
+   "guionTabla": null,
+   "campaign": "Publicaciones informativas",
    "time": "",
    "date": "2026-11-01",
+   "inicio": "",
    "format": "post",
    "status": "publicado",
    "priority": "normal",
@@ -1776,7 +1779,7 @@
      "done": true
     }
    ],
-   "updatedAt": "2026-11-01T22:42:51.463Z",
+   "updatedAt": "2026-11-03T15:32:29.507Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
@@ -1791,7 +1794,8 @@
      "hasta": "2026-10-30T18:17:46.367Z",
      "by": "javi"
     }
-   ]
+   ],
+   "marca": []
   },
   {
    "title": "Cambio de modulo - Web Neorigen",
@@ -4683,6 +4687,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "0adddaf7-5d4e-423b-a00a-d96afb91eb65",
+   "postId": "aa409560-033d-4424-b548-ce59905530cd",
+   "postTitle": "Pilotes",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Pilotes” a la campaña Publicaciones informativas",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:29.508Z"
+  },
   {
    "id": "e275082a-057a-4799-9211-1de4c8246d06",
    "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",

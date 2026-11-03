@@ -703,7 +703,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-12",
+   "date": "",
    "inicio": "",
    "format": "carrusel",
    "status": "idea",
@@ -731,7 +731,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:21.886Z",
+   "updatedAt": "2026-11-03T15:30:46.832Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "7ba2a9b1-9f54-4098-be4d-fc3ac84ada5c",
+   "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "postTitle": "Tu terreno no tiene luz ni alcantarillado",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 12 nov a sin fecha",
+   "meta": {
+    "from": "2026-11-12",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:30:46.833Z"
+  },
+  {
    "id": "68c4e663-c194-4042-a2fa-6865a97b66a4",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -6629,6 +6642,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "44968a4b-3225-401d-9b4f-1bf28e482d27",
+   "to": "maca",
+   "from": "javi",
+   "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Tu terreno no tiene luz ni alcantarillado” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Tu terreno no tiene luz ni alcantarillado” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "createdAt": "2026-11-03T15:30:46.833Z"
+  },
   {
    "id": "92745e01-a97b-484c-991c-be9d6076a34d",
    "to": "maca",

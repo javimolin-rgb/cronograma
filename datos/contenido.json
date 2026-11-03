@@ -497,12 +497,13 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "platforms": [],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:37:41.263Z",
+   "updatedAt": "2026-11-03T14:39:41.605Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -3817,6 +3818,16 @@
  ],
  "activity": [
   {
+   "id": "e53fb385-ac96-49a0-8240-80d7e355d31c",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T14:39:41.605Z"
+  },
+  {
    "id": "eeafe944-c2e3-48d3-b45d-c4f00baeca6a",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -5469,6 +5480,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2381ec20-8bab-4646-ad78-bd083a2b4d2c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "tagged",
+   "text": "te etiquetó en “Casa Mañío”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Casa Mañío”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-03T14:39:41.606Z"
+  },
   {
    "id": "98a97f05-937a-4b13-ade3-26aba2e26c22",
    "to": "maca",

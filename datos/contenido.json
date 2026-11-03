@@ -610,7 +610,7 @@
    "date": "2026-11-15",
    "inicio": "",
    "format": "reel",
-   "status": "idea",
+   "status": "estructura",
    "priority": "normal",
    "revisions": 0,
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -640,9 +640,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:37:06.416Z",
+   "updatedAt": "2026-11-03T19:56:56.602Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-03T15:07:28.689Z",
+   "statusChangedAt": "2026-11-03T19:56:56.602Z",
    "publishedAt": null
   },
   {
@@ -4797,6 +4797,19 @@
  ],
  "activity": [
   {
+   "id": "4a42e4d0-3f6b-4ab5-91a1-3a73dbeddcae",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a Estructura por aprobar",
+   "meta": {
+    "from": "idea",
+    "to": "estructura"
+   },
+   "createdAt": "2026-11-03T19:56:56.603Z"
+  },
+  {
    "id": "1e4807cd-cae5-4257-84d6-92d2ecf1f731",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -7100,6 +7113,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "badf3adc-01b9-4fdc-83a1-3424dad969c5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Estructura por aprobar",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Un domingo en el refugio” a Estructura por aprobar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-03T19:56:56.603Z"
+  },
   {
    "id": "15849736-92a2-4e99-9585-26e06027c80f",
    "to": "maca",

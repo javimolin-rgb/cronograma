@@ -289,12 +289,13 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "platforms": [],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:38:27.421Z",
+   "updatedAt": "2026-11-03T14:39:47.553Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -3819,6 +3820,16 @@
  ],
  "activity": [
   {
+   "id": "df91483b-6865-4bf9-a56e-216fcaab65ed",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T14:39:47.553Z"
+  },
+  {
    "id": "80f3777e-e769-4290-87f7-ffa93bc41211",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -5491,6 +5502,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "41963df1-797a-4dd2-a676-8bd74b1dea86",
+   "to": "maca",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "tagged",
+   "text": "te etiquetó en “Casa Maitén”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Casa Maitén”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-03T14:39:47.553Z"
+  },
   {
    "id": "df727f2b-7f10-482a-8838-ead0cab317a4",
    "to": "maca",

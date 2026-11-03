@@ -1305,7 +1305,7 @@
      ]
     ]
    },
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-11-17",
    "inicio": "",
@@ -1322,7 +1322,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:41.605Z",
+   "updatedAt": "2026-11-03T15:32:17.509Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -4683,6 +4683,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "26bcb4f4-3675-44a0-b2f7-14a1ac0d04e2",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Mañío” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:17.509Z"
+  },
   {
    "id": "9bbb6d0e-4da1-4f33-ad93-6a7ae78b3e73",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

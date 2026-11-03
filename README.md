@@ -89,6 +89,14 @@ La ventana de **editar pieza** está ordenada para que se vea poco y se encuentr
 
 Donde antes estaban los *hashtags* ahora está el **guión / voz en off**, porque los hashtags van dentro del copy. Se guarda con sus versiones anteriores (*“cómo decía antes”*), avisa al equipo cuando cambia —igual que el copy— y el buscador lo encuentra. Flavio y Maca lo ven en el feed y en Entregas, plegado bajo *“Guión / voz en off”*.
 
+**El guión puede ser una tabla.** Si lo escribes en una tabla —momento · en pantalla · voz— cópiala y **pégala dentro del guión**: llega entera, con sus columnas, y se sigue viendo como tabla. Funciona pegando desde Word, Google Docs, Sheets, Notion o Claude (tabla de verdad), desde una planilla (columnas separadas por tabulaciones) y desde texto en Markdown (`| … | … |`). Si lo que pegas no es una tabla, se pega como texto normal, como siempre.
+
+- Cada casilla se corrige ahí mismo y crece sola con lo que escribes.
+- **+ Fila** y **+ Columna** para agregar; la **×** de cada fila la quita (pregunta antes si tenía algo).
+- **Copiar la tabla** la deja lista para pegar de vuelta en Word, Docs o Sheets.
+- **Quitar la tabla** la saca sin tocar el texto de abajo, que sirve para notas sueltas (“música: algo tranquilo, piano”).
+- Flavio y Maca la ven, pero no la editan. En el teléfono se desliza hacia el lado para ver todas las columnas.
+
 ## Compartir con enlace directo (solo Javi)
 
 En cada pieza —desde el botón de compartir del editor, del feed o de la vista de resultado— se abre la lista de lo que se puede mandar:

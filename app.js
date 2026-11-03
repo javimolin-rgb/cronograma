@@ -265,7 +265,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', guion: '', campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
+    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -388,8 +388,8 @@ async function notify(type, post, targets, text) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
-const CONTENT_FIELDS = ['title', 'caption', 'guion', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', guionTabla: 'la tabla del guión', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
+const CONTENT_FIELDS = ['title', 'caption', 'guion', 'guionTabla', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
 const TEXT_FIELDS = ['title', 'caption', 'guion', 'notes'];
 // De esos, los que vale la pena avisarle al equipo (las notas son internas)
@@ -487,7 +487,7 @@ function filtered() {
     if (f.platform && !p.platforms.includes(f.platform)) return false;
     if (f.status && p.status !== f.status) return false;
     if (f.format && p.format !== f.format) return false;
-    if (q && !`${p.title} ${p.caption} ${p.guion || ''} ${p.notes} ${p.campaign || ''}`.toLowerCase().includes(q)) return false;
+    if (q && !`${p.title} ${p.caption} ${p.guion || ''} ${tablaTexto(p.guionTabla)} ${p.notes} ${p.campaign || ''}`.toLowerCase().includes(q)) return false;
     return true;
   });
 }
@@ -922,7 +922,7 @@ function viewResultados() {
         ${artefactoHtml(p, false)}
         ${marcaEnPiezaHtml(p, false)}
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
-        ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p></details>` : ''}
+        ${gui || tablaValida(p.guionTabla) ? `<details class="guion"><summary>Guión / voz en off</summary>${tablaHtml(p.guionTabla)}${gui ? `<p>${esc(gui)}</p>` : ''}</details>` : ''}
         ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
         ${publicadoHtml(p)}
         <div class="resacts">
@@ -1000,7 +1000,7 @@ function postHtml(p, t) {
       ${artefactoHtml(p, false)}
       ${marcaEnPiezaHtml(p, false)}
       ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
-      ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p></details>` : ''}
+      ${gui || tablaValida(p.guionTabla) ? `<details class="guion"><summary>Guión / voz en off</summary>${tablaHtml(p.guionTabla)}${gui ? `<p>${esc(gui)}</p>` : ''}</details>` : ''}
       <div class="postcoms">
         ${coms.length > vis.length ? `<button class="lnk" data-act="feed-mas" data-id="${esc(p.id)}">Ver los ${coms.length} comentarios</button>` : ''}
         ${vis.map((c) => {
@@ -1273,6 +1273,85 @@ function pintarCola(cola) {
   });
 }
 const esAudio = (f) => /^audio\//.test(f.type || '') || /\.(mp3|wav|m4a|aac|ogg|aiff?|flac)$/i.test(f.name || '');
+
+/* ---------- El guión puede ser una tabla ----------
+   Ella escribe el guión en una tabla (momento · en pantalla · voz) y la pega aquí:
+   llega como tabla de verdad desde Word, Google Docs, Sheets, Notion o Claude, y se
+   guarda como tabla, no como un montón de líneas sueltas. */
+const MAX_COLS = 8, MAX_FILAS = 200;
+const limpiarCelda = (s) => String(s == null ? '' : s).replace(/ /g, ' ').replace(/[ \t]+/g, ' ').replace(/\s*\n\s*/g, '\n').trim();
+function armarTabla(filas) {
+  filas = (filas || []).map((f) => f.map(limpiarCelda)).filter((f) => f.some((c) => c));
+  if (filas.length < 2) return null;
+  const n = Math.min(MAX_COLS, Math.max(...filas.map((f) => f.length)));
+  if (n < 2) return null;
+  const pareja = (f) => { const x = f.slice(0, n); while (x.length < n) x.push(''); return x; };
+  return { cols: pareja(filas[0]), filas: filas.slice(1, MAX_FILAS + 1).map(pareja) };
+}
+// Lo que viene del portapapeles cuando se copia desde un documento: una <table> de verdad
+function tablaDeHtml(html) {
+  if (!html || !/<t(able|r)\b/i.test(html)) return null;
+  try {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const t = doc.querySelector('table'); if (!t) return null;
+    const filas = [...t.querySelectorAll('tr')].map((tr) => [...tr.querySelectorAll('th,td')]
+      .map((td) => limpiarCelda((td.textContent || '').replace(/\n+/g, '\n'))));
+    return armarTabla(filas);
+  } catch (e) { return null; }
+}
+// Y cuando viene como texto: con tabulaciones (Sheets, Excel) o con barras (Markdown)
+function tablaDeTexto(txt) {
+  const lineas = String(txt || '').replace(/\r/g, '').split('\n').filter((l) => l.trim());
+  if (lineas.length < 2) return null;
+  if (lineas[0].includes('\t')) return armarTabla(lineas.map((l) => l.split('\t')));
+  const barras = lineas.filter((l) => l.includes('|'));
+  if (barras.length >= 2 && barras.length >= lineas.length - 1) {
+    const filas = barras
+      .filter((l) => !/^\s*\|?[\s:|-]*\|[\s:|-]*\|?\s*$/.test(l))
+      .map((l) => l.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|'));
+    return armarTabla(filas);
+  }
+  return null;
+}
+const tablaValida = (t) => !!(t && Array.isArray(t.cols) && Array.isArray(t.filas) && t.filas.length && t.cols.length > 1);
+const tablaTexto = (t) => (tablaValida(t) ? [t.cols].concat(t.filas).map((f) => f.join('\t')).join('\n') : '');
+// Cómo se ve la tabla para quien solo la lee
+function tablaHtml(t) {
+  if (!tablaValida(t)) return '';
+  return `<div class="tablabox"><table class="gtabla">
+    <thead><tr>${t.cols.map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead>
+    <tbody>${t.filas.map((f) => `<tr>${f.map((c) => `<td>${esc(c).replace(/\n/g, '<br>')}</td>`).join('')}</tr>`).join('')}</tbody>
+  </table></div>`;
+}
+// Y cómo se edita: cada casilla es una casilla
+function tablaEditorHtml(t) {
+  if (!tablaValida(t)) return '';
+  return `<div class="tablabox"><table class="gtabla edit">
+    <thead><tr>${t.cols.map((c, i) => `<th><input class="gcel" data-f="-1" data-c="${i}" value="${esc(c)}" aria-label="Título de la columna ${i + 1}"></th>`).join('')}<th class="gacc"></th></tr></thead>
+    <tbody>${t.filas.map((f, fi) => `<tr>${f.map((c, ci) => `<td><textarea class="gcel" data-f="${fi}" data-c="${ci}" rows="${Math.min(6, Math.max(1, Math.ceil((c.length || 1) / 24) + (c.split('\n').length - 1)))}" aria-label="Fila ${fi + 1}, columna ${ci + 1}">${esc(c)}</textarea></td>`).join('')}
+      <td class="gacc"><button class="iconbtn" data-act="gt-quitar-fila" data-f="${fi}" aria-label="Quitar esta fila" title="Quitar esta fila">${ic('x', 15)}</button></td></tr>`).join('')}</tbody>
+  </table></div>
+  <div class="chips tablaacts">
+    <button class="chip" data-act="gt-fila">${ic('plus', 14)} Fila</button>
+    <button class="chip" data-act="gt-col">${ic('plus', 14)} Columna</button>
+    <button class="chip" data-act="gt-copiar">${ic('copy', 14)} Copiar la tabla</button>
+    <button class="chip" data-act="gt-quitar">${ic('trash', 14)} Quitar la tabla</button>
+  </div>`;
+}
+// Pegar una tabla dentro del guión: llega entera, con sus columnas
+document.addEventListener('paste', (e) => {
+  if (!ED || !e.target || e.target.id !== 'e-guion') return;
+  const dt = e.clipboardData; if (!dt) return;
+  const t = tablaDeHtml(dt.getData('text/html')) || tablaDeTexto(dt.getData('text/plain'));
+  if (!t) return;                                   // texto normal: se pega como siempre
+  e.preventDefault();
+  if (tablaValida(ED.d.guionTabla) && !confirm(`Ya hay una tabla con ${ED.d.guionTabla.filas.length} filas. ¿La reemplazo por la que estás pegando?`)) return;
+  syncDraft();
+  ED.d.guionTabla = t;
+  ED.abre.guion = true;
+  renderEditor();
+  toast(`Tabla pegada · ${t.filas.length} fila${t.filas.length === 1 ? '' : 's'} y ${t.cols.length} columnas`, 3500);
+});
 
 /* ---------- Marca: la nube de recursos del equipo (manual, logos, música…) ---------- */
 const CATS_MARCA = [
@@ -2067,7 +2146,7 @@ function openEditor(id, preset = {}) {
   if (id && !old) { toast('Esa pieza ya no existe'); return; }
   if (old) marcarVisto(old.id);
   const d = old ? clone(old) : {
-    id: uid(), title: '', caption: '', notes: '', hashtags: '', guion: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
+    id: uid(), title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], inicio: '', priority: 'normal', links: [], files: [], checklist: []
   };
   ED = { old, d, abre: {}, multiPlat: d.platforms.length > 1, comment: '', comFiles: [], verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
@@ -2164,6 +2243,13 @@ function syncDraft() {
   if (g('e-llabel')) ED.newLink = { label: g('e-llabel').value, url: g('e-lurl').value };
   if (g('e-newck')) ED.newCheck = g('e-newck').value;
   $$('#pb input.ckt').forEach((i) => { const it = d.checklist.find((c) => c.id === i.dataset.ck); if (it) it.text = i.value; });
+  if (tablaValida(d.guionTabla)) {
+    $$('#pb .gcel').forEach((c) => {
+      const f = +c.dataset.f, col = +c.dataset.c;
+      if (f < 0) { if (d.guionTabla.cols[col] != null) d.guionTabla.cols[col] = c.value; }
+      else if (d.guionTabla.filas[f]) d.guionTabla.filas[f][col] = c.value;
+    });
+  }
 }
 const mentionHtml = (t) => esc(t).replace(new RegExp('@(' + P.map((x) => x.name).join('|') + ')', 'gi'), '<span class="mention">@$1</span>').replace(/\n/g, '<br>');
 function normUrl(u) {
@@ -2175,7 +2261,7 @@ function normUrl(u) {
 function bloqueLleno(k) {
   const d = ED && ED.d; if (!d) return false;
   if (k === 'inicio') return !!d.inicio;
-  if (k === 'guion') return !!(d.guion || '').trim();
+  if (k === 'guion') return !!((d.guion || '').trim() || tablaValida(d.guionTabla));
   if (k === 'interactivo') return !!(artefactosDe(d).length || (ED && ED.art));
   if (k === 'marca') return !!marcaDe(d).length;
   if (k === 'enlaces') return !!linksVisibles(d).length;
@@ -2271,8 +2357,11 @@ function renderEditor() {
 
     ${publicadoHtml(d)}
 
-    ${bloque('guion', 'Guión / voz en off', !!(d.guion || '').trim(), (d.guion || '').trim() ? `${(d.guion || '').trim().split(/\s+/).length} palabras` : '', () => `
-      <textarea class="area" id="e-guion" style="min-height:110px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
+    ${bloque('guion', 'Guión / voz en off', !!((d.guion || '').trim() || tablaValida(d.guionTabla)),
+      tablaValida(d.guionTabla) ? `${d.guionTabla.filas.length} fila${d.guionTabla.filas.length === 1 ? '' : 's'}` : ((d.guion || '').trim() ? `${(d.guion || '').trim().split(/\s+/).length} palabras` : ''), () => `
+      ${tablaValida(d.guionTabla) ? tablaEditorHtml(d.guionTabla) : ''}
+      <textarea class="area" id="e-guion" style="min-height:${tablaValida(d.guionTabla) ? 70 : 110}px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
+      ${tablaValida(d.guionTabla) ? '' : '<p class="hint">Si tienes el guión en una tabla (Word, Google Docs, Sheets, Notion, Claude), pégala aquí mismo: se guarda y se ve como tabla.</p>'}
       ${historialTextoHtml(d, 'guion')}`)}
 
     ${bloque('interactivo', 'Interactivo', !!(artefactosDe(d).length || ED.art), artefactosDe(d).length ? `${artefactosDe(d).length}` : '', () => {
@@ -2349,7 +2438,11 @@ function renderEditor() {
     <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
   $('#panel').innerHTML = html;
   if ($('#pb')) $('#pb').scrollTop = sc;
+  ajustarCeldas();
 }
+// Las casillas de la tabla crecen con lo que se escribe: nada queda cortado
+const crecerCelda = (c) => { c.style.height = 'auto'; c.style.height = Math.min(260, c.scrollHeight + 2) + 'px'; };
+function ajustarCeldas() { $$('#pb textarea.gcel').forEach(crecerCelda); }
 
 // Archivos de la pieza: la última versión de cada uno (lo más nuevo primero, hasta 8) y el resto como "anteriores"
 function archivosEditor(d) {
@@ -4195,6 +4288,46 @@ const ACTS = {
     else d.date = (S.view === 'calendar' && S.sel) || today();
     renderEditor();
   },
+  'gt-fila': () => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const t = ED.d.guionTabla; if (!tablaValida(t)) return;
+    t.filas.push(t.cols.map(() => ''));
+    renderEditor();
+  },
+  'gt-col': () => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const t = ED.d.guionTabla;
+    if (!tablaValida(t)) return;
+    if (t.cols.length >= MAX_COLS) { toast('Ya son muchas columnas'); return; }
+    t.cols.push('');
+    t.filas.forEach((f) => f.push(''));
+    renderEditor();
+  },
+  'gt-quitar-fila': (el) => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const t = ED.d.guionTabla, f = +el.dataset.f;
+    if (!tablaValida(t) || !t.filas[f]) return;
+    if (t.filas[f].some((c) => (c || '').trim()) && !confirm('¿Quitar esta fila del guión?')) return;
+    t.filas.splice(f, 1);
+    if (!t.filas.length) ED.d.guionTabla = null;
+    renderEditor();
+  },
+  'gt-copiar': async () => {
+    if (!ED) return;
+    syncDraft();
+    const txt = tablaTexto(ED.d.guionTabla);
+    toast(await copiarTexto(txt) ? 'Tabla copiada · pégala en Word, Docs o Sheets' : 'No se pudo copiar', 3500);
+  },
+  'gt-quitar': () => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    if (!confirm('¿Quitar la tabla del guión?\n\nEl texto de abajo se queda como está.')) return;
+    ED.d.guionTabla = null;
+    renderEditor();
+  },
   'ed-bloque': (el) => {
     syncDraft();
     const k = el.dataset.k;
@@ -4357,6 +4490,7 @@ document.addEventListener('input', (e) => {
     if (m) { m.texto = e.target.value; m.original = m.original || e.target.value; m.pide = W().pideCambio(m.texto) && m.persona !== S.me.id; m.charla = !m.texto.trim(); m.usar = !!m.texto.trim() || !!m.foto; }
   }
   if (e.target.dataset && e.target.dataset.feedCom != null) { S.feedBorrador[e.target.dataset.feedCom] = e.target.value; return; }
+  if (e.target.classList && e.target.classList.contains('gcel') && e.target.tagName === 'TEXTAREA') crecerCelda(e.target);
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
   if (ED && ED.old && /^e-(caption|title|guion)$/.test(e.target.id || '')) {
     const bar = $('#aviso-texto');

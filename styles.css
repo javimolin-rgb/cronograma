@@ -279,6 +279,24 @@ details.group[open]>summary{margin-bottom:10px}
 .guion{margin-top:6px}
 .guion summary{font-size:0.75rem;font-weight:700;color:var(--muted);cursor:pointer}
 .guion p{font-size:0.8125rem;white-space:pre-wrap;margin-top:6px;overflow-wrap:anywhere}
+
+/* El guión en tabla: se desliza al lado si no cabe */
+.tablabox{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0 2px;border-radius:12px;box-shadow:inset 0 0 0 1px var(--line)}
+.gtabla{border-collapse:collapse;width:100%;min-width:540px;font-size:0.75rem;background:var(--surface)}
+.gtabla th,.gtabla td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.gtabla th{background:var(--surface2);font-weight:800;font-size:0.6875rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);position:sticky;top:0}
+.gtabla td{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.35}
+.gtabla tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--ink) 2.5%,transparent)}
+.gtabla td:first-child,.gtabla th:first-child{width:38px;text-align:center;color:var(--muted);font-weight:700}
+.gtabla.edit th,.gtabla.edit td{padding:2px}
+.gcel{width:100%;min-width:60px;border:0;outline:0;background:transparent;padding:6px 7px;font:inherit;color:inherit;resize:vertical;line-height:1.35}
+textarea.gcel{display:block;min-height:30px;white-space:pre-wrap;overflow:hidden;resize:none}
+.gtabla.edit td:first-child .gcel{min-width:0;text-align:center}
+.gcel:focus{background:var(--accent-soft);border-radius:7px}
+.gtabla.edit th .gcel{font-weight:800;text-transform:uppercase;font-size:0.6875rem;color:var(--muted)}
+.gtabla .gacc{width:34px;padding:0;text-align:center;border-left:1px solid var(--line)}
+.gtabla .gacc .iconbtn{width:28px;height:28px}
+.tablaacts{margin:8px 0 2px;gap:6px}
 .person{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);font-weight:600}
 .person.on{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--c)}
 .person .av{width:30px;height:30px;font-size:0.8125rem}

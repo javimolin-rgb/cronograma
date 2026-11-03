@@ -3550,6 +3550,14 @@
  ],
  "comments": [
   {
+   "id": "27f7f036-0e33-4510-8b9f-fa0d7a3b4238",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo combina diseño y eficiencia para disfrutar la naturaleza durante todo el año.\n\nSus grandes ventanales conectan el interior con el bosque. Afuera, la nieve. Adentro, la calidez de una casa bien resuelta.\n\nEn sus dos pisos, una distribución funcional que combina privacidad y espacios para compartir.\n\nDos dormitorios y dos baños, con una cocina integrada que conecta la vida cotidiana.\n\nCasa Peumo. Arquitectura y funcionalidad para mejorar la forma de vivir.\n\nConoce Casa Peumo y conversemos sobre tu proyecto en neorigen.cl.",
+   "fileIds": [],
+   "createdAt": "2026-11-03T17:22:18.472Z"
+  },
+  {
    "id": "01c6c975-58a1-40e2-b530-e23d2859c2be",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4693,6 +4701,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "30c6e0ea-9981-4f25-9f80-e14a028b5a76",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T17:22:18.479Z"
+  },
   {
    "id": "32c1f7be-73de-48a2-bbab-1e285f0f8203",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -6934,6 +6952,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f9e7d4a8-0d15-41e9-af7e-b5e7fd0dcca3",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo combina diseño y eficie…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo combina diseño y eficie…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T17:22:18.482Z"
+  },
+  {
+   "id": "729d99d4-47c9-4c11-8cbf-d26ac08d8f02",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo combina diseño y eficie…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Hay lugares que te invitan a bajar el ritmo.\n\nCasa Peumo combina diseño y eficie…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T17:22:18.481Z"
+  },
   {
    "id": "4c66e85c-d11a-4c37-93e2-21d3126df486",
    "to": "maca",

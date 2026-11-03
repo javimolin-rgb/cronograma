@@ -7613,7 +7613,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "supervision",
    "text": "comentó en “Casa Peumo”: Y donde hay q pagar para poder tener mejores opciones de voz en off?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

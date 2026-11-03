@@ -706,7 +706,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -722,7 +723,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:21.886Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4675,6 +4676,16 @@
  ],
  "activity": [
   {
+   "id": "5f1f852c-7059-4788-b0d5-a95934d3ce67",
+   "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "postTitle": "Tu terreno no tiene luz ni alcantarillado",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:21.887Z"
+  },
+  {
    "id": "b3a6c4ed-9f66-4c49-9e7e-947c160fff8e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -6517,6 +6528,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3106bb09-abd6-4485-9538-739d71216da8",
+   "to": "maca",
+   "from": "javi",
+   "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "type": "tagged",
+   "text": "te etiquetó en “Tu terreno no tiene luz ni alcantarillado”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Tu terreno no tiene luz ni alcantarillado”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "createdAt": "2026-11-03T15:29:21.887Z"
+  },
   {
    "id": "fe4c773d-824c-4048-873a-72c69cd0b761",
    "to": "maca",

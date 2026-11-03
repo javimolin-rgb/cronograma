@@ -3682,6 +3682,14 @@
  ],
  "comments": [
   {
+   "id": "fed298c4-5f90-4c1f-a092-0dc89b94caca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Y para modificar el texto descriptivo si lo vamos a poner en el feed, te dejo el siguiente: \nRecorramos nuestro modelo de la semana: Casa Peumo \n\nUna casa de dos pisos, con 2 dormitorios y 2 baños, que destaca por una doble altura de proporciones excepcionales en sus espacios comunes, potenciando la amplitud y la luminosidad.\n\nCuenta con 87,3 m² útiles y 37,86 m² de terrazas. En el segundo piso se encuentra el dormitorio principal en suite.\n\nPlazo de construcción estimado: 7 meses. Entrega llave en mano, terminada y lista para disfrutar.\n\n¿Te interesa este modelo? Cotiza en nuestro sitio web.\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables",
+   "fileIds": [],
+   "createdAt": "2026-11-03T22:17:22.091Z"
+  },
+  {
    "id": "ca79d357-1995-4395-b1c3-a39b93e64dc2",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "author": "flavio",
@@ -4966,6 +4974,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "93d0a148-4602-411f-aab0-8f3f5f151b58",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T22:17:22.100Z"
+  },
   {
    "id": "0a57493a-9824-46ed-b85c-9afac7adbb33",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
@@ -7512,6 +7530,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "aafee66b-44a1-41fd-97bf-3c1bbd77d203",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Y para modificar el texto descriptivo si lo vamos a poner en el feed, te dejo el…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Y para modificar el texto descriptivo si lo vamos a poner en el feed, te dejo el…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:17:22.102Z"
+  },
+  {
+   "id": "ef9ded07-65e1-48b4-8602-3d35eac5cb1d",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Y para modificar el texto descriptivo si lo vamos a poner en el feed, te dejo el…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Y para modificar el texto descriptivo si lo vamos a poner en el feed, te dejo el…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:17:22.101Z"
+  },
   {
    "id": "2195bd5a-48e7-49c5-a1b8-9b2b3fd0f38a",
    "to": "maca",

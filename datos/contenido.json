@@ -1410,7 +1410,7 @@
      ]
     ]
    },
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-11-11",
    "inicio": "",
@@ -1427,7 +1427,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:39:38.929Z",
+   "updatedAt": "2026-11-03T15:32:10.039Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -4683,6 +4683,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "9bbb6d0e-4da1-4f33-ad93-6a7ae78b3e73",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Boldo” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:10.039Z"
+  },
   {
    "id": "23adce59-a746-4761-9b85-686a2521fe3e",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",

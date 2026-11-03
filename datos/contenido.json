@@ -3628,6 +3628,14 @@
  ],
  "comments": [
   {
+   "id": "e2c1bfea-b782-402a-b26d-c25d251eb26a",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "author": "maca",
+   "text": "Qué tan mal le fue? Las imágenes muestran 319 y 51. \nPienso que igual suma agregarlo al perfil y la Peumo tb súbela al feed pero después de q esté en historias , o no?  Para eso tenemos q revisar el texto descriptivo para el reel.",
+   "fileIds": [],
+   "createdAt": "2026-11-03T20:17:25.880Z"
+  },
+  {
    "id": "37346a97-af34-43d9-81b8-ba36e0ed8119",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -4796,6 +4804,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ba49c152-52ec-4813-9f64-d479c97def2f",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "postTitle": "Reel de prueba y subida de modelos",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T20:17:25.891Z"
+  },
   {
    "id": "dc6a71a9-79da-442b-be4a-d9c34e90c1de",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
@@ -7139,6 +7157,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f66a9cdc-057a-459f-9991-cc51f06ca9f2",
+   "to": "javi",
+   "from": "maca",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "supervision",
+   "text": "comentó en “Reel de prueba y subida de modelos”: Qué tan mal le fue? Las imágenes muestran 319 y 51. \nPienso que igual suma agreg…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Reel de prueba y subida de modelos”: Qué tan mal le fue? Las imágenes muestran 319 y 51. \nPienso que igual suma agreg…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T20:17:25.893Z"
+  },
+  {
+   "id": "03018b64-5449-4679-aec2-ef71cd4a07d4",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "comment",
+   "text": "comentó en “Reel de prueba y subida de modelos”: Qué tan mal le fue? Las imágenes muestran 319 y 51. \nPienso que igual suma agreg…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Reel de prueba y subida de modelos”: Qué tan mal le fue? Las imágenes muestran 319 y 51. \nPienso que igual suma agreg…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T20:17:25.893Z"
+  },
   {
    "id": "6107d0be-d5d4-4db4-bae2-d8906d5ccf88",
    "to": "maca",

@@ -69,6 +69,8 @@ En cada pieza —desde el botón de compartir del editor, del feed o de la vista
 
 En el teléfono se abre el menú de compartir de siempre (WhatsApp, correo, AirDrop); en el computador, si el navegador no lo tiene, el enlace queda copiado. Los archivos sueltos y los de Marca también se comparten desde su propia ficha.
 
+También se comparte **una carpeta entera de Marca**: su enlace abre el cronograma justo en esa carpeta, con todo lo que tenga dentro.
+
 Para alguien de fuera del equipo conviene mandar el **enlace del archivo**, no el de la pieza: va directo a lo que quieres mostrar.
 
 ## Copiar el copy de una pieza
@@ -120,10 +122,14 @@ Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp
 La pestaña **Marca** guarda lo que la marca usa todo el tiempo y no pertenece a ninguna pieza: el **manual**, los **logos**, las **tipografías**, la **música**, **plantillas** y lo que haga falta.
 
 - **Sube Javi**, ven y escuchan todos. Flavio y Maca no pueden subir ni quitar.
-- Cada archivo cae solo en su carpeta según lo que sea (un .ttf a Tipografías, un .mp3 a Música, un PDF al Manual…). Si antes eliges una carpeta en los chips de arriba, va a esa.
+- **Carpetas de verdad.** Marca se abre como una nube: primero las carpetas, después los archivos. Están las de siempre (Logos, Manual, Tipografías, Música, Fotos, Plantillas y Otros) y las que cree Javi con **Nueva carpeta**, que pueden ir unas dentro de otras, sin límite de niveles. Arriba quedan las migas de pan (`Marca › Música › Reels de verano`) para volver, y tocar la pestaña **Marca** devuelve a la primera pantalla.
+- Cada archivo cae solo en la carpeta que le corresponde según lo que sea (un .ttf a Tipografías, un .mp3 a Música, un PDF al Manual…). Si Javi entra primero a una carpeta y sube ahí, queda en esa.
+- **Ver todo junto** muestra, de una, los archivos de la carpeta y de todas las que tiene adentro.
+- **El enlace de una carpeta se comparte.** El botón de compartir de cada carpeta copia un enlace que abre el cronograma justo ahí, con todo lo que tenga dentro. Solo Javi los crea.
+- El botón de ajustes de una carpeta deja cambiarle el nombre, moverla a otra, crear una adentro o quitarla. Al quitarla **no se borra nada**: lo que tenía pasa a la carpeta de arriba. Las siete de siempre no se quitan ni se renombran.
 - **El mismo material en varios formatos es una sola ficha.** `neorigen_pino_completa.wav` y `.mp3` se muestran juntos, con el peso de cada uno; al descargar, Javi elige en qué formato.
 - **Reproductor para todo:** al tocar un archivo se abre a pantalla completa y se pasa de uno a otro deslizando — fotos, videos y también **audios**, con su reproductor y el nombre de la pista.
-- **Renombrar y mover:** el botón de ajustes de cada ficha deja cambiar el nombre (se lo cambia a todos sus formatos), moverla de carpeta, copiar su enlace o quitarla.
+- **Renombrar y mover:** el botón de ajustes de cada ficha deja cambiar el nombre (se lo cambia a todos sus formatos), moverla a cualquier carpeta (incluidas las nuevas), copiar su enlace o quitarla.
 - **Ver y escuchar sí, descargar solo con permiso.** Flavio y Maca pueden abrir y escuchar todo, pero el botón de descargar aparece únicamente en lo que Javi marcó como libre; en el resto les sale un botón para **pedírselo**, que le llega como aviso. (El repositorio es público, así que es un acuerdo del equipo, no un candado.)
 - Mientras sube, cada archivo muestra su **barra de avance** con el porcentaje.
 - Se guardan en `archivos/marca-<carpeta>/` y cuentan como archivos en uso, así que la limpieza de *Espacio* nunca los toca.

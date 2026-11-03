@@ -249,7 +249,9 @@ const S = {
   feedAbiertos: {},  // piezas del feed con todos los comentarios a la vista
   feedBorrador: {},  // lo que se está escribiendo en cada pieza del feed
   compartidos: 0,
-  db: { posts: [], comments: [], activity: [], notifications: [], prefs: [], push_subs: [], dispositivos: [] }
+  marcaRuta: '',   // en qué carpeta de Marca está parada
+  marcaTodo: false, // ver también lo que hay en las carpetas de adentro
+  db: { posts: [], comments: [], activity: [], notifications: [], prefs: [], push_subs: [], dispositivos: [], recursos: [], carpetas: [] }
 };
 let store, ED = null, sheetOpen = false, toastT;
 
@@ -257,12 +259,13 @@ function normalize(db) {
   // archivos que quedaron guardados con su copia local de otro equipo: se usa la dirección publicada
   (db.posts || []).forEach((p) => (p.files || []).forEach((f) => { if (f.blobUrl) delete f.blobUrl; }));
   db.recursos = db.recursos || [];
+  db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
     title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
-  ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos'].forEach((t) => { db[t] = db[t] || []; });
+  ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos', 'carpetas'].forEach((t) => { db[t] = db[t] || []; });
   return db;
 }
 
@@ -330,6 +333,8 @@ async function cambiarAvisosPieza(post) {
 }
 const siteBase = () => CFG.SITE_URL || (location.origin + location.pathname);
 const siteLink = (id) => `${siteBase()}#post=${id}`;
+// Enlace directo a una carpeta de Marca: abre el cronograma justo ahí
+const enlaceCarpeta = (id) => `${siteBase()}#marca=${encodeURIComponent(id || 'raiz')}`;
 
 // Quién recibe aviso de todo lo que hacen los demás
 const supervisores = () => (CFG.SUPERVISA || []).filter((id) => id && id !== S.me.id && byId(P, id));
@@ -1145,6 +1150,7 @@ const CATS_MARCA = [
   ['musica', 'Música', 'music'], ['fotos', 'Fotos', 'image'], ['plantillas', 'Plantillas', 'copy'], ['otros', 'Otros', 'paperclip']
 ];
 const nombreCat = (c) => (CATS_MARCA.find((x) => x[0] === c) || ['otros', 'Otros'])[1];
+const iconoCat = (c) => (CATS_MARCA.find((x) => x[0] === c) || [, , 'folder'])[2];
 function catDe(file) {
   const n = (file.name || '').toLowerCase(), e = (n.split('.').pop() || '');
   if (/^(ttf|otf|woff2?|eot)$/.test(e)) return 'tipografias';
@@ -1156,6 +1162,90 @@ function catDe(file) {
   return 'otros';
 }
 const recursos = () => (S.db.recursos || []).slice().sort((a, b) => String(b.at || '').localeCompare(String(a.at || '')));
+
+/* ---- Carpetas ----
+   Las de siempre (Logos, Manual, Música…) existen solas: su id es “cat:logos”.
+   Las que crea Javi se guardan en la tabla “carpetas” y pueden ir dentro de cualquier
+   otra, todo lo hondo que quiera. La raíz —“Marca”— es la carpeta de id vacío. */
+const CATP = 'cat:';
+const filasCarpeta = () => (S.db.carpetas || []);
+const filaCarpeta = (id) => filasCarpeta().find((c) => c.id === id) || null;
+// Una carpeta que ya no existe se trata como si estuviera en la raíz
+function padreDe(p) {
+  const k = String(p || '');
+  if (!k) return '';
+  if (k.indexOf(CATP) === 0) return CATS_MARCA.some((x) => CATP + x[0] === k) ? k : '';
+  return filaCarpeta(k) ? k : '';
+}
+function infoCarpeta(id) {
+  const k = String(id == null ? '' : id);
+  if (!k) return { id: '', nombre: 'Marca', padre: null, raiz: true, fija: true };
+  if (k.indexOf(CATP) === 0) {
+    const c = k.slice(CATP.length);
+    return CATS_MARCA.some((x) => x[0] === c) ? { id: k, nombre: nombreCat(c), padre: '', cat: c, fija: true } : null;
+  }
+  const f = filaCarpeta(k);
+  return f ? { id: f.id, nombre: f.nombre || 'Carpeta', padre: padreDe(f.padre), at: f.at || '', by: f.by || '' } : null;
+}
+const porNombre = (a, b) => String(a.nombre).localeCompare(String(b.nombre), 'es');
+const hijasDe = (id) => filasCarpeta().filter((c) => padreDe(c.padre) === String(id || ''))
+  .map((c) => infoCarpeta(c.id)).filter(Boolean).sort(porNombre);
+/* Lo que hay en una carpeta. En la primera pantalla van también las de siempre;
+   primero las que creó ella, después las de siempre con algo adentro, y al final las vacías. */
+const carpetaVacia = (id) => !contenido(id).n && !hijasDe(id).length;
+function carpetasEn(id, todas) {
+  const k = String(id || '');
+  if (k) return hijasDe(k);
+  const fijas = CATS_MARCA.map((x) => infoCarpeta(CATP + x[0])).filter((f) => todas || !carpetaVacia(f.id));
+  return hijasDe('').concat(fijas.filter((f) => !carpetaVacia(f.id)), fijas.filter((f) => carpetaVacia(f.id)));
+}
+// Ella y todas las de adentro: para contar, y para no meter una carpeta dentro de sí misma
+function subarbol(id) {
+  const out = new Set([String(id || '')]);
+  if (!id) CATS_MARCA.forEach((x) => out.add(CATP + x[0]));
+  const bajar = (k) => hijasDe(k).forEach((h) => { if (!out.has(h.id)) { out.add(h.id); bajar(h.id); } });
+  [...out].forEach(bajar);
+  return out;
+}
+const carpetaDeRecurso = (r) => ((r.carpeta && infoCarpeta(r.carpeta)) ? r.carpeta : CATP + (r.cat || 'otros'));
+const nombreCarpeta = (id) => (infoCarpeta(id) || { nombre: 'Marca' }).nombre;
+function contenido(id) {
+  const ids = subarbol(id);
+  const items = recursos().filter((r) => ids.has(carpetaDeRecurso(r)));
+  return { n: items.length, peso: items.reduce((a, r) => a + (r.size || 0), 0), items };
+}
+const recursosEn = (id) => recursos().filter((r) => carpetaDeRecurso(r) === String(id || ''));
+// El camino desde Marca hasta esta carpeta, para las migas de pan
+function rutaDe(id) {
+  const out = [], visto = new Set();
+  let cur = infoCarpeta(id);
+  while (cur && !visto.has(cur.id)) { visto.add(cur.id); out.unshift(cur); cur = cur.raiz ? null : infoCarpeta(cur.padre); }
+  if (!out.length || !out[0].raiz) out.unshift(infoCarpeta(''));
+  return out;
+}
+const carpetaActual = () => (infoCarpeta(S.marcaRuta) ? String(S.marcaRuta || '') : '');
+function irACarpeta(id, desdeHoja) {
+  if (desdeHoja) closeSheet();
+  S.marcaRuta = infoCarpeta(id) ? String(id || '') : '';
+  S.marcaTodo = false;
+  if (UI.oculto.includes('marca')) { UI.oculto = UI.oculto.filter((x) => x !== 'marca'); guardarUI(); }
+  S.view = 'marca'; localStorage.setItem('crono_view', 'marca');
+  renderAll(); window.scrollTo(0, 0);
+}
+// Para elegir carpeta en una lista: “Logos”, “  › Verano”
+function opcionesCarpeta(excluir, conRaiz) {
+  const out = conRaiz ? [{ id: '', nombre: 'Marca', nivel: 0 }] : [];
+  const bajar = (id, nivel) => carpetasEn(id, true).forEach((f) => {
+    if (excluir && excluir.has(f.id)) return;
+    out.push({ id: f.id, nombre: f.nombre, nivel });
+    bajar(f.id, nivel + 1);
+  });
+  bajar('', conRaiz ? 1 : 0);
+  return out;
+}
+const sangria = (o) => (o.nivel ? '   '.repeat(o.nivel) + '› ' : '') + o.nombre;
+const opcionesHtml = (ops, sel) => ops.map((o) => `<option value="${esc(o.id)}"${o.id === sel ? ' selected' : ''}>${esc(sangria(o))}</option>`).join('');
+
 // Para mostrar primero el formato que se puede escuchar o ver de una
 const RANGO = ['mp3', 'm4a', 'ogg', 'webp', 'png', 'jpg', 'jpeg', 'svg', 'mp4', 'pdf', 'wav', 'aiff', 'aif', 'flac'];
 const rangoDe = (r) => { const i = RANGO.indexOf((extOf(r) || '').toLowerCase()); return i < 0 ? 99 : i; };
@@ -1163,9 +1253,9 @@ const rangoDe = (r) => { const i = RANGO.indexOf((extOf(r) || '').toLowerCase())
 function gruposMarca(lista) {
   const m = new Map();
   lista.forEach((r) => {
-    const info = splitName(r.name);
-    const k = (r.cat || 'otros') + '/' + slugify(info.base, 'x');
-    const g = m.get(k) || { id: k, titulo: info.label || r.name, cat: r.cat || 'otros', items: [], at: r.at || '' };
+    const info = splitName(r.name), carpeta = carpetaDeRecurso(r);
+    const k = carpeta + '|' + slugify(info.base, 'x');
+    const g = m.get(k) || { id: k, titulo: info.label || r.name, carpeta, cat: r.cat || 'otros', items: [], at: r.at || '' };
     g.items.push(r);
     if (String(r.at || '') > String(g.at)) g.at = r.at || '';
     m.set(k, g);
@@ -1179,25 +1269,56 @@ function gruposMarca(lista) {
   }).sort((a, b) => String(b.at).localeCompare(String(a.at)));
 }
 function viewMarca() {
-  const todos = recursos();
-  const cat = S.marcaCat || 'todos';
-  const lista = cat === 'todos' ? todos : todos.filter((r) => (r.cat || 'otros') === cat);
-  const cuenta = (c) => todos.filter((r) => (r.cat || 'otros') === c).length;
-  const peso = todos.reduce((a, r) => a + (r.size || 0), 0);
-  const puede = esAdmin() && store.canWrite;
-  const chips = [['todos', 'Todo', 'folder']].concat(CATS_MARCA.filter((c) => cuenta(c[0]) || cat === c[0] || puede))
-    .map(([id, n]) => `<button class="chip${cat === id ? ' on' : ''}" data-act="marca-cat" data-v="${id}">${esc(n)}${id !== 'todos' && cuenta(id) ? ` <b>${cuenta(id)}</b>` : ''}</button>`).join('');
-  const head = `<div class="fhead"><div class="chips scroll">${chips}</div>
-    <small>${todos.length} archivo${todos.length === 1 ? '' : 's'}${peso ? ' · ' + esc(prettySize(peso)) : ''}</small></div>
+  const soyJavi = esAdmin(), puede = soyJavi && store.canWrite;
+  const aqui = carpetaActual();
+  const info = infoCarpeta(aqui) || infoCarpeta('');
+  const ruta = rutaDe(aqui);
+  const dentro = contenido(aqui);
+  const subs = carpetasEn(aqui, soyJavi);
+  const archivos = S.marcaTodo ? dentro.items : recursosEn(aqui);
+  const miga = `<div class="miga">${ruta.map((f, i) => (i === ruta.length - 1
+    ? `<b>${esc(f.nombre)}</b>`
+    : `<button class="lnk" data-act="marca-ir" data-c="${esc(f.id)}">${esc(f.nombre)}</button><i>›</i>`)).join('')}</div>`;
+  const cuentas = `${dentro.n} archivo${dentro.n === 1 ? '' : 's'}${dentro.peso ? ' · ' + esc(prettySize(dentro.peso)) : ''}${subs.length ? ` · ${subs.length} carpeta${subs.length === 1 ? '' : 's'}` : ''}`;
+  const head = `<div class="fhead marcahead">
+      <div class="migabox">${miga}<small>${cuentas}</small></div>
+      <div class="chips">
+        ${dentro.n > recursosEn(aqui).length || S.marcaTodo ? `<button class="chip${S.marcaTodo ? ' on' : ''}" data-act="marca-todo">Ver todo junto</button>` : ''}
+        ${soyJavi ? `<button class="chip" data-act="marca-enlace-carpeta" data-c="${esc(aqui)}">${ic('share', 13)} Enlace</button>` : ''}
+        ${soyJavi && aqui ? `<button class="chip" data-act="marca-carpeta-menu" data-c="${esc(aqui)}">${ic('sliders', 13)} Esta carpeta</button>` : ''}
+      </div>
+    </div>
     ${colaHtml(S.marcaCola)}
-    ${puede ? `<label class="btn ghost sm arteup arteadd">${ic('plus', 16)} Subir a ${cat === 'todos' ? 'Marca' : nombreCat(cat)}<input type="file" multiple data-marca-file="1"></label>
-      <p class="hint">Lo que suba acá lo ve todo el equipo: manual, logos, tipografías, música, plantillas. ${cat === 'todos' ? 'Cada archivo se guarda en la carpeta que le corresponde según lo que sea.' : `Va a quedar en ${nombreCat(cat)}.`}</p>` : ''}`;
-  if (!lista.length) {
-    return head + `<div class="empty"><b>${cat === 'todos' ? 'Todavía no hay nada aquí' : 'Nada en ' + esc(nombreCat(cat))}</b>${puede ? 'Sube el manual, los logos, las tipografías y la música que usa la marca.' : 'Javi todavía no ha subido recursos de marca.'}</div>`;
+    ${puede ? `<div class="marcasubir">
+        <label class="btn ghost sm arteup arteadd">${ic('plus', 16)} Subir a ${esc(info.raiz ? 'Marca' : info.nombre)}<input type="file" multiple data-marca-file="1"></label>
+        <button class="btn ghost sm" data-act="marca-nueva" data-c="${esc(aqui)}">${ic('folder', 16)} Nueva carpeta</button>
+      </div>
+      <p class="hint">Lo que suba acá lo ve todo el equipo. ${info.raiz
+        ? 'Cada archivo se guarda en la carpeta que le corresponde según lo que sea; si prefieres, entra primero a una carpeta tuya y súbelo ahí.'
+        : `Va a quedar en ${esc(info.nombre)}.`}</p>` : ''}`;
+  if (!subs.length && !archivos.length) {
+    return head + `<div class="empty"><b>${info.raiz ? 'Todavía no hay nada aquí' : 'Nada en ' + esc(info.nombre)}</b>${puede
+      ? 'Sube el manual, los logos, las tipografías y la música que usa la marca, o crea una carpeta para ordenarlo a tu manera.'
+      : 'Javi todavía no ha subido recursos de marca.'}</div>`;
   }
-  const grupos = gruposMarca(lista);
+  const tiles = (S.marcaTodo || !subs.length) ? '' : `<div class="carpetas">${subs.map((f) => {
+    const c = contenido(f.id), hijas = carpetasEn(f.id, false).length;
+    const det = (c.n ? `${c.n} archivo${c.n === 1 ? '' : 's'} · ${prettySize(c.peso)}` : 'vacía') + (hijas ? ` · ${hijas} carpeta${hijas === 1 ? '' : 's'}` : '');
+    return `<div class="carpeta">
+      <button class="carpabrir" data-act="marca-ir" data-c="${esc(f.id)}">
+        <span class="carpic">${ic(f.cat ? iconoCat(f.cat) : 'folder', 20)}</span>
+        <span class="carpt"><b>${esc(f.nombre)}</b><small>${esc(det)}</small></span>
+        <i class="carpfl">${ic('right', 17)}</i></button>
+      ${soyJavi ? `<div class="recacts">
+        <button class="iconbtn" data-act="marca-enlace-carpeta" data-c="${esc(f.id)}" aria-label="Compartir la carpeta" title="Compartir la carpeta">${ic('share', 16)}</button>
+        <button class="iconbtn" data-act="marca-carpeta-menu" data-c="${esc(f.id)}" aria-label="Más" title="Más">${ic('sliders', 17)}</button>
+      </div>` : ''}
+    </div>`;
+  }).join('')}</div>`;
+  if (!archivos.length) return head + tiles;
+  const grupos = gruposMarca(archivos);
   const media = grupos.map((g) => g.principal).filter(esMediaOAudio);
-  return head + `<div class="recursos">${grupos.map((g) => {
+  return head + tiles + `<div class="recursos">${grupos.map((g) => {
     const r = g.principal;
     const mini = esMedia(r) ? miniMedia(r) : '';
     const puedeBajar = esAdmin() || g.libre;
@@ -1207,7 +1328,7 @@ function viewMarca() {
         ${mini || `<span class="ext">${esAudio(r) ? ic('music', 20) : esc((extOf(r) || '?').slice(0, 4).toUpperCase())}</span>`}
         ${esAudio(r) || isVideo(r) ? `<i class="playic">${ic('play', 16)}</i>` : ''}</button>
       <div class="rect"><b>${esc(g.titulo)}</b>
-        <small>${esc(nombreCat(g.cat))} · ${g.items.map((x) => `${esc((extOf(x) || '').toUpperCase())} ${esc(prettySize(x.size))}`).join(' · ')} · ${esc(ago(g.at))}${!esAdmin() && !g.libre ? ' · solo para ver' : ''}</small></div>
+        <small>${esc(nombreCarpeta(g.carpeta))} · ${g.items.map((x) => `${esc((extOf(x) || '').toUpperCase())} ${esc(prettySize(x.size))}`).join(' · ')} · ${esc(ago(g.at))}${!esAdmin() && !g.libre ? ' · solo para ver' : ''}</small></div>
       <div class="recacts">
         ${puedeBajar ? `<button class="iconbtn" data-act="marca-bajar" data-id="${esc(r.id)}" data-g="${esc(g.id)}" aria-label="Descargar" title="Descargar">${ic('download', 17)}</button>` : ''}
         ${esAdmin() ? `<button class="iconbtn" data-act="marca-menu" data-g="${esc(g.id)}" aria-label="Más" title="Más">${ic('sliders', 17)}</button>`
@@ -1216,22 +1337,23 @@ function viewMarca() {
   }).join('')}</div>`;
 }
 const esMediaOAudio = (f) => esMedia(f) || esAudio(f);
-// Todos los archivos de Marca que se pueden ver o escuchar, para pasar de uno a otro en el reproductor
+// Lo que se puede ver o escuchar de lo que está a la vista, para pasar de uno a otro en el reproductor
 function mediaMarca() {
-  const cat = S.marcaCat || 'todos';
-  const lista = recursos().filter((r) => cat === 'todos' || (r.cat || 'otros') === cat);
+  const aqui = carpetaActual();
+  const lista = S.marcaTodo ? contenido(aqui).items : recursosEn(aqui);
   return gruposMarca(lista).map((g) => g.principal).filter(esMediaOAudio);
 }
 async function subirAMarca(input) {
   const files = [...input.files]; input.value = '';
   if (!files.length || !esAdmin() || !requireWrite()) return;
+  const destino = infoCarpeta(carpetaActual()) || infoCarpeta('');
   const cola = S.marcaCola = files.map((f) => ({ nombre: f.name, pct: 0, estado: 'en espera' }));
   renderMain();
   const nuevos = [];
   for (let i = 0; i < files.length; i++) {
     const f = files[i], c = cola[i];
     try {
-      const cat = (S.marcaCat && S.marcaCat !== 'todos') ? S.marcaCat : catDe(f);
+      const cat = destino.cat || catDe(f);
       let archivo = f;
       if (await convieneComprimir(f)) {
         c.estado = 'comprimiendo…'; pintarCola(cola);
@@ -1245,7 +1367,7 @@ async function subirAMarca(input) {
       });
       c.pct = 1; c.listo = true; c.estado = 'listo'; pintarCola(cola);
       nuevos.push({
-        id: uid(), cat, name: r.name || archivo.name, path: r.path, url: r.url, sha: r.sha,
+        id: uid(), cat, carpeta: destino.fija ? '' : destino.id, name: r.name || archivo.name, path: r.path, url: r.url, sha: r.sha,
         type: r.type || archivo.type || '', size: r.size || archivo.size, libre: false, by: S.me.id, at: nowISO()
       });
     } catch (e) {
@@ -1258,7 +1380,7 @@ async function subirAMarca(input) {
   for (const r of nuevos) await save('recursos', r);
   setTimeout(() => { S.marcaCola = []; if (S.view === 'marca') renderMain(); }, 1200);
   renderMain();
-  if (nuevos.length) toast(`${nuevos.length} archivo${nuevos.length === 1 ? '' : 's'} en Marca`, 3000);
+  if (nuevos.length) toast(`${nuevos.length} archivo${nuevos.length === 1 ? '' : 's'} en ${destino.raiz ? 'Marca' : destino.nombre}`, 3000);
 }
 const grupoPorId = (gid) => gruposMarca(recursos()).find((g) => g.id === gid);
 const recursoPorId = (id) => (S.db.recursos || []).find((x) => x.id === id);
@@ -1274,23 +1396,23 @@ function marcaEnPiezaHtml(p, editable) {
       const ya = (p.marca || []).includes(g.principal.id);
       return `<button class="picked${ya ? ' on' : ''}" data-act="marca-usar" data-id="${esc(g.principal.id)}">
         <span>${esAudio(g.principal) ? ic('music', 15) : ic('paperclip', 15)}</span>
-        <b>${esc(g.titulo)}</b><small>${esc(nombreCat(g.cat))}</small>${ya ? ic('check', 15) : ''}</button>`;
+        <b>${esc(g.titulo)}</b><small>${esc(nombreCarpeta(g.carpeta))}</small>${ya ? ic('check', 15) : ''}</button>`;
     }).join('') || '<p class="hint">Todavía no hay nada en Marca.</p>'}</div>` : ''}`;
 }
 
-// Menú de un recurso (solo quien administra): renombrar, permitir descarga, enlace, quitar
+// Menú de un recurso (solo quien administra): renombrar, cambiar de carpeta, permitir descarga, enlace, quitar
 function menuRecurso(gid) {
   const g = grupoPorId(gid); if (!g) return;
   openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>${esc(g.titulo)}</h2><span style="width:40px"></span></div>
     <div class="pb">
-      <div class="track"><div><span>Carpeta</span><b>${esc(nombreCat(g.cat))}</b></div>
+      <div class="track"><div><span>Carpeta</span><b>${esc(nombreCarpeta(g.carpeta))}</b></div>
         <div><span>Formatos</span><b>${g.items.map((x) => esc((extOf(x) || '').toUpperCase())).join(' · ')}</b></div>
         <div><span>Peso</span><b>${esc(prettySize(g.size))}</b></div>
         <div><span>Descarga</span><b>${g.libre ? 'libre para el equipo' : 'solo tú'}</b></div></div>
       <label class="lbl">Nombre <small>se le cambia a todos los formatos</small></label>
       <input class="field" id="rec-nombre" value="${esc(g.titulo)}">
-      <label class="lbl">Carpeta</label>
-      <div class="chips">${CATS_MARCA.map(([c, n]) => `<button class="chip${g.cat === c ? ' on' : ''}" data-act="rec-cat" data-g="${esc(g.id)}" data-v="${c}">${esc(n)}</button>`).join('')}</div>
+      <label class="lbl">Carpeta <small>para moverlo</small></label>
+      <select class="sel" id="rec-carpeta">${opcionesHtml(opcionesCarpeta(null, false), g.carpeta)}</select>
       <label class="imppend" style="color:var(--ink);margin-top:14px"><input type="checkbox" id="rec-libre"${g.libre ? ' checked' : ''}> Dejar que Flavio y Maca lo descarguen</label>
       <p class="hint">Sin esto lo pueden ver y escuchar, pero no bajar: les aparece un botón para pedírtelo. Ojo: el repositorio es público, así que es un acuerdo del equipo, no un candado.</p>
       <label class="lbl">Archivos</label>
@@ -1301,6 +1423,49 @@ function menuRecurso(gid) {
       <button class="btn" data-act="rec-guardar" data-g="${esc(g.id)}">Guardar</button></div>`, true);
 }
 
+// Menú de una carpeta: nombre, dónde vive, enlace para compartirla y quitarla
+function menuCarpeta(id) {
+  const f = infoCarpeta(id); if (!f || !esAdmin()) return;
+  const c = contenido(f.id), subs = carpetasEn(f.id, false);
+  const fuera = subarbol(f.id);
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>${esc(f.nombre)}</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <div class="track">
+        <div><span>Archivos</span><b>${c.n}</b></div>
+        <div><span>Peso</span><b>${esc(prettySize(c.peso))}</b></div>
+        <div><span>Carpetas dentro</span><b>${subs.length}</b></div>
+      </div>
+      ${f.fija ? '<p class="hint">Las carpetas de siempre (Logos, Manual, Tipografías, Música, Fotos, Plantillas y Otros) no se cambian de nombre ni se quitan, pero sí puedes crear carpetas tuyas adentro.</p>' : `
+      <label class="lbl">Nombre</label>
+      <input class="field" id="carp-nombre" value="${esc(f.nombre)}">
+      <label class="lbl">Dentro de</label>
+      <select class="sel" id="carp-padre">${opcionesHtml(opcionesCarpeta(fuera, true), f.padre)}</select>`}
+      <label class="lbl">Compartir</label>
+      <button class="btn ghost sm" data-act="marca-enlace-carpeta" data-c="${esc(f.id)}">${ic('link', 15)} Copiar el enlace de la carpeta</button>
+      <p class="hint">El enlace abre el cronograma justo en esta carpeta, con todo lo que tenga adentro.</p>
+      <button class="btn ghost sm" data-act="marca-nueva" data-c="${esc(f.id)}" style="margin-top:10px">${ic('folder', 15)} Crear una carpeta aquí dentro</button>
+    </div>
+    <div class="pf">${f.fija ? `<button class="btn" data-act="marca-ir-hoja" data-c="${esc(f.id)}">Abrir la carpeta</button>`
+      : `<button class="btn ghost danger" data-act="marca-borrar-carpeta" data-c="${esc(f.id)}">${ic('trash', 17)} Quitar</button>
+      <button class="btn" data-act="carp-guardar" data-c="${esc(f.id)}">Guardar</button>`}</div>`, true);
+}
+
+// Crear una carpeta dentro de otra
+function nuevaCarpeta(padre) {
+  if (!esAdmin() || !requireWrite()) return;
+  const p = infoCarpeta(padre) || infoCarpeta('');
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Nueva carpeta</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <label class="lbl">Nombre</label>
+      <input class="field" id="carp-nueva" placeholder="Ej. Verano 2026" autocomplete="off">
+      <label class="lbl">Dentro de</label>
+      <select class="sel" id="carp-nueva-padre">${opcionesHtml(opcionesCarpeta(null, true), p.id)}</select>
+      <p class="hint">Las carpetas se pueden meter unas dentro de otras, y cada una tiene su enlace para compartir.</p>
+    </div>
+    <div class="pf"><button class="btn ghost" data-act="sheet-close">Cancelar</button>
+      <button class="btn" data-act="carp-crear">Crear</button></div>`, true);
+  setTimeout(() => { const i = $('#carp-nueva'); if (i) i.focus(); }, 120);
+}
 /* ---------- vista: panel de seguimiento ---------- */
 const bars = (rows) => { const max = Math.max(1, ...rows.map((r) => r.n)); return `<div class="bars">${rows.map((r) => `<div class="bar"><span class="bl">${esc(r.label)}</span><div class="bt"><i style="width:${(r.n / max) * 100}%;background:${r.color}"></i></div><b>${r.n}</b></div>`).join('')}</div>`; };
 const miniRow = (p, extra) => `<div class="minirow" data-act="open-post" data-id="${esc(p.id)}"><span class="av md" style="--c:${statusOf(p.status).color}">${esc(statusOf(p.status).name[0])}</span><div class="t"><b>${esc(p.title)}</b><small>${esc(extra)}</small></div>${p.assignees.slice(0, 3).map((a) => av(a, 'sm')).join('')}</div>`;
@@ -3426,7 +3591,11 @@ document.addEventListener('drop', async (e) => {
 
 /* ---------- acciones (clicks) ---------- */
 const ACTS = {
-  nav: (el) => { S.view = el.dataset.v; localStorage.setItem('crono_view', S.view); renderAll(); window.scrollTo(0, 0); },
+  nav: (el) => {
+    // tocar la pestaña de Marca vuelve a la primera pantalla, con todas las carpetas
+    if (el.dataset.v === 'marca') { S.marcaRuta = ''; S.marcaTodo = false; }
+    S.view = el.dataset.v; localStorage.setItem('crono_view', S.view); renderAll(); window.scrollTo(0, 0);
+  },
   'prev-m': () => { S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() - 1, 1); renderMain(); },
   'next-m': () => { S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() + 1, 1); renderMain(); },
   today: () => { const d = new Date(); d.setDate(1); S.cursor = d; S.sel = today(); renderMain(); },
@@ -3441,7 +3610,54 @@ const ACTS = {
   'set-status': async (el) => { closeSheet(); await changeStatus(el.dataset.id, el.dataset.v); },
   bell: () => openBell(),
   espacio: () => abrirEspacio(),
-  'marca-cat': (el) => { S.marcaCat = el.dataset.v; renderMain(); },
+  'marca-ir': (el) => irACarpeta(el.dataset.c),
+  'marca-ir-hoja': (el) => irACarpeta(el.dataset.c, true),
+  'marca-todo': () => { S.marcaTodo = !S.marcaTodo; renderMain(); window.scrollTo(0, 0); },
+  'marca-carpeta-menu': (el) => menuCarpeta(el.dataset.c),
+  'marca-nueva': (el) => nuevaCarpeta(el.dataset.c || carpetaActual()),
+  'carp-crear': async () => {
+    if (!esAdmin() || !requireWrite()) return;
+    const n = $('#carp-nueva'), p = $('#carp-nueva-padre');
+    const nombre = ((n && n.value) || '').trim();
+    if (!nombre) { toast('Ponle un nombre a la carpeta'); if (n) n.focus(); return; }
+    const padre = infoCarpeta(p ? p.value : '') ? (p ? p.value : '') : '';
+    const fila = { id: uid(), nombre, padre, by: S.me.id, at: nowISO() };
+    await save('carpetas', fila);
+    closeSheet();
+    irACarpeta(fila.id);
+    toast(`Carpeta “${nombre}” creada`, 3000);
+  },
+  'carp-guardar': async (el) => {
+    const f = infoCarpeta(el.dataset.c); if (!f || f.fija || !requireWrite()) return;
+    const n = $('#carp-nombre'), p = $('#carp-padre');
+    const nombre = ((n && n.value) || f.nombre).trim() || f.nombre;
+    let padre = p ? p.value : f.padre;
+    if (subarbol(f.id).has(padre)) padre = f.padre; // una carpeta no puede vivir dentro de sí misma
+    const fila = filaCarpeta(f.id);
+    await save('carpetas', Object.assign({}, fila, { nombre, padre }));
+    closeSheet(); renderMain();
+    toast('Guardado');
+  },
+  'marca-borrar-carpeta': async (el) => {
+    const f = infoCarpeta(el.dataset.c); if (!f || f.fija || !requireWrite()) return;
+    const dentro = recursosEn(f.id), hijas = hijasDe(f.id);
+    const destino = infoCarpeta(f.padre) || infoCarpeta('');
+    const quePasa = (dentro.length || hijas.length)
+      ? `\n\nLo que tiene dentro (${dentro.length} archivo${dentro.length === 1 ? '' : 's'}${hijas.length ? ` y ${hijas.length} carpeta${hijas.length === 1 ? '' : 's'}` : ''}) pasa a ${destino.raiz ? 'Marca' : destino.nombre}. No se borra nada.`
+      : '';
+    if (!confirm(`¿Quitar la carpeta “${f.nombre}”?${quePasa}`)) return;
+    for (const r of dentro) await save('recursos', Object.assign({}, r, { cat: destino.cat || r.cat, carpeta: destino.fija || destino.raiz ? '' : destino.id }));
+    for (const h of hijas) await save('carpetas', Object.assign({}, filaCarpeta(h.id), { padre: destino.id }));
+    await removeRow('carpetas', f.id);
+    if (carpetaActual() === f.id) S.marcaRuta = destino.id;
+    closeSheet(); renderMain();
+    toast('Carpeta quitada');
+  },
+  'marca-enlace-carpeta': async (el) => {
+    if (!esAdmin()) return;
+    const f = infoCarpeta(el.dataset.c) || infoCarpeta('');
+    await compartir(enlaceCarpeta(f.id), `${f.raiz ? 'Marca' : f.nombre} · ${CFG.APP_NAME}`);
+  },
   'marca-ver': (el) => {
     const r = recursoPorId(el.dataset.id); if (!r) return;
     if (esMediaOAudio(r)) { const lista = mediaMarca(); abrirGaleria(lista, Math.max(0, +el.dataset.i || lista.indexOf(r))); return; }
@@ -3485,22 +3701,21 @@ const ACTS = {
     }
     toast('Listo, le avisé a Javi', 3500);
   },
-  'rec-cat': (el) => {
-    const g = grupoPorId(el.dataset.g); if (!g || !esAdmin()) return;
-    g.items.forEach((x) => { x.cat = el.dataset.v; });
-    menuRecurso(el.dataset.v + el.dataset.g.slice(el.dataset.g.indexOf('/')));
-  },
   'rec-guardar': async (el) => {
     const g = grupoPorId(el.dataset.g); if (!g || !requireWrite()) return;
-    const n = $('#rec-nombre'), l = $('#rec-libre');
+    const n = $('#rec-nombre'), l = $('#rec-libre'), c = $('#rec-carpeta');
     const nombre = ((n && n.value) || g.titulo).trim();
     const libre = !!(l && l.checked);
+    const destino = infoCarpeta(c ? c.value : g.carpeta) || infoCarpeta(g.carpeta) || infoCarpeta('');
     for (const x of g.items) {
       const ext = extOf(x);
-      await save('recursos', Object.assign({}, x, { name: nombre ? `${nombre}${ext ? '.' + ext : ''}` : x.name, cat: x.cat, libre }));
+      await save('recursos', Object.assign({}, x, {
+        name: nombre ? `${nombre}${ext ? '.' + ext : ''}` : x.name,
+        cat: destino.cat || x.cat, carpeta: destino.fija || destino.raiz ? '' : destino.id, libre
+      }));
     }
     closeSheet(); renderMain();
-    toast('Guardado');
+    toast(destino.id !== g.carpeta ? `Movido a ${destino.raiz ? 'Marca' : destino.nombre}` : 'Guardado');
   },
   'marca-bajar': (el) => {
     const g = el.dataset.g ? grupoPorId(el.dataset.g) : null;
@@ -4143,10 +4358,18 @@ async function startApp() {
   if (store.mode === 'github' && !store.canWrite && store.hayAcceso && store.hayAcceso() && !llegoCompartido) setTimeout(pedirContrasena, 400);
 }
 function openFromHash() {
-  const m = location.hash.match(/post=([\w-]+)/);
-  if (!m) return;
+  const post = location.hash.match(/post=([\w-]+)/);
+  const carpeta = location.hash.match(/marca=([^&]*)/);
+  if (!post && !carpeta) return;
   history.replaceState(null, '', location.pathname + location.search);
-  if (S.db.posts.some((p) => p.id === m[1])) openEditor(m[1]);
+  if (carpeta) {
+    const v = decodeURIComponent(carpeta[1] || '');
+    const id = (v === 'raiz' || v === '') ? '' : v;
+    if (!id || infoCarpeta(id)) irACarpeta(id);
+    else toast('Esa carpeta de Marca ya no existe', 4000);
+    return;
+  }
+  if (S.db.posts.some((p) => p.id === post[1])) openEditor(post[1]);
 }
 window.addEventListener('hashchange', () => { if (S.me) openFromHash(); });
 if ('serviceWorker' in navigator) {

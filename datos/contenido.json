@@ -124,7 +124,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-28",
+   "date": "",
    "inicio": "",
    "format": "carrusel",
    "status": "idea",
@@ -162,7 +162,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:49.763Z",
+   "updatedAt": "2026-11-03T15:31:21.814Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "df21a692-7b8a-48e0-80bd-833e6cd356b3",
+   "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "postTitle": "¿Qué casa calza con tu familia?",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 28 nov a sin fecha",
+   "meta": {
+    "from": "2026-11-28",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:31:21.814Z"
+  },
+  {
    "id": "03bde750-fed2-4aa6-82f2-e6a5f60e6345",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -6720,6 +6733,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "74a8e1f7-dd0e-410e-b244-ad318c17e1b7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "type": "reschedule",
+   "text": "cambió la fecha de “¿Qué casa calza con tu familia?” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “¿Qué casa calza con tu familia?” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "createdAt": "2026-11-03T15:31:21.815Z"
+  },
   {
    "id": "8bffbd36-0c69-4b1b-bc37-23c03930ec9a",
    "to": "maca",

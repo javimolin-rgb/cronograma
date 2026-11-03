@@ -3682,6 +3682,14 @@
  ],
  "comments": [
   {
+   "id": "999974ca-21b8-438e-9925-f808f308d24b",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Usar esa portada de referencia y donde dice doble altura a la derecha yo le pondría un signo  +  , que demuestre que la altura es más q una doble altura tradicional.",
+   "fileIds": [],
+   "createdAt": "2026-11-03T22:05:28.237Z"
+  },
+  {
    "id": "0a953284-2f36-48c8-909d-a389c1088bcb",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4950,6 +4958,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3a8a7d3f-2a55-4afc-815e-01c70217b931",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T22:05:28.243Z"
+  },
   {
    "id": "5af969a8-4929-41c4-aaf3-66b61c8fbd97",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7476,6 +7494,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9427a84a-b732-4312-86fa-81d6da9c0376",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Usar esa portada de referencia y donde dice doble altura a la derecha yo le pond…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Usar esa portada de referencia y donde dice doble altura a la derecha yo le pond…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:05:28.246Z"
+  },
+  {
+   "id": "fa92120c-a136-466c-9883-edb0a2bf8781",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Usar esa portada de referencia y donde dice doble altura a la derecha yo le pond…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Usar esa portada de referencia y donde dice doble altura a la derecha yo le pond…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:05:28.245Z"
+  },
   {
    "id": "0eba42e6-92b3-423c-ab9e-39da37dd5927",
    "to": "javi",

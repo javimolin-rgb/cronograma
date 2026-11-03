@@ -551,7 +551,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -572,7 +573,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:28.288Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4677,6 +4678,16 @@
  ],
  "activity": [
   {
+   "id": "aef810f6-c914-47ea-9739-bd731ed53b0e",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:28.289Z"
+  },
+  {
    "id": "e4609b65-6ee9-459c-9974-b8b05589e204",
    "postId": "30efd072-8377-4a3a-96f6-e2a60dab643d",
    "postTitle": "El muro que guarda el sol",
@@ -6539,6 +6550,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4f8c39d7-672e-440a-a7ac-76dcaba5cba4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "tagged",
+   "text": "te etiquetó en “Un domingo en el refugio”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Un domingo en el refugio”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-03T15:29:28.290Z"
+  },
   {
    "id": "9dec22f8-451c-4f17-8fdb-931cb45dd247",
    "to": "maca",

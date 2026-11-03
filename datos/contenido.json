@@ -4970,7 +4970,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "review",
    "text": "subió 1 archivo en “Casa Peumo” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Para revisar · Casa Peumo",
@@ -4985,7 +4985,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "update",
    "text": "editó “Casa Peumo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Cronograma de contenido",
@@ -5015,7 +5015,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "status",
    "text": "movió “Casa Peumo” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Cronograma de contenido",
@@ -5045,7 +5045,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "tagged",
    "text": "te etiquetó en “Casa Peumo”",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",
@@ -7376,5 +7376,6 @@
    "by": "javi",
    "at": "2026-11-02T22:07:41.994Z"
   }
- ]
+ ],
+ "carpetas": []
 }

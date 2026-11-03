@@ -3722,7 +3722,10 @@
    "author": "maca",
    "text": "Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
    "fileIds": [],
-   "createdAt": "2026-11-03T23:11:06.253Z"
+   "createdAt": "2026-11-03T23:11:06.253Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "66f11f12-1793-4f4a-beb1-638fba91d98a",
@@ -7668,6 +7671,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ee9fb53e-2924-4a07-9792-64167b42f9b6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi le puso 👍 a tu comentario en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T23:36:43.130Z"
+  },
   {
    "id": "f1312821-f871-4003-bef2-aa4076d6a57d",
    "to": "javi",

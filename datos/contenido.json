@@ -54,7 +54,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-12-01",
+   "date": "",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -92,7 +92,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:53.022Z",
+   "updatedAt": "2026-11-03T15:31:27.707Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "ad315a18-f0a1-44ec-acc0-2efe2d736efd",
+   "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
+   "postTitle": "Una casa para todas las edades",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 1 dic a sin fecha",
+   "meta": {
+    "from": "2026-12-01",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:31:27.707Z"
+  },
+  {
    "id": "df21a692-7b8a-48e0-80bd-833e6cd356b3",
    "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
    "postTitle": "¿Qué casa calza con tu familia?",
@@ -6733,6 +6746,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "bc8e28b7-c109-463e-b958-91492039aa5e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Una casa para todas las edades” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Una casa para todas las edades” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
+   "createdAt": "2026-11-03T15:31:27.707Z"
+  },
   {
    "id": "74a8e1f7-dd0e-410e-b244-ad318c17e1b7",
    "to": "maca",

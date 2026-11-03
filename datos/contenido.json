@@ -3670,6 +3670,14 @@
  ],
  "comments": [
   {
+   "id": "6f007ca4-b530-4747-9b55-5e4a7b3b1220",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "javi",
+   "text": "@Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+   "fileIds": [],
+   "createdAt": "2026-11-03T21:34:29.415Z"
+  },
+  {
    "id": "ec2c2033-7a2a-4e06-ab58-778321f2bf4f",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4897,6 +4905,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "562423a7-5329-4b7c-a248-e7c165a52c16",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T21:34:29.420Z"
+  },
   {
    "id": "4402f32f-a823-4cbc-b7da-c79aed6ae2a5",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7350,6 +7368,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "bc519f98-aee2-4e80-acdd-0fb705f27d7d",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: @Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Casa Peumo”: @Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T21:34:29.422Z"
+  },
+  {
+   "id": "8c065445-a1f9-49fd-bdb9-d133e9d830a0",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "mention",
+   "text": "te mencionó en “Casa Peumo”: @Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Casa Peumo”: @Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T21:34:29.422Z"
+  },
   {
    "id": "7ac90d45-aa4b-4004-b15f-ab5d9c7c7d59",
    "to": "javi",

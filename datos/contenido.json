@@ -7308,12 +7308,12 @@
    "equipo": "Mac",
    "navegador": "Chrome",
    "tipo": "pc",
-   "instalada": true,
+   "instalada": false,
    "push": true,
-   "version": "2026.11.03-2",
+   "version": "2026.11.03-3",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-03T13:41:06.466Z"
+   "lastSeen": "2026-11-03T14:14:38.547Z"
   }
  ],
  "recursos": [

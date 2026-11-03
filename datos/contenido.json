@@ -471,7 +471,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-19",
+   "date": "",
    "inicio": "",
    "format": "carrusel",
    "status": "idea",
@@ -499,7 +499,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:29:31.631Z",
+   "updatedAt": "2026-11-03T15:31:06.468Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4684,6 +4684,19 @@
  ],
  "activity": [
   {
+   "id": "88b4b24f-70d6-4ae5-971c-c2cdc6287e49",
+   "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "postTitle": "Cómo se arma el precio de tu casa",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 19 nov a sin fecha",
+   "meta": {
+    "from": "2026-11-19",
+    "to": ""
+   },
+   "createdAt": "2026-11-03T15:31:06.469Z"
+  },
+  {
    "id": "9e9e928e-11d3-41ce-9c2a-4558f5481d39",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -6668,6 +6681,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b6694340-f8c7-4069-acc5-9401b1972532",
+   "to": "maca",
+   "from": "javi",
+   "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Cómo se arma el precio de tu casa” a sin fecha",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Cómo se arma el precio de tu casa” a sin fecha",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "createdAt": "2026-11-03T15:31:06.469Z"
+  },
   {
    "id": "0343c5d5-a9bb-4f2c-b092-47a30b6e1bc6",
    "to": "maca",

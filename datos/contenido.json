@@ -7383,7 +7383,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "status",
    "text": "movió “¿Son prefabricadas?” a Estructura por aprobar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Cronograma de contenido",

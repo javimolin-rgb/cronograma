@@ -3530,6 +3530,14 @@
  ],
  "comments": [
   {
+   "id": "01c6c975-58a1-40e2-b530-e23d2859c2be",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Te mando luego el texto modificado",
+   "fileIds": [],
+   "createdAt": "2026-11-03T15:17:41.411Z"
+  },
+  {
    "id": "7629c633-2c8d-4832-a12b-83c5c28db245",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4662,6 +4670,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "85979c05-1b44-4c8d-a77a-0a01a86dbd5b",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T15:17:41.412Z"
+  },
   {
    "id": "06002c80-e586-4bff-8197-40399cb6669f",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -6485,6 +6503,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "fcef3c6a-db5b-4907-8da6-a627bb0da399",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Te mando luego el texto modificado",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Te mando luego el texto modificado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T15:17:41.412Z"
+  },
+  {
+   "id": "b8ca9f4b-1a93-48a5-a9a9-570be0391f19",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Te mando luego el texto modificado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Te mando luego el texto modificado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T15:17:41.412Z"
+  },
   {
    "id": "ebe4064b-a957-4add-b2bf-0e865f87dcae",
    "to": "javi",

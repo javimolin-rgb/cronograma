@@ -82,31 +82,108 @@
    "publishedAt": null
   },
   {
-   "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "title": "Casa Roble",
-   "caption": "",
+   "caption": "Casa Roble, nuestro modelo de la semana ❄️\n\nEn la montaña, la forma no es un capricho: su silueta triangular deja que la nieve resbale sola, y su frente vidriado mira directo a la montaña.\n\nBotas en la entrada, algo caliente en la mesa y espacio para todos: cuatro dormitorios y tres baños para que nadie haga fila después del ski.\n\n4 dormitorios, 3 baños y 142 m² útiles en 2 pisos, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaRoble #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": {
+    "cols": [
+     "#",
+     "Momento",
+     "En pantalla (rótulo · titular · bajada)",
+     "Voz"
+    ],
+    "filas": [
+     [
+      "1",
+      "Apertura",
+      "MODELO DE LA SEMANA · Casa Roble · Hecha para la montaña.",
+      "En la montaña, la forma no es un capricho… es lo que te protege."
+     ],
+     [
+      "2",
+      "Superficie",
+      "SUPERFICIE ÚTIL · 142 m² · 4 dormitorios y 3 baños",
+      "Espacio de sobra para llegar con todos, y con todo."
+     ],
+     [
+      "3",
+      "Forma",
+      "TECHO A DOS AGUAS · Forma triangular · La nieve no se acumula",
+      "Su silueta deja que la nieve resbale, sola."
+     ],
+     [
+      "4",
+      "Ventanal",
+      "VIVE LO NATURAL · Frente vidriado · Mirando a la montaña",
+      "Y adentro, el calor de hogar mientras afuera todo es blanco."
+     ],
+     [
+      "5",
+      "1er piso",
+      "2 PISOS · Vida en común · Estar, comedor y cocina",
+      "Botas en la entrada, algo caliente en la mesa, y la nieve detrás del vidrio."
+     ],
+     [
+      "6",
+      "Dormitorios",
+      "DORMITORIOS · 4 dormitorios · Y 3 baños",
+      "Cuatro dormitorios y tres baños, para que nadie haga fila después del ski."
+     ],
+     [
+      "7",
+      "Planta",
+      "PLANTAS DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
+      "Para la familia, los amigos, y las temporadas que se vuelven tradición."
+     ],
+     [
+      "8",
+      "Cierre",
+      "Llave en mano · Plazo estimado: 9 meses",
+      "Casa Roble. Tu lugar en la nieve."
+     ],
+     [
+      "9",
+      "Llamado",
+      "DESCUBRE MÁS EN NEORIGEN.CL",
+      "Descúbrela en neorigen.cl"
+     ]
+    ]
+   },
    "campaign": "",
-   "date": "2026-11-25",
    "time": "",
-   "platforms": [],
-   "format": "post",
+   "date": "2026-11-25",
+   "inicio": "",
+   "format": "story",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-02T23:06:01.849Z",
+   "updatedAt": "2026-11-03T14:38:04.894Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T23:06:01.849Z",
-   "revisions": 0,
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "826f8a26-abf3-4c76-bd32-29d85762168e",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T14:38:04.894Z",
+     "by": "javi"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Casa Mañío",
@@ -3507,6 +3584,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "8d312bba-614b-4f88-953f-b4c742785370",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, la tabla del guión, formato",
+   "meta": null,
+   "createdAt": "2026-11-03T14:38:04.894Z"
+  },
   {
    "id": "d87a1048-36c1-420f-a18b-64272854f096",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",

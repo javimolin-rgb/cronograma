@@ -10684,10 +10684,10 @@
    "tipo": "pc",
    "instalada": false,
    "push": true,
-   "version": "2026.11.03-8",
+   "version": "2026.11.03-9",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-03T19:31:00.050Z"
+   "lastSeen": "2026-11-03T20:35:47.974Z"
   }
  ],
  "recursos": [

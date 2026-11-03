@@ -2224,6 +2224,14 @@
  ],
  "comments": [
   {
+   "id": "a2619e75-720d-4ab2-ba66-3c3ca71827bd",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "javi",
+   "text": "@Maca \nHay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse en ellos, con espacio para todos. Su ventanal sube de piso a techo: el bosque no se mira, se vive desde adentro. Pensada para el frío: que afuera nieve, y adentro siempre se esté tibio. Arriba, una suite que es solo tuya. Abajo, la cocina, la mesa y la estufa encendida. Y un dormitorio aparte, para los niños o las visitas. Dos pisos: el descanso por un lado, el día a día por otro. Ideal para una familia. Casa Peumo. Un refugio para volver a lo esencial. Cotízala en neorigen.cl.",
+   "fileIds": [],
+   "createdAt": "2026-11-03T13:29:00.021Z"
+  },
+  {
    "id": "ad136968-d67c-45bd-83ba-bef159fec08c",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -3333,6 +3341,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c7c28115-a78f-4f58-84b6-4f880efc51ed",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T13:29:00.023Z"
+  },
   {
    "id": "f9edaea7-288e-4ce3-9878-59a4f8bd4ce2",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -4876,6 +4894,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "07d17285-3667-44e7-a85e-942593978a08",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: @Maca \nHay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi comentó en “Casa Peumo”: @Maca \nHay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T13:29:00.024Z"
+  },
+  {
+   "id": "b9ebc03e-9ab9-46c1-8661-bf6964f60b51",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "mention",
+   "text": "te mencionó en “Casa Peumo”: @Maca \nHay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te mencionó en “Casa Peumo”: @Maca \nHay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T13:29:00.024Z"
+  },
   {
    "id": "9bf656e5-be62-48b7-a2c7-cb222fc1fb7c",
    "to": "javi",

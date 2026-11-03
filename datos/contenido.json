@@ -7537,7 +7537,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "supervision",
    "text": "comentó en “Casa Peumo”: Y para modificar el texto descriptivo si lo vamos a poner en el feed, te dejo el…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

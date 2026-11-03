@@ -1638,10 +1638,24 @@
      "sha": "e14a4a6b00abb62a0947ff3f38c034c235af5997",
      "type": "image/webp",
      "size": 87022
+    },
+    {
+     "id": "9f9d8c81-aaaf-4478-938b-81f5a29b3166",
+     "by": "javi",
+     "at": "2026-11-03T22:37:10.208Z",
+     "base": "captura-de-pantalla-2026-11-03-a-las-19.36.20",
+     "version": 1,
+     "shaOrigen": "5d67b3e4c941e898f788cabcbdba00f9ced57a23",
+     "name": "captura-de-pantalla-2026-11-03-a-las-19.36.20-v1.webp",
+     "path": "archivos/modelos/captura-de-pantalla-2026-11-03-a-las-19.36.20-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/captura-de-pantalla-2026-11-03-a-las-19.36.20-v1.webp",
+     "sha": "f47438f3e981ae3cb207b557365efc96a71a7b49",
+     "type": "image/webp",
+     "size": 67810
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-03T22:31:40.839Z",
+   "updatedAt": "2026-11-03T22:37:17.343Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
@@ -5011,6 +5025,16 @@
  ],
  "activity": [
   {
+   "id": "3ab2da3f-9e54-468e-b060-cad14e1f17ff",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-03T22:37:17.344Z"
+  },
+  {
    "id": "01099e48-a650-4c82-ba06-cb6bb939c92a",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -7606,6 +7630,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "926c6fcf-2473-4335-8126-9c7a807d78ab",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:37:17.475Z"
+  },
+  {
+   "id": "a13adc59-4fd7-4c0c-aec4-c68215bb051c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:37:17.475Z"
+  },
   {
    "id": "62551beb-ecc8-4ac8-9160-5e50a1175eba",
    "to": "javi",

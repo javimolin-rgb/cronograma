@@ -7675,7 +7675,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "supervision",
    "text": "comentó en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

@@ -109,31 +109,108 @@
    "publishedAt": null
   },
   {
-   "id": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "title": "Casa Mañío",
-   "caption": "",
+   "caption": "Casa Mañío, nuestro modelo de la semana 🌊\n\nHay casas con una ventana al mar; esta es toda ventana. Su fachada vidriada corre de punta a punta y la terraza la sigue entera: del living al exterior hay solo un paso.\n\nToda en un solo nivel, baja y tendida, deja ver el paisaje y cuida tu privacidad.\n\n3 dormitorios, 2 baños y 106 m² útiles en un piso, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMañío #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": {
+    "cols": [
+     "#",
+     "Momento",
+     "En pantalla (rótulo · titular · bajada)",
+     "Voz"
+    ],
+    "filas": [
+     [
+      "1",
+      "Apertura",
+      "MODELO DE LA SEMANA · Casa Mañío · Abierta de punta a punta.",
+      "Hay casas con una ventana al mar… esta es toda ventana."
+     ],
+     [
+      "2",
+      "Superficie",
+      "SUPERFICIE ÚTIL · 106 m² · 3 dormitorios y 2 baños",
+      "Toda en un solo nivel, sin escaleras, sin barreras."
+     ],
+     [
+      "3",
+      "Luz",
+      "UN SOLO PISO · Gran amplitud · Mucha luz desde sus ventanales",
+      "La fachada vidriada corre a lo largo, y la luz llega a cada rincón."
+     ],
+     [
+      "4",
+      "Sustentable",
+      "VIVE LO NATURAL · Perfil bajo · Se integra al entorno",
+      "Baja y tendida, deja ver el paisaje y cuida tu privacidad."
+     ],
+     [
+      "5",
+      "Dormitorios",
+      "DORMITORIOS · 3 dormitorios · Todos en el mismo nivel",
+      "Tres dormitorios, y todo a un paso."
+     ],
+     [
+      "6",
+      "Terraza",
+      "TERRAZA · De punta a punta · A lo largo de la fachada",
+      "Del living a la terraza hay solo un paso, y el día se vive afuera."
+     ],
+     [
+      "7",
+      "Planta",
+      "PLANTA DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
+      "Para la familia que vive hacia afuera, con los pies en la arena."
+     ],
+     [
+      "8",
+      "Cierre",
+      "Llave en mano · Plazo estimado: 8 meses",
+      "Casa Mañío. La casa que se abre entera."
+     ],
+     [
+      "9",
+      "Llamado",
+      "DESCUBRE MÁS EN NEORIGEN.CL",
+      "Descúbrela en neorigen.cl"
+     ]
+    ]
+   },
    "campaign": "",
-   "date": "2026-11-17",
    "time": "",
-   "platforms": [],
-   "format": "post",
+   "date": "2026-11-17",
+   "inicio": "",
+   "format": "story",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-02T23:05:48.447Z",
+   "updatedAt": "2026-11-03T14:37:41.263Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T23:05:48.447Z",
-   "revisions": 0,
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "16fcb23f-105b-4d09-837d-f0526e0419eb",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T14:37:41.263Z",
+     "by": "javi"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Casa Boldo",
@@ -3430,6 +3507,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d87a1048-36c1-420f-a18b-64272854f096",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, la tabla del guión, formato",
+   "meta": null,
+   "createdAt": "2026-11-03T14:37:41.263Z"
+  },
   {
    "id": "c0d6609d-d7d6-454d-b6dc-991691fad09e",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

@@ -3628,6 +3628,14 @@
  ],
  "comments": [
   {
+   "id": "d087d098-d58e-4391-93ce-54eecae711bd",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Tal vez es la entonación lo que suena extraño",
+   "fileIds": [],
+   "createdAt": "2026-11-03T20:22:39.010Z"
+  },
+  {
    "id": "70394892-b453-4c33-a82a-f6e0060bae29",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -4820,6 +4828,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5a12cb3d-9566-4e5a-b238-021fe44c41a3",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T20:22:39.010Z"
+  },
   {
    "id": "826f2d95-3fe7-49fc-9126-7e508afe46a1",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7193,6 +7211,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ee2363e4-c241-4435-af00-240afa136990",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Tal vez es la entonación lo que suena extraño",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Tal vez es la entonación lo que suena extraño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T20:22:39.011Z"
+  },
+  {
+   "id": "a515f3b7-8870-46d5-abff-56189ff52f9a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Tal vez es la entonación lo que suena extraño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Tal vez es la entonación lo que suena extraño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T20:22:39.011Z"
+  },
   {
    "id": "50951e3a-4865-4fce-ae5c-b2d1ada2a275",
    "to": "javi",

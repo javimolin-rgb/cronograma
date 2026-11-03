@@ -848,7 +848,7 @@
    "date": "2026-11-05",
    "inicio": "",
    "format": "reel",
-   "status": "idea",
+   "status": "estructura",
    "priority": "normal",
    "revisions": 0,
    "id": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -873,9 +873,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:35:45.582Z",
+   "updatedAt": "2026-11-03T19:56:48.554Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-03T15:07:28.689Z",
+   "statusChangedAt": "2026-11-03T19:56:48.554Z",
    "publishedAt": null
   },
   {
@@ -4797,6 +4797,19 @@
  ],
  "activity": [
   {
+   "id": "1e4807cd-cae5-4257-84d6-92d2ecf1f731",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a Estructura por aprobar",
+   "meta": {
+    "from": "idea",
+    "to": "estructura"
+   },
+   "createdAt": "2026-11-03T19:56:48.555Z"
+  },
+  {
    "id": "ef27ee83-3e0e-40a3-a02d-d853e77acaaa",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -7087,6 +7100,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "15849736-92a2-4e99-9585-26e06027c80f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "status",
+   "text": "movió “¿Son prefabricadas?” a Estructura por aprobar",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “¿Son prefabricadas?” a Estructura por aprobar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-03T19:56:48.556Z"
+  },
   {
    "id": "e1f7bc2a-a3a6-4ced-bf80-9b8399f22409",
    "to": "maca",

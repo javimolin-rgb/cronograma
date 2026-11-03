@@ -642,7 +642,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -663,7 +664,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:24.963Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4676,6 +4677,16 @@
  ],
  "activity": [
   {
+   "id": "e4609b65-6ee9-459c-9974-b8b05589e204",
+   "postId": "30efd072-8377-4a3a-96f6-e2a60dab643d",
+   "postTitle": "El muro que guarda el sol",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:24.964Z"
+  },
+  {
    "id": "5f1f852c-7059-4788-b0d5-a95934d3ce67",
    "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
    "postTitle": "Tu terreno no tiene luz ni alcantarillado",
@@ -6528,6 +6539,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9dec22f8-451c-4f17-8fdb-931cb45dd247",
+   "to": "maca",
+   "from": "javi",
+   "postId": "30efd072-8377-4a3a-96f6-e2a60dab643d",
+   "type": "tagged",
+   "text": "te etiquetó en “El muro que guarda el sol”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “El muro que guarda el sol”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=30efd072-8377-4a3a-96f6-e2a60dab643d",
+   "createdAt": "2026-11-03T15:29:24.964Z"
+  },
   {
    "id": "3106bb09-abd6-4485-9538-739d71216da8",
    "to": "maca",

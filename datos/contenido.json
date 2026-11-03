@@ -327,7 +327,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -348,7 +349,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:42.660Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4680,6 +4681,16 @@
  ],
  "activity": [
   {
+   "id": "c271e307-615b-4e25-a382-4de62e420f08",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:42.661Z"
+  },
+  {
    "id": "57094aa5-8927-447d-842f-5c12c8d62b3c",
    "postId": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
    "postTitle": "La casa que respira",
@@ -6572,6 +6583,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2aefd2c5-2b83-4519-8d79-dc5d78c49524",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "tagged",
+   "text": "te etiquetó en “Aire nuevo sin abrir la ventana”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Aire nuevo sin abrir la ventana”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-03T15:29:42.661Z"
+  },
   {
    "id": "7c67f025-1f9a-4ed4-b010-58a8486ffd46",
    "to": "maca",

@@ -3628,6 +3628,14 @@
  ],
  "comments": [
   {
+   "id": "90cdd77f-893d-4793-adaf-eda3b64b0ff4",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "author": "maca",
+   "text": "Ideal q todos los post y reels muestres … y otros… mientras no tienen un número significativo de likes, porque el último tiene solo 5 ❤️",
+   "fileIds": [],
+   "createdAt": "2026-11-03T20:18:34.601Z"
+  },
+  {
    "id": "e2c1bfea-b782-402a-b26d-c25d251eb26a",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
    "author": "maca",
@@ -4804,6 +4812,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "9a651d18-f714-40e1-8c67-2078dbfd602f",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "postTitle": "Reel de prueba y subida de modelos",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T20:18:34.607Z"
+  },
   {
    "id": "ba49c152-52ec-4813-9f64-d479c97def2f",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
@@ -7157,6 +7175,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6a90a2f8-31b9-40f0-987c-e844ced33d7a",
+   "to": "javi",
+   "from": "maca",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "supervision",
+   "text": "comentó en “Reel de prueba y subida de modelos”: Ideal q todos los post y reels muestres … y otros… mientras no tienen un número …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Reel de prueba y subida de modelos”: Ideal q todos los post y reels muestres … y otros… mientras no tienen un número …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T20:18:34.608Z"
+  },
+  {
+   "id": "6ce862aa-e895-4a69-b516-e12491d49454",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "comment",
+   "text": "comentó en “Reel de prueba y subida de modelos”: Ideal q todos los post y reels muestres … y otros… mientras no tienen un número …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Reel de prueba y subida de modelos”: Ideal q todos los post y reels muestres … y otros… mientras no tienen un número …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-03T20:18:34.608Z"
+  },
   {
    "id": "f66a9cdc-057a-459f-9991-cc51f06ca9f2",
    "to": "javi",

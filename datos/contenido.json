@@ -1,7 +1,6 @@
 {
  "posts": [
   {
-   "id": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
    "title": "Una casa para todas las edades",
    "caption": "Una casa no es solo para hoy. Contamos con modelos compatibles con accesibilidad universal y podemos incorporar adaptaciones específicas si las necesitas, para que la casa acompañe a toda la familia en cada etapa. Envíaselo a quien está pensando en una casa para todos.\n\n#Neorigen #CasasPrediseñadas #AccesibilidadUniversal #CasaFamiliar #DiseñoInclusivo #CasaParaTodaLaVida #CasaSustentable #ConstruirEnChile",
    "notes": "Reel · mini documental · 35 s · busca envíos\n\nIdea. Contar que hay modelos compatibles con accesibilidad universal a través de una escena familiar de tres generaciones, no de una lista técnica. Le habla al núcleo de la audiencia (35–44 años), que piensa a la vez en sus hijos y en sus padres. Es un tema que el feed nunca ha tocado y que se envía al hermano o hermana con quien se conversa \"lo de los papás\".\n\nImagen. Planos tipo documental, luz natural, cámara al hombro: auto que llega, una persona mayor que entra a la casa sin escalones, niños corriendo por la terraza, mesa larga al final del día. Si se graba con una familia real, con su autorización escrita; si no, con renders animados del repo 3D.\n\nFuente. Preguntas frecuentes: \"¿Las casas pueden adaptarse a accesibilidad universal?\"; distribución y etapas de la vida en el blog Inspiración y Estilo de Vida Neorigen; visión \"vivir bien debe ser posible para todos\" en Quiénes somos.",
@@ -53,19 +52,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-12-01",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-12-01",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "b8027d81-f2ca-4941-8720-a2e6589ed1d4",
@@ -90,14 +91,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.448Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
    "title": "¿Qué casa calza con tu familia?",
    "caption": "Nueve casas prediseñadas, de 57 a 167 m² útiles, ordenadas por dormitorios para que encuentres tu punto de partida. Todas se ajustan a tu terreno y se entregan llave en mano. Guárdalo y envíaselo a quien va a vivir contigo.\n\n#Neorigen #CasasPrediseñadas #ModelosDeCasas #CasaFamiliar #CasaLlaveEnMano #CasaSustentable #ConstruirEnChile #PlanosDeCasas",
    "notes": "Carrusel mixto · 10 láminas (la 2 es video de 10 s) · busca guardados\n\nIdea. Una guía para elegir entre los 9 modelos agrupados por dormitorios, con los datos tal cual están en la página Casas. El feed muestra modelos de a uno (y la serie de historias sigue con Boldo); nunca los ha puesto lado a lado. Es la pieza que se guarda y se envía al grupo familiar antes de cotizar.\n\nLáminas:\n1. Portada (imagen): fila de casas en el paisaje. \"¿Qué casa calza con tu familia?\" · bajada: \"9 modelos, de 57 a 167 m² útiles.\"\n2. Video (10 s): recorrido 3D rápido que pasa de un modelo a otro.\n3. 1 dormitorio · Casa Lingue: 1 baño · 57 m² útiles · 6 meses de obra.\n4. 2 dormitorios · Huingán y Peumo: Huingán 2 baños · 73 m² · 7 meses — Peumo 2 baños · 87 m² · 7 meses.\n5. 2 dormitorios · Casa Ciprés (nuevo diseño): 2 baños · 95 m² · 7 meses.\n6. 3 y 4 dormitorios · Mañío y Boldo: Mañío 3D · 2 baños · 106 m² · un piso · 8 meses — Boldo 4D · 2 baños · ver dato por confirmar · 8 meses.\n7. 4 dormitorios · Roble y Maitén: Roble 3 baños · 142 m² · 9 meses — Maitén 4 baños · 145 m² · 10 meses.\n8. 3 dormitorios, el más amplio · Casa Coihue: 3 baños · 167 m² · 10 meses.\n9. ¿Ninguno calza? Cada modelo se ajusta a tu terreno, y también se diseñan casas a medida.\n10. Cierre: \"Todos con el mismo estándar llave en mano\" · \"Guárdalo y envíaselo a quien va a vivir contigo\" · logo.\n\nFuente. Casas (dormitorios, baños, m² útiles y plazo de cada modelo), Casa Mañío (un piso) y Diseño a medida.",
@@ -122,19 +121,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-28",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-28",
    "inicio": "",
+   "format": "carrusel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
    "platforms": [
     "instagram"
    ],
-   "format": "carrusel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "2cf68c3d-6116-42a8-8f77-9c1ba1715625",
@@ -159,14 +160,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.448Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "549a3272-d695-4f76-9011-a252831ac96c",
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "caption": "Así es el camino desde tu primer mensaje hasta la entrega de tu casa: seis etapas, con el valor fijo en UF desde la firma y atendido directamente por los dueños de Neorigen. El primer paso es el más fácil: escríbenos por DM o WhatsApp.\n\n#Neorigen #CasasPrediseñadas #ConstruirTuCasa #CasaLlaveEnMano #ProcesoDeObra #CasaSustentable #ConstruirEnChile #TuCasaPropia",
    "notes": "Reel · cortes rápidos · 30 s · busca alcance\n\nIdea. Quitarle miedo al primer contacto: mostrar el recorrido completo desde \"escribo por WhatsApp\" hasta la entrega, en seis cortes de unos 4 segundos. El feed ya mostró la obra y la entrega por separado, pero nunca el camino comercial completo ni el dato de que atienden los propios dueños.\n\nImagen. Un objeto por paso, en planos cenitales sobre mesa de madera, con un número grande en Fraunces: celular con chat abierto, libreta con dormitorios anotados, plano impreso, lápiz sobre contrato, toma real de obra, llave sobre la palma.\n\nFuente. Preguntas frecuentes: \"¿Cómo es el proceso desde que los contacto?\" y \"¿El precio puede cambiar después de firmar el contrato?\"; atención por los dueños en Quiénes somos (valor \"Servicio al cliente\").",
@@ -224,19 +223,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-26",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-26",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "549a3272-d695-4f76-9011-a252831ac96c",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "082043bb-5402-4d1b-aa1d-4e15272456ed",
@@ -256,14 +257,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "title": "Aire nuevo sin abrir la ventana",
    "caption": "¿Ventilar sin dejar entrar el polen, el polvo ni el calor de afuera? Eso hace un recuperador de calor: renueva el aire sin abrir ventanas y lo entrega ya templado. Es una de las soluciones que podemos incorporar en tu proyecto. Envíaselo a quien vive estornudando en primavera. 🌬️\n\n#Neorigen #CasasPrediseñadas #RecuperadorDeCalor #CalidadDelAire #CasaSustentable #EficienciaEnergética #Alergias #CasaSaludable",
    "notes": "Reel · POV de primavera · 35 s · busca envíos\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. POV de alguien que se acerca a abrir una ventana con polen en el aire a contraluz, se detiene y la deja cerrada. Luego un esquema animado de la casa: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
@@ -315,19 +314,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-24",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-24",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "f24cf854-55de-44f0-8362-b64e3a951d06",
@@ -347,14 +348,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
    "title": "La casa que respira",
    "caption": "Ese espacio entre el revestimiento y el muro es una de las decisiones más importantes de la casa: la fachada ventilada. Ayuda a regular la temperatura, evita la humedad y alarga la vida de la construcción. Lo que no se ve también se diseña.\n\n#Neorigen #CasasPrediseñadas #FachadaVentilada #ConstruirBien #CasaSustentable #EficienciaEnergética #DetallesQueImportan #ObraEnCurso",
    "notes": "Reel · grabado en obra con celular · 30 s · busca alcance\n\nIdea. Mostrar la fachada ventilada desde adentro de la obra, antes de que el revestimiento la tape: es un detalle que solo se ve durante la construcción. Sigue la fórmula del reel de proceso del 22 de julio (el mejor del año), pero enfocado en una sola solución en vez del proceso completo, así que no repite el reel de pilotes ni los de avance de obra.\n\nImagen. Celular en mano en obra (galería: 03 · Aislación y revestimiento). Mano que pasa por detrás de una tabla del revestimiento para mostrar el espacio de aire. Una animación simple superpuesta marca la cámara de aire en Niebla.\n\nFuente. Blog: Vivir de forma sustentable: el nuevo estándar en las casas de Neorigen, sección \"Fachadas ventiladas\".",
@@ -406,19 +405,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-21",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-21",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "7c789d37-2f62-4fce-bc1f-562968906c61",
@@ -433,14 +434,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "title": "Cómo se arma el precio de tu casa",
    "caption": "Sin letra chica: esto es lo que define el valor de una casa Neorigen y lo que queda fijo al firmar. Guárdalo para cuando vayas a cotizar, y si tienes dudas sobre tu caso, escríbenos por DM o WhatsApp.\n\n#Neorigen #CasasPrediseñadas #ConstruirTuCasa #CasaLlaveEnMano #PresupuestoDeObra #CasaSustentable #ConstruirEnChile #ParcelaDeAgrado",
    "notes": "Carrusel mixto · 9 láminas (la 2 es video de 8 s) · busca guardados\n\nIdea. Transparencia de precio sin publicar precios: qué mueve el valor de una casa y qué queda fijo al firmar. Es la duda que frena la compra en una decisión de este tamaño, y el feed no tiene ninguna pieza sobre ella. Formato de \"lo que conviene saber antes de cotizar\", muy guardable.\n\nLáminas:\n1. Portada (imagen): casa terminada con un plano encima. \"¿Cuánto cuesta construir tu casa?\" · bajada: \"Depende de 6 cosas.\"\n2. Video (8 s): manos sobre un plano y una calculadora, luego la casa terminada.\n3. Los 6 factores: tamaño · nivel de terminaciones · ubicación · accesos · características del terreno · personalizaciones.\n4. Punto de partida. Cada modelo tiene un valor base de construcción referencial. Si personalizas, el presupuesto se actualiza.\n5. El terreno cuenta. Se evalúan accesos, factibilidades y condiciones de construcción para que la propuesta calce con la obra real.\n6. Lo que no cambia. Al firmar el contrato, el valor queda establecido en UF. Solo cambia si tú pides cambios, ampliaciones o adicionales, y se cotizan y aprueban antes.\n7. Pagas por avance. Estados de pago asociados al progreso de la obra.\n8. Permisos. Neorigen los gestiona y van incluidos en el contrato. Los derechos que cobra la municipalidad y los certificados de empalme son de cargo del cliente.\n9. Cierre: \"Guárdalo antes de cotizar\" · \"Envíanos: ubicación del terreno, m² aproximados, referencias y presupuesto estimado\" · logo.\n\nFuente. Preguntas frecuentes: \"¿Cuánto cuesta una casa Neorigen?\", \"¿Cómo podré saber el costo final?\", \"¿Trabajan con estados de pago?\", \"¿El precio puede cambiar después de firmar?\", \"¿Se incluyen permisos municipales?\" y \"¿Cómo puedo cotizar?\".",
@@ -465,19 +464,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-19",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-19",
    "inicio": "",
+   "format": "carrusel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "platforms": [
     "instagram"
    ],
-   "format": "carrusel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "2e4859e9-8025-4ec5-b4c6-be65a7969f88",
@@ -492,14 +493,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "title": "Un domingo en el refugio",
    "caption": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
    "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.",
@@ -539,19 +538,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-17",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-17",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "29a5ff63-6c5b-48f3-8c98-f6db3d668be0",
@@ -571,14 +572,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "30efd072-8377-4a3a-96f6-e2a60dab643d",
    "title": "El muro que guarda el sol",
    "caption": "El Muro Trombe es una técnica de arquitectura bioclimática de los años 60: un muro macizo detrás de un vidrio que guarda el calor del sol durante el día y lo entrega de noche. En cada proyecto evaluamos si conviene según el clima, la ubicación y la orientación de tu terreno. Envíaselo a quien siempre tiene frío. ☀️\n\n#Neorigen #CasasPrediseñadas #MuroTrombe #ArquitecturaBioclimática #CasaSustentable #EficienciaEnergética #DiseñoPasivo #CasaEnElSur",
    "notes": "Reel · explicativo animado · 40 s · busca guardados y envíos\n\nIdea. Explicar el Muro Trombe como una escena de un día completo: el sol entra, el muro lo guarda, y de noche la casa sigue tibia. Es el tema más \"wow\" del blog y nunca ha salido en el feed. Se presenta como \"la casa que vas a tener lista para tu primer invierno\", porque se publica en primavera.\n\nImagen. Corte de una casa en 3D (repo de renders) con un arco de sol que avanza de izquierda a derecha y se oscurece hacia la noche. Flechas en Madera para el calor, en Niebla para el aire frío. Termina en una toma real de interior cálido con luz de lámpara.\n\nFuente. Blog: Muro Trombe: Eficiencia y Sostenibilidad para tu Hogar; condición de evaluación por proyecto en Preguntas frecuentes (\"¿Qué soluciones sustentables ofrecen?\").",
@@ -630,19 +629,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-14",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-14",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "30efd072-8377-4a3a-96f6-e2a60dab643d",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "a7782e56-7442-4a81-b8fe-d3f3644f9818",
@@ -662,14 +663,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
    "title": "Tu terreno no tiene luz ni alcantarillado",
    "caption": "Que tu terreno no tenga red eléctrica ni alcantarillado no significa que no puedas construir. Te dejamos las alternativas que se usan hoy y cómo elegir entre ellas. Guárdalo para cuando vayas a ver parcelas, y envíaselo a quien está buscando contigo.\n\n#Neorigen #CasasPrediseñadas #VivirEnParcela #CasaOffGrid #EnergíaSolar #ParcelaDeAgrado #CasaSustentable #ConstruirEnChile",
    "notes": "Carrusel mixto · 10 láminas (la 2 es video de 10 s) · busca guardados\n\nIdea. Una guía de consulta para quien tiene o está buscando parcela: qué opciones existen cuando no hay red eléctrica ni alcantarillado. Es contenido que se guarda \"para cuando vaya a ver terrenos\" y se envía a la pareja o al socio. Cada lámina con un pictograma propio en trazo redondo, en la línea de las portadas de destacados.\n\nLáminas:\n1. Portada (imagen): casa en paisaje rural, sin postes a la vista. \"¿Tu terreno no tiene luz ni alcantarillado?\" · bajada: \"Igual se puede construir.\"\n2. Video (10 s): dron o caminata por un terreno vacío. Rótulo: \"Sin red eléctrica · sin alcantarillado\".\n3. Energía solar. Paneles que convierten el sol en electricidad, con baterías para la noche y los días nublados.\n4. Viento y agua. Aerogeneradores si hay viento constante; microhidroeléctrica si hay un flujo de agua constante.\n5. Generador. Diésel o gasolina, solo como respaldo: más ruidoso, contaminante y depende de combustible.\n6. Fosa séptica. Separa y descompone sólidos y líquidos; el líquido tratado se filtra al suelo y los sólidos se bombean cada cierto tiempo.\n7. Planta de tratamiento (STAR). Procesos biológicos y químicos; tratamiento más completo, más costoso de instalar y mantener.\n8. Filtro de arena y lodos activados. Capas de arena y grava, eficaz en suelos permeables · microorganismos, como una planta municipal a pequeña escala.\n9. ¿Cuál conviene? Depende de ubicación, consumo estimado, orientación y nivel de autonomía que busques. Se evalúa en cada proyecto.\n10. Cierre: \"Guárdalo para cuando vayas a ver terrenos\" · \"Para cotizar: ubicación del terreno, m² aproximados, dormitorios y baños\" · logo.\n\nFuente. Preguntas frecuentes: \"¿Qué solución me pueden dar si mi terreno no tiene red de alcantarillado?\", \"…acceso a la red eléctrica?\", \"¿Pueden incorporar energía solar?\" y \"¿Cómo puedo cotizar?\".",
@@ -694,19 +693,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-12",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-12",
    "inicio": "",
+   "format": "carrusel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
    "platforms": [
     "instagram"
    ],
-   "format": "carrusel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "ed9415de-7287-4ac2-a034-ef272576d255",
@@ -721,14 +722,12 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {
-   "id": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "title": "¿Son prefabricadas?",
    "caption": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción tradicional, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
    "notes": "Reel · respuesta a comentario · 25 s · busca envíos\n\nIdea. Responder en video la duda más repetida, con el formato de respuesta a comentario de Instagram. Si hay un comentario o DM real con esa pregunta, se usa su sticker; si no, se abre con un rótulo \"Nos preguntan:\" y nunca se inventa un comentario. Aclara la diferencia de la marca sin sonar a defensa.\n\nImagen. Toma de obra con la estructura en pie (galería: 02 · Estructura), luego un modelo terminado en su paisaje. Cámara en mano, sin estabilizar demasiado.\n\nFuente. Preguntas frecuentes: \"¿Las casas son prefabricadas?\", \"¿Qué es Neorigen?\" y plazo de construcción.",
@@ -774,19 +773,21 @@
      ]
     ]
    },
-   "campaign": "10 publicaciones Neorigen",
-   "date": "2026-11-10",
+   "campaign": "Publicaciones informativas",
    "time": "",
+   "date": "2026-11-10",
    "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "platforms": [
     "instagram"
    ],
-   "format": "reel",
-   "status": "idea",
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [
     {
      "id": "c2eb51a7-b8e4-49cd-8d86-83ecc7727de0",
@@ -801,10 +802,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:07:28.689Z",
+   "updatedAt": "2026-11-03T15:28:42.449Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "revisions": 0,
    "publishedAt": null
   },
   {

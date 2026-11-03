@@ -1825,9 +1825,12 @@
    "caption": "Casa Huingán, nuestro modelo de la semana 🌿\n\nUna casa pensada para estar juntos sin renunciar a tu propio espacio. Su planta mariposa pone un dormitorio en cada ala y deja al centro el lugar donde todo pasa: la mesa compartida, la cocina abierta, las conversaciones que se alargan.\n\nAdentro, el techo se eleva hasta los 4,5 m y la luz entra de lleno. Mucho más que una doble altura: una sensación de amplitud que se vive en cada rincón.\n\nIdeal para dos parejas, para recibir a la familia o para que los amigos siempre tengan dónde quedarse.\n\n2 dormitorios, 2 baños y 73,8 m² útiles, en un solo nivel y con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaHuingan #ViveLoNatural #CasasPrediseñadas #CasasSustentables ",
    "notes": "",
    "hashtags": "",
-   "campaign": "",
+   "guion": "",
+   "guionTabla": null,
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-10-28",
+   "inicio": "",
    "format": "story",
    "status": "publicado",
    "priority": "normal",
@@ -2043,7 +2046,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-10-30T21:09:13.103Z",
+   "updatedAt": "2026-11-03T15:13:16.584Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-24T20:58:21.032Z",
    "createdBy": "javi",
@@ -2135,7 +2138,8 @@
      "hasta": "2026-10-29T21:54:06.240Z",
      "by": "javi"
     }
-   ]
+   ],
+   "marca": []
   },
   {
    "id": "e-diagnostico",
@@ -4651,6 +4655,16 @@
  ],
  "activity": [
   {
+   "id": "651219a1-5acf-49a4-9a67-30081c9cf57b",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "postTitle": "Video 3D Huingan",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó campaña",
+   "meta": null,
+   "createdAt": "2026-11-03T15:13:16.585Z"
+  },
+  {
    "id": "1fe2d0f0-848e-4e63-87d2-40aaacc7d038",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -6453,6 +6467,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4ed4ec23-b554-4f2d-86c8-973ff8c8274a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (campaña)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (campaña)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-11-03T15:13:16.585Z"
+  },
+  {
+   "id": "e04d5ff3-558b-4d3b-9e3b-4f11beb6c16e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "type": "update",
+   "text": "editó “Video 3D Huingan” (campaña)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Video 3D Huingan” (campaña)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181",
+   "createdAt": "2026-11-03T15:13:16.585Z"
+  },
   {
    "id": "e3888c87-3a87-45a5-b381-a357d8899212",
    "to": "maca",

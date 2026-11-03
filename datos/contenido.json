@@ -3628,6 +3628,14 @@
  ],
  "comments": [
   {
+   "id": "70394892-b453-4c33-a82a-f6e0060bae29",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Javi, te quería pedir probar la misma voz en off con IA lo más persona posible. Tal vez hombre? No sé si suene menos IA. Tu voz en lindaaaa pero suena extraña para el reel 😬🙏",
+   "fileIds": [],
+   "createdAt": "2026-11-03T20:21:35.097Z"
+  },
+  {
    "id": "90cdd77f-893d-4793-adaf-eda3b64b0ff4",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
    "author": "maca",
@@ -4812,6 +4820,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "826f2d95-3fe7-49fc-9126-7e508afe46a1",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T20:21:35.097Z"
+  },
   {
    "id": "9a651d18-f714-40e1-8c67-2078dbfd602f",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
@@ -7175,6 +7193,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "50951e3a-4865-4fce-ae5c-b2d1ada2a275",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Javi, te quería pedir probar la misma voz en off con IA lo más persona posible. …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Javi, te quería pedir probar la misma voz en off con IA lo más persona posible. …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T20:21:35.098Z"
+  },
+  {
+   "id": "b79d6888-1c84-4b11-8225-6ec6fd8e339e",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Javi, te quería pedir probar la misma voz en off con IA lo más persona posible. …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Javi, te quería pedir probar la misma voz en off con IA lo más persona posible. …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T20:21:35.098Z"
+  },
   {
    "id": "6a90a2f8-31b9-40f0-987c-e844ced33d7a",
    "to": "javi",

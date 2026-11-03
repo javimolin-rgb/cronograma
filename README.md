@@ -75,6 +75,28 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 - Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
 
 
+## Importar un documento de publicaciones
+
+En **+ → Importar un documento** entra un `.md` o `.txt` con varias publicaciones adentro —de los que traen guion, idea, copy y voz en off— y la app **separa sola las publicaciones del contexto**.
+
+- Cuenta como publicación la sección que trae **copy**, o una **tabla con voz en off**, o un título numerado con su línea de formato (*“Reel · POV · 18 s”*).
+- Todo lo demás —lo que ya está en el feed, las tendencias, la tabla “de un vistazo”, los datos por confirmar, las fuentes— queda marcado como **contexto** y no se importa, aunque puedes marcarlo si en algún caso sí lo quieres.
+- La tabla de resumen del documento (la de fechas) le pone a cada pieza su **fecha** y su **formato**; el resto sale de su propia sección.
+
+Antes de crear nada aparece la pantalla de **revisar**: cada publicación con su fecha, su formato y qué se encontró (guión de N filas, copy, enlaces), con su casilla para dejarla fuera. Abajo se elige la **campaña** —así quedan agrupadas en la carta Gantt— y con qué **estado** entran.
+
+De cada publicación se guarda:
+
+| En el documento | Dónde queda |
+|---|---|
+| Caption + hashtags | El **copy** de la pieza |
+| Tabla de tiempo · imagen · texto en pantalla · voz en off | El **guión**, como tabla |
+| Idea, imagen, láminas, fuente | Las **notas internas** |
+| Enlaces de la fuente | Los **enlaces** de la pieza |
+| Fecha sugerida y formato | La **fecha** y el **formato** |
+
+Si vuelves a importar el mismo documento, las que ya existen aparecen marcadas como repetidas y desmarcadas, así que no se duplican.
+
 ## Editar una pieza: lo justo a la vista
 
 La ventana de **editar pieza** está ordenada para que se vea poco y se encuentre todo.

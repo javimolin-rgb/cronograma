@@ -1353,6 +1353,164 @@ document.addEventListener('paste', (e) => {
   toast(`Tabla pegada · ${t.filas.length} fila${t.filas.length === 1 ? '' : 's'} y ${t.cols.length} columnas`, 3500);
 });
 
+/* ===== Importar un documento de publicaciones =====
+   Un documento como “10 publicaciones Neorigen” trae mucho contexto —lo que ya
+   está en el feed, las tendencias, los datos por confirmar, las fuentes— y, en el
+   medio, las publicaciones de verdad. Esto separa una cosa de la otra: cada
+   publicación entra como pieza con su copy, su guión en tabla y sus notas, y el
+   contexto se queda afuera (salvo que ella diga lo contrario). */
+const MESES_CORTOS = { ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5, jul: 6, ago: 7, sep: 8, set: 8, oct: 9, nov: 10, dic: 11 };
+const sinMd = (s) => String(s == null ? '' : s)
+  .replace(/\[([^\]]*)\]\(([^)]*)\)/g, '$1')
+  .replace(/\*\*([^*]+)\*\*/g, '$1')
+  .replace(/(^|[\s(])[*_]([^*_\n]+)[*_]($|[\s).,;:])/g, '$1$2$3')
+  .replace(/`/g, '')
+  .replace(/\\([#*_~[\]()])/g, '$1')
+  .trim();
+const RE_TAGS = /^\s*\\?#[^\s#]/;
+const RE_ETIQ = /^\s*\*\*\s*([^*]+?)\s*\*\*\s*/;
+
+// El documento en secciones: el título de arriba y cada “## …” con su cuerpo
+function partirSecciones(texto) {
+  const lineas = String(texto || '').replace(/\r/g, '').split('\n');
+  const out = [];
+  let act = { h: '', nivel: 0, cuerpo: [] };
+  lineas.forEach((l) => {
+    const m = l.match(/^(#{1,2})\s+(.*)$/);
+    if (m) { out.push(act); act = { h: m[2].trim(), nivel: m[1].length, cuerpo: [] }; }
+    else act.cuerpo.push(l);
+  });
+  out.push(act);
+  return out.filter((s) => s.h || s.cuerpo.some((l) => l.trim()));
+}
+// Todas las tablas de un cuerpo, ya convertidas a { cols, filas }
+function tablasDe(cuerpo) {
+  const bloques = [];
+  let act = [];
+  (cuerpo || []).forEach((l) => {
+    if (/^\s*\|/.test(l)) act.push(l);
+    else { if (act.length >= 2) bloques.push(act.slice()); act = []; }
+  });
+  if (act.length >= 2) bloques.push(act);
+  return bloques.map((ls) => tablaDeTexto(ls.join('\n'))).filter(Boolean);
+}
+/* Los trozos marcados con **Idea.**, **Imagen.**, **Caption.**, **Láminas**…
+   Devuelve { idea: '…', caption: '…', … } con el texto de cada uno. */
+function trozosEtiquetados(cuerpo) {
+  const marcas = [];
+  (cuerpo || []).forEach((l, i) => {
+    const m = l.match(RE_ETIQ);
+    if (m && m[1].length < 40) marcas.push({ i, nombre: m[1].replace(/[.:]$/, '').trim().toLowerCase(), resto: l.replace(RE_ETIQ, '') });
+  });
+  const out = {};
+  marcas.forEach((mk, k) => {
+    const hasta = k + 1 < marcas.length ? marcas[k + 1].i : (cuerpo || []).length;
+    const trozo = [mk.resto].concat(cuerpo.slice(mk.i + 1, hasta))
+      .filter((l) => !/^\s*\|/.test(l))           // las tablas van por su lado
+      .join('\n').replace(/\n{3,}/g, '\n\n').trim();
+    if (!out[mk.nombre]) out[mk.nombre] = trozo;
+  });
+  return out;
+}
+const enlacesDe = (txt) => {
+  const out = [];
+  String(txt || '').replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, label, url) => {
+    if (!out.some((l) => l.url === url)) out.push({ label: sinMd(label), url });
+    return '';
+  });
+  return out;
+};
+// “Lu 10 nov” → 2026-11-10
+function fechaSuelta(txt, anio) {
+  const m = String(txt || '').toLowerCase().match(/(\d{1,2})\s*(?:de\s+)?([a-záéíóú]{3,10})/);
+  if (!m) return '';
+  const mes = MESES_CORTOS[m[2].slice(0, 3)];
+  if (mes == null) return '';
+  const d = +m[1];
+  if (!(d >= 1 && d <= 31)) return '';
+  return `${anio}-${String(mes + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+const FORMATO_DOC = [[/carrusel/i, 'carrusel'], [/reel|video corto/i, 'reel'], [/story|historia/i, 'story'],
+  [/video/i, 'video'], [/banner|gr[áa]fica/i, 'banner'], [/art[íi]culo/i, 'articulo'], [/post/i, 'post']];
+const formatoDoc = (txt) => (FORMATO_DOC.find(([re]) => re.test(String(txt || ''))) || [, 'post'])[1];
+
+/* ¿Esta sección es una publicación o es contexto?
+   Una publicación trae copy, o un guión con voz en off, o un título numerado con
+   su línea de formato (“Reel · POV · 18 s”). El contexto no trae nada de eso. */
+function miraSeccion(sec, anio) {
+  const cuerpo = sec.cuerpo || [];
+  const trozos = trozosEtiquetados(cuerpo);
+  const tablas = tablasDe(cuerpo);
+  const guion = tablas.find((t) => t.cols.some((c) => /voz/i.test(c))) || null;
+  const numero = (sec.h.match(/^\s*(\d{1,2})\s*[.)]\s*/) || [])[1] || '';
+  const titulo = sinMd(sec.h.replace(/^\s*\d{1,2}\s*[.)]\s*/, '')).replace(/^["“'«]|["”'»]$/g, '').trim();
+  const lineaFormato = cuerpo.map((l) => l.trim()).find((l) => /^\*\*.+\*\*$/.test(l) && /reel|carrusel|story|historia|post\b/i.test(l) && l.includes('·')) || '';
+  const tags = cuerpo.filter((l) => RE_TAGS.test(l)).map((l) => sinMd(l)).join(' ').trim();
+  const caption = (trozos.caption || '').split('\n').filter((l) => !RE_TAGS.test(l)).join('\n').trim();
+  const esPieza = !!(caption || guion || (numero && lineaFormato));
+  return { numero, titulo, trozos, tablas, guion, lineaFormato: sinMd(lineaFormato), tags, caption, esPieza, cuerpo };
+}
+/* Lee el documento entero y devuelve lo que hay que mostrar para revisar */
+function leerDocumento(texto, nombre) {
+  const secs = partirSecciones(texto);
+  const cab = secs.find((s) => s.nivel === 1) || secs[0] || { h: '', cuerpo: [] };
+  const titulo = sinMd(cab.h) || sinMd(String(nombre || '').replace(/\.[a-z]+$/i, '').replace(/[_-]+/g, ' '));
+  const cuerpoCab = (cab.cuerpo || []).join('\n');
+  const anioDoc = +((cuerpoCab.match(/\b(20\d{2})\b/) || [])[1] || new Date().getFullYear());
+  const intro = sinMd((cab.cuerpo || []).filter((l) => l.trim() && !/^\s*\|/.test(l)).slice(0, 6).join('\n'));
+
+  const vistas = secs.filter((s) => s.nivel === 2).map((s) => miraSeccion(s, anioDoc));
+  // La tabla “de un vistazo” le pone fecha y formato a cada pieza
+  const agenda = new Map();
+  vistas.filter((v) => !v.esPieza).forEach((v) => v.tablas.forEach((t) => {
+    const iF = t.cols.findIndex((c) => /fecha/i.test(c));
+    const iP = t.cols.findIndex((c) => /pieza|publicaci|t[íi]tulo/i.test(c));
+    const iFo = t.cols.findIndex((c) => /formato/i.test(c));
+    const iN = t.cols.findIndex((c) => /^#$|n[úu]mero/i.test(c));
+    if (iF < 0 || (iP < 0 && iN < 0)) return;
+    let previa = '', anio = anioDoc;
+    t.filas.forEach((f) => {
+      let fecha = fechaSuelta(f[iF], anio);
+      if (fecha && previa && fecha < previa) { anio += 1; fecha = fechaSuelta(f[iF], anio); }   // cambió de año
+      if (fecha) previa = fecha;
+      const dato = { fecha, formato: iFo >= 0 ? sinMd(f[iFo]) : '', busca: '' };
+      if (iN >= 0 && String(f[iN]).trim()) agenda.set('n' + String(f[iN]).trim(), dato);
+      if (iP >= 0 && sinMd(f[iP])) agenda.set('t' + clave(sinMd(f[iP])), dato);
+    });
+  }));
+
+  const piezas = vistas.filter((v) => v.esPieza).map((v) => {
+    const agenda1 = agenda.get('n' + v.numero) || agenda.get('t' + clave(v.titulo)) || {};
+    const fuente = v.trozos.fuente || '';
+    const notas = [
+      v.lineaFormato,
+      v.trozos.idea ? `Idea. ${sinMd(v.trozos.idea)}` : '',
+      v.trozos.imagen ? `Imagen. ${sinMd(v.trozos.imagen)}` : '',
+      v.trozos['láminas'] || v.trozos.laminas ? `Láminas:\n${sinMd(v.trozos['láminas'] || v.trozos.laminas)}` : '',
+      fuente ? `Fuente. ${sinMd(fuente)}` : ''
+    ].filter(Boolean).join('\n\n');
+    const caption = [sinMd(v.caption), v.tags].filter(Boolean).join('\n\n');
+    return {
+      usar: true,
+      numero: v.numero,
+      titulo: v.titulo || 'Publicación',
+      fecha: agenda1.fecha || '',
+      formato: formatoDoc(v.lineaFormato || agenda1.formato || ''),
+      caption,
+      guionTabla: v.guion,
+      notas,
+      enlaces: enlacesDe(fuente).slice(0, 4)
+    };
+  });
+  const contexto = vistas.filter((v) => !v.esPieza).map((v) => ({
+    usar: false, titulo: v.titulo || 'Sección', fecha: '', formato: 'post', caption: '',
+    guionTabla: null, enlaces: [], contexto: true,
+    notas: sinMd((v.cuerpo || []).filter((l) => !/^\s*\|/.test(l)).join('\n')).slice(0, 4000)
+  }));
+  return { titulo, intro, anio: anioDoc, piezas, contexto };
+}
+const clave = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+
 /* ---------- Marca: la nube de recursos del equipo (manual, logos, música…) ---------- */
 const CATS_MARCA = [
   ['logos', 'Logos', 'image'], ['manual', 'Manual', 'folder'], ['tipografias', 'Tipografías', 'list'],
@@ -3598,7 +3756,95 @@ function openAgregar() {
       <label class="opt2">${ic('folder', 22)}<span><b>Importar zip de conversación</b><small>El .zip exportado de WhatsApp (con fotos y audios). Actualiza el estado de las piezas o crea las que falten.</small></span>
         <input type="file" id="zip-in" accept=".zip,application/zip,application/x-zip-compressed" hidden></label>
       <button class="opt2" data-act="imp-abrir">${ic('msg', 22)}<span><b>Pegar mensajes</b><small>Texto copiado de WhatsApp o un chat exportado sin archivos</small></span></button>
+      <label class="opt2">${ic('copy', 22)}<span><b>Importar un documento</b><small>Un .md o .txt con varias publicaciones (guion, copy y voz en off). Reconoce cuáles son publicaciones y cuál es el contexto.</small></span>
+        <input type="file" id="doc-in" accept=".md,.markdown,.txt,text/markdown,text/plain" hidden></label>
     </div>`);
+}
+
+/* La pantalla para revisar lo que trae el documento antes de crear nada */
+let DOC = null;
+async function importarDoc(file) {
+  if (!file) return;
+  if (!puedeImportar()) { toast('Primero entra con tu clave'); return; }
+  openSheet(`<div class="ph"><h2>Importar documento</h2><span style="width:40px"></span></div><div class="pb" style="min-height:240px"></div>`, true);
+  cargando('Leyendo el documento…', `${file.name} · ${prettySize(file.size)}`);
+  await respirar();
+  let texto = '';
+  try { texto = await file.text(); }
+  catch (e) { sinCargando(); toast('No se pudo leer el documento: ' + ((e && e.message) || e), 6000); closeSheet(); return; }
+  const r = leerDocumento(texto, file.name);
+  sinCargando();
+  if (!r.piezas.length) {
+    openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Importar documento</h2><span style="width:40px"></span></div>
+      <div class="pb"><div class="empty"><b>No encontré publicaciones</b>Este documento no trae secciones con copy ni con guión. Un documento sirve si cada publicación va en su propio título (“## 1. Nombre”) con su copy y, si lo tiene, su tabla de guión.</div></div>`, true);
+    return;
+  }
+  DOC = { nombre: file.name, titulo: r.titulo, intro: r.intro, piezas: r.piezas, contexto: r.contexto, campana: r.titulo.split(/\s[—–·|:]\s/)[0].trim().slice(0, 60), estado: 'idea' };
+  DOC.piezas.forEach((p) => { p.repetida = S.db.posts.some((x) => clave(x.title) === clave(p.titulo)); if (p.repetida) p.usar = false; });
+  renderDoc();
+}
+function renderDoc() {
+  if (!DOC) return;
+  const elegidas = DOC.piezas.concat(DOC.contexto).filter((p) => p.usar);
+  const fila = (p, i, esCtx) => `<label class="docfila${p.usar ? ' on' : ''}${esCtx ? ' ctx' : ''}">
+    <span class="cb2"><input type="checkbox" data-act="doc-usar" data-i="${i}" data-ctx="${esCtx ? 1 : 0}"${p.usar ? ' checked' : ''}><span>${ic('check', 16)}</span></span>
+    <span class="doct">
+      <b>${p.numero ? esc(p.numero) + '. ' : ''}${esc(p.titulo)}</b>
+      <small>${[esCtx ? 'contexto del documento' : formatName(p.formato), p.fecha ? cap(fmtShort(p.fecha)) : 'sin fecha',
+        p.guionTabla ? `guión de ${p.guionTabla.filas.length} filas` : '', p.caption ? 'con copy' : '',
+        p.enlaces.length ? `${p.enlaces.length} enlace${p.enlaces.length === 1 ? '' : 's'}` : ''].filter(Boolean).map(esc).join(' · ')}</small>
+      ${p.repetida ? '<small class="docrep">Ya existe una pieza con este nombre</small>' : ''}
+    </span></label>`;
+  $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Revisar e importar</h2><span style="width:40px"></span></div>
+    <div class="pb" id="doc-pb">
+      <div class="docdoc"><b>${esc(DOC.titulo)}</b><small>${esc(DOC.nombre)} · ${DOC.piezas.length} ${DOC.piezas.length === 1 ? 'publicación' : 'publicaciones'} y ${DOC.contexto.length} ${DOC.contexto.length === 1 ? 'sección' : 'secciones'} de contexto</small></div>
+      <label class="lbl">Publicaciones <small>${DOC.piezas.filter((p) => p.usar).length} de ${DOC.piezas.length}</small></label>
+      ${DOC.piezas.map((p, i) => fila(p, i, false)).join('')}
+      ${DOC.contexto.length ? `<label class="lbl">Contexto <small>no son publicaciones</small></label>
+        <p class="hint" style="margin-top:0">Esto es lo que el documento cuenta alrededor: lo que ya está publicado, las tendencias, los datos por confirmar y las fuentes. No se importa, salvo que lo marques.</p>
+        ${DOC.contexto.map((p, i) => fila(p, i, true)).join('')}` : ''}
+      <label class="lbl">Campaña <small>agrupa estas piezas en la carta Gantt</small></label>
+      <input class="field" id="doc-camp" value="${esc(DOC.campana)}" placeholder="Ej. 10 publicaciones Neorigen">
+      <label class="lbl">Entran como</label>
+      <div class="chips">${STATUSES.slice(0, 4).map((st) => `<button class="chip${DOC.estado === st.id ? ' on' : ''}" style="--c:${st.color}" data-act="doc-estado" data-v="${st.id}">${esc(st.name)}</button>`).join('')}</div>
+      <p class="hint">Cada publicación entra con su copy (con los hashtags), su guión en tabla, la idea y las láminas en las notas internas, y las fuentes como enlaces.</p>
+    </div>
+    <div class="pf"><button class="btn block" data-act="doc-crear"${elegidas.length ? '' : ' disabled'}>Crear ${elegidas.length} pieza${elegidas.length === 1 ? '' : 's'}</button></div>`;
+}
+async function crearDesdeDoc() {
+  if (!DOC || !requireWrite()) return;
+  const c = $('#doc-camp');
+  if (c) DOC.campana = c.value.trim();
+  const elegidas = DOC.piezas.concat(DOC.contexto).filter((p) => p.usar);
+  if (!elegidas.length) return;
+  cargando('Creando las piezas…', `${elegidas.length} en total`);
+  const at = nowISO();
+  let hechas = 0;
+  for (const p of elegidas) {
+    cargando('Creando las piezas…', `${hechas + 1} de ${elegidas.length} · ${p.titulo}`);
+    await respirar();
+    const post = {
+      id: uid(), title: p.titulo, caption: p.caption || '', notes: p.notas || '', hashtags: '',
+      guion: '', guionTabla: p.guionTabla || null, campaign: DOC.campana || '',
+      date: p.fecha || '', time: '', inicio: '',
+      platforms: p.contexto ? [] : ['instagram'], format: p.formato || 'post',
+      status: DOC.estado || 'idea', assignees: [S.me.id], priority: 'normal',
+      links: (p.enlaces || []).map((l) => ({ id: uid(), label: l.label.slice(0, 60), url: l.url })),
+      files: [], checklist: [], artefactos: [], versionesTexto: [], marca: [],
+      createdAt: at, createdBy: S.me.id, updatedAt: at, updatedBy: S.me.id,
+      statusChangedAt: at, revisions: 0, publishedAt: null
+    };
+    try {
+      await save('posts', post);
+      await log(post, 'created', `creó la pieza desde “${DOC.titulo}”`);
+      hechas++;
+    } catch (e) { console.error(e); }
+  }
+  sinCargando();
+  closeSheet();
+  DOC = null;
+  renderAll();
+  toast(`${hechas} pieza${hechas === 1 ? '' : 's'} creada${hechas === 1 ? '' : 's'} desde el documento`, 5000);
 }
 
 /* Aviso de "cargando" encima de la hoja: puede tardar, pero siempre se ve que está trabajando */
@@ -4288,6 +4534,21 @@ const ACTS = {
     else d.date = (S.view === 'calendar' && S.sel) || today();
     renderEditor();
   },
+  'doc-usar': (el) => {
+    if (!DOC) return;
+    const lista = el.dataset.ctx === '1' ? DOC.contexto : DOC.piezas;
+    const p = lista[+el.dataset.i]; if (!p) return;
+    p.usar = !p.usar;
+    const c = $('#doc-camp'); if (c) DOC.campana = c.value;
+    renderDoc();
+  },
+  'doc-estado': (el) => {
+    if (!DOC) return;
+    const c = $('#doc-camp'); if (c) DOC.campana = c.value;
+    DOC.estado = el.dataset.v;
+    renderDoc();
+  },
+  'doc-crear': () => crearDesdeDoc(),
   'gt-fila': () => {
     if (!ED || !requireWrite()) return;
     syncDraft();
@@ -4529,6 +4790,7 @@ document.addEventListener('change', (e) => {
     if (a) { a.origen = normUrl(t.value) || ''; toast('Enlace anotado · guarda la pieza'); }
   }
   else if (t.id === 'zip-in') { const f = t.files[0]; t.value = ''; importarZip(f); }
+  else if (t.id === 'doc-in') { const f = t.files[0]; t.value = ''; importarDoc(f); }
   else if (t.id === 'imp-archivos') { const fs = [...t.files]; t.value = ''; elegirArchivosImport(fs); }
 });
 /* Arrastrar y soltar en el tablero (escritorio) */

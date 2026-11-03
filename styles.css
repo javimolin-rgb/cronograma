@@ -138,8 +138,8 @@ main{padding:0 var(--gut);max-width:100%}
 .gdia{flex:none;width:var(--dia);text-align:center;font-size:0.5625rem;font-weight:700;color:var(--muted);padding:1px 0 3px}
 .gdia.fin{background:color-mix(in srgb,var(--ink) 4%,transparent)}
 .gdia.hoy{background:var(--accent);color:var(--accent-ink);border-radius:6px}
-.gcamp .getq{font-size:0.6875rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.gcamp .gpista{height:22px;background:none}
+.gcamp .getq{font-size:0.6875rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;padding-top:7px}
+.gcamp .gpista{height:26px;background:none}
 .ghoy{position:absolute;left:calc(var(--d) * var(--dia));top:0;bottom:0;width:2px;background:var(--accent);opacity:.5;pointer-events:none}
 .gbar{position:absolute;top:5px;height:24px;left:calc(var(--d) * var(--dia) + 2px);width:calc(var(--w) * var(--dia) - 4px);
   border-radius:8px;background:color-mix(in srgb,var(--c) 24%,var(--surface));color:var(--ink);display:flex;align-items:center;padding:0 7px 0 9px;overflow:hidden;
@@ -297,6 +297,19 @@ textarea.gcel{display:block;min-height:30px;white-space:pre-wrap;overflow:hidden
 .gtabla .gacc{width:34px;padding:0;text-align:center;border-left:1px solid var(--line)}
 .gtabla .gacc .iconbtn{width:28px;height:28px}
 .tablaacts{margin:8px 0 2px;gap:6px}
+
+/* Revisar lo que trae un documento */
+.docdoc{padding:11px 13px;border-radius:14px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.docdoc b{display:block;font-size:0.9375rem;line-height:1.25}
+.docdoc small{color:var(--muted);font-size:0.6875rem}
+.docfila{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;margin-bottom:6px;border-radius:14px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.docfila.on{box-shadow:inset 0 0 0 1.5px var(--accent)}
+.docfila.ctx{background:var(--surface2);opacity:.9}
+.docfila .cb2{flex:none;margin-top:1px}
+.doct{min-width:0;flex:1}
+.doct b{display:block;font-size:0.8125rem;font-weight:700;line-height:1.3}
+.doct small{display:block;color:var(--muted);font-size:0.6875rem;margin-top:2px}
+.doct .docrep{color:var(--danger);font-weight:600}
 .person{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);font-weight:600}
 .person.on{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--c)}
 .person .av{width:30px;height:30px;font-size:0.8125rem}

@@ -190,6 +190,7 @@ const IC = {
   monitor: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
   send: '<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>',
   left: '<path d="M15 18l-6-6 6-6"/>',
+  down: '<path d="M6 9l6 6 6-6"/>',
   right: '<path d="M9 18l6-6-6-6"/>',
   msg: '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>',
   alert: '<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/>',
@@ -264,7 +265,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
+    title: '', caption: '', notes: '', hashtags: '', guion: '', campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -387,13 +388,13 @@ async function notify(type, post, targets, text) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', hashtags: 'hashtags', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
-const CONTENT_FIELDS = ['title', 'caption', 'hashtags', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
+const CONTENT_FIELDS = ['title', 'caption', 'guion', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
-const TEXT_FIELDS = ['title', 'caption', 'hashtags', 'notes'];
+const TEXT_FIELDS = ['title', 'caption', 'guion', 'notes'];
 // De esos, los que vale la pena avisarle al equipo (las notas son internas)
-const AVISO_TEXTOS = ['caption', 'title', 'hashtags'];
-const NOMBRE_TEXTO = { caption: 'el copy', title: 'el título', hashtags: 'los hashtags', notes: 'las notas' };
+const AVISO_TEXTOS = ['caption', 'title', 'guion'];
+const NOMBRE_TEXTO = { caption: 'el copy', title: 'el título', guion: 'el guión', hashtags: 'los hashtags', notes: 'las notas' };
 function textosCambiados(viejo, nuevo) {
   if (!viejo || !nuevo) return [];
   return AVISO_TEXTOS.filter((k) => String(viejo[k] || '').trim() !== String(nuevo[k] || '').trim());
@@ -486,7 +487,7 @@ function filtered() {
     if (f.platform && !p.platforms.includes(f.platform)) return false;
     if (f.status && p.status !== f.status) return false;
     if (f.format && p.format !== f.format) return false;
-    if (q && !`${p.title} ${p.caption} ${p.hashtags} ${p.notes} ${p.campaign || ''}`.toLowerCase().includes(q)) return false;
+    if (q && !`${p.title} ${p.caption} ${p.guion || ''} ${p.notes} ${p.campaign || ''}`.toLowerCase().includes(q)) return false;
     return true;
   });
 }
@@ -908,7 +909,7 @@ function viewResultados() {
   return `<div class="resfeed">${piezas.map((p) => {
     const files = pieceFiles(p, true); // solo la versión final de cada archivo
     const st = statusOf(p.status);
-    const tags = (p.hashtags || '').trim();
+    const gui = (p.guion || '').trim();
     return `<article class="res" style="--c:${st.color}">
       <header>
         <div><h3>${esc(p.title)}</h3>
@@ -921,7 +922,7 @@ function viewResultados() {
         ${artefactoHtml(p, false)}
         ${marcaEnPiezaHtml(p, false)}
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
-        ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
+        ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p></details>` : ''}
         ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
         ${publicadoHtml(p)}
         <div class="resacts">
@@ -982,7 +983,7 @@ function postHtml(p, t) {
   const vis = abiertos ? coms : coms.slice(-3);
   const autor = person(p.updatedBy || p.createdBy);
   const puedeAprobar = !['aprobado', 'programado', 'publicado'].includes(p.status);
-  const tags = (p.hashtags || '').trim();
+  const gui = (p.guion || '').trim();
   const ig = S.feedVista === 'ig';
   return `<article class="post" style="--c:${st.color}">
     <header class="posth">${ig ? `<span class="logo sm">${marca()}</span>` : av(autor.id, 'md')}
@@ -999,7 +1000,7 @@ function postHtml(p, t) {
       ${artefactoHtml(p, false)}
       ${marcaEnPiezaHtml(p, false)}
       ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
-      ${tags ? `<p class="tags">${esc(tags)}</p>` : ''}
+      ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p></details>` : ''}
       <div class="postcoms">
         ${coms.length > vis.length ? `<button class="lnk" data-act="feed-mas" data-id="${esc(p.id)}">Ver los ${coms.length} comentarios</button>` : ''}
         ${vis.map((c) => {
@@ -2066,25 +2067,31 @@ function openEditor(id, preset = {}) {
   if (id && !old) { toast('Esa pieza ya no existe'); return; }
   if (old) marcarVisto(old.id);
   const d = old ? clone(old) : {
-    id: uid(), title: '', caption: '', notes: '', hashtags: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
+    id: uid(), title: '', caption: '', notes: '', hashtags: '', guion: '', campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], inicio: '', priority: 'normal', links: [], files: [], checklist: []
   };
-  ED = { old, d, comment: '', comFiles: [], verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
+  ED = { old, d, abre: {}, multiPlat: d.platforms.length > 1, comment: '', comFiles: [], verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
   renderEditor();
 }
-/* Compartir con enlace directo: en el teléfono abre el menú de compartir de siempre
-   (WhatsApp, correo…), y si el navegador no lo tiene, copia el enlace. */
-async function compartir(url, titulo, texto) {
-  const datos = { url, title: titulo || CFG.APP_NAME };
-  if (texto) datos.text = texto;
-  if (navigator.share) {
-    try { await navigator.share(datos); return true; }
-    catch (e) { if (e && e.name === 'AbortError') return true; }
-  }
-  const ok = await copiarTexto(texto ? `${texto}\n${url}` : url);
-  toast(ok ? 'Enlace copiado' : 'No se pudo copiar; mantén apretado el enlace', 3500);
-  return ok;
+/* Compartir con enlace directo. Siempre se pregunta cómo: copiar el enlace tal cual
+   (para pegarlo donde sea) o pasarlo al menú de compartir del teléfono. */
+let ENLACE = null;
+function compartir(url, titulo, texto) {
+  if (!url) return false;
+  ENLACE = { url, titulo: titulo || CFG.APP_NAME, texto: texto || '' };
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Compartir</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      ${titulo ? `<p class="hint" style="margin-top:0">${esc(titulo)}</p>` : ''}
+      <input class="field enlacein" id="enlace-url" readonly value="${esc(url)}" aria-label="Enlace">
+      <div class="vlist" style="margin-top:12px">
+        <button class="vrow" data-act="enlace-copiar">${ic('copy', 18)}<span><b>Copiar enlace</b><small>para pegarlo donde quieras</small></span></button>
+        ${navigator.share ? `<button class="vrow" data-act="enlace-compartir">${ic('share', 18)}<span><b>Compartir…</b><small>WhatsApp, correo, mensajes, notas</small></span></button>` : ''}
+        <button class="vrow" data-act="enlace-abrir">${ic('eye', 18)}<span><b>Abrir</b><small>para ver qué va a ver quien lo reciba</small></span></button>
+      </div>
+    </div>`);
+  setTimeout(() => { const i = $('#enlace-url'); if (i) { i.focus(); i.setSelectionRange(0, i.value.length); } }, 120);
+  return true;
 }
 const urlPublica = (ruta) => (siteBase().replace(/\/?$/, '/')) + String(ruta || '').split('/').map(encodeURIComponent).join('/');
 const urlArchivo = (f) => f && (f.path ? urlPublica(f.path) : (f.url || ''));
@@ -2137,13 +2144,25 @@ function syncDraft() {
   if (!ED || !$('#e-title')) return;
   const g = (i) => document.getElementById(i), d = ED.d;
   const val = (i) => { const e = g(i); return e ? e.value : ''; };
-  d.title = g('e-title').value; d.date = val('e-date'); d.time = val('e-time'); d.format = val('e-format') || d.format;
+  d.title = g('e-title').value;
+  if (g('e-date')) { d.date = val('e-date'); d.time = val('e-time'); }
   if (g('e-inicio')) d.inicio = val('e-inicio');
-  if (!d.date || (d.inicio && d.inicio > d.date)) d.inicio = d.date ? d.date : '';
-  d.caption = g('e-caption').value; d.hashtags = g('e-tags').value; d.notes = g('e-notes').value; d.campaign = g('e-camp').value;
+  if (!d.date || (d.inicio && d.inicio > d.date)) d.inicio = d.date ? d.inicio && d.inicio > d.date ? d.date : d.inicio : '';
+  if (g('e-format')) d.format = val('e-format') || d.format;
+  if (g('e-status')) d.status = val('e-status') || d.status;
+  if (g('e-prio')) d.priority = val('e-prio') === 'alta' ? 'alta' : 'normal';
+  if (g('e-plat')) {
+    const v = val('e-plat');
+    if (v === '__varias') ED.multiPlat = true;
+    else { d.platforms = v ? [v] : []; ED.multiPlat = false; }
+  }
+  d.caption = g('e-caption').value;
+  if (g('e-guion')) d.guion = g('e-guion').value;
+  if (g('e-notes')) d.notes = g('e-notes').value;
+  if (g('e-camp')) d.campaign = g('e-camp').value;
   ED.comment = g('e-comment') ? g('e-comment').value : '';
-  ED.newLink = { label: g('e-llabel').value, url: g('e-lurl').value };
-  ED.newCheck = g('e-newck').value;
+  if (g('e-llabel')) ED.newLink = { label: g('e-llabel').value, url: g('e-lurl').value };
+  if (g('e-newck')) ED.newCheck = g('e-newck').value;
   $$('#pb input.ckt').forEach((i) => { const it = d.checklist.find((c) => c.id === i.dataset.ck); if (it) it.text = i.value; });
 }
 const mentionHtml = (t) => esc(t).replace(new RegExp('@(' + P.map((x) => x.name).join('|') + ')', 'gi'), '<span class="mention">@$1</span>').replace(/\n/g, '<br>');
@@ -2153,9 +2172,32 @@ function normUrl(u) {
   return /^https?:\/\//i.test(u) ? u : '';
 }
 
+function bloqueLleno(k) {
+  const d = ED && ED.d; if (!d) return false;
+  if (k === 'inicio') return !!d.inicio;
+  if (k === 'guion') return !!(d.guion || '').trim();
+  if (k === 'interactivo') return !!(artefactosDe(d).length || (ED && ED.art));
+  if (k === 'marca') return !!marcaDe(d).length;
+  if (k === 'enlaces') return !!linksVisibles(d).length;
+  if (k === 'checklist') return !!d.checklist.length;
+  if (k === 'campana') return !!(d.campaign || '').trim();
+  if (k === 'notas') return !!(d.notes || '').trim();
+  return false;
+}
+// ¿La pieza va a varias plataformas? Entonces el menú muestra “Varias…” y salen los chips
+const variasPlat = (d) => d.platforms.length > 1 || !!(ED && ED.multiPlat);
+/* Lo que no se usa casi nunca (guión, interactivo, enlaces, checklist, campaña, notas)
+   vive plegado en una línea; si tiene algo adentro se abre solo. */
+function bloque(k, titulo, lleno, resumen, cuerpo) {
+  const abierto = (k in ED.abre) ? ED.abre[k] : lleno;
+  return `<div class="bloque${abierto ? ' on' : ''}${lleno ? ' lleno' : ''}">
+    <button class="bloqueh" data-act="ed-bloque" data-k="${esc(k)}">${ic(abierto ? 'down' : 'right', 15)}<b>${esc(titulo)}</b>${resumen ? `<small>${esc(resumen)}</small>` : ''}${abierto || lleno ? '' : '<i>+</i>'}</button>
+    ${abierto ? `<div class="bloquec">${cuerpo()}</div>` : ''}</div>`;
+}
 function renderEditor() {
   if (!ED || !sheetOpen) return;
   const { d, old } = ED, sc = $('#pb') ? $('#pb').scrollTop : 0;
+  ED.abre = ED.abre || {};
   const comments = old ? S.db.comments.filter((c) => c.postId === d.id).sort((a, b) => (a.createdAt < b.createdAt ? -1 : 1)) : [];
   const acts = old ? S.db.activity.filter((a) => a.postId === d.id).sort(descBy('createdAt')).slice(0, 15) : [];
   const camps = [...new Set(S.db.posts.map((p) => p.campaign).filter(Boolean))];
@@ -2167,34 +2209,42 @@ function renderEditor() {
     <input id="e-title" class="title-in" placeholder="Título de la pieza" value="${esc(d.title)}" autocomplete="off">
     ${historialTextoHtml(d, 'title')}
 
-    <label class="lbl">Estado</label>
-    <div class="chips scroll">${STATUSES.map((s) => `<button class="chip${d.status === s.id ? ' on' : ''}" style="--c:${s.color}" data-act="ed-status" data-v="${s.id}">${esc(s.name)}</button>`).join('')}</div>
+    <div class="row2">
+      <div><label class="lbl">Estado</label>
+        <select class="sel estsel" id="e-status" style="--c:${st.color}">${STATUSES.map((s) => `<option value="${s.id}"${d.status === s.id ? ' selected' : ''}>${esc(s.name)}</option>`).join('')}</select></div>
+      <div><label class="lbl">Etiquetar <small>les llega aviso</small></label>
+        <div class="chips gente">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}" title="${esc(x.name)}" aria-label="${esc(x.name)}">${av(x.id)}</button>`).join('')}</div></div>
+    </div>
     ${old ? `<div class="stage" style="--c:${st.color}"><i></i>${esc(statusOf(old.status).name)} desde ${ago(old.statusChangedAt || old.createdAt)}${isStalled(old) ? ' · <b class="stuck">estancada</b>' : ''}</div>` : ''}
 
     <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
-    <div class="row2"${d.date ? '' : ' hidden'}><input class="field" id="e-date" type="date" value="${esc(d.date || '')}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>
-    <div class="chips"><button class="chip${d.date ? '' : ' on'}" data-act="ed-sinfecha">${ic('check', 15)} Sin fecha límite</button></div>
-    ${d.date ? `<label class="lbl">Se trabaja desde <small>opcional, es donde empieza su barra en la carta Gantt</small></label>
-      <input class="field" id="e-inicio" type="date" value="${esc(d.inicio || '')}" max="${esc(d.date)}">` : ''}
+    ${d.date ? `<div class="row2"><input class="field" id="e-date" type="date" value="${esc(d.date)}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>` : ''}
+    <div class="chips">
+      <button class="chip${d.date ? '' : ' on'}" data-act="ed-sinfecha">${ic('check', 15)} Sin fecha límite</button>
+      ${d.date ? `<button class="chip${d.inicio ? ' on' : ''}" data-act="ed-bloque" data-k="inicio">${ic('chart', 14)} ${d.inicio ? 'Empieza el ' + esc(fmtShort(d.inicio)) : 'Se trabaja desde…'}</button>` : ''}
+    </div>
+    ${d.date && (ED.abre.inicio || d.inicio) ? `<input class="field" id="e-inicio" type="date" value="${esc(d.inicio || '')}" max="${esc(d.date)}">
+      <p class="hint">Donde empieza su barra en la carta Gantt. Vacío, se calcula solo.</p>` : ''}
 
-    <label class="lbl">Plataformas</label>
-    <div class="chips">${PLATFORMS.map((p) => `<button class="chip${d.platforms.includes(p.id) ? ' on' : ''}" style="--c:${p.color}" data-act="ed-plat" data-v="${p.id}">${esc(p.name)}</button>`).join('')}</div>
-
-    <div class="row2"><div><label class="lbl">Formato</label><select class="sel" id="e-format">${FORMATS.map((f) => `<option value="${f.id}"${d.format === f.id ? ' selected' : ''}>${esc(f.name)}</option>`).join('')}</select></div>
-      <div><label class="lbl">Prioridad</label><div class="chips"><button class="chip${d.priority === 'alta' ? ' on' : ''}" style="--c:#E5484D" data-act="ed-prio">${d.priority === 'alta' ? 'Alta' : 'Normal'}</button></div></div></div>
-
-    <label class="lbl">Etiquetar <small>reciben un aviso al guardar</small></label>
-    <div class="chips">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}">${av(x.id)}${esc(x.name)}</button>`).join('')}</div>
+    <div class="row3">
+      <div><label class="lbl">Plataforma</label>
+        <select class="sel" id="e-plat">
+          <option value=""${!d.platforms.length ? ' selected' : ''}>—</option>
+          ${PLATFORMS.map((p) => `<option value="${p.id}"${d.platforms.length === 1 && d.platforms[0] === p.id ? ' selected' : ''}>${esc(p.name)}</option>`).join('')}
+          <option value="__varias"${variasPlat(d) ? ' selected' : ''}>Varias…</option>
+        </select></div>
+      <div><label class="lbl">Formato</label>
+        <select class="sel" id="e-format">${FORMATS.map((f) => `<option value="${f.id}"${d.format === f.id ? ' selected' : ''}>${esc(f.name)}</option>`).join('')}</select></div>
+      <div><label class="lbl">Prioridad</label>
+        <select class="sel" id="e-prio"><option value="normal"${d.priority !== 'alta' ? ' selected' : ''}>Normal</option><option value="alta"${d.priority === 'alta' ? ' selected' : ''}>Alta</option></select></div>
+    </div>
+    ${variasPlat(d) ? `<div class="chips">${PLATFORMS.map((p) => `<button class="chip${d.platforms.includes(p.id) ? ' on' : ''}" style="--c:${p.color}" data-act="ed-plat" data-v="${p.id}">${esc(p.name)}</button>`).join('')}</div>` : ''}
 
     <label class="lbl">Copy / texto <small id="e-count">${d.caption.length} caracteres</small>
       <span class="lblacts"><button class="lnk" data-act="ed-sel-copy">Seleccionar todo</button><button class="lnk" data-act="ed-copiar-copy">${ic('copy', 13)} Copiar</button></span></label>
     <textarea class="area" id="e-caption" placeholder="Texto de la publicación…">${esc(d.caption)}</textarea>
     ${historialTextoHtml(d, 'caption')}
-    <label class="lbl">Hashtags</label><input class="field" id="e-tags" placeholder="#marca #campaña" value="${esc(d.hashtags)}">
-    ${historialTextoHtml(d, 'hashtags')}
     ${old && esAdmin() && store.canWrite ? `<div class="avisobar" id="aviso-texto"${textosCambiados(old, d).length ? '' : ' hidden'}>${ic('send', 18)}<span>Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
-    <label class="lbl">Campaña / pilar</label><input class="field" id="e-camp" list="camps" placeholder="Ej. Lanzamiento, Educativo…" value="${esc(d.campaign || '')}">
-    <datalist id="camps">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
 
     ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
@@ -2218,29 +2268,40 @@ function renderEditor() {
 
     ${colaHtml(ED.cola)}
     ${ED.comprimiendo ? `<div class="avisobar"><span id="comprimiendo">Comprimiendo “${esc(ED.comprimiendo.nombre)}”… ${Math.round((ED.comprimiendo.pct || 0) * 100)}%</span></div>` : ''}
-    ${(() => {
-      if (ED.art) return `<label class="lbl">Interactivo</label><div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}${ED.art.bytesTotal ? ` · ${esc(prettySize(ED.art.bytes))} de ${esc(prettySize(ED.art.bytesTotal))}` : ''}…<br><small>Deja la app abierta hasta que termine.</small></span></div>`;
-      const tarjetas = artefactoHtml(d, true);
-      if (!puedeArtefactos()) return tarjetas;
-      return `${tarjetas || `<label class="lbl">Interactivo <small>una página para probar opciones</small></label>`}
-        <label class="btn ghost sm arteup arteadd">${ic('plus', 16)} ${artefactosDe(d).length ? 'Subir otro interactivo' : 'Subir un interactivo (.zip)'}<input type="file" accept=".zip,application/zip" data-art-nuevo="1"></label>
-        <p class="hint">Un .zip con su <b>index.html</b> adentro: lo que entrega Claude al descargar un artefacto. Si subes otra vez el mismo, se actualiza en vez de repetirse.</p>`;
-    })()}
-
-    ${marcaEnPiezaHtml(d, esAdmin() && store.canWrite)}
 
     ${publicadoHtml(d)}
 
-    <label class="lbl">Enlaces <small>Canva, Drive, Figma…</small></label>
-    ${linksVisibles(d).map((l) => `<div class="linkrow">${ic('link', 18)}<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a><button data-act="ed-rmlink" data-id="${esc(l.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
-    <div class="addrow"><input class="field" id="e-llabel" placeholder="Nombre" value="${esc(ED.newLink.label)}" style="flex:1"><input class="field" id="e-lurl" inputmode="url" placeholder="https://…" value="${esc(ED.newLink.url)}" style="flex:2"><button class="btn sm" data-act="ed-addlink">${ic('plus', 16)}</button></div>
+    ${bloque('guion', 'Guión / voz en off', !!(d.guion || '').trim(), (d.guion || '').trim() ? `${(d.guion || '').trim().split(/\s+/).length} palabras` : '', () => `
+      <textarea class="area" id="e-guion" style="min-height:110px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
+      ${historialTextoHtml(d, 'guion')}`)}
 
-    <label class="lbl">Checklist <small>${d.checklist.filter((c) => c.done).length}/${d.checklist.length}</small></label>
-    ${d.checklist.map((c) => `<div class="ck"><label class="cb2"><input type="checkbox" data-act="ed-check" data-ck="${esc(c.id)}"${c.done ? ' checked' : ''}><span>${ic('check', 16)}</span></label><input class="ckt" data-ck="${esc(c.id)}" value="${esc(c.text)}"><button data-act="ed-rmcheck" data-id="${esc(c.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
-    <div class="addrow"><input class="field" id="e-newck" placeholder="Ej. Revisar ortografía" value="${esc(ED.newCheck)}"><button class="btn sm" data-act="ed-addcheck">${ic('plus', 16)}</button></div>
+    ${bloque('interactivo', 'Interactivo', !!(artefactosDe(d).length || ED.art), artefactosDe(d).length ? `${artefactosDe(d).length}` : '', () => {
+      if (ED.art) return `<div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}${ED.art.bytesTotal ? ` · ${esc(prettySize(ED.art.bytes))} de ${esc(prettySize(ED.art.bytesTotal))}` : ''}…<br><small>Deja la app abierta hasta que termine.</small></span></div>`;
+      const tarjetas = artefactoHtml(d, true);
+      if (!puedeArtefactos()) return tarjetas || '<p class="hint">Esta pieza no tiene interactivo.</p>';
+      return `${tarjetas}
+        <label class="btn ghost sm arteup arteadd">${ic('plus', 16)} ${artefactosDe(d).length ? 'Subir otro interactivo' : 'Subir un interactivo (.zip)'}<input type="file" accept=".zip,application/zip" data-art-nuevo="1"></label>
+        <p class="hint">Un .zip con su <b>index.html</b> adentro: lo que entrega Claude al descargar un artefacto. Si subes otra vez el mismo, se actualiza en vez de repetirse.</p>`;
+    })}
 
-    <label class="lbl">Notas internas</label><textarea class="area" id="e-notes" style="min-height:80px" placeholder="Referencias, indicaciones…">${esc(d.notes)}</textarea>
-    ${historialTextoHtml(d, 'notes')}
+    ${bloque('marca', 'De Marca', !!marcaDe(d).length, marcaDe(d).length ? `${marcaDe(d).length}` : '', () => marcaEnPiezaHtml(d, esAdmin() && store.canWrite) || '<p class="hint">Todavía no hay nada en Marca.</p>')}
+
+    ${bloque('enlaces', 'Enlaces', !!linksVisibles(d).length, linksVisibles(d).length ? `${linksVisibles(d).length}` : 'Canva, Drive, Figma…', () => `
+      ${linksVisibles(d).map((l) => `<div class="linkrow">${ic('link', 18)}<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a><button data-act="ed-rmlink" data-id="${esc(l.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
+      <div class="addrow"><input class="field" id="e-llabel" placeholder="Nombre" value="${esc(ED.newLink.label)}" style="flex:1"><input class="field" id="e-lurl" inputmode="url" placeholder="https://…" value="${esc(ED.newLink.url)}" style="flex:2"><button class="btn sm" data-act="ed-addlink">${ic('plus', 16)}</button></div>`)}
+
+    ${bloque('checklist', 'Checklist', !!d.checklist.length, d.checklist.length ? `${d.checklist.filter((c) => c.done).length}/${d.checklist.length}` : '', () => `
+      ${d.checklist.map((c) => `<div class="ck"><label class="cb2"><input type="checkbox" data-act="ed-check" data-ck="${esc(c.id)}"${c.done ? ' checked' : ''}><span>${ic('check', 16)}</span></label><input class="ckt" data-ck="${esc(c.id)}" value="${esc(c.text)}"><button data-act="ed-rmcheck" data-id="${esc(c.id)}" aria-label="Quitar">${ic('x', 16)}</button></div>`).join('')}
+      <div class="addrow"><input class="field" id="e-newck" placeholder="Ej. Revisar ortografía" value="${esc(ED.newCheck)}"><button class="btn sm" data-act="ed-addcheck">${ic('plus', 16)}</button></div>`)}
+
+    ${bloque('campana', 'Campaña / pilar', !!(d.campaign || '').trim(), (d.campaign || '').trim(), () => `
+      <input class="field" id="e-camp" list="camps" placeholder="Ej. Lanzamiento, Educativo…" value="${esc(d.campaign || '')}">
+      <datalist id="camps">${camps.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
+      <p class="hint">Agrupa las piezas en la carta Gantt.</p>`)}
+
+    ${bloque('notas', 'Notas internas', !!(d.notes || '').trim(), '', () => `
+      <textarea class="area" id="e-notes" style="min-height:80px" placeholder="Referencias, indicaciones…">${esc(d.notes)}</textarea>
+      ${historialTextoHtml(d, 'notes')}`)}
 
     ${old ? `
     <label class="lbl">Seguimiento</label>
@@ -3866,6 +3927,20 @@ const ACTS = {
     const r = recursoPorId(el.dataset.id); if (!r) return;
     await compartir(urlArchivo(r), r.name);
   },
+  'enlace-copiar': async () => {
+    if (!ENLACE) return;
+    const ok = await copiarTexto(ENLACE.url);
+    closeSheet();
+    toast(ok ? 'Enlace copiado' : 'No se pudo copiar; selecciónalo y cópialo a mano', 3500);
+  },
+  'enlace-compartir': async () => {
+    if (!ENLACE || !navigator.share) return;
+    const datos = { url: ENLACE.url, title: ENLACE.titulo };
+    if (ENLACE.texto) datos.text = ENLACE.texto;
+    try { await navigator.share(datos); closeSheet(); }
+    catch (e) { if (!e || e.name !== 'AbortError') toast('No se pudo abrir el menú de compartir', 3000); }
+  },
+  'enlace-abrir': () => { if (ENLACE) window.open(ENLACE.url, '_blank', 'noopener'); },
   'file-compartir': async (el) => {
     const hit = findFile(el.dataset.f); if (!hit) return;
     await compartir(urlArchivo(hit.file), hit.file.name);
@@ -4111,7 +4186,6 @@ const ACTS = {
   },
   'who-volver': () => showWho(),
   /* editor */
-  'ed-status': (el) => { syncDraft(); ED.d.status = el.dataset.v; renderEditor(); },
   'ed-plat': (el) => { syncDraft(); const a = ED.d.platforms, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
   'ed-person': (el) => { syncDraft(); const a = ED.d.assignees, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderEditor(); },
   'ed-sinfecha': () => {
@@ -4121,7 +4195,12 @@ const ACTS = {
     else d.date = (S.view === 'calendar' && S.sel) || today();
     renderEditor();
   },
-  'ed-prio': () => { syncDraft(); ED.d.priority = ED.d.priority === 'alta' ? 'normal' : 'alta'; renderEditor(); },
+  'ed-bloque': (el) => {
+    syncDraft();
+    const k = el.dataset.k;
+    ED.abre[k] = !(k in ED.abre ? ED.abre[k] : bloqueLleno(k));
+    renderEditor();
+  },
   'ed-rmfile': (el) => {
     syncDraft();
     const f = ED.d.files.find((x) => x.id === el.dataset.id);
@@ -4279,7 +4358,7 @@ document.addEventListener('input', (e) => {
   }
   if (e.target.dataset && e.target.dataset.feedCom != null) { S.feedBorrador[e.target.dataset.feedCom] = e.target.value; return; }
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
-  if (ED && ED.old && /^e-(caption|title|tags)$/.test(e.target.id || '')) {
+  if (ED && ED.old && /^e-(caption|title|guion)$/.test(e.target.id || '')) {
     const bar = $('#aviso-texto');
     if (bar) { syncDraft(); bar.hidden = !textosCambiados(ED.old, ED.d).length; }
   }
@@ -4305,6 +4384,7 @@ document.addEventListener('change', (e) => {
     if (tr) { tr.estado = t.value; tr.motivo = t.value ? 'elegido a mano' : ''; tr.aMano = true; }
     renderImport(); return;
   }
+  if (ED && (t.id === 'e-status' || t.id === 'e-plat')) { syncDraft(); renderEditor(); return; }
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);

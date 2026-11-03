@@ -10,7 +10,7 @@ Las entregas de agosto a octubre de 2026: diagnóstico y resumen de marca, cotiz
 
 ## Qué ve cada uno
 
-- **Flavio y Maca** entran a **Entregas** y ven cada pieza terminada como resultado: el carrusel se desliza con el dedo, con su descripción, sus hashtags y los enlaces. Pueden comentar y descargar la versión final. No ven archivos sueltos, ni versiones, ni carpetas.
+- **Flavio y Maca** entran a **Entregas** y ven cada pieza terminada como resultado: el carrusel se desliza con el dedo, con su descripción, el guión si lo tiene y los enlaces. Pueden comentar y descargar la versión final. No ven archivos sueltos, ni versiones, ni carpetas.
 - **Javi** ve en esa misma pestaña la carpeta completa: proyectos, piezas, todos los archivos, las versiones anteriores y las descargas en zip.
 
 ## Feed: revisar rápido, como en Instagram
@@ -75,6 +75,20 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 - Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
 
 
+## Editar una pieza: lo justo a la vista
+
+La ventana de **editar pieza** está ordenada para que se vea poco y se encuentre todo.
+
+- Arriba, en una línea: **Estado** (menú) y a quién **etiquetar** (los avatares).
+- Debajo, la fecha; el botón **“se trabaja desde…”** solo abre su casilla cuando lo necesitas.
+- En una sola fila y como menús: **Plataforma · Formato · Prioridad**. Si una pieza va a más de una plataforma, se elige **Varias…** y recién ahí aparecen los chips.
+- Después el **copy** y los **archivos**, que es lo que de verdad se usa todos los días.
+- Lo demás —**guión / voz en off, interactivo, de Marca, enlaces, checklist, campaña y notas internas**— vive plegado en una línea cada uno. Si tienen algo adentro se abren solos y llevan un punto verde; si no, son una línea delgada con un **+**. Tocarlos los abre y los cierra.
+
+### Guión / voz en off
+
+Donde antes estaban los *hashtags* ahora está el **guión / voz en off**, porque los hashtags van dentro del copy. Se guarda con sus versiones anteriores (*“cómo decía antes”*), avisa al equipo cuando cambia —igual que el copy— y el buscador lo encuentra. Flavio y Maca lo ven en el feed y en Entregas, plegado bajo *“Guión / voz en off”*.
+
 ## Compartir con enlace directo (solo Javi)
 
 En cada pieza —desde el botón de compartir del editor, del feed o de la vista de resultado— se abre la lista de lo que se puede mandar:
@@ -82,12 +96,12 @@ En cada pieza —desde el botón de compartir del editor, del feed o de la vista
 | Qué | Para qué sirve |
 |---|---|
 | **La pieza** | Abre el cronograma en esa pieza. Para Flavio y Maca. |
-| **El texto** | Copia el copy con los hashtags. |
+| **El texto** | Copia el copy completo, listo para pegar. |
 | **Cada archivo** | Enlace directo al archivo: lo abre cualquiera, sin entrar al cronograma ni tener la clave. |
 | **El interactivo** | El enlace de la página interactiva, que se abre sola. |
 | **Lo que usa de Marca** | El logo o la pista que la pieza tiene mencionados. |
 
-En el teléfono se abre el menú de compartir de siempre (WhatsApp, correo, AirDrop); en el computador, si el navegador no lo tiene, el enlace queda copiado. Los archivos sueltos y los de Marca también se comparten desde su propia ficha.
+Al tocar compartir —una pieza, un archivo, una carpeta de Marca— se abre un cartel con el enlace a la vista y tres opciones: **Copiar enlace** (para pegarlo donde quieras), **Compartir…** (el menú del teléfono: WhatsApp, correo, mensajes, notas) y **Abrir**, para ver qué va a ver quien lo reciba. Los archivos sueltos y los de Marca también se comparten desde su propia ficha.
 
 También se comparte **una carpeta entera de Marca**: su enlace abre el cronograma justo en esa carpeta, con todo lo que tenga dentro.
 
@@ -95,19 +109,19 @@ Para alguien de fuera del equipo conviene mandar el **enlace del archivo**, no e
 
 ## Copiar el copy de una pieza
 
-Junto a *Copy / texto* hay dos atajos: **Copiar**, que se lleva el copy y los hashtags juntos, listos para pegar en Instagram (te dice cuántos caracteres), y **Seleccionar todo**, para reemplazarlo de una sin pelear con el dedo.
+Junto a *Copy / texto* hay dos atajos: **Copiar**, que se lleva el copy entero listo para pegar en Instagram (te dice cuántos caracteres), y **Seleccionar todo**, para reemplazarlo de una sin pelear con el dedo.
 
 En la vista de resultado, cada entrega tiene **Copiar texto**: así Flavio o Maca se llevan el texto sin tener que abrir la pieza ni seleccionar a mano.
 
 ## Avisar de un cambio de copy
 
-Igual que al subir archivos: apenas cambias el **copy**, el **título** o los **hashtags** de una pieza ya guardada, aparece la barra *“Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?”* con el botón **Avisar**.
+Igual que al subir archivos: apenas cambias el **copy**, el **título** o el **guión** de una pieza ya guardada, aparece la barra *“Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?”* con el botón **Avisar**.
 
 Ese aviso guarda la pieza, puede pasarla a *En revisión* y manda una notificación directa —al celular y a la campana— que dice qué cambió: “cambió el copy en «Pilotes» para revisar”, o “subió 2 archivos y cambió el copy…” si hiciste las dos cosas. Llega aunque tengan apagados los avisos de “editan contenido”. Las notas internas no cuentan: son tuyas.
 
 ## Versiones del copy y los textos
 
-Cada vez que se guarda una pieza, lo que decían antes el **título**, el **copy**, los **hashtags** y las **notas internas** queda guardado. Debajo de cada uno aparece **“Cómo decía antes (N)”**: al tocarlo se despliegan las versiones anteriores, con la fecha hasta la que estuvieron y quién las cambió, y cada una trae **“Volver a este”** para recuperarla en el editor (después hay que guardar la pieza, como siempre).
+Cada vez que se guarda una pieza, lo que decían antes el **título**, el **copy**, el **guión** y las **notas internas** queda guardado. Debajo de cada uno aparece **“Cómo decía antes (N)”**: al tocarlo se despliegan las versiones anteriores, con la fecha hasta la que estuvieron y quién las cambió, y cada una trae **“Volver a este”** para recuperarla en el editor (después hay que guardar la pieza, como siempre).
 
 Se guardan las últimas 40 versiones de la pieza y solo ocupan texto, así que no pesan nada. Sirve para cuando el cliente pide volver al copy de antes, o para comparar dos redacciones sin tener que acordarse.
 

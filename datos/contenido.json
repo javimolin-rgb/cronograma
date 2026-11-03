@@ -1565,10 +1565,27 @@
      "sha": "4589d43308ee3f8ab75fd96174cc78fbae60c29f",
      "type": "video/mp4",
      "size": 7214936
+    },
+    {
+     "id": "73ae32b7-e528-4d1b-8b13-d09adb4ff1aa",
+     "by": "javi",
+     "at": "2026-11-03T19:25:23.932Z",
+     "base": "casa-peumo-1",
+     "version": 1,
+     "shaOrigen": "d9239253d01c69e4a9e1d7e742f4abfe864fdbc6",
+     "dur": 49.56666666666667,
+     "w": 720,
+     "h": 1280,
+     "name": "casa-peumo-1-v1.mov",
+     "path": "archivos/modelos/casa-peumo-1-v1.mov",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-peumo-1-v1.mov",
+     "sha": "d9239253d01c69e4a9e1d7e742f4abfe864fdbc6",
+     "type": "video/quicktime",
+     "size": 18877866
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-03T17:43:14.443Z",
+   "updatedAt": "2026-11-03T19:25:40.724Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
@@ -3611,6 +3628,13 @@
  ],
  "comments": [
   {
+   "id": "37346a97-af34-43d9-81b8-ba36e0ed8119",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "javi",
+   "text": "Video con guion actualizado",
+   "createdAt": "2026-11-03T19:25:40.729Z"
+  },
+  {
    "id": "c0a2adef-82b6-4f5a-a15a-79583ae27014",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
    "author": "javi",
@@ -4772,6 +4796,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "ef27ee83-3e0e-40a3-a02d-d853e77acaaa",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T19:25:40.729Z"
+  },
+  {
+   "id": "fce9901e-55ca-439f-a189-5bda3aa52b16",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-03T19:25:40.726Z"
+  },
   {
    "id": "ddc37397-65e2-40c1-98e9-81f39b874a14",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
@@ -7043,6 +7087,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e1f7bc2a-a3a6-4ced-bf80-9b8399f22409",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Peumo” para revisar: Video con guion actualizado",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Para revisar · Casa Peumo",
+   "body": "Javi: Video con guion actualizado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T19:25:40.728Z"
+  },
+  {
+   "id": "527756a8-1ff2-472b-b81a-3f100bea13a0",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T19:25:40.728Z"
+  },
+  {
+   "id": "aa622caf-17b7-4e12-91d3-471d0620d989",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (archivos)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T19:25:40.728Z"
+  },
   {
    "id": "edaf0b50-8173-48b8-a041-d8963519c006",
    "to": "maca",

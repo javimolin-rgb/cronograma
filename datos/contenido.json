@@ -291,7 +291,7 @@
    "date": "2026-11-29",
    "inicio": "",
    "format": "reel",
-   "status": "idea",
+   "status": "estructura",
    "priority": "normal",
    "revisions": 0,
    "id": "549a3272-d695-4f76-9011-a252831ac96c",
@@ -321,9 +321,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:36:18.253Z",
+   "updatedAt": "2026-11-03T19:57:08.735Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-03T15:07:28.689Z",
+   "statusChangedAt": "2026-11-03T19:57:08.735Z",
    "publishedAt": null
   },
   {
@@ -4797,6 +4797,19 @@
  ],
  "activity": [
   {
+   "id": "dc6a71a9-79da-442b-be4a-d9c34e90c1de",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a Estructura por aprobar",
+   "meta": {
+    "from": "idea",
+    "to": "estructura"
+   },
+   "createdAt": "2026-11-03T19:57:08.735Z"
+  },
+  {
    "id": "c2438219-71f4-49a7-8761-121447967ad0",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -7126,6 +7139,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6107d0be-d5d4-4db4-bae2-d8906d5ccf88",
+   "to": "maca",
+   "from": "javi",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "status",
+   "text": "movió “Del primer mensaje a la obra, en 6 pasos” a Estructura por aprobar",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi movió “Del primer mensaje a la obra, en 6 pasos” a Estructura por aprobar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-03T19:57:08.735Z"
+  },
   {
    "id": "5c8a64e4-e921-4bc7-9854-1ef69f444871",
    "to": "maca",

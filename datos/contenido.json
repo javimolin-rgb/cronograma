@@ -546,7 +546,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "",
+   "date": "2026-11-15",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -579,7 +579,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:02.641Z",
+   "updatedAt": "2026-11-03T15:37:06.416Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4694,6 +4694,19 @@
  ],
  "activity": [
   {
+   "id": "32c1f7be-73de-48a2-bbab-1e285f0f8203",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha a 15 nov",
+   "meta": {
+    "from": "",
+    "to": "2026-11-15"
+   },
+   "createdAt": "2026-11-03T15:37:06.416Z"
+  },
+  {
    "id": "307e2d20-dc0c-46da-aa7d-a8bc87f47da4",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -6921,6 +6934,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4c66e85c-d11a-4c37-93e2-21d3126df486",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Un domingo en el refugio” a 15 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi cambió la fecha de “Un domingo en el refugio” a 15 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-03T15:37:06.416Z"
+  },
   {
    "id": "5afb4667-49ad-4d3a-bdc7-508d04400ef0",
    "to": "maca",

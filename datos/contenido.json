@@ -3703,6 +3703,14 @@
  ],
  "comments": [
   {
+   "id": "1beb232a-f7ce-4da5-8eec-7c7cabbccbaa",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Y donde hay q pagar para poder tener mejores opciones de voz en off?",
+   "fileIds": [],
+   "createdAt": "2026-11-03T22:32:07.700Z"
+  },
+  {
    "id": "a9647c13-0c8c-4041-b640-7a7c51d88b1b",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -5002,6 +5010,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "01099e48-a650-4c82-ba06-cb6bb939c92a",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T22:32:07.705Z"
+  },
   {
    "id": "8fc2fb3e-4da8-405c-9487-741c172c41b6",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7588,6 +7606,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "62551beb-ecc8-4ac8-9160-5e50a1175eba",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Y donde hay q pagar para poder tener mejores opciones de voz en off?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Y donde hay q pagar para poder tener mejores opciones de voz en off?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:32:07.707Z"
+  },
+  {
+   "id": "359dba3a-2e4d-45bd-87d2-56705ed46f03",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Y donde hay q pagar para poder tener mejores opciones de voz en off?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Y donde hay q pagar para poder tener mejores opciones de voz en off?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T22:32:07.707Z"
+  },
   {
    "id": "7c67d051-c7fe-4ab2-bb46-602b8b84f1e2",
    "to": "maca",

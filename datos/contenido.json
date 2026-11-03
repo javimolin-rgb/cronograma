@@ -134,7 +134,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -160,7 +161,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.448Z",
+   "updatedAt": "2026-11-03T15:29:49.763Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -236,7 +237,8 @@
     "instagram"
    ],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [
     {
@@ -257,7 +259,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:28:42.449Z",
+   "updatedAt": "2026-11-03T15:29:45.268Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4681,6 +4683,26 @@
  ],
  "activity": [
   {
+   "id": "f9919f80-8baf-4e12-9be3-1b9e9701040d",
+   "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "postTitle": "¿Qué casa calza con tu familia?",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:49.763Z"
+  },
+  {
+   "id": "4ada405e-a089-48f2-b2f3-63bb96a66faa",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T15:29:45.268Z"
+  },
+  {
    "id": "c271e307-615b-4e25-a382-4de62e420f08",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -6583,6 +6605,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "41a72dc2-c621-41ad-b722-35a420273800",
+   "to": "maca",
+   "from": "javi",
+   "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "type": "tagged",
+   "text": "te etiquetó en “¿Qué casa calza con tu familia?”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “¿Qué casa calza con tu familia?”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "createdAt": "2026-11-03T15:29:49.763Z"
+  },
+  {
+   "id": "d9dc70f3-1a52-48cc-aefa-1d71033131c2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "tagged",
+   "text": "te etiquetó en “Del primer mensaje a la obra, en 6 pasos”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Del primer mensaje a la obra, en 6 pasos”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-03T15:29:45.268Z"
+  },
   {
    "id": "2aefd2c5-2b83-4519-8d79-dc5d78c49524",
    "to": "maca",

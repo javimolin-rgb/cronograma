@@ -70,6 +70,7 @@ window.CRONO_CONFIG = {
   // Flujo de trabajo de cada pieza (en este orden)
   STATUSES: [
     { id: "idea",       name: "Idea",        color: "#8C8A93" },
+    { id: "estructura", name: "Estructura por aprobar", color: "#7A6A9B" },
     { id: "diseno",     name: "En diseño",   color: "#5A6B8C" },
     { id: "revision",   name: "En revisión", color: "#B4701B" },
     { id: "cambios",    name: "Cambios",     color: "#C2453E" },

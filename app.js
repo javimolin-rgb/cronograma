@@ -474,7 +474,7 @@ async function changeStatus(id, status) {
 }
 
 /* ---------- vistas: piezas ---------- */
-const isStalled = (p) => ['diseno', 'revision', 'cambios'].includes(p.status) && daysSince(p.statusChangedAt || p.updatedAt || nowISO()) >= 3;
+const isStalled = (p) => ['estructura', 'diseno', 'revision', 'cambios'].includes(p.status) && daysSince(p.statusChangedAt || p.updatedAt || nowISO()) >= 3;
 const av = (pid, cls = '') => { const p = person(pid); return `<span class="av ${cls}" style="--c:${p.color}" title="${esc(p.name)}">${esc(p.name[0])}</span>`; };
 const platBadge = (id) => { const p = platOf(id); return `<span class="plat" style="--c:${p.color}">${esc(p.short)}</span>`; };
 const sortPosts = (a, b) => ((a.date || '9999') + (a.time || '99:99') + a.title).localeCompare((b.date || '9999') + (b.time || '99:99') + b.title);
@@ -1064,7 +1064,7 @@ function postHtml(p, t) {
     <div class="postmedia">${files.length ? carruselHtml(files, 'f-' + p.id) : `<div class="postvacio">${ic('image', 30)}<small>Todavía sin archivos</small></div>`}</div>
     <div class="postside">
       <div class="postacts">
-        ${puedeAprobar ? `<button class="btn sm" data-act="feed-aprobar" data-id="${esc(p.id)}">${ic('check', 16)} Aprobar</button>
+        ${puedeAprobar ? `<button class="btn sm" data-act="feed-aprobar" data-id="${esc(p.id)}">${ic('check', 16)} ${p.status === 'estructura' ? 'Aprobar la estructura' : 'Aprobar'}</button>
         <button class="btn ghost sm" data-act="feed-cambios" data-id="${esc(p.id)}">Pedir cambios</button>` : `<span class="postok">${ic('check', 16)} ${esc(st.name)}</span>`}
         <button class="btn ghost sm postabrir" data-act="open-post" data-id="${esc(p.id)}">Abrir</button>
         ${esAdmin() ? `<button class="iconbtn" data-act="compartir-pieza" data-id="${esc(p.id)}" aria-label="Compartir" title="Compartir">${ic('share', 16)}</button>` : ''}
@@ -2117,9 +2117,10 @@ function openBell() {
     <div class="pb">
       ${dl.length ? `<div class="nh">Vencimientos</div>${dl.map((p) => `<div class="nrow alert" data-act="open-post" data-id="${esc(p.id)}"><span>${ic('alert', 22)}</span><div><b>${esc(p.title)}</b><small>${dlTxt(p)} · ${statusOf(p.status).name}</small></div></div>`).join('')}` : ''}
       <div class="nh">Avisos</div>
-      ${mine.length ? mine.map((n) => `<div class="nrow${n.read ? '' : ' unread'}" data-act="open-post" data-id="${esc(n.postId)}">${av(n.from, 'md')}<div><b>${esc(person(n.from).name)}</b> ${esc(n.text)}<small>${ago(n.createdAt)}</small></div></div>`).join('') : '<div class="empty">Sin avisos todavía.<br>Aquí verás cuando te etiqueten o comenten.</div>'}
+      ${mine.length ? mine.map((n) => `<div class="nrow${n.read ? '' : ' unread'}"${n.postId ? ` data-act="open-post" data-id="${esc(n.postId)}"` : ''}>${av(n.from, 'md')}<div><b>${esc(person(n.from).name)}</b> ${esc(n.text)}<small>${ago(n.createdAt)}</small></div></div>`).join('') : '<div class="empty">Sin avisos todavía.<br>Aquí verás cuando te etiqueten o comenten.</div>'}
     </div>
-    <div class="pf"><button class="btn ghost" data-act="me">Ajustes de avisos</button></div>`);
+    <div class="pf">${esAdmin() ? `<button class="btn ghost" data-act="msg-abrir">${ic('send', 17)} Avisar</button>` : ''}
+      <button class="btn ghost" data-act="me">Ajustes de avisos</button></div>`);
   // marcar como leídas después de mostrarlas
   mine.filter((n) => unreadIds.includes(n.id)).forEach((n) => { n.read = true; save('notifications', n).catch(() => {}); });
   verVencimientos(dl);
@@ -3070,6 +3071,71 @@ async function enviarAviso() {
   } catch (e) { if (btn) btn.disabled = false; /* ya avisado */ }
 }
 
+/* ---------- Mandar un aviso al equipo, sin subir ni cambiar nada ----------
+   Para decir cosas como “las publicaciones de noviembre ya están todas subidas”:
+   llega al celular y a la campana de cada uno, aunque la pieza no cambie. */
+let MSG = null;
+function abrirMensaje(preset) {
+  if (!esAdmin() || !requireWrite()) return;
+  const otros = P.filter((x) => x.id !== S.me.id);
+  if (!MSG) MSG = { para: otros.map((x) => x.id), texto: '', postId: (preset && preset.postId) || '' };
+  renderMensaje();
+}
+function sincroMensaje() {
+  if (!MSG) return;
+  const t = $('#msg-texto'), p = $('#msg-pieza');
+  if (t) MSG.texto = t.value;
+  if (p) MSG.postId = p.value;
+}
+function renderMensaje() {
+  if (!MSG) return;
+  const otros = P.filter((x) => x.id !== S.me.id);
+  const piezas = S.db.posts.slice().sort(sortPosts).slice(0, 60);
+  openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Avisar al equipo</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <label class="lbl">A quién</label>
+      <div class="chips">${otros.map((x) => `<button class="person${MSG.para.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="msg-para" data-v="${x.id}">${av(x.id)}${esc(x.name)}</button>`).join('')}</div>
+      <p class="hint">${otros.map((x) => `${esc(x.name)}: ${recibeEnCelular(x.id) ? 'le llega al celular 🔔' : 'solo en la campana de la app (no activó las notificaciones del teléfono)'}`).join('<br>')}</p>
+      <label class="lbl">Mensaje</label>
+      <textarea class="area" id="msg-texto" style="min-height:110px" placeholder="Ej. Las publicaciones de noviembre ya están todas subidas">${esc(MSG.texto)}</textarea>
+      <label class="lbl">Sobre una pieza <small>opcional</small></label>
+      <select class="sel" id="msg-pieza">
+        <option value="">— Ninguna, es un aviso general</option>
+        ${piezas.map((p) => `<option value="${esc(p.id)}"${MSG.postId === p.id ? ' selected' : ''}>${esc((p.date ? fmtShort(p.date) + ' · ' : '') + p.title)}</option>`).join('')}
+      </select>
+      <p class="hint">Si eliges una pieza, al tocar el aviso se abre esa pieza. Este aviso llega igual aunque tengan apagados los avisos de las piezas.</p>
+    </div>
+    <div class="pf"><button class="btn ghost" data-act="sheet-close">Cancelar</button>
+      <button class="btn" data-act="msg-enviar">${ic('send', 17)} Enviar</button></div>`, true);
+  setTimeout(() => { const t = $('#msg-texto'); if (t && !MSG.texto) t.focus(); }, 120);
+}
+async function enviarMensaje() {
+  if (!MSG || !requireWrite()) return;
+  sincroMensaje();
+  const texto = (MSG.texto || '').trim();
+  if (!MSG.para.length) { toast('Elige a quién avisarle'); return; }
+  if (!texto) { toast('Escribe el mensaje'); const t = $('#msg-texto'); if (t) t.focus(); return; }
+  const btn = $('[data-act="msg-enviar"]'); if (btn) btn.disabled = true;
+  const post = MSG.postId ? S.db.posts.find((p) => p.id === MSG.postId) : null;
+  const corto = texto.length > 90 ? texto.slice(0, 90) + '…' : texto;
+  try {
+    for (const pid of MSG.para) {
+      await save('notifications', {
+        id: uid(), to: pid, from: S.me.id, postId: post ? post.id : null, type: 'mensaje',
+        text: post ? `te avisó sobre “${post.title}”: ${corto}` : `te avisó: ${corto}`,
+        read: false, inApp: true, push: true,
+        title: `${S.me.name} · ${CFG.APP_NAME}`, body: texto.slice(0, 180),
+        url: post ? siteLink(post.id) : siteBase(), createdAt: nowISO()
+      });
+    }
+    if (post) await log(post, 'review', `avisó a ${MSG.para.map((x) => person(x).name).join(' y ')}: ${corto}`);
+    const nombres = MSG.para.map((x) => person(x).name).join(' y ');
+    MSG = null;
+    closeSheet(); renderAll();
+    toast(`Aviso enviado a ${nombres} ✅`, 4000);
+  } catch (e) { if (btn) btn.disabled = false; /* ya avisado */ }
+}
+
 /* ---------- prompts para la IA (solo quien administra) ---------- */
 const TIPOS = [
   ['editar-imagen', 'Editar fotos', 'image'],
@@ -3827,6 +3893,7 @@ function openAgregar() {
       <button class="opt2" data-act="new-pieza">${ic('plus', 22)}<span><b>Nueva pieza</b><small>Crear una pieza a mano</small></span></button>
       <label class="opt2">${ic('folder', 22)}<span><b>Importar zip de conversación</b><small>El .zip exportado de WhatsApp (con fotos y audios). Actualiza el estado de las piezas o crea las que falten.</small></span>
         <input type="file" id="zip-in" accept=".zip,application/zip,application/x-zip-compressed" hidden></label>
+      <button class="opt2" data-act="msg-abrir">${ic('send', 22)}<span><b>Avisar al equipo</b><small>Mandar un mensaje a Flavio y Maca, al celular y a la campana, sin subir ni cambiar nada</small></span></button>
       <button class="opt2" data-act="imp-abrir">${ic('msg', 22)}<span><b>Pegar mensajes</b><small>Texto copiado de WhatsApp o un chat exportado sin archivos</small></span></button>
       <label class="opt2">${ic('copy', 22)}<span><b>Importar un documento</b><small>Un .md o .txt con varias publicaciones (guion, copy y voz en off). Reconoce cuáles son publicaciones y cuál es el contexto.</small></span>
         <input type="file" id="doc-in" accept=".md,.markdown,.txt,text/markdown,text/plain" hidden></label>
@@ -4606,6 +4673,9 @@ const ACTS = {
     else d.date = (S.view === 'calendar' && S.sel) || today();
     renderEditor();
   },
+  'msg-abrir': (el) => { closeSheet(); setTimeout(() => abrirMensaje({ postId: (el && el.dataset.id) || '' }), 160); },
+  'msg-para': (el) => { sincroMensaje(); const a = MSG.para, v = el.dataset.v; a.includes(v) ? a.splice(a.indexOf(v), 1) : a.push(v); renderMensaje(); },
+  'msg-enviar': () => enviarMensaje(),
   'camp-menu': (el) => menuCampana(el.dataset.camp),
   'camp-pieza': (el) => elegirCampana(el.dataset.id),
   'camp-poner': async (el) => { closeSheet(); await moverDeCampana(el.dataset.id, el.dataset.camp); },
@@ -4793,7 +4863,11 @@ const ACTS = {
   'piezas-vista': (el) => { S.piezasVista = el.dataset.v; localStorage.setItem('crono_piezas_vista', S.piezasVista); renderAll(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),
-  'feed-aprobar': async (el) => { await changeStatus(el.dataset.id, 'aprobado'); },
+  'feed-aprobar': async (el) => {
+    const p = S.db.posts.find((x) => x.id === el.dataset.id);
+    // dar el visto bueno a la estructura no es aprobar la pieza: recién ahí se diseña
+    await changeStatus(el.dataset.id, p && p.status === 'estructura' ? 'diseno' : 'aprobado');
+  },
   'feed-cambios': (el) => {
     S.feedCambios = el.dataset.id; renderMain();
     const i = document.querySelector(`[data-feed-com="${CSS.escape(el.dataset.id)}"]`);

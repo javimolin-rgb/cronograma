@@ -85,6 +85,22 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 - Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
 
 
+## Avisar al equipo sin subir ni cambiar nada
+
+Para decir cosas como *“las publicaciones de noviembre ya están todas subidas”*, Javi tiene **Avisar al equipo**: en **+ → Avisar al equipo**, y también en el botón **Avisar** de la campana.
+
+- Se elige **a quién** (Flavio, Maca o los dos) y se escribe el mensaje. Debajo de los nombres dice si a cada uno le va a llegar **al celular** o solo a la campana de la app.
+- Opcionalmente se puede colgar de **una pieza**: entonces, al tocar el aviso, se abre esa pieza. Si no, es un aviso general y no abre nada.
+- El aviso **llega igual aunque tengan apagados los avisos de las piezas**, como las menciones.
+- No toca ninguna pieza: no cambia estados, ni fechas, ni archivos.
+
+## Estado “Estructura por aprobar”
+
+Entre **Idea** y **En diseño** hay un paso más: **Estructura por aprobar**. Es para las piezas donde ya está la estructura o la base, pero no vale la pena ponerse a diseñar hasta que la aprueben.
+
+- En el feed, el botón de aprobar cambia a **“Aprobar la estructura”**, y al tocarlo la pieza pasa a **En diseño** (no a *Aprobado*: lo que se aprobó fue la estructura, el diseño viene después).
+- Si lleva tres días o más esperando, se marca como **estancada**, igual que las demás etapas de trabajo.
+
 ## Importar un documento de publicaciones
 
 En **+ → Importar un documento** entra un `.md` o `.txt` con varias publicaciones adentro —de los que traen guion, idea, copy y voz en off— y la app **separa sola las publicaciones del contexto**.

@@ -3535,7 +3535,10 @@
    "author": "maca",
    "text": "Te mando luego el texto modificado",
    "fileIds": [],
-   "createdAt": "2026-11-03T15:17:41.411Z"
+   "createdAt": "2026-11-03T15:17:41.411Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "7629c633-2c8d-4832-a12b-83c5c28db245",
@@ -6503,6 +6506,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "fd06ac69-4671-465c-8700-29a3fac9c05a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Peumo”: Te mando luego el texto modificado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi le puso 👍 a tu comentario en “Casa Peumo”: Te mando luego el texto modificado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T15:20:14.727Z"
+  },
   {
    "id": "fcef3c6a-db5b-4907-8da6-a627bb0da399",
    "to": "javi",

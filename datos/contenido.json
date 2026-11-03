@@ -3717,6 +3717,14 @@
  ],
  "comments": [
   {
+   "id": "5e12000c-9683-4da9-b346-80137843d9d8",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "fileIds": [],
+   "createdAt": "2026-11-03T23:11:06.253Z"
+  },
+  {
    "id": "66f11f12-1793-4f4a-beb1-638fba91d98a",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -5034,6 +5042,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b2c64c8f-19d3-4990-95b1-20999eab6fa4",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T23:11:06.258Z"
+  },
   {
    "id": "75e5f152-7fdf-4962-9612-52c089044bbf",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7650,6 +7668,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f1312821-f871-4003-bef2-aa4076d6a57d",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T23:11:06.261Z"
+  },
+  {
+   "id": "13811516-873a-4789-b026-35008fb03864",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Voy a ver cuánto cuesta y te aviso. . Pero ya mañana AM",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T23:11:06.260Z"
+  },
   {
    "id": "efb632c1-48a3-45f9-8821-a4201e1b6c03",
    "to": "flavio",

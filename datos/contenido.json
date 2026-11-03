@@ -7409,7 +7409,7 @@
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "type": "mention",
    "text": "te mencionó en “Casa Peumo”: @Maca Sii, muy similar a la forma en que lo generé, con ElevenLabs y todo",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Cronograma de contenido",

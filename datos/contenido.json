@@ -1452,7 +1452,7 @@
    "hashtags": "",
    "guion": "Hay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse en ellos, con espacio para todos. \nSu ventanal sube de piso a techo: el bosque no se mira, se vive desde adentro. Pensada para el frío: que afuera nieve, y adentro siempre se esté tibio. \nArriba, una suite que es solo tuya. Abajo, la cocina, la mesa y la estufa encendida. Y un dormitorio aparte, para los niños o las visitas. \nDos pisos: el descanso por un lado, el día a día por otro. Ideal para una familia. Casa Peumo. \nUn refugio para volver a lo esencial. Cotízala en neorigen.cl.",
    "guionTabla": null,
-   "campaign": "",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-11-03",
    "inicio": "",
@@ -1507,7 +1507,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:12:46.523Z",
+   "updatedAt": "2026-11-03T15:32:05.729Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
@@ -4683,6 +4683,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "23adce59-a746-4761-9b85-686a2521fe3e",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Casa Peumo” a la campaña Modelos",
+   "meta": null,
+   "createdAt": "2026-11-03T15:32:05.729Z"
+  },
   {
    "id": "ad315a18-f0a1-44ec-acc0-2efe2d736efd",
    "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",

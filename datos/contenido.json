@@ -55,31 +55,108 @@
    "publishedAt": null
   },
   {
-   "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "title": "Casa Maitén",
-   "caption": "",
+   "caption": "Casa Maitén, nuestro modelo de la semana 🌊\n\nFrente al mar, hay que estar a la altura. Se levanta para mirar el horizonte por sobre las rocas, y su cocina se abre al comedor y a las terrazas.\n\nSon dos volúmenes: la casa principal y uno más pequeño con vida propia. Juntos cuando quieren, independientes cuando lo necesitan.\n\n4 dormitorios, 4 baños y 145 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMaiten #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
+   "guion": "",
+   "guionTabla": {
+    "cols": [
+     "#",
+     "Momento",
+     "En pantalla (rótulo · titular · bajada)",
+     "Voz"
+    ],
+    "filas": [
+     [
+      "1",
+      "Apertura",
+      "MODELO DE LA SEMANA · Casa Maitén · Frente al mar, en grande.",
+      "Frente al mar, hay que estar a la altura."
+     ],
+     [
+      "2",
+      "Superficie",
+      "SUPERFICIE ÚTIL · 145 m² · 4 dormitorios y 4 baños",
+      "Se levanta para mirar el horizonte por sobre las rocas."
+     ],
+     [
+      "3",
+      "Frente",
+      "DOBLE ALTURA · Frente vidriado · Hacia el mar",
+      "Su frente alto deja entrar todo el horizonte."
+     ],
+     [
+      "4",
+      "Volúmenes",
+      "DOS VOLÚMENES · Casa principal y anexo · Cada uno con su techo",
+      "Una casa grande, y otra más pequeña con vida propia."
+     ],
+     [
+      "5",
+      "Cocina",
+      "COCINA INTEGRADA · Al comedor y las terrazas · Todo conectado",
+      "La cocina se abre a la mesa, y la mesa al mar."
+     ],
+     [
+      "6",
+      "Dormitorios",
+      "DORMITORIOS · 4 dormitorios · Y 4 baños",
+      "Ideal para recibir: a los hijos que vuelven, a los abuelos, a los amigos."
+     ],
+     [
+      "7",
+      "Planta",
+      "PLANTAS DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
+      "Juntos cuando quieren, independientes cuando lo necesitan."
+     ],
+     [
+      "8",
+      "Cierre",
+      "Llave en mano · Plazo estimado: 10 meses",
+      "Casa Maitén. Para vivir el mar en grande."
+     ],
+     [
+      "9",
+      "Llamado",
+      "DESCUBRE MÁS EN NEORIGEN.CL",
+      "Descúbrela en neorigen.cl"
+     ]
+    ]
+   },
    "campaign": "",
-   "date": "2026-12-01",
    "time": "",
-   "platforms": [],
-   "format": "post",
+   "date": "2026-12-01",
+   "inicio": "",
+   "format": "story",
    "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "platforms": [],
    "assignees": [
     "javi"
    ],
-   "priority": "normal",
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-02T23:06:32.432Z",
+   "updatedAt": "2026-11-03T14:38:27.421Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T23:06:32.432Z",
-   "revisions": 0,
-   "publishedAt": null
+   "publishedAt": null,
+   "artefactos": [],
+   "versionesTexto": [
+    {
+     "id": "0ee67b8c-f958-43b9-8e7e-3f0a8e56101f",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-03T14:38:27.421Z",
+     "by": "javi"
+    }
+   ],
+   "marca": []
   },
   {
    "title": "Casa Roble",
@@ -3584,6 +3661,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "fd9545b6-28f3-41cd-bb9d-577963691bfa",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, la tabla del guión, formato",
+   "meta": null,
+   "createdAt": "2026-11-03T14:38:27.422Z"
+  },
   {
    "id": "8d312bba-614b-4f88-953f-b4c742785370",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",

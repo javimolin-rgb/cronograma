@@ -167,9 +167,12 @@
    "caption": "Recorramos nuestro modelo de la semana, Casa Peumo ❄️\n\n2 dormitorios y 2 baños en dos pisos, con doble altura en las zonas comunes: 87,3 m² útiles y 37,86 m² de terrazas. Suite en el segundo piso, plazo de obra estimado de 7 meses y entrega llave en mano.\n\nCotiza en neorigen.cl\n\n#Neorigen #CasaPeumo #CasasPrediseñadas #CasasSustentables \n",
    "notes": "",
    "hashtags": "",
+   "guion": "Hay lugares que te invitan a bajar el ritmo. Y casas hechas para quedarse en ellos, con espacio para todos. \nSu ventanal sube de piso a techo: el bosque no se mira, se vive desde adentro. Pensada para el frío: que afuera nieve, y adentro siempre se esté tibio. \nArriba, una suite que es solo tuya. Abajo, la cocina, la mesa y la estufa encendida. Y un dormitorio aparte, para los niños o las visitas. \nDos pisos: el descanso por un lado, el día a día por otro. Ideal para una familia. Casa Peumo. \nUn refugio para volver a lo esencial. Cotízala en neorigen.cl.",
+   "guionTabla": null,
    "campaign": "",
    "time": "",
    "date": "2026-11-03",
+   "inicio": "",
    "format": "story",
    "status": "revision",
    "priority": "normal",
@@ -204,14 +207,22 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-03T13:29:15.990Z",
+   "updatedAt": "2026-11-03T14:28:50.048Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-02T16:03:53.424Z",
    "publishedAt": null,
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "6f7dada8-ca84-4fc4-b7b9-f355b053d820",
+     "campo": "guion",
+     "text": "",
+     "hasta": "2026-11-03T14:28:50.048Z",
+     "by": "javi"
+    }
+   ],
    "marca": []
   },
   {
@@ -3343,6 +3354,16 @@
  ],
  "activity": [
   {
+   "id": "6fa7bcb6-29ad-4c64-889c-6c045883ae84",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó guión / voz en off",
+   "meta": null,
+   "createdAt": "2026-11-03T14:28:50.050Z"
+  },
+  {
    "id": "c7c28115-a78f-4f58-84b6-4f880efc51ed",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -4895,6 +4916,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "49cf6699-99eb-4a31-af57-7b2ba7fcf74a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (guión / voz en off)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (guión / voz en off)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T14:28:50.053Z"
+  },
+  {
+   "id": "ac57113a-06a4-4e6e-a756-b60449d8fbc9",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "update",
+   "text": "editó “Casa Peumo” (guión / voz en off)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi editó “Casa Peumo” (guión / voz en off)",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T14:28:50.053Z"
+  },
   {
    "id": "07d17285-3667-44e7-a85e-942593978a08",
    "to": "flavio",

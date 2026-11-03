@@ -3670,6 +3670,14 @@
  ],
  "comments": [
   {
+   "id": "ec2c2033-7a2a-4e06-ab58-778321f2bf4f",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Javi, habrás probado algo así? Indicación final: Voz masculina de IA lo más natural posible, cálida y expresiva, para un reel de Neorigen. Ritmo ligeramente pausado, comas naturales, énfasis simple,. Usar herramienta tipo ElevenLabs. Sonar como una persona contando algo que le entusiasma, no como un locutor leyendo. agregar, un toque juvenil y cálido para que calce con IG.",
+   "fileIds": [],
+   "createdAt": "2026-11-03T21:29:03.327Z"
+  },
+  {
    "id": "cbbb78ec-1e3f-489b-946b-de3a11978920",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -4889,6 +4897,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4402f32f-a823-4cbc-b7da-c79aed6ae2a5",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-03T21:29:03.333Z"
+  },
   {
    "id": "cb352bc3-828c-447f-854d-074d0eddc28d",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7332,6 +7350,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7ac90d45-aa4b-4004-b15f-ab5d9c7c7d59",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Javi, habrás probado algo así? Indicación final: Voz masculina de IA lo más natu…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Javi, habrás probado algo así? Indicación final: Voz masculina de IA lo más natu…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T21:29:03.337Z"
+  },
+  {
+   "id": "36a289ba-acb6-49d9-88aa-f736f28a71e9",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Javi, habrás probado algo así? Indicación final: Voz masculina de IA lo más natu…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Maca comentó en “Casa Peumo”: Javi, habrás probado algo así? Indicación final: Voz masculina de IA lo más natu…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T21:29:03.336Z"
+  },
   {
    "id": "85b2b2c1-5cc7-424a-b716-bce174b1885c",
    "to": "flavio",

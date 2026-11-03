@@ -119,6 +119,23 @@ Entre **Idea** y **En diseño** hay un paso más: **Estructura por aprobar**. Es
 - En el feed, el botón de aprobar cambia a **“Aprobar la estructura”**, y al tocarlo la pieza pasa a **En diseño** (no a *Aprobado*: lo que se aprobó fue la estructura, el diseño viene después).
 - Si lleva tres días o más esperando, se marca como **estancada**, igual que las demás etapas de trabajo.
 
+## Los colores de los estados
+
+Los ocho estados tienen ahora **un color por familia de tono**, elegidos para que se distingan de verdad —el morado y el gris de antes se parecían demasiado—:
+
+| Estado | Color |
+|---|---|
+| Idea | gris pizarra |
+| Estructura por aprobar | morado |
+| En diseño | azul |
+| En revisión | ámbar |
+| Cambios | rojo |
+| Aprobado | verde |
+| Programado | celeste |
+| Publicado | verde oscuro |
+
+No es a ojo: la paleta está medida con el validador de color (distancia ΔE de OKLab). Entre **todos** los pares hay ≥ 15 de diferencia a vista normal —antes el peor par, morado contra azul, tenía 5,5— y ≥ 7 simulando daltonismo, con todos los tonos dentro de la claridad que se ve bien tanto en modo claro como en oscuro. Donde el color va solo (los puntitos del calendario) siempre está además el nombre del estado al abrir el día.
+
 ## Importar un documento de publicaciones
 
 En **+ → Importar un documento** entra un `.md` o `.txt` con varias publicaciones adentro —de los que traen guion, idea, copy y voz en off— y la app **separa sola las publicaciones del contexto**.

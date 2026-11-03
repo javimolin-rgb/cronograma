@@ -67,16 +67,18 @@ window.CRONO_CONFIG = {
     { id: "javi",   name: "Javi",   color: "#5E7142" }
   ],
 
-  // Flujo de trabajo de cada pieza (en este orden)
+  // Flujo de trabajo de cada pieza (en este orden).
+  // Los colores están elegidos para distinguirse entre sí: cada estado en su propia
+  // familia de tono y todos dentro de la claridad que se ve bien en claro y en oscuro.
   STATUSES: [
-    { id: "idea",       name: "Idea",        color: "#8C8A93" },
-    { id: "estructura", name: "Estructura por aprobar", color: "#7A6A9B" },
-    { id: "diseno",     name: "En diseño",   color: "#5A6B8C" },
-    { id: "revision",   name: "En revisión", color: "#B4701B" },
-    { id: "cambios",    name: "Cambios",     color: "#C2453E" },
-    { id: "aprobado",   name: "Aprobado",    color: "#5E7142" },
-    { id: "programado", name: "Programado",  color: "#3C5A82" },
-    { id: "publicado",  name: "Publicado",   color: "#2F5D50" }
+    { id: "idea",       name: "Idea",        color: "#6D637F" },
+    { id: "estructura", name: "Estructura por aprobar", color: "#9431B9" },
+    { id: "diseno",     name: "En diseño",   color: "#3E6FEF" },
+    { id: "revision",   name: "En revisión", color: "#D37E01" },
+    { id: "cambios",    name: "Cambios",     color: "#BE2327" },
+    { id: "aprobado",   name: "Aprobado",    color: "#47AA62" },
+    { id: "programado", name: "Programado",  color: "#01A2C5" },
+    { id: "publicado",  name: "Publicado",   color: "#03734A" }
   ],
 
   PLATFORMS: [

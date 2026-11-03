@@ -3644,7 +3644,10 @@
    "author": "maca",
    "text": "Javi, te quería pedir probar la misma voz en off con IA lo más persona posible. Tal vez hombre? No sé si suene menos IA. Tu voz en lindaaaa pero suena extraña para el reel 😬🙏",
    "fileIds": [],
-   "createdAt": "2026-11-03T20:21:35.097Z"
+   "createdAt": "2026-11-03T20:21:35.097Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "90cdd77f-893d-4793-adaf-eda3b64b0ff4",
@@ -7224,6 +7227,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4d132232-b6e7-4661-b96c-cc22cc32487d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Peumo”: Javi, te quería pedir probar la misma voz en off con IA lo m",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Cronograma de contenido",
+   "body": "Javi le puso 👍 a tu comentario en “Casa Peumo”: Javi, te quería pedir probar la misma voz en off con IA lo m",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-03T20:38:56.139Z"
+  },
   {
    "id": "3e3cd533-91af-46c0-b7d1-5444d1b1e487",
    "to": "javi",

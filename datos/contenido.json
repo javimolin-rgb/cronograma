@@ -601,12 +601,13 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31",
    "platforms": [],
    "assignees": [
-    "javi"
+    "javi",
+    "maca"
    ],
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T14:37:04.763Z",
+   "updatedAt": "2026-11-03T14:39:38.929Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -3816,6 +3817,16 @@
  ],
  "activity": [
   {
+   "id": "eeafe944-c2e3-48d3-b45d-c4f00baeca6a",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-03T14:39:38.929Z"
+  },
+  {
    "id": "06b82d50-374b-4b55-87d2-d1569d071a18",
    "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
    "postTitle": "Casa Ciprés",
@@ -5458,6 +5469,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "98a97f05-937a-4b13-ade3-26aba2e26c22",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "tagged",
+   "text": "te etiquetó en “Casa Boldo”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cronograma de contenido",
+   "body": "Javi te etiquetó en “Casa Boldo”",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-03T14:39:38.930Z"
+  },
   {
    "id": "49cf6699-99eb-4a31-af57-7b2ba7fcf74a",
    "to": "flavio",

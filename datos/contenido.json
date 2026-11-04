@@ -8169,7 +8169,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "supervision",
    "text": "comentó en “¿Son prefabricadas?”: Es la descripción que aparece en las imágenes… por ejemplo: \nNos preguntan\nTu te…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",

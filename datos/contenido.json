@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "a810fbcf-b87c-4fa8-9ac1-8bb4dc034e53",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Es la descripción que aparece en las imágenes… por ejemplo: \nNos preguntan\nTu terreno\nSe arma aquí, etc \nNo se alcanzan a leer , por pequeño y porque algunos aparecen al mismo tiempo entonces el ojo no puede leer tres cosas en simultáneo.",
+   "fileIds": [],
+   "createdAt": "2026-11-04T16:25:40.464Z"
+  },
+  {
    "id": "978f669b-0ff0-4d1a-828f-d76f50a0e273",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5261,6 +5269,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c5b75ced-10a9-4eb9-b4fb-a52a815ac4f5",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T16:25:40.466Z"
+  },
   {
    "id": "33ee6c31-039a-4362-afde-c116798803fd",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8096,6 +8114,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7ce5f5bb-d52a-44aa-a770-cb714b549e83",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Es la descripción que aparece en las imágenes… por ejemplo: \nNos preguntan\nTu te…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Es la descripción que aparece en las imágenes… por ejemplo: \nNos preguntan\nTu te…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T16:25:40.468Z"
+  },
   {
    "id": "782fcf26-7197-4fb7-a0d4-6507cddd0fc6",
    "to": "javi",

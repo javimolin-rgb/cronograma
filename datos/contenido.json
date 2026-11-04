@@ -860,8 +860,8 @@
     ]
    },
    "campaign": "Publicaciones informativas",
-   "time": "",
-   "date": "2026-11-05",
+   "time": "18:13",
+   "date": "2026-11-08",
    "inicio": "",
    "format": "reel",
    "status": "revision",
@@ -992,7 +992,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T20:54:08.487Z",
+   "updatedAt": "2026-11-04T21:13:57.240Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
@@ -5547,6 +5547,29 @@
  ],
  "activity": [
   {
+   "id": "30077ce5-42ee-4a5e-adb9-3352974250e9",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó hora",
+   "meta": null,
+   "createdAt": "2026-11-04T21:13:57.241Z"
+  },
+  {
+   "id": "0bca661e-9a34-48e5-b2a8-44805c89e895",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 5 nov a 8 nov",
+   "meta": {
+    "from": "2026-11-05",
+    "to": "2026-11-08"
+   },
+   "createdAt": "2026-11-04T21:13:57.240Z"
+  },
+  {
    "id": "426fd575-9a22-475a-bb0d-2411781b56c7",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -8664,6 +8687,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b238ee23-6b4c-42db-97b5-1e5191af6005",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "update",
+   "text": "editó “¿Son prefabricadas?” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T21:13:57.242Z"
+  },
+  {
+   "id": "078f6901-f72c-415a-b157-5a62f46dc9b6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "reschedule",
+   "text": "cambió la fecha de “¿Son prefabricadas?” a 8 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi cambió la fecha a 8 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T21:13:57.241Z"
+  },
   {
    "id": "23ab46a7-25f8-4602-953d-e1238f3062c7",
    "to": "maca",

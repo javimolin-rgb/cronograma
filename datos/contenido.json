@@ -4045,6 +4045,14 @@
  ],
  "comments": [
   {
+   "id": "e241049a-2fb1-423a-a64c-44d0ae97355b",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Ok, entonces faltaría unificar color negro de los perfiles de las ventanas y abrir ventanas que aparecen en negro. \nMantener el sendero de Deck inicial, se ve mejor q estos últimos",
+   "fileIds": [],
+   "createdAt": "2026-11-04T23:32:44.467Z"
+  },
+  {
    "id": "0e92b852-0420-4b57-a414-9264eef0d061",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -5761,6 +5769,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5f69081b-23f1-4d02-8a10-7d46f3cdd8de",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T23:32:44.472Z"
+  },
   {
    "id": "ce7e56fc-8df1-4e28-9d13-8350f2a7bf00",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9102,6 +9120,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7b0d4940-9995-48f7-af95-739d33931c58",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Ok, entonces faltaría unificar color negro de los perfiles de las ventanas y abr…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Ok, entonces faltaría unificar color negro de los perfiles de las ventanas y abr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:32:44.475Z"
+  },
+  {
+   "id": "df4da877-fe68-42b4-9fe0-a240cd659d15",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Ok, entonces faltaría unificar color negro de los perfiles de las ventanas y abr…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Ok, entonces faltaría unificar color negro de los perfiles de las ventanas y abr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:32:44.474Z"
+  },
   {
    "id": "04ae48d7-651e-41d1-a5a2-c0b5215b01dc",
    "to": "flavio",

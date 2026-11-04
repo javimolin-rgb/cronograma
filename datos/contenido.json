@@ -3828,6 +3828,14 @@
  ],
  "comments": [
   {
+   "id": "53ca5737-2a57-4db2-ba33-e7ae967e7561",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Si, traté de marcarlo pero no me resultó.",
+   "fileIds": [],
+   "createdAt": "2026-11-04T15:30:31.162Z"
+  },
+  {
    "id": "ff298775-6c76-4ae2-be25-c820eaeff663",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -5195,6 +5203,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "2195b97f-53d6-431c-bd81-5909fe0d220f",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T15:30:31.169Z"
+  },
   {
    "id": "b93c914d-8c25-44fb-8b13-7449fa7d75fb",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7950,6 +7968,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "10c871a7-5d99-4c6b-90f2-0905c3332815",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Si, traté de marcarlo pero no me resultó.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Peumo",
+   "body": "Maca comentó: Si, traté de marcarlo pero no me resultó.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T15:30:31.171Z"
+  },
+  {
+   "id": "5056a58a-53d9-4960-a0d7-9f694f61e907",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Si, traté de marcarlo pero no me resultó.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Maca comentó: Si, traté de marcarlo pero no me resultó.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T15:30:31.170Z"
+  },
   {
    "id": "56348755-c807-43a1-b6ea-a1302d6d8b89",
    "to": "flavio",

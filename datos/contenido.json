@@ -8178,7 +8178,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "reaccion",
    "text": "le puso 👍 a tu comentario en “¿Son prefabricadas?”: Es la descripción que aparece en las imágenes… por ejemplo: ",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "¿Son prefabricadas?",

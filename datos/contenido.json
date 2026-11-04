@@ -962,6 +962,23 @@
      "sha": "08c6f03e9a6315501476766f40ec431ce93e9f07",
      "type": "image/jpeg",
      "size": 242703
+    },
+    {
+     "id": "38d95187-44ea-4b81-8e88-1243858f3ca9",
+     "by": "javi",
+     "at": "2026-11-04T22:04:06.530Z",
+     "base": "reel_son_prefabricadas_musica",
+     "version": 1,
+     "shaOrigen": "6685c172a42ede38f76542e7a2064567d6f3708c",
+     "dur": 32.6,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_son_prefabricadas_musica-v1.mp4",
+     "path": "archivos/publicaciones-informativas/reel_son_prefabricadas_musica-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/reel_son_prefabricadas_musica-v1.mp4",
+     "sha": "6685c172a42ede38f76542e7a2064567d6f3708c",
+     "type": "video/mp4",
+     "size": 8123076
     }
    ],
    "checklist": [],
@@ -992,7 +1009,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T21:13:57.240Z",
+   "updatedAt": "2026-11-04T22:05:34.838Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
@@ -5630,6 +5647,16 @@
  ],
  "activity": [
   {
+   "id": "e8cad97b-fbcc-473f-9189-b63e75837644",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-04T22:05:34.842Z"
+  },
+  {
    "id": "911d72c1-aed6-41f5-ae8c-2e74de501ee2",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -8830,6 +8857,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3edd12e4-7759-46d8-b639-68a6b415ffda",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "update",
+   "text": "editó “¿Son prefabricadas?” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T22:05:34.842Z"
+  },
   {
    "id": "5c464a19-5651-43aa-a7f8-ee21d527a72d",
    "to": "maca",

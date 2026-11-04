@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "653347bc-d896-417c-9b24-667520fc492d",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Entonces va a quedar medio tapado, por la red social , eso es bueno",
+   "fileIds": [],
+   "createdAt": "2026-11-04T20:00:05.577Z"
+  },
+  {
    "id": "5471db46-a995-4def-8c1c-a66745a73451",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5432,6 +5440,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "421d9f76-b110-480c-b2c4-477092d80914",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T20:00:05.578Z"
+  },
   {
    "id": "f09bf0d7-b8fd-4170-8388-60dc628b98e2",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8470,6 +8488,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ed6d2857-b9b1-4986-8c8f-fdddfe88da7a",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Entonces va a quedar medio tapado, por la red social , eso es bueno",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Entonces va a quedar medio tapado, por la red social , eso es bueno",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T20:00:05.578Z"
+  },
   {
    "id": "7d0babc6-5217-4d6d-9e29-26de1e482380",
    "to": "javi",

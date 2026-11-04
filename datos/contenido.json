@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "8eb4920c-0c01-4091-a0b7-3ef3d057dc5f",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca Noo los textos no son para hoy! es lo del video render nomas",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:23:33.780Z"
+  },
+  {
    "id": "4f451bcf-7edf-48fc-8980-a70fac4c2e15",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -3891,7 +3899,10 @@
    "author": "maca",
    "text": "Ajustes para el render: \nSacar lo blanco del techo\nLas líneas del techo deben ser verticales\nPoner tranqueras para ambientar el campo \nMarcos de las ventanas negros ( sólo los marcos) \nLos bordes del techo, frente al alero, deben ser negros \nOjalá se le pudiera dar algo de textura “ madera” a lo blanco albayalde. \nQuitar la bruma del fondo en la primera imagen, tratar sea más luminoso. \nEl Deck que baja al muelle ver si se puede cambiar por una bajada/camino  más natural .",
    "fileIds": [],
-   "createdAt": "2026-11-04T19:14:47.179Z"
+   "createdAt": "2026-11-04T19:14:47.179Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "cd5cb5c7-89d7-4a66-81a4-7c2428f5f4d8",
@@ -5362,6 +5373,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ee0b6dde-2fed-40b2-b8e8-7ff843258712",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:23:33.781Z"
+  },
   {
    "id": "a28b93d0-876c-416e-8ff1-f9886c42b886",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8320,6 +8341,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ae28e58c-e1a1-45b8-941e-f61d2276112c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Boldo”: Ajustes para el render: \nSacar lo blanco del techo\nLas línea",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi le puso 👍 a tu comentario: Ajustes para el render: \nSacar lo blanco del techo\nLas línea",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:23:35.402Z"
+  },
+  {
+   "id": "ce6b80f7-1a4e-42a4-8150-c79656bbd71f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca Noo los textos no son para hoy! es lo del video render nomas",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca Noo los textos no son para hoy! es lo del video render nomas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:23:33.782Z"
+  },
+  {
+   "id": "1f537121-1324-432d-8b49-8b3f6470f56c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca Noo los textos no son para hoy! es lo del video render nomas",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca Noo los textos no son para hoy! es lo del video render nomas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:23:33.781Z"
+  },
   {
    "id": "e1fa28aa-4879-4b34-a68a-a1009cdb3600",
    "to": "maca",

@@ -4045,6 +4045,17 @@
  ],
  "comments": [
   {
+   "id": "d16dd22f-47ad-4679-8ba3-91346babb8e8",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Y Si poner las tranqueras te está modificando mucho, déjalo sin no más, son más importantes las ventanas",
+   "fileIds": [
+    "b1fdffab-6173-49cb-91cd-86c422923f39",
+    "b7003560-57d8-45ad-b344-8e3adb6c079d"
+   ],
+   "createdAt": "2026-11-04T23:26:46.009Z"
+  },
+  {
    "id": "d0fe2e41-6e46-4e96-8a5c-ee55cbf79055",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5742,6 +5753,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "36d23d54-c3dd-4c33-ac14-21114d3aecc7",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T23:26:46.016Z"
+  },
   {
    "id": "1c1de2fb-816c-4b19-8bd0-e6ffc82075f1",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9063,6 +9084,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a0f71d62-1609-46aa-9f2a-85f26503a202",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Y Si poner las tranqueras te está modificando mucho, déjalo sin no más, son más …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Y Si poner las tranqueras te está modificando mucho, déjalo sin no más, son más …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:26:46.018Z"
+  },
+  {
+   "id": "65647ea1-2d19-4391-ab6e-36227650bef7",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Y Si poner las tranqueras te está modificando mucho, déjalo sin no más, son más …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Y Si poner las tranqueras te está modificando mucho, déjalo sin no más, son más …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:26:46.018Z"
+  },
   {
    "id": "d9a20398-02cf-487a-8335-3cacd51fd7fc",
    "to": "javi",

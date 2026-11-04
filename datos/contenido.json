@@ -4003,6 +4003,18 @@
  ],
  "comments": [
   {
+   "id": "d164115f-7690-4277-b057-ef103a564e23",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca",
+   "fileIds": [
+    "2d701d6a-9443-4a12-b3f0-3a5da652075b",
+    "340ab011-a227-449f-a804-7c60fb34478d",
+    "f5011bbd-ca29-4d72-91c3-cb59fe323dc6"
+   ],
+   "createdAt": "2026-11-04T22:06:18.952Z"
+  },
+  {
    "id": "65d2b0a6-d5bc-425c-b80c-77b6ebcdbaca",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5646,6 +5658,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "bd880205-e672-4af0-919c-2155b846ca6d",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T22:06:18.954Z"
+  },
   {
    "id": "e8cad97b-fbcc-473f-9189-b63e75837644",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8857,6 +8879,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "51bac726-e5e1-4773-a622-2fbe06800bed",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T22:06:18.955Z"
+  },
+  {
+   "id": "5f4a5adf-de90-469e-afa9-b62a90b10d94",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T22:06:18.955Z"
+  },
   {
    "id": "3edd12e4-7759-46d8-b639-68a6b415ffda",
    "to": "maca",

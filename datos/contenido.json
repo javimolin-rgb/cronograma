@@ -8459,7 +8459,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "mention",
    "text": "te mencionó en “¿Son prefabricadas?”: @Maca Se puede, pero no es recomendado poner textos en esa zona porque se tapan …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",

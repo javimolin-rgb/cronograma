@@ -13396,10 +13396,10 @@
    "tipo": "pc",
    "instalada": true,
    "push": true,
-   "version": "2026.11.04-2",
+   "version": "2026.11.04-3",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-26T12:14:30.832Z",
-   "lastSeen": "2026-11-04T13:43:35.151Z"
+   "lastSeen": "2026-11-04T19:40:15.105Z"
   },
   {
    "id": "d_5888b1e332884189",

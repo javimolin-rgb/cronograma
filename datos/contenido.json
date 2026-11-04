@@ -1649,10 +1649,52 @@
      "sha": "ebc107012e6835d6d1e903800e52da938b1e6b2f",
      "type": "image/webp",
      "size": 107798
+    },
+    {
+     "id": "f4538125-0fdd-4810-a030-ebde63af624e",
+     "by": "javi",
+     "at": "2026-11-04T21:11:58.865Z",
+     "base": "casa-boldo-1",
+     "version": 1,
+     "shaOrigen": "63411a1fdfedc4aed36b85614738dd424552c591",
+     "name": "casa-boldo-1-v1.jpg",
+     "path": "archivos/modelos/casa-boldo-1-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-1-v1.jpg",
+     "sha": "8d66a9c1f61a72ca1b0dcd3b936c6007be858b4d",
+     "type": "image/jpeg",
+     "size": 260083
+    },
+    {
+     "id": "0b0d7516-097e-4b2b-b995-6aefba8caf8b",
+     "by": "javi",
+     "at": "2026-11-04T21:12:04.186Z",
+     "base": "casa-boldo-3",
+     "version": 1,
+     "shaOrigen": "275a2bdb13920a15480716e2354dbfb535403431",
+     "name": "casa-boldo-3-v1.jpg",
+     "path": "archivos/modelos/casa-boldo-3-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-3-v1.jpg",
+     "sha": "34835f5f762ca4c73b50e903a1b09c929d2d1cf4",
+     "type": "image/jpeg",
+     "size": 277451
+    },
+    {
+     "id": "b1fdffab-6173-49cb-91cd-86c422923f39",
+     "by": "javi",
+     "at": "2026-11-04T21:12:06.700Z",
+     "base": "casa-boldo-5",
+     "version": 1,
+     "shaOrigen": "3ce7e6ec931831c209d3d99029aa1c7f4d2bb724",
+     "name": "casa-boldo-5-v1.jpg",
+     "path": "archivos/modelos/casa-boldo-5-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-5-v1.jpg",
+     "sha": "8b2e4de7142eee472f2fe9b2cf42e208a920ebd0",
+     "type": "image/jpeg",
+     "size": 279329
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-04T16:26:00.484Z",
+   "updatedAt": "2026-11-04T21:12:23.088Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -3902,6 +3944,13 @@
  ],
  "comments": [
   {
+   "id": "1d312646-abcc-468c-b0a8-33713f4baf27",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Fotos con los cambios subidas",
+   "createdAt": "2026-11-04T21:12:23.093Z"
+  },
+  {
    "id": "0311591a-1f76-4d30-8e80-beae0103d171",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "flavio",
@@ -5497,6 +5546,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "426fd575-9a22-475a-bb0d-2411781b56c7",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-04T21:12:23.093Z"
+  },
+  {
+   "id": "0587811f-77f2-4c3c-bec4-e000455b86ee",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-04T21:12:23.090Z"
+  },
   {
    "id": "13444af6-1bc8-4d8b-946e-d37186fbb8d1",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8595,6 +8664,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "23ab46a7-25f8-4602-953d-e1238f3062c7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Fotos con los cambios subidas",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Fotos con los cambios subidas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:12:23.093Z"
+  },
+  {
+   "id": "c5c9806e-15dd-46b0-b24d-7ebe6a72eb6f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:12:23.092Z"
+  },
+  {
+   "id": "1f42ed6b-5d79-419c-9232-66972c34b3a2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:12:23.092Z"
+  },
   {
    "id": "c9776480-b1d8-48f0-a935-f0b4db7b659e",
    "to": "maca",

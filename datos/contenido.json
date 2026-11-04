@@ -12936,6 +12936,19 @@
  ],
  "dispositivos": [
   {
+   "id": "d_45ffafba0b344b99",
+   "person": "javi",
+   "equipo": "Mac",
+   "navegador": "Chrome",
+   "tipo": "pc",
+   "instalada": false,
+   "push": false,
+   "version": "2026.11.04-2",
+   "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Claude/1.46388.4 Chrome/148.0.7778.280 Safari/537.36",
+   "firstSeen": "2026-11-04T18:10:29.290Z",
+   "lastSeen": "2026-11-04T18:10:29.291Z"
+  },
+  {
    "id": "d_fc2173f476a44c41",
    "person": "maca",
    "equipo": "iPhone",

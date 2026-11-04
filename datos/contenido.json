@@ -4045,6 +4045,14 @@
  ],
  "comments": [
   {
+   "id": "b38ee019-7ff8-44a5-8838-9d4432e15607",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca Avisar porfavor si está okay",
+   "fileIds": [],
+   "createdAt": "2026-11-04T23:09:39.672Z"
+  },
+  {
    "id": "bb0a88cd-7a4d-4190-a18b-ebfa14c5bb52",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -5705,6 +5713,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3527c2c3-6fe7-42c6-8eef-7ecf95b6047b",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T23:09:39.675Z"
+  },
   {
    "id": "75c162f7-c66e-4d97-b29a-f24e83330254",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8986,6 +9004,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c4e21001-3e93-45e4-86df-c719d79b033b",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca Avisar porfavor si está okay",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca Avisar porfavor si está okay",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:09:39.676Z"
+  },
+  {
+   "id": "7b129e57-176b-4617-b9a4-23b0e66a08ea",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca Avisar porfavor si está okay",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca Avisar porfavor si está okay",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:09:39.675Z"
+  },
   {
    "id": "6439ecf6-c7a5-4f40-b767-e3406a265a80",
    "to": "maca",

@@ -12,9 +12,10 @@
    "date": "2026-11-03",
    "inicio": "",
    "format": "post",
-   "status": "estructura",
+   "status": "publicado",
    "priority": "alta",
    "revisions": 0,
+   "desarchivada": false,
    "id": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
    "platforms": [],
    "assignees": [
@@ -54,12 +55,12 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-03T20:38:19.461Z",
+   "updatedAt": "2026-11-04T02:03:17.138Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-03T19:19:07.045Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-03T19:19:07.045Z",
-   "publishedAt": null,
+   "statusChangedAt": "2026-11-04T02:03:17.138Z",
+   "publishedAt": "2026-11-04T02:03:17.138Z",
    "artefactos": [],
    "versionesTexto": [],
    "marca": []
@@ -5046,6 +5047,19 @@
  ],
  "activity": [
   {
+   "id": "614ad69e-7a33-4f59-9159-725a367e63cf",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "postTitle": "Reel de prueba y subida de modelos",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Estructura por aprobar a Publicado",
+   "meta": {
+    "from": "estructura",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-04T02:03:17.147Z"
+  },
+  {
    "id": "b2c64c8f-19d3-4990-95b1-20999eab6fa4",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -7671,6 +7685,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3b3e15b2-097b-4ad7-91e1-fd27c46acd30",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "status",
+   "text": "movió “Reel de prueba y subida de modelos” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Reel de prueba y subida de modelos",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-04T02:03:17.150Z"
+  },
+  {
+   "id": "a348ef5f-47b3-409c-990d-2b0471c3433e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "type": "status",
+   "text": "movió “Reel de prueba y subida de modelos” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Reel de prueba y subida de modelos",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=d803aa90-d8cb-42e9-bf3e-71e3511878f7",
+   "createdAt": "2026-11-04T02:03:17.150Z"
+  },
   {
    "id": "ee9fb53e-2924-4a07-9792-64167b42f9b6",
    "to": "maca",

@@ -3828,6 +3828,14 @@
  ],
  "comments": [
   {
+   "id": "f527fae8-c44a-4e54-a1b9-c4fbcd0b9b06",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "maca",
+   "text": "Gracias Javi, súper\nEstamos ok con video y la portada 3/8",
+   "fileIds": [],
+   "createdAt": "2026-11-04T15:02:47.156Z"
+  },
+  {
    "id": "402f4eed-2529-41a9-9e70-976d680b4e2e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5177,6 +5185,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "dc9883a8-9ecc-44d3-91bb-bc40b33b29d5",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T15:02:47.164Z"
+  },
   {
    "id": "ef172e42-6095-4610-bfb9-30e65c16772e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -7912,6 +7930,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2ecf70f3-dfd3-4ca4-8616-41cf064b99b6",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "supervision",
+   "text": "comentó en “Casa Peumo”: Gracias Javi, súper\nEstamos ok con video y la portada 3/8",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Peumo",
+   "body": "Maca comentó: Gracias Javi, súper\nEstamos ok con video y la portada 3/8",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T15:02:47.167Z"
+  },
+  {
+   "id": "0b237507-1e97-421a-b8f9-fa9f2b6d389c",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Gracias Javi, súper\nEstamos ok con video y la portada 3/8",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Maca comentó: Gracias Javi, súper\nEstamos ok con video y la portada 3/8",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T15:02:47.166Z"
+  },
   {
    "id": "7155a699-5b22-4d19-a6f8-a75238c28c4c",
    "to": "maca",

@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "5a80dcc7-70c6-4303-8545-c6b05e3d0c55",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Ajustes para el render: \nSacar lo blanco del techo\nLas líneas del techo deben ser verticales\nPoner tranqueras para ambientar el campo \nMarcos de las ventanas negros ( sólo los marcos) \nLos bordes del techo, frente al alero, deben ser negros \nOjalá se le pudiera dar algo de textura “ madera” a lo blanco albayalde. \nQuitar la bruma del fondo en la primera imagen, tratar sea más luminoso. \nEl Deck que baja al muelle ver si se puede cambiar por una bajada/camino  más natural .",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:14:47.179Z"
+  },
+  {
    "id": "cd5cb5c7-89d7-4a66-81a4-7c2428f5f4d8",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5322,6 +5330,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4b329484-2d6f-45c6-99d3-75c8d94c4751",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:14:47.185Z"
+  },
   {
    "id": "35476d01-5202-41ac-ba64-99a87ff30340",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -8240,6 +8258,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6575ab12-f47e-40d6-a423-08f4f8b86870",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Ajustes para el render: \nSacar lo blanco del techo\nLas líneas del techo deben se…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Ajustes para el render: \nSacar lo blanco del techo\nLas líneas del techo deben se…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:14:47.187Z"
+  },
+  {
+   "id": "e5c874ff-fbe7-4a94-ab64-2b98383ad4e3",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Ajustes para el render: \nSacar lo blanco del techo\nLas líneas del techo deben se…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Ajustes para el render: \nSacar lo blanco del techo\nLas líneas del techo deben se…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:14:47.187Z"
+  },
   {
    "id": "1d736316-7cc3-49d9-a17f-6a4d47cd76c5",
    "to": "flavio",

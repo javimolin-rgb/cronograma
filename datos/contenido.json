@@ -3828,6 +3828,16 @@
  ],
  "comments": [
   {
+   "id": "ff298775-6c76-4ae2-be25-c820eaeff663",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "javi",
+   "text": "Supongo que te refieres a esta portada?  @Maca  Recuerda que se pueden marcar (para así evitar confusiones)",
+   "fileIds": [
+    "6e87b170-8c6f-4c7e-9d6c-604fdc35f588"
+   ],
+   "createdAt": "2026-11-04T15:16:11.371Z"
+  },
+  {
    "id": "f527fae8-c44a-4e54-a1b9-c4fbcd0b9b06",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -5185,6 +5195,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b93c914d-8c25-44fb-8b13-7449fa7d75fb",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T15:16:11.375Z"
+  },
   {
    "id": "dc9883a8-9ecc-44d3-91bb-bc40b33b29d5",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -7930,6 +7950,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "56348755-c807-43a1-b6ea-a1302d6d8b89",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Supongo que te refieres a esta portada?  @Maca  Recuerda que se pueden marcar (p…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Javi comentó: Supongo que te refieres a esta portada?  @Maca  Recuerda que se pueden marcar (p…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T15:16:11.376Z"
+  },
+  {
+   "id": "01dc8c5c-41a3-4071-88b6-0159df4891a3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "mention",
+   "text": "te mencionó en “Casa Peumo”: Supongo que te refieres a esta portada?  @Maca  Recuerda que se pueden marcar (p…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Peumo",
+   "body": "Javi te mencionó: Supongo que te refieres a esta portada?  @Maca  Recuerda que se pueden marcar (p…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T15:16:11.376Z"
+  },
   {
    "id": "2ecf70f3-dfd3-4ca4-8616-41cf064b99b6",
    "to": "javi",

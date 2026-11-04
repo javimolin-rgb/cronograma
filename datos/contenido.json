@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "02b35022-d017-4a7f-b5e5-6f37b71ec3a0",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca de texto te refieres a la descripción o al guión?",
+   "fileIds": [],
+   "createdAt": "2026-11-04T16:18:00.014Z"
+  },
+  {
    "id": "9f0052ef-777b-41a3-b47c-09180ec9d4cf",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "javi",
@@ -5245,6 +5253,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "31efc846-ac0e-4a0a-9fe4-7ef605f8ab8a",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T16:18:00.015Z"
+  },
   {
    "id": "c131f504-fada-4a87-b49a-2d536ee83c26",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
@@ -8060,6 +8078,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7516f7a2-8572-4c21-b561-29d0843f2143",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca de texto te refieres a la descripción o al guión?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca de texto te refieres a la descripción o al guión?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T16:18:00.016Z"
+  },
   {
    "id": "5b16a8fe-9018-418f-b8fa-c1e47a441804",
    "to": "flavio",

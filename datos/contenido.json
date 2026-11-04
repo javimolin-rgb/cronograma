@@ -3854,6 +3854,16 @@
  ],
  "comments": [
   {
+   "id": "c9de8fa6-8357-4405-b0a2-1aad3e680f7e",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "En la segunda slide sacar el texto terreno que muestra la tierra. Solo destacar se arma aquí",
+   "fileIds": [
+    "58871b08-5788-46b9-94ed-3c836ff5dcd5"
+   ],
+   "createdAt": "2026-11-04T17:38:50.648Z"
+  },
+  {
    "id": "5f128bb9-625d-48ee-ae13-4e57398b0ffe",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5296,6 +5306,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4f24f1dd-ae4c-464d-9efd-282b621ea255",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T17:38:50.653Z"
+  },
   {
    "id": "3717b9cf-094d-4f1d-a537-8988d701d97d",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8171,6 +8191,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c78c2046-616a-4cb9-8f7b-01cee56df298",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: En la segunda slide sacar el texto terreno que muestra la tierra. Solo destacar …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: En la segunda slide sacar el texto terreno que muestra la tierra. Solo destacar …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T17:38:50.656Z"
+  },
   {
    "id": "b2336358-d4ae-4ab2-9dba-fbc461830b65",
    "to": "maca",

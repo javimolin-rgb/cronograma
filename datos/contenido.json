@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "5471db46-a995-4def-8c1c-a66745a73451",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Ahh ok, tienes razón. Ya, es q el terreno como es tierra era pa disimulsr",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:58:43.769Z"
+  },
+  {
    "id": "8794ccce-a169-40b1-a842-d3f2ae71cb22",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5424,6 +5432,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f09bf0d7-b8fd-4170-8388-60dc628b98e2",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:58:43.774Z"
+  },
   {
    "id": "4afd1ecb-f4f3-4153-b618-4cd3e9334dd1",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8452,6 +8470,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7d0babc6-5217-4d6d-9e29-26de1e482380",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Ahh ok, tienes razón. Ya, es q el terreno como es tierra era pa disimulsr",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Ahh ok, tienes razón. Ya, es q el terreno como es tierra era pa disimulsr",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T19:58:43.775Z"
+  },
   {
    "id": "57c5302d-1017-41a2-a0c8-f4f3e6af0b67",
    "to": "maca",

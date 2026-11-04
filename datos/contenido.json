@@ -4006,9 +4006,18 @@
    "id": "bb0a88cd-7a4d-4190-a18b-ebfa14c5bb52",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
-   "text": "@Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está modificando elementos completos, por lo que tengo que reajustar la estructura",
+   "text": "@Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está modificando elementos completos, por lo que tengo que reajustar la estructura, pero los otros cambios están en las fotos mas recientes.",
    "fileIds": [],
-   "createdAt": "2026-11-04T22:19:39.172Z"
+   "createdAt": "2026-11-04T22:19:39.172Z",
+   "versiones": [
+    {
+     "text": "@Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está modificando elementos completos, por lo que tengo que reajustar la estructura",
+     "hasta": "2026-11-04T22:20:51.379Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-11-04T22:20:51.379Z",
+   "editedBy": "javi"
   },
   {
    "id": "65d2b0a6-d5bc-425c-b80c-77b6ebcdbaca",
@@ -5654,6 +5663,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7b300cc4-36ce-4a6c-a4af-2413ea341d06",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-11-04T22:20:51.382Z"
+  },
   {
    "id": "7a1ea91b-cffb-45f0-9d04-e6b44b3d0052",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

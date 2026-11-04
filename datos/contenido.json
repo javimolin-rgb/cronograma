@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "8794ccce-a169-40b1-a842-d3f2ae71cb22",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca Se puede, pero no es recomendado poner textos en esa zona porque se tapan por la misma red social.",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:57:01.796Z"
+  },
+  {
    "id": "3dc40144-b16a-46a6-8c8f-9cf4b55daf4e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5416,6 +5424,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4afd1ecb-f4f3-4153-b618-4cd3e9334dd1",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:57:01.799Z"
+  },
   {
    "id": "889c2206-9ec6-435b-a27d-223060bad31b",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8434,6 +8452,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "57c5302d-1017-41a2-a0c8-f4f3e6af0b67",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca Se puede, pero no es recomendado poner textos en esa zona porque se tapan …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca Se puede, pero no es recomendado poner textos en esa zona porque se tapan …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T19:57:01.799Z"
+  },
   {
    "id": "08e9aef7-7f84-461d-83e4-f64ef973d384",
    "to": "javi",

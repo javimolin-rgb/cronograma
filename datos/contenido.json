@@ -8730,7 +8730,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "mention",
    "text": "te mencionó en “¿Son prefabricadas?”: @Javi , el último video con los trabajadores armando la terraza, esa me gusta má…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",

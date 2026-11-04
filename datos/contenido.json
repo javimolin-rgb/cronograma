@@ -4045,6 +4045,14 @@
  ],
  "comments": [
   {
+   "id": "d4a988aa-faa4-4bc5-b5b0-14e56a840413",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Estaba sin señal. Lo veo altiro",
+   "fileIds": [],
+   "createdAt": "2026-11-04T23:19:14.822Z"
+  },
+  {
    "id": "b38ee019-7ff8-44a5-8838-9d4432e15607",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -5713,6 +5721,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c19ccf34-3148-4541-b91b-1294b82d2cbd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T23:19:14.826Z"
+  },
   {
    "id": "3527c2c3-6fe7-42c6-8eef-7ecf95b6047b",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9004,6 +9022,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d7c9e740-2b47-421b-94a2-a9816bad68a2",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Estaba sin señal. Lo veo altiro",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Estaba sin señal. Lo veo altiro",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:19:14.828Z"
+  },
+  {
+   "id": "43e11d24-cc4e-421d-9ec9-146885c35d8b",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Estaba sin señal. Lo veo altiro",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Estaba sin señal. Lo veo altiro",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:19:14.827Z"
+  },
   {
    "id": "c4e21001-3e93-45e4-86df-c719d79b033b",
    "to": "flavio",

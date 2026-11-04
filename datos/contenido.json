@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "7dfdb3e1-0ca4-41f7-85df-58360c276256",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Con respecto a los textos los corrijo apenas pueda. Esos no son necesarios hoy 20:00 hrs? O si?",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:15:51.992Z"
+  },
+  {
    "id": "5a80dcc7-70c6-4303-8545-c6b05e3d0c55",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5330,6 +5338,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "44a7b814-53de-424f-8fdb-65bc642fd629",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:15:51.993Z"
+  },
   {
    "id": "4b329484-2d6f-45c6-99d3-75c8d94c4751",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8258,6 +8276,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b137d1eb-fa3a-4973-a5d2-029f421c4af7",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Con respecto a los textos los corrijo apenas pueda. Esos no son necesarios hoy 2…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Con respecto a los textos los corrijo apenas pueda. Esos no son necesarios hoy 2…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:15:51.994Z"
+  },
+  {
+   "id": "c075d74d-a3a9-45a8-8c96-3e2eac4983c3",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Con respecto a los textos los corrijo apenas pueda. Esos no son necesarios hoy 2…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Con respecto a los textos los corrijo apenas pueda. Esos no son necesarios hoy 2…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T19:15:51.994Z"
+  },
   {
    "id": "6575ab12-f47e-40d6-a423-08f4f8b86870",
    "to": "javi",

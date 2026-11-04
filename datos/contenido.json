@@ -4003,27 +4003,6 @@
  ],
  "comments": [
   {
-   "id": "d164115f-7690-4277-b057-ef103a564e23",
-   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
-   "author": "javi",
-   "text": "@Maca espera que se estan fusionando",
-   "fileIds": [
-    "2d701d6a-9443-4a12-b3f0-3a5da652075b",
-    "340ab011-a227-449f-a804-7c60fb34478d",
-    "f5011bbd-ca29-4d72-91c3-cb59fe323dc6"
-   ],
-   "createdAt": "2026-11-04T22:06:18.952Z",
-   "versiones": [
-    {
-     "text": "@Maca",
-     "hasta": "2026-11-04T22:08:01.910Z",
-     "by": "javi"
-    }
-   ],
-   "editedAt": "2026-11-04T22:08:01.910Z",
-   "editedBy": "javi"
-  },
-  {
    "id": "65d2b0a6-d5bc-425c-b80c-77b6ebcdbaca",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5667,6 +5646,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3164f8b7-2435-453f-98ce-0ff061d3c1fb",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "borró un comentario de Javi",
+   "meta": null,
+   "createdAt": "2026-11-04T22:13:16.032Z"
+  },
   {
    "id": "7f2e6e71-1fef-4d9b-bd55-cd862b25ebda",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -14307,10 +14296,10 @@
    "tipo": "pc",
    "instalada": false,
    "push": true,
-   "version": "2026.11.04-3",
+   "version": "2026.11.04-4",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-04T19:45:03.674Z"
+   "lastSeen": "2026-11-04T22:13:11.368Z"
   }
  ],
  "recursos": [

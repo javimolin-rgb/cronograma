@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "577e76aa-40f4-4dcf-998c-4328637061a7",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "La voz y música la ve Flavio  o tú con los créditos de eleven?",
+   "fileIds": [],
+   "createdAt": "2026-11-04T20:01:38.668Z"
+  },
+  {
    "id": "653347bc-d896-417c-9b24-667520fc492d",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5440,6 +5448,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "31c777cd-d6a0-48de-9169-3e6536166cee",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T20:01:38.668Z"
+  },
   {
    "id": "421d9f76-b110-480c-b2c4-477092d80914",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8488,6 +8506,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "55b836dd-c5de-41ab-8942-08bc32f5b91c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: La voz y música la ve Flavio  o tú con los créditos de eleven?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: La voz y música la ve Flavio  o tú con los créditos de eleven?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T20:01:38.670Z"
+  },
   {
    "id": "ed6d2857-b9b1-4986-8c8f-fdddfe88da7a",
    "to": "javi",

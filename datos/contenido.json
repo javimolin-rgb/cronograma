@@ -931,6 +931,23 @@
      "sha": "b6ba604b0b3e6ed83165c64e7bd07991a17c8d60",
      "type": "video/mp4",
      "size": 17077225
+    },
+    {
+     "id": "cf35e86d-e4a9-4c93-a44d-fa4bff9913e6",
+     "by": "javi",
+     "at": "2026-11-04T20:05:07.742Z",
+     "base": "reel_son_prefabricadasa",
+     "version": 1,
+     "shaOrigen": "69ce6c841e433ffb43993205c6f42f47f90928b3",
+     "dur": 32.739841,
+     "w": 608,
+     "h": 1080,
+     "name": "reel_son_prefabricadasa-v1.mp4",
+     "path": "archivos/publicaciones-informativas/reel_son_prefabricadasa-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/reel_son_prefabricadasa-v1.mp4",
+     "sha": "69ce6c841e433ffb43993205c6f42f47f90928b3",
+     "type": "video/mp4",
+     "size": 6147822
     }
    ],
    "checklist": [],
@@ -961,7 +978,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T19:22:28.617Z",
+   "updatedAt": "2026-11-04T20:05:07.743Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
@@ -5448,6 +5465,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "9e2cd5b4-e993-4aa8-b85f-c8e4c70866b0",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-04T20:05:07.744Z"
+  },
   {
    "id": "31c777cd-d6a0-48de-9169-3e6536166cee",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",

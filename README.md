@@ -100,12 +100,12 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 
 ## Las publicadas se archivan solas
 
-Cuando una pieza pasa a **Publicado**, el trabajo se terminó: la app la **archiva sola**, para que lo que ya está hecho no siga estorbando en las listas de lo que falta.
+Cuando una pieza está en **Publicado**, el trabajo se terminó: la app la **archiva sola**, para que lo que ya está hecho no siga estorbando en las listas de lo que falta. Vale para las que publiques de ahora en adelante y también para **las que ya tenías publicadas**.
 
 - **Desaparece de Piezas y del Calendario** (agenda, tablero, mes, Gantt y línea). Eso es todo lo que cambia.
 - **No se borra nada** ni se pierde nada: sigue entera en el **Feed** (y en su pestaña *Publicadas*), en **Entregas** con todos sus archivos, en el **Panel** y en las búsquedas del archivo.
 - En **Piezas** y en **Calendario** aparece arriba un botón **Archivo** con el número de piezas archivadas: tocarlo las trae de vuelta a la vista, y tocarlo otra vez las esconde. También está como casilla dentro de **Filtros**.
-- Si una pieza publicada hay que volver a tocarla, se abre y se toca **“Sacar del archivo”**: vuelve a las listas aunque siga marcada como Publicado. Si después la mueves a otro estado y la vuelves a publicar, se archiva de nuevo.
+- Si una pieza publicada hay que volver a tocarla, se abre y se toca **“Sacar del archivo”**: vuelve a las listas aunque siga marcada como Publicado, y se queda ahí. Si después la mueves a otro estado y la vuelves a publicar, se archiva de nuevo.
 
 Es automático: no hay que archivar nada a mano.
 

@@ -271,7 +271,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, archivado: ''
+    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, desarchivada: false
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -422,17 +422,16 @@ async function commitPost(old, p) {
   p.updatedAt = at; p.updatedBy = me;
   if (isNew) {
     Object.assign(p, { createdAt: at, createdBy: me, statusChangedAt: at, revisions: 0, publishedAt: p.status === 'publicado' ? at : null });
-    if (p.status === 'publicado') p.archivado = at;   // nace publicada: ya está lista, se guarda archivada
   } else {
     Object.assign(p, { createdAt: old.createdAt, createdBy: old.createdBy, revisions: old.revisions || 0, statusChangedAt: old.statusChangedAt, publishedAt: old.publishedAt || null });
     if (old.status !== p.status) {
       p.statusChangedAt = at;
       if (p.status === 'cambios') p.revisions += 1;
       p.publishedAt = p.status === 'publicado' ? at : null;
-      /* Publicada = trabajo terminado: se archiva sola para dejar la lista limpia.
-         Si vuelve atrás (hubo que retocarla), sale del archivo. Se archiva solo al
-         CAMBIAR de estado, para que “Sacar del archivo” no se deshaga al guardar. */
-      p.archivado = p.status === 'publicado' ? at : '';
+      /* Publicada = trabajo terminado, así que queda archivada (ver archivada()).
+         Si sale de Publicado se olvida el “sacar del archivo”: cuando vuelva a
+         publicarse, se archiva de nuevo como cualquier otra. */
+      if (p.status !== 'publicado') p.desarchivada = false;
     }
   }
   if (old) {
@@ -490,7 +489,7 @@ async function changeStatus(id, status) {
   const p = clone(old); p.status = status;
   await commitPost(old, p);
   renderAll();
-  toast(p.archivado && !old.archivado ? 'Publicada y archivada ✅' : `Movida a ${statusOf(status).name}`, 3200);
+  toast(archivada(p) && !archivada(old) ? 'Publicada y archivada ✅' : `Movida a ${statusOf(status).name}`, 3200);
 }
 
 /* ---------- vistas: piezas ---------- */
@@ -502,7 +501,7 @@ const sortPosts = (a, b) => ((a.date || '9999') + (a.time || '99:99') + a.title)
 function filtered(conArchivadas) {
   const f = S.f, q = f.q.trim().toLowerCase();
   return S.db.posts.filter((p) => {
-    if (p.archivado && !f.archivadas && !conArchivadas) return false;
+    if (archivada(p) && !f.archivadas && !conArchivadas) return false;
     if (f.mine && !p.assignees.includes(S.me.id)) return false;
     if (f.person && !p.assignees.includes(f.person)) return false;
     if (f.platform && !p.platforms.includes(f.platform)) return false;
@@ -513,8 +512,12 @@ function filtered(conArchivadas) {
   });
 }
 const filterCount = () => ['person', 'platform', 'status', 'format'].filter((k) => S.f[k]).length;
-// Cuántas piezas publicadas están guardadas en el archivo
-const archivadas = () => S.db.posts.filter((p) => p.archivado).length;
+/* Una pieza publicada está en el archivo: el trabajo se terminó y deja de estorbar
+   en las listas de lo que falta. Sale del archivo solo si la sacan a mano. */
+const archivada = (p) => p.status === 'publicado' && !p.desarchivada;
+const archivadas = () => S.db.posts.filter(archivada).length;
+// Desde cuándo está archivada (lo que se muestra dentro de la pieza)
+const archivadaDesde = (p) => p.publishedAt || p.statusChangedAt || p.updatedAt || p.createdAt;
 
 function card(p, o = {}) {
   const st = statusOf(p.status), t = today();
@@ -2624,7 +2627,7 @@ function renderEditor() {
         <div class="chips gente">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}" title="${esc(x.name)}" aria-label="${esc(x.name)}">${av(x.id)}</button>`).join('')}</div></div>
     </div>
     ${old ? `<div class="stage" style="--c:${st.color}"><i></i>${esc(statusOf(old.status).name)} desde ${ago(old.statusChangedAt || old.createdAt)}${isStalled(old) ? ' · <b class="stuck">estancada</b>' : ''}</div>` : ''}
-    ${old && old.archivado ? `<div class="archbox">${ic('archive', 17)}<span><b>Guardada en el archivo</b> desde ${esc(ago(old.archivado))}. Ya está publicada: no sale en Piezas ni en el calendario, pero sigue entera en el Feed y en Entregas.</span>${store.canWrite ? `<button class="btn sm" data-act="ed-desarchivar">Sacar del archivo</button>` : ''}</div>` : ''}
+    ${old && archivada(old) ? `<div class="archbox">${ic('archive', 17)}<span><b>Guardada en el archivo</b>${archivadaDesde(old) ? ` desde ${esc(ago(archivadaDesde(old)))}` : ''}. Ya está publicada: no sale en Piezas ni en el calendario, pero sigue entera en el Feed y en Entregas.</span>${store.canWrite ? `<button class="btn sm" data-act="ed-desarchivar">Sacar del archivo</button>` : ''}</div>` : ''}
 
     <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
     ${d.date ? `<div class="row2"><input class="field" id="e-date" type="date" value="${esc(d.date)}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>` : ''}
@@ -4668,8 +4671,8 @@ const ACTS = {
   // Sacar del archivo: la pieza sigue publicada, pero vuelve a las listas
   'ed-desarchivar': async () => {
     if (!ED || !ED.old || !requireWrite()) return;
-    ED.d.archivado = '';
-    await save('posts', Object.assign({}, S.db.posts.find((p) => p.id === ED.d.id) || ED.d, { archivado: '', updatedAt: nowISO(), updatedBy: S.me.id }));
+    ED.d.desarchivada = true;
+    await save('posts', Object.assign({}, S.db.posts.find((p) => p.id === ED.d.id) || ED.d, { desarchivada: true, updatedAt: nowISO(), updatedBy: S.me.id }));
     ED.old = clone(S.db.posts.find((p) => p.id === ED.d.id)) || ED.old;
     renderEditor(); renderToolbar();
     toast('Fuera del archivo: vuelve a aparecer en las listas', 3200);

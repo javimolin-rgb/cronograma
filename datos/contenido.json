@@ -11796,12 +11796,12 @@
    "equipo": "Mac",
    "navegador": "Chrome",
    "tipo": "pc",
-   "instalada": false,
+   "instalada": true,
    "push": false,
-   "version": "2026.11.03-9",
+   "version": "2026.11.04-2",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-26T12:14:30.832Z",
-   "lastSeen": "2026-11-03T21:44:08.092Z"
+   "lastSeen": "2026-11-04T00:52:31.695Z"
   },
   {
    "id": "d_5888b1e332884189",

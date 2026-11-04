@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "e3307aaf-ba38-4381-9aa9-4307985f3845",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Faltaría cambiar naturaleza por viento en la voz. \nNo hay fotos con los maestros trabajando ?",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:32:19.422Z"
+  },
+  {
    "id": "6993c207-8a66-45c8-9ce8-d462e8590364",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5384,6 +5392,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "970406e2-6cff-4d3c-bceb-ff7034ef683f",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:32:19.431Z"
+  },
   {
    "id": "b4762c9f-325b-4420-898c-c5b2905a40be",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8362,6 +8380,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9a58d141-b2ef-432a-9089-4920500a434e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Faltaría cambiar naturaleza por viento en la voz. \nNo hay fotos con los maestros…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Faltaría cambiar naturaleza por viento en la voz. \nNo hay fotos con los maestros…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T19:32:19.433Z"
+  },
   {
    "id": "e01048de-e93e-4953-8cbc-cdb8c63accc1",
    "to": "maca",

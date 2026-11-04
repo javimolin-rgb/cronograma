@@ -4003,6 +4003,14 @@
  ],
  "comments": [
   {
+   "id": "bb0a88cd-7a4d-4190-a18b-ebfa14c5bb52",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está modificando elementos completos, por lo que tengo que reajustar la estructura",
+   "fileIds": [],
+   "createdAt": "2026-11-04T22:19:39.172Z"
+  },
+  {
    "id": "65d2b0a6-d5bc-425c-b80c-77b6ebcdbaca",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5646,6 +5654,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7a1ea91b-cffb-45f0-9d04-e6b44b3d0052",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T22:19:39.176Z"
+  },
   {
    "id": "3164f8b7-2435-453f-98ce-0ff061d3c1fb",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8887,6 +8905,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d0b9766e-6197-4c8a-9410-f392d54d0ec8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está m…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está m…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T22:19:39.178Z"
+  },
+  {
+   "id": "2a605635-d5f0-411c-ba95-4974d4d7d93e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está m…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca Dame unos minutos que los bordes no son tan faciles de cambiar y me está m…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T22:19:39.177Z"
+  },
   {
    "id": "51bac726-e5e1-4773-a622-2fbe06800bed",
    "to": "flavio",

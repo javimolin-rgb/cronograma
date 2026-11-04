@@ -1634,7 +1634,7 @@
    "date": "2026-11-03",
    "inicio": "",
    "format": "story",
-   "status": "revision",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1792,12 +1792,12 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-04T14:41:57.607Z",
+   "updatedAt": "2026-11-04T17:56:25.181Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T15:54:25.786Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-02T16:03:53.424Z",
-   "publishedAt": null,
+   "statusChangedAt": "2026-11-04T17:56:25.181Z",
+   "publishedAt": "2026-11-04T17:56:25.181Z",
    "artefactos": [],
    "versionesTexto": [
     {
@@ -5323,6 +5323,19 @@
  ],
  "activity": [
   {
+   "id": "35476d01-5202-41ac-ba64-99a87ff30340",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Publicado",
+   "meta": {
+    "from": "revision",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-04T17:56:25.184Z"
+  },
+  {
    "id": "574f2e44-f061-4dc9-b799-29d4d8b305ff",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -8227,6 +8240,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1d736316-7cc3-49d9-a17f-6a4d47cd76c5",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "status",
+   "text": "movió “Casa Peumo” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T17:56:25.186Z"
+  },
+  {
+   "id": "131f179e-dabd-4042-89f6-80437d22b03f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "status",
+   "text": "movió “Casa Peumo” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T17:56:25.185Z"
+  },
   {
    "id": "e1097a05-125c-44ad-b71b-34c718e12e1b",
    "to": "javi",

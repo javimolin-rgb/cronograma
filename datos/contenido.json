@@ -3944,6 +3944,14 @@
  ],
  "comments": [
   {
+   "id": "a1c1d14f-6887-4ed9-8943-50417e32c4af",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "@Javi , el último video con los trabajadores armando la terraza, esa me gusta más. \nOjo q sigue diciendo tradicional, porfa cambiar. \nY  la foto de inicio el texto tapa toda la casa, eso se ve bien una vez publicado? O sino darle un poco más de tiempo a la casa antes del texto? Opinen",
+   "fileIds": [],
+   "createdAt": "2026-11-04T21:47:03.728Z"
+  },
+  {
    "id": "1158d78a-796b-48aa-bd3a-7ceaa28150d3",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5554,6 +5562,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "158bfb60-fb89-4fe8-96c8-f4fe60679be4",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T21:47:03.736Z"
+  },
   {
    "id": "a63b083b-35ca-4b63-b493-3797491c011c",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8705,6 +8723,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "66f2b860-5e16-42e6-a319-62362ca97b8e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Javi , el último video con los trabajadores armando la terraza, esa me gusta má…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca te mencionó: @Javi , el último video con los trabajadores armando la terraza, esa me gusta má…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T21:47:03.737Z"
+  },
   {
    "id": "b00d5deb-518e-487c-a45b-f17ba801fce0",
    "to": "javi",

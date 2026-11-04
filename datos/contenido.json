@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "92c23e5c-6d8e-4dee-a00e-ab5e1a031c94",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Equipo en obra sería bueno si se mostrara  más personas 😬 tienes otra foto?",
+   "fileIds": [],
+   "createdAt": "2026-11-04T17:40:26.482Z"
+  },
+  {
    "id": "c9de8fa6-8357-4405-b0a2-1aad3e680f7e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5306,6 +5314,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f30a4ece-233d-42cb-a822-197f6a65016a",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T17:40:26.487Z"
+  },
   {
    "id": "4f24f1dd-ae4c-464d-9efd-282b621ea255",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8191,6 +8209,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7509c840-eb6a-4e9f-8219-ae51edf78367",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Equipo en obra sería bueno si se mostrara  más personas 😬 tienes otra foto?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Equipo en obra sería bueno si se mostrara  más personas 😬 tienes otra foto?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T17:40:26.488Z"
+  },
   {
    "id": "c78c2046-616a-4cb9-8f7b-01cee56df298",
    "to": "javi",

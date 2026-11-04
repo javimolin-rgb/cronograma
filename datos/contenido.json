@@ -812,38 +812,50 @@
      "Tiempo",
      "Imagen",
      "Texto en pantalla",
-     "Voz en off"
+     "Voz en off",
+     "",
+     ""
     ],
     "filas": [
      [
       "0–3 s",
       "Sticker de comentario sobre la estructura",
       "¿Estas casas son prefabricadas?",
-      "—"
+      "—",
+      "",
+      ""
      ],
      [
       "3–8 s",
       "Paneo por la estructura en el terreno",
       "No. Se construyen en tu terreno",
-      "Tu casa no llega en un camión."
+      "Tu casa no llega en un camión.",
+      "",
+      ""
      ],
      [
       "8–13 s",
       "Detalle de manos trabajando",
       "Construcción en obra, calidad y eficiencia",
-      "Crece en el mismo lugar donde vas a despertar cada mañana."
+      "Crece en el mismo lugar donde vas a despertar cada mañana.",
+      "",
+      ""
      ],
      [
       "13–19 s",
       "Plano del modelo que se dibuja sobre el terreno",
       "Partimos de un modelo prediseñado y lo adaptamos a tu terreno",
-      "Mirando tu paisaje, con tu luz, con tu viento."
+      "Mirando tu paisaje, con tu luz, con tu naturaleza.",
+      "",
+      ""
      ],
      [
       "19–25 s",
       "Casa terminada al atardecer + logo",
       "Obra de 6 a 10 meses · neorigen.cl",
-      "Pensada con ustedes, para la vida que quieren tener ahí."
+      "Pensada con ustedes, para la vida que quieren tener ahí.",
+      "",
+      ""
      ]
     ]
    },
@@ -932,7 +944,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T15:40:54.431Z",
+   "updatedAt": "2026-11-04T15:47:24.416Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
@@ -5218,6 +5230,16 @@
  ],
  "activity": [
   {
+   "id": "c2dd46ca-a676-4171-94b9-57063350dfbc",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-04T15:47:24.421Z"
+  },
+  {
    "id": "7ee73c6f-feda-4392-b729-ed38b48e8a8a",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -8002,6 +8024,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "be49d4bb-f258-4665-8320-6be9bede4fd1",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "en “¿Son prefabricadas?”: editó la tabla del guión",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T15:47:24.424Z"
+  },
   {
    "id": "41e1a088-a1b4-4539-91e7-8e3c703df2c9",
    "to": "javi",

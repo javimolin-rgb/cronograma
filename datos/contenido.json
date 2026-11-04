@@ -803,7 +803,7 @@
   },
   {
    "title": "¿Son prefabricadas?",
-   "caption": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción n en obra, calidad y eficiencia, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? E \nCompártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
+   "caption": "No, no son prefabricadas. 🌿 Partimos de nuestros modelos prediseñados y los construimos en tu  terreno, con construcción en obra, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Compártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
    "notes": "Reel · respuesta a comentario · 25 s · busca envíos\n\nIdea. Responder en video la duda más repetida, con el formato de respuesta a comentario de Instagram. Si hay un comentario o DM real con esa pregunta, se usa su sticker; si no, se abre con un rótulo \"Nos preguntan:\" y nunca se inventa un comentario. Aclara la diferencia de la marca sin sonar a defensa.\n\nImagen. Toma de obra con la estructura en pie (galería: 02 · Estructura), luego un modelo terminado en su paisaje. Cámara en mano, sin estabilizar demasiado.\n\nFuente. Preguntas frecuentes: \"¿Las casas son prefabricadas?\", \"¿Qué es Neorigen?\" y plazo de construcción.",
    "hashtags": "",
    "guion": "",
@@ -913,13 +913,20 @@
      "text": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción tradicional, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
      "hasta": "2026-11-03T20:42:11.195Z",
      "by": "maca"
+    },
+    {
+     "id": "880baee7-3593-4670-a3e3-81ee350ee437",
+     "campo": "caption",
+     "text": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción n en obra, calidad y eficiencia, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? E \nCompártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
+     "hasta": "2026-11-04T15:34:21.466Z",
+     "by": "maca"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T14:43:40.061Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-04T15:34:21.466Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
   },
@@ -5204,6 +5211,16 @@
  ],
  "activity": [
   {
+   "id": "7b8fd78a-125c-4a53-a989-1ef9e7d4b34d",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-11-04T15:34:21.468Z"
+  },
+  {
    "id": "2195b97f-53d6-431c-bd81-5909fe0d220f",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "postTitle": "Casa Peumo",
@@ -7968,6 +7985,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c85ef337-5f7d-4d55-ad57-152473b3b39e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "en “¿Son prefabricadas?”: editó copy",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T15:34:21.470Z"
+  },
   {
    "id": "10c871a7-5d99-4c6b-90f2-0905c3332815",
    "to": "javi",

@@ -117,7 +117,7 @@ const findFile = (fid) => {
 const projectName = (p) => (p.campaign || '').trim() || 'Sin proyecto';
 function projects(lastOnly) {
   const map = new Map();
-  filtered().forEach((p) => {
+  filtered(true).forEach((p) => {
     const files = pieceFiles(p, lastOnly);
     const k = projectName(p);
     if (!map.has(k)) map.set(k, { name: k, posts: [], files: 0, size: 0 });
@@ -201,6 +201,8 @@ const IC = {
   eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
   key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M17 6l3 3M14 9l3 3"/>',
   cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>',
+  archive: '<rect x="2.5" y="3.5" width="19" height="5" rx="1.5"/><path d="M4.5 8.5V19a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V8.5M10 12h4"/>',
+  zap: '<path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/>',
   copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>'
 };
 // Marca: un calendario con la división en T de Neorigen
@@ -219,6 +221,9 @@ const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Pieza
 const PIEZAS_VISTAS = [['agenda', 'Agenda', 'list'], ['tablero', 'Tablero', 'board']];
 // Dentro de Calendario: el mes de siempre, la carta Gantt y la línea que baja
 const CAL_VISTAS = [['mes', 'Mes', 'calendar'], ['gantt', 'Gantt', 'chart'], ['linea', 'Línea', 'list']];
+/* En la carta Gantt, qué va en la columna de la izquierda (el eje de abajo siempre son los días).
+   Con “Pieza” hay una línea por pieza; con las demás, cada línea junta todas sus piezas. */
+const GANTT_EJES = [['pieza', 'Pieza'], ['campana', 'Campaña'], ['estado', 'Estado'], ['persona', 'Persona']];
 function guardarUI() { try { localStorage.setItem(UI_KEY, JSON.stringify(UI)); } catch (e) { /* sin espacio */ } }
 function aplicarUI() {
   const r = document.documentElement;
@@ -241,9 +246,10 @@ const S = {
   view: (localStorage.getItem('crono_view') === 'board' ? 'list' : localStorage.getItem('crono_view')) || 'calendar',
   piezasVista: (localStorage.getItem('crono_piezas_vista') || (localStorage.getItem('crono_view') === 'board' ? 'tablero' : 'agenda')),
   calVista: localStorage.getItem('crono_cal_vista') || 'mes',
+  ganttY: localStorage.getItem('crono_gantt_y') || 'campana',
   cursor: (() => { const d = new Date(); d.setDate(1); return d; })(),
   sel: today(),
-  f: { q: '', person: '', platform: '', status: '', format: '', mine: false },
+  f: { q: '', person: '', platform: '', status: '', format: '', mine: false, archivadas: false },
   offline: '',
   lastOnly: localStorage.getItem('crono_last_only') !== '0',
   conPrompts: localStorage.getItem('crono_prompts') === '1',
@@ -265,7 +271,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0
+    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, archivado: ''
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -343,8 +349,17 @@ const enlaceCarpeta = (id) => `${siteBase()}#marca=${encodeURIComponent(id || 'r
 // Quién recibe aviso de todo lo que hacen los demás
 const supervisores = () => (CFG.SUPERVISA || []).filter((id) => id && id !== S.me.id && byId(P, id));
 
+/* Lo que se ve en la pantalla bloqueada del celular (y en el reloj), que es poco:
+   arriba, el nombre de la pieza; abajo, quién fue y qué hizo. Nunca “Cronograma”,
+   porque eso ya lo dice el sistema encima con el logo de la app. */
+const PUSH_TITULO = 64, PUSH_CUERPO = 150;
+const tituloPush = (post) => ((post && String(post.title || '').trim()) || CFG.APP_NAME).slice(0, PUSH_TITULO);
+const cuerpoPush = (frase) => `${S.me.name} ${String(frase || '').trim()}`.slice(0, PUSH_CUERPO);
+// Un texto largo cabe mejor recortado que cortado a la mitad de una palabra
+const recorte = (t, n) => { const s = String(t || '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s; };
+
 // Un solo aviso por acción, con el resumen de lo que pasó
-async function notifySuper(post, texto, yaAvisados) {
+async function notifySuper(post, texto, yaAvisados, frase) {
   for (const pid of supervisores()) {
     if (post && silenciada(pid, post.id)) continue;
     if (yaAvisados && yaAvisados.includes(pid)) continue;   // ya le llegó el aviso directo de lo mismo
@@ -354,14 +369,14 @@ async function notifySuper(post, texto, yaAvisados) {
       await save('notifications', {
         id: uid(), to: pid, from: S.me.id, postId: post ? post.id : null, type: 'supervision', text: texto, read: false,
         inApp: !!ev.app, push: !!ev.push,
-        title: CFG.APP_NAME, body: `${S.me.name} ${texto}`.slice(0, 180), url: post ? siteLink(post.id) : siteBase(),
+        title: tituloPush(post), body: cuerpoPush(frase || texto), url: post ? siteLink(post.id) : siteBase(),
         createdAt: nowISO()
       });
     } catch (e) { /* ya avisado */ }
   }
 }
 
-async function notify(type, post, targets, text) {
+async function notify(type, post, targets, text, frase) {
   // quienes siguen la pieza también se enteran; quienes la silenciaron, no
   const seguidores = ['comment', 'status', 'reschedule', 'update'].includes(type) ? P.filter((x) => sigue(x.id, post.id)).map((x) => x.id) : [];
   const sup = supervisores(); // reciben su propio resumen, no un aviso por cada cosa
@@ -379,7 +394,7 @@ async function notify(type, post, targets, text) {
       await save('notifications', {
         id: uid(), to: pid, from: S.me.id, postId: post.id, type, text, read: false,
         inApp: !!ev.app, push: !!ev.push,
-        title: CFG.APP_NAME, body: `${S.me.name} ${text}`.slice(0, 180), url: siteLink(post.id),
+        title: tituloPush(post), body: cuerpoPush(frase || text), url: siteLink(post.id),
         createdAt: nowISO()
       });
     } catch (e) { /* ya avisado */ }
@@ -407,12 +422,17 @@ async function commitPost(old, p) {
   p.updatedAt = at; p.updatedBy = me;
   if (isNew) {
     Object.assign(p, { createdAt: at, createdBy: me, statusChangedAt: at, revisions: 0, publishedAt: p.status === 'publicado' ? at : null });
+    if (p.status === 'publicado') p.archivado = at;   // nace publicada: ya está lista, se guarda archivada
   } else {
     Object.assign(p, { createdAt: old.createdAt, createdBy: old.createdBy, revisions: old.revisions || 0, statusChangedAt: old.statusChangedAt, publishedAt: old.publishedAt || null });
     if (old.status !== p.status) {
       p.statusChangedAt = at;
       if (p.status === 'cambios') p.revisions += 1;
       p.publishedAt = p.status === 'publicado' ? at : null;
+      /* Publicada = trabajo terminado: se archiva sola para dejar la lista limpia.
+         Si vuelve atrás (hubo que retocarla), sale del archivo. Se archiva solo al
+         CAMBIAR de estado, para que “Sacar del archivo” no se deshaga al guardar. */
+      p.archivado = p.status === 'publicado' ? at : '';
     }
   }
   if (old) {
@@ -427,8 +447,8 @@ async function commitPost(old, p) {
 
   if (isNew) {
     await log(p, 'created', 'creó la pieza');
-    const av = await notify('tagged', p, p.assignees, `te etiquetó en “${p.title}”`);
-    await notifySuper(p, `creó la pieza “${p.title}”`, av);
+    const av = await notify('tagged', p, p.assignees, `te etiquetó en “${p.title}”`, 'te etiquetó como responsable');
+    await notifySuper(p, `creó la pieza “${p.title}”`, av, 'creó esta pieza');
     return;
   }
   const resumen = [], avisados = [];
@@ -437,19 +457,19 @@ async function commitPost(old, p) {
   const keep = p.assignees.filter((x) => old.assignees.includes(x));
   if (added.length) {
     await log(p, 'tag', `etiquetó a ${added.map((a) => person(a).name).join(', ')}`);
-    avisados.push(...await notify('tagged', p, added, `te etiquetó en “${p.title}”`));
+    avisados.push(...await notify('tagged', p, added, `te etiquetó en “${p.title}”`, 'te etiquetó como responsable'));
     resumen.push(`etiquetó a ${added.map((a) => person(a).name).join(', ')}`);
   }
   if (removed.length) await log(p, 'untag', `quitó a ${removed.map((a) => person(a).name).join(', ')}`);
   if (old.status !== p.status) {
     await log(p, 'status', `movió de ${statusOf(old.status).name} a ${statusOf(p.status).name}`, { from: old.status, to: p.status });
-    await notify('status', p, keep, `movió “${p.title}” a ${statusOf(p.status).name}`);
+    await notify('status', p, keep, `movió “${p.title}” a ${statusOf(p.status).name}`, `la movió a ${statusOf(p.status).name}`);
     resumen.push(`la movió a ${statusOf(p.status).name}`);
   }
   if ((old.date || '') !== (p.date || '')) {
     const nd = p.date ? fmtShort(p.date) : 'sin fecha';
     await log(p, 'reschedule', `cambió la fecha ${old.date ? 'de ' + fmtShort(old.date) + ' ' : ''}a ${nd}`, { from: old.date, to: p.date });
-    await notify('reschedule', p, keep, `cambió la fecha de “${p.title}” a ${nd}`);
+    await notify('reschedule', p, keep, `cambió la fecha de “${p.title}” a ${nd}`, `cambió la fecha a ${nd}`);
     resumen.push(`cambió la fecha a ${nd}`);
   }
   const changed = CONTENT_FIELDS.filter((k) => !sameJ(old[k], p[k]));
@@ -457,10 +477,10 @@ async function commitPost(old, p) {
   if (changed.length || ckChanged) {
     const labels = changed.concat(ckChanged ? ['checklist'] : []).map((k) => FIELD_LABEL[k]).join(', ');
     await log(p, 'edit', `editó ${labels}`);
-    if (changed.length) await notify('update', p, keep, `editó “${p.title}” (${changed.map((k) => FIELD_LABEL[k]).join(', ')})`);
+    if (changed.length) await notify('update', p, keep, `editó “${p.title}” (${changed.map((k) => FIELD_LABEL[k]).join(', ')})`, `editó ${changed.map((k) => FIELD_LABEL[k]).join(', ')}`);
     resumen.push(`editó ${labels}`);
   }
-  if (resumen.length) await notifySuper(p, `en “${p.title}”: ${resumen.join('; ')}`, avisados);
+  if (resumen.length) await notifySuper(p, `en “${p.title}”: ${resumen.join('; ')}`, avisados, resumen.join('; '));
 }
 
 async function changeStatus(id, status) {
@@ -470,7 +490,7 @@ async function changeStatus(id, status) {
   const p = clone(old); p.status = status;
   await commitPost(old, p);
   renderAll();
-  toast(`Movida a ${statusOf(status).name}`);
+  toast(p.archivado && !old.archivado ? 'Publicada y archivada ✅' : `Movida a ${statusOf(status).name}`, 3200);
 }
 
 /* ---------- vistas: piezas ---------- */
@@ -479,9 +499,10 @@ const av = (pid, cls = '') => { const p = person(pid); return `<span class="av $
 const platBadge = (id) => { const p = platOf(id); return `<span class="plat" style="--c:${p.color}">${esc(p.short)}</span>`; };
 const sortPosts = (a, b) => ((a.date || '9999') + (a.time || '99:99') + a.title).localeCompare((b.date || '9999') + (b.time || '99:99') + b.title);
 
-function filtered() {
+function filtered(conArchivadas) {
   const f = S.f, q = f.q.trim().toLowerCase();
   return S.db.posts.filter((p) => {
+    if (p.archivado && !f.archivadas && !conArchivadas) return false;
     if (f.mine && !p.assignees.includes(S.me.id)) return false;
     if (f.person && !p.assignees.includes(f.person)) return false;
     if (f.platform && !p.platforms.includes(f.platform)) return false;
@@ -492,6 +513,8 @@ function filtered() {
   });
 }
 const filterCount = () => ['person', 'platform', 'status', 'format'].filter((k) => S.f[k]).length;
+// Cuántas piezas publicadas están guardadas en el archivo
+const archivadas = () => S.db.posts.filter((p) => p.archivado).length;
 
 function card(p, o = {}) {
   const st = statusOf(p.status), t = today();
@@ -567,6 +590,41 @@ function rangoGantt() {
   const dow = (primero.getDay() + 6) % 7;                 // el lunes de esa semana
   return { ini: ymd(new Date(c.getFullYear(), c.getMonth(), 1 - dow)), dias: GANTT_DIAS };
 }
+/* Las piezas de una misma línea se reparten en pisos para que no se tapen:
+   cada una entra en el primer piso donde quepa sin pisarle la barra a otra. */
+function pisos(items) {
+  const fin = [];                                  // en qué día termina lo último de cada piso
+  items.slice().sort((x, y) => x.d0 - y.d0 || x.d1 - y.d1).forEach((it) => {
+    let i = 0;
+    while (i < fin.length && fin[i] >= it.d0) i++;  // ese piso todavía está ocupado
+    it.piso = i;
+    fin[i] = it.d1;
+  });
+  return Math.max(1, fin.length);
+}
+// Cada línea del eje elegido: su nombre, su color y las piezas que le tocan
+function lineasGantt(filas, eje) {
+  const put = (m, k, nombre, color, x) => {
+    if (!m.has(k)) m.set(k, { k, nombre, color, items: [] });
+    m.get(k).items.push(x);
+  };
+  const m = new Map();
+  if (eje === 'campana') {
+    filas.forEach((x) => { const c = (x.p.campaign || '').trim(); put(m, c || SIN_CAMP, c || SIN_CAMP, '', x); });
+    return [...m.values()].sort((a, b) => (a.k === SIN_CAMP) - (b.k === SIN_CAMP) || a.nombre.localeCompare(b.nombre, 'es'));
+  }
+  if (eje === 'estado') {
+    filas.forEach((x) => { const s = statusOf(x.p.status); put(m, s.id, s.name, s.color, x); });
+    return STATUSES.map((s) => m.get(s.id)).filter(Boolean);
+  }
+  // por persona: una pieza con dos responsables sale en las dos líneas
+  filas.forEach((x) => {
+    if (!x.p.assignees.length) return put(m, '', 'Sin responsable', '', x);
+    x.p.assignees.forEach((pid) => { const q = person(pid); put(m, pid, q.name, q.color, x); });
+  });
+  return P.map((q) => m.get(q.id)).concat(m.get('') || []).filter(Boolean);
+}
+
 function viewGantt() {
   const { ini, dias } = rangoGantt();
   const fin = addDays(ini, dias - 1), t = today();
@@ -576,8 +634,11 @@ function viewGantt() {
     .sort((a, b) => (a.r.ini + a.p.date + a.p.title).localeCompare(b.r.ini + b.p.date + b.p.title));
   const sinFecha = todas.filter((p) => !p.date);
   const cab = calNav(`${cap(MS[parseYmd(ini).getMonth()])} — ${cap(MS[parseYmd(fin).getMonth()])} ${parseYmd(fin).getFullYear()}`, '12 semanas');
+  const eje = (GANTT_EJES.some((x) => x[0] === S.ganttY) ? S.ganttY : 'pieza');
+  const ejeSel = `<div class="ejesel"><label for="gantt-y">Cada línea es</label>
+    <select class="sel" id="gantt-y">${GANTT_EJES.map(([id, n]) => `<option value="${id}"${eje === id ? ' selected' : ''}>${esc(n)}</option>`).join('')}</select></div>`;
   if (!filas.length) {
-    return cab + emptyBox('Nada en estas doce semanas', 'Muévete de mes con las flechas, o quítale filtros a la búsqueda.') + sinFechaHtml(sinFecha);
+    return cab + ejeSel + emptyBox('Nada en estas doce semanas', 'Muévete de mes con las flechas, o quítale filtros a la búsqueda.') + sinFechaHtml(sinFecha);
   }
   // cabecera: los meses arriba y los días abajo
   let meses = '', dcel = '';
@@ -601,13 +662,13 @@ function viewGantt() {
     const k = hayCamp ? ((x.p.campaign || '').trim() || SIN_CAMP) : '';
     (grupos.get(k) || grupos.set(k, []).get(k)).push(x);
   });
-  const puede = esAdmin() && store.canWrite;
+  const puede = esAdmin() && store.canWrite, arrastra = puede && eje === 'pieza';
   const fila = ({ p, r }) => {
     const d0 = Math.max(0, diffDays(r.ini, ini));
     const d1 = Math.min(dias - 1, diffDays(r.fin, ini));
     const st = statusOf(p.status);
     const corta = diffDays(r.ini, ini) < 0, larga = diffDays(r.fin, ini) > dias - 1;
-    return `<div class="gfila"${puede ? ' draggable="true"' : ''} data-id="${esc(p.id)}">
+    return `<div class="gfila"${arrastra ? ' draggable="true"' : ''} data-id="${esc(p.id)}">
       <div class="getq">
         <button class="getqb" data-act="open-post" data-id="${esc(p.id)}" title="${esc(p.title)}">
           <i style="--c:${st.color}"></i><span><b>${esc(p.title)}</b><small>${esc(fmtShort(p.date))}${p.assignees.length ? ' · ' + esc(p.assignees.map((a) => person(a).name.split(' ')[0]).join(', ')) : ''}</small></span></button>
@@ -619,7 +680,29 @@ function viewGantt() {
           <span>${esc(p.title)}</span></button>
       </div></div>`;
   };
-  const cuerpo = [...grupos.entries()].map(([k, arr]) => (k
+  // una sola línea por grupo, con las piezas repartidas en pisos
+  const linea = (g) => {
+    const items = g.items.map(({ p, r }) => ({
+      p, r,
+      d0: Math.max(0, diffDays(r.ini, ini)),
+      d1: Math.min(dias - 1, diffDays(r.fin, ini)),
+      corta: diffDays(r.ini, ini) < 0, larga: diffDays(r.fin, ini) > dias - 1
+    }));
+    const n = pisos(items);
+    const suelta = puede && eje === 'campana';   // soltar una pieza aquí la cambia de campaña
+    return `<div class="gfila gmulti${suelta ? ' ggrupo' : ''}"${suelta ? ` data-camp="${esc(g.k === SIN_CAMP ? '' : g.k)}"` : ''} style="--pisos:${n}">
+      <div class="getq">${g.color ? `<i style="--c:${g.color}"></i>` : ''}<span><b>${esc(g.nombre)}</b><small>${g.items.length} pieza${g.items.length === 1 ? '' : 's'}</small></span>
+        ${puede && eje === 'campana' ? `<button class="iconbtn gcampb" data-act="camp-menu" data-camp="${esc(g.k === SIN_CAMP ? '' : g.k)}" aria-label="Opciones de la campaña" title="Cambiarle el nombre">${ic('folder', 15)}</button>` : ''}
+      </div>
+      <div class="gpista">${marcaHoy}
+        ${items.map((it) => { const st = statusOf(it.p.status); return `<button class="gbar${it.r.estimado ? ' est' : ''}${it.corta ? ' corta-ini' : ''}${it.larga ? ' corta-fin' : ''}"${suelta ? ' draggable="true"' : ''} data-id="${esc(it.p.id)}" style="--d:${it.d0};--w:${Math.max(1, it.d1 - it.d0 + 1)};--c:${st.color};--piso:${it.piso}"
+          data-act="open-post" title="${esc(it.p.title)} · ${esc(st.name)} · ${esc(fmtShort(it.r.ini))} a ${esc(fmtShort(it.r.fin))}${it.r.estimado ? ' (calculado)' : ''}">
+          <span>${esc(it.p.title)}</span></button>`; }).join('')}
+      </div></div>`;
+  };
+  const cuerpo = eje !== 'pieza'
+    ? lineasGantt(filas, eje).map(linea).join('')
+    : [...grupos.entries()].map(([k, arr]) => (k
     ? `<div class="ggrupo" data-camp="${esc(k === SIN_CAMP ? '' : k)}">
         <div class="gfila gcamp"><div class="getq gesq">${puede
           ? `<button class="gcampnom" data-act="camp-menu" data-camp="${esc(k === SIN_CAMP ? '' : k)}">${esc(k)} <b>${arr.length}</b></button>`
@@ -627,13 +710,13 @@ function viewGantt() {
         ${arr.map(fila).join('')}</div>`
     : arr.map(fila).join('')
   )).join('');
-  return cab + `<div class="gantt" id="gantt" data-hoy="${offHoy}">
+  return cab + ejeSel + `<div class="gantt" id="gantt" data-hoy="${offHoy}">
       <div class="gcont" style="--dias:${dias}">
-        <div class="gfila gmeses"><div class="getq gesq">Pieza</div><div class="gpista">${meses}</div></div>
+        <div class="gfila gmeses"><div class="getq gesq">${esc((GANTT_EJES.find((x) => x[0] === eje) || GANTT_EJES[0])[1])}</div><div class="gpista">${meses}</div></div>
         <div class="gfila gdias"><div class="getq gesq"></div><div class="gpista">${dcel}</div></div>
         ${cuerpo}
       </div></div>
-    <p class="hint">Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se publica. Las <b>rayadas</b> son un cálculo (una semana antes, o desde que la creaste): para fijarla, pon <b>“se trabaja desde”</b> dentro de la pieza.</p>`
+    <p class="hint">Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se publica. Las <b>rayadas</b> son un cálculo (una semana antes, o desde que la creaste): para fijarla, pon <b>“se trabaja desde”</b> dentro de la pieza.${eje !== 'pieza' ? ' Cuando dos piezas de la misma línea se pisan, se ponen una debajo de la otra.' : ''}</p>`
     + sinFechaHtml(sinFecha);
 }
 const sinFechaHtml = (arr) => (arr.length ? `<section class="group"><h3>Sin fecha <b>${arr.length}</b></h3>
@@ -821,7 +904,7 @@ function entriesOfPost(p, lastOnly) {
 }
 function entriesOfProject(name, lastOnly) {
   const out = [];
-  filtered().filter((p) => projectName(p) === name).forEach((p) => {
+  filtered(true).filter((p) => projectName(p) === name).forEach((p) => {
     const carpeta = slugify(p.title, 'pieza');
     const archivos = pieceFiles(p, lastOnly);
     archivos.forEach((f) => out.push({ name: `${carpeta}/${f.name}`, file: f }));
@@ -975,7 +1058,7 @@ function carruselHtml(files, id) {
 // Piezas que ya se mostraron al equipo: lo entregado, no lo que está en preparación
 const esEntrega = (p) => !['idea', 'diseno'].includes(p.status);
 function viewResultados() {
-  const piezas = filtered().filter(esEntrega)
+  const piezas = filtered(true).filter(esEntrega)
     .sort((a, b) => String(b.date || b.updatedAt || '').localeCompare(String(a.date || a.updatedAt || '')));
   if (!piezas.length) return emptyBox('Todavía no hay entregas', 'Aquí vas a ver cada pieza terminada, como se ve publicada.');
   return `<div class="resfeed">${piezas.map((p) => {
@@ -1020,7 +1103,7 @@ const FEED_FILTROS = [['todo', 'Todo'], ['revisar', 'Por revisar'], ['aprobado',
 const FEED_VISTAS = [['tarjetas', 'Tarjetas', 'list'], ['ig', 'Como en Instagram', 'image'], ['grid', 'Cuadrícula', 'board']];
 function viewFeed() {
   const f = S.feedFiltro;
-  const piezas = filtered()
+  const piezas = filtered(true)
     .filter((p) => p.status !== 'idea' || p.files.length)
     .filter((p) => f === 'todo' || (f === 'revisar' ? ['diseno', 'revision', 'cambios'].includes(p.status) : f === 'aprobado' ? ['aprobado', 'programado'].includes(p.status) : p.status === 'publicado'))
     .map((p) => ({ p, t: ultimaActividad(p) }))
@@ -2012,9 +2095,10 @@ function renderToolbar() {
   const tb = $('#toolbar');
   if (S.view === 'dash' || S.view === 'marca') { tb.hidden = true; return; }
   tb.hidden = false;
-  const fc = filterCount();
+  const fc = filterCount(), nArch = archivadas();
   tb.innerHTML = `<label class="search">${ic('search', 18)}<input id="q" type="search" placeholder="Buscar piezas…" value="${esc(S.f.q)}" autocomplete="off"></label>
     <button class="chip${S.f.mine ? ' on' : ''}" data-act="toggle-mine">Mías</button>
+    ${nArch && ['list', 'calendar'].includes(S.view) ? `<button class="chip${S.f.archivadas ? ' on' : ''}" data-act="toggle-archivadas" title="Piezas publicadas, guardadas en el archivo">${ic('archive', 15)} Archivo <b>${nArch}</b></button>` : ''}
     <button class="iconbtn" data-act="filters" aria-label="Filtros">${ic('sliders')}${fc ? `<i class="fcount">${fc}</i>` : ''}</button>`;
 }
 function renderTabs() {
@@ -2071,7 +2155,7 @@ function closeSheet(fromPop) {
   if (!sheetOpen) return;
   sheetOpen = false; ED = null;
   if (IMP) { IMP.msgs.forEach(soltarFoto); IMP = null; if (S.compartidos) setTimeout(renderBanner, 0); }
-  $('#sheet').hidden = true; $('#panel').innerHTML = '';
+  $('#sheet').hidden = true; $('#panel').innerHTML = ''; ZUM = null;
   document.body.style.overflow = '';
   if (!fromPop) history.back();
 }
@@ -2107,7 +2191,10 @@ function openFilters() {
     <div class="pb"><label class="lbl">Etiquetado/a</label>${opt(P, 'person', 'Todas las personas')}
     <label class="lbl">Plataforma</label>${opt(PLATFORMS, 'platform', 'Todas')}
     <label class="lbl">Estado</label>${opt(STATUSES, 'status', 'Todos')}
-    <label class="lbl">Formato</label>${opt(FORMATS, 'format', 'Todos')}</div>
+    <label class="lbl">Formato</label>${opt(FORMATS, 'format', 'Todos')}
+    <label class="lbl">Archivo</label>
+    <label class="imppend" style="color:var(--ink)"><input type="checkbox" id="f-archivadas"${S.f.archivadas ? ' checked' : ''}> Ver también las archivadas <b style="margin-left:auto">${archivadas()}</b></label>
+    <p class="hint">Cuando una pieza pasa a <b>Publicado</b> se archiva sola: deja de aparecer en <b>Piezas</b> ni en el <b>calendario</b>, para no tener delante lo que ya está hecho. Sigue entera en <b>Feed</b>, en <b>Entregas</b> y aquí: no se borra nada. Si necesitas volver a trabajarla, ábrela y toca “Sacar del archivo”.</p></div>
     <div class="pf"><button class="btn ghost" data-act="clear-filters">Limpiar</button><button class="btn" data-act="sheet-close">Listo</button></div>`);
 }
 
@@ -2121,7 +2208,7 @@ function openBell() {
     <div class="pb">
       ${dl.length ? `<div class="nh">Vencimientos</div>${dl.map((p) => `<div class="nrow alert" data-act="open-post" data-id="${esc(p.id)}"><span>${ic('alert', 22)}</span><div><b>${esc(p.title)}</b><small>${dlTxt(p)} · ${statusOf(p.status).name}</small></div></div>`).join('')}` : ''}
       <div class="nh">Avisos</div>
-      ${mine.length ? mine.map((n) => `<div class="nrow${n.read ? '' : ' unread'}"${n.postId ? ` data-act="open-post" data-id="${esc(n.postId)}"` : ''}>${av(n.from, 'md')}<div><b>${esc(person(n.from).name)}</b> ${esc(n.text)}<small>${ago(n.createdAt)}</small></div></div>`).join('') : '<div class="empty">Sin avisos todavía.<br>Aquí verás cuando te etiqueten o comenten.</div>'}
+      ${mine.length ? mine.map((n) => `<div class="nrow${n.read ? '' : ' unread'}${n.type === 'zumbido' ? ' zum' : ''}"${n.postId ? ` data-act="open-post" data-id="${esc(n.postId)}"` : ''}>${av(n.from, 'md')}<div><b>${esc(person(n.from).name)}</b> ${esc(n.text)}<small>${ago(n.createdAt)}</small></div></div>`).join('') : '<div class="empty">Sin avisos todavía.<br>Aquí verás cuando te etiqueten o comenten.</div>'}
     </div>
     <div class="pf">${esAdmin() ? `<button class="btn ghost" data-act="msg-abrir">${ic('send', 17)} Avisar</button>` : ''}
       <button class="btn ghost" data-act="me">Ajustes de avisos</button></div>`);
@@ -2525,7 +2612,7 @@ function renderEditor() {
   const st = statusOf(d.status);
   const html = `
   <div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>${old ? 'Editar pieza' : 'Nueva pieza'}</h2>
-    ${old ? `<div class="phacts">${(() => { const on = recibeAvisos(S.me.id, old); return `<button class="iconbtn avisos${on ? ' on' : ''}" data-act="ed-avisos" aria-label="${on ? 'Silenciar avisos de esta pieza' : 'Activar avisos de esta pieza'}" title="${on ? 'Recibes avisos de esta pieza' : 'Avisos de esta pieza apagados'}">${ic(on ? 'bell' : 'bellOff')}</button>`; })()}<button class="iconbtn danger" data-act="ed-delete" aria-label="Eliminar">${ic('trash')}</button></div>` : '<span style="width:40px"></span>'}</div>
+    ${old ? `<div class="phacts">${old && store.canWrite && P.length > 1 ? `<button class="iconbtn zumb" data-act="zum-abrir" aria-label="Mandar un zumbido" title="Zumbido: aviso urgente">${ic('zap')}</button>` : ''}${(() => { const on = recibeAvisos(S.me.id, old); return `<button class="iconbtn avisos${on ? ' on' : ''}" data-act="ed-avisos" aria-label="${on ? 'Silenciar avisos de esta pieza' : 'Activar avisos de esta pieza'}" title="${on ? 'Recibes avisos de esta pieza' : 'Avisos de esta pieza apagados'}">${ic(on ? 'bell' : 'bellOff')}</button>`; })()}<button class="iconbtn danger" data-act="ed-delete" aria-label="Eliminar">${ic('trash')}</button></div>` : '<span style="width:40px"></span>'}</div>
   <div class="pb" id="pb">
     <input id="e-title" class="title-in" placeholder="Título de la pieza" value="${esc(d.title)}" autocomplete="off">
     ${historialTextoHtml(d, 'title')}
@@ -2537,6 +2624,7 @@ function renderEditor() {
         <div class="chips gente">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}" title="${esc(x.name)}" aria-label="${esc(x.name)}">${av(x.id)}</button>`).join('')}</div></div>
     </div>
     ${old ? `<div class="stage" style="--c:${st.color}"><i></i>${esc(statusOf(old.status).name)} desde ${ago(old.statusChangedAt || old.createdAt)}${isStalled(old) ? ' · <b class="stuck">estancada</b>' : ''}</div>` : ''}
+    ${old && old.archivado ? `<div class="archbox">${ic('archive', 17)}<span><b>Guardada en el archivo</b> desde ${esc(ago(old.archivado))}. Ya está publicada: no sale en Piezas ni en el calendario, pero sigue entera en el Feed y en Entregas.</span>${store.canWrite ? `<button class="btn sm" data-act="ed-desarchivar">Sacar del archivo</button>` : ''}</div>` : ''}
 
     <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
     ${d.date ? `<div class="row2"><input class="field" id="e-date" type="date" value="${esc(d.date)}"><input class="field" id="e-time" type="time" value="${esc(d.time || '')}"></div>` : ''}
@@ -2726,9 +2814,9 @@ async function comentar(p, text, fileIds) {
   await log(p, 'comment', 'comentó');
   const corto = text.length > 80 ? text.slice(0, 80) + '…' : text;
   const snippet = corto || (fids.length > 1 ? `marcó ${fids.length} archivos` : 'marcó un archivo');
-  const avisados = await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`);
-  avisados.push(...await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`));
-  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados);
+  const avisados = await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`, `te mencionó: ${snippet}`);
+  avisados.push(...await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`, `comentó: ${snippet}`));
+  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados, `comentó: ${snippet}`);
 }
 /* Pulgar arriba o abajo en un comentario: sirve para decir "lo leí / de acuerdo" sin escribir nada. */
 function reacHtml(c, postId) {
@@ -2751,7 +2839,8 @@ async function avisarReaccion(c, v) {
   try {
     await save('notifications', {
       id: uid(), to: c.author, from: S.me.id, postId: c.postId || null, type: 'reaccion', text: texto, read: false,
-      inApp: !!ev.app, push: !!ev.push, title: CFG.APP_NAME, body: `${S.me.name} ${texto}`.slice(0, 180),
+      inApp: !!ev.app, push: !!ev.push, title: tituloPush(p),
+      body: cuerpoPush(`le puso ${v === 'up' ? '👍' : '👎'} a tu comentario${corto ? `: ${corto}` : ''}`),
       url: p ? siteLink(p.id) : siteBase(), createdAt: nowISO()
     });
   } catch (e) { /* ya avisado */ }
@@ -2769,7 +2858,7 @@ async function guardarComentario(id, texto) {
   const p = S.db.posts.find((x) => x.id === c.postId);
   if (p) {
     await log(p, 'comment', 'corrigió un comentario');
-    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${texto.length > 80 ? texto.slice(0, 80) + '…' : texto}`);
+    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${recorte(texto, 80)}`, null, `corrigió un comentario: ${recorte(texto, 80)}`);
   }
   ED.editando = null;
   renderEditor();
@@ -3064,7 +3153,7 @@ async function enviarAviso() {
       await save('notifications', {
         id: uid(), to: pid, from: S.me.id, postId: d.id, type: 'review',
         text: que + (msg ? `: ${msg}` : ''), read: false, inApp: true, push: true,
-        title: 'Para revisar · ' + d.title.slice(0, 60), body: `${S.me.name}: ${msg || (partes.length ? listaY(partes) : 'te pide revisar esta pieza')}`.slice(0, 180),
+        title: tituloPush(d), body: cuerpoPush(msg ? `te pide revisar: ${msg}` : (partes.length ? `${listaY(partes)} para que lo revises` : 'te pide revisar esta pieza')),
         url: siteLink(d.id), createdAt: nowISO()
       });
     }
@@ -3073,6 +3162,80 @@ async function enviarAviso() {
     const nombres = A.para.map((x) => person(x).name).join(' y ');
     closeSheet(); renderAll();
     toast(`Aviso enviado a ${nombres} ✅`, 3500);
+  } catch (e) { if (btn) btn.disabled = false; /* ya avisado */ }
+}
+
+/* ---------- Zumbido: el aviso urgente de una pieza ----------
+   Es el golpecito en el hombro: suena distinto, no se junta con los demás avisos
+   y se queda en la pantalla hasta que lo tocan. Llega aunque tengan apagados los
+   avisos de esa pieza, así que se usa solo cuando de verdad hace falta. */
+const ZUMBIDOS = [
+  'está esperando tu respuesta',
+  'necesita que revises esto hoy',
+  'te está esperando para poder seguir',
+  'necesita esto con urgencia'
+];
+let ZUM = null;
+function abrirZumbido() {
+  if (!ED || !ED.old || !requireWrite()) return;
+  const otros = P.filter((x) => x.id !== S.me.id);
+  if (!otros.length) { toast('No hay a quién mandarle el zumbido'); return; }
+  ZUM = { para: otros.map((x) => x.id), frase: ZUMBIDOS[0], texto: '' };
+  renderZumbido();
+}
+function sincroZumbido() {
+  if (!ZUM) return;
+  const t = $('#zum-texto');
+  if (t) ZUM.texto = t.value;
+}
+// Lo que va a leer en el celular, tal cual
+const zumbidoCuerpo = () => (ZUM.texto || '').trim() ? `${S.me.name}: ${recorte(ZUM.texto, PUSH_CUERPO - S.me.name.length - 2)}` : `${S.me.name} ${ZUM.frase}`;
+function renderZumbido() {
+  if (!ZUM || !ED) return;
+  const otros = P.filter((x) => x.id !== S.me.id);
+  const panel = $('#panel');
+  let c = $('#avisocapa');
+  if (!c) { c = document.createElement('div'); c.id = 'avisocapa'; panel.appendChild(c); }
+  c.innerHTML = `<div class="avisocaja" role="dialog" aria-label="Mandar un zumbido">
+    <div class="ph"><h2>${ic('zap', 19)} Zumbido</h2><button class="iconbtn" data-act="zum-cerrar" aria-label="Cerrar">${ic('x')}</button></div>
+    <div class="pb">
+      <p class="hint" style="margin-top:0">Un aviso urgente sobre <b>“${esc(ED.old.title)}”</b>: suena aparte, se queda en la pantalla y llega aunque tengan apagados los avisos de esta pieza. Para cuando de verdad hace falta.</p>
+      <label class="lbl">A quién</label>
+      <div class="chips">${otros.map((x) => `<button class="person${ZUM.para.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="zum-para" data-v="${x.id}">${av(x.id)}${esc(x.name)}</button>`).join('')}</div>
+      <p class="hint">${otros.filter((x) => ZUM.para.includes(x.id)).map((x) => `${esc(x.name)}: ${recibeEnCelular(x.id) ? 'le suena el celular 🔔' : '<b>no activó las notificaciones del celular</b>: lo verá en la campana de la app'}`).join('<br>') || 'Elige al menos a una persona.'}</p>
+      <label class="lbl">Qué decir</label>
+      <div class="chips">${ZUMBIDOS.map((f) => `<button class="chip${!(ZUM.texto || '').trim() && ZUM.frase === f ? ' on' : ''}" data-act="zum-frase" data-v="${esc(f)}">${esc(cap(f))}</button>`).join('')}</div>
+      <textarea class="area" id="zum-texto" style="min-height:70px" placeholder="O escríbelo tú (opcional)">${esc(ZUM.texto)}</textarea>
+      <div class="zumprev">${ic('phone', 17)}<div><small>Así le va a llegar</small><b>${esc(ED.old.title)}</b><span>${esc(zumbidoCuerpo())}</span></div></div>
+    </div>
+    <div class="pf"><button class="btn ghost" data-act="zum-cerrar">Cancelar</button><button class="btn" data-act="zum-enviar">${ic('zap', 17)} Mandar zumbido</button></div>
+  </div>`;
+}
+async function enviarZumbido() {
+  if (!ZUM || !ED || !ED.old || !requireWrite()) return;
+  sincroZumbido();
+  const d = ED.old;
+  if (!ZUM.para.length) { toast('Elige a quién mandárselo'); return; }
+  const btn = $('[data-act="zum-enviar"]'); if (btn) btn.disabled = true;
+  const libre = (ZUM.texto || '').trim();
+  const frase = libre || ZUM.frase;
+  const cuerpo = zumbidoCuerpo();
+  try {
+    for (const pid of ZUM.para) {
+      await save('notifications', {
+        id: uid(), to: pid, from: S.me.id, postId: d.id, type: 'zumbido',
+        text: `te mandó un zumbido en “${d.title}”: ${recorte(frase, 90)}`,
+        read: false, inApp: true, push: true, urgente: true,
+        title: tituloPush(d), body: recorte(cuerpo, PUSH_CUERPO),
+        url: siteLink(d.id), createdAt: nowISO()
+      });
+    }
+    await log(d, 'review', `mandó un zumbido a ${ZUM.para.map((x) => person(x).name).join(' y ')}: ${recorte(frase, 90)}`);
+    const nombres = ZUM.para.map((x) => person(x).name).join(' y ');
+    ZUM = null;
+    const c = $('#avisocapa'); if (c) c.remove();
+    renderEditor();
+    toast(`Zumbido mandado a ${nombres} ⚡`, 3500);
   } catch (e) { if (btn) btn.disabled = false; /* ya avisado */ }
 }
 
@@ -3129,7 +3292,8 @@ async function enviarMensaje() {
         id: uid(), to: pid, from: S.me.id, postId: post ? post.id : null, type: 'mensaje',
         text: post ? `te avisó sobre “${post.title}”: ${corto}` : `te avisó: ${corto}`,
         read: false, inApp: true, push: true,
-        title: `${S.me.name} · ${CFG.APP_NAME}`, body: texto.slice(0, 180),
+        title: post ? tituloPush(post) : `Aviso de ${S.me.name}`,
+        body: post ? cuerpoPush(`avisó: ${texto}`) : recorte(texto, PUSH_CUERPO),
         url: post ? siteLink(post.id) : siteBase(), createdAt: nowISO()
       });
     }
@@ -4498,8 +4662,18 @@ const ACTS = {
   },
   me: () => openMe(),
   filters: () => openFilters(),
-  'clear-filters': () => { Object.assign(S.f, { person: '', platform: '', status: '', format: '' }); closeSheet(); renderToolbar(); renderMain(); },
+  'clear-filters': () => { Object.assign(S.f, { person: '', platform: '', status: '', format: '', archivadas: false }); closeSheet(); renderToolbar(); renderMain(); },
   'toggle-mine': () => { S.f.mine = !S.f.mine; renderToolbar(); renderMain(); },
+  'toggle-archivadas': () => { S.f.archivadas = !S.f.archivadas; renderToolbar(); renderMain(); },
+  // Sacar del archivo: la pieza sigue publicada, pero vuelve a las listas
+  'ed-desarchivar': async () => {
+    if (!ED || !ED.old || !requireWrite()) return;
+    ED.d.archivado = '';
+    await save('posts', Object.assign({}, S.db.posts.find((p) => p.id === ED.d.id) || ED.d, { archivado: '', updatedAt: nowISO(), updatedBy: S.me.id }));
+    ED.old = clone(S.db.posts.find((p) => p.id === ED.d.id)) || ED.old;
+    renderEditor(); renderToolbar();
+    toast('Fuera del archivo: vuelve a aparecer en las listas', 3200);
+  },
   carru: (el) => {
     const c = el.closest('.carru'); if (!c) return;
     const t = c.querySelector('.carru-track');
@@ -4531,6 +4705,16 @@ const ACTS = {
     guardarUI(); renderAll(); openMe();
   },
   'buscar-update': (el) => buscarActualizacion(el),
+  'zum-abrir': () => abrirZumbido(),
+  'zum-cerrar': () => { ZUM = null; const c = $('#avisocapa'); if (c) c.remove(); },
+  'zum-para': (el) => {
+    sincroZumbido();
+    const v = el.dataset.v;
+    ZUM.para = ZUM.para.includes(v) ? ZUM.para.filter((x) => x !== v) : ZUM.para.concat([v]);
+    renderZumbido();
+  },
+  'zum-frase': (el) => { ZUM.frase = el.dataset.v; ZUM.texto = ''; renderZumbido(); },
+  'zum-enviar': () => enviarZumbido(),
   'acc-pedir': () => pedirContrasena(),
   'llave-nueva': () => {
     openMe();
@@ -4665,7 +4849,7 @@ const ACTS = {
     openDispositivos();
   },
   'push-test': async () => {
-    await save('notifications', { id: uid(), to: S.me.id, from: S.me.id, postId: null, type: 'test', text: 'probó las notificaciones', read: true, inApp: false, push: true, title: CFG.APP_NAME, body: 'Si ves esto, las notificaciones funcionan ✅', url: siteBase(), createdAt: nowISO() });
+    await save('notifications', { id: uid(), to: S.me.id, from: S.me.id, postId: null, type: 'test', text: 'probó las notificaciones', read: true, inApp: false, push: true, title: 'Prueba de notificaciones', body: `Listo, ${S.me.name}: te llegan bien ✅`, url: siteBase(), createdAt: nowISO() });
     toast('Enviada. Debería llegar en unos segundos.');
   },
   'install-app': async () => { if (!deferredInstall) return; deferredInstall.prompt(); await deferredInstall.userChoice.catch(() => {}); deferredInstall = null; renderBanner(); },
@@ -4912,7 +5096,7 @@ const ACTS = {
     const p = ED && ED.old; if (!p) return;
     if (!confirm(`¿Eliminar “${p.title}”? Esta acción no se puede deshacer.`)) return;
     await log(p, 'deleted', 'eliminó la pieza');
-    await notifySuper(p, `eliminó la pieza “${p.title}”`);
+    await notifySuper(p, `eliminó la pieza “${p.title}”`, null, 'eliminó esta pieza');
     for (const c of S.db.comments.filter((x) => x.postId === p.id)) await removeRow('comments', c.id);
     await removeRow('posts', p.id);
     closeSheet(); renderAll(); toast('Pieza eliminada');
@@ -4941,6 +5125,11 @@ document.addEventListener('input', (e) => {
   if (e.target.dataset && e.target.dataset.feedCom != null) { S.feedBorrador[e.target.dataset.feedCom] = e.target.value; return; }
   if (e.target.classList && e.target.classList.contains('gcel') && e.target.tagName === 'TEXTAREA') crecerCelda(e.target);
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
+  if (e.target.id === 'zum-texto' && ZUM) {
+    ZUM.texto = e.target.value;
+    const pv = $('.zumprev span'); if (pv) pv.textContent = zumbidoCuerpo();
+    $$('[data-act="zum-frase"]').forEach((b) => b.classList.toggle('on', !ZUM.texto.trim() && b.dataset.v === ZUM.frase));
+  }
   if (ED && ED.old && /^e-(caption|title|guion)$/.test(e.target.id || '')) {
     const bar = $('#aviso-texto');
     if (bar) { syncDraft(); bar.hidden = !textosCambiados(ED.old, ED.d).length; }
@@ -4967,6 +5156,12 @@ document.addEventListener('change', (e) => {
     if (tr) { tr.estado = t.value; tr.motivo = t.value ? 'elegido a mano' : ''; tr.aMano = true; }
     renderImport(); return;
   }
+  if (t.id === 'gantt-y') {
+    S.ganttY = t.value || 'pieza';
+    try { localStorage.setItem('crono_gantt_y', S.ganttY); } catch (e) { /* sin espacio */ }
+    renderMain(); return;
+  }
+  if (t.id === 'f-archivadas') { S.f.archivadas = t.checked; renderToolbar(); renderMain(); return; }
   if (ED && (t.id === 'e-status' || t.id === 'e-plat')) { syncDraft(); renderEditor(); return; }
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
@@ -4984,7 +5179,7 @@ document.addEventListener('change', (e) => {
 /* Arrastrar y soltar en el tablero (escritorio) */
 const alSoltar = (e, sel) => (e.target.closest && e.target.closest(sel)) || null;
 document.addEventListener('dragstart', (e) => {
-  const c = alSoltar(e, '.card[draggable]') || alSoltar(e, '.gfila[draggable]');
+  const c = alSoltar(e, '.card[draggable]') || alSoltar(e, '.gfila[draggable]') || alSoltar(e, '.gbar[draggable]');
   if (c) { e.dataTransfer.setData('text/plain', c.dataset.id); c.classList.add('llevando'); }
 });
 document.addEventListener('dragend', (e) => { const c = alSoltar(e, '.llevando'); if (c) c.classList.remove('llevando'); });

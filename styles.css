@@ -156,6 +156,13 @@ main{padding:0 var(--gut);max-width:100%}
   box-shadow:inset 3px 0 0 var(--c),0 1px 2px rgba(0,0,0,.08)}
 .gbar span{font-size:0.6875rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gbar.est{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 26%,var(--surface)) 0 5px,color-mix(in srgb,var(--c) 9%,var(--surface)) 5px 10px)}
+/* Carta Gantt agrupada: la línea crece según cuántas piezas se pisen */
+.ejesel{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.ejesel label{font-size:0.75rem;font-weight:700;color:var(--muted);flex:none}
+.ejesel .sel{flex:1;max-width:220px}
+.gmulti .gpista{height:calc(var(--pisos) * 30px + 4px)}
+.gmulti .getq{align-items:flex-start;padding-top:9px}
+.gmulti .gbar{top:calc(var(--piso) * 30px + 5px)}
 .gbar.corta-ini{border-top-left-radius:2px;border-bottom-left-radius:2px}
 .gbar.corta-fin{border-top-right-radius:2px;border-bottom-right-radius:2px}
 
@@ -253,6 +260,15 @@ details.group[open]>summary{margin-bottom:10px}
 .pb{flex:1;overflow-y:auto;overflow-x:hidden;padding:4px var(--gut) 24px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .pf{padding:10px var(--gut) calc(12px + var(--safe-b));border-top:1px solid var(--line);background:var(--bg);display:flex;gap:8px}
 .pf .btn{flex:1}
+/* Los botones de solo icono del pie no le roban ancho al botón principal */
+.pf .btn.ghost{flex:0 0 auto;min-width:46px;padding-left:12px;padding-right:12px}
+/* Pieza archivada */
+.archbox{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 0;padding:11px 13px;border-radius:12px;
+  background:color-mix(in srgb,var(--ink) 5%,var(--surface));box-shadow:inset 0 0 0 1px var(--line);font-size:0.8125rem;line-height:1.45}
+.archbox>svg{flex:none;color:var(--muted)}
+.archbox>span{flex:1;min-width:150px;color:var(--muted)}
+.archbox b{color:var(--ink)}
+.chip>b{margin-left:3px}
 
 /* ===== Formularios ===== */
 .title-in{width:100%;font-size:1.375rem;font-weight:800;letter-spacing:-.01em;border:0;outline:0;background:none;padding:6px 0 10px;border-bottom:2px solid var(--line)}
@@ -697,6 +713,18 @@ html{overscroll-behavior-y:none}
 
 /* Avisos de una pieza */
 .phacts{display:flex;gap:6px}
+/* Zumbido: el aviso urgente de una pieza */
+.iconbtn.zumb{color:var(--warn)}
+.iconbtn.zumb:hover,.iconbtn.zumb:focus{background:color-mix(in srgb,var(--warn) 14%,transparent)}
+.zumprev{display:flex;gap:11px;align-items:flex-start;margin-top:14px;padding:12px 13px;border-radius:14px;
+  background:color-mix(in srgb,var(--ink) 6%,var(--surface));box-shadow:inset 0 0 0 1px var(--line)}
+.zumprev>svg{flex:none;margin-top:2px;color:var(--muted)}
+.zumprev>div{min-width:0;flex:1}
+.zumprev small{display:block;font-size:0.625rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:5px}
+.zumprev b{display:block;font-size:0.875rem;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.zumprev span{display:block;font-size:0.8125rem;color:var(--muted);line-height:1.4;margin-top:1px}
+.nrow.zum{box-shadow:inset 3px 0 0 var(--warn)}
+.nrow.zum b::after{content:" ⚡"}
 .iconbtn.avisos{color:var(--muted)}
 .iconbtn.avisos.on{color:var(--accent);background:var(--accent-soft)}
 

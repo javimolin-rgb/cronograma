@@ -62,17 +62,30 @@ El **Calendario** también tiene su conmutador arriba, con tres maneras de mirar
 | Vista | Qué muestra |
 |---|---|
 | **Mes** | La cuadrícula de siempre, con los puntitos de cada día y las piezas del día elegido abajo. |
-| **Gantt** | Doce semanas seguidas, una barra por pieza, de corrido hacia el lado. Se arrastra con el dedo; la columna de los títulos queda fija y una línea marca el día de hoy (se abre ahí puesta). Los fines de semana van sombreados y, si hay campañas, las piezas se agrupan por campaña. |
+| **Gantt** | Doce semanas seguidas, de corrido hacia el lado. Se arrastra con el dedo; la columna de la izquierda queda fija y una línea marca el día de hoy (se abre ahí puesta). Los fines de semana van sombreados. Arriba se elige **qué va en esa columna**. |
 | **Línea** | El cronograma que baja: mes a mes y día a día, con las tarjetas completas al lado de cada fecha y cuánto falta (“hoy”, “en 8 días”, “ya pasó”). |
 
 En las tres, tocar una pieza la abre. Las piezas **sin fecha** aparecen al final de Gantt y de Línea, como chips, para que no se pierdan.
+
+### Qué va en el eje de la izquierda
+
+Arriba de la carta hay un menú, **“Cada línea es”**, con cuatro maneras de leer lo mismo:
+
+| Cada línea es | Qué se ve |
+|---|---|
+| **Campaña** | Una sola línea por campaña, con todas sus publicaciones puestas encima. Es la que viene puesta: se ve de un vistazo cómo avanza cada campaña en el tiempo. |
+| **Estado** | Una línea por estado (Idea, Estructura por aprobar, En diseño…), para ver dónde está atascado el trabajo. |
+| **Persona** | Una línea por persona, con lo que tiene encima cada una. Una pieza con dos responsables sale en las dos líneas. |
+| **Pieza** | Como antes: una línea por publicación, agrupadas por campaña. |
+
+Cuando dos piezas de la misma línea se pisan en el tiempo, se ponen **una debajo de la otra** dentro de esa línea, así que nunca se tapan. Cada barra mantiene el color de su estado, y tocarla abre la pieza. La app recuerda cuál elegiste.
 
 ### Campañas: renombrar y mover
 
 Cuando las piezas tienen **campaña**, la carta Gantt las agrupa y cada grupo se maneja entero:
 
 - Tocar el **nombre del grupo** abre su menú: cuántas piezas tiene, desde cuándo hasta cuándo, la lista para saltar a cualquiera, y el **nombre**. Cambiarlo ahí se lo cambia **a todas sus piezas de una vez**, sin ir una por una. También está **“quitársela a todas”**, que las deja sin campaña sin borrar nada.
-- En el computador, cada pieza se **arrastra** desde su nombre hasta el grupo donde va (el grupo se ilumina al pasar por encima).
+- En el computador, cada pieza se **arrastra** hasta el grupo donde va (el grupo se ilumina al pasar por encima): con el eje en *Pieza*, desde su nombre; con el eje en *Campaña*, arrastrando la barra misma a otra línea.
 - En el teléfono, cada fila tiene un botón de **carpeta**: abre la lista de campañas, con *Sin campaña* y un casillero para crear una nueva ahí mismo.
 
 Flavio y Maca ven los grupos, pero no pueden renombrarlos ni mover piezas.
@@ -83,6 +96,18 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 
 - Dentro de la pieza hay un campo nuevo, **“se trabaja desde”**, para fijar ese comienzo.
 - Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
+
+
+## Las publicadas se archivan solas
+
+Cuando una pieza pasa a **Publicado**, el trabajo se terminó: la app la **archiva sola**, para que lo que ya está hecho no siga estorbando en las listas de lo que falta.
+
+- **Desaparece de Piezas y del Calendario** (agenda, tablero, mes, Gantt y línea). Eso es todo lo que cambia.
+- **No se borra nada** ni se pierde nada: sigue entera en el **Feed** (y en su pestaña *Publicadas*), en **Entregas** con todos sus archivos, en el **Panel** y en las búsquedas del archivo.
+- En **Piezas** y en **Calendario** aparece arriba un botón **Archivo** con el número de piezas archivadas: tocarlo las trae de vuelta a la vista, y tocarlo otra vez las esconde. También está como casilla dentro de **Filtros**.
+- Si una pieza publicada hay que volver a tocarla, se abre y se toca **“Sacar del archivo”**: vuelve a las listas aunque siga marcada como Publicado. Si después la mueves a otro estado y la vuelves a publicar, se archiva de nuevo.
+
+Es automático: no hay que archivar nada a mano.
 
 
 ## Cuando la llave de GitHub deja de servir
@@ -102,6 +127,19 @@ Ahora la app lo dice en claro:
 2. En la app: **Ajustes → tu clave larga**, pegarla y *Guardar*.
 3. En el mismo Ajustes, en la entrada del equipo, volver a poner la clave simple y tocar **Cambiar**: eso vuelve a guardar la llave nueva para Flavio y Maca.
 4. Ellos, la próxima vez que abran, escriben esa clave simple una vez y siguen como siempre.
+
+## Zumbido: el aviso urgente de una pieza
+
+Para cuando hace falta de verdad y no se puede esperar. Dentro de una pieza, arriba a la derecha, está el **rayo ⚡**.
+
+- Se elige **a quién** (Flavio, Maca o los dos) y **qué decir**: hay cuatro frases listas —*“está esperando tu respuesta”*, *“necesita que revises esto hoy”*, *“te está esperando para poder seguir”*, *“necesita esto con urgencia”*— o se escribe cualquier otra cosa.
+- Abajo se ve **tal cual le va a llegar** al celular antes de mandarlo.
+- Llega como una notificación **aparte de las demás**: no se junta con los otros avisos de esa pieza, vibra distinto y **se queda en la pantalla** hasta que la tocan. Llega aunque tengan apagados los avisos de esa pieza.
+- En la campana de la app queda marcada con un **⚡** y una raya al costado.
+- **No cambia ni guarda nada** de la pieza: solo manda el aviso y lo anota en el historial.
+
+Lo puede mandar cualquiera que tenga la clave de escritura, no solo Javi. Como suena por encima de todo, conviene dejarlo para cuando de verdad hace falta.
+
 
 ## Avisar al equipo sin subir ni cambiar nada
 
@@ -349,6 +387,17 @@ En **Settings → Secrets and variables → Actions**, tres secretos: `VAPID_PUB
 ### 5. Instalar en el teléfono
 - **iPhone (iOS 16.4+):** abrir en **Safari** → Compartir → **Agregar a pantalla de inicio**. Las notificaciones solo funcionan abriéndola desde ese ícono.
 - **Android:** abrir en Chrome → **Instalar** en el aviso de arriba.
+
+## Qué se ve en la notificación del celular
+
+La notificación es poco espacio —sobre todo en un reloj—, así que no se gasta en repetir el nombre de la app:
+
+- **Arriba va el nombre de la publicación** de la que se trata (“Casa Peumo”), no “Cronograma”. El logo y el nombre de la app ya los pone el teléfono encima.
+- **Abajo va quién fue y qué hizo**, sin repetir el título: *“Maca comentó: me gusta el encuadre”*, *“Javi la movió a En revisión”*, *“Flavio te etiquetó como responsable”*, *“Javi cambió la fecha a 12 nov”*.
+- En los avisos generales (los que no son de ninguna pieza) arriba dice **“Aviso de Javi”** y abajo el mensaje tal cual.
+
+Dentro de la app, en la campana, los avisos siguen diciendo de qué pieza son, porque ahí se ven todos juntos.
+
 
 ## Si no te llegan las notificaciones al celular
 

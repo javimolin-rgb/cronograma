@@ -39,10 +39,14 @@ for (const n of pendientes) {
     body: n.body || n.text || '',
     url: n.url || './',
     postId: n.postId || null,
-    tag: n.postId ? 'post-' + n.postId : undefined
+    urgente: !!n.urgente,
+    // los avisos de una misma pieza se reemplazan entre sí; los zumbidos no, cada uno suena
+    tag: n.urgente ? 'zumbido-' + n.id : (n.postId ? 'post-' + n.postId : undefined)
   });
+  // un zumbido se entrega de inmediato, aunque el teléfono esté ahorrando batería
+  const opciones = n.urgente ? { urgency: 'high', TTL: 3600 } : {};
   for (const s of destinos) {
-    try { await webpush.sendNotification(s.sub, carga); enviados++; }
+    try { await webpush.sendNotification(s.sub, carga, opciones); enviados++; }
     catch (e) {
       const codigo = e.statusCode || 0;
       if (codigo === 404 || codigo === 410) { muertos.add(s.id); console.log('Suscripción vencida de', n.to, '— se borrará de la lista'); }

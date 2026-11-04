@@ -1,6 +1,6 @@
 /* Service worker: notificaciones y funcionamiento tipo app.
    Al cambiar VERSION, todas las apps instaladas se actualizan solas la próxima vez que se abren. */
-const VERSION = '2026.11.03-9';
+const VERSION = '2026.11.04-1';
 const CACHE = 'crono-' + VERSION;
 const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'store.js', 'zip.js', 'whatsapp.js', 'app.js', 'icon.svg', 'icon-192.png'];
 
@@ -63,13 +63,21 @@ self.addEventListener('fetch', (e) => {
 self.addEventListener('push', (e) => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch (err) { d = { body: e.data ? e.data.text() : '' }; }
+  /* Arriba va el nombre de la pieza, no el de la app: el sistema ya pone
+     el logo y el nombre de Cronograma encima. Abajo, quién fue y qué hizo. */
   const title = d.title || 'Cronograma';
+  /* Un zumbido es urgente: no se junta con los demás avisos de la misma pieza,
+     vibra distinto y se queda en la pantalla hasta que lo tocan. */
+  const zumbido = !!d.urgente;
   e.waitUntil(self.registration.showNotification(title, {
     body: d.body || '',
     icon: 'icon-192.png',
     badge: 'badge.png',
-    tag: d.tag || undefined,
-    renotify: !!d.tag,
+    tag: zumbido ? undefined : (d.tag || undefined),
+    renotify: !zumbido && !!d.tag,
+    requireInteraction: zumbido,
+    vibrate: zumbido ? [90, 60, 90, 60, 200] : undefined,
+    silent: false,
     data: { url: d.url || './', postId: d.postId || null }
   }));
 });

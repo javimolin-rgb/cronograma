@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "3dc40144-b16a-46a6-8c8f-9cf4b55daf4e",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Se pueden bajar los textos de primera y segunda imagen para discimular la 🌍 tier",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:42:37.685Z"
+  },
+  {
    "id": "5712eb26-fc52-411a-98c5-f70f40218cfc",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5408,6 +5416,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "889c2206-9ec6-435b-a27d-223060bad31b",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:42:37.692Z"
+  },
   {
    "id": "8ae243ae-ee6c-4123-ba85-82e1aeb5e0a8",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8416,6 +8434,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "08e9aef7-7f84-461d-83e4-f64ef973d384",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Se pueden bajar los textos de primera y segunda imagen para discimular la 🌍 tie…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Se pueden bajar los textos de primera y segunda imagen para discimular la 🌍 tie…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T19:42:37.693Z"
+  },
   {
    "id": "b1f95e49-8bf6-499e-a3a2-beeda8e391a5",
    "to": "javi",

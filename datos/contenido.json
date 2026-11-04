@@ -11666,6 +11666,21 @@
  ],
  "push_subs": [
   {
+   "id": "ps_43bfd730d9d5ffebf61bf9942410fd1c",
+   "person": "flavio",
+   "device": "d_f6c6518010fd48af",
+   "sub": {
+    "endpoint": "https://fcm.googleapis.com/fcm/send/fhOkbelzBEM:APA91bE0Io2deRTfO4bMrnUB4p92d3lfeRRdD2rXLxs9vlFBlYP1B4l1U-InT5PzevyPliIWSM5oKxmifvdpx4BmtctHFIUYzN19KipahewbQyaMF47eEL87LsV9CbLnDYo15MJTW4qd",
+    "expirationTime": null,
+    "keys": {
+     "p256dh": "BGGDxnEf00dz-nLXK3BqgM7Oztr7oVdaHyPVq4os65Hjlko91PZYEUcKMdNmrK8CuxJG-2sUSVXbT1PuI9reQOM",
+     "auth": "5K6AL_QrhVQfa8W7YWVgaw"
+    }
+   },
+   "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+   "createdAt": "2026-11-04T13:43:35.144Z"
+  },
+  {
    "id": "ps_45bad16a0e7ecf0e4ffbe117f84b79aa",
    "person": "javi",
    "device": "d_2b2f195d9860411a",
@@ -11841,11 +11856,11 @@
    "navegador": "Chrome",
    "tipo": "pc",
    "instalada": true,
-   "push": false,
+   "push": true,
    "version": "2026.11.04-2",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-26T12:14:30.832Z",
-   "lastSeen": "2026-11-04T00:52:31.695Z"
+   "lastSeen": "2026-11-04T13:43:35.151Z"
   },
   {
    "id": "d_5888b1e332884189",

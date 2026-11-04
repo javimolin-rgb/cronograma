@@ -4045,6 +4045,14 @@
  ],
  "comments": [
   {
+   "id": "0e92b852-0420-4b57-a414-9264eef0d061",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca Si esas son las ultimas. las tranqueras están en la primera foto que marcaste a la izquierda.",
+   "fileIds": [],
+   "createdAt": "2026-11-04T23:29:40.856Z"
+  },
+  {
    "id": "d16dd22f-47ad-4679-8ba3-91346babb8e8",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5753,6 +5761,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ce7e56fc-8df1-4e28-9d13-8350f2a7bf00",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T23:29:40.858Z"
+  },
   {
    "id": "36d23d54-c3dd-4c33-ac14-21114d3aecc7",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9084,6 +9102,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "04ae48d7-651e-41d1-a5a2-c0b5215b01dc",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca Si esas son las ultimas. las tranqueras están en la primera foto que marca…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca Si esas son las ultimas. las tranqueras están en la primera foto que marca…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:29:40.858Z"
+  },
+  {
+   "id": "7a1ca2f6-4e7c-418a-921d-730d47c6118e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca Si esas son las ultimas. las tranqueras están en la primera foto que marca…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca Si esas son las ultimas. las tranqueras están en la primera foto que marca…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:29:40.858Z"
+  },
   {
    "id": "a0f71d62-1609-46aa-9f2a-85f26503a202",
    "to": "javi",

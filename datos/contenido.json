@@ -3986,6 +3986,14 @@
  ],
  "comments": [
   {
+   "id": "9f5edaac-9cdc-4cce-b9d5-0e8ca39e1c0d",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Chuta estoy al parecer con señal no lo recibo",
+   "fileIds": [],
+   "createdAt": "2026-11-04T22:03:10.530Z"
+  },
+  {
    "id": "f61c2932-13c4-4990-920b-e8c7e13bcb0d",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -5611,6 +5619,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "9407252f-be0d-4747-8d3a-c12c80682298",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T22:03:10.535Z"
+  },
   {
    "id": "5a7b4902-d59e-4d5c-8398-9db42fa9fa66",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8792,6 +8810,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "79ac9346-c4dd-4945-9344-8837c8e3fbd1",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Chuta estoy al parecer con señal no lo recibo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Chuta estoy al parecer con señal no lo recibo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T22:03:10.538Z"
+  },
+  {
+   "id": "cd729060-ca02-4d40-a224-5654a7bf4954",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Chuta estoy al parecer con señal no lo recibo",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Chuta estoy al parecer con señal no lo recibo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T22:03:10.537Z"
+  },
   {
    "id": "757d1fb0-c520-4f48-9955-e4007d373e34",
    "to": "maca",

@@ -362,9 +362,10 @@ const cuerpoPush = (frase) => `${S.me.name} ${String(frase || '').trim()}`.slice
 const recorte = (t, n) => { const s = String(t || '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s; };
 
 // Un solo aviso por acción, con el resumen de lo que pasó
-async function notifySuper(post, texto, yaAvisados, frase) {
+async function notifySuper(post, texto, yaAvisados, frase, opts) {
   for (const pid of supervisores()) {
-    if (post && silenciada(pid, post.id)) continue;
+    // Los comentarios le llegan siempre a quien supervisa, aunque haya silenciado la pieza
+    if (post && silenciada(pid, post.id) && !(opts && opts.siempre)) continue;
     if (yaAvisados && yaAvisados.includes(pid)) continue;   // ya le llegó el aviso directo de lo mismo
     const ev = prefsOf(pid).events.supervision;
     if (!ev || (!ev.app && !ev.push)) continue;
@@ -1168,7 +1169,7 @@ function postHtml(p, t) {
           const fotos = (c.fileIds || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
           return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
             ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(x) || ''}</span>`).join('')}</div>` : ''}
-            <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}</small>
+            <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}${puedeBorrarComentario(c) ? ` · <button class="lnk borrar" data-act="cm-borrar" data-id="${esc(c.id)}">Borrar</button>` : ''}</small>
             <div class="cmacts">${reacHtml(c, p.id)}</div></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
       </div>
@@ -2771,6 +2772,7 @@ function renderEditor() {
         <div class="cmacts">
           ${reacHtml(c, d.id)}
           ${puedeEditarComentario(c) ? `<button class="lnk" data-act="cm-editar" data-id="${esc(c.id)}">Editar</button>` : ''}
+          ${puedeBorrarComentario(c) ? `<button class="lnk borrar" data-act="cm-borrar" data-id="${esc(c.id)}">Borrar</button>` : ''}
           ${vers ? `<button class="lnk" data-act="cm-versiones" data-id="${esc(c.id)}">${ED.versionesDe === c.id ? 'Ocultar' : 'Cómo decía antes'} (${vers})</button>` : ''}
         </div>
         ${ED.versionesDe === c.id ? `<div class="cmvers">${(c.versiones || []).slice().reverse().map((v) => `<div><small>Hasta ${esc(ago(v.hasta))}${v.by ? ' · lo cambió ' + esc(person(v.by).name) : ''}</small>${mentionHtml(v.text)}</div>`).join('')}</div>` : ''}
@@ -2918,7 +2920,7 @@ async function comentar(p, text, fileIds) {
   const snippet = corto || (fids.length > 1 ? `marcó ${fids.length} archivos` : 'marcó un archivo');
   const avisados = await notify('mention', p, ments, `te mencionó en “${p.title}”: ${snippet}`, `te mencionó: ${snippet}`);
   avisados.push(...await notify('comment', p, p.assignees.filter((x) => !ments.includes(x)), `comentó en “${p.title}”: ${snippet}`, `comentó: ${snippet}`));
-  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados, `comentó: ${snippet}`);
+  await notifySuper(p, `comentó en “${p.title}”: ${snippet}`, avisados, `comentó: ${snippet}`, { siempre: true });
 }
 /* Pulgar arriba o abajo en un comentario: sirve para decir "lo leí / de acuerdo" sin escribir nada. */
 function reacHtml(c, postId) {
@@ -2950,6 +2952,20 @@ async function avisarReaccion(c, v) {
 
 // Los comentarios se pueden corregir: el texto anterior se guarda para poder mirarlo.
 const puedeEditarComentario = (c) => store.canWrite && c.author === S.me.id;
+// Quien administra (Javi) puede borrar cualquier comentario; las fotos que tenía siguen en la pieza
+const puedeBorrarComentario = (c) => store.canWrite && esAdmin() && !!c;
+async function borrarComentario(id) {
+  const c = S.db.comments.find((x) => x.id === id);
+  if (!c || !puedeBorrarComentario(c)) return false;
+  const quien = person(c.author).name;
+  const corto = (c.text || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+  if (!confirm(`¿Borrar el comentario de ${quien}?${corto ? `\n\n«${corto}${(c.text || '').length > 80 ? '…' : ''}»` : ''}\n\nNo se puede deshacer.`)) return false;
+  await removeRow('comments', id);
+  const p = S.db.posts.find((x) => x.id === c.postId);
+  if (p) await log(p, 'comment', `borró un comentario de ${quien}`);
+  toast('Comentario borrado');
+  return true;
+}
 async function guardarComentario(id, texto) {
   const c = S.db.comments.find((x) => x.id === id);
   if (!c || !puedeEditarComentario(c)) return;
@@ -2960,7 +2976,7 @@ async function guardarComentario(id, texto) {
   const p = S.db.posts.find((x) => x.id === c.postId);
   if (p) {
     await log(p, 'comment', 'corrigió un comentario');
-    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${recorte(texto, 80)}`, null, `corrigió un comentario: ${recorte(texto, 80)}`);
+    await notifySuper(p, `corrigió un comentario en “${p.title}”: ${recorte(texto, 80)}`, null, `corrigió un comentario: ${recorte(texto, 80)}`, { siempre: true });
   }
   ED.editando = null;
   renderEditor();
@@ -5150,6 +5166,12 @@ const ACTS = {
     ED.editando = el.dataset.id;
     renderEditor();
     setTimeout(() => { const t = $('#c-edit'); if (t) { t.scrollIntoView({ block: 'center' }); t.focus(); t.setSelectionRange(t.value.length, t.value.length); } }, 120);
+  },
+  'cm-borrar': async (el, e) => {
+    if (e) e.stopPropagation();
+    if (!requireWrite()) return;
+    if (ED && sheetOpen) syncDraft();
+    if (await borrarComentario(el.dataset.id)) { if (ED && sheetOpen) renderEditor(); renderMain(); }
   },
   'cm-guardar': async (el) => { const t = $('#c-edit'); await guardarComentario(el.dataset.id, t ? t.value : ''); },
   'cm-versiones': (el) => { syncDraft(); ED.versionesDe = ED.versionesDe === el.dataset.id ? null : el.dataset.id; renderEditor(); },

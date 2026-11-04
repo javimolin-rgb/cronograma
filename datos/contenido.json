@@ -1488,23 +1488,68 @@
    "date": "2026-11-11",
    "inicio": "",
    "format": "story",
-   "status": "idea",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "03b2da82-2617-417b-8081-df3dadaefb31",
    "platforms": [],
    "assignees": [
     "javi",
-    "maca"
+    "maca",
+    "flavio"
    ],
    "links": [],
-   "files": [],
+   "files": [
+    {
+     "id": "6eff77cc-be1a-4ed2-815a-d02fdf966f57",
+     "by": "javi",
+     "at": "2026-11-04T14:37:51.182Z",
+     "base": "atras",
+     "version": 1,
+     "shaOrigen": "cf0de73232d406dc9f0de733806399dc37cd1610",
+     "name": "atras-v1.webp",
+     "path": "archivos/modelos/atras-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v1.webp",
+     "sha": "16532d8a0d6282330c553193b2dcb65df3b0a0c7",
+     "type": "image/webp",
+     "size": 85778
+    },
+    {
+     "id": "f9130570-46bc-4d00-927d-4dbc6df6f120",
+     "by": "javi",
+     "at": "2026-11-04T14:37:53.952Z",
+     "base": "izq",
+     "version": 1,
+     "shaOrigen": "3e9a905cc1e0cd868880409cf859f1a1fbe50d1b",
+     "name": "izq-v1.webp",
+     "path": "archivos/modelos/izq-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v1.webp",
+     "sha": "92a6299e7579fe11bfefa7ed7739aafe54013e4b",
+     "type": "image/webp",
+     "size": 111034
+    },
+    {
+     "id": "13375c22-84ce-4c0d-95f1-b954c75f7abe",
+     "by": "javi",
+     "at": "2026-11-04T14:37:56.720Z",
+     "base": "der",
+     "version": 1,
+     "shaOrigen": "768a891639efaefb4653684844b36a6ad1da39d5",
+     "name": "der-v1.webp",
+     "path": "archivos/modelos/der-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v1.webp",
+     "sha": "ebc107012e6835d6d1e903800e52da938b1e6b2f",
+     "type": "image/webp",
+     "size": 107798
+    }
+   ],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:32:10.039Z",
+   "updatedAt": "2026-11-04T14:39:45.131Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-02T23:05:35.732Z",
+   "statusChangedAt": "2026-11-04T14:39:45.131Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -3718,6 +3763,13 @@
  ],
  "comments": [
   {
+   "id": "3f30730e-5088-4f9c-88c7-0ec7dad0bc7c",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Vistas de la casa. Miércoles 20:00hrs empiezo a renderizar, cualquier cambio de render debe ser antes de eso",
+   "createdAt": "2026-11-04T14:39:45.134Z"
+  },
+  {
    "id": "5e12000c-9683-4da9-b346-80137843d9d8",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -5046,6 +5098,49 @@
   }
  ],
  "activity": [
+  {
+   "id": "491c116f-a05d-4fab-b907-6d8d3e91bffd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-04T14:39:45.134Z"
+  },
+  {
+   "id": "e341ac87-92ac-48f2-8527-098efcecc4e4",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-04T14:39:45.134Z"
+  },
+  {
+   "id": "8f690756-866c-40dc-99f2-f314e071409b",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a En revisión",
+   "meta": {
+    "from": "idea",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-04T14:39:45.133Z"
+  },
+  {
+   "id": "5275d7f8-242c-4055-8b41-6c80280fe73f",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Flavio",
+   "meta": null,
+   "createdAt": "2026-11-04T14:39:45.132Z"
+  },
   {
    "id": "614ad69e-7a33-4f59-9159-725a367e63cf",
    "postId": "d803aa90-d8cb-42e9-bf3e-71e3511878f7",
@@ -7685,6 +7780,81 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0494fa43-4d26-4e0d-a0c0-70a9629ab3b3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Vistas de la casa. Miércoles 20:00hrs empiezo a renderizar, cualquier cambio de render debe ser antes de eso",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Vistas de la casa. Miércoles 20:00hrs empiezo a renderizar, cualquier cambio de render debe ser antes de eso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T14:39:45.134Z"
+  },
+  {
+   "id": "df649e02-3fc0-49c2-995e-b8a2134d937f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Vistas de la casa. Miércoles 20:00hrs empiezo a renderizar, cualquier cambio de render debe ser antes de eso",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Vistas de la casa. Miércoles 20:00hrs empiezo a renderizar, cualquier cambio de render debe ser antes de eso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T14:39:45.134Z"
+  },
+  {
+   "id": "6242e377-e404-4e9c-b9ce-836837500280",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T14:39:45.134Z"
+  },
+  {
+   "id": "005f0f50-d2a3-4438-8090-a263c1ae34a2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T14:39:45.133Z"
+  },
+  {
+   "id": "9bea9a54-b763-485f-aee5-733f438432e8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "tagged",
+   "text": "te etiquetó en “Casa Boldo”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te etiquetó como responsable",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T14:39:45.133Z"
+  },
   {
    "id": "3b3e15b2-097b-4ad7-91e1-fd27c46acd30",
    "to": "flavio",

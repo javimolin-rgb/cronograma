@@ -806,7 +806,7 @@
    "caption": "No, no son prefabricadas. 🌿 Partimos de nuestros modelos prediseñados y los construimos en tu  terreno, con construcción en obra, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Compártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
    "notes": "Reel · respuesta a comentario · 25 s · busca envíos\n\nIdea. Responder en video la duda más repetida, con el formato de respuesta a comentario de Instagram. Si hay un comentario o DM real con esa pregunta, se usa su sticker; si no, se abre con un rótulo \"Nos preguntan:\" y nunca se inventa un comentario. Aclara la diferencia de la marca sin sonar a defensa.\n\nImagen. Toma de obra con la estructura en pie (galería: 02 · Estructura), luego un modelo terminado en su paisaje. Cámara en mano, sin estabilizar demasiado.\n\nFuente. Preguntas frecuentes: \"¿Las casas son prefabricadas?\", \"¿Qué es Neorigen?\" y plazo de construcción.",
    "hashtags": "",
-   "guion": "",
+   "guion": "Por favor agrandar un poco todas las palabras que aparecen en  chico , no alcanzan a leerse, se va la vista solo a lo grande.  ",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -920,12 +920,19 @@
      "text": "No, no son prefabricadas. 🌿 Partimos de modelos prediseñados y los construimos en tu propio terreno, con construcción n en obra, calidad y eficiencia, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? E \nCompártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
      "hasta": "2026-11-04T15:34:21.466Z",
      "by": "maca"
+    },
+    {
+     "id": "4c2710d6-8c3e-4eab-bd04-e681194e3676",
+     "campo": "guion",
+     "text": "",
+     "hasta": "2026-11-04T15:40:54.431Z",
+     "by": "maca"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T15:34:21.466Z",
+   "updatedAt": "2026-11-04T15:40:54.431Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
@@ -5211,6 +5218,16 @@
  ],
  "activity": [
   {
+   "id": "7ee73c6f-feda-4392-b729-ed38b48e8a8a",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó guión / voz en off",
+   "meta": null,
+   "createdAt": "2026-11-04T15:40:54.434Z"
+  },
+  {
    "id": "7b8fd78a-125c-4a53-a989-1ef9e7d4b34d",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -7985,6 +8002,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "41e1a088-a1b4-4539-91e7-8e3c703df2c9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "en “¿Son prefabricadas?”: editó guión / voz en off",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca editó guión / voz en off",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T15:40:54.436Z"
+  },
   {
    "id": "c85ef337-5f7d-4d55-ad57-152473b3b39e",
    "to": "javi",

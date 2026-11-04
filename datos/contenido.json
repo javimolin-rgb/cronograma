@@ -3883,7 +3883,10 @@
    "author": "maca",
    "text": "Es la descripción que aparece en las imágenes… por ejemplo: \nNos preguntan\nTu terreno\nSe arma aquí, etc \nNo se alcanzan a leer , por pequeño y porque algunos aparecen al mismo tiempo entonces el ojo no puede leer tres cosas en simultáneo.",
    "fileIds": [],
-   "createdAt": "2026-11-04T16:25:40.464Z"
+   "createdAt": "2026-11-04T16:25:40.464Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "978f669b-0ff0-4d1a-828f-d76f50a0e273",
@@ -8169,13 +8172,28 @@
  ],
  "notifications": [
   {
+   "id": "b2336358-d4ae-4ab2-9dba-fbc461830b65",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “¿Son prefabricadas?”: Es la descripción que aparece en las imágenes… por ejemplo: ",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi le puso 👍 a tu comentario: Es la descripción que aparece en las imágenes… por ejemplo:",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T16:34:04.853Z"
+  },
+  {
    "id": "5aed3b1b-e539-413d-95cf-1b1c64499ee4",
    "to": "javi",
    "from": "maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: Yap, gracias!",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
@@ -8205,7 +8223,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "supervision",
    "text": "comentó en “¿Son prefabricadas?”: Osea… casi al mismo tiempo…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",

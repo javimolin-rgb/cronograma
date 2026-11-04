@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "c31738ab-f98b-4d56-a3b6-a69947fa3ca3",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "@Javi dejé comentarios arriba. \nModifiqué algunos detalles del texto.\nPrimera y segunda slides dejarlas con más luz como las que siguen . Sacar bulto azul y plásticos negros que ensucian la imagen. Igual se entiende que es obra.",
+   "fileIds": [],
+   "createdAt": "2026-11-04T15:58:11.781Z"
+  },
+  {
    "id": "53ca5737-2a57-4db2-ba33-e7ae967e7561",
    "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
    "author": "maca",
@@ -5229,6 +5237,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f5edf585-3817-423b-87d7-580c9aeac756",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T15:58:11.789Z"
+  },
   {
    "id": "c2dd46ca-a676-4171-94b9-57063350dfbc",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8024,6 +8042,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3486845f-6873-4f6c-8d6b-a2cbc513f2dd",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Javi dejé comentarios arriba. \nModifiqué algunos detalles del texto.\nPrimera y …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca te mencionó: @Javi dejé comentarios arriba. \nModifiqué algunos detalles del texto.\nPrimera y …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T15:58:11.790Z"
+  },
   {
    "id": "be49d4bb-f258-4665-8320-6be9bede4fd1",
    "to": "javi",

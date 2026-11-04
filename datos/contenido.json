@@ -4045,6 +4045,14 @@
  ],
  "comments": [
   {
+   "id": "d0fe2e41-6e46-4e96-8a5c-ee55cbf79055",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Los marcos de ventanas no están negros",
+   "fileIds": [],
+   "createdAt": "2026-11-04T23:23:22.128Z"
+  },
+  {
    "id": "7577b24a-3e44-4a11-a34b-d7152525e628",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5734,6 +5742,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "1c1de2fb-816c-4b19-8bd0-e6ffc82075f1",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T23:23:22.131Z"
+  },
   {
    "id": "5ecd1472-891a-4006-a0a4-f67a932d5ef2",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9045,6 +9063,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d9a20398-02cf-487a-8335-3cacd51fd7fc",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Los marcos de ventanas no están negros",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Los marcos de ventanas no están negros",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:23:22.135Z"
+  },
+  {
+   "id": "b5818b0c-ab98-4e5f-8916-dd94bda5b436",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Los marcos de ventanas no están negros",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Los marcos de ventanas no están negros",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T23:23:22.134Z"
+  },
   {
    "id": "a0b5ff3b-73f1-46b3-b358-cf912db76284",
    "to": "javi",

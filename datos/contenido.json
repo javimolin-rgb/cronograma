@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "978f669b-0ff0-4d1a-828f-d76f50a0e273",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Hola! Te refieres a hoy miércoles? \nQue tanto se puede modificar? \nPor ejemplo agregar terraza que rodean la casa? Tonalidad de los cerros con bosque? Ponerle más jardín? Qué nivel de detalles te permite el peso…",
+   "fileIds": [],
+   "createdAt": "2026-11-04T16:20:39.800Z"
+  },
+  {
    "id": "02b35022-d017-4a7f-b5e5-6f37b71ec3a0",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5253,6 +5261,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "33ee6c31-039a-4362-afde-c116798803fd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T16:20:39.810Z"
+  },
   {
    "id": "31efc846-ac0e-4a0a-9fe4-7ef605f8ab8a",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8078,6 +8096,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "782fcf26-7197-4fb7-a0d4-6507cddd0fc6",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Hola! Te refieres a hoy miércoles? \nQue tanto se puede modificar? \nPor ejemplo a…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hola! Te refieres a hoy miércoles? \nQue tanto se puede modificar? \nPor ejemplo a…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T16:20:39.813Z"
+  },
+  {
+   "id": "bf4b28a7-7007-4d68-9de0-6ed8d95eb0ef",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Hola! Te refieres a hoy miércoles? \nQue tanto se puede modificar? \nPor ejemplo a…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hola! Te refieres a hoy miércoles? \nQue tanto se puede modificar? \nPor ejemplo a…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T16:20:39.812Z"
+  },
   {
    "id": "7516f7a2-8572-4c21-b561-29d0843f2143",
    "to": "maca",

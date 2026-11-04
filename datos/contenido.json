@@ -9234,7 +9234,7 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a Estructura por aprobar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Cronograma de contenido",

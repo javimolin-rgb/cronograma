@@ -3986,6 +3986,16 @@
  ],
  "comments": [
   {
+   "id": "65d2b0a6-d5bc-425c-b80c-77b6ebcdbaca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca Te subo una versión alternativa en donde se ve más",
+   "fileIds": [
+    "38d95187-44ea-4b81-8e88-1243858f3ca9"
+   ],
+   "createdAt": "2026-11-04T22:04:30.598Z"
+  },
+  {
    "id": "9f5edaac-9cdc-4cce-b9d5-0e8ca39e1c0d",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5619,6 +5629,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "911d72c1-aed6-41f5-ae8c-2e74de501ee2",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T22:04:30.599Z"
+  },
   {
    "id": "9407252f-be0d-4747-8d3a-c12c80682298",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8810,6 +8830,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5c464a19-5651-43aa-a7f8-ee21d527a72d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca Te subo una versión alternativa en donde se ve más",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca Te subo una versión alternativa en donde se ve más",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T22:04:30.600Z"
+  },
   {
    "id": "79ac9346-c4dd-4945-9344-8837c8e3fbd1",
    "to": "javi",

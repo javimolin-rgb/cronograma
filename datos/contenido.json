@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "9f0052ef-777b-41a3-b47c-09180ec9d4cf",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "author": "javi",
+   "text": "Al aire!",
+   "fileIds": [],
+   "createdAt": "2026-11-04T16:12:34.710Z"
+  },
+  {
    "id": "c31738ab-f98b-4d56-a3b6-a69947fa3ca3",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5237,6 +5245,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c131f504-fada-4a87-b49a-2d536ee83c26",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "postTitle": "Casa Peumo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T16:12:34.712Z"
+  },
   {
    "id": "f5edf585-3817-423b-87d7-580c9aeac756",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8042,6 +8060,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5b16a8fe-9018-418f-b8fa-c1e47a441804",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Al aire!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Javi comentó: Al aire!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T16:12:34.717Z"
+  },
+  {
+   "id": "5c86f6b9-3214-4319-98a3-88c2704a0019",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "type": "comment",
+   "text": "comentó en “Casa Peumo”: Al aire!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Peumo",
+   "body": "Javi comentó: Al aire!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5ebdd461-a506-4c8c-b849-34c2290c0ae1",
+   "createdAt": "2026-11-04T16:12:34.716Z"
+  },
   {
    "id": "3486845f-6873-4f6c-8d6b-a2cbc513f2dd",
    "to": "javi",

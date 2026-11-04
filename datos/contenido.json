@@ -3854,6 +3854,14 @@
  ],
  "comments": [
   {
+   "id": "cd5cb5c7-89d7-4a66-81a4-7c2428f5f4d8",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "En la última foto aparece 6 -10 meses… otra manera de presentarlo para q se entienda q es desde hasta según el modelo",
+   "fileIds": [],
+   "createdAt": "2026-11-04T17:42:47.274Z"
+  },
+  {
    "id": "92c23e5c-6d8e-4dee-a00e-ab5e1a031c94",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5314,6 +5322,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "574f2e44-f061-4dc9-b799-29d4d8b305ff",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T17:42:47.275Z"
+  },
   {
    "id": "f30a4ece-233d-42cb-a822-197f6a65016a",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8209,6 +8227,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e1097a05-125c-44ad-b71b-34c718e12e1b",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: En la última foto aparece 6 -10 meses… otra manera de presentarlo para q se enti…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: En la última foto aparece 6 -10 meses… otra manera de presentarlo para q se enti…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T17:42:47.276Z"
+  },
   {
    "id": "7509c840-eb6a-4e9f-8219-ae51edf78367",
    "to": "javi",

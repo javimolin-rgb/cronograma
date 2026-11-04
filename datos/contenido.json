@@ -8366,7 +8366,7 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: Ya! Ahí te mandé los ajustes",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",

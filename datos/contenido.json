@@ -3888,6 +3888,14 @@
  ],
  "comments": [
   {
+   "id": "0311591a-1f76-4d30-8e80-beae0103d171",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "flavio",
+   "text": "@Javi ¿me puedes mandar el texto de la voz en off por favor?",
+   "fileIds": [],
+   "createdAt": "2026-11-04T20:50:20.025Z"
+  },
+  {
    "id": "4af058be-924d-437d-b94b-68cdb0ba81e4",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5475,6 +5483,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "bedecf2f-4938-41a5-90fc-12f62a732af5",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T20:50:20.026Z"
+  },
   {
    "id": "93a3aed9-48fa-4e5d-a0a4-54ae41f06256",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8553,6 +8571,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c9776480-b1d8-48f0-a935-f0b4db7b659e",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: @Javi ¿me puedes mandar el texto de la voz en off por favor?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Flavio comentó: @Javi ¿me puedes mandar el texto de la voz en off por favor?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T20:50:20.027Z"
+  },
+  {
+   "id": "243133fb-f276-4c91-a022-8ba197f6c19b",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Javi ¿me puedes mandar el texto de la voz en off por favor?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Flavio te mencionó: @Javi ¿me puedes mandar el texto de la voz en off por favor?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T20:50:20.027Z"
+  },
   {
    "id": "ea8d516d-b477-47bc-8d73-67f600f1ee89",
    "to": "maca",

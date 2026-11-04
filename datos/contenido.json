@@ -3888,6 +3888,16 @@
  ],
  "comments": [
   {
+   "id": "4af058be-924d-437d-b94b-68cdb0ba81e4",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca Dejo video con foto de trabajadores alternativa, me avisas cual de ls dos dejar. El video ya tiene voz y música",
+   "fileIds": [
+    "cf35e86d-e4a9-4c93-a44d-fa4bff9913e6"
+   ],
+   "createdAt": "2026-11-04T20:05:51.069Z"
+  },
+  {
    "id": "577e76aa-40f4-4dcf-998c-4328637061a7",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5465,6 +5475,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "93a3aed9-48fa-4e5d-a0a4-54ae41f06256",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T20:05:51.073Z"
+  },
   {
    "id": "9e2cd5b4-e993-4aa8-b85f-c8e4c70866b0",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8533,6 +8553,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ea8d516d-b477-47bc-8d73-67f600f1ee89",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca Dejo video con foto de trabajadores alternativa, me avisas cual de ls dos …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca Dejo video con foto de trabajadores alternativa, me avisas cual de ls dos …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T20:05:51.074Z"
+  },
   {
    "id": "55b836dd-c5de-41ab-8942-08bc32f5b91c",
    "to": "javi",

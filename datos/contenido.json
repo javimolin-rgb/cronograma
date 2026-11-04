@@ -3871,6 +3871,14 @@
  ],
  "comments": [
   {
+   "id": "3f339063-625c-4ea3-a65d-1313ff92b584",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "Esa es la foto con gente que encontré que aparecen los 3",
+   "fileIds": [],
+   "createdAt": "2026-11-04T19:34:01.373Z"
+  },
+  {
    "id": "e3307aaf-ba38-4381-9aa9-4307985f3845",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5392,6 +5400,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "431a03ad-1469-4b83-966b-bbbd8415818a",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-04T19:34:01.375Z"
+  },
   {
    "id": "970406e2-6cff-4d3c-bceb-ff7034ef683f",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8380,6 +8398,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c4f2b6fa-ee65-4d65-b3a9-2b535e2635bb",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Esa es la foto con gente que encontré que aparecen los 3",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi comentó: Esa es la foto con gente que encontré que aparecen los 3",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-04T19:34:01.375Z"
+  },
   {
    "id": "9a58d141-b2ef-432a-9089-4920500a434e",
    "to": "javi",

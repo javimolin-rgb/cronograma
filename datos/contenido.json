@@ -1691,11 +1691,53 @@
      "sha": "8b2e4de7142eee472f2fe9b2cf42e208a920ebd0",
      "type": "image/jpeg",
      "size": 279329
+    },
+    {
+     "id": "2d701d6a-9443-4a12-b3f0-3a5da652075b",
+     "by": "javi",
+     "at": "2026-11-04T21:54:28.787Z",
+     "base": "atras",
+     "version": 2,
+     "shaOrigen": "2ab3966e3ad4067603f1eec91d0720a57ef46966",
+     "name": "atras-v2.webp",
+     "path": "archivos/modelos/atras-v2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v2.webp",
+     "sha": "c58fe1ab2181fcd23fa45ce9dd9a36b5792dff60",
+     "type": "image/webp",
+     "size": 97992
+    },
+    {
+     "id": "340ab011-a227-449f-a804-7c60fb34478d",
+     "by": "javi",
+     "at": "2026-11-04T21:54:32.450Z",
+     "base": "der",
+     "version": 2,
+     "shaOrigen": "77ee315c65dea3f483190ed97c5899cb2ecbe748",
+     "name": "der-v2.webp",
+     "path": "archivos/modelos/der-v2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v2.webp",
+     "sha": "0332ea440118607b735c22245f4030d6f4ff81f8",
+     "type": "image/webp",
+     "size": 110296
+    },
+    {
+     "id": "f5011bbd-ca29-4d72-91c3-cb59fe323dc6",
+     "by": "javi",
+     "at": "2026-11-04T21:54:35.602Z",
+     "base": "izq",
+     "version": 2,
+     "shaOrigen": "5b5d9bc9a637861d729bdebbd0812ec616f9c9ab",
+     "name": "izq-v2.webp",
+     "path": "archivos/modelos/izq-v2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v2.webp",
+     "sha": "ac7d926c99d67129f64d745fd4384ed046e4a26e",
+     "type": "image/webp",
+     "size": 117964
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-04T21:25:47.231Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-04T21:56:40.944Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-04T14:39:45.131Z",
@@ -3944,6 +3986,13 @@
  ],
  "comments": [
   {
+   "id": "f61c2932-13c4-4990-920b-e8c7e13bcb0d",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Ajustes de render subidos",
+   "createdAt": "2026-11-04T21:56:40.951Z"
+  },
+  {
    "id": "a1c1d14f-6887-4ed9-8943-50417e32c4af",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -5562,6 +5611,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "5a7b4902-d59e-4d5c-8398-9db42fa9fa66",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-04T21:56:40.951Z"
+  },
+  {
+   "id": "91b87afc-d585-44e2-9309-b4e60485da93",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-04T21:56:40.947Z"
+  },
   {
    "id": "158bfb60-fb89-4fe8-96c8-f4fe60679be4",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -8723,6 +8792,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "757d1fb0-c520-4f48-9955-e4007d373e34",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Ajustes de render subidos",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Ajustes de render subidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:56:40.951Z"
+  },
+  {
+   "id": "b53c21c5-0a49-4b6e-8d0c-11e2fbe270cd",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Ajustes de render subidos",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Ajustes de render subidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:56:40.950Z"
+  },
+  {
+   "id": "8d33de0e-c5b4-4f56-bcfc-f5905b23e1d7",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:56:40.950Z"
+  },
+  {
+   "id": "1b807d06-df32-4ea0-a600-387e556dc66c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-04T21:56:40.950Z"
+  },
   {
    "id": "66f2b860-5e16-42e6-a319-62362ca97b8e",
    "to": "javi",

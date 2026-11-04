@@ -618,6 +618,18 @@ html{overscroll-behavior-y:none}
 .cmpick .playic{position:absolute;right:4px;bottom:2px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
 .cmpick .tick{position:absolute;inset:0;display:none;place-items:center;background:rgba(20,16,40,.5);color:#fff}
 .cmpick.on{box-shadow:0 0 0 2px var(--accent)}
+/* Sumar una foto desde el casillero de comentarios */
+.cmpick.cmadd{display:grid;place-items:center;color:var(--muted);background:none;box-shadow:inset 0 0 0 2px var(--line);cursor:pointer}
+.cmpick.cmadd:hover,.cmpick.cmadd:focus-within{color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.cmpick.cmadd input,.iconbtn.cmcam input{display:none}
+.iconbtn.cmcam{flex:none;cursor:pointer;display:grid;place-items:center}
+.cmspin{width:18px;height:18px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--accent);animation:cmgira .8s linear infinite}
+@keyframes cmgira{to{transform:rotate(360deg)}}
+/* Fotos ya elegidas para el comentario que se está escribiendo */
+.cmfotos.pend{margin:10px 0 0}
+.cmfotos.pend .cmfoto{width:62px;height:62px;cursor:default}
+.cmfoto .quitar{position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(20,16,40,.68);color:#fff;box-shadow:none}
 .cmpick.on .tick{display:grid}
 .reac{display:inline-flex;align-items:center;gap:3px;font-size:0.75rem;font-weight:700;color:var(--muted);background:var(--surface2);border-radius:999px;padding:3px 9px;line-height:1.35}
 .reac.on{background:var(--accent-soft);color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
@@ -863,13 +875,14 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .pcom small{color:var(--muted);font-size:0.6875rem}
 .postcompose{display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:10px}
 .postcompose .field{flex:1;min-width:0}
+.postpie .cmfotos.pend{margin:0 0 10px}
 @media (min-width:900px){
   .post{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);grid-template-rows:auto 1fr;max-height:86dvh}
   .posth{grid-column:2;grid-row:1;border-bottom:1px solid var(--line)}
   .postmedia{grid-column:1;grid-row:1 / span 2;background:#0d0d10;display:flex;align-items:center;min-height:0}
   .postmedia .carru{width:100%}
   .postside{grid-column:2;grid-row:2;min-height:0;overflow:auto}
-  .postcompose{position:sticky;bottom:0;background:var(--surface)}
+  .postpie{position:sticky;bottom:0;background:var(--surface)}
 }
 
 /* ===== Selector de tipo de vista del feed ===== */

@@ -201,6 +201,7 @@ const IC = {
   eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
   key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M17 6l3 3M14 9l3 3"/>',
   cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>',
+  camera: '<path d="M3 8a2 2 0 012-2h2.2l1.3-2h7l1.3 2H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="12.5" r="3.4"/>',
   archive: '<rect x="2.5" y="3.5" width="19" height="5" rx="1.5"/><path d="M4.5 8.5V19a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V8.5M10 12h4"/>',
   zap: '<path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/>',
   copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>'
@@ -258,6 +259,8 @@ const S = {
   feedVista: localStorage.getItem('crono_feed_vista') || 'tarjetas',
   feedAbiertos: {},  // piezas del feed con todos los comentarios a la vista
   feedBorrador: {},  // lo que se está escribiendo en cada pieza del feed
+  feedFotos: {},     // fotos ya subidas que van con ese comentario
+  feedSubiendo: '',  // en qué pieza se está subiendo una foto ahora mismo
   compartidos: 0,
   marcaRuta: '',   // en qué carpeta de Marca está parada
   marcaTodo: false, // ver también lo que hay en las carpetas de adentro
@@ -1169,9 +1172,17 @@ function postHtml(p, t) {
             <div class="cmacts">${reacHtml(c, p.id)}</div></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
       </div>
+      <div class="postpie">
+      ${(() => {
+        const puestas = (S.feedFotos[p.id] || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
+        if (!puestas.length) return '';
+        return `<div class="cmfotos pend">${puestas.map((x) => `<span class="cmfoto">${miniMedia(x) || ''}<button class="quitar" data-act="feed-foto-quitar" data-id="${esc(p.id)}" data-f="${esc(x.id)}" aria-label="Quitar">${ic('x', 13)}</button></span>`).join('')}</div>`;
+      })()}
       <div class="postcompose">
+        ${store.canWrite ? `<label class="iconbtn cmcam" title="Mandar una foto" aria-label="Mandar una foto">${S.feedSubiendo === p.id ? `<i class="cmspin"></i>` : ic('camera', 18)}<input type="file" accept="image/*,video/*" multiple data-feed-foto="${esc(p.id)}"${S.feedSubiendo === p.id ? ' disabled' : ''}></label>` : ''}
         <input class="field" data-feed-com="${esc(p.id)}" placeholder="${S.feedCambios === p.id ? '¿Qué cambiarías?' : 'Escribe un comentario…'}" value="${esc(S.feedBorrador[p.id] || '')}" autocomplete="off" enterkeyhint="send">
         <button class="iconbtn" data-act="feed-enviar" data-id="${esc(p.id)}" aria-label="Enviar">${ic('send', 18)}</button>
+      </div>
       </div>
     </div>
   </article>`;
@@ -1180,16 +1191,33 @@ async function feedEnviar(id) {
   const p = S.db.posts.find((x) => x.id === id); if (!p || !requireWrite()) return;
   const inp = document.querySelector(`[data-feed-com="${CSS.escape(id)}"]`);
   const text = ((inp && inp.value) || S.feedBorrador[id] || '').trim();
-  if (!text) { if (inp) inp.focus(); return; }
+  const fotos = (S.feedFotos[id] || []).filter((fid) => p.files.some((f) => f.id === fid));
+  if (!text && !fotos.length) { if (inp) inp.focus(); return; }   // una foto sola también vale
   if (inp) inp.disabled = true;
   try {
-    await comentar(p, text);
+    await comentar(p, text, fotos);
     if (S.feedCambios === id && p.status !== 'cambios') await changeStatus(id, 'cambios');
     delete S.feedBorrador[id];
+    delete S.feedFotos[id];
     if (S.feedCambios === id) S.feedCambios = null;
     renderMain();
     toast('Comentario enviado');
   } catch (e) { if (inp) inp.disabled = false; }
+}
+// Elegir una foto desde el feed: se sube a la pieza y queda lista para mandarla
+async function feedFoto(input) {
+  const id = input.dataset.feedFoto;
+  const files = [...input.files]; input.value = '';
+  const p = S.db.posts.find((x) => x.id === id);
+  if (!p || !files.length) return;
+  S.feedSubiendo = id; renderMain();
+  try {
+    const ids = await subirFotosComentario(p, files);
+    S.feedFotos[id] = [...new Set((S.feedFotos[id] || []).concat(ids))];
+  } finally {
+    S.feedSubiendo = '';
+    renderMain();
+  }
 }
 
 /* ---------- espacio: qué ocupa el repositorio y qué se puede soltar (solo quien administra) ---------- */
@@ -2751,10 +2779,13 @@ function renderEditor() {
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
       ${(() => {
         const media = pieceFiles(d, true).filter(esMedia);
-        if (!media.length) return '';
         const sel = ED.comFiles || [];
-        return `<div class="commedia">${media.map((f) => `<button class="cmpick${sel.includes(f.id) ? ' on' : ''}" data-act="cm-media" data-f="${esc(f.id)}" aria-label="${esc(f.name)}" title="${esc(f.name)}">${miniMedia(f) || ''}<i class="tick">${ic('check', 14)}</i></button>`).join('')}</div>
-        <p class="hint">${sel.length ? `Hablando de ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : 'Toca una foto o un video para decir de cuál estás hablando.'}</p>`;
+        const subir = store.canWrite
+          ? `<label class="cmpick cmadd" title="Sumar una foto o un video">${ED.comSubiendo ? `<i class="cmspin"></i>` : ic('camera', 20)}<input id="cm-file" type="file" accept="image/*,video/*" multiple${ED.comSubiendo ? ' disabled' : ''}></label>`
+          : '';
+        if (!media.length && !subir) return '';
+        return `<div class="commedia">${subir}${media.map((f) => `<button class="cmpick${sel.includes(f.id) ? ' on' : ''}" data-act="cm-media" data-f="${esc(f.id)}" aria-label="${esc(f.name)}" title="${esc(f.name)}">${miniMedia(f) || ''}<i class="tick">${ic('check', 14)}</i></button>`).join('')}</div>
+        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca la cámara para sumar una foto, o una de abajo para decir de cuál estás hablando.' : 'Toca la cámara para mandar una foto con el comentario: queda guardada en los archivos de la pieza.'}</p>`;
       })()}
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
@@ -2810,6 +2841,74 @@ async function saveEditor() {
 }
 
 // Comentario en una pieza (desde el editor o desde el feed), con sus avisos
+/* Subir una foto (o un video) desde el casillero de comentarios.
+   No es un borrador: el archivo queda guardado en la pieza —en la misma carpeta de
+   proyecto que los demás— apenas se sube, así que aunque después no se mande el
+   comentario, la foto no se pierde. Devuelve los id de lo que quedó subido. */
+async function subirFotosComentario(post, files) {
+  if (!post || !files || !files.length || !requireWrite()) return [];
+  const guardada = S.db.posts.find((x) => x.id === post.id) || post;
+  const nuevos = [], ids = [];
+  toast(`Subiendo ${files.length} ${files.length === 1 ? 'archivo' : 'archivos'}…`, 10000);
+  let repetidos = 0;
+  for (const f of files) {
+    try {
+      let archivo = f;
+      if (await convieneComprimir(f)) {
+        toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo…`, 8000);
+        const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8);
+        if (chico) archivo = chico;
+      }
+      const shaOrigen = await shaGit(archivo).catch(() => '');
+      // la misma foto dos veces en la misma pieza no se vuelve a subir: se usa la que ya está
+      const gemela = shaOrigen && (guardada.files || []).find((x) => x && x.path && (x.shaOrigen === shaOrigen || x.sha === shaOrigen));
+      if (gemela) { ids.push(gemela.id); repetidos++; continue; }
+      const info = splitName(archivo.name);
+      info.base = nombreUtil(archivo, guardada, nuevos.length);
+      const previas = (guardada.files || []).filter((x) => (x.base || splitName(x.name).base) === info.base);
+      const version = info.version || (previas.length ? Math.max(...previas.map((x) => x.version || 1)) + 1 : 1);
+      const nombre = `${info.base}-v${version}${info.ext ? '.' + info.ext : ''}`;
+      const extra = esVideoArchivo(archivo) ? (await datosVideo(archivo).catch(() => null)) : null;
+      const r = await store.upload(archivo, { dir: projectName(guardada), name: nombre });
+      const nuevo = archivoSubido(Object.assign(
+        { id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen },
+        extra ? { dur: extra.dur, w: extra.w, h: extra.h } : {}, r));
+      nuevos.push(nuevo); ids.push(nuevo.id);
+    } catch (e) {
+      console.error(e);
+      const pesado = f.size > LIMITE_SUBIDA;
+      toast(`“${f.name}” NO se subió: ${pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar aquí` : ((e && e.message) || e)}`, 7000);
+    }
+  }
+  if (nuevos.length) {
+    const files2 = (guardada.files || []).concat(nuevos);
+    await save('posts', Object.assign({}, guardada, { files: files2, updatedAt: nowISO(), updatedBy: S.me.id }));
+    // si la pieza está abierta, el borrador y la copia de referencia se enteran también
+    if (ED && ED.d.id === guardada.id) {
+      nuevos.forEach((x) => { if (!ED.d.files.some((y) => y.id === x.id)) ED.d.files.push(x); });
+      if (ED.old) ED.old.files = (ED.old.files || []).concat(nuevos.filter((x) => !(ED.old.files || []).some((y) => y.id === x.id)));
+    }
+    await log(guardada, 'file', `subió ${nuevos.length} ${nuevos.length === 1 ? 'archivo' : 'archivos'} desde un comentario`);
+  }
+  if (ids.length) toast(repetidos && !nuevos.length ? 'Esa foto ya estaba en la pieza: la usé igual' : `Lista para mandar en el comentario`, 3000);
+  return ids;
+}
+
+// Desde la pieza abierta: sube lo elegido y lo deja marcado en el comentario que se está escribiendo
+async function fotosDeComentario(input) {
+  const files = [...input.files]; input.value = '';
+  if (!ED || !ED.old || !files.length) return;
+  syncDraft();
+  ED.comSubiendo = true; renderEditor();
+  try {
+    const ids = await subirFotosComentario(ED.old, files);
+    ED.comFiles = [...new Set((ED.comFiles || []).concat(ids))];
+  } finally {
+    ED.comSubiendo = false;
+    if (ED) renderEditor();
+  }
+}
+
 async function comentar(p, text, fileIds) {
   const fids = (fileIds || []).filter(Boolean);
   await save('comments', { id: uid(), postId: p.id, author: S.me.id, text, fileIds: fids, createdAt: nowISO() });
@@ -5063,6 +5162,12 @@ const ACTS = {
   'piezas-vista': (el) => { S.piezasVista = el.dataset.v; localStorage.setItem('crono_piezas_vista', S.piezasVista); renderAll(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),
+  'feed-foto-quitar': (el) => {
+    const id = el.dataset.id;
+    S.feedFotos[id] = (S.feedFotos[id] || []).filter((x) => x !== el.dataset.f);
+    renderMain();
+    toast('La saqué del comentario; en los archivos de la pieza sigue guardada', 4000);
+  },
   'feed-aprobar': async (el) => {
     const p = S.db.posts.find((x) => x.id === el.dataset.id);
     // dar el visto bueno a la estructura no es aprobar la pieza: recién ahí se diseña
@@ -5169,6 +5274,8 @@ document.addEventListener('change', (e) => {
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
+  else if (t.id === 'cm-file') fotosDeComentario(t);
+  else if (t.dataset && t.dataset.feedFoto) feedFoto(t);
   else if (t.dataset && t.dataset.marcaFile) subirAMarca(t);
   else if (t.dataset && (t.dataset.art || t.dataset.artNuevo)) onArtFile(t);
   else if (t.dataset && t.dataset.arteurl) {

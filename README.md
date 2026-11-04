@@ -43,6 +43,18 @@ Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a 
 
 Debajo del cuadro de comentario, en cada pieza, están las miniaturas de sus fotos y videos: al tocar una (o varias) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es. Es la forma de decir “en esta saquemos la camioneta” sin tener que explicarlo. Si solo marcas archivos y no escribes nada, igual se puede enviar.
 
+## Mandar una foto nueva en el comentario
+
+La primera miniatura es una **cámara**: abre la galería o la cámara del teléfono para sumar una foto (o un video) que todavía no está en la pieza. En el **Feed** está el mismo botón, a la izquierda del casillero de escribir.
+
+- La foto **se sube de inmediato a los archivos de la pieza**, en la misma carpeta de proyecto que el resto, y aparece en **Entregas** como cualquier otro archivo. No es un adjunto suelto del comentario.
+- Queda **marcada sola** para el comentario que estás escribiendo. Si al final no mandas el comentario, la foto no se pierde: sigue guardada en la pieza.
+- Se le pone el nombre de la pieza si venía con uno inservible (`IMG_4821`, un número largo…), se numera como versión y las fotos grandes se achican solas, igual que cuando subes desde *Archivos*.
+- Si mandas **la misma foto dos veces**, no se vuelve a subir: se usa la que ya estaba.
+- En el Feed, antes de mandar, las fotos elegidas se ven arriba del casillero con una **✕** para sacarlas del comentario (del archivo de la pieza no se borran).
+
+Lo pueden usar los tres, no solo Javi: es la forma de que Flavio o Maca manden una referencia o una captura sin salirse de la conversación. En modo solo lectura el botón no aparece.
+
 ## Pulgar arriba o abajo
 
 Cada comentario tiene **👍** y **👎**: sirven para decir “lo leí / de acuerdo” sin escribir. Se toca una vez para ponerlo y otra para sacarlo, y al pasar el dedo (o el mouse) sobre el número se ve quién lo puso. Están tanto en la pieza como en el feed.

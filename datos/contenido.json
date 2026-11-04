@@ -948,6 +948,20 @@
      "sha": "69ce6c841e433ffb43993205c6f42f47f90928b3",
      "type": "video/mp4",
      "size": 6147822
+    },
+    {
+     "id": "87299403-85ea-466c-b69a-59984ee80857",
+     "by": "javi",
+     "at": "2026-11-04T20:54:08.486Z",
+     "base": "son-prefabricadas-1",
+     "version": 1,
+     "shaOrigen": "775dbbbfea59f97133fe7e7d10f11d409c807fd0",
+     "name": "son-prefabricadas-1-v1.jpg",
+     "path": "archivos/publicaciones-informativas/son-prefabricadas-1-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/son-prefabricadas-1-v1.jpg",
+     "sha": "08c6f03e9a6315501476766f40ec431ce93e9f07",
+     "type": "image/jpeg",
+     "size": 242703
     }
    ],
    "checklist": [],
@@ -978,8 +992,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-04T20:51:32.314Z",
-   "updatedBy": "flavio",
+   "updatedAt": "2026-11-04T20:54:08.487Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
   },
@@ -5484,6 +5498,16 @@
  ],
  "activity": [
   {
+   "id": "13444af6-1bc8-4d8b-946e-d37186fbb8d1",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-04T20:54:08.488Z"
+  },
+  {
    "id": "bedecf2f-4938-41a5-90fc-12f62a732af5",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -8593,7 +8617,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "mention",
    "text": "te mencionó en “¿Son prefabricadas?”: @Javi ¿me puedes mandar el texto de la voz en off por favor?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",
@@ -13697,10 +13721,10 @@
    "tipo": "cel",
    "instalada": true,
    "push": true,
-   "version": "2026.11.04-2",
+   "version": "2026.11.04-3",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-10-24T21:01:24.671Z",
-   "lastSeen": "2026-11-04T19:16:30.708Z"
+   "lastSeen": "2026-11-04T20:52:16.424Z"
   },
   {
    "id": "d_005f1d53f0f34e1a",

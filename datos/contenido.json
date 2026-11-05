@@ -14803,10 +14803,10 @@
    "tipo": "cel",
    "instalada": true,
    "push": true,
-   "version": "2026.10.29-2",
+   "version": "2026.11.04-4",
    "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
    "firstSeen": "2026-10-25T17:32:41.155Z",
-   "lastSeen": "2026-10-29T12:20:09.823Z"
+   "lastSeen": "2026-11-05T00:14:46.542Z"
   },
   {
    "id": "d_2b2f195d9860411a",

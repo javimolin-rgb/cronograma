@@ -4087,6 +4087,14 @@
  ],
  "comments": [
   {
+   "id": "2f9af7fe-201d-43b0-b854-15b445f2df6e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Todavía me aparece la anterior con ventanas cerradas negras",
+   "fileIds": [],
+   "createdAt": "2026-11-05T00:32:52.804Z"
+  },
+  {
    "id": "6722e308-5c6e-4519-8874-5a32477fdb0b",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5826,6 +5834,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "1aa72597-c72f-4f0b-87e3-eb33feb321f5",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-05T00:32:52.809Z"
+  },
   {
    "id": "67297e55-0d2c-44ef-9de3-3328a255210c",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9207,6 +9225,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "06fb0f73-ee91-4a8a-9ec9-bd11f28fe1c9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Todavía me aparece la anterior con ventanas cerradas negras",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Todavía me aparece la anterior con ventanas cerradas negras",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:32:52.810Z"
+  },
+  {
+   "id": "4b37de5f-04ce-4917-912d-05c82942333b",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Todavía me aparece la anterior con ventanas cerradas negras",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Todavía me aparece la anterior con ventanas cerradas negras",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:32:52.809Z"
+  },
   {
    "id": "de47d1b5-433a-478f-82a5-16dae2f98aae",
    "to": "javi",

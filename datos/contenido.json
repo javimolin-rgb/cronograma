@@ -9482,7 +9482,7 @@
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "type": "supervision",
    "text": "en “Opciones foto portada web”: la movió a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Opciones foto portada web",

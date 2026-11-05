@@ -4132,8 +4132,17 @@
    "id": "af8ae461-830f-4e27-9c00-0e79e73cc40b",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
-   "text": "Imágenes actualizadas",
-   "createdAt": "2026-11-05T01:13:43.532Z"
+   "text": "Imágenes actualizadas (estoy ajustando lo negro de la primera ventana de las 3 del lado)",
+   "createdAt": "2026-11-05T01:13:43.532Z",
+   "versiones": [
+    {
+     "text": "Imágenes actualizadas",
+     "hasta": "2026-11-05T01:17:58.682Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-11-05T01:17:58.682Z",
+   "editedBy": "javi"
   },
   {
    "id": "67fb52f8-61d1-4fd6-a710-91587d002eb5",
@@ -5943,6 +5952,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ece1fec2-e2c2-4862-bbac-76aa3883ea6d",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-11-05T01:17:58.682Z"
+  },
   {
    "id": "6dc62c0f-816e-47c8-96cb-1f2e09f7548d",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

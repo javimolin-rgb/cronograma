@@ -15299,6 +15299,48 @@
  ],
  "prefs": [
   {
+   "id": "flavio",
+   "events": {
+    "tagged": {
+     "app": 1,
+     "push": 1
+    },
+    "mention": {
+     "app": 1,
+     "push": 1
+    },
+    "comment": {
+     "app": 1,
+     "push": 0
+    },
+    "status": {
+     "app": 1,
+     "push": 0
+    },
+    "reschedule": {
+     "app": 1,
+     "push": 1
+    },
+    "update": {
+     "app": 1,
+     "push": 1
+    },
+    "deadline": {
+     "app": 1,
+     "push": 0
+    },
+    "reaccion": {
+     "app": 1,
+     "push": 0
+    },
+    "supervision": {
+     "app": 0,
+     "push": 0
+    }
+   },
+   "createdAt": "2026-11-05T01:56:53.478Z"
+  },
+  {
    "id": "javi",
    "events": {
     "tagged": {

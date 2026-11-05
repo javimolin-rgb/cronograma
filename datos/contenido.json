@@ -4087,6 +4087,14 @@
  ],
  "comments": [
   {
+   "id": "8ddcc13f-21bf-4d31-a465-b0130ce801c1",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Por eso pensé q no eran las ultimas",
+   "fileIds": [],
+   "createdAt": "2026-11-05T00:44:18.197Z"
+  },
+  {
    "id": "c6fb3793-9e53-4405-92c7-af9183a2b549",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5862,6 +5870,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d76b8a37-f526-4e55-80f1-867d36cbc13c",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-05T00:44:18.197Z"
+  },
   {
    "id": "f8f340bb-1ae7-46fd-bd63-66a0c1cd3e92",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9283,6 +9301,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "890d2165-e3de-482f-b0ff-983db2e8b495",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Por eso pensé q no eran las ultimas",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Por eso pensé q no eran las ultimas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:44:18.198Z"
+  },
+  {
+   "id": "08cdecd2-ab28-4eb9-adf5-bbef980cb8a9",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Por eso pensé q no eran las ultimas",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Por eso pensé q no eran las ultimas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:44:18.197Z"
+  },
   {
    "id": "5207061e-c7ce-40ba-8bcd-f9e3c6615c0c",
    "to": "javi",

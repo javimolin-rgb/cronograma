@@ -1876,10 +1876,24 @@
      "sha": "9b582dc13265a3801b991c0cb6fe79ba7d10b6a7",
      "type": "image/webp",
      "size": 118646
+    },
+    {
+     "id": "f5ca4c23-a809-4781-9e34-fe4e416eeb6c",
+     "by": "javi",
+     "at": "2026-11-05T02:12:43.563Z",
+     "base": "atras",
+     "version": 6,
+     "shaOrigen": "3925e25ba61bf5dae718345819070602e4ec7c97",
+     "name": "atras-v6.webp",
+     "path": "archivos/modelos/atras-v6.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v6.webp",
+     "sha": "6f7ac8472a3c7bc28c2206a03be69d43cc4e5231",
+     "type": "image/webp",
+     "size": 97488
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-05T01:13:43.529Z",
+   "updatedAt": "2026-11-05T02:12:53.442Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -5962,6 +5976,16 @@
  ],
  "activity": [
   {
+   "id": "caa32e67-b36f-4d37-8494-dc520adc0f43",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-05T02:12:53.447Z"
+  },
+  {
    "id": "71bfef0d-d878-42cf-a452-82e64247210c",
    "postId": "309f771f-1276-4384-95ed-3e597aac5756",
    "postTitle": "Opciones foto portada web",
@@ -9475,6 +9499,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6ec92785-383c-4524-b302-8731de86f2f5",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T02:12:53.448Z"
+  },
+  {
+   "id": "d2e98205-20c5-47db-aec2-876d430c489e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T02:12:53.448Z"
+  },
   {
    "id": "57d95f85-1295-4c44-a498-c568124b37b0",
    "to": "javi",

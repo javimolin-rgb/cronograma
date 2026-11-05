@@ -4087,6 +4087,14 @@
  ],
  "comments": [
   {
+   "id": "67fb52f8-61d1-4fd6-a710-91587d002eb5",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Te mando audio por chat",
+   "fileIds": [],
+   "createdAt": "2026-11-05T00:47:54.269Z"
+  },
+  {
    "id": "97711d84-1f80-42b0-85c5-d4c5d87bef24",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5886,6 +5894,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "28ad9858-931a-4e60-9444-d5a2a6fdd0bd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-05T00:47:54.271Z"
+  },
   {
    "id": "3b4f1b6f-a94c-4681-bd68-ccc4aff15e2b",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9337,6 +9355,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e9be8b16-008f-4eb8-9af8-e9b042035d01",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Te mando audio por chat",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Te mando audio por chat",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:47:54.271Z"
+  },
+  {
+   "id": "7dbbc22c-100c-4bd1-a6a9-ac3230870bca",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Te mando audio por chat",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Te mando audio por chat",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:47:54.271Z"
+  },
   {
    "id": "3c5b26cf-3395-4283-b5bc-36c35180dd64",
    "to": "javi",

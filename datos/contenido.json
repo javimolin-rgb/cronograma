@@ -1792,10 +1792,52 @@
      "sha": "3af1f1fb2a4b3a149b2b127995e60c478a3a3855",
      "type": "image/webp",
      "size": 117144
+    },
+    {
+     "id": "ae0f1091-d55a-424d-88ff-73ed20c2b256",
+     "by": "javi",
+     "at": "2026-11-05T00:21:46.280Z",
+     "base": "atras",
+     "version": 4,
+     "shaOrigen": "d6df646fd10e02d28c894332192e8e359e76f6ef",
+     "name": "atras-v4.webp",
+     "path": "archivos/modelos/atras-v4.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v4.webp",
+     "sha": "4ec442f600265a7f79f9878bf551a6f2c762dee4",
+     "type": "image/webp",
+     "size": 96900
+    },
+    {
+     "id": "d4dcc3d0-96bc-41c0-a4db-3f1c018645a2",
+     "by": "javi",
+     "at": "2026-11-05T00:21:49.105Z",
+     "base": "der",
+     "version": 4,
+     "shaOrigen": "91582f0feb53422a56fa3d494f61f6fad0abfad2",
+     "name": "der-v4.webp",
+     "path": "archivos/modelos/der-v4.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v4.webp",
+     "sha": "a518afb84768fb43bee4d52fbdad0ae2bad9d886",
+     "type": "image/webp",
+     "size": 109792
+    },
+    {
+     "id": "f129e8fe-4409-446c-8f0d-ecf040d9f99d",
+     "by": "javi",
+     "at": "2026-11-05T00:21:51.839Z",
+     "base": "izq",
+     "version": 4,
+     "shaOrigen": "68a49f5db0fc8a55f8371332bc1b51dc75a7b050",
+     "name": "izq-v4.webp",
+     "path": "archivos/modelos/izq-v4.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v4.webp",
+     "sha": "f91d900c5ffc9bb99c3cd4be7fda09c3b5694868",
+     "type": "image/webp",
+     "size": 117570
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-04T23:01:35.643Z",
+   "updatedAt": "2026-11-05T00:22:28.610Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -4045,6 +4087,13 @@
  ],
  "comments": [
   {
+   "id": "2deec182-0a00-4c99-b7b8-f316c218c506",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Versión con marco negro actualizado. Porfis confirmar si está okay para empezar a renderizar",
+   "createdAt": "2026-11-05T00:22:28.619Z"
+  },
+  {
    "id": "e241049a-2fb1-423a-a64c-44d0ae97355b",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5769,6 +5818,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "36e6c259-90f3-4627-baaa-e4e5cf940afd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-05T00:22:28.619Z"
+  },
+  {
+   "id": "a1b3df55-0b89-4ff3-9cc1-bf957b219224",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-05T00:22:28.614Z"
+  },
   {
    "id": "5f69081b-23f1-4d02-8a10-7d46f3cdd8de",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9120,6 +9189,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "884f8864-948a-457c-8ad2-4e89b99190d3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Versión con marco negro actualizado. Porfis confirmar si está okay para empezar a renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Versión con marco negro actualizado. Porfis confirmar si está okay para empezar a renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:22:28.617Z"
+  },
+  {
+   "id": "518d7f51-f4e5-4e2f-a160-97b41240da88",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 3 archivos en “Casa Boldo” para revisar: Versión con marco negro actualizado. Porfis confirmar si está okay para empezar a renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Versión con marco negro actualizado. Porfis confirmar si está okay para empezar a renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:22:28.617Z"
+  },
+  {
+   "id": "cb635b8e-f230-47eb-8121-369de42381f3",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:22:28.617Z"
+  },
+  {
+   "id": "123a63ee-4261-4cbb-822d-be0c11d7685d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:22:28.616Z"
+  },
   {
    "id": "7b0d4940-9995-48f7-af95-739d33931c58",
    "to": "javi",

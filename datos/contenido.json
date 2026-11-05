@@ -4087,6 +4087,14 @@
  ],
  "comments": [
   {
+   "id": "97711d84-1f80-42b0-85c5-d4c5d87bef24",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Por eso hay veces q es mejor hablar 🥴",
+   "fileIds": [],
+   "createdAt": "2026-11-05T00:47:43.242Z"
+  },
+  {
    "id": "55ae95a8-5ab8-44de-ab7e-d402017826e6",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -5878,6 +5886,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3b4f1b6f-a94c-4681-bd68-ccc4aff15e2b",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-05T00:47:43.248Z"
+  },
   {
    "id": "4bb9267b-7489-470f-b647-dbaa1f6f6d4d",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9319,6 +9337,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3c5b26cf-3395-4283-b5bc-36c35180dd64",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Por eso hay veces q es mejor hablar 🥴",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Por eso hay veces q es mejor hablar 🥴",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:47:43.250Z"
+  },
+  {
+   "id": "77686a61-1f6f-4e50-9903-e73adff1a57c",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Por eso hay veces q es mejor hablar 🥴",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Por eso hay veces q es mejor hablar 🥴",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-05T00:47:43.250Z"
+  },
   {
    "id": "843f1e6e-46bb-4039-94b7-bf82ee1aa46d",
    "to": "flavio",

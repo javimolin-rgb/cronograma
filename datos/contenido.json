@@ -4195,9 +4195,18 @@
    "id": "d32adec2-9dc5-470e-b148-03e8e307cf3e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
-   "text": "@Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.github.io/cronograma/#marca=cat%3Amusica para ver si alguna de esas te gusta (EN EL BOTÓN DE MARCA/MÚSICA)",
+   "text": "@Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.github.io/cronograma/#marca=cat%3Amusica para ver si alguna de esas te gusta (EN EL BOTÓN DE MARCA/MÚSICA). Además todos los videos que he enviado han tenido música.",
    "fileIds": [],
-   "createdAt": "2026-11-06T18:41:41.187Z"
+   "createdAt": "2026-11-06T18:41:41.187Z",
+   "versiones": [
+    {
+     "text": "@Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.github.io/cronograma/#marca=cat%3Amusica para ver si alguna de esas te gusta (EN EL BOTÓN DE MARCA/MÚSICA)",
+     "hasta": "2026-11-06T18:43:40.004Z",
+     "by": "javi"
+    }
+   ],
+   "editedAt": "2026-11-06T18:43:40.004Z",
+   "editedBy": "javi"
   },
   {
    "id": "da410972-57a5-404d-aa25-165dea45cbda",
@@ -6196,6 +6205,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "60713f84-0724-4491-8a1d-95db816c46e4",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-11-06T18:43:40.004Z"
+  },
   {
    "id": "57180615-83b1-4be3-a8ca-6a8e45bd335f",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",

@@ -39,21 +39,33 @@ Antes de empezar una subida grande (más de 60 MB) la app avisa cuánto pesa y c
 
 Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a la clave de la app (si guarda algo “recordado”, como la última pista elegida, no lo va a recordar). Cada archivo puede pesar hasta 24 MB, y como todo queda en el repositorio, conviene no dejar interactivos que ya no se usan: **Quitar** borra también sus archivos.
 
-## Nombrar una foto o un video en un comentario
+## Cualquier tipo de archivo en una pieza
 
-Debajo del cuadro de comentario, en cada pieza, están las miniaturas de sus fotos y videos: al tocar una (o varias) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es. Es la forma de decir “en esta saquemos la camioneta” sin tener que explicarlo. Si solo marcas archivos y no escribes nada, igual se puede enviar.
+En **Archivos**, dentro de la pieza, entra **cualquier cosa**: fotos, videos, **audios** (una locución, la música del reel, una nota de voz), PDF, documentos, hojas de cálculo, .psd, .ai, .fig, .zip… No hay lista de tipos permitidos. Lo mismo vale para soltar archivos encima de la pieza en el computador: antes solo se tomaban las fotos y los .zip, ahora se sube todo lo que sueltes.
 
-## Mandar una foto nueva en el comentario
+Cómo se ve cada cosa:
 
-La primera miniatura es una **cámara**: abre la galería o la cámara del teléfono para sumar una foto (o un video) que todavía no está en la pieza. En el **Feed** está el mismo botón, a la izquierda del casillero de escribir.
+- **Audios:** en el feed y en la vista de resultado salen con su **reproductor ahí mismo**, con la nota musical y el nombre de la pista; al tocarlos se abren a pantalla completa, igual que en Marca. En las fichas de *Archivos* y en *Entregas* se reconocen por la nota musical.
+- **Lo que no se puede ver** (una planilla, un .psd): muestra su extensión y el nombre, y al tocarlo se descarga.
+- Los **PDF** se siguen viendo dentro de la app.
 
-- La foto **se sube de inmediato a los archivos de la pieza**, en la misma carpeta de proyecto que el resto, y aparece en **Entregas** como cualquier otro archivo. No es un adjunto suelto del comentario.
-- Queda **marcada sola** para el comentario que estás escribiendo. Si al final no mandas el comentario, la foto no se pierde: sigue guardada en la pieza.
+Un audio pasa tal cual (no se recomprime); el tope de 24 MB por archivo sigue siendo el mismo para todos. Un .zip con un `index.html` adentro sigue quedando como **interactivo**, no como archivo suelto.
+
+## Nombrar un archivo en un comentario
+
+Debajo del cuadro de comentario, en cada pieza, están las miniaturas de **todos** sus archivos —fotos, videos, audios y documentos—: al tocar uno (o varios) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es. Es la forma de decir “en esta saquemos la camioneta” o “el minuto 0:12 de esta locución” sin tener que explicarlo. Si solo marcas archivos y no escribes nada, igual se puede enviar.
+
+## Mandar un archivo nuevo en el comentario
+
+La primera miniatura es un **clip**: abre la galería, la cámara o los archivos del teléfono para sumar lo que todavía no está en la pieza —una foto, un video, **un audio**, un PDF, lo que sea—. En el **Feed** está el mismo botón, a la izquierda del casillero de escribir.
+
+- El archivo **se sube de inmediato a los archivos de la pieza**, en la misma carpeta de proyecto que el resto, y aparece en **Entregas** como cualquier otro. No es un adjunto suelto del comentario.
+- Queda **marcado solo** para el comentario que estás escribiendo. Si al final no mandas el comentario, no se pierde: sigue guardado en la pieza.
 - Se le pone el nombre de la pieza si venía con uno inservible (`IMG_4821`, un número largo…), se numera como versión y las fotos grandes se achican solas, igual que cuando subes desde *Archivos*.
-- Si mandas **la misma foto dos veces**, no se vuelve a subir: se usa la que ya estaba.
-- En el Feed, antes de mandar, las fotos elegidas se ven arriba del casillero con una **✕** para sacarlas del comentario (del archivo de la pieza no se borran).
+- Si mandas **el mismo archivo dos veces**, no se vuelve a subir: se usa el que ya estaba.
+- En el Feed, antes de mandar, lo elegido se ve arriba del casillero con una **✕** para sacarlo del comentario (del archivo de la pieza no se borra).
 
-Lo pueden usar los tres, no solo Javi: es la forma de que Flavio o Maca manden una referencia o una captura sin salirse de la conversación. En modo solo lectura el botón no aparece.
+Lo pueden usar los tres, no solo Javi: es la forma de que Flavio o Maca manden una referencia, una captura o una nota de voz sin salirse de la conversación. En modo solo lectura el botón no aparece.
 
 ## Pulgar arriba o abajo
 
@@ -282,7 +294,7 @@ Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*
 
 ## Archivos pesados
 
-Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Un **video de más de 24 MB se comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio, y se sube esa copia. Tarda lo que dura el video, y mientras tanto se ve el avance.
+Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Los audios y los documentos se suben tal cual, sin tocarlos. Un **video de más de 24 MB se comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio, y se sube esa copia. Tarda lo que dura el video, y mientras tanto se ve el avance.
 
 Cuando el computador no deja leer el archivo (pasa si se eligió mientras todavía se descargaba, o si está en iCloud/Drive sin bajar), la app lo intenta una segunda vez sola y, si tampoco, lo dice con esas palabras en vez de un error técnico.
 

@@ -4192,6 +4192,14 @@
  ],
  "comments": [
   {
+   "id": "e828fd05-20db-4a03-bcf5-b4f1af3319eb",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Javi, te llegó la notificación? La mandé hace un rato\nEs la última, decía cimientos . Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-06T19:03:40.973Z"
+  },
+  {
    "id": "d32adec2-9dc5-470e-b148-03e8e307cf3e",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -6205,6 +6213,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "2b3788ef-ae9c-4cba-9d7f-84d7aba1852f",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T19:03:40.981Z"
+  },
   {
    "id": "60713f84-0724-4491-8a1d-95db816c46e4",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9999,6 +10017,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e0848912-2e71-4a61-a855-f46310c4022c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Javi, te llegó la notificación? La mandé hace un rato\nEs la última, decía cimien…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Javi, te llegó la notificación? La mandé hace un rato\nEs la última, decía cimien…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:03:40.983Z"
+  },
+  {
+   "id": "0c8b5a5e-ef88-44e5-b494-f2a7c8e559d5",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Javi, te llegó la notificación? La mandé hace un rato\nEs la última, decía cimien…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Javi, te llegó la notificación? La mandé hace un rato\nEs la última, decía cimien…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:03:40.982Z"
+  },
   {
    "id": "03d970c8-9364-4571-bdbb-d90ee087d3f1",
    "to": "javi",

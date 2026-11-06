@@ -1548,62 +1548,92 @@
      "#",
      "Momento",
      "En pantalla (rótulo · titular · bajada)",
-     "Voz"
+     "Voz",
+     "",
+     "",
+     ""
     ],
     "filas": [
      [
       "1",
       "Apertura",
       "MODELO DE LA SEMANA · Casa Boldo · Toda la casa mira al lago.",
-      "Hay casas que miran a todas partes… esta mira a un solo lugar."
+      "Hay casas que miran a todas partes… esta mira a un solo lugar.",
+      "",
+      "",
+      ""
      ],
      [
       "2",
       "Superficie",
       "SUPERFICIE ÚTIL · 96,6 m² · 4 dormitorios y 2 baños",
-      "Larga y serena, toda la casa se orienta hacia el agua."
+      "Larga y serena, toda la casa se orienta hacia el agua.",
+      "",
+      "",
+      ""
      ],
      [
       "3",
       "Ventanal",
       "FRENTE VIDRIADO · Orientado al lago · El paisaje como protagonista",
-      "El ventanal enmarca el lago como si fuera una pintura."
+      "El ventanal enmarca el lago como si fuera una pintura.",
+      "",
+      "",
+      ""
      ],
      [
       "4",
       "Techo",
       "VIVE LO NATURAL · Pendiente pronunciada · La lluvia y la nieve escurren solas",
-      "Llueva o nieve, adentro todo sigue en calma."
+      "Llueva o nieve, adentro todo sigue en calma.",
+      "Lo que aparecería en pantalla hablando de nieve??\nModificar ese texto clmoleto",
+      "",
+      ""
      ],
      [
       "5",
       "1er piso",
       "1ER PISO · 2 dormitorios y 1 baño · Una distribución muy práctica",
-      "Cuatro dormitorios, para que cada uno tenga su espacio."
+      "Cuatro dormitorios, para que cada uno tenga su espacio.",
+      "",
+      "",
+      ""
      ],
      [
       "6",
       "2do piso",
       "2DO PISO · 2 dormitorios y 1 baño · Espacio para todos",
-      "Ideal para una familia grande, de esas que se juntan todas las vacaciones."
+      "Ideal para una familia grande, de esas que se juntan todas las vacaciones.",
+      "",
+      "",
+      ""
      ],
      [
       "7",
       "Planta",
       "PLANTAS DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
-      "Y al final del día, todos frente al mismo paisaje."
+      "Y al final del día, todos frente al mismo paisaje.",
+      "",
+      "",
+      ""
      ],
      [
       "8",
       "Cierre",
       "Llave en mano · Plazo estimado: 8 meses",
-      "Casa Boldo. La vida, mirando al lago."
+      "Casa Boldo. La vida, mirando al lago.",
+      "",
+      "",
+      ""
      ],
      [
       "9",
       "Llamado",
       "DESCUBRE MÁS EN NEORIGEN.CL",
-      "Descúbrela en neorigen.cl"
+      "Descúbrela en neorigen.cl",
+      "",
+      "",
+      ""
      ]
     ]
    },
@@ -1893,8 +1923,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-05T02:12:53.442Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-06T16:24:13.965Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-04T14:39:45.131Z",
@@ -6011,6 +6041,16 @@
  ],
  "activity": [
   {
+   "id": "95985363-52c9-4851-8b65-797a783de995",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-06T16:24:13.969Z"
+  },
+  {
    "id": "52ea2357-0d15-49f6-985d-82466afc3c7c",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -9584,6 +9624,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b110d9db-6c16-40ae-9b7e-fe9c5f5a54ed",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "en “Casa Boldo”: editó la tabla del guión",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:24:13.972Z"
+  },
+  {
+   "id": "35e23ae8-7325-4df9-a92e-3e23199e970e",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (la tabla del guión)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:24:13.971Z"
+  },
   {
    "id": "fb975190-d4ad-46fd-b25d-3feca27411db",
    "to": "flavio",

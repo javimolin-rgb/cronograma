@@ -1595,7 +1595,7 @@
       "1er piso",
       "1ER PISO · 2 dormitorios y 1 baño · Una distribución muy práctica",
       "Cuatro dormitorios, para que cada uno tenga su espacio.",
-      "",
+      "Buscar otras características, cambiar practica",
       "",
       ""
      ],
@@ -1923,7 +1923,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-06T16:24:13.965Z",
+   "updatedAt": "2026-11-06T16:32:20.433Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -6057,6 +6057,16 @@
  ],
  "activity": [
   {
+   "id": "39bac327-1928-4cfa-931a-eed96378ba93",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-06T16:32:20.435Z"
+  },
+  {
    "id": "b4b7abbf-6fea-491d-b42f-e693511a97b4",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -9660,6 +9670,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1b275060-961d-4a33-a5e0-b88c1cd11178",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "en “Casa Boldo”: editó la tabla del guión",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:32:20.436Z"
+  },
+  {
+   "id": "25c2c962-54b7-4049-81ad-8f498acb097c",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (la tabla del guión)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:32:20.435Z"
+  },
   {
    "id": "01ffb692-7a21-486e-81f1-99ad1c69988d",
    "to": "javi",

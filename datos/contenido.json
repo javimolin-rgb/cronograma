@@ -9552,7 +9552,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "supervision",
    "text": "comentó en “¿Son prefabricadas?”: Hola Javi, durante la mañana lo veo. Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",
@@ -15812,7 +15812,7 @@
    "version": "2026.11.04-4",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-10-24T21:01:24.671Z",
-   "lastSeen": "2026-11-05T22:45:48.688Z"
+   "lastSeen": "2026-11-06T12:05:44.487Z"
   },
   {
    "id": "d_005f1d53f0f34e1a",

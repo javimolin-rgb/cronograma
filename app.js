@@ -67,6 +67,10 @@ const extOf = (f) => (splitName(f.name).ext || (f.path || '').split('.').pop() |
 const isImg = (f) => (f.type || '').startsWith('image/') || ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'svg'].includes(extOf(f));
 const isVideo = (f) => (f.type || '').startsWith('video/') || ['mp4', 'mov', 'webm', 'm4v'].includes(extOf(f));
 const isPdf = (f) => (f.type || '') === 'application/pdf' || extOf(f) === 'pdf';
+// Audios: por el tipo o por la extensión (el teléfono a veces entrega el archivo sin tipo)
+const AUDIO_EXT = ['mp3', 'm4a', 'aac', 'wav', 'ogg', 'oga', 'opus', 'weba', 'flac', 'aif', 'aiff', 'amr', 'wma', 'caf', 'mid', 'midi'];
+const isAudio = (f) => (f.type || '').startsWith('audio/') || AUDIO_EXT.includes(extOf(f));
+const esAudio = isAudio;   // los dos nombres se usan en la app
 function prettySize(n) {
   if (!n && n !== 0) return '';
   if (n < 1024) return n + ' B';
@@ -935,6 +939,8 @@ function openFilePreview(fid) {
   if (isImg(file)) media = `<img src="${esc(src)}" alt="${esc(file.name)}" data-act="file-zoom" data-f="${esc(file.id)}">`;
   else if (isVideo(file)) media = `<video src="${esc(src)}" controls playsinline></video>`;
   else if (isPdf(file)) media = `<iframe src="${esc(src)}" title="${esc(file.name)}"></iframe>`;
+  else if (isAudio(file)) media = `<div class="sonido"><span class="disco">${ic('music', 34)}</span><b>${esc(file.name)}</b>
+    <audio src="${esc(src)}" controls preload="metadata"></audio></div>`;
   else media = `<div class="noprev"><span class="ext">${esc((extOf(file) || '?').toUpperCase())}</span><p class="hint">Este tipo de archivo no se puede ver aquí. Descárgalo para abrirlo.</p></div>`;
   openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button>
       <h2>${esc(esAdmin() ? file.name : post.title)}</h2><span style="width:40px"></span></div>
@@ -962,9 +968,12 @@ function miniMedia(f) {
   if (!src) return null;
   if (isImg(f)) return `<img loading="lazy" alt="" src="${esc(src)}">`;
   if (isVideo(f)) return `<video class="vprev" src="${esc(src)}#t=0.1" muted playsinline preload="metadata"></video><i class="playic">${ic('play', 18)}</i>`;
+  if (isAudio(f)) return `<span class="miniaudio">${ic('music', 20)}</span><i class="playic">${ic('play', 18)}</i>`;
   return null;
 }
 const esMedia = (f) => isImg(f) || isVideo(f);
+// Miniatura de cualquier archivo: foto, video, audio o —si no se puede ver— su extensión
+const miniArchivo = (f) => miniMedia(f) || `<span class="ext">${esc((extOf(f) || '?').slice(0, 4).toUpperCase())}</span>`;
 
 // Galería: se desliza con el dedo entre fotos y videos; flechas y teclado en el computador
 let GAL = null;
@@ -1048,7 +1057,9 @@ function slideHtml(f, i, id) {
   const src = fileSrc(f);
   if (isImg(f)) return `<div class="slide"><img loading="lazy" alt="" src="${esc(src)}" data-act="gal-carru" data-c="${esc(id)}" data-i="${i}"></div>`;
   if (isVideo(f)) return `<div class="slide"><video src="${esc(src)}#t=0.1" controls playsinline preload="metadata"></video><button class="slidezoom" data-act="gal-carru" data-c="${esc(id)}" data-i="${i}" aria-label="Ver en grande">${ic('eye', 16)}</button></div>`;
-  return `<div class="slide doc" data-act="file-open" data-f="${esc(f.id)}"><span class="ext">${esc((extOf(f) || 'archivo').toUpperCase())}</span><small>Tocar para abrir</small></div>`;
+  if (isAudio(f)) return `<div class="slide audio"><div class="sonido"><span class="disco">${ic('music', 30)}</span><b>${esc(splitName(f.name).label || f.name)}</b>
+    <audio src="${esc(src)}" controls preload="metadata"></audio></div></div>`;
+  return `<div class="slide doc" data-act="file-open" data-f="${esc(f.id)}"><span class="ext">${esc((extOf(f) || 'archivo').toUpperCase())}</span><small>${esc(f.name || '')}</small><small>Tocar para abrir</small></div>`;
 }
 function carruselHtml(files, id) {
   if (!files.length) return '';
@@ -1127,11 +1138,12 @@ function viewFeed() {
 // Cuadrícula tipo perfil de Instagram
 function gridHtml(piezas) {
   return `<div class="iggrid">${piezas.map(({ p }) => {
-    const files = pieceFiles(p, true).filter(esMedia);
+    const todos = pieceFiles(p, true);
+    const files = todos.filter(esMedia).concat(todos.filter((f) => !esMedia(f)));   // primero lo que se ve
     const st = statusOf(p.status);
     const coms = S.db.comments.filter((c) => c.postId === p.id).length;
     return `<button class="igcell" data-act="open-post" data-id="${esc(p.id)}" style="--c:${st.color}" title="${esc(p.title)}">
-      ${files.length ? (miniMedia(files[0]) || '') : `<span class="igvacia">${ic('image', 24)}</span>`}
+      ${files.length ? miniArchivo(files[0]) : `<span class="igvacia">${ic('image', 24)}</span>`}
       ${files.length > 1 ? `<i class="igmulti">${ic('copy', 13)}</i>` : ''}
       <span class="igpie"><b>${esc(p.title)}</b><small>${esc(st.name)}${coms ? ' · ' + coms + ' com.' : ''}</small></span>
     </button>`;
@@ -1168,7 +1180,7 @@ function postHtml(p, t) {
         ${vis.map((c) => {
           const fotos = (c.fileIds || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
           return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
-            ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(x) || ''}</span>`).join('')}</div>` : ''}
+            ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}" title="${esc(x.name || '')}">${miniArchivo(x)}</span>`).join('')}</div>` : ''}
             <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}${puedeBorrarComentario(c) ? ` · <button class="lnk borrar" data-act="cm-borrar" data-id="${esc(c.id)}">Borrar</button>` : ''}</small>
             <div class="cmacts">${reacHtml(c, p.id)}</div></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
@@ -1177,10 +1189,10 @@ function postHtml(p, t) {
       ${(() => {
         const puestas = (S.feedFotos[p.id] || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
         if (!puestas.length) return '';
-        return `<div class="cmfotos pend">${puestas.map((x) => `<span class="cmfoto">${miniMedia(x) || ''}<button class="quitar" data-act="feed-foto-quitar" data-id="${esc(p.id)}" data-f="${esc(x.id)}" aria-label="Quitar">${ic('x', 13)}</button></span>`).join('')}</div>`;
+        return `<div class="cmfotos pend">${puestas.map((x) => `<span class="cmfoto" title="${esc(x.name || '')}">${miniArchivo(x)}<button class="quitar" data-act="feed-foto-quitar" data-id="${esc(p.id)}" data-f="${esc(x.id)}" aria-label="Quitar">${ic('x', 13)}</button></span>`).join('')}</div>`;
       })()}
       <div class="postcompose">
-        ${store.canWrite ? `<label class="iconbtn cmcam" title="Mandar una foto" aria-label="Mandar una foto">${S.feedSubiendo === p.id ? `<i class="cmspin"></i>` : ic('camera', 18)}<input type="file" accept="image/*,video/*" multiple data-feed-foto="${esc(p.id)}"${S.feedSubiendo === p.id ? ' disabled' : ''}></label>` : ''}
+        ${store.canWrite ? `<label class="iconbtn cmcam" title="Mandar un archivo: foto, video, audio, PDF…" aria-label="Mandar un archivo">${S.feedSubiendo === p.id ? `<i class="cmspin"></i>` : ic('paperclip', 18)}<input type="file" multiple data-feed-foto="${esc(p.id)}"${S.feedSubiendo === p.id ? ' disabled' : ''}></label>` : ''}
         <input class="field" data-feed-com="${esc(p.id)}" placeholder="${S.feedCambios === p.id ? '¿Qué cambiarías?' : 'Escribe un comentario…'}" value="${esc(S.feedBorrador[p.id] || '')}" autocomplete="off" enterkeyhint="send">
         <button class="iconbtn" data-act="feed-enviar" data-id="${esc(p.id)}" aria-label="Enviar">${ic('send', 18)}</button>
       </div>
@@ -1205,7 +1217,7 @@ async function feedEnviar(id) {
     toast('Comentario enviado');
   } catch (e) { if (inp) inp.disabled = false; }
 }
-// Elegir una foto desde el feed: se sube a la pieza y queda lista para mandarla
+// Elegir un archivo desde el feed: se sube a la pieza y queda listo para mandarlo
 async function feedFoto(input) {
   const id = input.dataset.feedFoto;
   const files = [...input.files]; input.value = '';
@@ -1459,7 +1471,6 @@ function pintarCola(cola) {
     if (t) t.textContent = c.estado || (Math.round((c.pct || 0) * 100) + '%');
   });
 }
-const esAudio = (f) => /^audio\//.test(f.type || '') || /\.(mp3|wav|m4a|aac|ogg|aiff?|flac)$/i.test(f.name || '');
 
 /* ---------- El guión puede ser una tabla ----------
    Ella escribe el guión en una tabla (momento · en pantalla · voz) y la pega aquí:
@@ -2533,7 +2544,7 @@ function cosasDeLaPieza(p) {
   const out = [{ que: 'La pieza', titulo: p.title, det: 'Se abre en el cronograma, en esta misma pieza', url: siteLink(p.id), icono: 'link' }];
   const t = textoPublicacion(p);
   if (t) out.push({ que: 'El texto', det: `${t.length} caracteres, con los hashtags`, texto: t, icono: 'copy' });
-  pieceFiles(p, true).forEach((f) => out.push({ que: f.name, det: `${prettySize(f.size)} · enlace directo al archivo`, url: urlArchivo(f), icono: esMedia(f) ? 'image' : 'paperclip' }));
+  pieceFiles(p, true).forEach((f) => out.push({ que: f.name, det: `${prettySize(f.size)} · enlace directo al archivo`, url: urlArchivo(f), icono: esMedia(f) ? 'image' : esAudio(f) ? 'music' : 'paperclip' }));
   artefactosDe(p).forEach((a) => out.push({ que: a.nombre, det: 'La página interactiva, se abre sola', url: urlPublica(`${a.carpeta}/${a.index || 'index.html'}`), icono: 'play' }));
   marcaDe(p).forEach((r) => out.push({ que: r.name, det: 'Archivo de Marca', url: urlArchivo(r), icono: 'marca' }));
   return out;
@@ -2688,7 +2699,7 @@ function renderEditor() {
     ${old && esAdmin() && store.canWrite ? `<div class="avisobar" id="aviso-texto"${textosCambiados(old, d).length ? '' : ' hidden'}>${ic('send', 18)}<span>Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
 
     ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
-    <label class="lbl">Archivos <small>imágenes, videos, PDF</small></label>
+    <label class="lbl">Archivos <small>fotos, videos, audios, PDF… cualquier archivo</small></label>
     ${(ED.fallos || []).length ? `<div class="avisobar mal">${ic('alert', 18)}
       <span><b>${ED.fallos.length} archivo${ED.fallos.length === 1 ? ' no se subió' : 's no se subieron'}</b><br>${ED.fallos.map((x) => `${esc(x.nombre)} · ${esc(x.motivo)}`).join('<br>')}</span>
       ${store.caducada && esAdmin() ? `<button class="btn sm" data-act="llave-nueva">Cambiar la llave</button>` : ''}
@@ -2698,12 +2709,12 @@ function renderEditor() {
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
       const { recientes, anteriores } = archivosEditor(d);
-      const tile = (f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}">${miniMedia(f)
-        || `<span class="fileico">${ic('paperclip', 24)}<span>${esc(f.name)}</span></span>`}
+      const tile = (f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}" title="${esc(f.name)}">${esMedia(f) ? miniMedia(f)
+        : `<span class="fileico">${ic(esAudio(f) ? 'music' : 'paperclip', 24)}<span>${esc(f.name)}</span></span>`}
         ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
         <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`;
       return `<div class="files">${recientes.map(tile).join('')}
-        <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple accept="image/*,video/*,application/pdf,.psd,.ai,.fig,.zip"></label></div>
+        <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple></label></div>
         ${anteriores.length ? `<button class="vermas" data-act="ed-vermas">${ED.verAnteriores ? 'Ocultar' : 'Ver más'} · ${anteriores.length} archivo${anteriores.length === 1 ? '' : 's'} anterior${anteriores.length === 1 ? '' : 'es'} ${ic(ED.verAnteriores ? 'left' : 'right', 14)}</button>
         ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
     })()}`}
@@ -2768,7 +2779,7 @@ function renderEditor() {
       }
       const vers = (c.versiones || []).length;
       return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}${c.editedAt ? ' · corregido' : ''}</small>${mentionHtml(c.text)}
-        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}">${miniMedia(f) || ''}</span>`).join('')}</div>` : ''}
+        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}" title="${esc(f.name || '')}">${miniArchivo(f)}</span>`).join('')}</div>` : ''}
         <div class="cmacts">
           ${reacHtml(c, d.id)}
           ${puedeEditarComentario(c) ? `<button class="lnk" data-act="cm-editar" data-id="${esc(c.id)}">Editar</button>` : ''}
@@ -2780,14 +2791,14 @@ function renderEditor() {
     }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
       ${(() => {
-        const media = pieceFiles(d, true).filter(esMedia);
+        const media = pieceFiles(d, true);
         const sel = ED.comFiles || [];
         const subir = store.canWrite
-          ? `<label class="cmpick cmadd" title="Sumar una foto o un video">${ED.comSubiendo ? `<i class="cmspin"></i>` : ic('camera', 20)}<input id="cm-file" type="file" accept="image/*,video/*" multiple${ED.comSubiendo ? ' disabled' : ''}></label>`
+          ? `<label class="cmpick cmadd" title="Sumar un archivo: foto, video, audio, PDF…">${ED.comSubiendo ? `<i class="cmspin"></i>` : ic('paperclip', 20)}<input id="cm-file" type="file" multiple${ED.comSubiendo ? ' disabled' : ''}></label>`
           : '';
         if (!media.length && !subir) return '';
-        return `<div class="commedia">${subir}${media.map((f) => `<button class="cmpick${sel.includes(f.id) ? ' on' : ''}" data-act="cm-media" data-f="${esc(f.id)}" aria-label="${esc(f.name)}" title="${esc(f.name)}">${miniMedia(f) || ''}<i class="tick">${ic('check', 14)}</i></button>`).join('')}</div>
-        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca la cámara para sumar una foto, o una de abajo para decir de cuál estás hablando.' : 'Toca la cámara para mandar una foto con el comentario: queda guardada en los archivos de la pieza.'}</p>`;
+        return `<div class="commedia">${subir}${media.map((f) => `<button class="cmpick${sel.includes(f.id) ? ' on' : ''}" data-act="cm-media" data-f="${esc(f.id)}" aria-label="${esc(f.name)}" title="${esc(f.name)}">${miniArchivo(f)}<i class="tick">${ic('check', 14)}</i></button>`).join('')}</div>
+        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca el clip para sumar un archivo (foto, video, audio, PDF…), o uno de abajo para decir de cuál estás hablando.' : 'Toca el clip para mandar un archivo con el comentario: queda guardado en los archivos de la pieza.'}</p>`;
       })()}
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
@@ -2843,10 +2854,10 @@ async function saveEditor() {
 }
 
 // Comentario en una pieza (desde el editor o desde el feed), con sus avisos
-/* Subir una foto (o un video) desde el casillero de comentarios.
+/* Subir un archivo cualquiera (foto, video, audio, PDF…) desde el casillero de comentarios.
    No es un borrador: el archivo queda guardado en la pieza —en la misma carpeta de
    proyecto que los demás— apenas se sube, así que aunque después no se mande el
-   comentario, la foto no se pierde. Devuelve los id de lo que quedó subido. */
+   comentario, no se pierde. Devuelve los id de lo que quedó subido. */
 async function subirFotosComentario(post, files) {
   if (!post || !files || !files.length || !requireWrite()) return [];
   const guardada = S.db.posts.find((x) => x.id === post.id) || post;
@@ -2862,7 +2873,7 @@ async function subirFotosComentario(post, files) {
         if (chico) archivo = chico;
       }
       const shaOrigen = await shaGit(archivo).catch(() => '');
-      // la misma foto dos veces en la misma pieza no se vuelve a subir: se usa la que ya está
+      // el mismo archivo dos veces en la misma pieza no se vuelve a subir: se usa el que ya está
       const gemela = shaOrigen && (guardada.files || []).find((x) => x && x.path && (x.shaOrigen === shaOrigen || x.sha === shaOrigen));
       if (gemela) { ids.push(gemela.id); repetidos++; continue; }
       const info = splitName(archivo.name);
@@ -2892,7 +2903,7 @@ async function subirFotosComentario(post, files) {
     }
     await log(guardada, 'file', `subió ${nuevos.length} ${nuevos.length === 1 ? 'archivo' : 'archivos'} desde un comentario`);
   }
-  if (ids.length) toast(repetidos && !nuevos.length ? 'Esa foto ya estaba en la pieza: la usé igual' : `Lista para mandar en el comentario`, 3000);
+  if (ids.length) toast(repetidos && !nuevos.length ? 'Ese archivo ya estaba en la pieza: lo usé igual' : `Listo para mandar en el comentario`, 3000);
   return ids;
 }
 
@@ -4541,12 +4552,13 @@ document.addEventListener('dragover', (e) => { if (sheetOpen && e.dataTransfer &
 document.addEventListener('drop', async (e) => {
   if (!sheetOpen || !e.dataTransfer || !e.dataTransfer.files.length) return;
   const todo = [...e.dataTransfer.files];
-  const zips = ED && puedeArtefactos() ? todo.filter((f) => /\.zip$/i.test(f.name || '')) : [];
+  // Con una pieza abierta se sube cualquier cosa que suelten (fotos, videos, audios, documentos…);
+  // los .zip con un index.html adentro siguen quedando como interactivo, que es lo que hace subirArchivos().
+  if (ED && !IMP && esAdmin()) { e.preventDefault(); await subirArchivos(todo); return; }
   const imgs = todo.filter((f) => /^image\//.test(f.type));
-  if (!imgs.length && !zips.length) return;
+  if (!imgs.length) return;
   e.preventDefault();
-  for (const z of zips) { if (!(await subirArtefacto(z))) toast('Ese .zip no trae un index.html', 4000); }
-  if (imgs.length) pegarImagenes(imgs);
+  pegarImagenes(imgs);
 });
 
 /* ---------- acciones (clicks) ---------- */
@@ -5092,10 +5104,10 @@ const ACTS = {
   },
   'ed-view': (el) => {
     const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;
-    if (!esMedia(f)) { downloadOne(f); return; }
+    if (!esMediaOAudio(f)) { downloadOne(f); return; }
     // se desliza por los archivos en el mismo orden en que se ven
     const { recientes, anteriores } = archivosEditor(ED.d);
-    const lista = recientes.concat(ED.verAnteriores ? anteriores : []).filter(esMedia);
+    const lista = recientes.concat(ED.verAnteriores ? anteriores : []).filter(esMediaOAudio);
     const i = lista.findIndex((x) => x.id === f.id);
     abrirGaleria(i >= 0 ? lista : [f], Math.max(0, i));
   },

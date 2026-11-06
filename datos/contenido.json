@@ -4192,6 +4192,14 @@
  ],
  "comments": [
   {
+   "id": "6012eb20-c96e-4a4a-8411-940a5cecd6ac",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Cuántas hay? Me mostró 1",
+   "fileIds": [],
+   "createdAt": "2026-11-06T18:35:32.260Z"
+  },
+  {
    "id": "645f9f00-8b7c-422a-9817-2b08395548c2",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -6164,6 +6172,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "15d98b5d-2f3e-45a3-b51b-4e232d96e0e2",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T18:35:32.270Z"
+  },
   {
    "id": "7543652a-fb32-48ef-8335-57463cc40ce9",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9909,6 +9927,36 @@
  ],
  "notifications": [
   {
+   "id": "77224892-9fde-41da-9354-10f33691237e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Cuántas hay? Me mostró 1",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Cuántas hay? Me mostró 1",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:35:32.274Z"
+  },
+  {
+   "id": "8e8263d0-fa24-4597-90fa-fabcfd7476fd",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Cuántas hay? Me mostró 1",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Cuántas hay? Me mostró 1",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:35:32.273Z"
+  },
+  {
    "id": "81105038-442e-4107-a6fb-5292c7f7e7f9",
    "to": "flavio",
    "from": "javi",
@@ -9930,7 +9978,7 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "mention",
    "text": "te mencionó en “¿Son prefabricadas?”: @Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.gith…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "¿Son prefabricadas?",

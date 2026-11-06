@@ -4174,6 +4174,14 @@
  ],
  "comments": [
   {
+   "id": "90fc3cdd-cc03-4fd5-8239-76d0e91a87ad",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Tienes razón, voy a dejarlo con esa info con mayor coneccion",
+   "fileIds": [],
+   "createdAt": "2026-11-06T16:42:42.510Z"
+  },
+  {
    "id": "c7c6e659-c961-4e64-bf66-f5595a554e9c",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -6064,6 +6072,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7cd4b533-98a7-40aa-bbed-8458a2b49715",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T16:42:42.515Z"
+  },
   {
    "id": "8057b77a-7c04-446a-9a53-1d2862235eba",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9688,6 +9706,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "652615d0-0b78-4b8c-bd16-a8ed96c47878",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Tienes razón, voy a dejarlo con esa info con mayor coneccion",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Tienes razón, voy a dejarlo con esa info con mayor coneccion",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:42:42.517Z"
+  },
+  {
+   "id": "b4f7e878-19e9-4720-ad2f-a5d0b0bee21a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Tienes razón, voy a dejarlo con esa info con mayor coneccion",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Tienes razón, voy a dejarlo con esa info con mayor coneccion",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:42:42.516Z"
+  },
   {
    "id": "12e58f79-c0e7-4244-9a53-ddca1e940d31",
    "to": "flavio",

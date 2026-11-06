@@ -4174,6 +4174,14 @@
  ],
  "comments": [
   {
+   "id": "10a748af-efcf-46fa-bc9f-261a17847a70",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Hay paisajes que merecen ser parte de la casa. En Casa Boldo, la arquitectura está pensada para integrarlos.\n\nSu diseño alargado se orienta hacia el lago, mientras un gran ventanal conecta el interior con el entorno y lo integra a la vida cotidiana.\n\nCon 96,6 m², cuatro dormitorios y dos baños distribuidos en dos pisos, ofrece espacios para compartir y disfrutar en familia, junto con la privacidad que cada uno necesita.\n\n¿Te imaginas viviendo aquí? Conversemos sobre tu proyecto. Descubre Casa Boldo en neorigen.cl.",
+   "fileIds": [],
+   "createdAt": "2026-11-06T16:30:00.318Z"
+  },
+  {
    "id": "549c17cb-bea4-495b-8f56-ee2afdaffd4c",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6040,6 +6048,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "602bba69-8a88-43d0-b1a1-4845bd7ff4b6",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T16:30:00.325Z"
+  },
   {
    "id": "95985363-52c9-4851-8b65-797a783de995",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9624,6 +9642,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "63e25c87-26b9-460a-8fe0-ab86aae7de77",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Hay paisajes que merecen ser parte de la casa. En Casa Boldo, la arquitectura es…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hay paisajes que merecen ser parte de la casa. En Casa Boldo, la arquitectura es…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:30:00.328Z"
+  },
+  {
+   "id": "33a7f343-829c-4c24-95dc-997b5bc2a6d3",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Hay paisajes que merecen ser parte de la casa. En Casa Boldo, la arquitectura es…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hay paisajes que merecen ser parte de la casa. En Casa Boldo, la arquitectura es…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:30:00.327Z"
+  },
   {
    "id": "b110d9db-6c16-40ae-9b7e-fe9c5f5a54ed",
    "to": "javi",

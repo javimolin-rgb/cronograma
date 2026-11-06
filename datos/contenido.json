@@ -4144,6 +4144,14 @@
  ],
  "comments": [
   {
+   "id": "9530cd76-ff0d-4cb2-b44c-779073377b3a",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca Me avisas si ese te parece bien para sincronizar la voz en off correctamente porfa",
+   "fileIds": [],
+   "createdAt": "2026-11-06T01:21:06.467Z"
+  },
+  {
    "id": "c5fe57c9-064f-440c-8c4e-1635f44c7e07",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -5975,6 +5983,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "27508cfe-60f1-45ac-9c49-1ec15c99725b",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T01:21:06.472Z"
+  },
   {
    "id": "ed00032b-f9ba-4d2e-bbc5-f8d80ea4766d",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9509,6 +9527,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "950d8366-622d-4341-a62d-261716119d88",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca Me avisas si ese te parece bien para sincronizar la voz en off correctamen…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca Me avisas si ese te parece bien para sincronizar la voz en off correctamen…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T01:21:06.474Z"
+  },
   {
    "id": "b2e399ef-4d04-4df2-95f9-48cb7cb835ca",
    "to": "maca",

@@ -4144,6 +4144,14 @@
  ],
  "comments": [
   {
+   "id": "fd0d8dc6-9751-49f6-b5f2-6e6ac24396a3",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Hola Javi, durante la mañana lo veo. Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-06T10:47:44.063Z"
+  },
+  {
    "id": "9530cd76-ff0d-4cb2-b44c-779073377b3a",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -5983,6 +5991,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "328b6fb0-90ad-4f36-a7ea-a480b6213197",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T10:47:44.069Z"
+  },
   {
    "id": "27508cfe-60f1-45ac-9c49-1ec15c99725b",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9527,6 +9545,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4fce3fdd-9386-462d-81f0-a5777726d22e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Hola Javi, durante la mañana lo veo. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Hola Javi, durante la mañana lo veo. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T10:47:44.072Z"
+  },
   {
    "id": "950d8366-622d-4341-a62d-261716119d88",
    "to": "maca",

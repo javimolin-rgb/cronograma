@@ -15944,7 +15944,11 @@
      "push": 0
     }
    },
-   "createdAt": "2026-11-05T01:56:53.478Z"
+   "createdAt": "2026-11-05T01:56:53.478Z",
+   "silenciadas": [],
+   "seguidas": [
+    "a013c4e6-c3bb-4d47-9667-5ee418b19336"
+   ]
   },
   {
    "id": "javi",

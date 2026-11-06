@@ -1563,95 +1563,55 @@
    "guion": "",
    "guionTabla": {
     "cols": [
-     "#",
-     "Momento",
-     "En pantalla (rótulo · titular · bajada)",
+     "Seg.",
      "Voz",
-     "",
-     "",
-     ""
+     "En pantalla"
     ],
     "filas": [
      [
-      "1",
-      "Apertura",
-      "MODELO DE LA SEMANA · Casa Boldo · Toda la casa mira al lago.",
-      "Hay casas que miran a todas partes… esta mira a un solo lugar.",
-      "",
-      "",
-      ""
+      "0,3",
+      "Hay lugares donde el tiempo…",
+      "MODELO DE LA SEMANA · Casa Boldo · Toda la casa mira al lago."
      ],
      [
-      "2",
-      "Superficie",
-      "SUPERFICIE ÚTIL · 96,6 m² · 4 dormitorios y 2 baños",
-      "Larga y serena, toda la casa se orienta hacia el agua.",
-      "",
-      "",
-      ""
+      "4,0",
+      "Donde despertar con el lago…",
+      "SUPERFICIE ÚTIL · 96,6 m² · 4 dormitorios y 2 baños, en dos pisos"
      ],
      [
-      "3",
-      "Ventanal",
-      "FRENTE VIDRIADO · Orientado al lago · El paisaje como protagonista",
-      "El ventanal enmarca el lago como si fuera una pintura.",
-      "",
-      "",
-      ""
+      "10,0",
+      "De esa idea nace Casa Boldo. Una arquitectura alargada…",
+      "ARQUITECTURA · Larga y serena · Orientada hacia el agua"
      ],
      [
-      "4",
-      "Techo",
-      "VIVE LO NATURAL · Pendiente pronunciada · La lluvia y la nieve escurren solas",
-      "Llueva o nieve, adentro todo sigue en calma.",
-      "Lo que aparecería en pantalla hablando de nieve??\nModificar ese texto clmoleto",
-      "",
-      ""
+      "15,8",
+      "…donde un gran ventanal conecta el interior…",
+      "FRENTE VIDRIADO · Orientado al lago · El paisaje como protagonista"
      ],
      [
-      "5",
-      "1er piso",
-      "1ER PISO · 2 dormitorios y 1 baño · Una distribución muy práctica",
-      "Cuatro dormitorios, para que cada uno tenga su espacio.",
-      "Buscar otras características, cambiar practica",
-      "",
-      ""
+      "24,2",
+      "…los espacios invitan a compartir",
+      "1ER PISO · Estar y cocina · Integrados, con barra + rótulos: Terraza, Estar, Cocina, Lavadero, Porch"
      ],
      [
-      "6",
-      "2do piso",
-      "2DO PISO · 2 dormitorios y 1 baño · Espacio para todos",
-      "Ideal para una familia grande, de esas que se juntan todas las vacaciones.",
-      "",
-      "",
-      ""
+      "27,3",
+      "…un lugar para disfrutar de un momento propio.",
+      "1ER PISO · 2 dormitorios · Y 1 baño, igual que en el 2º piso + rótulos: Dormitorio, Baño, Dormitorio"
      ],
      [
-      "7",
-      "Planta",
-      "PLANTAS DE ARQUITECTURA · Plantas y ficha técnica en neorigen.cl",
-      "Y al final del día, todos frente al mismo paisaje.",
-      "",
-      "",
-      ""
+      "31,1",
+      "Sus cuatro dormitorios y dos baños…",
+      "PLANTA DE ARQUITECTURA · 1ER PISO + tabla: Superficie útil 96,6 m² · Dormitorios · baños 4 · 2 · Plazo de obra 8 meses"
      ],
      [
-      "8",
-      "Cierre",
-      "Llave en mano · Plazo estimado: 8 meses",
-      "Casa Boldo. La vida, mirando al lago.",
-      "",
-      "",
-      ""
+      "37,1",
+      "¿Te imaginas viviendo aquí? Conversemos…",
+      "sin texto; el dron baja hacia el lago"
      ],
      [
-      "9",
-      "Llamado",
-      "DESCUBRE MÁS EN NEORIGEN.CL",
-      "Descúbrela en neorigen.cl",
-      "",
-      "",
-      ""
+      "39,4",
+      "Descubre Casa Boldo en neorigen.cl.",
+      "Logo · Llave en mano · DESCUBRE MÁS EN NEORIGEN.CL"
      ]
     ]
    },
@@ -1941,8 +1901,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-06T17:09:34.831Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-06T19:28:02.483Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-04T14:39:45.131Z",
@@ -6222,6 +6182,16 @@
  ],
  "activity": [
   {
+   "id": "781aeea4-5c83-4138-be49-ff785edaa73a",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó la tabla del guión",
+   "meta": null,
+   "createdAt": "2026-11-06T19:28:02.483Z"
+  },
+  {
    "id": "7699894b-dfeb-4b41-9718-22222a99de32",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -10035,6 +10005,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a8017c7d-8e3c-45b1-aba4-8ef13a6428d6",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (la tabla del guión)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T19:28:02.484Z"
+  },
+  {
+   "id": "475f5fa6-4da0-4948-9afb-64d3cc3efa94",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (la tabla del guión)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó la tabla del guión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T19:28:02.484Z"
+  },
   {
    "id": "955a0f1a-ff60-4580-aeb2-1a8aa210a452",
    "to": "flavio",

@@ -4174,6 +4174,14 @@
  ],
  "comments": [
   {
+   "id": "4800c48d-17c8-4765-955d-bf5afabd220f",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la última versión de voz q te mandamos, de una mujer. Y por favor cambiar la música, por el chat de mandamos más o menos el estilo para buscar. Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-06T18:10:41.758Z"
+  },
+  {
    "id": "f91a22b6-d54e-4e07-8dbe-bf9fc6c80331",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6112,6 +6120,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "725606ae-6550-43f0-86ca-4bc238169c20",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T18:10:41.764Z"
+  },
   {
    "id": "7a592171-1b6c-4e19-8973-dd722a35a707",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9796,6 +9814,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2e218142-8fb9-4267-aa19-cce6cd16e0a5",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la última versión de vo…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la última versión de vo…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:10:41.767Z"
+  },
+  {
+   "id": "3ab8fd00-3442-474e-adb6-d652a13a826c",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la última versión de vo…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la última versión de vo…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:10:41.766Z"
+  },
   {
    "id": "9e0f535f-dc07-41c6-89f4-ad9721893dea",
    "to": "javi",

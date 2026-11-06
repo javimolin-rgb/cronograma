@@ -4179,7 +4179,10 @@
    "author": "maca",
    "text": "Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la última versión de voz q te mandamos, de una mujer. Y por favor cambiar la música, por el chat de mandamos más o menos el estilo para buscar. Gracias",
    "fileIds": [],
-   "createdAt": "2026-11-06T18:10:41.758Z"
+   "createdAt": "2026-11-06T18:10:41.758Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "f91a22b6-d54e-4e07-8dbe-bf9fc6c80331",
@@ -9814,6 +9817,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "134abae9-ff80-4f20-9a64-44d95b905217",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “¿Son prefabricadas?”: Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la ",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi le puso 👍 a tu comentario: Si. Está ok. Entendí q necesitas la voz en off. Ojo q es la",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:11:33.446Z"
+  },
   {
    "id": "2e218142-8fb9-4267-aa19-cce6cd16e0a5",
    "to": "javi",

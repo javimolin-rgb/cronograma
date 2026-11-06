@@ -4192,6 +4192,14 @@
  ],
  "comments": [
   {
+   "id": "cfa8257f-f95e-42f1-afc2-759ae1db943a",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca hay 6 archivos.",
+   "fileIds": [],
+   "createdAt": "2026-11-06T18:38:19.559Z"
+  },
+  {
    "id": "6012eb20-c96e-4a4a-8411-940a5cecd6ac",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -6172,6 +6180,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "50cf2a0a-c001-48c4-85b0-839ce0f6cf4f",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T18:38:19.560Z"
+  },
   {
    "id": "15d98b5d-2f3e-45a3-b51b-4e232d96e0e2",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9926,6 +9944,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b9813475-58c9-4815-b573-633d6144a6df",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: @Maca hay 6 archivos.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi comentó: @Maca hay 6 archivos.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:38:19.560Z"
+  },
+  {
+   "id": "0e13edb8-0653-4364-aa30-31dce1b7b954",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca hay 6 archivos.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca hay 6 archivos.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:38:19.560Z"
+  },
   {
    "id": "77224892-9fde-41da-9354-10f33691237e",
    "to": "javi",

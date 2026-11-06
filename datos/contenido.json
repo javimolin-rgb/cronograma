@@ -4149,7 +4149,10 @@
    "author": "maca",
    "text": "Hola Javi, durante la mañana lo veo. Gracias",
    "fileIds": [],
-   "createdAt": "2026-11-06T10:47:44.063Z"
+   "createdAt": "2026-11-06T10:47:44.063Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "9530cd76-ff0d-4cb2-b44c-779073377b3a",
@@ -9545,6 +9548,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c676329a-06b9-48fd-ad18-d0cf673324ca",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “¿Son prefabricadas?”: Hola Javi, durante la mañana lo veo. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi le puso 👍 a tu comentario: Hola Javi, durante la mañana lo veo. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T12:05:53.787Z"
+  },
   {
    "id": "4fce3fdd-9386-462d-81f0-a5777726d22e",
    "to": "javi",

@@ -1923,7 +1923,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-06T16:32:58.240Z",
+   "updatedAt": "2026-11-06T17:09:34.831Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -4174,6 +4174,38 @@
  ],
  "comments": [
   {
+   "id": "4c87332e-b880-4c9b-9746-1e5016a3f703",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Tiene q ser una música como good vibes , good energy, de ese estilo. Que no tenga esos cambios como tinggg 🤪😂",
+   "fileIds": [],
+   "createdAt": "2026-11-06T17:08:54.165Z"
+  },
+  {
+   "id": "8b55fd45-0e8d-4c9f-8ed8-10fc3bd74d4e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "La música porfa ponla tú que nos sale q hay q pagar en elevenlab",
+   "fileIds": [],
+   "createdAt": "2026-11-06T17:06:58.741Z"
+  },
+  {
+   "id": "3360bc70-e6dc-4296-9fcb-1c71a5ccc03e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Ya te la mandamos en voz en off lista",
+   "fileIds": [],
+   "createdAt": "2026-11-06T17:06:20.463Z"
+  },
+  {
+   "id": "d6b30199-eac4-4a13-9d5b-edf71857381f",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Hay lugares donde el tiempo parece ir un poco más lento. Donde despertar con el lago frente a ti y disfrutar del paisaje se vuelve parte de cada día.\n\nDe esa idea nace Casa Boldo. Una arquitectura alargada, orientada hacia el agua, donde un gran ventanal conecta el interior con el entorno y hace que la naturaleza esté siempre presente.\n\nAquí, las mañanas comienzan con calma, los espacios invitan a compartir y siempre hay un lugar para disfrutar de un momento propio. Sus cuatro dormitorios y dos baños, distribuidos en dos pisos, hacen posible esa forma de vivir.\n\n¿Te imaginas viviendo aquí? Conversemos sobre tu proyecto. Descubre Casa Boldo en neorigen.cl.",
+   "fileIds": [],
+   "createdAt": "2026-11-06T17:06:01.215Z"
+  },
+  {
    "id": "90fc3cdd-cc03-4fd5-8239-76d0e91a87ad",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6072,6 +6104,46 @@
   }
  ],
  "activity": [
+  {
+   "id": "04f3bbb2-9093-412f-8922-e57a46e66e3e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T17:08:54.171Z"
+  },
+  {
+   "id": "136bd0db-ce0b-4df6-bbf3-6d2cdf1becba",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T17:06:58.741Z"
+  },
+  {
+   "id": "a856810d-a2fb-40eb-9bd0-cc679206c401",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T17:06:20.463Z"
+  },
+  {
+   "id": "9e7655cc-fae9-482c-b031-ca45b74ae484",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T17:06:01.222Z"
+  },
   {
    "id": "7cd4b533-98a7-40aa-bbed-8458a2b49715",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9706,6 +9778,126 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6cb83cff-09e5-4981-a430-766c6ab906ad",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Tiene q ser una música como good vibes , good energy, de ese estilo. Que no teng…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Tiene q ser una música como good vibes , good energy, de ese estilo. Que no teng…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:08:54.172Z"
+  },
+  {
+   "id": "b3a66337-a360-4c31-a4f7-630cf87fae67",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Tiene q ser una música como good vibes , good energy, de ese estilo. Que no teng…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Tiene q ser una música como good vibes , good energy, de ese estilo. Que no teng…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:08:54.171Z"
+  },
+  {
+   "id": "c65c1ae4-765f-482b-860d-827599702a34",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: La música porfa ponla tú que nos sale q hay q pagar en elevenlab",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: La música porfa ponla tú que nos sale q hay q pagar en elevenlab",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:06:58.742Z"
+  },
+  {
+   "id": "5d62e311-796d-4930-8c8d-35c3f86fbecf",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: La música porfa ponla tú que nos sale q hay q pagar en elevenlab",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: La música porfa ponla tú que nos sale q hay q pagar en elevenlab",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:06:58.742Z"
+  },
+  {
+   "id": "8a3bf98f-33df-4d55-b52e-2bc0a5ee684c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Ya te la mandamos en voz en off lista",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Ya te la mandamos en voz en off lista",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:06:20.464Z"
+  },
+  {
+   "id": "ccc296b1-8abf-445d-8d95-a7d8087c6611",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Ya te la mandamos en voz en off lista",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Ya te la mandamos en voz en off lista",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:06:20.464Z"
+  },
+  {
+   "id": "66a5cbe3-e2b0-43e2-a573-7fd66e9378d1",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Hay lugares donde el tiempo parece ir un poco más lento. Donde despertar con el …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hay lugares donde el tiempo parece ir un poco más lento. Donde despertar con el …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:06:01.225Z"
+  },
+  {
+   "id": "ef33458a-a279-47bf-8091-eef06c2c56a0",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Hay lugares donde el tiempo parece ir un poco más lento. Donde despertar con el …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hay lugares donde el tiempo parece ir un poco más lento. Donde despertar con el …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T17:06:01.224Z"
+  },
   {
    "id": "652615d0-0b78-4b8c-bd16-a8ed96c47878",
    "to": "javi",

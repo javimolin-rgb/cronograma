@@ -4174,6 +4174,14 @@
  ],
  "comments": [
   {
+   "id": "c7c6e659-c961-4e64-bf66-f5595a554e9c",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca Sii se puede ajustar al video, lo que sí es que pierde todo lo de voz más emocional que habíamos acordado",
+   "fileIds": [],
+   "createdAt": "2026-11-06T16:40:23.079Z"
+  },
+  {
    "id": "16e1aebc-95c2-421a-af01-a7b992b0e719",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6056,6 +6064,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "8057b77a-7c04-446a-9a53-1d2862235eba",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T16:40:23.084Z"
+  },
   {
    "id": "39bac327-1928-4cfa-931a-eed96378ba93",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9670,6 +9688,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "12e58f79-c0e7-4244-9a53-ddca1e940d31",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca Sii se puede ajustar al video, lo que sí es que pierde todo lo de voz más …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca Sii se puede ajustar al video, lo que sí es que pierde todo lo de voz más …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:40:23.087Z"
+  },
+  {
+   "id": "3f63d00b-0da2-4dd5-b156-eccf7b5493c5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca Sii se puede ajustar al video, lo que sí es que pierde todo lo de voz más …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca Sii se puede ajustar al video, lo que sí es que pierde todo lo de voz más …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:40:23.086Z"
+  },
   {
    "id": "1b275060-961d-4a33-a5e0-b88c1cd11178",
    "to": "javi",

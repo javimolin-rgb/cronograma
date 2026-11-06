@@ -4192,6 +4192,14 @@
  ],
  "comments": [
   {
+   "id": "645f9f00-8b7c-422a-9817-2b08395548c2",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "@Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.github.io/cronograma/#marca=cat%3Amusica para ver si alguna deesas te gusta (en marca/musica)",
+   "fileIds": [],
+   "createdAt": "2026-11-06T18:32:31.894Z"
+  },
+  {
    "id": "f2828ff5-4313-4fe1-b86d-7f3881daeaf4",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -6156,6 +6164,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7543652a-fb32-48ef-8335-57463cc40ce9",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T18:32:31.926Z"
+  },
   {
    "id": "1daebcc2-b5bb-48f5-960e-28aa80b9361c",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9890,6 +9908,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "81105038-442e-4107-a6fb-5292c7f7e7f9",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: @Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.gith…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi comentó: @Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.gith…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:32:31.929Z"
+  },
+  {
+   "id": "ddf19cbc-c180-44fa-bce9-02892a735ace",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "mention",
+   "text": "te mencionó en “¿Son prefabricadas?”: @Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.gith…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te mencionó: @Maca revisaste las que están subidas en el crono? en https://javimolin-rgb.gith…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:32:31.928Z"
+  },
   {
    "id": "96a9922b-4cae-42aa-b131-6a1532ac3e0c",
    "to": "javi",

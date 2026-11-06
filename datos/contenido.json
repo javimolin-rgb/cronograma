@@ -4144,6 +4144,14 @@
  ],
  "comments": [
   {
+   "id": "549c17cb-bea4-495b-8f56-ee2afdaffd4c",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "@Javi este texto como está en tiempos para el render? \nSi está ok lo grabamos con IA",
+   "fileIds": [],
+   "createdAt": "2026-11-06T16:20:48.631Z"
+  },
+  {
    "id": "0bf26184-3b9d-44d5-9aff-3ca5216d5272",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6002,6 +6010,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "52ea2357-0d15-49f6-985d-82466afc3c7c",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T16:20:48.633Z"
+  },
   {
    "id": "c3904442-3e54-4774-996a-daa725f0eaae",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -9566,6 +9584,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "fb975190-d4ad-46fd-b25d-3feca27411db",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Javi este texto como está en tiempos para el render? \nSi está ok lo grabamos co…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: @Javi este texto como está en tiempos para el render? \nSi está ok lo grabamos co…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:20:48.634Z"
+  },
+  {
+   "id": "ed195366-3cbb-4d3f-a257-d25c195a7613",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Javi este texto como está en tiempos para el render? \nSi está ok lo grabamos co…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca te mencionó: @Javi este texto como está en tiempos para el render? \nSi está ok lo grabamos co…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-06T16:20:48.634Z"
+  },
   {
    "id": "5be82599-836e-4000-b58d-e8569b6bca86",
    "to": "javi",

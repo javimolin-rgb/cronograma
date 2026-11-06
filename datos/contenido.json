@@ -997,6 +997,23 @@
      "sha": "bd469910a6144e12820d01b3bf379fb040e29b33",
      "type": "video/mp4",
      "size": 6278040
+    },
+    {
+     "id": "d9ea0f11-bb0e-4560-bfb7-ca3bb108b580",
+     "by": "javi",
+     "at": "2026-11-06T19:32:13.167Z",
+     "base": "reel_son_prefabricadas-1",
+     "version": 1,
+     "shaOrigen": "eedad976947de94c3b5041d70a472fe4b929f675",
+     "dur": 32.6,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_son_prefabricadas-1-v1.mp4",
+     "path": "archivos/publicaciones-informativas/reel_son_prefabricadas-1-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/reel_son_prefabricadas-1-v1.mp4",
+     "sha": "eedad976947de94c3b5041d70a472fe4b929f675",
+     "type": "video/mp4",
+     "size": 6424488
     }
    ],
    "checklist": [],
@@ -1027,7 +1044,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-06T18:43:46.404Z",
+   "updatedAt": "2026-11-06T19:32:24.454Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-04T14:43:40.061Z",
    "publishedAt": null
@@ -4152,6 +4169,13 @@
  ],
  "comments": [
   {
+   "id": "087056f5-b343-4440-84b5-f49b95e46bd4",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "Video actualizado",
+   "createdAt": "2026-11-06T19:32:24.457Z"
+  },
+  {
    "id": "32da23b5-1928-487b-b25e-36f91794f8ad",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -6181,6 +6205,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "721a0f64-a858-4627-945c-3acdc32378cc",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-06T19:32:24.457Z"
+  },
+  {
+   "id": "b653a215-e434-459c-ae2a-57a264510e44",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-06T19:32:24.456Z"
+  },
   {
    "id": "781aeea4-5c83-4138-be49-ff785edaa73a",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10005,6 +10049,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "61124995-5ec0-452d-a6f0-765ee7a085ac",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "review",
+   "text": "subió 1 archivo en “¿Son prefabricadas?” para revisar: Video actualizado",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te pide revisar: Video actualizado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:32:24.457Z"
+  },
+  {
+   "id": "381352cf-1347-423d-b051-df371434f1f4",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "review",
+   "text": "subió 1 archivo en “¿Son prefabricadas?” para revisar: Video actualizado",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi te pide revisar: Video actualizado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:32:24.457Z"
+  },
+  {
+   "id": "f3c7a09d-e890-4aca-bc27-4f07a3f0bbec",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "update",
+   "text": "editó “¿Son prefabricadas?” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:32:24.457Z"
+  },
+  {
+   "id": "03025748-b06c-4a34-964f-4ac1326950ca",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "update",
+   "text": "editó “¿Son prefabricadas?” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:32:24.456Z"
+  },
   {
    "id": "a8017c7d-8e3c-45b1-aba4-8ef13a6428d6",
    "to": "flavio",

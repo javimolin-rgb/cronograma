@@ -4192,6 +4192,14 @@
  ],
  "comments": [
   {
+   "id": "32da23b5-1928-487b-b25e-36f91794f8ad",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "javi",
+   "text": "Si me llegó, gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-06T19:05:02.649Z"
+  },
+  {
    "id": "e828fd05-20db-4a03-bcf5-b4f1af3319eb",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -6213,6 +6221,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7699894b-dfeb-4b41-9718-22222a99de32",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T19:05:02.654Z"
+  },
   {
    "id": "2b3788ef-ae9c-4cba-9d7f-84d7aba1852f",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -10017,6 +10035,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "955a0f1a-ff60-4580-aeb2-1a8aa210a452",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Si me llegó, gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi comentó: Si me llegó, gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:05:02.656Z"
+  },
+  {
+   "id": "4dfd9bd7-d87e-427b-a312-daa72ef72590",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Si me llegó, gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi comentó: Si me llegó, gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T19:05:02.655Z"
+  },
   {
    "id": "e0848912-2e71-4a61-a855-f46310c4022c",
    "to": "javi",
@@ -17048,10 +17096,10 @@
    "tipo": "cel",
    "instalada": true,
    "push": true,
-   "version": "2026.11.04-4",
+   "version": "2026.11.06-1",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-10-24T21:01:24.671Z",
-   "lastSeen": "2026-11-06T12:05:44.487Z"
+   "lastSeen": "2026-11-06T19:04:44.425Z"
   },
   {
    "id": "d_005f1d53f0f34e1a",

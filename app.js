@@ -265,6 +265,7 @@ const S = {
   feedBorrador: {},  // lo que se está escribiendo en cada pieza del feed
   feedFotos: {},     // fotos ya subidas que van con ese comentario
   feedSubiendo: '',  // en qué pieza se está subiendo una foto ahora mismo
+  feedPick: {},      // en qué piezas del feed está abierto el elegidor para etiquetar
   compartidos: 0,
   marcaRuta: '',   // en qué carpeta de Marca está parada
   marcaTodo: false, // ver también lo que hay en las carpetas de adentro
@@ -975,6 +976,28 @@ const esMedia = (f) => isImg(f) || isVideo(f);
 // Miniatura de cualquier archivo: foto, video, audio o —si no se puede ver— su extensión
 const miniArchivo = (f) => miniMedia(f) || `<span class="ext">${esc((extOf(f) || '?').slice(0, 4).toUpperCase())}</span>`;
 
+/* Etiquetar en un comentario: se puede nombrar cualquier archivo de la pieza y también
+   cualquier cosa de Marca (el logo, la música, el manual…). No se copia nada: el
+   comentario guarda el id, así que para mostrarlo hay que buscarlo en los dos lados. */
+const esDeMarca = (f) => !!f && (S.db.recursos || []).some((r) => r.id === f.id);
+const archivoDeComentario = (fid, post) => (post && (post.files || []).find((f) => f.id === fid)) || recursoPorId(fid) || null;
+const archivosDeComentario = (c, post) => ((c && c.fileIds) || []).map((fid) => archivoDeComentario(fid, post)).filter(Boolean);
+// Lo que se puede etiquetar: primero lo de la pieza, después lo de Marca (lo que se ve y se escucha, adelante)
+function etiquetables(p) {
+  const propios = pieceFiles(p, true);
+  const enMarca = gruposMarca(recursos()).map((g) => g.principal)
+    .filter((r) => r && !propios.some((f) => f.id === r.id));
+  return propios.concat(enMarca.filter(esMediaOAudio), enMarca.filter((r) => !esMediaOAudio(r)));
+}
+// Una miniatura del elegidor: marcada o no, y con la estrella si viene de Marca
+function pickHtml(f, elegido, act, extra) {
+  const dm = esDeMarca(f);
+  const nombre = (dm ? splitName(f.name).label || f.name : f.name) + (dm ? ' · de Marca' : '');
+  return `<button class="cmpick${elegido ? ' on' : ''}${dm ? ' demarca' : ''}" data-act="${act}"${extra || ''} data-f="${esc(f.id)}" aria-label="${esc(nombre)}" title="${esc(nombre)}">${miniArchivo(f)}${dm ? `<i class="src">${ic('marca', 11)}</i>` : ''}<i class="tick">${ic('check', 14)}</i></button>`;
+}
+// Lo etiquetado, como se ve dentro de un comentario (o esperando a que lo manden)
+const comFotoHtml = (f, dentro, extra) => `<span class="cmfoto${esDeMarca(f) ? ' demarca' : ''}"${extra || ''} title="${esc(f.name || '')}">${miniArchivo(f)}${esDeMarca(f) ? `<i class="src">${ic('marca', 11)}</i>` : ''}${dentro || ''}</span>`;
+
 // Galería: se desliza con el dedo entre fotos y videos; flechas y teclado en el computador
 let GAL = null;
 function abrirGaleria(files, inicio) {
@@ -1178,21 +1201,30 @@ function postHtml(p, t) {
       <div class="postcoms">
         ${coms.length > vis.length ? `<button class="lnk" data-act="feed-mas" data-id="${esc(p.id)}">Ver los ${coms.length} comentarios</button>` : ''}
         ${vis.map((c) => {
-          const fotos = (c.fileIds || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
+          const fotos = archivosDeComentario(c, p);
           return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
-            ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}" title="${esc(x.name || '')}">${miniArchivo(x)}</span>`).join('')}</div>` : ''}
+            ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => comFotoHtml(x, '', ` data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}"`)).join('')}</div>` : ''}
             <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}${puedeBorrarComentario(c) ? ` · <button class="lnk borrar" data-act="cm-borrar" data-id="${esc(c.id)}">Borrar</button>` : ''}</small>
             <div class="cmacts">${reacHtml(c, p.id)}</div></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
       </div>
       <div class="postpie">
       ${(() => {
-        const puestas = (S.feedFotos[p.id] || []).map((fid) => p.files.find((x) => x.id === fid)).filter(Boolean);
+        if (!store.canWrite || !S.feedPick[p.id]) return '';
+        const puestos = S.feedFotos[p.id] || [];
+        const lista = etiquetables(p);
+        if (!lista.length) return '<p class="hint">Todavía no hay archivos en la pieza ni en Marca.</p>';
+        return `<div class="commedia">${lista.map((f) => pickHtml(f, puestos.includes(f.id), 'feed-media', ` data-p="${esc(p.id)}"`)).join('')}</div>
+          <p class="hint">Toca lo que quieras nombrar en el comentario. La estrella es lo que viene de Marca.</p>`;
+      })()}
+      ${(() => {
+        const puestas = (S.feedFotos[p.id] || []).map((fid) => archivoDeComentario(fid, p)).filter(Boolean);
         if (!puestas.length) return '';
-        return `<div class="cmfotos pend">${puestas.map((x) => `<span class="cmfoto" title="${esc(x.name || '')}">${miniArchivo(x)}<button class="quitar" data-act="feed-foto-quitar" data-id="${esc(p.id)}" data-f="${esc(x.id)}" aria-label="Quitar">${ic('x', 13)}</button></span>`).join('')}</div>`;
+        return `<div class="cmfotos pend">${puestas.map((x) => comFotoHtml(x, `<button class="quitar" data-act="feed-foto-quitar" data-id="${esc(p.id)}" data-f="${esc(x.id)}" aria-label="Quitar">${ic('x', 13)}</button>`)).join('')}</div>`;
       })()}
       <div class="postcompose">
-        ${store.canWrite ? `<label class="iconbtn cmcam" title="Mandar un archivo: foto, video, audio, PDF…" aria-label="Mandar un archivo">${S.feedSubiendo === p.id ? `<i class="cmspin"></i>` : ic('paperclip', 18)}<input type="file" multiple data-feed-foto="${esc(p.id)}"${S.feedSubiendo === p.id ? ' disabled' : ''}></label>` : ''}
+        ${store.canWrite ? `<label class="iconbtn cmcam" title="Mandar un archivo: foto, video, audio, PDF…" aria-label="Mandar un archivo">${S.feedSubiendo === p.id ? `<i class="cmspin"></i>` : ic('paperclip', 18)}<input type="file" multiple data-feed-foto="${esc(p.id)}"${S.feedSubiendo === p.id ? ' disabled' : ''}></label>
+        <button class="iconbtn${S.feedPick[p.id] ? ' on' : ''}" data-act="feed-etiquetar" data-id="${esc(p.id)}" title="Etiquetar un archivo de la pieza o algo de Marca" aria-label="Etiquetar un archivo">${ic('image', 18)}</button>` : ''}
         <input class="field" data-feed-com="${esc(p.id)}" placeholder="${S.feedCambios === p.id ? '¿Qué cambiarías?' : 'Escribe un comentario…'}" value="${esc(S.feedBorrador[p.id] || '')}" autocomplete="off" enterkeyhint="send">
         <button class="iconbtn" data-act="feed-enviar" data-id="${esc(p.id)}" aria-label="Enviar">${ic('send', 18)}</button>
       </div>
@@ -1204,14 +1236,15 @@ async function feedEnviar(id) {
   const p = S.db.posts.find((x) => x.id === id); if (!p || !requireWrite()) return;
   const inp = document.querySelector(`[data-feed-com="${CSS.escape(id)}"]`);
   const text = ((inp && inp.value) || S.feedBorrador[id] || '').trim();
-  const fotos = (S.feedFotos[id] || []).filter((fid) => p.files.some((f) => f.id === fid));
-  if (!text && !fotos.length) { if (inp) inp.focus(); return; }   // una foto sola también vale
+  const fotos = (S.feedFotos[id] || []).filter((fid) => archivoDeComentario(fid, p));
+  if (!text && !fotos.length) { if (inp) inp.focus(); return; }   // un archivo solo también vale
   if (inp) inp.disabled = true;
   try {
     await comentar(p, text, fotos);
     if (S.feedCambios === id && p.status !== 'cambios') await changeStatus(id, 'cambios');
     delete S.feedBorrador[id];
     delete S.feedFotos[id];
+    delete S.feedPick[id];
     if (S.feedCambios === id) S.feedCambios = null;
     renderMain();
     toast('Comentario enviado');
@@ -2771,7 +2804,7 @@ function renderEditor() {
 
     <label class="lbl">Comentarios <small>${comments.length}</small></label>
     ${comments.map((c) => {
-      const fotos = (c.fileIds || []).map((fid) => d.files.find((f) => f.id === fid)).filter(Boolean);
+      const fotos = archivosDeComentario(c, d);
       if (ED.editando === c.id) {
         return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · corrigiendo</small>
           <textarea class="area" id="c-edit" style="min-height:76px">${esc(c.text || '')}</textarea>
@@ -2779,7 +2812,7 @@ function renderEditor() {
       }
       const vers = (c.versiones || []).length;
       return `<div class="cm">${av(c.author, 'md')}<div class="bubble"><small><b>${esc(person(c.author).name)}</b> · ${ago(c.createdAt)}${c.editedAt ? ' · corregido' : ''}</small>${mentionHtml(c.text)}
-        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => `<span class="cmfoto" data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}" title="${esc(f.name || '')}">${miniArchivo(f)}</span>`).join('')}</div>` : ''}
+        ${fotos.length ? `<div class="cmfotos">${fotos.map((f, k) => comFotoHtml(f, '', ` data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}"`)).join('')}</div>` : ''}
         <div class="cmacts">
           ${reacHtml(c, d.id)}
           ${puedeEditarComentario(c) ? `<button class="lnk" data-act="cm-editar" data-id="${esc(c.id)}">Editar</button>` : ''}
@@ -2791,14 +2824,14 @@ function renderEditor() {
     }).join('')}
     <div class="compose"><textarea class="area" id="e-comment" style="min-height:70px" placeholder="Escribe un comentario…">${esc(ED.comment)}</textarea>
       ${(() => {
-        const media = pieceFiles(d, true);
+        const media = etiquetables(d);
         const sel = ED.comFiles || [];
         const subir = store.canWrite
           ? `<label class="cmpick cmadd" title="Sumar un archivo: foto, video, audio, PDF…">${ED.comSubiendo ? `<i class="cmspin"></i>` : ic('paperclip', 20)}<input id="cm-file" type="file" multiple${ED.comSubiendo ? ' disabled' : ''}></label>`
           : '';
         if (!media.length && !subir) return '';
-        return `<div class="commedia">${subir}${media.map((f) => `<button class="cmpick${sel.includes(f.id) ? ' on' : ''}" data-act="cm-media" data-f="${esc(f.id)}" aria-label="${esc(f.name)}" title="${esc(f.name)}">${miniArchivo(f)}<i class="tick">${ic('check', 14)}</i></button>`).join('')}</div>
-        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca el clip para sumar un archivo (foto, video, audio, PDF…), o uno de abajo para decir de cuál estás hablando.' : 'Toca el clip para mandar un archivo con el comentario: queda guardado en los archivos de la pieza.'}</p>`;
+        return `<div class="commedia">${subir}${media.map((f) => pickHtml(f, sel.includes(f.id), 'cm-media')).join('')}</div>
+        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca el clip para sumar un archivo (foto, video, audio, PDF…), o uno de abajo para decir de cuál estás hablando: van los de la pieza y también lo de Marca (con la estrella).' : 'Toca el clip para mandar un archivo con el comentario: queda guardado en los archivos de la pieza.'}</p>`;
       })()}
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
@@ -2998,7 +3031,7 @@ async function addComment() {
   if (!requireWrite()) return;
   syncDraft();
   const text = (ED.comment || '').trim();
-  const fids = (ED.comFiles || []).filter((id) => (ED.d.files || []).some((f) => f.id === id));
+  const fids = (ED.comFiles || []).filter((id) => archivoDeComentario(id, ED.d));
   if (!text && !fids.length) return;
   const p = ED.old; if (!p) return;
   await comentar(p, text, fids);
@@ -4935,7 +4968,7 @@ const ACTS = {
     if (e) e.stopPropagation();
     const c = S.db.comments.find((x) => x.id === el.dataset.c); if (!c) return;
     const post = (ED && ED.d && ED.d.id === c.postId) ? ED.d : S.db.posts.find((p) => p.id === c.postId);
-    abrirGaleria((c.fileIds || []).map((fid) => post && post.files.find((f) => f.id === fid)).filter(Boolean), +el.dataset.i);
+    abrirGaleria(archivosDeComentario(c, post), +el.dataset.i);
   },
   'gal-mover': (el) => galMover(+el.dataset.d),
   'gal-cerrar': () => cerrarGaleria(),
@@ -5196,6 +5229,19 @@ const ACTS = {
   'piezas-vista': (el) => { S.piezasVista = el.dataset.v; localStorage.setItem('crono_piezas_vista', S.piezasVista); renderAll(); window.scrollTo(0, 0); },
   'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),
+  // abrir o cerrar el elegidor de archivos para etiquetar en el feed
+  'feed-etiquetar': (el) => {
+    const id = el.dataset.id;
+    if (S.feedPick[id]) delete S.feedPick[id]; else S.feedPick[id] = true;
+    renderMain();
+  },
+  'feed-media': (el) => {
+    const id = el.dataset.p, fid = el.dataset.f;
+    const sel = S.feedFotos[id] = S.feedFotos[id] || [];
+    const i = sel.indexOf(fid);
+    if (i >= 0) sel.splice(i, 1); else sel.push(fid);
+    renderMain();
+  },
   'feed-foto-quitar': (el) => {
     const id = el.dataset.id;
     S.feedFotos[id] = (S.feedFotos[id] || []).filter((x) => x !== el.dataset.f);

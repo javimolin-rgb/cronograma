@@ -51,9 +51,13 @@ Cómo se ve cada cosa:
 
 Un audio pasa tal cual (no se recomprime); el tope de 24 MB por archivo sigue siendo el mismo para todos. Un .zip con un `index.html` adentro sigue quedando como **interactivo**, no como archivo suelto.
 
-## Nombrar un archivo en un comentario
+## Nombrar un archivo en un comentario (también lo de Marca)
 
-Debajo del cuadro de comentario, en cada pieza, están las miniaturas de **todos** sus archivos —fotos, videos, audios y documentos—: al tocar uno (o varios) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es. Es la forma de decir “en esta saquemos la camioneta” o “el minuto 0:12 de esta locución” sin tener que explicarlo. Si solo marcas archivos y no escribes nada, igual se puede enviar.
+Debajo del cuadro de comentario, en cada pieza, están las miniaturas de **todo lo que se puede nombrar**: primero los archivos de la pieza —fotos, videos, audios y documentos— y después **todo lo que hay en Marca** (los logos, la música, las tipografías, el manual…), que se reconocen por la **estrella** en la esquina. Al tocar uno (o varios) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es.
+
+Es la forma de decir “en esta saquemos la camioneta”, “el minuto 0:12 de esta locución” o “ponle esta música de Marca” sin tener que explicarlo ni volver a subir nada: lo de Marca **no se copia a la pieza**, el comentario solo lo apunta. Al tocar la miniatura dentro del comentario se abre a pantalla completa, con su reproductor si es audio o video; la descarga de lo de Marca sigue la misma regla de siempre (solo lo que Javi dejó libre).
+
+En el **Feed** está el mismo elegidor: el botón de la foto, a la derecha del clip, abre y cierra la tira de miniaturas. Si solo marcas archivos y no escribes nada, igual se puede enviar.
 
 ## Mandar un archivo nuevo en el comentario
 

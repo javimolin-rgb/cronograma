@@ -4192,6 +4192,14 @@
  ],
  "comments": [
   {
+   "id": "da410972-57a5-404d-aa25-165dea45cbda",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "author": "maca",
+   "text": "Si pero los  otros están sin música",
+   "fileIds": [],
+   "createdAt": "2026-11-06T18:40:02.380Z"
+  },
+  {
    "id": "cfa8257f-f95e-42f1-afc2-759ae1db943a",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "javi",
@@ -6180,6 +6188,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c19a5f1d-4b4a-4955-ad0c-2a97072651c0",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-06T18:40:02.386Z"
+  },
   {
    "id": "50cf2a0a-c001-48c4-85b0-839ce0f6cf4f",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
@@ -9944,6 +9962,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e7f4fc66-57cb-4313-b3c4-eaf861941e0f",
+   "to": "javi",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "supervision",
+   "text": "comentó en “¿Son prefabricadas?”: Si pero los  otros están sin música",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Si pero los  otros están sin música",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:40:02.389Z"
+  },
+  {
+   "id": "2a1dbe96-9994-4d52-b466-355418a340be",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "comment",
+   "text": "comentó en “¿Son prefabricadas?”: Si pero los  otros están sin música",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Maca comentó: Si pero los  otros están sin música",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-06T18:40:02.388Z"
+  },
   {
    "id": "b9813475-58c9-4815-b573-633d6144a6df",
    "to": "flavio",

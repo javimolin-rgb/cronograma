@@ -864,7 +864,7 @@
    "date": "2026-11-08",
    "inicio": "",
    "format": "reel",
-   "status": "aprobado",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1044,9 +1044,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-06T23:59:56.151Z",
+   "updatedAt": "2026-11-07T00:00:34.041Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-06T23:59:56.151Z",
+   "statusChangedAt": "2026-11-07T00:00:34.041Z",
    "publishedAt": null
   },
   {
@@ -6214,6 +6214,19 @@
  ],
  "activity": [
   {
+   "id": "05e737f4-2fee-4a46-8d76-6861da0223e9",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a En revisión",
+   "meta": {
+    "from": "aprobado",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-07T00:00:34.041Z"
+  },
+  {
    "id": "793be158-471d-4eb8-bf73-96f2bf3dea24",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -10080,6 +10093,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2ab13e7a-f62e-4e05-b69f-5682875247ca",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "status",
+   "text": "movió “¿Son prefabricadas?” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-07T00:00:34.042Z"
+  },
+  {
+   "id": "0508b6cc-5328-43ce-adc6-185d7b8cbd61",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "status",
+   "text": "movió “¿Son prefabricadas?” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-07T00:00:34.041Z"
+  },
   {
    "id": "771dc841-593d-49c9-9d18-a7bffce10ae0",
    "to": "flavio",

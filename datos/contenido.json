@@ -4287,7 +4287,10 @@
    "author": "maca",
    "text": "Esos son los cambios de textos. \nLa idea es q no quede solo restringido al lago. \n\nCon respecto al audio nos equivocamos en no cambiar una frase de “alargada y orientada hacia el agua”  ( si es mucho tiempo o complicado modificarlo, lo dejamos como está el audio) me cuentas. \nGracias",
    "fileIds": [],
-   "createdAt": "2026-11-09T19:35:46.233Z"
+   "createdAt": "2026-11-09T19:35:46.233Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "b2c8b509-9914-428f-8a09-3fc0d8b9ce60",
@@ -10516,6 +10519,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "df34bea9-7b42-4531-8bc2-d4215cb703d9",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Boldo”: Esos son los cambios de textos. \nLa idea es q no quede solo ",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi le puso 👍 a tu comentario: Esos son los cambios de textos. \nLa idea es q no quede solo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:58:09.341Z"
+  },
   {
    "id": "a731cc67-e7af-44f9-a6db-3b7328238bcc",
    "to": "javi",

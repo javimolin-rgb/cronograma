@@ -4274,6 +4274,16 @@
  ],
  "comments": [
   {
+   "id": "b2c8b509-9914-428f-8a09-3fc0d8b9ce60",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Distribución \n4 Dormitorios\nAmplitud para compartir",
+   "fileIds": [
+    "45e49f1b-99cd-492e-806d-18bb49fb5076"
+   ],
+   "createdAt": "2026-11-09T19:27:58.096Z"
+  },
+  {
    "id": "16ef2343-43b6-4680-9ab9-0b9ed2fdda79",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6397,6 +6407,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "e1ab11eb-737f-45ee-b902-03224e3ac701",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T19:27:58.096Z"
+  },
   {
    "id": "9126c430-7c70-4f6e-b7d3-9c71717121cb",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10460,6 +10480,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "dd04d4f1-cd07-4162-acc8-2a969bf9b073",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Distribución \n4 Dormitorios\nAmplitud para compartir",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Distribución \n4 Dormitorios\nAmplitud para compartir",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:27:58.097Z"
+  },
+  {
+   "id": "b4b098ea-01a4-44e1-9267-88dfe8feb259",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Distribución \n4 Dormitorios\nAmplitud para compartir",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Distribución \n4 Dormitorios\nAmplitud para compartir",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:27:58.097Z"
+  },
   {
    "id": "6e04dae4-edcd-4744-a53b-5ff11ee5e368",
    "to": "javi",

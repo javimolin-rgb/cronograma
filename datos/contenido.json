@@ -10238,7 +10238,7 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: El video y audio ok, hay que modificar algunos textos que aparecen en el video",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
@@ -10268,7 +10268,7 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: Javi, no encuentro las observaciones que te dejé en las columnas. Dónde puedo ve…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
@@ -10298,7 +10298,7 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: Gracias Javi, reviso",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
@@ -17668,7 +17668,7 @@
    "version": "2026.11.06-2",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-06T21:55:17.974Z"
+   "lastSeen": "2026-11-09T17:47:01.444Z"
   }
  ],
  "recursos": [

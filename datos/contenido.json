@@ -4232,6 +4232,16 @@
  ],
  "comments": [
   {
+   "id": "b73bd5e9-e323-4ca0-8c19-9b37c9c747dc",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Arquitectura\nEficiencia y bienestar en cada esoacio",
+   "fileIds": [
+    "66213d8b-d382-473b-9082-f2ccb2d5e2d4"
+   ],
+   "createdAt": "2026-11-09T19:22:21.797Z"
+  },
+  {
    "id": "248a6f83-44ab-4579-94c2-c0b1605a83c0",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6325,6 +6335,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "93049b49-476f-4efe-959b-b704f1d070db",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T19:22:21.797Z"
+  },
   {
    "id": "e5a1631d-0f72-4b54-a0d9-88d2c6273e3a",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10328,6 +10348,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "16cb5717-70bc-450e-bd17-e6c46d6c013f",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Arquitectura\nEficiencia y bienestar en cada esoacio",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Arquitectura\nEficiencia y bienestar en cada esoacio",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:22:21.798Z"
+  },
+  {
+   "id": "1199d10a-b810-42e1-ad90-eca6e6512c03",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Arquitectura\nEficiencia y bienestar en cada esoacio",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Arquitectura\nEficiencia y bienestar en cada esoacio",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:22:21.798Z"
+  },
   {
    "id": "4dad64cf-0b32-4d2c-8276-979400cc113e",
    "to": "javi",

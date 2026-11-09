@@ -10685,7 +10685,7 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Un domingo en el refugio”: te está esperando para poder seguir",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,

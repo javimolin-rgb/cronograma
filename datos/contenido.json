@@ -4203,6 +4203,14 @@
  ],
  "comments": [
   {
+   "id": "ab545bfa-a108-4911-942a-8a52d069ba1a",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Gracias Javi, reviso",
+   "fileIds": [],
+   "createdAt": "2026-11-09T16:27:05.540Z"
+  },
+  {
    "id": "6b13748a-feb1-4cb2-b51e-d607ca6e74dd",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -6254,6 +6262,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5c600224-8b39-4e25-ab76-1450e71d5d2e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T16:27:05.545Z"
+  },
   {
    "id": "d48d6ac2-1c1d-4937-bdf9-33510b28245e",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10177,6 +10195,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5578d8cb-9ba5-4859-95b6-c369a7a41f80",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Gracias Javi, reviso",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Gracias Javi, reviso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T16:27:05.547Z"
+  },
+  {
+   "id": "15a53fd3-4b1e-445c-b9bb-3bbeca8898d5",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Gracias Javi, reviso",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Gracias Javi, reviso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T16:27:05.546Z"
+  },
   {
    "id": "f850822c-e391-4bb6-8358-d7ae4c97dcda",
    "to": "maca",

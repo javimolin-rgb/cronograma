@@ -4203,6 +4203,14 @@
  ],
  "comments": [
   {
+   "id": "21d3badf-cf0a-4253-8f28-975d4565d6bd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "El video y audio ok, hay que modificar algunos textos que aparecen en el video",
+   "fileIds": [],
+   "createdAt": "2026-11-09T16:34:48.002Z"
+  },
+  {
    "id": "70733dd5-009f-47f9-8426-9b984d980e39",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6270,6 +6278,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7376e831-13f5-4545-9efd-382ea2738d05",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T16:34:48.004Z"
+  },
   {
    "id": "3e303dab-4ccf-4863-bfea-2561e77cd6f9",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10213,6 +10231,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4a2d2127-08cd-4c0f-83c1-214f25b450ca",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: El video y audio ok, hay que modificar algunos textos que aparecen en el video",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: El video y audio ok, hay que modificar algunos textos que aparecen en el video",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T16:34:48.006Z"
+  },
+  {
+   "id": "adf7eccf-25b6-44e6-9a19-99492f5dfab4",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: El video y audio ok, hay que modificar algunos textos que aparecen en el video",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: El video y audio ok, hay que modificar algunos textos que aparecen en el video",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T16:34:48.005Z"
+  },
   {
    "id": "31414b4b-ca57-4a8c-98e8-879d16b81bde",
    "to": "javi",

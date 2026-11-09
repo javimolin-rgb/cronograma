@@ -864,7 +864,7 @@
    "date": "2026-11-08",
    "inicio": "",
    "format": "reel",
-   "status": "revision",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1044,10 +1044,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-07T00:00:34.041Z",
+   "updatedAt": "2026-11-09T00:13:29.920Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-07T00:00:34.041Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-11-09T00:13:29.920Z",
+   "publishedAt": "2026-11-09T00:13:29.920Z"
   },
   {
    "title": "Casa Ciprés",
@@ -6214,6 +6214,19 @@
  ],
  "activity": [
   {
+   "id": "03f098bc-8c15-4761-a5ca-9515e16764d4",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "postTitle": "¿Son prefabricadas?",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Publicado",
+   "meta": {
+    "from": "revision",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-09T00:13:29.921Z"
+  },
+  {
    "id": "05e737f4-2fee-4a46-8d76-6861da0223e9",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "postTitle": "¿Son prefabricadas?",
@@ -10093,6 +10106,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8abf6400-ade6-4e40-930d-0a16f84f75ff",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "status",
+   "text": "movió “¿Son prefabricadas?” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-09T00:13:29.922Z"
+  },
+  {
+   "id": "2fb1bb0e-f5eb-4813-918f-543e217ebc48",
+   "to": "maca",
+   "from": "javi",
+   "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "type": "status",
+   "text": "movió “¿Son prefabricadas?” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Son prefabricadas?",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
+   "createdAt": "2026-11-09T00:13:29.922Z"
+  },
   {
    "id": "2ab13e7a-f62e-4e05-b69f-5682875247ca",
    "to": "flavio",

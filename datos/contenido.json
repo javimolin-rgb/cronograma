@@ -574,7 +574,7 @@
    "caption": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
    "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.",
    "hashtags": "",
-   "guion": "",
+   "guion": "Veamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -641,12 +641,20 @@
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "c7549a15-023f-4b1b-9aba-b0775aa89dd6",
+     "campo": "guion",
+     "text": "",
+     "hasta": "2026-11-09T19:41:13.356Z",
+     "by": "maca"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-09T17:48:15.524Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-09T19:41:13.356Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T19:56:56.602Z",
    "publishedAt": null
   },
@@ -6416,6 +6424,16 @@
  ],
  "activity": [
   {
+   "id": "30bf9737-430e-4db8-a0c0-036c659579ac",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "edit",
+   "text": "editó guión / voz en off",
+   "meta": null,
+   "createdAt": "2026-11-09T19:41:13.357Z"
+  },
+  {
    "id": "33e54518-98e2-4b12-bfb9-37b6f62ab240",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -10498,6 +10516,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a731cc67-e7af-44f9-a6db-3b7328238bcc",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "en “Un domingo en el refugio”: editó guión / voz en off",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca editó guión / voz en off",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-09T19:41:13.358Z"
+  },
   {
    "id": "c621b692-87e1-4fe4-8e1a-e20fc603b9ac",
    "to": "javi",

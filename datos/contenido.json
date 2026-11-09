@@ -4282,6 +4282,14 @@
  ],
  "comments": [
   {
+   "id": "ff952ec3-09d9-4bd1-987e-7d86db0403e5",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "@Javi , siii siempre pensé que si hacíamos el cambio lo mandábamos entero listo denuevo, siempre y cuando no fuese complicado ni muy tedioso el cambio. Sino lo dejamos como está el audio",
+   "fileIds": [],
+   "createdAt": "2026-11-09T22:12:50.318Z"
+  },
+  {
    "id": "15ef082e-10dc-44a4-9b0a-e88f45346f78",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -6434,6 +6442,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3c2e04bf-8370-412e-8237-1bde17ac1bd1",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T22:12:50.323Z"
+  },
   {
    "id": "508ffc7a-530e-480c-babb-aa4643fea6c4",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10537,6 +10555,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "206abfb5-80a1-4154-8a1a-f54c0c999c44",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Javi , siii siempre pensé que si hacíamos el cambio lo mandábamos entero listo …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: @Javi , siii siempre pensé que si hacíamos el cambio lo mandábamos entero listo …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T22:12:50.325Z"
+  },
+  {
+   "id": "0204534e-66d6-4985-a9eb-e923c07acfb2",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Javi , siii siempre pensé que si hacíamos el cambio lo mandábamos entero listo …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca te mencionó: @Javi , siii siempre pensé que si hacíamos el cambio lo mandábamos entero listo …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T22:12:50.324Z"
+  },
   {
    "id": "7d821931-b11c-45e9-986a-02ca8b29a1cb",
    "to": "flavio",

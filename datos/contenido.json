@@ -1932,10 +1932,27 @@
      "sha": "c8bc3e460afe55bc2e91b1bcee4f4e11bbcd97f2",
      "type": "video/mp4",
      "size": 8429208
+    },
+    {
+     "id": "12ef978d-d9be-481e-800c-7cff7d7dcf5d",
+     "by": "javi",
+     "at": "2026-11-09T15:10:24.094Z",
+     "base": "reel_casa_boldo",
+     "version": 2,
+     "shaOrigen": "119922fb62fba9ef5ff2b0991378401fc2e855ea",
+     "dur": 45.299,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_boldo-v2.mp4",
+     "path": "archivos/modelos/reel_casa_boldo-v2.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/reel_casa_boldo-v2.mp4",
+     "sha": "119922fb62fba9ef5ff2b0991378401fc2e855ea",
+     "type": "video/mp4",
+     "size": 7348165
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-09T15:09:35.420Z",
+   "updatedAt": "2026-11-09T15:14:04.914Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -4186,6 +4203,13 @@
  ],
  "comments": [
   {
+   "id": "6b13748a-feb1-4cb2-b51e-d607ca6e74dd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Video Boldo subido!",
+   "createdAt": "2026-11-09T15:14:04.916Z"
+  },
+  {
    "id": "b2c3d3db-539a-497e-8f5e-37da58d17739",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "author": "maca",
@@ -6230,6 +6254,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "d48d6ac2-1c1d-4937-bdf9-33510b28245e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-09T15:14:04.916Z"
+  },
+  {
+   "id": "3738113e-833f-4d56-9fa3-1e528d439c03",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-09T15:14:04.915Z"
+  },
   {
    "id": "460640da-3bb2-42dd-918f-a5d4a7f3b336",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10133,6 +10177,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f850822c-e391-4bb6-8358-d7ae4c97dcda",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Boldo” para revisar: Video Boldo subido!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Video Boldo subido!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T15:14:04.916Z"
+  },
+  {
+   "id": "888d2bdc-0ba3-4390-b3ca-daa94bca7dad",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Boldo” para revisar: Video Boldo subido!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Video Boldo subido!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T15:14:04.916Z"
+  },
+  {
+   "id": "25a124e9-5a8c-428b-8077-0d76a1a7f77b",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T15:14:04.916Z"
+  },
+  {
+   "id": "56f17a9d-ff44-4045-9498-db4c9e472b12",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T15:14:04.916Z"
+  },
   {
    "id": "8abf6400-ade6-4e40-930d-0a16f84f75ff",
    "to": "flavio",

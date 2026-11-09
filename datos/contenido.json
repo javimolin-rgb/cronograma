@@ -4203,6 +4203,14 @@
  ],
  "comments": [
   {
+   "id": "70733dd5-009f-47f9-8426-9b984d980e39",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Javi, no encuentro las observaciones que te dejé en las columnas. Dónde puedo ver las?",
+   "fileIds": [],
+   "createdAt": "2026-11-09T16:29:27.519Z"
+  },
+  {
    "id": "ab545bfa-a108-4911-942a-8a52d069ba1a",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6262,6 +6270,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3e303dab-4ccf-4863-bfea-2561e77cd6f9",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T16:29:27.520Z"
+  },
   {
    "id": "5c600224-8b39-4e25-ab76-1450e71d5d2e",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10195,6 +10213,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "31414b4b-ca57-4a8c-98e8-879d16b81bde",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Javi, no encuentro las observaciones que te dejé en las columnas. Dónde puedo ve…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Javi, no encuentro las observaciones que te dejé en las columnas. Dónde puedo ve…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T16:29:27.521Z"
+  },
+  {
+   "id": "41f1460a-48db-4b41-a0b4-71d6195aeef3",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Javi, no encuentro las observaciones que te dejé en las columnas. Dónde puedo ve…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Javi, no encuentro las observaciones que te dejé en las columnas. Dónde puedo ve…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T16:29:27.520Z"
+  },
   {
    "id": "5578d8cb-9ba5-4859-95b6-c369a7a41f80",
    "to": "javi",

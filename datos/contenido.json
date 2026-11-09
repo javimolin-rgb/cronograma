@@ -4282,6 +4282,14 @@
  ],
  "comments": [
   {
+   "id": "15ef082e-10dc-44a4-9b0a-e88f45346f78",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca oka! Lo que sí es que yo no puedo modificar el audio que me mandaron ustedes (podría pero quedaría con otra voz y quedaría cortado/raro)",
+   "fileIds": [],
+   "createdAt": "2026-11-09T19:59:27.880Z"
+  },
+  {
    "id": "68ffbb52-729b-4179-b4be-559a75ca3473",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6426,6 +6434,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "508ffc7a-530e-480c-babb-aa4643fea6c4",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T19:59:27.886Z"
+  },
   {
    "id": "30bf9737-430e-4db8-a0c0-036c659579ac",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -10519,6 +10537,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7d821931-b11c-45e9-986a-02ca8b29a1cb",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca oka! Lo que sí es que yo no puedo modificar el audio que me mandaron usted…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca oka! Lo que sí es que yo no puedo modificar el audio que me mandaron usted…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:59:27.888Z"
+  },
+  {
+   "id": "e34fc4b9-be13-40cb-b380-9bc6384c7025",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca oka! Lo que sí es que yo no puedo modificar el audio que me mandaron usted…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca oka! Lo que sí es que yo no puedo modificar el audio que me mandaron usted…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:59:27.887Z"
+  },
   {
    "id": "df34bea9-7b42-4531-8bc2-d4215cb703d9",
    "to": "maca",

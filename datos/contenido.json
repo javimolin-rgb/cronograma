@@ -4274,6 +4274,14 @@
  ],
  "comments": [
   {
+   "id": "68ffbb52-729b-4179-b4be-559a75ca3473",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Esos son los cambios de textos. \nLa idea es q no quede solo restringido al lago. \n\nCon respecto al audio nos equivocamos en no cambiar una frase de “alargada y orientada hacia el agua”  ( si es mucho tiempo o complicado modificarlo, lo dejamos como está el audio) me cuentas. \nGracias",
+   "fileIds": [],
+   "createdAt": "2026-11-09T19:35:46.233Z"
+  },
+  {
    "id": "b2c8b509-9914-428f-8a09-3fc0d8b9ce60",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6407,6 +6415,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "33e54518-98e2-4b12-bfb9-37b6f62ab240",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T19:35:46.242Z"
+  },
   {
    "id": "e1ab11eb-737f-45ee-b902-03224e3ac701",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10480,6 +10498,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c621b692-87e1-4fe4-8e1a-e20fc603b9ac",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Esos son los cambios de textos. \nLa idea es q no quede solo restringido al lago.…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Esos son los cambios de textos. \nLa idea es q no quede solo restringido al lago.…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:35:46.244Z"
+  },
+  {
+   "id": "5b5f1c06-17c4-4415-b951-ad1e383d3b0f",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Esos son los cambios de textos. \nLa idea es q no quede solo restringido al lago.…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Esos son los cambios de textos. \nLa idea es q no quede solo restringido al lago.…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:35:46.243Z"
+  },
   {
    "id": "dd04d4f1-cd07-4162-acc8-2a969bf9b073",
    "to": "javi",

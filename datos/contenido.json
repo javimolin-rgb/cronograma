@@ -1992,10 +1992,24 @@
      "sha": "822170b2dfb9d0c7cc79a07cc71959abb4e0bbc1",
      "type": "image/jpeg",
      "size": 267784
+    },
+    {
+     "id": "d56d8c59-6a0c-4d0e-9e2e-81e2c84b2889",
+     "by": "maca",
+     "at": "2026-11-09T19:26:02.520Z",
+     "base": "casa-boldo-7",
+     "version": 1,
+     "shaOrigen": "2264b3d256506245a92635d5f27801487c8ca376",
+     "name": "casa-boldo-7-v1.jpeg",
+     "path": "archivos/modelos/casa-boldo-7-v1.jpeg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-7-v1.jpeg",
+     "sha": "2264b3d256506245a92635d5f27801487c8ca376",
+     "type": "image/jpeg",
+     "size": 242548
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-09T19:24:48.808Z",
+   "updatedAt": "2026-11-09T19:26:02.520Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -6359,6 +6373,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b11f59c3-b39e-4003-bad4-ab2078f60df0",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-09T19:26:02.521Z"
+  },
   {
    "id": "f453f976-3fe8-42e3-acb2-9cf63098c48f",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

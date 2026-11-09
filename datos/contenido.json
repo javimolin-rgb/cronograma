@@ -617,6 +617,7 @@
    "status": "estructura",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "platforms": [
     "instagram"
@@ -644,7 +645,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T19:56:56.602Z",
+   "updatedAt": "2026-11-09T17:48:15.524Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:56:56.602Z",
    "publishedAt": null

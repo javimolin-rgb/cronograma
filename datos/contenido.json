@@ -4203,6 +4203,14 @@
  ],
  "comments": [
   {
+   "id": "3ee60b84-9401-43cb-a161-9cb367b119ec",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca Ajusté esa parte de la tabla a los cambios que me solicitabas. avísame cuales son los textos que hay que modificar",
+   "fileIds": [],
+   "createdAt": "2026-11-09T17:47:46.088Z"
+  },
+  {
    "id": "21d3badf-cf0a-4253-8f28-975d4565d6bd",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6278,6 +6286,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "92e991b0-9be0-492b-8dc3-6e4993f1ba58",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T17:47:46.091Z"
+  },
   {
    "id": "7376e831-13f5-4545-9efd-382ea2738d05",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10231,6 +10249,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1171922b-a17d-4f42-891e-3d0b2ca40e3e",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Maca Ajusté esa parte de la tabla a los cambios que me solicitabas. avísame cua…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: @Maca Ajusté esa parte de la tabla a los cambios que me solicitabas. avísame cua…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T17:47:46.092Z"
+  },
+  {
+   "id": "c3cafada-5708-4fb8-9597-9bb6d7900e56",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca Ajusté esa parte de la tabla a los cambios que me solicitabas. avísame cua…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca Ajusté esa parte de la tabla a los cambios que me solicitabas. avísame cua…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T17:47:46.091Z"
+  },
   {
    "id": "4a2d2127-08cd-4c0f-83c1-214f25b450ca",
    "to": "javi",

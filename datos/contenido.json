@@ -10523,7 +10523,7 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "en “Un domingo en el refugio”: editó guión / voz en off",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",

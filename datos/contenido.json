@@ -1915,10 +1915,27 @@
      "sha": "6f7ac8472a3c7bc28c2206a03be69d43cc4e5231",
      "type": "image/webp",
      "size": 97488
+    },
+    {
+     "id": "7aba207d-f3b9-4790-8a7c-743223c38e2a",
+     "by": "javi",
+     "at": "2026-11-09T15:09:35.417Z",
+     "base": "reel_casa_boldo",
+     "version": 1,
+     "shaOrigen": "c8bc3e460afe55bc2e91b1bcee4f4e11bbcd97f2",
+     "dur": 45.301746,
+     "w": 608,
+     "h": 1080,
+     "name": "reel_casa_boldo-v1.mp4",
+     "path": "archivos/modelos/reel_casa_boldo-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/reel_casa_boldo-v1.mp4",
+     "sha": "c8bc3e460afe55bc2e91b1bcee4f4e11bbcd97f2",
+     "type": "video/mp4",
+     "size": 8429208
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-06T19:28:02.483Z",
+   "updatedAt": "2026-11-09T15:09:35.420Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -6213,6 +6230,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "460640da-3bb2-42dd-918f-a5d4a7f3b336",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-09T15:09:35.422Z"
+  },
   {
    "id": "03f098bc-8c15-4761-a5ca-9515e16764d4",
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",

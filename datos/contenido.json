@@ -4246,6 +4246,16 @@
  ],
  "comments": [
   {
+   "id": "40e9f825-ec5e-42fb-8c29-0d970bba04a8",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Subir el paisaje como protagonista",
+   "fileIds": [
+    "8b557210-0495-4ffd-950f-91624b614864"
+   ],
+   "createdAt": "2026-11-09T19:25:19.240Z"
+  },
+  {
    "id": "b73bd5e9-e323-4ca0-8c19-9b37c9c747dc",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6349,6 +6359,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f453f976-3fe8-42e3-acb2-9cf63098c48f",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-09T19:25:19.244Z"
+  },
   {
    "id": "00b27b08-861d-4a03-9deb-814588a091e4",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10372,6 +10392,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "69b9b232-4605-4839-8b92-058c00063487",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Subir el paisaje como protagonista",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Subir el paisaje como protagonista",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:25:19.247Z"
+  },
+  {
+   "id": "e54d9c5c-5ede-4987-875a-b12c86c4d444",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Subir el paisaje como protagonista",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Subir el paisaje como protagonista",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-09T19:25:19.246Z"
+  },
   {
    "id": "16cb5717-70bc-450e-bd17-e6c46d6c013f",
    "to": "javi",

@@ -10608,7 +10608,7 @@
    "postId": null,
    "type": "review",
    "text": "te pidió el archivo “neorigen_terraza_completa.mp3” de Marca",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Piden un archivo de Marca",

@@ -96,12 +96,24 @@ El **Calendario** también tiene su conmutador arriba, con tres maneras de mirar
 
 En las tres, tocar una pieza la abre. Las piezas **sin fecha** aparecen al final de Gantt y de Línea, como chips, para que no se pierdan.
 
+## El orden del carrusel se pone a mano
+
+En un carrusel el orden **es** el contenido: la lámina 1 va primero. Dentro de la pieza, cada archivo muestra ahora **su número** y dos flechas para moverlo.
+
+- Ese número es **el orden en que se ve en todas partes**: el carrusel del Feed, la pieza, Entregas y el zip que se descarga. Se acabó tener que subirlas al revés.
+- Mientras nadie los mueva, siguen como siempre (lo último que se subió, primero). **Al mover uno, se fija el orden de todos** y aparecen todos los archivos, no solo los ocho últimos.
+- **“Volver al orden de subida”** deshace el orden manual.
+
+
 ### Detalle: la planilla para imprimir y para Excel
 
 Las mismas doce semanas de la carta Gantt, escritas en una tabla: **fecha, se trabaja desde, campaña, pieza, estado, plataforma, formato, responsables, copy, estructura y guión de voz**. Tocando el nombre de una pieza se abre.
 
 - **Bajar para Excel** deja un archivo `.csv` que se abre directo en **Excel, Numbers o Google Sheets**, con los acentos bien y una fila por pieza. El nombre lleva las fechas: `cronograma-2026-10-26-a-2027-01-17.csv`.
-- **Imprimir / PDF** saca **solo la planilla**, sin menús ni botones, apaisada y con todo el texto entero (en pantalla las casillas largas van recortadas con su propio scroll para que la tabla se lea; al imprimir salen completas). Desde ahí se guarda como PDF.
+- **Imprimir / PDF** no imprime la pantalla: arma **una hoja aparte, hecha para el papel**, así que sale **exactamente igual desde el computador y desde el teléfono**, y da lo mismo si la mandas con el botón de la app o con *Compartir → Imprimir* del navegador. Tiene dos partes:
+  1. **La planilla**, con los datos cortos (fecha, se trabaja desde, campaña, pieza, estado, red, formato, quién). Filas de una o dos líneas, muchas piezas por hoja.
+  2. **El detalle de cada pieza**, en dos columnas corridas: copy, estructura, guión, comentarios. Así una casilla larga ya no estira toda la fila dejando media hoja en blanco — el mismo contenido pasó de 15 hojas a 7.
+- **El rango de fechas y el tipo de contenido se eligen**: *Desde*, *Hasta* y un menú con todos los formatos y plataformas. También se puede sacar las piezas sin fecha. Vale para lo que se ve, para lo que se imprime y para lo que se baja. **“Volver a las 12 semanas”** deja todo como estaba, y lo elegido se recuerda en cada dispositivo.
 - **Qué columnas se ven** deja prender y apagar columnas: hay dieciséis en total (prioridad, enlaces, archivos, checklist y los comentarios de la estructura, además de las de siempre). Se recuerda en cada dispositivo.
 - Respeta la búsqueda y los filtros de arriba, así que se puede bajar solo una campaña, solo lo de una persona o solo lo que está en revisión.
 

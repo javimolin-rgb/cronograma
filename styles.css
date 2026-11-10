@@ -1076,28 +1076,68 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .detest{display:inline-block;padding:2px 8px;border-radius:999px;font-weight:700;font-size:0.6875rem;white-space:nowrap;
   background:color-mix(in srgb,var(--c) 18%,var(--surface));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 45%,transparent)}
 
+/* ===== Rango y tipo de contenido del Detalle ===== */
+.detrango{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px}
+.detrango>div{display:flex;flex-direction:column;min-width:0}
+.detrango .lbl{margin:0 0 5px}
+.detrango .field,.detrango .sel{width:100%}
+.detchips{margin:2px 0 0}
+
+/* ===== La hoja impresa =====
+   No se ve en pantalla: existe solo para el papel y el PDF, y por eso sale igual
+   desde el computador y desde el teléfono. */
+.detprint{display:none}
+
 @media print{
-  body.imprimiendo{background:#fff}
-  body.imprimiendo #top,body.imprimiendo #tabs,body.imprimiendo #toolbar,body.imprimiendo #banner,
-  body.imprimiendo .fab,body.imprimiendo .vistasel,body.imprimiendo .calhead .nav,body.imprimiendo .detacts,
-  body.imprimiendo .hint,body.imprimiendo #sheet,body.imprimiendo #lightbox,body.imprimiendo #toast{display:none!important}
-  body.imprimiendo #main{padding:0;margin:0}
-  body.imprimiendo .detbox{overflow:visible;box-shadow:none;border-radius:0;background:#fff}
-  body.imprimiendo .dettabla{font-size:8pt;width:100%}
-  body.imprimiendo .dettabla th{background:#eee;color:#000;position:static}
-  body.imprimiendo .dettabla th,body.imprimiendo .dettabla td{border:1px solid #999;color:#000;padding:4px 5px}
-  body.imprimiendo .dettabla tbody tr{break-inside:avoid;page-break-inside:avoid}
-  body.imprimiendo .dettabla .detcel{max-height:none;overflow:visible;padding:0}
-  /* todo tiene que entrar en el ancho de la hoja: las columnas se reparten solas */
-  body.imprimiendo .detbox{width:100%;overflow:visible}
-  body.imprimiendo .dettabla{table-layout:fixed;width:100%}
-  body.imprimiendo .dettabla th,body.imprimiendo .dettabla td{min-width:0;max-width:none;overflow-wrap:anywhere;word-break:normal}
-  body.imprimiendo .dettabla .detlargo{width:17%}
-  body.imprimiendo .dettabla .dettit{width:11%}
-  body.imprimiendo .detestr{font-size:7pt}
-  body.imprimiendo .detest{background:#fff;box-shadow:none;padding:0}
-  body.imprimiendo .detmeta{color:#000;font-size:9pt}
-  @page{size:landscape;margin:10mm}
+  /* fuera todo lo que es de la app */
+  #top,#tabs,#toolbar,#banner,.fab,#toast,#sheet,#lightbox,
+  .vistasel,.calhead,.detacts,.hint,.detbox,.feedtop{display:none!important}
+  html,body{background:#fff!important;margin:0;padding:0}
+  #main{padding:0!important;margin:0!important;max-width:none!important}
+  .detprint{display:block;color:#000;font-size:9pt;line-height:1.35}
+  .detprint *{color:#000!important;box-shadow:none!important}
+
+  .pcab{display:flex;justify-content:space-between;align-items:flex-end;gap:12mm;
+    border-bottom:1.5pt solid #000;padding-bottom:2mm;margin-bottom:4mm}
+  .pcab h1{font-size:14pt;font-weight:800;margin:0;line-height:1.1}
+  .pcab p{font-size:9.5pt;margin:1mm 0 0}
+  .pmeta{text-align:right;white-space:nowrap}
+  .pmeta b{display:block;font-size:10pt}
+  .pmeta span{font-size:8pt}
+  .pvacio{font-size:10pt;margin:6mm 0}
+
+  /* la planilla: solo datos cortos, muchas piezas por hoja */
+  .ptabla{width:100%;max-width:100%;border-collapse:collapse;table-layout:fixed;font-size:8pt}
+  .ptabla th,.ptabla td{border:0.5pt solid #9a9a9a;padding:1.4mm 1.8mm;text-align:left;vertical-align:top;
+    overflow-wrap:break-word;word-break:normal;hyphens:auto}
+  /* los títulos pueden partirse: si no, obligan a la tabla a ser más ancha que la hoja */
+  .ptabla th{background:#ededed;font-size:7pt;font-weight:800;text-transform:uppercase;letter-spacing:.03em;white-space:normal;overflow-wrap:break-word}
+  .ptabla tbody tr{break-inside:avoid;page-break-inside:avoid}
+  .ptabla tbody tr:nth-child(even) td{background:#f7f7f7}
+  .ptabla thead{display:table-header-group}
+  .ptabla .ptit{font-weight:700}
+  .ptabla .pest{white-space:normal}
+  .ptabla .pest i{display:inline-block;width:6pt;height:6pt;border-radius:50%;margin-right:1.4mm;
+    vertical-align:middle;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* el detalle largo: corrido, en dos columnas, sin estirar filas */
+  .pdet{font-size:11pt;font-weight:800;margin:7mm 0 3mm;padding-bottom:1mm;border-bottom:1pt solid #000;
+    break-before:page;page-break-before:always}
+  .pdetalle{columns:2;column-gap:8mm}
+  .ppieza{margin:0 0 3.5mm;padding:0 0 2.5mm;border-bottom:0.5pt solid #c8c8c8}
+  .ppieza:last-child{border-bottom:0}
+  .ppieza h3{font-size:9.5pt;font-weight:800;margin:0 0 1.2mm;line-height:1.3;break-after:avoid;page-break-after:avoid}
+  .ppieza h3 .pfecha{display:inline-block;min-width:13mm;font-weight:800}
+  .ppieza h3 small{display:block;font-size:7pt;font-weight:600;color:#444!important;margin-top:0.5mm}
+  .pcampo{break-inside:avoid;page-break-inside:avoid;margin:0 0 2mm}
+  .pcampo h4{font-size:6.5pt;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#555!important;margin:0 0 0.7mm;break-after:avoid}
+  .pcampo p{font-size:8pt;margin:0 0 1.2mm;white-space:pre-wrap;overflow-wrap:break-word;orphans:3;widows:3}
+  .pcampo p:last-child{margin-bottom:0}
+  .pestr{margin:0;padding:0 0 0 4.5mm;font-size:7.5pt}
+  .pestr li{margin:0 0 0.7mm;break-inside:avoid;page-break-inside:avoid}
+  .pestr b{font-weight:800}
+
+  @page{margin:12mm 10mm}
 }
 .detcel.detestr{font-size:0.6875rem;line-height:1.45}
 .detestr>b{display:block;color:var(--muted);font-size:0.625rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
@@ -1113,3 +1153,12 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .post .spoti,.res .spoti{margin:10px 0 0}
 .hint.mal{color:var(--danger)}
 a.btn{text-decoration:none;align-items:center}
+
+/* ===== Orden a mano de los archivos (el carrusel se publica en este orden) ===== */
+.ordhint{margin:0 0 8px}
+.file.ord .num{position:absolute;top:5px;left:5px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;
+  background:var(--accent);color:var(--accent-ink);font-size:0.625rem;font-weight:800;display:grid;place-items:center;z-index:2}
+.file .mover{position:absolute;left:0;right:0;bottom:0;display:flex;gap:2px;justify-content:center;padding:3px;
+  background:linear-gradient(to top,rgba(20,16,40,.62),transparent);z-index:2}
+.file .mv{width:26px;height:22px;border-radius:7px;background:rgba(255,255,255,.92);color:#141A2B;display:grid;place-items:center;box-shadow:none}
+.file .mv:disabled{opacity:.3;pointer-events:none}

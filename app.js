@@ -88,11 +88,28 @@ function filesOf(p) {
   Object.values(groups).forEach((g) => g.sort((a, b) => (b.version - a.version) || String(b.at || '').localeCompare(String(a.at || ''))));
   return groups;
 }
+/* En un carrusel el orden es el contenido: la lámina 1 va primero. Cuando se ordena a
+   mano, cada archivo guarda su número (`orden`) y ese orden manda en todas partes —el
+   carrusel del feed, la pieza, Entregas y el zip—. Si nadie lo ordenó, se usa el de
+   siempre: por tandas de subida, lo último primero. */
+const ordenados = (arr) => (arr.some((f) => Number.isFinite(f.orden))
+  ? arr.slice().sort((x, y) => (Number.isFinite(x.orden) ? x.orden : 1e9) - (Number.isFinite(y.orden) ? y.orden : 1e9))
+  : null);
 function pieceFiles(p, lastOnly) {
   const g = filesOf(p);
   const out = [];
   Object.keys(g).sort().forEach((k) => { (lastOnly ? g[k].slice(0, 1) : g[k]).forEach((f) => out.push(Object.assign({}, f, { versions: g[k].length }))); });
-  return tandas(out).flatMap((t) => t.files);
+  return ordenados(out) || tandas(out).flatMap((t) => t.files);
+}
+// ¿Esta pieza tiene un orden puesto a mano?
+const tieneOrden = (p) => (p.files || []).some((f) => Number.isFinite(f.orden));
+/* Deja los números de orden como 0,1,2… siguiendo la lista que se le pasa.
+   Se escriben sobre los archivos de verdad de la pieza, no sobre las copias. */
+function fijarOrden(d, lista) {
+  lista.forEach((f, i) => { const real = (d.files || []).find((x) => x.id === f.id); if (real) real.orden = i; });
+  // las versiones viejas quedan detrás, cada una con su número, sin empatar entre ellas
+  let n = lista.length;
+  (d.files || []).forEach((f) => { if (!lista.some((x) => x.id === f.id)) f.orden = ++n + 1000; });
 }
 /* Tandas: lo que se subió de una vez queda junto (entre una tanda y la siguiente pasa al menos media hora).
    La tanda más nueva va primero; dentro de cada tanda, en el orden en que se subieron. */
@@ -741,7 +758,7 @@ function viewGantt() {
    Es la vista que se imprime y la que se baja para abrir en Excel o en Sheets. ===== */
 const DET_COLS = [
   ['fecha', 'Fecha', (p) => (p.date ? fmtShort(p.date) + (p.time ? ' · ' + p.time : '') : 'Sin fecha')],
-  ['inicio', 'Se trabaja desde', (p) => { const r = tramo(p); return r ? fmtShort(r.ini) + (r.estimado ? ' (calc.)' : '') : ''; }],
+  ['inicio', 'Se trabaja desde', (p) => { const r = tramo(p); return r ? fmtShort(r.ini) : ''; }],
   ['campana', 'Campaña / pilar', (p) => (p.campaign || '').trim() || '—'],
   ['titulo', 'Pieza', (p) => p.title],
   ['estado', 'Estado', (p) => statusOf(p.status).name],
@@ -770,28 +787,63 @@ function detCols() {
   return DET_COLS.filter(([id]) => ids.includes(id));
 }
 const guardarDetCols = (ids) => { try { localStorage.setItem(DET_KEY, JSON.stringify(ids)); } catch (e) { /* sin espacio */ } };
-// Las piezas que entran en la planilla: las mismas doce semanas de la carta Gantt
-function piezasDetalle() {
+/* Qué entra en la planilla: un rango de fechas y, si se quiere, un tipo de contenido.
+   Mientras no se toque nada, son las mismas doce semanas de la carta Gantt. */
+const DET_F = 'crono_det_filtros';
+const DET_FILTROS = Object.assign({ desde: '', hasta: '', formato: '', sinFecha: true }, (() => {
+  try { return JSON.parse(localStorage.getItem(DET_F) || '{}'); } catch (e) { return {}; }
+})());
+const guardarDetFiltros = () => { try { localStorage.setItem(DET_F, JSON.stringify(DET_FILTROS)); } catch (e) { /* sin espacio */ } };
+function rangoDetalle() {
   const { ini, dias } = rangoGantt();
-  const fin = addDays(ini, dias - 1);
-  const todas = filtered();
-  const dentro = todas.filter((p) => p.date && p.date >= ini && p.date <= fin);
-  const sin = todas.filter((p) => !p.date);
-  return { ini, fin, filas: dentro.concat(sin).sort(sortPosts) };
+  return {
+    ini: DET_FILTROS.desde || ini,
+    fin: DET_FILTROS.hasta || addDays(ini, dias - 1),
+    propio: !!(DET_FILTROS.desde || DET_FILTROS.hasta)
+  };
 }
+function piezasDetalle() {
+  const { ini, fin, propio } = rangoDetalle();
+  const f = DET_FILTROS.formato;
+  const tipo = (p) => !f || p.format === f || p.platforms.includes(f);
+  const todas = filtered().filter(tipo);
+  const dentro = todas.filter((p) => p.date && p.date >= ini && p.date <= fin);
+  const sin = DET_FILTROS.sinFecha ? todas.filter((p) => !p.date) : [];
+  return { ini, fin, propio, filas: dentro.concat(sin).sort(sortPosts) };
+}
+// El título de lo que se está mirando, que es también el del papel
+const tituloDetalle = (ini, fin) => {
+  const f = DET_FILTROS.formato;
+  const nom = f ? ((FORMATS.find((x) => x.id === f) || PLATFORMS.find((x) => x.id === f) || {}).name || '') : '';
+  return `${cap(fmtLong(ini))} a ${fmtLong(fin)}${nom ? ' · ' + nom : ''}`;
+};
 function viewDetalle() {
-  const { ini, fin, filas } = piezasDetalle();
+  const { ini, fin, propio, filas } = piezasDetalle();
   const cols = detCols();
-  const cab = calNav(`${cap(MS[parseYmd(ini).getMonth()])} — ${cap(MS[parseYmd(fin).getMonth()])} ${parseYmd(fin).getFullYear()}`, '12 semanas');
+  const cab = calNav(`${cap(MS[parseYmd(ini).getMonth()])} — ${cap(MS[parseYmd(fin).getMonth()])} ${parseYmd(fin).getFullYear()}`, propio ? 'rango propio' : '12 semanas');
   const acc = `<div class="detacts">
+    <div class="detrango">
+      <div><label class="lbl" for="det-desde">Desde</label><input class="field" id="det-desde" type="date" value="${esc(DET_FILTROS.desde || ini)}"></div>
+      <div><label class="lbl" for="det-hasta">Hasta</label><input class="field" id="det-hasta" type="date" value="${esc(DET_FILTROS.hasta || fin)}"></div>
+      <div><label class="lbl" for="det-tipo">Tipo de contenido</label>
+        <select class="sel" id="det-tipo">
+          <option value="">Todo el contenido</option>
+          <optgroup label="Formato">${FORMATS.map((f) => `<option value="${f.id}"${DET_FILTROS.formato === f.id ? ' selected' : ''}>${esc(f.name)}</option>`).join('')}</optgroup>
+          <optgroup label="Plataforma">${PLATFORMS.map((p) => `<option value="${p.id}"${DET_FILTROS.formato === p.id ? ' selected' : ''}>${esc(p.name)}</option>`).join('')}</optgroup>
+        </select></div>
+    </div>
+    <div class="chips detchips">
+      <button class="chip${DET_FILTROS.sinFecha ? ' on' : ''}" data-act="det-sinfecha">${ic('check', 14)} Incluir las sin fecha</button>
+      ${propio || DET_FILTROS.formato || !DET_FILTROS.sinFecha ? `<button class="chip" data-act="det-limpiar">${ic('x', 14)} Volver a las 12 semanas</button>` : ''}
+    </div>
     <div class="gridbtn dos">
       <button class="btn ghost sm" data-act="det-bajar">${ic('download', 16)} Bajar para Excel</button>
-      <button class="btn ghost sm" data-act="det-imprimir">${ic('copy', 16)} Imprimir / PDF</button>
+      <button class="btn ghost sm" data-act="det-imprimir">${ic('table', 16)} Imprimir / PDF</button>
     </div>
     <button class="chip ancho" data-act="det-cols">${ic('sliders', 15)} Qué columnas se ven <b>${cols.length}</b></button>
     ${S.detCols ? `<div class="gridbtn tres detcolsel">${DET_COLS.map(([id, nom]) => `<button class="chip${cols.some((c) => c[0] === id) ? ' on' : ''}" data-act="det-col" data-v="${id}">${esc(nom)}</button>`).join('')}</div>` : ''}
   </div>`;
-  if (!filas.length) return cab + acc + emptyBox('Nada en estas doce semanas', 'Muévete de mes con las flechas, o quítale filtros a la búsqueda.');
+  if (!filas.length) return cab + acc + emptyBox('Nada en este rango', 'Cambia las fechas o el tipo de contenido, o quítale filtros a la búsqueda.');
   const celda = (p, [id, , val]) => {
     const v = val(p) || '';
     if (id === 'titulo') return `<td class="dettit"><button class="lnk" data-act="open-post" data-id="${esc(p.id)}">${esc(v)}</button></td>`;
@@ -812,8 +864,68 @@ function viewDetalle() {
       <table class="dettabla"><thead><tr>${cols.map(([, n]) => `<th>${esc(n)}</th>`).join('')}</tr></thead>
       <tbody>${cuerpo}</tbody></table>
     </div>
+    ${detallePrintHtml()}
     <p class="hint">La misma información de la carta Gantt, escrita. <b>Bajar para Excel</b> deja un archivo que se abre en Excel, Numbers o Google Sheets; <b>Imprimir</b> saca solo esta planilla, sin los menús.</p>`;
 }
+/* ===== La hoja impresa =====
+   No se imprime la pantalla: se arma un documento aparte, pensado para el papel. Así
+   sale exactamente igual desde el computador y desde el teléfono, y da lo mismo cómo se
+   mande a imprimir (el botón de la app o el menú Compartir → Imprimir del celular).
+   Arriba, la planilla compacta —solo los datos cortos, muchas piezas por hoja—; abajo,
+   el detalle largo de cada una, corrido, para no dejar media hoja en blanco por una
+   casilla angosta que estira toda la fila. */
+const DET_LARGAS = ['copy', 'estructura', 'guion', 'notas', 'enlaces', 'checklist'];
+/* Cuánto espacio pide cada columna en el papel. Se reparte proporcionalmente entre las
+   que estén puestas, así la hoja siempre queda del ancho de la página, salga del
+   computador o del teléfono. */
+const DET_ANCHO = { fecha: 9, inicio: 9, campana: 15, titulo: 24, estado: 13, plataforma: 11, formato: 11, gente: 12, prioridad: 8, archivos: 6, spotify: 15 };
+const DET_CORTO = { inicio: 'Desde', campana: 'Campaña', plataforma: 'Red', gente: 'Quién', formato: 'Formato', archivos: 'Arch.', spotify: 'Canción' };
+function detallePrintHtml() {
+  const { ini, fin, filas } = piezasDetalle();
+  const cols = detCols();
+  const cortas = cols.filter(([id]) => !DET_LARGAS.includes(id));
+  const largas = cols.filter(([id]) => DET_LARGAS.includes(id));
+  const hoy = new Date();
+  const cab = `<header class="pcab">
+      <div><h1>${esc(CFG.APP_NAME)}</h1><p>${esc(tituloDetalle(ini, fin))}</p></div>
+      <div class="pmeta"><b>${filas.length} pieza${filas.length === 1 ? '' : 's'}</b>
+        <span>${esc(fmtLong(ymd(hoy)))} · ${String(hoy.getHours()).padStart(2, '0')}:${String(hoy.getMinutes()).padStart(2, '0')}</span></div>
+    </header>`;
+  if (!filas.length) return `<div class="detprint">${cab}<p class="pvacio">No hay piezas en este rango.</p></div>`;
+  const celda = (p, [id, , val]) => {
+    const v = val(p) || '';
+    if (id === 'estado') return `<td class="pest"><i style="background:${statusOf(p.status).color}"></i>${esc(v)}</td>`;
+    if (id === 'titulo') return `<td class="ptit">${esc(v)}</td>`;
+    return `<td>${esc(v)}</td>`;
+  };
+  const suma = cortas.reduce((x, [id]) => x + (DET_ANCHO[id] || 10), 0) || 1;
+  const grupo = `<colgroup>${cortas.map(([id]) => `<col style="width:${((DET_ANCHO[id] || 10) / suma * 100).toFixed(2)}%">`).join('')}</colgroup>`;
+  const tabla = `<table class="ptabla">${grupo}<thead><tr>${cortas.map(([id, n]) => `<th>${esc(DET_CORTO[id] || n)}</th>`).join('')}</tr></thead>
+    <tbody>${filas.map((p) => `<tr>${cortas.map((c) => celda(p, c)).join('')}</tr>`).join('')}</tbody></table>`;
+  // el detalle largo, solo de las piezas que tienen algo que mostrar
+  const bloques = largas.length ? filas.map((p) => {
+    const partes = largas.map(([id, nom, val]) => {
+      if (id === 'estructura' && tablaValida(p.guionTabla)) {
+        const t = p.guionTabla;
+        return `<div class="pcampo"><h4>${esc(nom)}</h4><ol class="pestr">${t.filas.map((f) =>
+          `<li>${f.map((c, i) => (String(c || '').trim() ? `<b>${esc(t.cols[i] || '')}</b> ${esc(String(c).trim())}` : '')).filter(Boolean).join(' · ')}</li>`).join('')}</ol></div>`;
+      }
+      const v = (val(p) || '').trim();
+      if (!v) return '';
+      // cada párrafo con su propio espacio chico: una línea en blanco entera gasta hoja
+      const parrafos = v.split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
+      return `<div class="pcampo"><h4>${esc(nom)}</h4>${parrafos.map((x) => `<p>${esc(x).replace(/\n/g, '<br>')}</p>`).join('')}</div>`;
+    }).filter(Boolean);
+    if (!partes.length) return '';
+    return `<section class="ppieza">
+      <h3><span class="pfecha">${esc(p.date ? fmtShort(p.date) : 'Sin fecha')}</span>${esc(p.title)}
+        <small>${esc([(p.campaign || '').trim(), statusOf(p.status).name, (FORMATS.find((f) => f.id === p.format) || {}).name || ''].filter(Boolean).join(' · '))}</small></h3>
+      <div class="pcampos">${partes.join('')}</div></section>`;
+  }).filter(Boolean).join('') : '';
+  return `<div class="detprint">${cab}${tabla}
+    ${bloques ? `<h2 class="pdet">El detalle de cada pieza</h2><div class="pdetalle">${bloques}</div>` : ''}</div>`;
+}
+
 // El archivo que se baja: separado por punto y coma, que es lo que Excel en español espera
 function detalleCsv() {
   const { filas } = piezasDetalle();
@@ -3058,12 +3170,19 @@ function renderEditor() {
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
-      const { recientes, anteriores } = archivosEditor(d);
-      const tile = (f) => `<div class="file" data-act="ed-view" data-id="${esc(f.id)}" title="${esc(f.name)}">${esMedia(f) ? miniMedia(f)
+      const { recientes, anteriores, aMano } = archivosEditor(d);
+      const puedeOrdenar = store.canWrite && recientes.length > 1;
+      const tile = (f, i, arr) => `<div class="file${puedeOrdenar ? ' ord' : ''}" data-act="ed-view" data-id="${esc(f.id)}" title="${esc(f.name)}">${esMedia(f) ? miniMedia(f)
         : `<span class="fileico">${ic(esAudio(f) ? 'music' : 'paperclip', 24)}<span>${esc(f.name)}</span></span>`}
         ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
+        ${puedeOrdenar ? `<i class="ntag num">${i + 1}</i>
+          <span class="mover">
+            <button class="mv" data-act="ed-mover" data-id="${esc(f.id)}" data-d="-1"${i === 0 ? ' disabled' : ''} aria-label="Moverlo antes" title="Moverlo antes">${ic('left', 14)}</button>
+            <button class="mv" data-act="ed-mover" data-id="${esc(f.id)}" data-d="1"${i === arr.length - 1 ? ' disabled' : ''} aria-label="Moverlo después" title="Moverlo después">${ic('right', 14)}</button>
+          </span>` : ''}
         <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`;
-      return `<div class="files">${recientes.map(tile).join('')}
+      return `${puedeOrdenar ? `<p class="hint ordhint"><b>El número es el orden en que se ven</b>: así se publica el carrusel y así sale en el Feed. Muévelos con las flechas.${aMano ? ` <button class="lnk" data-act="ed-orden-auto">Volver al orden de subida</button>` : ''}</p>` : ''}
+      <div class="files">${recientes.map(tile).join('')}
         <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple></label></div>
         ${anteriores.length ? `<button class="vermas" data-act="ed-vermas">${ED.verAnteriores ? 'Ocultar' : 'Ver más'} · ${anteriores.length} archivo${anteriores.length === 1 ? '' : 's'} anterior${anteriores.length === 1 ? '' : 'es'} ${ic(ED.verAnteriores ? 'left' : 'right', 14)}</button>
         ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
@@ -3199,10 +3318,17 @@ function archivosEditor(d) {
     g.sort((a, b) => ((b.version || splitName(b.name).version || 1) - (a.version || splitName(a.name).version || 1)) || fecha(b).localeCompare(fecha(a)));
     ultimos.push(g[0]); viejos.push(...g.slice(1));
   });
-  ultimos.sort((a, b) => fecha(b).localeCompare(fecha(a)));
+  const aMano = ordenados(ultimos);
+  if (aMano) ultimos.splice(0, ultimos.length, ...aMano);
+  else ultimos.sort((a, b) => fecha(b).localeCompare(fecha(a)));
   viejos.sort((a, b) => fecha(b).localeCompare(fecha(a)));
   const MAX = 8;
-  return { recientes: ultimos.slice(0, MAX), anteriores: ultimos.slice(MAX).concat(viejos) };
+  return {
+    recientes: aMano ? ultimos : ultimos.slice(0, MAX),
+    anteriores: aMano ? viejos : ultimos.slice(MAX).concat(viejos),
+    todos: ultimos,          // la lista completa, en el orden en que van: sobre esta se mueve
+    aMano: !!aMano
+  };
 }
 
 async function saveEditor() {
@@ -4946,6 +5072,12 @@ const ACTS = {
     renderAll(); window.scrollTo(0, 0);
   },
   'det-cols': () => { S.detCols = !S.detCols; renderMain(); },
+  'det-sinfecha': () => { DET_FILTROS.sinFecha = !DET_FILTROS.sinFecha; guardarDetFiltros(); renderMain(); },
+  'det-limpiar': () => {
+    Object.assign(DET_FILTROS, { desde: '', hasta: '', formato: '', sinFecha: true });
+    guardarDetFiltros(); renderMain();
+    toast('Vuelven las doce semanas de la carta Gantt, con todo el contenido', 3500);
+  },
   'det-col': (el) => {
     const id = el.dataset.v;
     const ids = detCols().map((c) => c[0]);
@@ -4965,10 +5097,12 @@ const ACTS = {
   },
   'det-imprimir': () => {
     if (S.detCols) { S.detCols = false; renderMain(); }
-    document.body.classList.add('imprimiendo');
-    const limpiar = () => { document.body.classList.remove('imprimiendo'); window.removeEventListener('afterprint', limpiar); };
-    window.addEventListener('afterprint', limpiar);
-    setTimeout(() => { try { window.print(); } catch (e) { toast('Este navegador no deja imprimir desde aquí'); } setTimeout(limpiar, 1500); }, 120);
+    /* La hoja ya está armada en la página, así que da igual por dónde se mande a
+       imprimir. En iPhone, si el navegador no deja hacerlo desde aquí, se explica cómo. */
+    setTimeout(() => {
+      try { window.print(); }
+      catch (e) { toast('Desde aquí no se puede: usa Compartir → Imprimir del navegador. La hoja sale igual.', 7000); }
+    }, 120);
   },
   'cal-detalle': () => {
     S.view = 'calendar'; S.calVista = 'detalle';
@@ -5518,6 +5652,25 @@ const ACTS = {
   },
   // al quitar la canción el bloque se queda abierto, para poder pegar otra al tiro
   'ed-spoti-quitar': () => { if (!ED || !requireWrite()) return; syncDraft(); ED.d.spotify = ''; ED.abre.spotify = true; renderEditor(); setTimeout(() => { const i = $('#e-spotify'); if (i) i.focus(); }, 60); },
+  'ed-mover': (el, e) => {
+    if (e) e.stopPropagation();
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const d = ED.d, lista = archivosEditor(d).todos.slice();
+    const i = lista.findIndex((f) => f.id === el.dataset.id);
+    const j = i + (+el.dataset.d);
+    if (i < 0 || j < 0 || j >= lista.length) return;
+    lista.splice(j, 0, lista.splice(i, 1)[0]);
+    fijarOrden(d, lista);
+    renderEditor();
+  },
+  'ed-orden-auto': () => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    (ED.d.files || []).forEach((f) => { delete f.orden; });
+    renderEditor();
+    toast('Vuelve el orden por fecha de subida (lo último, primero)', 3500);
+  },
   'ed-sel-guion': () => { const t = $('#e-guion'); if (!t) return; t.focus(); t.setSelectionRange(0, t.value.length); },
   'ed-copiar-guion': async () => {
     if (!ED) return;
@@ -5802,6 +5955,14 @@ document.addEventListener('change', (e) => {
     toast(r ? `“${splitName(r.name).label || r.name}” queda apuntado en esta pieza` : 'Listo', 3000);
     return;
   }
+  if (t.id === 'det-desde' || t.id === 'det-hasta') {
+    DET_FILTROS[t.id === 'det-desde' ? 'desde' : 'hasta'] = t.value || '';
+    if (DET_FILTROS.desde && DET_FILTROS.hasta && DET_FILTROS.desde > DET_FILTROS.hasta) {
+      const x = DET_FILTROS.desde; DET_FILTROS.desde = DET_FILTROS.hasta; DET_FILTROS.hasta = x;   // al revés: se dan vuelta
+    }
+    guardarDetFiltros(); renderMain(); return;
+  }
+  if (t.id === 'det-tipo') { DET_FILTROS.formato = t.value || ''; guardarDetFiltros(); renderMain(); return; }
   if (t.id === 'gt-voz' && ED) {
     syncDraft();
     const tb = ED.d.guionTabla;

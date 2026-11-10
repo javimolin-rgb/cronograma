@@ -809,7 +809,7 @@
    "caption": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
    "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.",
    "hashtags": "",
-   "guion": "Veamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
+   "guion": "Un café sin apuro.\n\nLa luz entra sola, y nadie tiene que irse a ninguna parte.\n\nUna conversación que se alarga hasta la tarde.\n\nHoy el lujo es esto: vivir bien.",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -842,16 +842,24 @@
       "Casas prediseñadas · neorigen.cl",
       "Hoy el lujo es esto: vivir bien."
      ]
+    ],
+    "ids": [
+     "da00a976-33d1-40c9-9ed6-005d9f58d312",
+     "7f3ea26b-ae87-4f0b-b6dd-f47a8a7c9f8e",
+     "00199004-a8d4-4723-8b61-aa4c1a614f29",
+     "a45a6193-c0ae-49ba-8b2a-2fa20c6f1f24"
     ]
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Publicaciones informativas",
    "time": "",
    "date": "2026-11-22",
    "inicio": "",
    "format": "carrusel",
-   "status": "estructura",
+   "status": "cambios",
    "priority": "normal",
-   "revisions": 0,
+   "revisions": 1,
    "desarchivada": false,
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "platforms": [
@@ -883,14 +891,21 @@
      "text": "",
      "hasta": "2026-11-09T19:41:13.356Z",
      "by": "maca"
+    },
+    {
+     "id": "174ede68-e60a-4dcc-841f-fc5e261d454e",
+     "campo": "guion",
+     "text": "Veamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
+     "hasta": "2026-11-10T19:03:06.450Z",
+     "by": "javi"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:03:06.450Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-03T19:56:56.602Z",
+   "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
   },
   {
@@ -6694,6 +6709,29 @@
  ],
  "activity": [
   {
+   "id": "84191f01-e217-4a13-8d39-592e0e592dca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó guión / voz en off, la estructura",
+   "meta": null,
+   "createdAt": "2026-11-10T19:03:06.453Z"
+  },
+  {
+   "id": "730f5fb2-5818-4b40-acc0-f5200ffa73dd",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Estructura por aprobar a Cambios",
+   "meta": {
+    "from": "estructura",
+    "to": "cambios"
+   },
+   "createdAt": "2026-11-10T19:03:06.451Z"
+  },
+  {
    "id": "9b7eda69-22f2-4355-84f3-97b1fba213b7",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -11039,6 +11077,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "dad37fde-ea8a-42b3-9caa-d276b079697b",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (guión / voz en off, la estructura)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó guión / voz en off, la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-10T19:03:06.454Z"
+  },
+  {
+   "id": "e8105957-7fc6-4591-ac98-5afa1b21aa50",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Cambios",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a Cambios",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-10T19:03:06.453Z"
+  },
   {
    "id": "5637d228-753d-449f-abe5-87e40c847be6",
    "to": "maca",

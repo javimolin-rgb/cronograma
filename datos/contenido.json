@@ -613,7 +613,7 @@
    "time": "",
    "date": "2026-11-15",
    "inicio": "",
-   "format": "reel",
+   "format": "carrusel",
    "status": "estructura",
    "priority": "normal",
    "revisions": 0,
@@ -653,8 +653,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-09T19:41:13.356Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-10T16:01:26.491Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:56:56.602Z",
    "publishedAt": null
   },
@@ -6459,6 +6459,16 @@
  ],
  "activity": [
   {
+   "id": "e0f67cce-4549-4cbb-bbd2-f25e9e2ad71d",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó formato",
+   "meta": null,
+   "createdAt": "2026-11-10T16:01:26.494Z"
+  },
+  {
    "id": "f62d6735-2f3c-479e-bf58-f0b35bf591f2",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -10591,6 +10601,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d3cf51e4-2e48-4249-9693-f3c11b1d78e9",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (formato)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó formato",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-10T16:01:26.495Z"
+  },
   {
    "id": "28f16f82-34d0-4b00-bc1a-49cdca91a129",
    "to": "javi",

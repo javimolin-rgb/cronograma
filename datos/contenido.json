@@ -10577,7 +10577,7 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "mention",
    "text": "te mencionó en “Casa Boldo”: @Javi , siii siempre pensé que si hacíamos el cambio lo mandábamos entero listo …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",

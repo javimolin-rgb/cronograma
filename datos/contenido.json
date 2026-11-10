@@ -4282,6 +4282,14 @@
  ],
  "comments": [
   {
+   "id": "c0036333-e63d-43b1-ba55-92cd4e75143f",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Noo cambiar audio no es  tan complejo! No hay problema con eso",
+   "fileIds": [],
+   "createdAt": "2026-11-10T00:31:55.425Z"
+  },
+  {
    "id": "ff952ec3-09d9-4bd1-987e-7d86db0403e5",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6442,6 +6450,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "05532db4-2d61-4c6f-9428-f1d339e1a42d",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-10T00:31:55.430Z"
+  },
   {
    "id": "3c2e04bf-8370-412e-8237-1bde17ac1bd1",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10555,6 +10573,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "bf30d191-e2b2-4d9b-becf-298965def32a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Noo cambiar audio no es  tan complejo! No hay problema con eso",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: Noo cambiar audio no es  tan complejo! No hay problema con eso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-10T00:31:55.432Z"
+  },
+  {
+   "id": "29652202-3c19-4ca3-9e79-75f82b2230ee",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Noo cambiar audio no es  tan complejo! No hay problema con eso",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi comentó: Noo cambiar audio no es  tan complejo! No hay problema con eso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-10T00:31:55.431Z"
+  },
   {
    "id": "206abfb5-80a1-4154-8a1a-f54c0c999c44",
    "to": "flavio",

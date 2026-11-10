@@ -1,6 +1,84 @@
 {
  "posts": [
   {
+   "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "caption": "",
+   "notes": "Carrusel de 10 láminas: un punto por lámina. Revisar con Javi qué entra en cada una.",
+   "hashtags": "",
+   "guion": "",
+   "guionTabla": null,
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Publicaciones informativas",
+   "time": "",
+   "date": "2026-11-11",
+   "inicio": "",
+   "format": "carrusel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-10T18:36:15.730Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-10T18:36:15.730Z",
+   "publishedAt": null
+  },
+  {
+   "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "title": "Historia: los modelos de casas",
+   "caption": "",
+   "notes": "Historia larga recorriendo todos los modelos, uno por pantalla, con sus metros y dormitorios. Cierra con el enlace a la web.",
+   "hashtags": "",
+   "guion": "",
+   "guionTabla": null,
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Modelos",
+   "time": "",
+   "date": "2026-11-13",
+   "inicio": "",
+   "format": "story",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-10T18:36:15.730Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-10T18:36:15.730Z",
+   "publishedAt": null
+  },
+  {
    "title": "Reel de prueba y subida de modelos",
    "caption": "Con el reel de prueba de huingan no nos fue muy bien. Quieren que lo agregue al perfil de todos modos? Y si si, quieren que dejemos todos los modelos en el feed? (Además de historias destacadas) Necesito saber esto último para saber si la historia del render dejemos Peumo la subo al feed igual. ",
    "notes": "",
@@ -292,7 +370,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-29",
+   "date": "2026-12-06",
    "inicio": "",
    "format": "reel",
    "status": "estructura",
@@ -325,7 +403,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T19:57:08.735Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:08.735Z",
    "publishedAt": null
@@ -384,7 +462,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-19",
+   "date": "2026-11-26",
    "inicio": "",
    "format": "reel",
    "status": "estructura",
@@ -417,7 +495,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T19:57:03.587Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
@@ -611,7 +689,7 @@
    },
    "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-15",
+   "date": "2026-11-22",
    "inicio": "",
    "format": "carrusel",
    "status": "estructura",
@@ -653,7 +731,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T16:01:26.491Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:56:56.602Z",
    "publishedAt": null
@@ -1130,7 +1208,7 @@
    },
    "campaign": "Modelos",
    "time": "",
-   "date": "2026-12-15",
+   "date": "2026-12-22",
    "inicio": "",
    "format": "story",
    "status": "idea",
@@ -1144,7 +1222,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:32:24.895Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:55.027Z",
    "createdBy": "javi",
@@ -1234,7 +1312,7 @@
    },
    "campaign": "Modelos",
    "time": "",
-   "date": "2026-12-09",
+   "date": "2026-12-16",
    "inicio": "",
    "format": "story",
    "status": "idea",
@@ -1249,7 +1327,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:32:22.958Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
@@ -1339,7 +1417,7 @@
    },
    "campaign": "Modelos",
    "time": "",
-   "date": "2026-12-01",
+   "date": "2026-12-08",
    "inicio": "",
    "format": "story",
    "status": "idea",
@@ -1353,7 +1431,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:32:21.535Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -1443,7 +1521,7 @@
    },
    "campaign": "Modelos",
    "time": "",
-   "date": "2026-11-25",
+   "date": "2026-12-02",
    "inicio": "",
    "format": "story",
    "status": "idea",
@@ -1458,7 +1536,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:32:19.447Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -1548,7 +1626,7 @@
    },
    "campaign": "Modelos",
    "time": "",
-   "date": "2026-11-17",
+   "date": "2026-11-24",
    "inicio": "",
    "format": "story",
    "status": "idea",
@@ -1563,7 +1641,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-03T15:32:17.509Z",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -1643,7 +1721,7 @@
    },
    "campaign": "Modelos",
    "time": "",
-   "date": "2026-11-11",
+   "date": "2026-11-18",
    "inicio": "",
    "format": "story",
    "status": "revision",
@@ -2031,8 +2109,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-10T12:37:36.982Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-04T14:39:45.131Z",
@@ -6458,6 +6536,143 @@
   }
  ],
  "activity": [
+  {
+   "id": "63e4d166-a8f9-4faf-8880-799c613ce53d",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-11-29 a 2026-12-06",
+   "meta": {
+    "from": "2026-11-29",
+    "to": "2026-12-06"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "9fa11d96-3946-4814-bee2-6ca2531675f1",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-11-19 a 2026-11-26",
+   "meta": {
+    "from": "2026-11-19",
+    "to": "2026-11-26"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "4f04d2e2-b45a-4256-b309-89fb72443968",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-11-15 a 2026-11-22",
+   "meta": {
+    "from": "2026-11-15",
+    "to": "2026-11-22"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "21d5ebd6-2efa-45f7-9b6d-ed9f0e0e9ce8",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "postTitle": "Casa Ciprés",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-12-15 a 2026-12-22",
+   "meta": {
+    "from": "2026-12-15",
+    "to": "2026-12-22"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "05eabd01-d763-4f32-952a-7912d72b1c04",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-12-09 a 2026-12-16",
+   "meta": {
+    "from": "2026-12-09",
+    "to": "2026-12-16"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "dc6d8b6a-cd39-4797-af47-6f4e2c79b628",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-12-01 a 2026-12-08",
+   "meta": {
+    "from": "2026-12-01",
+    "to": "2026-12-08"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "14ab6060-7148-49bc-a2e0-99a0c35fe8d8",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-11-25 a 2026-12-02",
+   "meta": {
+    "from": "2026-11-25",
+    "to": "2026-12-02"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "d7f4aa2b-1d1b-4041-826e-275701f07007",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-11-17 a 2026-11-24",
+   "meta": {
+    "from": "2026-11-17",
+    "to": "2026-11-24"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "9ff12c0b-792d-4321-91b7-f3dd872e6fba",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 2026-11-11 a 2026-11-18",
+   "meta": {
+    "from": "2026-11-11",
+    "to": "2026-11-18"
+   },
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "c5c7be0e-3139-44d5-9e56-88fe5130b391",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
+  {
+   "id": "a37e635f-ca46-46d1-9584-8e846e0f6835",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-10T18:36:15.730Z"
+  },
   {
    "id": "e0f67cce-4549-4cbb-bbd2-f25e9e2ad71d",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

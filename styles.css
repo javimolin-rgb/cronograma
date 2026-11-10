@@ -83,10 +83,11 @@ main{padding:0 var(--gut);max-width:100%}
 .thumb{width:100%;aspect-ratio:1;border-radius:12px;background:var(--surface2);overflow:hidden;display:grid;place-items:center;color:var(--muted)}
 .thumb img{width:100%;height:100%;object-fit:cover}
 .cb{min-width:0;display:flex;flex-direction:column;gap:5px}
-.ctop{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}
-.ctop h3{font-size:0.9375rem;font-weight:700;line-height:1.25;overflow-wrap:anywhere}
+.ctop{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:flex-start;justify-content:space-between}
+.ctop h3{flex:1 1 9ch;min-width:0;font-size:0.9375rem;font-weight:700;line-height:1.25;overflow-wrap:anywhere}
 .prio{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--danger);margin-right:6px;vertical-align:middle}
-.badge{flex:none;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--c,var(--accent)) 16%,transparent);color:var(--c);font-size:0.71875rem;font-weight:700;border:0}
+.badge{flex:0 1 auto;min-width:0;max-width:100%;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--c,var(--accent)) 16%,transparent);color:var(--c);font-size:0.71875rem;font-weight:700;border:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
 .card .badge{--c:inherit}
 .cmeta{display:flex;flex-wrap:wrap;gap:4px 10px;color:var(--muted);font-size:0.78125rem;align-items:center}
 .cmeta .late{color:var(--danger);font-weight:700;display:inline-flex;align-items:center;gap:3px}
@@ -176,6 +177,13 @@ main{padding:0 var(--gut);max-width:100%}
 .ldia.hoy::before{background:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
 .ldia.pasado{opacity:.72}
 .lfecha{flex:none;width:48px;text-align:center;padding-top:4px}
+@media (max-width:420px){
+  .ldias{margin-left:7px}
+  .ldia{gap:6px;padding-left:11px}
+  .lfecha{width:38px}
+  .lfecha b{font-size:0.9375rem}
+  .ldia .card{padding:10px;gap:8px;grid-template-columns:44px minmax(0,1fr)}
+}
 .lfecha b{display:block;font-size:1.0625rem;font-weight:800;line-height:1}
 .lfecha small{display:block;font-size:0.625rem;color:var(--muted);text-transform:uppercase;font-weight:700}
 .lfecha em{display:block;font-size:0.5625rem;color:var(--muted);font-style:normal;margin-top:2px}
@@ -1098,3 +1106,10 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 /* Lo de Marca en un comentario: su propio menú, aparte de las miniaturas de la pieza */
 .marcasel.comarca{margin:8px 0 0}
 .marcausa .marcachip>i{display:inline-grid;place-items:center;margin-left:4px;opacity:.6}
+
+/* ===== La canción de la pieza (reproductor de Spotify) ===== */
+.spoti{margin:10px 0 0;border-radius:14px;overflow:hidden;background:var(--surface2);min-height:80px}
+.spoti iframe{display:block;width:100%;border:0;border-radius:14px}
+.post .spoti,.res .spoti{margin:10px 0 0}
+.hint.mal{color:var(--danger)}
+a.btn{text-decoration:none;align-items:center}

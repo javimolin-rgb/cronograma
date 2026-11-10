@@ -285,7 +285,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, guionNotas: [], campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, desarchivada: false
+    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, guionNotas: [], spotify: '', campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, desarchivada: false
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -418,8 +418,8 @@ async function notify(type, post, targets, text, frase) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', guionTabla: 'la estructura', guionNotas: 'los comentarios de la estructura', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
-const CONTENT_FIELDS = ['title', 'caption', 'guion', 'guionTabla', 'guionNotas', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', guionTabla: 'la estructura', guionNotas: 'los comentarios de la estructura', spotify: 'la canción', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
+const CONTENT_FIELDS = ['title', 'caption', 'guion', 'guionTabla', 'guionNotas', 'spotify', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
 const TEXT_FIELDS = ['title', 'caption', 'guion', 'notes'];
 // De esos, los que vale la pena avisarle al equipo (las notas son internas)
@@ -754,6 +754,7 @@ const DET_COLS = [
     ? p.guionTabla.filas.map((f) => f.map((c, i) => (String(c || '').trim() ? `${p.guionTabla.cols[i] || ''}: ${String(c).trim()}` : '')).filter(Boolean).join(' · ')).join('\n')
     : '')],
   ['guion', 'Guión / voz en off', (p) => (p.guion || '').trim()],
+  ['spotify', 'Canción', (p) => { const s = spotifyDatos(p.spotify); return s ? `${SPOTI_NOMBRE[s.tipo]}: ${s.url}` : ''; }],
   ['notas', 'Comentarios de la estructura', (p) => (p.guionNotas || []).map((n) => `${person(n.by).name}: ${n.text}`).join(' · ')],
   ['enlaces', 'Enlaces', (p) => (p.links || []).map((l) => `${l.label || ''} ${l.url}`.trim()).join(' · ')],
   ['archivos', 'Archivos', (p) => String(pieceFiles(p, true).length || '')],
@@ -1227,6 +1228,7 @@ function viewResultados() {
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
         ${tablaValida(p.guionTabla) ? `<details class="guion"><summary>Estructura <b>${p.guionTabla.filas.length}</b></summary>${tablaHtml(p.guionTabla, p)}</details>` : ''}
         ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p><button class="lnk" data-act="copiar-guion" data-id="${esc(p.id)}">${ic('copy', 13)} Copiar para la voz IA</button></details>` : ''}
+        ${spotifyHtml(p.spotify)}
         ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
         ${publicadoHtml(p)}
         <div class="resacts">
@@ -1307,6 +1309,7 @@ function postHtml(p, t) {
       ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
       ${tablaValida(p.guionTabla) ? `<details class="guion"><summary>Estructura <b>${p.guionTabla.filas.length}</b></summary>${tablaHtml(p.guionTabla, p)}</details>` : ''}
         ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p><button class="lnk" data-act="copiar-guion" data-id="${esc(p.id)}">${ic('copy', 13)} Copiar para la voz IA</button></details>` : ''}
+        ${spotifyHtml(p.spotify)}
       <div class="postcoms">
         ${coms.length > vis.length ? `<button class="lnk" data-act="feed-mas" data-id="${esc(p.id)}">Ver los ${coms.length} comentarios</button>` : ''}
         ${vis.map((c) => {
@@ -2294,6 +2297,33 @@ function nuevaCarpeta(padre) {
       <button class="btn" data-act="carp-crear">Crear</button></div>`, true);
   setTimeout(() => { const i = $('#carp-nueva'); if (i) i.focus(); }, 120);
 }
+/* ===== La canción de la pieza =====
+   Se pega el enlace que da Spotify en “Compartir” (de una canción, un álbum, un
+   artista, una playlist o un episodio) y queda el reproductor dentro de la pieza,
+   para escuchar los 30 segundos de muestra sin salir de la app. No se sube nada:
+   es el reproductor de Spotify, con su enlace para abrirlo completo. ===== */
+const SPOTI_TIPOS = ['track', 'album', 'playlist', 'artist', 'episode', 'show'];
+function spotifyDatos(url) {
+  const u = String(url || '').trim();
+  if (!u) return null;
+  // enlace normal, enlace corto y el formato uri:  spotify:track:xxxx
+  const m = u.match(/(?:open\.spotify\.com\/(?:intl-[a-z-]+\/)?(track|album|playlist|artist|episode|show)\/|spotify:(track|album|playlist|artist|episode|show):)([A-Za-z0-9]{10,40})/i);
+  if (!m) return null;
+  const tipo = String(m[1] || m[2]).toLowerCase();
+  if (!SPOTI_TIPOS.includes(tipo)) return null;
+  const id = m[3];
+  return { tipo, id, url: `https://open.spotify.com/${tipo}/${id}`, embed: `https://open.spotify.com/embed/${tipo}/${id}?utm_source=generator` };
+}
+const SPOTI_NOMBRE = { track: 'Canción', album: 'Álbum', playlist: 'Playlist', artist: 'Artista', episode: 'Episodio', show: 'Podcast' };
+// El reproductor; `alto` chico para el pie de una tarjeta, grande dentro de la pieza
+function spotifyHtml(url, alto) {
+  const s = spotifyDatos(url);
+  if (!s) return '';
+  const h = alto || (s.tipo === 'track' || s.tipo === 'episode' ? 152 : 232);
+  return `<div class="spoti"><iframe src="${esc(s.embed)}" height="${h}" width="100%" frameborder="0" loading="lazy"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Reproductor de Spotify"></iframe></div>`;
+}
+
 /* ---------- vista: panel de seguimiento ---------- */
 const bars = (rows) => { const max = Math.max(1, ...rows.map((r) => r.n)); return `<div class="bars">${rows.map((r) => `<div class="bar"><span class="bl">${esc(r.label)}</span><div class="bt"><i style="width:${(r.n / max) * 100}%;background:${r.color}"></i></div><b>${r.n}</b></div>`).join('')}</div>`; };
 const miniRow = (p, extra) => `<div class="minirow" data-act="open-post" data-id="${esc(p.id)}"><span class="av md" style="--c:${statusOf(p.status).color}">${esc(statusOf(p.status).name[0])}</span><div class="t"><b>${esc(p.title)}</b><small>${esc(extra)}</small></div>${p.assignees.slice(0, 3).map((a) => av(a, 'sm')).join('')}</div>`;
@@ -2824,6 +2854,7 @@ function cosasDeLaPieza(p) {
   pieceFiles(p, true).forEach((f) => out.push({ que: f.name, det: `${prettySize(f.size)} · enlace directo al archivo`, url: urlArchivo(f), icono: esMedia(f) ? 'image' : esAudio(f) ? 'music' : 'paperclip' }));
   artefactosDe(p).forEach((a) => out.push({ que: a.nombre, det: 'La página interactiva, se abre sola', url: urlPublica(`${a.carpeta}/${a.index || 'index.html'}`), icono: 'play' }));
   marcaDe(p).forEach((r) => out.push({ que: r.name, det: 'Archivo de Marca', url: urlArchivo(r), icono: 'marca' }));
+  if (spotifyDatos(p.spotify)) out.push({ que: 'La canción', det: SPOTI_NOMBRE[spotifyDatos(p.spotify).tipo] + ' en Spotify', url: spotifyDatos(p.spotify).url, icono: 'music' });
   return out;
 }
 function compartirPieza(id) {
@@ -2879,6 +2910,7 @@ function syncDraft() {
   }
   d.caption = g('e-caption').value;
   if (g('e-guion')) d.guion = g('e-guion').value;
+  if (g('e-spotify')) d.spotify = g('e-spotify').value.trim();
   if (g('e-notes')) d.notes = g('e-notes').value;
   if (g('e-camp')) d.campaign = g('e-camp').value;
   ED.comment = g('e-comment') ? g('e-comment').value : '';
@@ -2910,6 +2942,7 @@ function bloqueLleno(k) {
   if (k === 'inicio') return !!d.inicio;
   if (k === 'guion') return !!(d.guion || '').trim();
   if (k === 'estructura') return tablaValida(d.guionTabla);
+  if (k === 'spotify') return !!spotifyDatos(d.spotify);
   if (k === 'interactivo') return !!(artefactosDe(d).length || (ED && ED.art));
   if (k === 'marca') return !!marcaDe(d).length;
   if (k === 'enlaces') return !!linksVisibles(d).length;
@@ -3021,6 +3054,18 @@ function renderEditor() {
       <div class="lblacts solo"><button class="lnk" data-act="ed-sel-guion">Seleccionar todo</button><button class="lnk" data-act="ed-copiar-guion">${ic('copy', 13)} Copiar para la voz IA</button></div>
       <textarea class="area" id="e-guion" style="min-height:120px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
       ${historialTextoHtml(d, 'guion')}`)}
+
+    ${bloque('spotify', 'Canción', !!spotifyDatos(d.spotify), (() => { const s = spotifyDatos(d.spotify); return s ? SPOTI_NOMBRE[s.tipo] : 'Spotify'; })(), () => `
+      <input class="field" id="e-spotify" inputmode="url" placeholder="Pega el enlace de Spotify…" value="${esc(d.spotify || '')}">
+      ${spotifyDatos(d.spotify)
+        ? `${spotifyHtml(d.spotify)}
+           <div class="gridbtn dos">
+             <a class="btn ghost sm" href="${esc(spotifyDatos(d.spotify).url)}" target="_blank" rel="noopener">${ic('music', 15)} Abrir en Spotify</a>
+             <button class="btn ghost sm" data-act="ed-spoti-quitar">${ic('x', 15)} Quitar</button>
+           </div>`
+        : ((d.spotify || '').trim()
+          ? '<p class="hint mal">Ese enlace no es de Spotify. En Spotify: <b>⋯ → Compartir → Copiar enlace</b>.</p>'
+          : '<p class="hint">En Spotify, en la canción: <b>⋯ → Compartir → Copiar enlace</b>, y pégalo aquí. Queda el reproductor dentro de la pieza, para que todos escuchen de cuál se trata.</p>')}`)}
 
     ${bloque('interactivo', 'Interactivo', !!(artefactosDe(d).length || ED.art), artefactosDe(d).length ? `${artefactosDe(d).length}` : '', () => {
       if (ED.art) return `<div class="avisobar">${ic('send', 18)}<span>Subiendo “${esc(ED.art.nombre)}”: ${ED.art.hecho} de ${ED.art.total}${ED.art.bytesTotal ? ` · ${esc(prettySize(ED.art.bytes))} de ${esc(prettySize(ED.art.bytesTotal))}` : ''}…<br><small>Deja la app abierta hasta que termine.</small></span></div>`;
@@ -5437,6 +5482,8 @@ const ACTS = {
     if (!txt) { toast('Esta pieza no tiene guión de voz'); return; }
     toast(await copiarTexto(txt) ? 'Guión copiado · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 3500);
   },
+  // al quitar la canción el bloque se queda abierto, para poder pegar otra al tiro
+  'ed-spoti-quitar': () => { if (!ED || !requireWrite()) return; syncDraft(); ED.d.spotify = ''; ED.abre.spotify = true; renderEditor(); setTimeout(() => { const i = $('#e-spotify'); if (i) i.focus(); }, 60); },
   'ed-sel-guion': () => { const t = $('#e-guion'); if (!t) return; t.focus(); t.setSelectionRange(0, t.value.length); },
   'ed-copiar-guion': async () => {
     if (!ED) return;
@@ -5650,6 +5697,12 @@ document.addEventListener('input', (e) => {
   }
   if (e.target.id === 'e-guion' && ED) ED.guionMano = true;   // manda el cuadro del guión
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
+  if (e.target.id === 'e-spotify' && ED) {
+    const antes = (spotifyDatos(ED.d.spotify) || {}).embed || '';
+    syncDraft();
+    // si cambió a otra canción (o a otro tipo), el reproductor se vuelve a dibujar
+    if (antes !== ((spotifyDatos(ED.d.spotify) || {}).embed || '')) renderEditor();
+  }
   if (e.target.id === 'zum-texto' && ZUM) {
     ZUM.texto = e.target.value;
     const pv = $('.zumprev span'); if (pv) pv.textContent = zumbidoCuerpo();

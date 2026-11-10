@@ -91,7 +91,7 @@ El **Calendario** también tiene su conmutador arriba, con tres maneras de mirar
 |---|---|
 | **Mes** | La cuadrícula de siempre, con los puntitos de cada día y las piezas del día elegido abajo. |
 | **Gantt** | Doce semanas seguidas, de corrido hacia el lado. Se arrastra con el dedo; la columna de la izquierda queda fija y una línea marca el día de hoy (se abre ahí puesta). Los fines de semana van sombreados. Arriba se elige **qué va en esa columna**. |
-| **Línea** | El cronograma que baja: mes a mes y día a día, con las tarjetas completas al lado de cada fecha y cuánto falta (“hoy”, “en 8 días”, “ya pasó”). |
+| **Línea** | Arreglada para el teléfono: el nombre de la pieza ya no se partía letra por letra cuando el estado era largo (“Estructura por aprobar”). Ahora manda el título y, si no caben los dos, el estado baja a su propia línea; en pantallas angostas la columna de la fecha ocupa menos para que la tarjeta respire. El cronograma que baja: mes a mes y día a día, con las tarjetas completas al lado de cada fecha y cuánto falta (“hoy”, “en 8 días”, “ya pasó”). |
 | **Detalle** | La misma información de la carta Gantt pero **escrita, como una planilla**: una fila por pieza y una columna por dato. Es la que se imprime y la que se baja para Excel. |
 
 En las tres, tocar una pieza la abre. Las piezas **sin fecha** aparecen al final de Gantt y de Línea, como chips, para que no se pierdan.
@@ -344,6 +344,17 @@ Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o 
 **Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 25 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
+
+## La canción de una pieza (Spotify)
+
+Dentro de la pieza hay un bloque **Canción**: se pega ahí el enlace de Spotify —en Spotify: **⋯ → Compartir → Copiar enlace**— y queda el **reproductor adentro de la pieza**, para que todos escuchen de cuál se trata sin salir de la app ni preguntar “¿cuál era?”.
+
+- Sirve para **canciones, álbumes, playlists, artistas, episodios y podcasts**, y acepta tanto el enlace normal como el corto, el que trae `intl-es` y el formato `spotify:track:…`.
+- Si lo que pegas no es de Spotify, te lo dice en vez de quedarse en blanco.
+- No se sube ni se copia nada: es el reproductor de Spotify, con su botón **Abrir en Spotify** al lado.
+- El reproductor también sale en el **Feed** y en **Entregas**, y el enlace va en la columna *Canción* del **Detalle** y en el archivo que se baja para Excel.
+- **Quitar** la deja sin canción y te deja el casillero listo para pegar otra.
+
 
 ## Lo de Marca, en su propio menú
 

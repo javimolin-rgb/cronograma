@@ -92,8 +92,20 @@ El **Calendario** también tiene su conmutador arriba, con tres maneras de mirar
 | **Mes** | La cuadrícula de siempre, con los puntitos de cada día y las piezas del día elegido abajo. |
 | **Gantt** | Doce semanas seguidas, de corrido hacia el lado. Se arrastra con el dedo; la columna de la izquierda queda fija y una línea marca el día de hoy (se abre ahí puesta). Los fines de semana van sombreados. Arriba se elige **qué va en esa columna**. |
 | **Línea** | El cronograma que baja: mes a mes y día a día, con las tarjetas completas al lado de cada fecha y cuánto falta (“hoy”, “en 8 días”, “ya pasó”). |
+| **Detalle** | La misma información de la carta Gantt pero **escrita, como una planilla**: una fila por pieza y una columna por dato. Es la que se imprime y la que se baja para Excel. |
 
 En las tres, tocar una pieza la abre. Las piezas **sin fecha** aparecen al final de Gantt y de Línea, como chips, para que no se pierdan.
+
+### Detalle: la planilla para imprimir y para Excel
+
+Las mismas doce semanas de la carta Gantt, escritas en una tabla: **fecha, se trabaja desde, campaña, pieza, estado, plataforma, formato, responsables, copy, estructura y guión de voz**. Tocando el nombre de una pieza se abre.
+
+- **Bajar para Excel** deja un archivo `.csv` que se abre directo en **Excel, Numbers o Google Sheets**, con los acentos bien y una fila por pieza. El nombre lleva las fechas: `cronograma-2026-10-26-a-2027-01-17.csv`.
+- **Imprimir / PDF** saca **solo la planilla**, sin menús ni botones, apaisada y con todo el texto entero (en pantalla las casillas largas van recortadas con su propio scroll para que la tabla se lea; al imprimir salen completas). Desde ahí se guarda como PDF.
+- **Qué columnas se ven** deja prender y apagar columnas: hay dieciséis en total (prioridad, enlaces, archivos, checklist y los comentarios de la estructura, además de las de siempre). Se recuerda en cada dispositivo.
+- Respeta la búsqueda y los filtros de arriba, así que se puede bajar solo una campaña, solo lo de una persona o solo lo que está en revisión.
+
+También se llega directo desde el **Panel**, con el botón *Detalle del cronograma*.
 
 ### Qué va en el eje de la izquierda
 
@@ -124,6 +136,13 @@ Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se p
 
 - Dentro de la pieza hay un campo nuevo, **“se trabaja desde”**, para fijar ese comienzo.
 - Si está vacío, la barra se calcula sola: una semana antes de publicar, o desde el día en que creaste la pieza si es más cerca. Esas barras salen **rayadas**, para que se note que son un cálculo y no algo que dijiste tú.
+
+
+## Entregas ahora está dentro del Panel
+
+**Entregas** salió de la barra de abajo: quedan cinco pestañas (Feed, Calendario, Piezas, Marca, Panel). Se entra desde el **Panel**, con el primer botón de arriba, que además dice cuántos proyectos, cuántos archivos y cuánto pesan. Adentro hay un **← Panel** para volver, y mientras la miras la pestaña que queda marcada abajo es *Panel*.
+
+Es la misma vista de siempre: para Javi, los archivos agrupados por proyecto; para Flavio y Maca, las piezas terminadas como se ven publicadas.
 
 
 ## Las publicadas se archivan solas
@@ -224,6 +243,24 @@ De cada publicación se guarda:
 
 Si vuelves a importar el mismo documento, las que ya existen aparecen marcadas como repetidas y desmarcadas, así que no se duplican.
 
+## Estructura y guión de voz en off
+
+Lo que antes era “el guión con una tabla adentro” ahora son **dos bloques que son la misma cosa vista de dos maneras**:
+
+- **Estructura**: la tabla. Cada fila es un momento del contenido (tiempo, imagen, texto en pantalla, voz…). Se pega desde Word, Google Docs, Sheets, Notion o Claude y se guarda como tabla de verdad.
+- **Guión / voz en off**: solo el texto que se dice, seguido y limpio, **listo para copiar y pegar en el generador de voz con IA**. Tiene su botón *Copiar para la voz IA* (también en el Feed, sin abrir la pieza).
+
+**Se actualizan solos, en los dos sentidos.** Una columna de la tabla es la de la voz —la app la reconoce por su nombre (*Voz*, *Voz en off*, *locución*…) y queda marcada en celeste—, y esa columna es la que arma el guión, una fila por párrafo. Si escribes en el guión, el texto vuelve a la tabla fila por fila. Si la app eligió mal la columna, se cambia en **“Columna de la voz en off”**, debajo de la tabla.
+
+### Comentar una fila sin editarla
+
+Cada fila de la Estructura tiene un botón de **globito 💬**: deja un comentario *sobre* esa fila **sin tocar lo que dice**. Sirve para “acá iría un plano más cerrado” sin tener que reescribir la celda.
+
+- Los comentarios se ven **debajo de la tabla**, cada uno con su fila (“Fila 1 · 0–3 s”), quién lo escribió y cuándo.
+- Se guardan con la pieza, salen en el **Feed** junto a la estructura y en la columna *Comentarios de la estructura* del Detalle.
+- Los borra quien los escribió (y Javi). Si se quita la fila, se van con ella.
+
+
 ## Editar una pieza: lo justo a la vista
 
 La ventana de **editar pieza** está ordenada para que se vea poco y se encuentre todo.
@@ -308,6 +345,11 @@ Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o 
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 
+## Elegir de Marca en una pieza
+
+Dentro de la pieza, el bloque **De Marca** ya no muestra una lista larga de archivos que se confundía con los de la pieza. Ahora es un **menú desplegable**, con su ícono de Marca al lado y los archivos **agrupados por carpeta**. Lo que eliges queda como chip arriba, y el texto de ayuda aclara que son los archivos de la pestaña *Marca* —logos, tipografías, músicas—, que **se apuntan, no se copian**, y que no son los archivos de esta pieza.
+
+
 ## Marca: la nube de recursos
 
 La pestaña **Marca** guarda lo que la marca usa todo el tiempo y no pertenece a ninguna pieza: el **manual**, los **logos**, las **tipografías**, la **música**, **plantillas** y lo que haga falta.
@@ -364,6 +406,11 @@ Tocar cualquier foto o video (en el feed, en una pieza, en un comentario) abre l
 **Con sonido:** los videos nunca van silenciados. Al abrir uno en grande empieza a reproducirse solo, con audio; en el feed y en los carruseles tienen sus controles y suenan al darles play. Si un archivo no trae pista de audio (pasa con los renders), sale el aviso **“sin sonido”** encima, para que quede claro que es el archivo y no la app.
 
 En iPhone, ojo con el **interruptor de silencio** del costado: con el teléfono en silencio, Safari no deja que suene el video dentro de la app aunque esté todo bien.
+
+## Botones parejos
+
+Las filas de botones ahora van en **grilla**: si en una fila hay dos botones, los dos miden exactamente lo mismo; si hay tres, los tres. Vale para las acciones de la Estructura (*Fila · Columna · Copiar · Quitar*), para los dos botones del Detalle (*Bajar para Excel · Imprimir*), para el selector de columnas y para los menús de la pieza (estado, plataforma, formato, prioridad), que quedan alineados por abajo aunque sus títulos ocupen distinto. En pantalla angosta se reacomodan, pero siempre parejos.
+
 
 ## Apariencia (cada uno en su teléfono)
 

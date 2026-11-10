@@ -205,6 +205,7 @@ const IC = {
   eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
   key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M17 6l3 3M14 9l3 3"/>',
   cloud: '<path d="M20 17.6A4.5 4.5 0 0017.5 9h-1.3A7 7 0 103 15.9"/><path d="M12 12v9M8.5 16.5L12 13l3.5 3.5"/>',
+  table: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M3 15h18M9 9.5V20"/>',
   camera: '<path d="M3 8a2 2 0 012-2h2.2l1.3-2h7l1.3 2H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="12.5" r="3.4"/>',
   archive: '<rect x="2.5" y="3.5" width="19" height="5" rx="1.5"/><path d="M4.5 8.5V19a1.5 1.5 0 001.5 1.5h12a1.5 1.5 0 001.5-1.5V8.5M10 12h4"/>',
   zap: '<path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12z"/>',
@@ -221,11 +222,14 @@ const UI = Object.assign({ tema: 'auto', escala: 1, oculto: [] }, (() => {
 })());
 const TEMAS = [['auto', 'Según el sistema'], ['light', 'Claro'], ['dark', 'Oscuro']];
 const ESCALAS = [[0.9, 'Chica'], [1, 'Normal'], [1.15, 'Grande'], [1.3, 'Más grande']];
-const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Piezas'], ['files', 'Entregas'], ['marca', 'Marca'], ['dash', 'Panel']];
+const SECCIONES = [['feed', 'Feed'], ['calendar', 'Calendario'], ['list', 'Piezas'], ['marca', 'Marca'], ['dash', 'Panel']];
+/* Entregas ya no es una pestaña de abajo: se abre con un botón dentro del Panel.
+   Sigue siendo una vista completa, con su botón para volver. */
+const SUBVISTAS = ['files'];
 // Dentro de Piezas se cambia entre la agenda (por fecha) y el tablero (por estado)
 const PIEZAS_VISTAS = [['agenda', 'Agenda', 'list'], ['tablero', 'Tablero', 'board']];
 // Dentro de Calendario: el mes de siempre, la carta Gantt y la línea que baja
-const CAL_VISTAS = [['mes', 'Mes', 'calendar'], ['gantt', 'Gantt', 'chart'], ['linea', 'Línea', 'list']];
+const CAL_VISTAS = [['mes', 'Mes', 'calendar'], ['gantt', 'Gantt', 'chart'], ['linea', 'Línea', 'list'], ['detalle', 'Detalle', 'table']];
 /* En la carta Gantt, qué va en la columna de la izquierda (el eje de abajo siempre son los días).
    Con “Pieza” hay una línea por pieza; con las demás, cada línea junta todas sus piezas. */
 const GANTT_EJES = [['pieza', 'Pieza'], ['campana', 'Campaña'], ['estado', 'Estado'], ['persona', 'Persona']];
@@ -241,6 +245,7 @@ function aplicarUI() {
 if (UI.oculto.includes('board')) { UI.oculto = UI.oculto.filter((x) => x !== 'board' && x !== 'list'); guardarUI(); }   // antes eran dos pestañas
 const visibles = () => SECCIONES.filter(([id]) => !UI.oculto.includes(id));
 function asegurarVista() {
+  if (SUBVISTAS.includes(S.view)) return;              // se abre desde el Panel, no desde las pestañas
   const v = visibles();
   if (!v.some(([id]) => id === S.view)) { S.view = v[0][0]; localStorage.setItem('crono_view', S.view); }
 }
@@ -252,6 +257,7 @@ const S = {
   piezasVista: (localStorage.getItem('crono_piezas_vista') || (localStorage.getItem('crono_view') === 'board' ? 'tablero' : 'agenda')),
   calVista: localStorage.getItem('crono_cal_vista') || 'mes',
   ganttY: localStorage.getItem('crono_gantt_y') || 'campana',
+  detCols: false,   // si está abierto el selector de columnas del Detalle
   cursor: (() => { const d = new Date(); d.setDate(1); return d; })(),
   sel: today(),
   f: { q: '', person: '', platform: '', status: '', format: '', mine: false, archivadas: false },
@@ -279,7 +285,7 @@ function normalize(db) {
   db.recursos = db.recursos || [];
   db.carpetas = (db.carpetas || []).map((c) => Object.assign({ nombre: 'Carpeta', padre: '' }, c));
   db.posts = (db.posts || []).map((p) => Object.assign({
-    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, desarchivada: false
+    title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, guionNotas: [], campaign: '', time: '', date: '', inicio: '', format: 'post', status: 'idea', priority: 'normal', revisions: 0, desarchivada: false
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
@@ -412,8 +418,8 @@ async function notify(type, post, targets, text, frase) {
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
-const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', guionTabla: 'la tabla del guión', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
-const CONTENT_FIELDS = ['title', 'caption', 'guion', 'guionTabla', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
+const FIELD_LABEL = { title: 'título', caption: 'copy', guion: 'guión / voz en off', guionTabla: 'la estructura', guionNotas: 'los comentarios de la estructura', notes: 'notas', format: 'formato', platforms: 'plataformas', priority: 'prioridad', time: 'hora', links: 'enlaces', files: 'archivos', campaign: 'campaña', inicio: 'cuándo empieza', checklist: 'checklist', artefactos: 'interactivo', marca: 'recursos de marca' };
+const CONTENT_FIELDS = ['title', 'caption', 'guion', 'guionTabla', 'guionNotas', 'notes', 'format', 'platforms', 'priority', 'time', 'links', 'files', 'campaign', 'inicio', 'artefactos', 'marca'];
 // Los textos guardan cómo decían antes, para poder mirarlos y recuperarlos
 const TEXT_FIELDS = ['title', 'caption', 'guion', 'notes'];
 // De esos, los que vale la pena avisarle al equipo (las notas son internas)
@@ -552,7 +558,7 @@ function viewCalendar() {
   const sel = `<div class="feedtop piezastop">
     <div class="vistasel" role="group" aria-label="Cómo ver el calendario">${CAL_VISTAS.map(([id, n, i]) => `<button class="vbtn${S.calVista === id ? ' on' : ''}" data-act="cal-vista" data-v="${id}" title="${esc(n)}" aria-label="${esc(n)}">${ic(i, 17)}<span>${esc(n)}</span></button>`).join('')}</div>
   </div>`;
-  return sel + (S.calVista === 'gantt' ? viewGantt() : S.calVista === 'linea' ? viewLinea() : viewMes());
+  return sel + (S.calVista === 'gantt' ? viewGantt() : S.calVista === 'linea' ? viewLinea() : S.calVista === 'detalle' ? viewDetalle() : viewMes());
 }
 const calNav = (titulo, sub) => `<div class="calhead"><h2>${esc(titulo)}${sub ? ` <small>${esc(sub)}</small>` : ''}</h2><div class="nav">
     <button class="chip" data-act="today">Hoy</button>
@@ -731,6 +737,92 @@ function viewGantt() {
     <p class="hint">Cada barra va desde que se empieza a trabajar la pieza hasta el día en que se publica. Las <b>rayadas</b> son un cálculo (una semana antes, o desde que la creaste): para fijarla, pon <b>“se trabaja desde”</b> dentro de la pieza.${eje !== 'pieza' ? ' Cuando dos piezas de la misma línea se pisan, se ponen una debajo de la otra.' : ''}</p>`
     + sinFechaHtml(sinFecha);
 }
+/* ===== Detalle: la misma información de la carta Gantt pero escrita, como una planilla.
+   Es la vista que se imprime y la que se baja para abrir en Excel o en Sheets. ===== */
+const DET_COLS = [
+  ['fecha', 'Fecha', (p) => (p.date ? fmtShort(p.date) + (p.time ? ' · ' + p.time : '') : 'Sin fecha')],
+  ['inicio', 'Se trabaja desde', (p) => { const r = tramo(p); return r ? fmtShort(r.ini) + (r.estimado ? ' (calc.)' : '') : ''; }],
+  ['campana', 'Campaña / pilar', (p) => (p.campaign || '').trim() || '—'],
+  ['titulo', 'Pieza', (p) => p.title],
+  ['estado', 'Estado', (p) => statusOf(p.status).name],
+  ['plataforma', 'Plataforma', (p) => p.platforms.map((x) => platOf(x).name).join(', ')],
+  ['formato', 'Formato', (p) => (FORMATS.find((f) => f.id === p.format) || { name: p.format }).name],
+  ['prioridad', 'Prioridad', (p) => (p.priority === 'alta' ? 'Alta' : 'Normal')],
+  ['gente', 'Responsables', (p) => p.assignees.map((x) => person(x).name).join(', ')],
+  ['copy', 'Copy / texto', (p) => (p.caption || '').trim()],
+  ['estructura', 'Estructura', (p) => (tablaValida(p.guionTabla)
+    ? p.guionTabla.filas.map((f) => f.map((c, i) => (String(c || '').trim() ? `${p.guionTabla.cols[i] || ''}: ${String(c).trim()}` : '')).filter(Boolean).join(' · ')).join('\n')
+    : '')],
+  ['guion', 'Guión / voz en off', (p) => (p.guion || '').trim()],
+  ['notas', 'Comentarios de la estructura', (p) => (p.guionNotas || []).map((n) => `${person(n.by).name}: ${n.text}`).join(' · ')],
+  ['enlaces', 'Enlaces', (p) => (p.links || []).map((l) => `${l.label || ''} ${l.url}`.trim()).join(' · ')],
+  ['archivos', 'Archivos', (p) => String(pieceFiles(p, true).length || '')],
+  ['checklist', 'Checklist', (p) => (p.checklist || []).map((c) => `${c.done ? '[x]' : '[ ]'} ${c.text}`).join(' · ')]
+];
+// Qué columnas se ven (las largas se pueden apagar para que quepa)
+const DET_KEY = 'crono_det_cols';
+const DET_POR_DEFECTO = ['fecha', 'inicio', 'campana', 'titulo', 'estado', 'plataforma', 'formato', 'gente', 'copy', 'estructura', 'guion'];
+function detCols() {
+  let g = null;
+  try { g = JSON.parse(localStorage.getItem(DET_KEY) || 'null'); } catch (e) { g = null; }
+  const ids = Array.isArray(g) && g.length ? g : DET_POR_DEFECTO;
+  return DET_COLS.filter(([id]) => ids.includes(id));
+}
+const guardarDetCols = (ids) => { try { localStorage.setItem(DET_KEY, JSON.stringify(ids)); } catch (e) { /* sin espacio */ } };
+// Las piezas que entran en la planilla: las mismas doce semanas de la carta Gantt
+function piezasDetalle() {
+  const { ini, dias } = rangoGantt();
+  const fin = addDays(ini, dias - 1);
+  const todas = filtered();
+  const dentro = todas.filter((p) => p.date && p.date >= ini && p.date <= fin);
+  const sin = todas.filter((p) => !p.date);
+  return { ini, fin, filas: dentro.concat(sin).sort(sortPosts) };
+}
+function viewDetalle() {
+  const { ini, fin, filas } = piezasDetalle();
+  const cols = detCols();
+  const cab = calNav(`${cap(MS[parseYmd(ini).getMonth()])} — ${cap(MS[parseYmd(fin).getMonth()])} ${parseYmd(fin).getFullYear()}`, '12 semanas');
+  const acc = `<div class="detacts">
+    <div class="gridbtn dos">
+      <button class="btn ghost sm" data-act="det-bajar">${ic('download', 16)} Bajar para Excel</button>
+      <button class="btn ghost sm" data-act="det-imprimir">${ic('copy', 16)} Imprimir / PDF</button>
+    </div>
+    <button class="chip ancho" data-act="det-cols">${ic('sliders', 15)} Qué columnas se ven <b>${cols.length}</b></button>
+    ${S.detCols ? `<div class="gridbtn tres detcolsel">${DET_COLS.map(([id, nom]) => `<button class="chip${cols.some((c) => c[0] === id) ? ' on' : ''}" data-act="det-col" data-v="${id}">${esc(nom)}</button>`).join('')}</div>` : ''}
+  </div>`;
+  if (!filas.length) return cab + acc + emptyBox('Nada en estas doce semanas', 'Muévete de mes con las flechas, o quítale filtros a la búsqueda.');
+  const celda = (p, [id, , val]) => {
+    const v = val(p) || '';
+    if (id === 'titulo') return `<td class="dettit"><button class="lnk" data-act="open-post" data-id="${esc(p.id)}">${esc(v)}</button></td>`;
+    if (id === 'estado') return `<td><span class="detest" style="--c:${statusOf(p.status).color}">${esc(v)}</span></td>`;
+    if (id === 'estructura' && tablaValida(p.guionTabla)) {
+      const t = p.guionTabla;
+      return `<td class="detlargo"><div class="detcel detestr"><b>${t.filas.length} fila${t.filas.length === 1 ? '' : 's'}</b>${t.filas.map((f) =>
+        `<span>${f.map((c, i) => (String(c || '').trim() ? `<i>${esc(t.cols[i] || '')}</i> ${esc(String(c).trim())}` : '')).filter(Boolean).join(' · ')}</span>`).join('')}</div></td>`;
+    }
+    if (['copy', 'guion', 'notas', 'checklist', 'enlaces'].includes(id)) {
+      return `<td class="detlargo"><div class="detcel">${esc(v).replace(/\n/g, '<br>')}</div></td>`;
+    }
+    return `<td>${esc(v).replace(/\n/g, '<br>')}</td>`;
+  };
+  const cuerpo = filas.map((p) => `<tr>${cols.map((c) => celda(p, c)).join('')}</tr>`).join('');
+  return cab + acc + `<div class="detbox" id="detbox">
+      <div class="detmeta">${esc(CFG.APP_NAME)} · ${esc(fmtLong(ini))} a ${esc(fmtLong(fin))} · ${filas.length} pieza${filas.length === 1 ? '' : 's'}</div>
+      <table class="dettabla"><thead><tr>${cols.map(([, n]) => `<th>${esc(n)}</th>`).join('')}</tr></thead>
+      <tbody>${cuerpo}</tbody></table>
+    </div>
+    <p class="hint">La misma información de la carta Gantt, escrita. <b>Bajar para Excel</b> deja un archivo que se abre en Excel, Numbers o Google Sheets; <b>Imprimir</b> saca solo esta planilla, sin los menús.</p>`;
+}
+// El archivo que se baja: separado por punto y coma, que es lo que Excel en español espera
+function detalleCsv() {
+  const { filas } = piezasDetalle();
+  const cols = detCols();
+  const cel = (s) => '"' + String(s == null ? '' : s).replace(/"/g, '""') + '"';
+  const lineas = [cols.map(([, n]) => cel(n)).join(';')]
+    .concat(filas.map((p) => cols.map(([, , v]) => cel(v(p) || '')).join(';')));
+  return '\uFEFF' + lineas.join('\r\n') + '\r\n';
+}
+
 const sinFechaHtml = (arr) => (arr.length ? `<section class="group"><h3>Sin fecha <b>${arr.length}</b></h3>
   <div class="chips">${arr.map((p) => `<button class="chip" style="--c:${statusOf(p.status).color}" data-act="open-post" data-id="${esc(p.id)}">${esc(p.title)}</button>`).join('')}</div></section>` : '');
 // Deja la carta Gantt mirando el día de hoy en cuanto se dibuja
@@ -879,6 +971,8 @@ function viewFiles() {
   const groups = projects(S.lastOnly);
   const totalFiles = groups.reduce((a, g) => a + g.files, 0);
   const head = `<div class="fhead">
+      <button class="volver" data-act="nav" data-v="dash">${ic('left', 16)} Panel</button>
+      <h2 class="subtit">Entregas</h2>
       <div class="chips"><button class="chip${S.lastOnly ? ' on' : ''}" data-act="toggle-last">${ic('check', 15)} Solo última versión</button>
       <button class="chip${S.conPrompts ? ' on' : ''}" data-act="toggle-prompts">${ic('copy', 15)} Con prompt para IA</button>
       <button class="btn ghost sm" data-act="dl-all">${ic('download', 16)} Todo</button>
@@ -1101,8 +1195,9 @@ const esEntrega = (p) => !['idea', 'diseno'].includes(p.status);
 function viewResultados() {
   const piezas = filtered(true).filter(esEntrega)
     .sort((a, b) => String(b.date || b.updatedAt || '').localeCompare(String(a.date || a.updatedAt || '')));
-  if (!piezas.length) return emptyBox('Todavía no hay entregas', 'Aquí vas a ver cada pieza terminada, como se ve publicada.');
-  return `<div class="resfeed">${piezas.map((p) => {
+  const cab = `<div class="fhead"><button class="volver" data-act="nav" data-v="dash">${ic('left', 16)} Panel</button><h2 class="subtit">Entregas</h2></div>`;
+  if (!piezas.length) return cab + emptyBox('Todavía no hay entregas', 'Aquí vas a ver cada pieza terminada, como se ve publicada.');
+  return cab + `<div class="resfeed">${piezas.map((p) => {
     const files = pieceFiles(p, true); // solo la versión final de cada archivo
     const st = statusOf(p.status);
     const gui = (p.guion || '').trim();
@@ -1118,7 +1213,8 @@ function viewResultados() {
         ${artefactoHtml(p, false)}
         ${marcaEnPiezaHtml(p, false)}
         ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
-        ${gui || tablaValida(p.guionTabla) ? `<details class="guion"><summary>Guión / voz en off</summary>${tablaHtml(p.guionTabla)}${gui ? `<p>${esc(gui)}</p>` : ''}</details>` : ''}
+        ${tablaValida(p.guionTabla) ? `<details class="guion"><summary>Estructura <b>${p.guionTabla.filas.length}</b></summary>${tablaHtml(p.guionTabla, p)}</details>` : ''}
+        ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p><button class="lnk" data-act="copiar-guion" data-id="${esc(p.id)}">${ic('copy', 13)} Copiar para la voz IA</button></details>` : ''}
         ${linksVisibles(p).length ? `<div class="flinks">${linksVisibles(p).map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
         ${publicadoHtml(p)}
         <div class="resacts">
@@ -1197,7 +1293,8 @@ function postHtml(p, t) {
       ${artefactoHtml(p, false)}
       ${marcaEnPiezaHtml(p, false)}
       ${p.caption ? `<p class="copy">${mentionHtml(p.caption)}</p>` : ''}
-      ${gui || tablaValida(p.guionTabla) ? `<details class="guion"><summary>Guión / voz en off</summary>${tablaHtml(p.guionTabla)}${gui ? `<p>${esc(gui)}</p>` : ''}</details>` : ''}
+      ${tablaValida(p.guionTabla) ? `<details class="guion"><summary>Estructura <b>${p.guionTabla.filas.length}</b></summary>${tablaHtml(p.guionTabla, p)}</details>` : ''}
+        ${gui ? `<details class="guion"><summary>Guión / voz en off</summary><p>${esc(gui)}</p><button class="lnk" data-act="copiar-guion" data-id="${esc(p.id)}">${ic('copy', 13)} Copiar para la voz IA</button></details>` : ''}
       <div class="postcoms">
         ${coms.length > vis.length ? `<button class="lnk" data-act="feed-mas" data-id="${esc(p.id)}">Ver los ${coms.length} comentarios</button>` : ''}
         ${vis.map((c) => {
@@ -1545,24 +1642,129 @@ function tablaDeTexto(txt) {
   return null;
 }
 const tablaValida = (t) => !!(t && Array.isArray(t.cols) && Array.isArray(t.filas) && t.filas.length && t.cols.length > 1);
+
+/* ===== La estructura (la tabla) y el guión de voz en off son lo mismo visto de dos maneras.
+   La tabla manda: una de sus columnas es la voz, y el cuadro de texto muestra esa columna
+   seguida, lista para copiar y pegar en el generador de voz. Lo que se escribe en el cuadro
+   vuelve a la columna, fila por fila, separando por líneas en blanco. ===== */
+const RE_VOZ = /(voz|locuci|narrac|gui[oó]n|off|audio)/i;
+// Qué columna es la voz: la que lo diga en su título y, si ninguna lo dice, la última
+function colVoz(t) {
+  if (!tablaValida(t)) return -1;
+  if (Number.isInteger(t.voz) && t.voz >= 0 && t.voz < t.cols.length) return t.voz;
+  const i = t.cols.findIndex((c) => RE_VOZ.test(String(c || '')));
+  return i >= 0 ? i : t.cols.length - 1;
+}
+// Cada fila lleva su identificador, para poder comentarla aunque después se muevan las filas
+function asegurarIds(t) {
+  if (!tablaValida(t)) return t;
+  if (!Array.isArray(t.ids)) t.ids = [];
+  while (t.ids.length < t.filas.length) t.ids.push(uid());
+  if (t.ids.length > t.filas.length) t.ids = t.ids.slice(0, t.filas.length);
+  return t;
+}
+const PARTE = '\n\n';
+// Tabla → texto: la columna de la voz, una fila por párrafo
+function vozDeTabla(t) {
+  const v = colVoz(t);
+  if (v < 0) return '';
+  return t.filas.map((f) => String(f[v] || '').trim()).join(PARTE).replace(/\n{3,}/g, PARTE).trim();
+}
+// Texto → tabla: cada párrafo vuelve a su fila, en el mismo orden
+function vozATabla(t, texto) {
+  const v = colVoz(t);
+  if (v < 0) return;
+  const partes = String(texto || '').replace(/\r/g, '').split(/\n\s*\n/);
+  t.filas.forEach((f, i) => { f[v] = (partes[i] != null ? partes[i] : '').trim(); });
+  // si quedó texto de más, se suma a la última fila para no perderlo
+  if (partes.length > t.filas.length) {
+    const sobra = partes.slice(t.filas.length).join(PARTE).trim();
+    const u = t.filas[t.filas.length - 1];
+    if (sobra) u[v] = (u[v] ? u[v] + PARTE : '') + sobra;
+  }
+}
+/* Deja las dos caras iguales. `desdeTexto` es true cuando lo último que se tocó fue
+   el cuadro de la voz; si no, manda la tabla. */
+/* Después de sincronizar, la cara que no se estaba escribiendo queda vieja en pantalla.
+   Se le pone al día el valor sin volver a dibujar todo, para no perder el cursor. */
+function repintarVoz(d, veniaDelTexto) {
+  const t = d.guionTabla, v = colVoz(t);
+  if (!tablaValida(t) || v < 0) return;
+  if (veniaDelTexto) {
+    $$('#pb .gcel').forEach((c) => {
+      const f = +c.dataset.f;
+      if (f >= 0 && +c.dataset.c === v && t.filas[f] && c.value !== t.filas[f][v]) {
+        c.value = t.filas[f][v];
+        if (c.tagName === 'TEXTAREA') crecerCelda(c);
+      }
+    });
+  } else {
+    const g = $('#e-guion');
+    if (g && document.activeElement !== g && g.value !== d.guion) g.value = d.guion;
+  }
+}
+function sincronizarGuion(d, desdeTexto) {
+  if (!tablaValida(d.guionTabla)) return;
+  asegurarIds(d.guionTabla);
+  if (desdeTexto) vozATabla(d.guionTabla, d.guion);
+  d.guion = vozDeTabla(d.guionTabla);
+}
+// Los comentarios que se le dejan a una fila sin tocar lo que dice
+const notasDe = (d, fid) => ((d && d.guionNotas) || []).filter((n) => n.fila === fid);
+function notasFilaHtml(d, fid, editable) {
+  const ns = notasDe(d, fid);
+  if (!ns.length && !editable) return '';
+  return `<div class="gnotas">${ns.map((n) => `<div class="gnota">${av(n.by, 'sm')}<span><b>${esc(person(n.by).name)}</b> ${esc(n.text)}<small>${esc(ago(n.at))}</small></span>${editable && (n.by === S.me.id || esAdmin()) ? `<button class="iconbtn" data-act="gt-nota-quitar" data-id="${esc(n.id)}" aria-label="Quitar el comentario">${ic('x', 14)}</button>` : ''}</div>`).join('')}</div>`;
+}
 const tablaTexto = (t) => (tablaValida(t) ? [t.cols].concat(t.filas).map((f) => f.join('\t')).join('\n') : '');
 // Cómo se ve la tabla para quien solo la lee
-function tablaHtml(t) {
+function tablaHtml(t, d) {
   if (!tablaValida(t)) return '';
+  const v = colVoz(t);
+  const ids = (t.ids || []);
   return `<div class="tablabox"><table class="gtabla">
-    <thead><tr>${t.cols.map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead>
-    <tbody>${t.filas.map((f) => `<tr>${f.map((c) => `<td>${esc(c).replace(/\n/g, '<br>')}</td>`).join('')}</tr>`).join('')}</tbody>
-  </table></div>`;
+    <thead><tr>${t.cols.map((c, i) => `<th${i === v ? ' class="colvoz"' : ''}>${esc(c)}</th>`).join('')}</tr></thead>
+    <tbody>${t.filas.map((f, fi) => {
+      const notas = d ? notasDe(d, ids[fi]) : [];
+      return `<tr>${f.map((c, ci) => `<td${ci === v ? ' class="colvoz"' : ''}>${esc(c).replace(/\n/g, '<br>')}${ci === 0 && notas.length ? `<i class="ntag" title="${esc(notas.length + (notas.length === 1 ? ' comentario' : ' comentarios'))}">${ic('msg', 11)}${notas.length}</i>` : ''}</td>`).join('')}</tr>`;
+    }).join('')}</tbody>
+  </table></div>${d && (d.guionNotas || []).length ? `<div class="gnotastodas">${t.filas.map((f, fi) => {
+    const ns = d ? notasDe(d, ids[fi]) : [];
+    return ns.length ? `<div class="gnotafila"><b>${esc(String(f[0] || '').slice(0, 40) || 'Fila ' + (fi + 1))}</b>${notasFilaHtml(d, ids[fi], false)}</div>` : '';
+  }).join('')}</div>` : ''}`;
 }
 // Y cómo se edita: cada casilla es una casilla
-function tablaEditorHtml(t) {
+function tablaEditorHtml(t, d) {
   if (!tablaValida(t)) return '';
+  asegurarIds(t);
+  const v = colVoz(t), puede = store.canWrite;
   return `<div class="tablabox"><table class="gtabla edit">
-    <thead><tr>${t.cols.map((c, i) => `<th><input class="gcel" data-f="-1" data-c="${i}" value="${esc(c)}" aria-label="Título de la columna ${i + 1}"></th>`).join('')}<th class="gacc"></th></tr></thead>
-    <tbody>${t.filas.map((f, fi) => `<tr>${f.map((c, ci) => `<td><textarea class="gcel" data-f="${fi}" data-c="${ci}" rows="${Math.min(6, Math.max(1, Math.ceil((c.length || 1) / 24) + (c.split('\n').length - 1)))}" aria-label="Fila ${fi + 1}, columna ${ci + 1}">${esc(c)}</textarea></td>`).join('')}
-      <td class="gacc"><button class="iconbtn" data-act="gt-quitar-fila" data-f="${fi}" aria-label="Quitar esta fila" title="Quitar esta fila">${ic('x', 15)}</button></td></tr>`).join('')}</tbody>
+    <thead><tr>${t.cols.map((c, i) => `<th${i === v ? ' class="colvoz"' : ''}><input class="gcel" data-f="-1" data-c="${i}" value="${esc(c)}" aria-label="Título de la columna ${i + 1}">${i === v ? '<i class="vozt">voz en off</i>' : ''}</th>`).join('')}<th class="gacc"></th></tr></thead>
+    <tbody>${t.filas.map((f, fi) => {
+      const fid = t.ids[fi], ns = notasDe(d, fid), abierta = ED && ED.notaFila === fid;
+      return `<tr${abierta ? ' class="filanota"' : ''}>${f.map((c, ci) => `<td${ci === v ? ' class="colvoz"' : ''}><textarea class="gcel" data-f="${fi}" data-c="${ci}" rows="1" aria-label="Fila ${fi + 1}, columna ${ci + 1}">${esc(c)}</textarea></td>`).join('')}
+      <td class="gacc">
+        ${puede ? `<button class="iconbtn gnotab${ns.length ? ' con' : ''}${abierta ? ' on' : ''}" data-act="gt-nota" data-id="${esc(fid)}" aria-label="Comentar esta fila" title="Comentar esta fila sin cambiarla">${ic('msg', 15)}${ns.length ? `<i>${ns.length}</i>` : ''}</button>` : ''}
+        ${puede ? `<button class="iconbtn" data-act="gt-quitar-fila" data-f="${fi}" aria-label="Quitar esta fila" title="Quitar esta fila">${ic('x', 15)}</button>` : ''}
+      </td></tr>`;
+    }).join('')}</tbody>
   </table></div>
-  <div class="chips tablaacts">
+  ${(() => {
+    const conNota = t.filas.map((f, fi) => ({ f, fi, fid: t.ids[fi] }))
+      .filter((x) => notasDe(d, x.fid).length || (ED && ED.notaFila === x.fid));
+    if (!conNota.length) return '';
+    return `<div class="gnotaslist">${conNota.map(({ f, fi, fid }) => `<div class="gnotafila">
+      <b>${ic('msg', 12)} Fila ${fi + 1}${String(f[0] || '').trim() ? ' · ' + esc(String(f[0]).trim().slice(0, 42)) : ''}</b>
+      ${notasFilaHtml(d, fid, puede)}
+      ${ED && ED.notaFila === fid ? `<div class="addrow"><input class="field" id="gt-nota-txt" placeholder="Ej. acá iría un plano más cerrado" autocomplete="off"><button class="btn sm" data-act="gt-nota-guardar" data-id="${esc(fid)}">Comentar</button></div>` : ''}
+    </div>`).join('')}</div>`;
+  })()}
+  <div class="vozsel">
+    <label for="gt-voz">Columna de la voz en off</label>
+    <select class="sel" id="gt-voz">${t.cols.map((c, i) => `<option value="${i}"${i === v ? ' selected' : ''}>${esc(c || 'Columna ' + (i + 1))}</option>`).join('')}
+      <option value="-1"${v < 0 ? ' selected' : ''}>— ninguna</option></select>
+  </div>
+  <div class="gridbtn tablaacts">
     <button class="chip" data-act="gt-fila">${ic('plus', 14)} Fila</button>
     <button class="chip" data-act="gt-col">${ic('plus', 14)} Columna</button>
     <button class="chip" data-act="gt-copiar">${ic('copy', 14)} Copiar la tabla</button>
@@ -1571,17 +1773,20 @@ function tablaEditorHtml(t) {
 }
 // Pegar una tabla dentro del guión: llega entera, con sus columnas
 document.addEventListener('paste', (e) => {
-  if (!ED || !e.target || e.target.id !== 'e-guion') return;
+  if (!ED || !e.target || (e.target.id !== 'e-guion' && e.target.id !== 'e-estructura')) return;
   const dt = e.clipboardData; if (!dt) return;
   const t = tablaDeHtml(dt.getData('text/html')) || tablaDeTexto(dt.getData('text/plain'));
   if (!t) return;                                   // texto normal: se pega como siempre
   e.preventDefault();
   if (tablaValida(ED.d.guionTabla) && !confirm(`Ya hay una tabla con ${ED.d.guionTabla.filas.length} filas. ¿La reemplazo por la que estás pegando?`)) return;
   syncDraft();
-  ED.d.guionTabla = t;
+  ED.d.guionTabla = asegurarIds(t);
+  ED.abre.estructura = true;
   ED.abre.guion = true;
+  sincronizarGuion(ED.d, false);
   renderEditor();
-  toast(`Tabla pegada · ${t.filas.length} fila${t.filas.length === 1 ? '' : 's'} y ${t.cols.length} columnas`, 3500);
+  const v = colVoz(t);
+  toast(`Estructura pegada · ${t.filas.length} fila${t.filas.length === 1 ? '' : 's'} y ${t.cols.length} columnas${v >= 0 ? ` · la voz sale de “${t.cols[v]}”` : ''}`, 4500);
 });
 
 /* ===== Importar un documento de publicaciones =====
@@ -1987,15 +2192,26 @@ const marcaDe = (p) => ((p && p.marca) || []).map(recursoPorId).filter(Boolean);
 function marcaEnPiezaHtml(p, editable) {
   const usados = marcaDe(p);
   if (!usados.length && !editable) return '';
+  const chips = usados.length
+    ? `<div class="chips marcausa">${usados.map((r) => `<button class="chip marcachip" data-act="marca-abrir" data-id="${esc(r.id)}">${esAudio(r) ? ic('music', 13) : ic('marca', 13)} ${esc(splitName(r.name).label || r.name)}${editable ? `<i data-act="marca-quitar-pieza" data-id="${esc(r.id)}" aria-label="Quitar">${ic('x', 12)}</i>` : ''}</button>`).join('')}</div>`
+    : (editable ? '' : '');
+  if (!editable) return `<label class="lbl">De Marca <small>lo que usa esta pieza</small></label>${chips}`;
+  // agrupado por carpeta, para distinguirlo de los archivos de la pieza
+  const grupos = new Map();
+  gruposMarca(recursos()).forEach((g) => {
+    const k = nombreCarpeta(g.carpeta) || 'Marca';
+    (grupos.get(k) || grupos.set(k, []).get(k)).push(g);
+  });
+  const ya = (id) => (p.marca || []).includes(id);
+  const opciones = [...grupos.entries()].sort((x, y) => x[0].localeCompare(y[0], 'es')).map(([k, gs]) =>
+    `<optgroup label="${esc(k)}">${gs.map((g) => `<option value="${esc(g.principal.id)}"${ya(g.principal.id) ? ' disabled' : ''}>${esc(g.titulo)}${ya(g.principal.id) ? ' — ya está' : ''}</option>`).join('')}</optgroup>`).join('');
   return `<label class="lbl">De Marca <small>lo que usa esta pieza</small></label>
-    <div class="chips">${usados.map((r) => `<button class="chip marcachip" data-act="marca-abrir" data-id="${esc(r.id)}">${esAudio(r) ? ic('music', 13) : ic('marca', 13)} ${esc(splitName(r.name).label || r.name)}${editable ? `<i data-act="marca-quitar-pieza" data-id="${esc(r.id)}" aria-label="Quitar">${ic('x', 12)}</i>` : ''}</button>`).join('')}
-      ${editable ? `<button class="chip" data-act="marca-elegir">${ic('plus', 14)} Usar de Marca</button>` : ''}</div>
-    ${editable && ED.verMarca ? `<div class="marcapick">${gruposMarca(recursos()).map((g) => {
-      const ya = (p.marca || []).includes(g.principal.id);
-      return `<button class="picked${ya ? ' on' : ''}" data-act="marca-usar" data-id="${esc(g.principal.id)}">
-        <span>${esAudio(g.principal) ? ic('music', 15) : ic('paperclip', 15)}</span>
-        <b>${esc(g.titulo)}</b><small>${esc(nombreCarpeta(g.carpeta))}</small>${ya ? ic('check', 15) : ''}</button>`;
-    }).join('') || '<p class="hint">Todavía no hay nada en Marca.</p>'}</div>` : ''}`;
+    ${chips}
+    ${opciones
+      ? `<div class="marcasel"><span class="marcaic">${ic('marca', 16)}</span>
+          <select class="sel" id="marca-add"><option value="">Elegir de la nube de Marca…</option>${opciones}</select></div>
+         <p class="hint">Son los archivos de la pestaña <b>Marca</b> (logos, tipografías, músicas): se apuntan, no se copian. No son los archivos de esta pieza.</p>`
+      : '<p class="hint">Todavía no hay nada en Marca.</p>'}`;
 }
 
 // Menú de un recurso (solo quien administra): renombrar, cambiar de carpeta, permitir descarga, enlace, quitar
@@ -2095,7 +2311,18 @@ function viewDash() {
   all.forEach((p) => { if (p.campaign) camp[p.campaign] = (camp[p.campaign] || 0) + 1; });
   const acts = S.db.activity.slice().sort(descBy('createdAt')).slice(0, 10);
 
+  const ent = projects(true);
+  const nArchivos = ent.reduce((x, g) => x + g.files, 0);
+  const pesoEnt = ent.reduce((x, g) => x + (g.size || 0), 0);
+
   return `
+  <div class="panelacc">
+    <button class="accbtn" data-act="nav" data-v="files">${ic('folder', 22)}
+      <span><b>Entregas</b><small>${ent.length} proyecto${ent.length === 1 ? '' : 's'} · ${nArchivos} archivo${nArchivos === 1 ? '' : 's'}${pesoEnt ? ' · ' + esc(prettySize(pesoEnt)) : ''}</small></span>${ic('right', 18)}</button>
+    <button class="accbtn" data-act="cal-detalle">${ic('table', 22)}
+      <span><b>Detalle del cronograma</b><small>La planilla con todo, para imprimir o bajar</small></span>${ic('right', 18)}</button>
+  </div>
+
   <div class="kpis">
     <div class="kpi wide"><small>Publicado este mes</small><b>${mPub} <span>de ${month.length} planificadas</span></b><div class="meter"><i style="width:${pct}%"></i></div></div>
     <div class="kpi ${overdue.length ? 'bad' : ''}"><small>Atrasadas</small><b>${overdue.length}</b><span>pasaron su fecha</span></div>
@@ -2180,7 +2407,8 @@ function renderToolbar() {
 function renderTabs() {
   const IC_TAB = { feed: 'feed', calendar: (CAL_VISTAS.find((x) => x[0] === S.calVista) || CAL_VISTAS[0])[2], list: S.piezasVista === 'tablero' ? 'board' : 'list', files: esAdmin() ? 'folder' : 'image', marca: 'marca', dash: 'chart' };
   const T = visibles().map(([id, l]) => [id, l, IC_TAB[id]]);
-  $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${S.view === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
+  const activa = SUBVISTAS.includes(S.view) ? 'dash' : S.view;   // Entregas vive dentro del Panel
+  $('#tabs').innerHTML = `<div class="in">${T.map(([id, l, i]) => `<button class="tab${activa === id ? ' on' : ''}" data-act="nav" data-v="${id}">${ic(i, 22)}${l}</button>`).join('')}</div>`;
 }
 function renderMain() {
   const v = { feed: viewFeed, calendar: viewCalendar, list: viewPiezas, files: esAdmin() ? viewFiles : viewResultados, marca: viewMarca, dash: viewDash }[S.view] || viewCalendar;
@@ -2238,6 +2466,7 @@ function closeSheet(fromPop) {
 window.addEventListener('popstate', () => { if (sheetOpen) closeSheet(true); });
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && e.target.dataset && e.target.dataset.feedCom != null) { e.preventDefault(); feedEnviar(e.target.dataset.feedCom); return; }
+  if (e.key === 'Enter' && e.target.id === 'gt-nota-txt') { e.preventDefault(); const b = $('[data-act="gt-nota-guardar"]'); if (b) b.click(); return; }
   const lb = $('#lightbox');
   if (!lb.hidden && GAL && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); galMover(e.key === 'ArrowRight' ? 1 : -1); return; }
   if (e.key === 'Escape') { if (!lb.hidden) { if (GAL) cerrarGaleria(); else lb.hidden = true; } else closeSheet(); }
@@ -2547,7 +2776,8 @@ function openEditor(id, preset = {}) {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], inicio: '', priority: 'normal', links: [], files: [], checklist: []
   };
-  ED = { old, d, abre: {}, multiPlat: d.platforms.length > 1, comment: '', comFiles: [], verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
+  if (tablaValida(d.guionTabla)) { asegurarIds(d.guionTabla); if (!(d.guion || '').trim()) d.guion = vozDeTabla(d.guionTabla); }
+  ED = { old, d, abre: {}, multiPlat: d.platforms.length > 1, comment: '', comFiles: [], guionMano: false, notaFila: null, verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
   renderEditor();
 }
@@ -2647,6 +2877,11 @@ function syncDraft() {
       if (f < 0) { if (d.guionTabla.cols[col] != null) d.guionTabla.cols[col] = c.value; }
       else if (d.guionTabla.filas[f]) d.guionTabla.filas[f][col] = c.value;
     });
+    // la tabla y el guión de voz quedan iguales: manda lo último que se tocó
+    const deTexto = !!ED.guionMano;
+    sincronizarGuion(d, deTexto);
+    repintarVoz(d, deTexto);
+    ED.guionMano = false;
   }
 }
 const mentionHtml = (t) => esc(t).replace(new RegExp('@(' + P.map((x) => x.name).join('|') + ')', 'gi'), '<span class="mention">@$1</span>').replace(/\n/g, '<br>');
@@ -2659,7 +2894,8 @@ function normUrl(u) {
 function bloqueLleno(k) {
   const d = ED && ED.d; if (!d) return false;
   if (k === 'inicio') return !!d.inicio;
-  if (k === 'guion') return !!((d.guion || '').trim() || tablaValida(d.guionTabla));
+  if (k === 'guion') return !!(d.guion || '').trim();
+  if (k === 'estructura') return tablaValida(d.guionTabla);
   if (k === 'interactivo') return !!(artefactosDe(d).length || (ED && ED.art));
   if (k === 'marca') return !!marcaDe(d).length;
   if (k === 'enlaces') return !!linksVisibles(d).length;
@@ -2757,11 +2993,19 @@ function renderEditor() {
 
     ${publicadoHtml(d)}
 
-    ${bloque('guion', 'Guión / voz en off', !!((d.guion || '').trim() || tablaValida(d.guionTabla)),
-      tablaValida(d.guionTabla) ? `${d.guionTabla.filas.length} fila${d.guionTabla.filas.length === 1 ? '' : 's'}` : ((d.guion || '').trim() ? `${(d.guion || '').trim().split(/\s+/).length} palabras` : ''), () => `
-      ${tablaValida(d.guionTabla) ? tablaEditorHtml(d.guionTabla) : ''}
-      <textarea class="area" id="e-guion" style="min-height:${tablaValida(d.guionTabla) ? 70 : 110}px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
-      ${tablaValida(d.guionTabla) ? '' : '<p class="hint">Si tienes el guión en una tabla (Word, Google Docs, Sheets, Notion, Claude), pégala aquí mismo: se guarda y se ve como tabla.</p>'}
+    ${bloque('estructura', 'Estructura', tablaValida(d.guionTabla),
+      tablaValida(d.guionTabla) ? `${d.guionTabla.filas.length} fila${d.guionTabla.filas.length === 1 ? '' : 's'} · ${d.guionTabla.cols.length} columnas${(d.guionNotas || []).length ? ` · ${(d.guionNotas || []).length} comentario${(d.guionNotas || []).length === 1 ? '' : 's'}` : ''}` : '', () =>
+      (tablaValida(d.guionTabla)
+        ? `${tablaEditorHtml(d.guionTabla, d)}
+           <p class="hint">Cada fila es un momento del contenido. El botón ${ic('msg', 12)} deja un comentario en esa fila <b>sin cambiar lo que dice</b>. La columna marcada como <b>voz en off</b> es la que arma el guión de más abajo.</p>`
+        : `<textarea class="area" id="e-estructura" style="min-height:92px" placeholder="Pega aquí la tabla (Word, Google Docs, Sheets, Notion, Claude)…"></textarea>
+           <p class="hint">Pega la tabla de tu guión aquí: se guarda como tabla de verdad, con sus columnas. Una de ellas —la de la voz— arma sola el guión de voz en off.</p>`))}
+
+    ${bloque('guion', 'Guión / voz en off', !!(d.guion || '').trim(),
+      (d.guion || '').trim() ? `${(d.guion || '').trim().split(/\s+/).length} palabras` : '', () => `
+      ${tablaValida(d.guionTabla) && colVoz(d.guionTabla) >= 0 ? `<p class="hint hintvoz">${ic('refresh', 13)} Es la columna <b>${esc(d.guionTabla.cols[colVoz(d.guionTabla)] || '')}</b> de la Estructura, una fila por párrafo. Lo que cambies acá vuelve a la tabla, y al revés.</p>` : ''}
+      <div class="lblacts solo"><button class="lnk" data-act="ed-sel-guion">Seleccionar todo</button><button class="lnk" data-act="ed-copiar-guion">${ic('copy', 13)} Copiar para la voz IA</button></div>
+      <textarea class="area" id="e-guion" style="min-height:120px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
       ${historialTextoHtml(d, 'guion')}`)}
 
     ${bloque('interactivo', 'Interactivo', !!(artefactosDe(d).length || ED.art), artefactosDe(d).length ? `${artefactosDe(d).length}` : '', () => {
@@ -4261,7 +4505,7 @@ function renderDoc() {
     <span class="doct">
       <b>${p.numero ? esc(p.numero) + '. ' : ''}${esc(p.titulo)}</b>
       <small>${[esCtx ? 'contexto del documento' : formatName(p.formato), p.fecha ? cap(fmtShort(p.fecha)) : 'sin fecha',
-        p.guionTabla ? `guión de ${p.guionTabla.filas.length} filas` : '', p.caption ? 'con copy' : '',
+        p.guionTabla ? `estructura de ${p.guionTabla.filas.length} filas` : "", p.caption ? 'con copy' : '',
         p.enlaces.length ? `${p.enlaces.length} enlace${p.enlaces.length === 1 ? '' : 's'}` : ''].filter(Boolean).map(esc).join(' · ')}</small>
       ${p.repetida ? '<small class="docrep">Ya existe una pieza con este nombre</small>' : ''}
     </span></label>`;
@@ -4295,7 +4539,7 @@ async function crearDesdeDoc() {
     await respirar();
     const post = {
       id: uid(), title: p.titulo, caption: p.caption || '', notes: p.notas || '', hashtags: '',
-      guion: '', guionTabla: p.guionTabla || null, campaign: DOC.campana || '',
+      guion: '', guionTabla: p.guionTabla ? asegurarIds(p.guionTabla) : null, guionNotas: [], campaign: DOC.campana || '',
       date: p.fecha || '', time: '', inicio: '',
       platforms: p.contexto ? [] : ['instagram'], format: p.formato || 'post',
       status: DOC.estado || 'idea', assignees: [S.me.id], priority: 'normal',
@@ -4304,6 +4548,7 @@ async function crearDesdeDoc() {
       createdAt: at, createdBy: S.me.id, updatedAt: at, updatedBy: S.me.id,
       statusChangedAt: at, revisions: 0, publishedAt: null
     };
+    sincronizarGuion(post, false);   // la estructura trae su guión de voz hecho
     try {
       await save('posts', post);
       await log(post, 'created', `creó la pieza desde “${DOC.titulo}”`);
@@ -4599,7 +4844,40 @@ const ACTS = {
   nav: (el) => {
     // tocar la pestaña de Marca vuelve a la primera pantalla, con todas las carpetas
     if (el.dataset.v === 'marca') { S.marcaRuta = ''; S.marcaTodo = false; }
-    S.view = el.dataset.v; localStorage.setItem('crono_view', S.view); renderAll(); window.scrollTo(0, 0);
+    S.view = el.dataset.v;
+    if (!SUBVISTAS.includes(S.view)) localStorage.setItem('crono_view', S.view);
+    renderAll(); window.scrollTo(0, 0);
+  },
+  'det-cols': () => { S.detCols = !S.detCols; renderMain(); },
+  'det-col': (el) => {
+    const id = el.dataset.v;
+    const ids = detCols().map((c) => c[0]);
+    const i = ids.indexOf(id);
+    if (i >= 0) { if (ids.length <= 2) { toast('Deja al menos dos columnas'); return; } ids.splice(i, 1); }
+    else ids.push(id);
+    guardarDetCols(DET_COLS.map((c) => c[0]).filter((x) => ids.includes(x)));   // siempre en el mismo orden
+    renderMain();
+  },
+  'det-bajar': () => {
+    const { ini, fin, filas } = piezasDetalle();
+    if (!filas.length) { toast('No hay piezas en estas doce semanas'); return; }
+    const blob = new Blob([detalleCsv()], { type: 'text/csv;charset=utf-8' });
+    const nombre = `cronograma-${ini}-a-${fin}.csv`;
+    try { window.Zip.save(blob, nombre); toast(`${filas.length} piezas en ${nombre} · ábrelo en Excel o Sheets`, 5000); }
+    catch (e) { toast('No se pudo bajar: ' + (e.message || e), 4000); }
+  },
+  'det-imprimir': () => {
+    if (S.detCols) { S.detCols = false; renderMain(); }
+    document.body.classList.add('imprimiendo');
+    const limpiar = () => { document.body.classList.remove('imprimiendo'); window.removeEventListener('afterprint', limpiar); };
+    window.addEventListener('afterprint', limpiar);
+    setTimeout(() => { try { window.print(); } catch (e) { toast('Este navegador no deja imprimir desde aquí'); } setTimeout(limpiar, 1500); }, 120);
+  },
+  'cal-detalle': () => {
+    S.view = 'calendar'; S.calVista = 'detalle';
+    localStorage.setItem('crono_view', 'calendar');
+    try { localStorage.setItem('crono_cal_vista', 'detalle'); } catch (e) { /* sin espacio */ }
+    renderAll(); window.scrollTo(0, 0);
   },
   'prev-m': () => { S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() - 1, 1); renderMain(); },
   'next-m': () => { S.cursor = new Date(S.cursor.getFullYear(), S.cursor.getMonth() + 1, 1); renderMain(); },
@@ -4674,15 +4952,6 @@ const ACTS = {
     if (esMediaOAudio(r)) { abrirGaleria([r], 0); return; }
     if (isPdf(r) && r.path) { window.open(r.path.split('/').map(encodeURIComponent).join('/'), '_blank', 'noopener'); return; }
     if (esAdmin() || r.libre) downloadOne(r);
-  },
-  'marca-elegir': () => { if (!ED) return; syncDraft(); ED.verMarca = !ED.verMarca; renderEditor(); },
-  'marca-usar': (el) => {
-    if (!ED || !requireWrite()) return;
-    syncDraft();
-    const lista = ED.d.marca || (ED.d.marca = []);
-    const i = lista.indexOf(el.dataset.id);
-    if (i >= 0) lista.splice(i, 1); else lista.push(el.dataset.id);
-    renderEditor();
   },
   'marca-quitar-pieza': (el, e) => {
     if (e) e.stopPropagation();
@@ -5085,6 +5354,7 @@ const ACTS = {
     syncDraft();
     const t = ED.d.guionTabla; if (!tablaValida(t)) return;
     t.filas.push(t.cols.map(() => ''));
+    asegurarIds(t);
     renderEditor();
   },
   'gt-col': () => {
@@ -5102,22 +5372,67 @@ const ACTS = {
     syncDraft();
     const t = ED.d.guionTabla, f = +el.dataset.f;
     if (!tablaValida(t) || !t.filas[f]) return;
-    if (t.filas[f].some((c) => (c || '').trim()) && !confirm('¿Quitar esta fila del guión?')) return;
+    if (t.filas[f].some((c) => (c || '').trim()) && !confirm('¿Quitar esta fila de la estructura?')) return;
+    const fid = (t.ids || [])[f];
     t.filas.splice(f, 1);
+    if (Array.isArray(t.ids)) t.ids.splice(f, 1);
+    if (fid) ED.d.guionNotas = (ED.d.guionNotas || []).filter((n) => n.fila !== fid);
     if (!t.filas.length) ED.d.guionTabla = null;
+    sincronizarGuion(ED.d, false);
     renderEditor();
   },
   'gt-copiar': async () => {
     if (!ED) return;
     syncDraft();
     const txt = tablaTexto(ED.d.guionTabla);
-    toast(await copiarTexto(txt) ? 'Tabla copiada · pégala en Word, Docs o Sheets' : 'No se pudo copiar', 3500);
+    toast(await copiarTexto(txt) ? 'Estructura copiada · pégala en Word, Docs o Sheets' : 'No se pudo copiar', 3500);
+  },
+  // Comentar una fila sin cambiar lo que dice
+  'gt-nota': (el) => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    ED.notaFila = ED.notaFila === el.dataset.id ? null : el.dataset.id;
+    renderEditor();
+    setTimeout(() => { const i = $('#gt-nota-txt'); if (i) i.focus(); }, 60);
+  },
+  'gt-nota-guardar': (el) => {
+    if (!ED || !requireWrite()) return;
+    const i = $('#gt-nota-txt');
+    const texto = ((i && i.value) || '').trim();
+    if (!texto) { if (i) i.focus(); return; }
+    syncDraft();
+    ED.d.guionNotas = (ED.d.guionNotas || []).concat([{ id: uid(), fila: el.dataset.id, text: texto, by: S.me.id, at: nowISO() }]);
+    ED.notaFila = null;
+    renderEditor();
+    toast('Comentario puesto en esa fila · se guarda con la pieza', 3500);
+  },
+  'gt-nota-quitar': (el) => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    ED.d.guionNotas = (ED.d.guionNotas || []).filter((n) => n.id !== el.dataset.id);
+    renderEditor();
+  },
+  'copiar-guion': async (el, e) => {
+    if (e) e.stopPropagation();
+    const p = S.db.posts.find((x) => x.id === el.dataset.id); if (!p) return;
+    const txt = (p.guion || '').trim();
+    if (!txt) { toast('Esta pieza no tiene guión de voz'); return; }
+    toast(await copiarTexto(txt) ? 'Guión copiado · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 3500);
+  },
+  'ed-sel-guion': () => { const t = $('#e-guion'); if (!t) return; t.focus(); t.setSelectionRange(0, t.value.length); },
+  'ed-copiar-guion': async () => {
+    if (!ED) return;
+    syncDraft();
+    const txt = (ED.d.guion || '').trim();
+    if (!txt) { toast('Todavía no hay guión de voz'); return; }
+    toast(await copiarTexto(txt) ? 'Guión copiado · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 3500);
   },
   'gt-quitar': () => {
     if (!ED || !requireWrite()) return;
     syncDraft();
-    if (!confirm('¿Quitar la tabla del guión?\n\nEl texto de abajo se queda como está.')) return;
+    if (!confirm('¿Quitar la estructura?\n\nEl guión de voz en off se queda como está, en texto.')) return;
     ED.d.guionTabla = null;
+    ED.d.guionNotas = [];
     renderEditor();
   },
   'ed-bloque': (el) => {
@@ -5311,7 +5626,11 @@ document.addEventListener('input', (e) => {
     if (m) { m.texto = e.target.value; m.original = m.original || e.target.value; m.pide = W().pideCambio(m.texto) && m.persona !== S.me.id; m.charla = !m.texto.trim(); m.usar = !!m.texto.trim() || !!m.foto; }
   }
   if (e.target.dataset && e.target.dataset.feedCom != null) { S.feedBorrador[e.target.dataset.feedCom] = e.target.value; return; }
-  if (e.target.classList && e.target.classList.contains('gcel') && e.target.tagName === 'TEXTAREA') crecerCelda(e.target);
+  if (e.target.classList && e.target.classList.contains('gcel')) {
+    if (ED) ED.guionMano = false;                    // manda la tabla
+    if (e.target.tagName === 'TEXTAREA') crecerCelda(e.target);
+  }
+  if (e.target.id === 'e-guion' && ED) ED.guionMano = true;   // manda el cuadro del guión
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
   if (e.target.id === 'zum-texto' && ZUM) {
     ZUM.texto = e.target.value;
@@ -5350,6 +5669,24 @@ document.addEventListener('change', (e) => {
     renderMain(); return;
   }
   if (t.id === 'f-archivadas') { S.f.archivadas = t.checked; renderToolbar(); renderMain(); return; }
+  if (t.id === 'marca-add' && ED) {
+    const id = t.value; t.value = '';
+    if (!id || !requireWrite()) return;
+    syncDraft();
+    const lista = ED.d.marca || (ED.d.marca = []);
+    if (!lista.includes(id)) lista.push(id);
+    ED.abre.marca = true;
+    renderEditor();
+    const r = recursoPorId(id);
+    toast(r ? `“${splitName(r.name).label || r.name}” queda apuntado en esta pieza` : 'Listo', 3000);
+    return;
+  }
+  if (t.id === 'gt-voz' && ED) {
+    syncDraft();
+    const tb = ED.d.guionTabla;
+    if (tablaValida(tb)) { tb.voz = +t.value; sincronizarGuion(ED.d, false); }
+    renderEditor(); return;
+  }
   if (ED && (t.id === 'e-status' || t.id === 'e-plat')) { syncDraft(); renderEditor(); return; }
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();

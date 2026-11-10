@@ -1,10 +1,9 @@
 {
  "posts": [
   {
-   "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "title": "10 puntos que revisar antes de comprar tu terreno",
-   "caption": "",
-   "notes": "Carrusel de 10 láminas: un punto por lámina. Revisar con Javi qué entra en cada una.",
+   "caption": "¿Estás por comprar un terreno para construir tu casa? 🌲\n\nAntes de firmar, revisa estos 10 puntos. Un buen terreno te ayuda a construir más rápido, cumplir el presupuesto y disfrutar tu casa por décadas. Uno mal elegido puede traer permisos rechazados, falta de agua o caminos que en invierno no se pueden usar.\n\n📄 Papeles: dominio, cargas y subdivisión aprobada\n📐 Normativa: Certificado de Informaciones Previas y zona rural\n💧 Servicios: agua, electricidad y acceso todo el año\n⛰️ El terreno: pendiente, orientación y riesgos naturales\n\nGuarda este post para tenerlo a mano cuando visites terrenos, y lee la guía completa en el blog de neorigen.cl (link en la bio).\n\n¿Ya tienes uno en la mira? Envíanos la ubicación y fotos por WhatsApp o en neorigen.cl y te recomendamos el modelo y la orientación.\n\nEs una guía general: antes de comprar, haz un estudio de títulos con un abogado y confirma los requisitos en la DOM.\n\nVive lo natural, a tu manera.\n\n#Neorigen #TerrenoEnChile #ComprarTerreno #CasasPrediseñadas #ParcelaEnChile\n",
+   "notes": "",
    "hashtags": "",
    "guion": "",
    "guionTabla": null,
@@ -15,28 +14,45 @@
    "date": "2026-11-11",
    "inicio": "",
    "format": "carrusel",
-   "status": "idea",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
+   "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "platforms": [
     "instagram"
    ],
    "assignees": [
     "javi",
-    "maca"
+    "maca",
+    "flavio"
    ],
    "links": [],
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "1b769158-3bef-4167-a412-2ca3a0b712c7",
+     "campo": "caption",
+     "text": "",
+     "hasta": "2026-11-10T18:52:47.961Z",
+     "by": "javi"
+    },
+    {
+     "id": "177aab40-5cec-4ba3-b833-87571bcb2d26",
+     "campo": "notes",
+     "text": "Carrusel de 10 láminas: un punto por lámina. Revisar con Javi qué entra en cada una.",
+     "hasta": "2026-11-10T18:52:47.961Z",
+     "by": "javi"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T18:52:47.961Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-10T18:36:15.730Z",
+   "statusChangedAt": "2026-11-10T18:52:47.961Z",
    "publishedAt": null
   },
   {
@@ -6537,6 +6553,39 @@
  ],
  "activity": [
   {
+   "id": "e6019c45-442b-4cc0-9be7-186496c0dba7",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy, notas",
+   "meta": null,
+   "createdAt": "2026-11-10T18:52:47.963Z"
+  },
+  {
+   "id": "8aa2ae8f-1d93-44d7-9295-2e552a414dce",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Idea a En diseño",
+   "meta": {
+    "from": "idea",
+    "to": "diseno"
+   },
+   "createdAt": "2026-11-10T18:52:47.963Z"
+  },
+  {
+   "id": "a352a711-95a0-45cd-afa9-82ad926bf21d",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Flavio",
+   "meta": null,
+   "createdAt": "2026-11-10T18:52:47.962Z"
+  },
+  {
    "id": "63e4d166-a8f9-4faf-8880-799c613ce53d",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -10816,6 +10865,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c8a29411-5c2a-450d-b5ce-198f1892ffbe",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (copy, notas)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó copy, notas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-10T18:52:47.963Z"
+  },
+  {
+   "id": "d6c3d105-f55f-4948-bb05-d59c7df740fe",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-10T18:52:47.963Z"
+  },
+  {
+   "id": "e7dc07a2-f8c9-4a19-8853-bbde9a5e98ee",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "tagged",
+   "text": "te etiquetó en “10 puntos que revisar antes de comprar tu terreno”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi te etiquetó como responsable",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-10T18:52:47.962Z"
+  },
   {
    "id": "987181fd-5e3e-436a-9518-325a2ffea9dc",
    "to": "javi",

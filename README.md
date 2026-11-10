@@ -345,9 +345,14 @@ Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o 
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 
-## Elegir de Marca en una pieza
+## Lo de Marca, en su propio menú
 
-Dentro de la pieza, el bloque **De Marca** ya no muestra una lista larga de archivos que se confundía con los de la pieza. Ahora es un **menú desplegable**, con su ícono de Marca al lado y los archivos **agrupados por carpeta**. Lo que eliges queda como chip arriba, y el texto de ayuda aclara que son los archivos de la pestaña *Marca* —logos, tipografías, músicas—, que **se apuntan, no se copian**, y que no son los archivos de esta pieza.
+Antes, lo de **Marca** aparecía mezclado con los archivos de la pieza —las mismas miniaturas, distinguidas solo por una estrellita— y se confundía. Ahora va siempre **aparte, en un menú desplegable**, agrupado por carpeta y con el ícono de Marca al lado. En tres lugares:
+
+- **Al comentar una pieza**: la tira de miniaturas es solo de *esta* pieza; lo de Marca se elige en el menú de abajo y queda como chip, con su nombre a la vista. Igual en el **Feed**.
+- **En el bloque “De Marca”** de la pieza: el mismo menú, en vez de la lista larga de antes.
+
+El texto de ayuda aclara qué son: los archivos de la pestaña *Marca* —logos, tipografías, músicas, el manual—, que **se apuntan, no se copian**, y que no son los archivos de la pieza.
 
 
 ## Marca: la nube de recursos

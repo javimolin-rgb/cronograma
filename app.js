@@ -1076,12 +1076,24 @@ const miniArchivo = (f) => miniMedia(f) || `<span class="ext">${esc((extOf(f) ||
 const esDeMarca = (f) => !!f && (S.db.recursos || []).some((r) => r.id === f.id);
 const archivoDeComentario = (fid, post) => (post && (post.files || []).find((f) => f.id === fid)) || recursoPorId(fid) || null;
 const archivosDeComentario = (c, post) => ((c && c.fileIds) || []).map((fid) => archivoDeComentario(fid, post)).filter(Boolean);
-// Lo que se puede etiquetar: primero lo de la pieza, después lo de Marca (lo que se ve y se escucha, adelante)
-function etiquetables(p) {
+// Lo que se puede etiquetar: los archivos de la pieza (miniaturas) y lo de Marca (desplegable)
+const etiquetables = (p) => pieceFiles(p, true);
+function marcaEtiquetable(p) {
   const propios = pieceFiles(p, true);
-  const enMarca = gruposMarca(recursos()).map((g) => g.principal)
-    .filter((r) => r && !propios.some((f) => f.id === r.id));
-  return propios.concat(enMarca.filter(esMediaOAudio), enMarca.filter((r) => !esMediaOAudio(r)));
+  return gruposMarca(recursos()).map((g) => g.principal).filter((r) => r && !propios.some((f) => f.id === r.id));
+}
+/* El desplegable de Marca: agrupado por carpeta y aparte de los archivos de la pieza,
+   que es lo que se confundía cuando iban todos mezclados en la misma tira. */
+function marcaComboHtml(p, id, puestos) {
+  const lista = marcaEtiquetable(p);
+  if (!lista.length) return '';
+  const grupos = new Map();
+  lista.forEach((r) => { const k = nombreCarpeta(carpetaDeRecurso(r)) || 'Marca'; (grupos.get(k) || grupos.set(k, []).get(k)).push(r); });
+  const ya = (x) => (puestos || []).includes(x);
+  const ops = [...grupos.entries()].sort((x, y) => x[0].localeCompare(y[0], 'es')).map(([k, rs]) =>
+    `<optgroup label="${esc(k)}">${rs.map((r) => `<option value="${esc(r.id)}"${ya(r.id) ? ' disabled' : ''}>${esc(splitName(r.name).label || r.name)}${ya(r.id) ? ' — ya está' : ''}</option>`).join('')}</optgroup>`).join('');
+  return `<div class="marcasel comarca"><span class="marcaic">${ic('marca', 16)}</span>
+    <select class="sel" data-marca-com="${esc(id)}"><option value="">Nombrar algo de Marca…</option>${ops}</select></div>`;
 }
 // Una miniatura del elegidor: marcada o no, y con la estrella si viene de Marca
 function pickHtml(f, elegido, act, extra) {
@@ -1310,9 +1322,11 @@ function postHtml(p, t) {
         if (!store.canWrite || !S.feedPick[p.id]) return '';
         const puestos = S.feedFotos[p.id] || [];
         const lista = etiquetables(p);
-        if (!lista.length) return '<p class="hint">Todavía no hay archivos en la pieza ni en Marca.</p>';
-        return `<div class="commedia">${lista.map((f) => pickHtml(f, puestos.includes(f.id), 'feed-media', ` data-p="${esc(p.id)}"`)).join('')}</div>
-          <p class="hint">Toca lo que quieras nombrar en el comentario. La estrella es lo que viene de Marca.</p>`;
+        const combo = marcaComboHtml(p, p.id, puestos);
+        if (!lista.length && !combo) return '<p class="hint">Todavía no hay archivos en la pieza ni en Marca.</p>';
+        return `${lista.length ? `<div class="commedia">${lista.map((f) => pickHtml(f, puestos.includes(f.id), 'feed-media', ` data-p="${esc(p.id)}"`)).join('')}</div>` : ''}
+          ${combo}
+          <p class="hint">${lista.length ? 'Toca una miniatura para nombrar un archivo <b>de esta pieza</b>. ' : ''}Lo de <b>Marca</b> (logos, música, el manual…) se elige en el menú.</p>`;
       })()}
       ${(() => {
         const puestas = (S.feedFotos[p.id] || []).map((fid) => archivoDeComentario(fid, p)).filter(Boolean);
@@ -3073,9 +3087,13 @@ function renderEditor() {
         const subir = store.canWrite
           ? `<label class="cmpick cmadd" title="Sumar un archivo: foto, video, audio, PDF…">${ED.comSubiendo ? `<i class="cmspin"></i>` : ic('paperclip', 20)}<input id="cm-file" type="file" multiple${ED.comSubiendo ? ' disabled' : ''}></label>`
           : '';
-        if (!media.length && !subir) return '';
+        const combo = store.canWrite ? marcaComboHtml(d, 'ed', sel) : '';
+        if (!media.length && !subir && !combo) return '';
+        const puestasMarca = sel.map((fid) => recursoPorId(fid)).filter(Boolean);
         return `<div class="commedia">${subir}${media.map((f) => pickHtml(f, sel.includes(f.id), 'cm-media')).join('')}</div>
-        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca el clip para sumar un archivo (foto, video, audio, PDF…), o uno de abajo para decir de cuál estás hablando: van los de la pieza y también lo de Marca (con la estrella).' : 'Toca el clip para mandar un archivo con el comentario: queda guardado en los archivos de la pieza.'}</p>`;
+        ${combo}
+        ${puestasMarca.length ? `<div class="chips marcausa">${puestasMarca.map((r) => `<button class="chip marcachip" data-act="cm-media" data-f="${esc(r.id)}" title="Sacarlo del comentario">${esAudio(r) ? ic('music', 13) : ic('marca', 13)} ${esc(splitName(r.name).label || r.name)}<i>${ic('x', 12)}</i></button>`).join('')}</div>` : ''}
+        <p class="hint">${ED.comSubiendo ? 'Subiendo…' : sel.length ? `Va con ${sel.length} ${sel.length === 1 ? 'archivo' : 'archivos'}. Tócalos de nuevo para soltarlos.` : media.length ? 'Toca el clip para sumar un archivo (foto, video, audio, PDF…), o una miniatura para decir de cuál de esta pieza estás hablando. Lo de Marca va en el menú de abajo.' : 'Toca el clip para mandar un archivo con el comentario: queda guardado en los archivos de la pieza.'}</p>`;
       })()}
       <div class="chips">${P.filter((x) => x.id !== S.me.id).map((x) => `<button class="chip" data-act="ed-mention" data-v="${esc(x.name)}">@${esc(x.name)}</button>`).join('')}<button class="btn sm" data-act="ed-comment" style="margin-left:auto">Comentar</button></div></div>
     ` : '<p class="hint" style="margin-top:20px">Guarda la pieza para poder comentar y ver el historial.</p>'}
@@ -5669,6 +5687,22 @@ document.addEventListener('change', (e) => {
     renderMain(); return;
   }
   if (t.id === 'f-archivadas') { S.f.archivadas = t.checked; renderToolbar(); renderMain(); return; }
+  if (t.dataset && t.dataset.marcaCom) {
+    const id = t.value, donde = t.dataset.marcaCom; t.value = '';
+    if (!id || !requireWrite()) return;
+    const r = recursoPorId(id);
+    if (donde === 'ed') {
+      if (!ED) return;
+      syncDraft();
+      ED.comFiles = [...new Set((ED.comFiles || []).concat([id]))];
+      renderEditor();
+    } else {
+      S.feedFotos[donde] = [...new Set((S.feedFotos[donde] || []).concat([id]))];
+      renderMain();
+    }
+    toast(r ? `“${splitName(r.name).label || r.name}” va nombrado en el comentario` : 'Listo', 3000);
+    return;
+  }
   if (t.id === 'marca-add' && ED) {
     const id = t.value; t.value = '';
     if (!id || !requireWrite()) return;

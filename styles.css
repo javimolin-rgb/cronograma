@@ -1095,3 +1095,6 @@ details.orig p{font-size:0.75rem;color:var(--muted)}
 .detestr>b{display:block;color:var(--muted);font-size:0.625rem;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
 .detestr>span{display:block;padding:3px 0;border-top:1px solid var(--line)}
 .detestr i{font-style:normal;font-weight:800;color:var(--muted)}
+/* Lo de Marca en un comentario: su propio menú, aparte de las miniaturas de la pieza */
+.marcasel.comarca{margin:8px 0 0}
+.marcausa .marcachip>i{display:inline-grid;place-items:center;margin-left:4px;opacity:.6}

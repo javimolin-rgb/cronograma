@@ -753,7 +753,7 @@ const DET_COLS = [
   ['estructura', 'Estructura', (p) => (tablaValida(p.guionTabla)
     ? p.guionTabla.filas.map((f) => f.map((c, i) => (String(c || '').trim() ? `${p.guionTabla.cols[i] || ''}: ${String(c).trim()}` : '')).filter(Boolean).join(' · ')).join('\n')
     : '')],
-  ['guion', 'Guión / voz en off', (p) => (p.guion || '').trim()],
+  ['guion', 'Guión / voz en off', (p) => textoVoz(p.guion)],
   ['spotify', 'Canción', (p) => { const s = spotifyDatos(p.spotify); return s ? `${SPOTI_NOMBRE[s.tipo]}: ${s.url}` : ''; }],
   ['notas', 'Comentarios de la estructura', (p) => (p.guionNotas || []).map((n) => `${person(n.by).name}: ${n.text}`).join(' · ')],
   ['enlaces', 'Enlaces', (p) => (p.links || []).map((l) => `${l.label || ''} ${l.url}`.trim()).join(' · ')],
@@ -1213,7 +1213,7 @@ function viewResultados() {
   return cab + `<div class="resfeed">${piezas.map((p) => {
     const files = pieceFiles(p, true); // solo la versión final de cada archivo
     const st = statusOf(p.status);
-    const gui = (p.guion || '').trim();
+    const gui = textoVoz(p.guion);   // sin las rayas de las filas sin voz
     return `<article class="res" style="--c:${st.color}">
       <header>
         <div><h3>${esc(p.title)}</h3>
@@ -1290,7 +1290,7 @@ function postHtml(p, t) {
   const vis = abiertos ? coms : coms.slice(-3);
   const autor = person(p.updatedBy || p.createdBy);
   const puedeAprobar = !['aprobado', 'programado', 'publicado'].includes(p.status);
-  const gui = (p.guion || '').trim();
+  const gui = textoVoz(p.guion);   // sin las rayas de las filas sin voz
   const ig = S.feedVista === 'ig';
   return `<article class="post" style="--c:${st.color}">
     <header class="posth">${ig ? `<span class="logo sm">${marca()}</span>` : av(autor.id, 'md')}
@@ -1681,24 +1681,48 @@ function asegurarIds(t) {
   return t;
 }
 const PARTE = '\n\n';
-// Tabla → texto: la columna de la voz, una fila por párrafo
+const SOLO_RAYA = /^[—–-]+$/;
+/* Tabla → texto: una fila, un párrafo, SIEMPRE en el mismo orden. Una fila sin voz
+   se escribe con una raya, para que las demás no se corran de lugar al volver. */
 function vozDeTabla(t) {
   const v = colVoz(t);
   if (v < 0) return '';
-  return t.filas.map((f) => String(f[v] || '').trim()).join(PARTE).replace(/\n{3,}/g, PARTE).trim();
+  return t.filas.map((f) => String(f[v] || '').trim() || '—').join(PARTE);
 }
-// Texto → tabla: cada párrafo vuelve a su fila, en el mismo orden
+/* Texto → tabla: cada párrafo vuelve a su fila. Una raya sola vuelve a dejar la casilla
+   vacía solo si estaba vacía antes, así nunca se borra una raya que escribió ella. */
 function vozATabla(t, texto) {
   const v = colVoz(t);
   if (v < 0) return;
   const partes = String(texto || '').replace(/\r/g, '').split(/\n\s*\n/);
-  t.filas.forEach((f, i) => { f[v] = (partes[i] != null ? partes[i] : '').trim(); });
+  t.filas.forEach((f, i) => {
+    const p = (partes[i] != null ? partes[i] : '').trim();
+    const eraVacia = !String(f[v] || '').trim();
+    f[v] = (eraVacia && SOLO_RAYA.test(p)) ? '' : p;
+  });
   // si quedó texto de más, se suma a la última fila para no perderlo
   if (partes.length > t.filas.length) {
     const sobra = partes.slice(t.filas.length).join(PARTE).trim();
     const u = t.filas[t.filas.length - 1];
     if (sobra) u[v] = (u[v] ? u[v] + PARTE : '') + sobra;
   }
+}
+/* Lo que se copia al generador de voz: sin las rayas de las filas sin voz, que ahí
+   sobran. En el cuadro del guión se quedan, porque marcan en qué fila va cada cosa. */
+const textoVoz = (g) => String(g || '').split(/\n\s*\n/).map((x) => x.trim())
+  .filter((x) => x && !SOLO_RAYA.test(x)).join(PARTE);
+/* Columnas sobrantes: las que quedaron al final, sin título y sin nada escrito
+   (pasa al pegar desde Word, que a veces trae columnas de más). */
+function podarTabla(t) {
+  if (!tablaValida(t)) return t;
+  while (t.cols.length > 2 && !String(t.cols[t.cols.length - 1] || '').trim()
+    && t.filas.every((f) => !String(f[t.cols.length - 1] || '').trim())) {
+    const i = t.cols.length - 1;
+    t.cols.splice(i, 1);
+    t.filas.forEach((f) => f.splice(i, 1));
+    if (Number.isInteger(t.voz) && t.voz >= t.cols.length) delete t.voz;
+  }
+  return t;
 }
 /* Deja las dos caras iguales. `desdeTexto` es true cuando lo último que se tocó fue
    el cuadro de la voz; si no, manda la tabla. */
@@ -1797,7 +1821,7 @@ document.addEventListener('paste', (e) => {
   e.preventDefault();
   if (tablaValida(ED.d.guionTabla) && !confirm(`Ya hay una tabla con ${ED.d.guionTabla.filas.length} filas. ¿La reemplazo por la que estás pegando?`)) return;
   syncDraft();
-  ED.d.guionTabla = asegurarIds(t);
+  ED.d.guionTabla = asegurarIds(podarTabla(t));
   ED.abre.estructura = true;
   ED.abre.guion = true;
   sincronizarGuion(ED.d, false);
@@ -2820,7 +2844,17 @@ function openEditor(id, preset = {}) {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], inicio: '', priority: 'normal', links: [], files: [], checklist: []
   };
-  if (tablaValida(d.guionTabla)) { asegurarIds(d.guionTabla); if (!(d.guion || '').trim()) d.guion = vozDeTabla(d.guionTabla); }
+  if (tablaValida(d.guionTabla)) {
+    asegurarIds(d.guionTabla);
+    const dela = vozDeTabla(d.guionTabla), previo = String(d.guion || '').trim();
+    /* Si en el guión había un recado del equipo (“ojo con esta palabra”) en vez de la voz
+       de la tabla, no se pisa en silencio: se guarda primero en las notas internas. */
+    if (previo && textoVoz(previo) !== textoVoz(dela) && !String(d.notes || '').includes(previo)) {
+      d.notes = `${String(d.notes || '').trim()}\n\nEstaba escrito en el guión (no era voz en off):\n${previo}`.trim();
+      setTimeout(() => toast('Lo que había escrito en el guión no era la voz de la tabla: lo dejé en las notas internas', 6000), 400);
+    }
+    d.guion = dela;
+  }
   ED = { old, d, abre: {}, multiPlat: d.platforms.length > 1, comment: '', comFiles: [], guionMano: false, notaFila: null, verTexto: null, newLink: { label: '', url: '' }, newCheck: '', uploading: 0, editando: null, versionesDe: null };
   openSheet('', true);
   renderEditor();
@@ -3048,9 +3082,9 @@ function renderEditor() {
         : `<textarea class="area" id="e-estructura" style="min-height:92px" placeholder="Pega aquí la tabla (Word, Google Docs, Sheets, Notion, Claude)…"></textarea>
            <p class="hint">Pega la tabla de tu guión aquí: se guarda como tabla de verdad, con sus columnas. Una de ellas —la de la voz— arma sola el guión de voz en off.</p>`))}
 
-    ${bloque('guion', 'Guión / voz en off', !!(d.guion || '').trim(),
-      (d.guion || '').trim() ? `${(d.guion || '').trim().split(/\s+/).length} palabras` : '', () => `
-      ${tablaValida(d.guionTabla) && colVoz(d.guionTabla) >= 0 ? `<p class="hint hintvoz">${ic('refresh', 13)} Es la columna <b>${esc(d.guionTabla.cols[colVoz(d.guionTabla)] || '')}</b> de la Estructura, una fila por párrafo. Lo que cambies acá vuelve a la tabla, y al revés.</p>` : ''}
+    ${bloque('guion', 'Guión / voz en off', !!textoVoz(d.guion),
+      textoVoz(d.guion) ? `${textoVoz(d.guion).split(/\s+/).length} palabras` : '', () => `
+      ${tablaValida(d.guionTabla) && colVoz(d.guionTabla) >= 0 ? `<p class="hint hintvoz">${ic('refresh', 13)} Es la columna <b>${esc(d.guionTabla.cols[colVoz(d.guionTabla)] || '')}</b> de la Estructura, <b>una fila por párrafo</b>. Lo que cambies acá vuelve a la tabla, y al revés. La <b>raya</b> marca una fila sin voz; al copiar no se va.</p>` : ''}
       <div class="lblacts solo"><button class="lnk" data-act="ed-sel-guion">Seleccionar todo</button><button class="lnk" data-act="ed-copiar-guion">${ic('copy', 13)} Copiar para la voz IA</button></div>
       <textarea class="area" id="e-guion" style="min-height:120px" placeholder="Lo que se dice en el video, locución, subtítulos…">${esc(d.guion || '')}</textarea>
       ${historialTextoHtml(d, 'guion')}`)}
@@ -5478,9 +5512,9 @@ const ACTS = {
   'copiar-guion': async (el, e) => {
     if (e) e.stopPropagation();
     const p = S.db.posts.find((x) => x.id === el.dataset.id); if (!p) return;
-    const txt = (p.guion || '').trim();
+    const txt = textoVoz(p.guion);
     if (!txt) { toast('Esta pieza no tiene guión de voz'); return; }
-    toast(await copiarTexto(txt) ? 'Guión copiado · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 3500);
+    toast(await copiarTexto(txt) ? 'Guión copiado, sin las rayas · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 4000);
   },
   // al quitar la canción el bloque se queda abierto, para poder pegar otra al tiro
   'ed-spoti-quitar': () => { if (!ED || !requireWrite()) return; syncDraft(); ED.d.spotify = ''; ED.abre.spotify = true; renderEditor(); setTimeout(() => { const i = $('#e-spotify'); if (i) i.focus(); }, 60); },
@@ -5488,9 +5522,9 @@ const ACTS = {
   'ed-copiar-guion': async () => {
     if (!ED) return;
     syncDraft();
-    const txt = (ED.d.guion || '').trim();
+    const txt = textoVoz(ED.d.guion);
     if (!txt) { toast('Todavía no hay guión de voz'); return; }
-    toast(await copiarTexto(txt) ? 'Guión copiado · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 3500);
+    toast(await copiarTexto(txt) ? 'Guión copiado, sin las rayas · pégalo en el generador de voz' : 'No se pudo copiar; selecciónalo a mano', 4000);
   },
   'gt-quitar': () => {
     if (!ED || !requireWrite()) return;

@@ -250,7 +250,11 @@ Lo que antes era “el guión con una tabla adentro” ahora son **dos bloques q
 - **Estructura**: la tabla. Cada fila es un momento del contenido (tiempo, imagen, texto en pantalla, voz…). Se pega desde Word, Google Docs, Sheets, Notion o Claude y se guarda como tabla de verdad.
 - **Guión / voz en off**: solo el texto que se dice, seguido y limpio, **listo para copiar y pegar en el generador de voz con IA**. Tiene su botón *Copiar para la voz IA* (también en el Feed, sin abrir la pieza).
 
-**Se actualizan solos, en los dos sentidos.** Una columna de la tabla es la de la voz —la app la reconoce por su nombre (*Voz*, *Voz en off*, *locución*…) y queda marcada en celeste—, y esa columna es la que arma el guión, una fila por párrafo. Si escribes en el guión, el texto vuelve a la tabla fila por fila. Si la app eligió mal la columna, se cambia en **“Columna de la voz en off”**, debajo de la tabla.
+**Se actualizan solos, en los dos sentidos.** Una columna de la tabla es la de la voz —la app la reconoce por su nombre (*Voz*, *Voz en off*, *locución*…) y queda marcada en celeste—, y esa columna es la que arma el guión: **una fila, un párrafo, siempre**. Si escribes en el guión, el texto vuelve a la tabla fila por fila. Si la app eligió mal la columna, se cambia en **“Columna de la voz en off”**, debajo de la tabla.
+
+**La raya.** Una fila sin voz (la portada, el cierre con el logo) aparece en el guión como una **raya `—`**. Está para que las filas no se corran de lugar al volver a la tabla: si la borras, el párrafo siguiente se sube de fila. Al tocar **Copiar para la voz IA** las rayas **no se copian**: al generador de voz llega solo lo que se dice.
+
+Todas las piezas que ya existían quedaron puestas al día: su tabla con identificador por fila (para poder comentarla), su columna de voz elegida y su guión armado.
 
 ### Comentar una fila sin editarla
 

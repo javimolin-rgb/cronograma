@@ -298,14 +298,16 @@
    "publishedAt": "2026-11-04T02:03:17.138Z",
    "artefactos": [],
    "versionesTexto": [],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Una casa para todas las edades",
    "caption": "Una casa no es solo para hoy. Contamos con modelos compatibles con accesibilidad universal y podemos incorporar adaptaciones específicas si las necesitas, para que la casa acompañe a toda la familia en cada etapa. Envíaselo a quien está pensando en una casa para todos.\n\n#Neorigen #CasasPrediseñadas #AccesibilidadUniversal #CasaFamiliar #DiseñoInclusivo #CasaParaTodaLaVida #CasaSustentable #ConstruirEnChile",
    "notes": "Reel · mini documental · 35 s · busca envíos\n\nIdea. Contar que hay modelos compatibles con accesibilidad universal a través de una escena familiar de tres generaciones, no de una lista técnica. Le habla al núcleo de la audiencia (35–44 años), que piensa a la vez en sus hijos y en sus padres. Es un tema que el feed nunca ha tocado y que se envía al hermano o hermana con quien se conversa \"lo de los papás\".\n\nImagen. Planos tipo documental, luz natural, cámara al hombro: auto que llega, una persona mayor que entra a la casa sin escalones, niños corriendo por la terraza, mesa larga al final del día. Si se graba con una familia real, con su autorización escrita; si no, con renders animados del repo 3D.\n\nFuente. Preguntas frecuentes: \"¿Las casas pueden adaptarse a accesibilidad universal?\"; distribución y etapas de la vida en el blog Inspiración y Estilo de Vida Neorigen; visión \"vivir bien debe ser posible para todos\" en Quiénes somos.",
    "hashtags": "",
-   "guion": "",
+   "guion": "—\n\nQue tus papás puedan venir a quedarse, y quedarse cómodos.\n\nQue tus hijos crezcan aquí…\n\n…y algún día vuelvan con los suyos.\n\nUna casa donde nadie se queda afuera.\n\n—",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -350,7 +352,16 @@
       "Casas prediseñadas · neorigen.cl",
       "—"
      ]
-    ]
+    ],
+    "ids": [
+     "43a4421e-5080-4c25-a2ec-29eab61d154e",
+     "b1660695-2634-4d83-acce-8e411e6344a1",
+     "79f55017-2b61-4355-8486-d6fbe22cb41a",
+     "9d32e2df-71b9-4b64-83a3-15cc61fa39d9",
+     "4366813f-394a-4bc8-8417-2a46d713200d",
+     "b1f98b86-51c1-4ffb-a81b-248d969bd9f4"
+    ],
+    "voz": 3
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -392,17 +403,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:27.707Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "¿Qué casa calza con tu familia?",
    "caption": "Nueve casas prediseñadas, de 57 a 167 m² útiles, ordenadas por dormitorios para que encuentres tu punto de partida. Todas se ajustan a tu terreno y se entregan llave en mano. Guárdalo y envíaselo a quien va a vivir contigo.\n\n#Neorigen #CasasPrediseñadas #ModelosDeCasas #CasaFamiliar #CasaLlaveEnMano #CasaSustentable #ConstruirEnChile #PlanosDeCasas",
    "notes": "Carrusel mixto · 10 láminas (la 2 es video de 10 s) · busca guardados\n\nIdea. Una guía para elegir entre los 9 modelos agrupados por dormitorios, con los datos tal cual están en la página Casas. El feed muestra modelos de a uno (y la serie de historias sigue con Boldo); nunca los ha puesto lado a lado. Es la pieza que se guarda y se envía al grupo familiar antes de cotizar.\n\nLáminas:\n1. Portada (imagen): fila de casas en el paisaje. \"¿Qué casa calza con tu familia?\" · bajada: \"9 modelos, de 57 a 167 m² útiles.\"\n2. Video (10 s): recorrido 3D rápido que pasa de un modelo a otro.\n3. 1 dormitorio · Casa Lingue: 1 baño · 57 m² útiles · 6 meses de obra.\n4. 2 dormitorios · Huingán y Peumo: Huingán 2 baños · 73 m² · 7 meses — Peumo 2 baños · 87 m² · 7 meses.\n5. 2 dormitorios · Casa Ciprés (nuevo diseño): 2 baños · 95 m² · 7 meses.\n6. 3 y 4 dormitorios · Mañío y Boldo: Mañío 3D · 2 baños · 106 m² · un piso · 8 meses — Boldo 4D · 2 baños · ver dato por confirmar · 8 meses.\n7. 4 dormitorios · Roble y Maitén: Roble 3 baños · 142 m² · 9 meses — Maitén 4 baños · 145 m² · 10 meses.\n8. 3 dormitorios, el más amplio · Casa Coihue: 3 baños · 167 m² · 10 meses.\n9. ¿Ninguno calza? Cada modelo se ajusta a tu terreno, y también se diseñan casas a medida.\n10. Cierre: \"Todos con el mismo estándar llave en mano\" · \"Guárdalo y envíaselo a quien va a vivir contigo\" · logo.\n\nFuente. Casas (dormitorios, baños, m² útiles y plazo de cada modelo), Casa Mañío (un piso) y Diseño a medida.",
    "hashtags": "",
-   "guion": "",
+   "guion": "Una casa para empezar, una para la familia que crece…\n\n…y una para cuando llegan todos. ¿Cuál es la de ustedes?",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -420,7 +433,12 @@
       "Llave en mano",
       "…y una para cuando llegan todos. ¿Cuál es la de ustedes?"
      ]
-    ]
+    ],
+    "ids": [
+     "b6598449-f80b-44c5-8df6-e7232c5ea236",
+     "83bd61c6-4291-46c4-8d84-8f1ebab419a6"
+    ],
+    "voz": 2
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -462,17 +480,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:21.814Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "caption": "Así es el camino desde tu primer mensaje hasta la entrega de tu casa: seis etapas, con el valor fijo en UF desde la firma y atendido directamente por los dueños de Neorigen. El primer paso es el más fácil: escríbenos por DM o WhatsApp.\n\n#Neorigen #CasasPrediseñadas #ConstruirTuCasa #CasaLlaveEnMano #ProcesoDeObra #CasaSustentable #ConstruirEnChile #TuCasaPropia",
    "notes": "Reel · cortes rápidos · 30 s · busca alcance\n\nIdea. Quitarle miedo al primer contacto: mostrar el recorrido completo desde \"escribo por WhatsApp\" hasta la entrega, en seis cortes de unos 4 segundos. El feed ya mostró la obra y la entrega por separado, pero nunca el camino comercial completo ni el dato de que atienden los propios dueños.\n\nImagen. Un objeto por paso, en planos cenitales sobre mesa de madera, con un número grande en Fraunces: celular con chat abierto, libreta con dormitorios anotados, plano impreso, lápiz sobre contrato, toma real de obra, llave sobre la palma.\n\nFuente. Preguntas frecuentes: \"¿Cómo es el proceso desde que los contacto?\" y \"¿El precio puede cambiar después de firmar el contrato?\"; atención por los dueños en Quiénes somos (valor \"Servicio al cliente\").",
    "hashtags": "",
-   "guion": "",
+   "guion": "—\n\nTodo empieza con una pregunta.\n\nNos cuentas cómo viven, qué sueñan, cuánto quieren invertir.\n\nY esa conversación empieza a tener forma.\n\nCon todo claro antes de poner la primera piedra.\n\nMientras se levanta, sabes en qué va.\n\nHasta el día en que la casa por fin es tuya.",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -523,7 +543,17 @@
       "6 · Entrega · atendido por los dueños de Neorigen",
       "Hasta el día en que la casa por fin es tuya."
      ]
-    ]
+    ],
+    "ids": [
+     "1683576b-f123-4c5d-a30c-ea9de8b8c4ae",
+     "8fd06ff2-1081-4361-8e2e-8ac89603228d",
+     "c528e3ae-7fc4-4195-b126-42f88f3dbc31",
+     "b9b127ac-167d-48f1-9ee2-5a26f2dab700",
+     "96dd3929-3c2c-4d11-944e-1cca90a46ac0",
+     "e7e6c9bd-81fd-489c-b91a-5e2351df716f",
+     "afca1e65-9f7e-43bc-a704-58ba16258307"
+    ],
+    "voz": 3
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -560,17 +590,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:08.735Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Aire nuevo sin abrir la ventana",
    "caption": "¿Ventilar sin dejar entrar el polen, el polvo ni el calor de afuera? Eso hace un recuperador de calor: renueva el aire sin abrir ventanas y lo entrega ya templado. Es una de las soluciones que podemos incorporar en tu proyecto. Envíaselo a quien vive estornudando en primavera. 🌬️\n\n#Neorigen #CasasPrediseñadas #RecuperadorDeCalor #CalidadDelAire #CasaSustentable #EficienciaEnergética #Alergias #CasaSaludable",
    "notes": "Reel · POV de primavera · 35 s · busca envíos\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. POV de alguien que se acerca a abrir una ventana con polen en el aire a contraluz, se detiene y la deja cerrada. Luego un esquema animado de la casa: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
    "hashtags": "",
-   "guion": "",
+   "guion": "—\n\nRespirar hondo en tu propia casa.\n\nSin estornudos al despertar, sin polvo en el velador.\n\nY la temperatura justo donde la dejaste.\n\nAire nuevo, todo el día, con la ventana cerrada.\n\nPara que tu casa se sienta liviana.",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -615,7 +647,16 @@
       "Solución que se puede incorporar según cada proyecto",
       "Para que tu casa se sienta liviana."
      ]
-    ]
+    ],
+    "ids": [
+     "c523cd8c-0137-451e-a43f-15a3430c5faa",
+     "fc293f2f-f7cd-45f2-963d-8285e9cf5658",
+     "20476d3e-6d58-42e6-b049-66e6c5cae59d",
+     "c55bd0a4-866b-4f73-9db8-fa77df5c003f",
+     "c745c815-3f3f-4f99-b1ae-f49396abfda8",
+     "94d803a1-ed7d-4557-8aa3-b2410c21be8f"
+    ],
+    "voz": 3
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -652,17 +693,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "La casa que respira",
    "caption": "Ese espacio entre el revestimiento y el muro es una de las decisiones más importantes de la casa: la fachada ventilada. Ayuda a regular la temperatura, evita la humedad y alarga la vida de la construcción. Lo que no se ve también se diseña.\n\n#Neorigen #CasasPrediseñadas #FachadaVentilada #ConstruirBien #CasaSustentable #EficienciaEnergética #DetallesQueImportan #ObraEnCurso",
    "notes": "Reel · grabado en obra con celular · 30 s · busca alcance\n\nIdea. Mostrar la fachada ventilada desde adentro de la obra, antes de que el revestimiento la tape: es un detalle que solo se ve durante la construcción. Sigue la fórmula del reel de proceso del 22 de julio (el mejor del año), pero enfocado en una sola solución en vez del proceso completo, así que no repite el reel de pilotes ni los de avance de obra.\n\nImagen. Celular en mano en obra (galería: 03 · Aislación y revestimiento). Mano que pasa por detrás de una tabla del revestimiento para mostrar el espacio de aire. Una animación simple superpuesta marca la cámara de aire en Niebla.\n\nFuente. Blog: Vivir de forma sustentable: el nuevo estándar en las casas de Neorigen, sección \"Fachadas ventiladas\".",
    "hashtags": "",
-   "guion": "",
+   "guion": "—\n\nPor fuera, la lluvia y el sol de todo el año.\n\nPor dentro, paredes secas.\n\nNada de ese olor a encierro en invierno.\n\nUna casa que envejece bien, contigo adentro.\n\n—",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -707,7 +750,16 @@
       "Casas prediseñadas · neorigen.cl",
       "—"
      ]
-    ]
+    ],
+    "ids": [
+     "cb268eb1-e1bd-4710-9140-6ee648b89b27",
+     "9009069c-ca10-48b8-b4ae-81aea302e633",
+     "e1e4bc07-48e7-419e-ba1a-6220d6e6dd83",
+     "04a91327-fb4d-47f4-97a0-b32244933791",
+     "fc1de629-4ce4-478e-93a7-689b3e3ec2d7",
+     "5ba70d8c-dd01-4bfc-b87e-371f23f66ce4"
+    ],
+    "voz": 3
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -739,17 +791,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:10.412Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Cómo se arma el precio de tu casa",
    "caption": "Sin letra chica: esto es lo que define el valor de una casa Neorigen y lo que queda fijo al firmar. Guárdalo para cuando vayas a cotizar, y si tienes dudas sobre tu caso, escríbenos por DM o WhatsApp.\n\n#Neorigen #CasasPrediseñadas #ConstruirTuCasa #CasaLlaveEnMano #PresupuestoDeObra #CasaSustentable #ConstruirEnChile #ParcelaDeAgrado",
    "notes": "Carrusel mixto · 9 láminas (la 2 es video de 8 s) · busca guardados\n\nIdea. Transparencia de precio sin publicar precios: qué mueve el valor de una casa y qué queda fijo al firmar. Es la duda que frena la compra en una decisión de este tamaño, y el feed no tiene ninguna pieza sobre ella. Formato de \"lo que conviene saber antes de cotizar\", muy guardable.\n\nLáminas:\n1. Portada (imagen): casa terminada con un plano encima. \"¿Cuánto cuesta construir tu casa?\" · bajada: \"Depende de 6 cosas.\"\n2. Video (8 s): manos sobre un plano y una calculadora, luego la casa terminada.\n3. Los 6 factores: tamaño · nivel de terminaciones · ubicación · accesos · características del terreno · personalizaciones.\n4. Punto de partida. Cada modelo tiene un valor base de construcción referencial. Si personalizas, el presupuesto se actualiza.\n5. El terreno cuenta. Se evalúan accesos, factibilidades y condiciones de construcción para que la propuesta calce con la obra real.\n6. Lo que no cambia. Al firmar el contrato, el valor queda establecido en UF. Solo cambia si tú pides cambios, ampliaciones o adicionales, y se cotizan y aprueban antes.\n7. Pagas por avance. Estados de pago asociados al progreso de la obra.\n8. Permisos. Neorigen los gestiona y van incluidos en el contrato. Los derechos que cobra la municipalidad y los certificados de empalme son de cargo del cliente.\n9. Cierre: \"Guárdalo antes de cotizar\" · \"Envíanos: ubicación del terreno, m² aproximados, referencias y presupuesto estimado\" · logo.\n\nFuente. Preguntas frecuentes: \"¿Cuánto cuesta una casa Neorigen?\", \"¿Cómo podré saber el costo final?\", \"¿Trabajan con estados de pago?\", \"¿El precio puede cambiar después de firmar?\", \"¿Se incluyen permisos municipales?\" y \"¿Cómo puedo cotizar?\".",
    "hashtags": "",
-   "guion": "",
+   "guion": "Construir tu casa puede ser la decisión más grande de tu vida.\n\nMereces entender cada número desde el primer día.",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -767,7 +821,12 @@
       "Valor en UF desde la firma",
       "Mereces entender cada número desde el primer día."
      ]
-    ]
+    ],
+    "ids": [
+     "0ad4bc47-9dd3-47c7-8272-a4d0efd1392d",
+     "15cc78d7-c220-43d0-a1cd-b8588559bfba"
+    ],
+    "voz": 2
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -799,15 +858,17 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:31:06.468Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Un domingo en el refugio",
    "caption": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
-   "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.",
+   "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.\n\nEstaba escrito en el guión (no era voz en off):\nVeamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
    "hashtags": "",
    "guion": "Un café sin apuro.\n\nLa luz entra sola, y nadie tiene que irse a ninguna parte.\n\nUna conversación que se alarga hasta la tarde.\n\nHoy el lujo es esto: vivir bien.",
    "guionTabla": {
@@ -848,7 +909,8 @@
      "7f3ea26b-ae87-4f0b-b6dd-f47a8a7c9f8e",
      "00199004-a8d4-4723-8b61-aa4c1a614f29",
      "a45a6193-c0ae-49ba-8b2a-2fa20c6f1f24"
-    ]
+    ],
+    "voz": 3
    },
    "guionNotas": [],
    "spotify": "",
@@ -903,7 +965,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:03:06.450Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
@@ -913,7 +975,7 @@
    "caption": "El Muro Trombe es una técnica de arquitectura bioclimática de los años 60: un muro macizo detrás de un vidrio que guarda el calor del sol durante el día y lo entrega de noche. En cada proyecto evaluamos si conviene según el clima, la ubicación y la orientación de tu terreno. Envíaselo a quien siempre tiene frío. ☀️\n\n#Neorigen #CasasPrediseñadas #MuroTrombe #ArquitecturaBioclimática #CasaSustentable #EficienciaEnergética #DiseñoPasivo #CasaEnElSur",
    "notes": "Reel · explicativo animado · 40 s · busca guardados y envíos\n\nIdea. Explicar el Muro Trombe como una escena de un día completo: el sol entra, el muro lo guarda, y de noche la casa sigue tibia. Es el tema más \"wow\" del blog y nunca ha salido en el feed. Se presenta como \"la casa que vas a tener lista para tu primer invierno\", porque se publica en primavera.\n\nImagen. Corte de una casa en 3D (repo de renders) con un arco de sol que avanza de izquierda a derecha y se oscurece hacia la noche. Flechas en Madera para el calor, en Niebla para el aire frío. Termina en una toma real de interior cálido con luz de lámpara.\n\nFuente. Blog: Muro Trombe: Eficiencia y Sostenibilidad para tu Hogar; condición de evaluación por proyecto en Preguntas frecuentes (\"¿Qué soluciones sustentables ofrecen?\").",
    "hashtags": "",
-   "guion": "",
+   "guion": "—\n\nImagina que la casa pudiera guardar el sol de la tarde…\n\n…y devolvértelo despacio, justo cuando afuera empieza a helar.\n\nSin ruido, sin encender nada. Un calor que se siente tranquilo.\n\nComo si la casa respirara tibio.\n\nDiseñarla hoy es llegar abrigado a tu primer invierno.",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -958,7 +1020,16 @@
       "Se evalúa según ubicación, clima y orientación de cada proyecto",
       "Diseñarla hoy es llegar abrigado a tu primer invierno."
      ]
-    ]
+    ],
+    "ids": [
+     "76b4a332-84de-4f51-93b5-3cac591551ec",
+     "43c655cc-0013-460c-97bc-3f50c038a01f",
+     "d75dc3d5-1f47-4320-91c1-bc440831c386",
+     "314aa0e2-7e21-4da4-ae21-aea9d3175778",
+     "4966c5f5-f548-4ad9-a742-6e1948c80693",
+     "88cd1209-72ed-42cc-8269-3f0d76c8115d"
+    ],
+    "voz": 3
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -995,17 +1066,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:30:58.412Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Tu terreno no tiene luz ni alcantarillado",
    "caption": "Que tu terreno no tenga red eléctrica ni alcantarillado no significa que no puedas construir. Te dejamos las alternativas que se usan hoy y cómo elegir entre ellas. Guárdalo para cuando vayas a ver parcelas, y envíaselo a quien está buscando contigo.\n\n#Neorigen #CasasPrediseñadas #VivirEnParcela #CasaOffGrid #EnergíaSolar #ParcelaDeAgrado #CasaSustentable #ConstruirEnChile",
    "notes": "Carrusel mixto · 10 láminas (la 2 es video de 10 s) · busca guardados\n\nIdea. Una guía de consulta para quien tiene o está buscando parcela: qué opciones existen cuando no hay red eléctrica ni alcantarillado. Es contenido que se guarda \"para cuando vaya a ver terrenos\" y se envía a la pareja o al socio. Cada lámina con un pictograma propio en trazo redondo, en la línea de las portadas de destacados.\n\nLáminas:\n1. Portada (imagen): casa en paisaje rural, sin postes a la vista. \"¿Tu terreno no tiene luz ni alcantarillado?\" · bajada: \"Igual se puede construir.\"\n2. Video (10 s): dron o caminata por un terreno vacío. Rótulo: \"Sin red eléctrica · sin alcantarillado\".\n3. Energía solar. Paneles que convierten el sol en electricidad, con baterías para la noche y los días nublados.\n4. Viento y agua. Aerogeneradores si hay viento constante; microhidroeléctrica si hay un flujo de agua constante.\n5. Generador. Diésel o gasolina, solo como respaldo: más ruidoso, contaminante y depende de combustible.\n6. Fosa séptica. Separa y descompone sólidos y líquidos; el líquido tratado se filtra al suelo y los sólidos se bombean cada cierto tiempo.\n7. Planta de tratamiento (STAR). Procesos biológicos y químicos; tratamiento más completo, más costoso de instalar y mantener.\n8. Filtro de arena y lodos activados. Capas de arena y grava, eficaz en suelos permeables · microorganismos, como una planta municipal a pequeña escala.\n9. ¿Cuál conviene? Depende de ubicación, consumo estimado, orientación y nivel de autonomía que busques. Se evalúa en cada proyecto.\n10. Cierre: \"Guárdalo para cuando vayas a ver terrenos\" · \"Para cotizar: ubicación del terreno, m² aproximados, dormitorios y baños\" · logo.\n\nFuente. Preguntas frecuentes: \"¿Qué solución me pueden dar si mi terreno no tiene red de alcantarillado?\", \"…acceso a la red eléctrica?\", \"¿Pueden incorporar energía solar?\" y \"¿Cómo puedo cotizar?\".",
    "hashtags": "",
-   "guion": "",
+   "guion": "Ese terreno que te enamoró, lejos de todo…\n\nA veces lo más lindo de un lugar es justo lo que le falta. Y eso tiene solución.",
    "guionTabla": {
     "cols": [
      "Tiempo",
@@ -1023,7 +1096,12 @@
       "Sin alcantarillado",
       "A veces lo más lindo de un lugar es justo lo que le falta. Y eso tiene solución."
      ]
-    ]
+    ],
+    "ids": [
+     "370ee513-e39d-46e8-bd42-7cfb7b6e8045",
+     "3c57539a-c0d6-45a1-b8d5-28d7ebd26654"
+    ],
+    "voz": 2
    },
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -1055,68 +1133,66 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-03T15:30:46.832Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null
+   "publishedAt": null,
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "¿Son prefabricadas?",
    "caption": "No, no son prefabricadas. 🌿 Partimos de nuestros modelos prediseñados y los construimos en tu  terreno, con construcción en obra, adaptando cada casa al lugar y a quienes la van a vivir. ¿Conoces a alguien que esté pensando en construir? Compártele este post ! \n\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #ConstruirEnChile #CasaDeCampo #ArquitecturaChilena #VidaNatural #CasaLlaveEnMano",
-   "notes": "Reel · respuesta a comentario · 25 s · busca envíos\n\nIdea. Responder en video la duda más repetida, con el formato de respuesta a comentario de Instagram. Si hay un comentario o DM real con esa pregunta, se usa su sticker; si no, se abre con un rótulo \"Nos preguntan:\" y nunca se inventa un comentario. Aclara la diferencia de la marca sin sonar a defensa.\n\nImagen. Toma de obra con la estructura en pie (galería: 02 · Estructura), luego un modelo terminado en su paisaje. Cámara en mano, sin estabilizar demasiado.\n\nFuente. Preguntas frecuentes: \"¿Las casas son prefabricadas?\", \"¿Qué es Neorigen?\" y plazo de construcción.",
+   "notes": "Reel · respuesta a comentario · 25 s · busca envíos\n\nIdea. Responder en video la duda más repetida, con el formato de respuesta a comentario de Instagram. Si hay un comentario o DM real con esa pregunta, se usa su sticker; si no, se abre con un rótulo \"Nos preguntan:\" y nunca se inventa un comentario. Aclara la diferencia de la marca sin sonar a defensa.\n\nImagen. Toma de obra con la estructura en pie (galería: 02 · Estructura), luego un modelo terminado en su paisaje. Cámara en mano, sin estabilizar demasiado.\n\nFuente. Preguntas frecuentes: \"¿Las casas son prefabricadas?\", \"¿Qué es Neorigen?\" y plazo de construcción.\n\nEstaba escrito en el guión (no era voz en off):\nPor favor agrandar un poco todas las palabras que aparecen en  chico , no alcanzan a leerse, se va la vista solo a lo grande.",
    "hashtags": "",
-   "guion": "Por favor agrandar un poco todas las palabras que aparecen en  chico , no alcanzan a leerse, se va la vista solo a lo grande.  ",
+   "guion": "—\n\nTu casa no llega en un camión.\n\nCrece en el mismo lugar donde vas a despertar cada mañana.\n\nMirando tu paisaje, con tu luz, con tu naturaleza.\n\nPensada con ustedes, para la vida que quieren tener ahí.",
    "guionTabla": {
     "cols": [
      "Tiempo",
      "Imagen",
      "Texto en pantalla",
-     "Voz en off",
-     "",
-     ""
+     "Voz en off"
     ],
     "filas": [
      [
       "0–3 s",
       "Sticker de comentario sobre la estructura",
       "¿Estas casas son prefabricadas?",
-      "—",
-      "",
-      ""
+      "—"
      ],
      [
       "3–8 s",
       "Paneo por la estructura en el terreno",
       "No. Se construyen en tu terreno",
-      "Tu casa no llega en un camión.",
-      "",
-      ""
+      "Tu casa no llega en un camión."
      ],
      [
       "8–13 s",
       "Detalle de manos trabajando",
       "Construcción en obra, calidad y eficiencia",
-      "Crece en el mismo lugar donde vas a despertar cada mañana.",
-      "",
-      ""
+      "Crece en el mismo lugar donde vas a despertar cada mañana."
      ],
      [
       "13–19 s",
       "Plano del modelo que se dibuja sobre el terreno",
       "Partimos de un modelo prediseñado y lo adaptamos a tu terreno",
-      "Mirando tu paisaje, con tu luz, con tu naturaleza.",
-      "",
-      ""
+      "Mirando tu paisaje, con tu luz, con tu naturaleza."
      ],
      [
       "19–25 s",
       "Casa terminada al atardecer + logo",
       "Obra de 6 a 10 meses · neorigen.cl",
-      "Pensada con ustedes, para la vida que quieren tener ahí.",
-      "",
-      ""
+      "Pensada con ustedes, para la vida que quieren tener ahí."
      ]
-    ]
+    ],
+    "ids": [
+     "ce660b8b-3c68-40c5-bbbc-08faaabc398e",
+     "5644fe71-990d-4ace-8f55-a1bd304951e1",
+     "9201b956-91ab-41fb-a4c1-88d2070c4e23",
+     "dd41dc58-6aaf-41f4-8c91-e1667554f20e",
+     "20468681-e312-441b-ad7a-945f74d464e6"
+    ],
+    "voz": 3
    },
    "campaign": "Publicaciones informativas",
    "time": "18:13",
@@ -1303,17 +1379,19 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-09T00:13:29.920Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-09T00:13:29.920Z",
-   "publishedAt": "2026-11-09T00:13:29.920Z"
+   "publishedAt": "2026-11-09T00:13:29.920Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Ciprés",
    "caption": "Casa Ciprés, nuestro modelo más nuevo 🌅\n\nUna casa que mira en una sola dirección: hacia el horizonte. Su techo a un agua arranca bajo y se levanta hacia la vista, y todo el espacio crece en la dirección en que miras.\n\nSobre pilotes, se posa en la arena sin cambiarle la forma al lugar. Un refugio frente al mar, o esa segunda casa para desconectarse.\n\n2 dormitorios, 2 baños y 95 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaCipres #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
-   "guion": "",
+   "guion": "Nuestra casa más nueva mira en una sola dirección: hacia el horizonte.\n\nEspacio para dos, o para recibir a quienes quieras.\n\nSu techo arranca bajo y se levanta, abriéndose hacia el paisaje.\n\nSe posa en la arena sin cambiarle la forma al lugar.\n\nAdentro, todo crece en la misma dirección en que miras.\n\nUn refugio frente al mar, o esa segunda casa para desconectarse.\n\nAtardeceres largos, la terraza, y nada más que el sonido del mar.\n\nCasa Ciprés. Abierta al horizonte.\n\nDescúbrela en neorigen.cl",
    "guionTabla": {
     "cols": [
      "#",
@@ -1376,7 +1454,19 @@
       "DESCUBRE MÁS EN NEORIGEN.CL",
       "Descúbrela en neorigen.cl"
      ]
-    ]
+    ],
+    "ids": [
+     "cc3ebb4d-972e-4d87-8846-99d3ea88c6d1",
+     "8f5ae2f9-eb89-4a50-9749-32696c615652",
+     "0ea630a0-552d-4d2a-abf4-de86076a3469",
+     "2009c0bc-760d-4544-b913-561e99db862d",
+     "74aafd19-57e7-4c30-b150-0813e2ebbc49",
+     "a57dd78c-180f-4b0b-b599-68367d20211b",
+     "5d171f1c-b264-42b9-a2a1-fcf7c16f04a6",
+     "08252118-9e90-4954-93b0-856edee1298f",
+     "6302e6a6-6b04-4d6d-9251-3ccc10f15c55"
+    ],
+    "voz": 3
    },
    "campaign": "Modelos",
    "time": "",
@@ -1394,7 +1484,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:55.027Z",
    "createdBy": "javi",
@@ -1410,14 +1500,16 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Coihue",
    "caption": "Casa Coihue, nuestro modelo de la semana 🌾\n\nEn el campo, todo se extiende, y esta casa también. Larga y baja, sigue la línea del trigal en vez de cortarla, y su fachada vidriada convierte el paisaje en el fondo de cada día.\n\nPara quienes eligieron dejar la ciudad sin dejar de hacer lo que aman.\n\n3 dormitorios, 3 baños y 167 m² útiles: nuestro modelo más grande, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaCoihue #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
-   "guion": "",
+   "guion": "En el campo, todo se extiende… y esta casa también.\n\nLarga y baja, sigue la línea del trigal en vez de cortarla.\n\nEl paisaje se vuelve el fondo de cada día.\n\nSe integra al entorno, como una franja más del campo.\n\nCada uno con su baño, y su propio rincón de calma.\n\nY un lugar para trabajar con el horizonte enfrente.\n\nPara quienes eligieron dejar la ciudad, sin dejar de hacer lo que aman.\n\nCasa Coihue. El campo, a tu medida.\n\nDescúbrela en neorigen.cl",
    "guionTabla": {
     "cols": [
      "#",
@@ -1480,7 +1572,19 @@
       "DESCUBRE MÁS EN NEORIGEN.CL",
       "Descúbrela en neorigen.cl"
      ]
-    ]
+    ],
+    "ids": [
+     "958368b0-0bbd-4ebb-b001-5b8031078b2a",
+     "8a17c934-fc10-4414-a73b-b98bb064b9c5",
+     "fc89ef88-6d6c-49a5-b574-4e1b35ea5bd3",
+     "ab67351a-ace4-4207-9d16-eee6c9c887e6",
+     "79571f95-9677-466f-b940-c71d2aaba68a",
+     "e7d54640-1b19-449f-8786-3e990ce7d335",
+     "c7128002-e452-4922-8254-7cbd1da9d2bb",
+     "339f7cd2-204a-4e18-8512-0a05b2a6ffd4",
+     "5cb925dc-7723-4769-adb6-277e5b1de4db"
+    ],
+    "voz": 3
    },
    "campaign": "Modelos",
    "time": "",
@@ -1499,7 +1603,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
@@ -1515,14 +1619,16 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Maitén",
    "caption": "Casa Maitén, nuestro modelo de la semana 🌊\n\nFrente al mar, hay que estar a la altura. Se levanta para mirar el horizonte por sobre las rocas, y su cocina se abre al comedor y a las terrazas.\n\nSon dos volúmenes: la casa principal y uno más pequeño con vida propia. Juntos cuando quieren, independientes cuando lo necesitan.\n\n4 dormitorios, 4 baños y 145 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMaiten #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
-   "guion": "",
+   "guion": "Frente al mar, hay que estar a la altura.\n\nSe levanta para mirar el horizonte por sobre las rocas.\n\nSu frente alto deja entrar todo el horizonte.\n\nUna casa grande, y otra más pequeña con vida propia.\n\nLa cocina se abre a la mesa, y la mesa al mar.\n\nIdeal para recibir: a los hijos que vuelven, a los abuelos, a los amigos.\n\nJuntos cuando quieren, independientes cuando lo necesitan.\n\nCasa Maitén. Para vivir el mar en grande.\n\nDescúbrela en neorigen.cl",
    "guionTabla": {
     "cols": [
      "#",
@@ -1585,7 +1691,19 @@
       "DESCUBRE MÁS EN NEORIGEN.CL",
       "Descúbrela en neorigen.cl"
      ]
-    ]
+    ],
+    "ids": [
+     "85ce327a-8102-4c91-bc45-6d0b5193196c",
+     "9b22ea1c-cc7f-4e44-b47c-a473e91605bb",
+     "d5a076b9-93cc-4531-9175-9dce47e1e6ae",
+     "b99f3562-e54b-481b-8c2b-ac8c853a97f7",
+     "73ab68aa-eb46-47fe-93b1-fe1090186859",
+     "2201d1f0-a9c7-4ea4-889a-e983fecd64e3",
+     "6335cf1e-9aee-4173-893d-bc89e31b1d6a",
+     "46686c41-159d-41ac-87af-45d4098e8d29",
+     "fe932e02-1c5a-4bf9-aaa0-ea5d8104fe68"
+    ],
+    "voz": 3
    },
    "campaign": "Modelos",
    "time": "",
@@ -1603,7 +1721,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -1619,14 +1737,16 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Roble",
    "caption": "Casa Roble, nuestro modelo de la semana ❄️\n\nEn la montaña, la forma no es un capricho: su silueta triangular deja que la nieve resbale sola, y su frente vidriado mira directo a la montaña.\n\nBotas en la entrada, algo caliente en la mesa y espacio para todos: cuatro dormitorios y tres baños para que nadie haga fila después del ski.\n\n4 dormitorios, 3 baños y 142 m² útiles en 2 pisos, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaRoble #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
-   "guion": "",
+   "guion": "En la montaña, la forma no es un capricho… es lo que te protege.\n\nEspacio de sobra para llegar con todos, y con todo.\n\nSu silueta deja que la nieve resbale, sola.\n\nY adentro, el calor de hogar mientras afuera todo es blanco.\n\nBotas en la entrada, algo caliente en la mesa, y la nieve detrás del vidrio.\n\nCuatro dormitorios y tres baños, para que nadie haga fila después del ski.\n\nPara la familia, los amigos, y las temporadas que se vuelven tradición.\n\nCasa Roble. Tu lugar en la nieve.\n\nDescúbrela en neorigen.cl",
    "guionTabla": {
     "cols": [
      "#",
@@ -1689,7 +1809,19 @@
       "DESCUBRE MÁS EN NEORIGEN.CL",
       "Descúbrela en neorigen.cl"
      ]
-    ]
+    ],
+    "ids": [
+     "2cdf58c1-0766-4027-b44a-33fb02b0b374",
+     "832ce6ac-7496-45d9-a811-a5fb57b6a598",
+     "7adc60d2-de1c-4f6d-8abe-2e872fea1e7b",
+     "16d27ab9-1e95-4171-9251-6d073e3eca68",
+     "9c91006d-4642-4f6e-875f-e777903e657b",
+     "eaf1b827-6b8b-4dd9-94cc-024e08ba761b",
+     "4000aa22-5d4d-40c2-809f-a38a6754d801",
+     "fce8f412-785c-481d-bce4-a227b6cf0210",
+     "08b02162-94ca-49c0-bc13-56180e53a57b"
+    ],
+    "voz": 3
    },
    "campaign": "Modelos",
    "time": "",
@@ -1708,7 +1840,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -1724,14 +1856,16 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Mañío",
    "caption": "Casa Mañío, nuestro modelo de la semana 🌊\n\nHay casas con una ventana al mar; esta es toda ventana. Su fachada vidriada corre de punta a punta y la terraza la sigue entera: del living al exterior hay solo un paso.\n\nToda en un solo nivel, baja y tendida, deja ver el paisaje y cuida tu privacidad.\n\n3 dormitorios, 2 baños y 106 m² útiles en un piso, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMañío #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
-   "guion": "",
+   "guion": "Hay casas con una ventana al mar… esta es toda ventana.\n\nToda en un solo nivel, sin escaleras, sin barreras.\n\nLa fachada vidriada corre a lo largo, y la luz llega a cada rincón.\n\nBaja y tendida, deja ver el paisaje y cuida tu privacidad.\n\nTres dormitorios, y todo a un paso.\n\nDel living a la terraza hay solo un paso, y el día se vive afuera.\n\nPara la familia que vive hacia afuera, con los pies en la arena.\n\nCasa Mañío. La casa que se abre entera.\n\nDescúbrela en neorigen.cl",
    "guionTabla": {
     "cols": [
      "#",
@@ -1794,7 +1928,19 @@
       "DESCUBRE MÁS EN NEORIGEN.CL",
       "Descúbrela en neorigen.cl"
      ]
-    ]
+    ],
+    "ids": [
+     "ea6938ce-a95a-462c-8328-5d063be187e6",
+     "39b52fbd-8b8f-4892-ad0d-c9474d454403",
+     "d36f712e-e2ec-4678-99e8-d35df0b996de",
+     "7432ce29-7e91-4d54-a24d-7eb11e1eecba",
+     "5e53754e-2471-482a-b82c-a7093c0695fb",
+     "9c5b3fc6-931c-46f9-a6b4-f2db1f897a88",
+     "4304841a-a360-4970-9e07-e8c9d4a92475",
+     "d29264f3-4f07-4957-bb76-f22d80d9d758",
+     "5d883cee-351e-4810-aa5d-682bb9054c3e"
+    ],
+    "voz": 3
    },
    "campaign": "Modelos",
    "time": "",
@@ -1813,7 +1959,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -1829,14 +1975,16 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Boldo",
    "caption": "Casa Boldo, nuestro modelo de la semana 🌿\n\nHay casas que miran a todas partes; esta mira a un solo lugar. Larga y serena, toda la casa se orienta hacia el agua y su ventanal enmarca el lago como una pintura.\n\nCuatro dormitorios repartidos en dos pisos, para la familia grande que se junta todas las vacaciones.\n\n4 dormitorios, 2 baños y 96,6 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaBoldo #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
-   "guion": "",
+   "guion": "Hay lugares donde el tiempo…\n\nDonde despertar con el lago…\n\nDe esa idea nace Casa Boldo. Una arquitectura alargada…\n\n…donde un gran ventanal conecta el interior…\n\n…los espacios invitan a compartir\n\n…un lugar para disfrutar de un momento propio.\n\nSus cuatro dormitorios y dos baños…\n\n¿Te imaginas viviendo aquí? Conversemos…\n\nDescubre Casa Boldo en neorigen.cl.",
    "guionTabla": {
     "cols": [
      "Seg.",
@@ -1889,7 +2037,19 @@
       "Descubre Casa Boldo en neorigen.cl.",
       "Logo · Llave en mano · DESCUBRE MÁS EN NEORIGEN.CL"
      ]
-    ]
+    ],
+    "ids": [
+     "dab308e2-908e-49c3-9e64-f8cdc65e67b1",
+     "f990584b-96b8-4465-9663-b700878618fc",
+     "93212560-099c-4d36-a18f-6ae6accb69ce",
+     "00b7757b-27f7-4f04-8485-7025f29d4616",
+     "1c2eb618-3a04-4533-9cea-c453194c87a1",
+     "5eca2e76-c957-491d-82c1-4e571e49d35e",
+     "f93d168b-8452-42a8-b473-aa64d051ccdd",
+     "e373f0ba-6d5f-449f-812c-547404bbbadb",
+     "54cd088a-9d75-416a-97b7-43c687918d75"
+    ],
+    "voz": 1
    },
    "campaign": "Modelos",
    "time": "",
@@ -2281,7 +2441,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-10T18:36:15.730Z",
+   "updatedAt": "2026-11-10T19:05:35.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -2297,7 +2457,9 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Casa Peumo",
@@ -2492,7 +2654,9 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Opciones foto portada web",
@@ -2616,7 +2780,9 @@
      "by": "flavio"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Pilotes",
@@ -2777,7 +2943,9 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Cambio de modulo - Web Neorigen",
@@ -2820,7 +2988,9 @@
    "publishedAt": "2026-10-27T16:09:58.926Z",
    "artefactos": [],
    "versionesTexto": [],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Video 3D Huingan",
@@ -3141,7 +3311,9 @@
      "by": "javi"
     }
    ],
-   "marca": []
+   "marca": [],
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-diagnostico",
@@ -3172,7 +3344,9 @@
    "updatedAt": "2026-09-01T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-01T19:00:00.000Z",
-   "publishedAt": "2026-09-01T19:00:00.000Z"
+   "publishedAt": "2026-09-01T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-resumen-marca",
@@ -3203,7 +3377,9 @@
    "updatedAt": "2026-09-01T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-01T19:00:00.000Z",
-   "publishedAt": "2026-09-01T19:00:00.000Z"
+   "publishedAt": "2026-09-01T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-iconos-ig",
@@ -3233,7 +3409,9 @@
    "updatedAt": "2026-10-19T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-19T19:00:00.000Z",
-   "publishedAt": "2026-10-19T19:00:00.000Z"
+   "publishedAt": "2026-10-19T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-cotizador-v1",
@@ -3269,7 +3447,9 @@
    "updatedAt": "2026-09-08T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-08T19:00:00.000Z",
-   "publishedAt": "2026-09-14T19:00:00.000Z"
+   "publishedAt": "2026-09-14T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-cotizador-correos",
@@ -3299,7 +3479,9 @@
    "updatedAt": "2026-09-28T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-28T19:00:00.000Z",
-   "publishedAt": "2026-09-28T19:00:00.000Z"
+   "publishedAt": "2026-09-28T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-cotizador-manio",
@@ -3340,7 +3522,9 @@
    "updatedAt": "2026-10-21T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-21T19:00:00.000Z",
-   "publishedAt": "2026-10-21T19:00:00.000Z"
+   "publishedAt": "2026-10-21T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-web-propuesta",
@@ -3377,7 +3561,9 @@
    "updatedAt": "2026-09-01T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-01T19:00:00.000Z",
-   "publishedAt": "2026-09-01T19:00:00.000Z"
+   "publishedAt": "2026-09-01T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-web-textos",
@@ -3418,7 +3604,9 @@
    "updatedAt": "2026-09-30T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-30T19:00:00.000Z",
-   "publishedAt": "2026-09-30T19:00:00.000Z"
+   "publishedAt": "2026-09-30T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-web-wix",
@@ -3455,7 +3643,9 @@
    "updatedAt": "2026-09-23T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-23T19:00:00.000Z",
-   "publishedAt": "2026-09-23T19:00:00.000Z"
+   "publishedAt": "2026-09-23T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-web-portada",
@@ -3496,7 +3686,9 @@
    "updatedAt": "2026-10-16T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-16T19:00:00.000Z",
-   "publishedAt": "2026-10-16T19:00:00.000Z"
+   "publishedAt": "2026-10-16T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Formulario de contacto de la web → bandeja de entrada",
@@ -3526,7 +3718,9 @@
    "updatedAt": "2026-10-22T22:16:07.174Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-10-22T22:02:21.150Z",
-   "publishedAt": "2026-10-22T22:02:21.150Z"
+   "publishedAt": "2026-10-22T22:02:21.150Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c1",
@@ -3573,7 +3767,9 @@
    "updatedAt": "2026-08-30T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-08-30T19:00:00.000Z",
-   "publishedAt": "2026-08-30T19:00:00.000Z"
+   "publishedAt": "2026-08-30T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c2",
@@ -3630,7 +3826,9 @@
    "updatedAt": "2026-09-03T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-03T19:00:00.000Z",
-   "publishedAt": "2026-09-03T19:00:00.000Z"
+   "publishedAt": "2026-09-03T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c3",
@@ -3682,7 +3880,9 @@
    "updatedAt": "2026-09-10T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-10T19:00:00.000Z",
-   "publishedAt": "2026-09-10T19:00:00.000Z"
+   "publishedAt": "2026-09-10T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Carrusel: terminaciones y llave en mano",
@@ -3728,7 +3928,9 @@
    "updatedAt": "2026-10-22T22:02:34.432Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-22T22:02:34.432Z",
-   "publishedAt": "2026-10-22T22:02:34.432Z"
+   "publishedAt": "2026-10-22T22:02:34.432Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c-web",
@@ -3769,7 +3971,9 @@
    "updatedAt": "2026-09-30T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-09-30T19:00:00.000Z",
-   "publishedAt": "2026-09-30T19:00:00.000Z"
+   "publishedAt": "2026-09-30T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c-fachada",
@@ -3800,7 +4004,9 @@
    "updatedAt": "2026-10-08T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-08T19:00:00.000Z",
-   "publishedAt": "2026-10-08T19:00:00.000Z"
+   "publishedAt": "2026-10-08T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c-cipres",
@@ -3830,7 +4036,9 @@
    "updatedAt": "2026-10-05T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-05T19:00:00.000Z",
-   "publishedAt": "2026-10-05T19:00:00.000Z"
+   "publishedAt": "2026-10-05T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-c-personalizables",
@@ -3886,7 +4094,9 @@
    "updatedAt": "2026-10-13T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-13T19:00:00.000Z",
-   "publishedAt": "2026-10-13T19:00:00.000Z"
+   "publishedAt": "2026-10-13T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-render-lingue",
@@ -3917,7 +4127,9 @@
    "updatedAt": "2026-10-20T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-20T19:00:00.000Z",
-   "publishedAt": "2026-10-20T19:00:00.000Z"
+   "publishedAt": "2026-10-20T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "title": "Edición de fotos de obra — Itahue",
@@ -4336,7 +4548,9 @@
    "updatedAt": "2026-10-24T22:12:50.223Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-24T22:12:50.223Z",
-   "publishedAt": "2026-10-24T22:12:50.223Z"
+   "publishedAt": "2026-10-24T22:12:50.223Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-carpeta-1",
@@ -4367,7 +4581,9 @@
    "updatedAt": "2026-10-06T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-06T19:00:00.000Z",
-   "publishedAt": "2026-10-06T19:00:00.000Z"
+   "publishedAt": "2026-10-06T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-carpeta-2",
@@ -4398,7 +4614,9 @@
    "updatedAt": "2026-10-07T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-07T19:00:00.000Z",
-   "publishedAt": "2026-10-07T19:00:00.000Z"
+   "publishedAt": "2026-10-07T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-carpeta-3",
@@ -4429,7 +4647,9 @@
    "updatedAt": "2026-10-07T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-07T19:00:00.000Z",
-   "publishedAt": "2026-10-07T19:00:00.000Z"
+   "publishedAt": "2026-10-07T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-carpeta-imprenta",
@@ -4459,7 +4679,9 @@
    "updatedAt": "2026-10-20T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-20T19:00:00.000Z",
-   "publishedAt": "2026-10-20T19:00:00.000Z"
+   "publishedAt": "2026-10-20T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   },
   {
    "id": "e-carpetas-impresas",
@@ -4527,7 +4749,9 @@
    "updatedAt": "2026-10-21T19:00:00.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-10-21T19:00:00.000Z",
-   "publishedAt": "2026-10-21T19:00:00.000Z"
+   "publishedAt": "2026-10-21T19:00:00.000Z",
+   "guionNotas": [],
+   "spotify": ""
   }
  ],
  "comments": [

@@ -4282,6 +4282,14 @@
  ],
  "comments": [
   {
+   "id": "d42f56d0-b2ee-4992-818d-e283b9b86576",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Super, te lo mando hoy",
+   "fileIds": [],
+   "createdAt": "2026-11-10T12:38:04.629Z"
+  },
+  {
    "id": "c0036333-e63d-43b1-ba55-92cd4e75143f",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -6450,6 +6458,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f62d6735-2f3c-479e-bf58-f0b35bf591f2",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-10T12:38:04.635Z"
+  },
   {
    "id": "05532db4-2d61-4c6f-9428-f1d339e1a42d",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -10573,6 +10591,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "28f16f82-34d0-4b00-bc1a-49cdca91a129",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Super, te lo mando hoy",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Super, te lo mando hoy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-10T12:38:04.637Z"
+  },
+  {
+   "id": "1c982ebc-d3c6-46a3-ade5-af63df82c4d7",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Super, te lo mando hoy",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Super, te lo mando hoy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-10T12:38:04.636Z"
+  },
   {
    "id": "bf30d191-e2b2-4d9b-becf-298965def32a",
    "to": "flavio",

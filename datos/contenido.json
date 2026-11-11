@@ -4986,6 +4986,14 @@
  ],
  "comments": [
   {
+   "id": "5ad670c7-0114-406b-87cc-2374d6b7287f",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "flavio",
+   "text": "@Javi  @Maca Muchas gracias!! Ok por mi parte!",
+   "fileIds": [],
+   "createdAt": "2026-11-11T22:05:47.707Z"
+  },
+  {
    "id": "91406966-65f2-4161-a22c-093226ff7237",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "javi",
@@ -7233,6 +7241,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "22143be0-cfdd-4f8c-8f5d-96a6f5ee5ffd",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T22:05:47.709Z"
+  },
   {
    "id": "289fee6a-b00f-4c1e-9bb2-b99e09fe2a16",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -11791,6 +11809,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c359cb85-c1fe-4bdf-bbd7-0fea4b60123f",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Javi  @Maca Muchas gracias!! Ok por mi parte!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Flavio te mencionó: @Javi  @Maca Muchas gracias!! Ok por mi parte!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T22:05:47.710Z"
+  },
+  {
+   "id": "c5d8de53-1965-42ce-8c67-f3975de2be47",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Javi  @Maca Muchas gracias!! Ok por mi parte!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Flavio te mencionó: @Javi  @Maca Muchas gracias!! Ok por mi parte!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T22:05:47.710Z"
+  },
   {
    "id": "9f85db4a-4130-423f-af91-ebe76a9cb76c",
    "to": "maca",

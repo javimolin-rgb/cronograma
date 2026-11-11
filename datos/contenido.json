@@ -4773,11 +4773,20 @@
    "id": "f09f89ea-723b-4cd2-a54c-3ad090fad00b",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "flavio",
-   "text": "Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto 08 del carrusel).. Muchas gracias!",
+   "text": "Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto 08 del carrusel).. Muchas gracias!\n\nTODO EL RESTO OK!!",
    "fileIds": [
     "cc4068d0-c556-4df8-8410-eb3ff7e3d651"
    ],
-   "createdAt": "2026-11-11T01:15:44.123Z"
+   "createdAt": "2026-11-11T01:15:44.123Z",
+   "versiones": [
+    {
+     "text": "Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto 08 del carrusel).. Muchas gracias!",
+     "hasta": "2026-11-11T01:16:26.106Z",
+     "by": "flavio"
+    }
+   ],
+   "editedAt": "2026-11-11T01:16:26.106Z",
+   "editedBy": "flavio"
   },
   {
    "id": "d42f56d0-b2ee-4992-818d-e283b9b86576",
@@ -6956,6 +6965,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "e7e554d6-c544-4382-a6ee-9719faba0a47",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "corrigió un comentario",
+   "meta": null,
+   "createdAt": "2026-11-11T01:16:26.106Z"
+  },
   {
    "id": "14b68cb7-305b-4e0e-a995-ec97edde582b",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -11345,6 +11364,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2e11818a-e133-48d0-a78e-dd62984249a2",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "corrigió un comentario en “10 puntos que revisar antes de comprar tu terreno”: Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punt…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Flavio corrigió un comentario: Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punt…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T01:16:26.106Z"
+  },
   {
    "id": "6407982c-afed-4331-b21d-60268d8a1da7",
    "to": "javi",

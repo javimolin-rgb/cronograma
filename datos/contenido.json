@@ -7250,6 +7250,16 @@
  ],
  "activity": [
   {
+   "id": "ff832f4e-a951-4de3-ab40-fde1f0a01655",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: necesita esto con urgencia",
+   "meta": null,
+   "createdAt": "2026-11-11T22:11:21.369Z"
+  },
+  {
    "id": "ef2444e0-9b38-437b-b0ca-d05533123cb5",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "postTitle": "Historia: los modelos de casas",
@@ -11840,6 +11850,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "73a1280d-4fcc-4d9d-b803-84b52c78d4a1",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “10 puntos que revisar antes de comprar tu terreno”: necesita esto con urgencia",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi necesita esto con urgencia",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T22:11:21.366Z"
+  },
   {
    "id": "9f87f99b-a5e8-4d2c-a8d9-8ce81805cc48",
    "to": "javi",

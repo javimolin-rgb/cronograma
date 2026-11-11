@@ -14,7 +14,7 @@
    "date": "2026-11-11",
    "inicio": "",
    "format": "carrusel",
-   "status": "cambios",
+   "status": "revision",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -42,7 +42,7 @@
      "sha": "cc179ffdef04aea0fe68a35735731103f81928e2",
      "type": "image/webp",
      "size": 165420,
-     "orden": 9
+     "orden": 1012
     },
     {
      "id": "88c2184d-4ef9-459f-b25c-e40269f0baa9",
@@ -57,7 +57,7 @@
      "sha": "6864cefa4d3ab50fca7269c5fb1f27a0adecd43d",
      "type": "image/webp",
      "size": 47746,
-     "orden": 8
+     "orden": 9
     },
     {
      "id": "7a01d9d0-9916-4a86-a423-8c700664f9f7",
@@ -72,7 +72,7 @@
      "sha": "3939f5f73c1877eb84d4b8722460cbd63e2010df",
      "type": "image/webp",
      "size": 103402,
-     "orden": 7
+     "orden": 1013
     },
     {
      "id": "7024d5f2-72b6-438a-bf1a-0cb6756df75d",
@@ -87,7 +87,7 @@
      "sha": "2eb7e358b7ded7c27750f83183b8273234195250",
      "type": "image/webp",
      "size": 292734,
-     "orden": 6
+     "orden": 1014
     },
     {
      "id": "7c06eb38-5c0f-4d6b-92be-c07dfa99db98",
@@ -192,8 +192,53 @@
      "sha": "33bb1d4697b67eb47700ff8fa91b2acd9bd5d8aa",
      "type": "image/jpeg",
      "size": 283366,
-     "orden": 10,
+     "orden": 6,
      "extra": true
+    },
+    {
+     "id": "a907cde1-2062-4515-81b4-a4cc3f845ab1",
+     "by": "javi",
+     "at": "2026-11-11T16:32:23.836Z",
+     "base": "10-cierre",
+     "version": 2,
+     "shaOrigen": "7d1271db6050e9810618233106dccb51feb28c9c",
+     "name": "10-cierre-v2.webp",
+     "path": "archivos/publicaciones-informativas/10-cierre-v2-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/10-cierre-v2-2.webp",
+     "sha": "01b394cfa8dcce1981fd6d01c3455d6f178ddfae",
+     "type": "image/webp",
+     "size": 161260,
+     "orden": 10
+    },
+    {
+     "id": "c03e2854-7fc5-4779-8148-1e5242bc0eca",
+     "by": "javi",
+     "at": "2026-11-11T16:32:27.117Z",
+     "base": "08-orientacion-y-sol",
+     "version": 2,
+     "shaOrigen": "e7b252eabdd7736e3eb88fbcfdad7e35aa4d803f",
+     "name": "08-orientacion-y-sol-v2.webp",
+     "path": "archivos/publicaciones-informativas/08-orientacion-y-sol-v2-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/08-orientacion-y-sol-v2-2.webp",
+     "sha": "6af388c09891382df1c48090c6f186ee4e0dcbc6",
+     "type": "image/webp",
+     "size": 101382,
+     "orden": 8
+    },
+    {
+     "id": "ce1b28b5-ecb2-4095-8def-1902639575bf",
+     "by": "javi",
+     "at": "2026-11-11T16:32:30.627Z",
+     "base": "07-pendiente-y-suelo",
+     "version": 2,
+     "shaOrigen": "99210a2e56c0258f0337b46f66d2a519577dc77b",
+     "name": "07-pendiente-y-suelo-v2.webp",
+     "path": "archivos/publicaciones-informativas/07-pendiente-y-suelo-v2-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/07-pendiente-y-suelo-v2-2.webp",
+     "sha": "71e448e342dcbfa3ed6814d15ed8b1040c608898",
+     "type": "image/webp",
+     "size": 153176,
+     "orden": 7
     }
    ],
    "checklist": [],
@@ -217,9 +262,9 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T16:18:43.687Z",
+   "updatedAt": "2026-11-11T16:33:20.271Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-11T15:38:03.534Z",
+   "statusChangedAt": "2026-11-11T16:33:20.271Z",
    "publishedAt": null
   },
   {
@@ -7044,6 +7089,39 @@
  ],
  "activity": [
   {
+   "id": "2965f462-3d8d-481c-8f36-f70094b23535",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-11T16:33:20.276Z"
+  },
+  {
+   "id": "3a0020a5-ebdb-4a6a-8fb4-42ac1ea42e12",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-11T16:33:20.274Z"
+  },
+  {
+   "id": "ead828d1-526d-4401-b2eb-c9e4ff7652d4",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Cambios a En revisión",
+   "meta": {
+    "from": "cambios",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-11T16:33:20.272Z"
+  },
+  {
    "id": "3d52ab8e-6883-4fa4-86e4-08ec45264c1f",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -11515,6 +11593,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6bd62cc2-b835-4469-a2c5-0d37d240d621",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "review",
+   "text": "subió 3 archivos en “10 puntos que revisar antes de comprar tu terreno” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi subió 3 archivos para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:33:20.276Z"
+  },
+  {
+   "id": "a28ba641-f443-45fb-aaeb-d03a169ca47b",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "review",
+   "text": "subió 3 archivos en “10 puntos que revisar antes de comprar tu terreno” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi subió 3 archivos para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:33:20.276Z"
+  },
+  {
+   "id": "eed7da6b-6a5c-4a7f-848d-9d0e36853d23",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:33:20.275Z"
+  },
+  {
+   "id": "2c7af056-5277-4f03-9b82-f3f4bd5807d2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:33:20.274Z"
+  },
+  {
+   "id": "d2396caf-b0b1-4ea6-9464-ff7971296256",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:33:20.273Z"
+  },
+  {
+   "id": "ebac238c-c550-4703-bfa3-fb2228850397",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:33:20.273Z"
+  },
   {
    "id": "5e9f532b-315f-45f5-8a6e-51b4f7829a0a",
    "to": "javi",

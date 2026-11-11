@@ -4770,6 +4770,16 @@
  ],
  "comments": [
   {
+   "id": "1e8c8080-851b-47ea-8bff-00bbebdcdef8",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "maca",
+   "text": "Sacar sticker de la bosca y si el tubo se puede poner negro, genial",
+   "fileIds": [
+    "7a01d9d0-9916-4a86-a423-8c700664f9f7"
+   ],
+   "createdAt": "2026-11-11T15:39:46.525Z"
+  },
+  {
    "id": "7be2eed7-4b53-4cb8-ab05-60b0648334a0",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "maca",
@@ -6999,6 +7009,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "8893ade0-dfb7-41c5-82ec-0ae8f569730b",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T15:39:46.525Z"
+  },
   {
    "id": "9e81336e-2fc2-4fd6-9c33-a0b9cc50f1a5",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -11451,6 +11471,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "32410b79-3127-4f2c-beb1-07bdf9747525",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Sacar sticker de la bosca y si el tubo se puede poner negro, genial",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Sacar sticker de la bosca y si el tubo se puede poner negro, genial",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T15:39:46.526Z"
+  },
+  {
+   "id": "af287962-4276-4780-b013-eff07068015d",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Sacar sticker de la bosca y si el tubo se puede poner negro, genial",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Sacar sticker de la bosca y si el tubo se puede poner negro, genial",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T15:39:46.526Z"
+  },
   {
    "id": "f6c5ee4d-b41a-4db6-9c02-5fe0d24c54af",
    "to": "javi",

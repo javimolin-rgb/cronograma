@@ -4849,6 +4849,14 @@
  ],
  "comments": [
   {
+   "id": "91406966-65f2-4161-a22c-093226ff7237",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "javi",
+   "text": "@Maca  @Flavio Listos los ajustes!",
+   "fileIds": [],
+   "createdAt": "2026-11-11T16:57:34.933Z"
+  },
+  {
    "id": "1e8c8080-851b-47ea-8bff-00bbebdcdef8",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "maca",
@@ -7088,6 +7096,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4a53c8d8-b8c6-4c93-873a-1a356eccd519",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T16:57:34.934Z"
+  },
   {
    "id": "2965f462-3d8d-481c-8f36-f70094b23535",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -11593,6 +11611,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "dc4f7bbf-bb78-45c4-acb4-3eab4439a0a0",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Maca  @Flavio Listos los ajustes!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi te mencionó: @Maca  @Flavio Listos los ajustes!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:57:34.935Z"
+  },
+  {
+   "id": "50719baf-c7e0-49f7-b540-1f798c8ec35c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Maca  @Flavio Listos los ajustes!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi te mencionó: @Maca  @Flavio Listos los ajustes!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T16:57:34.935Z"
+  },
   {
    "id": "6bd62cc2-b835-4469-a2c5-0d37d240d621",
    "to": "maca",

@@ -881,7 +881,7 @@
   },
   {
    "title": "Un domingo en el refugio",
-   "caption": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
+   "caption": "Tu refugio soñado se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
    "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.\n\nEstaba escrito en el guión (no era voz en off):\nVeamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
    "hashtags": "",
    "guion": "Un café sin apuro.\n\nLa luz entra sola, y nadie tiene que irse a ninguna parte.\n\nUna conversación que se alarga hasta la tarde.\n\nHoy el lujo es esto: vivir bien.",
@@ -926,7 +926,22 @@
     ],
     "voz": 3
    },
-   "guionNotas": [],
+   "guionNotas": [
+    {
+     "id": "ceaa1d40-52f5-405f-89f8-0ed969ab4144",
+     "fila": "7f3ea26b-ae87-4f0b-b6dd-f47a8a7c9f8e",
+     "text": "Sentir la luz que entra  y te cubre  con su calor.",
+     "by": "flavio",
+     "at": "2026-11-11T15:51:18.051Z"
+    },
+    {
+     "id": "e109638c-8c68-481e-a653-39e71aaf4eca",
+     "fila": "a45a6193-c0ae-49ba-8b2a-2fa20c6f1f24",
+     "text": "Hoy , vivir bien no es sinónimo de lujo, sino de sensaciones!",
+     "by": "flavio",
+     "at": "2026-11-11T15:52:26.442Z"
+    }
+   ],
    "spotify": "",
    "campaign": "Publicaciones informativas",
    "time": "",
@@ -974,13 +989,20 @@
      "text": "Veamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
      "hasta": "2026-11-10T19:03:06.450Z",
      "by": "javi"
+    },
+    {
+     "id": "e9e17485-4c3b-4de2-82d2-3c0bde9e4267",
+     "campo": "caption",
+     "text": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
+     "hasta": "2026-11-11T15:53:37.836Z",
+     "by": "flavio"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T15:48:50.610Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-11T15:53:37.836Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
   },
@@ -7010,6 +7032,16 @@
  ],
  "activity": [
   {
+   "id": "3d52ab8e-6883-4fa4-86e4-08ec45264c1f",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó copy, los comentarios de la estructura",
+   "meta": null,
+   "createdAt": "2026-11-11T15:53:37.837Z"
+  },
+  {
    "id": "8893ade0-dfb7-41c5-82ec-0ae8f569730b",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -11471,6 +11503,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5e9f532b-315f-45f5-8a6e-51b4f7829a0a",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "en “Un domingo en el refugio”: editó copy, los comentarios de la estructura",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio editó copy, los comentarios de la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-11T15:53:37.840Z"
+  },
+  {
+   "id": "b0d0bc28-19a2-4097-99ce-a66b4ed5b892",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (copy, los comentarios de la estructura)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio editó copy, los comentarios de la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-11T15:53:37.838Z"
+  },
   {
    "id": "32410b79-3127-4f2c-beb1-07bdf9747525",
    "to": "javi",

@@ -5079,6 +5079,14 @@
  ],
  "comments": [
   {
+   "id": "dfa74c76-d220-4f09-8e48-7073e0cc05d3",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "javi",
+   "text": "@Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Maitén y Roble. lo que si, de la Roble no encontré con la vista del otro lado, por lo que puse otra con un paisaje distinto pero seria ideal si tienen desde el otro punto para seguir con ese orden en todas",
+   "fileIds": [],
+   "createdAt": "2026-11-11T23:18:33.435Z"
+  },
+  {
    "id": "9d57ca07-4285-4ff6-9b23-5944364a9f6e",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "javi",
@@ -7360,6 +7368,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "3556d08f-c5c8-4868-bfed-f5f1bbeee2f6",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T23:18:33.436Z"
+  },
   {
    "id": "97291861-dedc-4931-81cc-f7d6be2acde7",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -12014,6 +12032,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9faca1ec-267d-4da5-9e81-457a12392f3c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: @Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Mait…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi comentó: @Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Mait…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:18:33.437Z"
+  },
+  {
+   "id": "225c2608-7f69-4916-928e-d39d51d816b1",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "mention",
+   "text": "te mencionó en “Historia: los modelos de casas”: @Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Mait…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi te mencionó: @Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Mait…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:18:33.437Z"
+  },
   {
    "id": "ade12659-78f9-4b37-a48e-31aeab1688bc",
    "to": "flavio",

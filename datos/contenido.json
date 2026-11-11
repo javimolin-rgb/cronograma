@@ -281,7 +281,7 @@
    "date": "2026-11-13",
    "inicio": "",
    "format": "story",
-   "status": "cambios",
+   "status": "revision",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -573,9 +573,9 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T23:52:55.264Z",
+   "updatedAt": "2026-11-11T23:53:17.530Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-11T22:10:24.919Z",
+   "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
   },
   {
@@ -7520,6 +7520,19 @@
  ],
  "activity": [
   {
+   "id": "177f172e-232f-4e54-ab41-5b9d2dc18cbd",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Cambios a En revisión",
+   "meta": {
+    "from": "cambios",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-11T23:53:17.532Z"
+  },
+  {
    "id": "d6ca625e-98df-431c-af99-31f42dbd7828",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "postTitle": "Historia: los modelos de casas",
@@ -12213,6 +12226,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c26768a0-d11d-4c70-8943-193f54d66d67",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "status",
+   "text": "movió “Historia: los modelos de casas” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:53:17.532Z"
+  },
+  {
+   "id": "a8a1b1be-285d-4c2b-917b-3f320bb4f1cd",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "status",
+   "text": "movió “Historia: los modelos de casas” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:53:17.532Z"
+  },
   {
    "id": "a386e1f8-f82e-458c-8737-0728d30fb602",
    "to": "maca",

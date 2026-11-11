@@ -5079,6 +5079,14 @@
  ],
  "comments": [
   {
+   "id": "142e24c8-60c0-4b67-84c4-df6f44c3cc12",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "flavio",
+   "text": "@Javi no veo las nuevas imagenes.. me parece que son las mismas.",
+   "fileIds": [],
+   "createdAt": "2026-11-11T23:48:50.633Z"
+  },
+  {
    "id": "dfa74c76-d220-4f09-8e48-7073e0cc05d3",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "javi",
@@ -7368,6 +7376,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "eb0f59ff-c8da-4dcb-afd3-f8ea1a03cfa0",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T23:48:50.634Z"
+  },
   {
    "id": "3556d08f-c5c8-4868-bfed-f5f1bbeee2f6",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12032,6 +12050,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cb901df0-351b-4caf-8ab1-82b9663e2c19",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: @Javi no veo las nuevas imagenes.. me parece que son las mismas.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Flavio comentó: @Javi no veo las nuevas imagenes.. me parece que son las mismas.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:48:50.634Z"
+  },
+  {
+   "id": "6bd3b4b0-6534-40fd-9502-b09ee6abbea9",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "mention",
+   "text": "te mencionó en “Historia: los modelos de casas”: @Javi no veo las nuevas imagenes.. me parece que son las mismas.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Flavio te mencionó: @Javi no veo las nuevas imagenes.. me parece que son las mismas.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:48:50.634Z"
+  },
   {
    "id": "9faca1ec-267d-4da5-9e81-457a12392f3c",
    "to": "maca",

@@ -4986,6 +4986,14 @@
  ],
  "comments": [
   {
+   "id": "a0e452d4-9fb9-442c-a392-da66eb50a3ff",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "javi",
+   "text": "@Maca Me avisas si está okay por tu parte para alcanzar a subir hoy! También feliz si me sugieres alguna cancion popular que vaya con el estilo que buscan para adjuntarla en el carrusel",
+   "fileIds": [],
+   "createdAt": "2026-11-11T22:25:22.031Z"
+  },
+  {
    "id": "e1ac7883-118b-4f04-bfdf-8cf05f6d349a",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "flavio",
@@ -7249,6 +7257,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "90e60abb-af5c-4571-b763-eab2b1712487",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T22:25:22.038Z"
+  },
   {
    "id": "ff832f4e-a951-4de3-ab40-fde1f0a01655",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -11850,6 +11868,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "fae2257e-946c-4680-9b14-572e4c97ceea",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: @Maca Me avisas si está okay por tu parte para alcanzar a subir hoy! También fel…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi comentó: @Maca Me avisas si está okay por tu parte para alcanzar a subir hoy! También fel…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T22:25:22.040Z"
+  },
+  {
+   "id": "4db20c46-7095-418c-bdac-8d535806dca7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Maca Me avisas si está okay por tu parte para alcanzar a subir hoy! También fel…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi te mencionó: @Maca Me avisas si está okay por tu parte para alcanzar a subir hoy! También fel…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T22:25:22.039Z"
+  },
   {
    "id": "73a1280d-4fcc-4d9d-b803-84b52c78d4a1",
    "to": "maca",

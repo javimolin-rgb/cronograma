@@ -4770,6 +4770,16 @@
  ],
  "comments": [
   {
+   "id": "f09f89ea-723b-4cd2-a54c-3ad090fad00b",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "flavio",
+   "text": "Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto 08 del carrusel).. Muchas gracias!",
+   "fileIds": [
+    "cc4068d0-c556-4df8-8410-eb3ff7e3d651"
+   ],
+   "createdAt": "2026-11-11T01:15:44.123Z"
+  },
+  {
    "id": "d42f56d0-b2ee-4992-818d-e283b9b86576",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -6946,6 +6956,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "14b68cb7-305b-4e0e-a995-ec97edde582b",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T01:15:44.124Z"
+  },
   {
    "id": "f6605852-ba72-48c5-b616-2e9d9ea9a0a0",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -11325,6 +11345,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6407982c-afed-4331-b21d-60268d8a1da7",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Flavio comentó: Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T01:15:44.124Z"
+  },
+  {
+   "id": "967f6f51-9337-40db-b03a-2baf1615d9b2",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Flavio comentó: Javi, subi esta foto como ejemplo, mejor poner alguna que tenga pilotes.. (punto…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T01:15:44.124Z"
+  },
   {
    "id": "dad37fde-ea8a-42b3-9caa-d276b079697b",
    "to": "maca",

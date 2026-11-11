@@ -4770,6 +4770,14 @@
  ],
  "comments": [
   {
+   "id": "7209fba0-851d-4efc-bdb3-da72f5847ef4",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "author": "flavio",
+   "text": "@Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar un blog y vincular.. Gracias!",
+   "fileIds": [],
+   "createdAt": "2026-11-11T13:27:44.310Z"
+  },
+  {
    "id": "f09f89ea-723b-4cd2-a54c-3ad090fad00b",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "flavio",
@@ -6965,6 +6973,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "078949bd-0374-4f13-99ff-80aa9a312504",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T13:27:44.313Z"
+  },
   {
    "id": "e7e554d6-c544-4382-a6ee-9719faba0a47",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -11364,6 +11382,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "37a41e90-d7e4-4888-9e58-8433a3e34d60",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "mention",
+   "text": "te mencionó en “Aire nuevo sin abrir la ventana”: @Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio te mencionó: @Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-11T13:27:44.314Z"
+  },
+  {
+   "id": "4bea4043-0fc6-4b4d-a10d-be6f3e11bd20",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "mention",
+   "text": "te mencionó en “Aire nuevo sin abrir la ventana”: @Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio te mencionó: @Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-11T13:27:44.313Z"
+  },
   {
    "id": "2e11818a-e133-48d0-a78e-dd62984249a2",
    "to": "javi",

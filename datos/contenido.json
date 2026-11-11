@@ -5214,6 +5214,14 @@
  ],
  "comments": [
   {
+   "id": "a54df28a-5005-4e4b-8fda-abcbbd254e7e",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "javi",
+   "text": "@Flavio Ahí te aparecen?",
+   "fileIds": [],
+   "createdAt": "2026-11-11T23:53:07.236Z"
+  },
+  {
    "id": "142e24c8-60c0-4b67-84c4-df6f44c3cc12",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "flavio",
@@ -7511,6 +7519,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d6ca625e-98df-431c-af99-31f42dbd7828",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T23:53:07.238Z"
+  },
   {
    "id": "ee3e8fed-23ae-4a5e-989c-aec16c389e29",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12195,6 +12213,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a386e1f8-f82e-458c-8737-0728d30fb602",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: @Flavio Ahí te aparecen?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi comentó: @Flavio Ahí te aparecen?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:53:07.243Z"
+  },
+  {
+   "id": "4831bbd5-ebef-441a-a55c-940fe51fad54",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "mention",
+   "text": "te mencionó en “Historia: los modelos de casas”: @Flavio Ahí te aparecen?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi te mencionó: @Flavio Ahí te aparecen?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:53:07.238Z"
+  },
   {
    "id": "6820c330-a409-4b11-b1e9-641e85a44186",
    "to": "flavio",

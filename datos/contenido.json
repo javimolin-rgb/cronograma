@@ -5099,7 +5099,10 @@
    "author": "flavio",
    "text": "Buenísimo  @Javi , Gracias.. La Casa Maiten y la Casa Roble tienen imagenes repetidas.. no hay de otros angulos? para pedirlas? Y si le puedes poner el logo Neorigen arriba a la Izquierda a cada una .. Ideal.. Muchas gracias!",
    "fileIds": [],
-   "createdAt": "2026-11-11T22:08:59.534Z"
+   "createdAt": "2026-11-11T22:08:59.534Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "5ad670c7-0114-406b-87cc-2374d6b7287f",
@@ -12011,6 +12014,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ade12659-78f9-4b37-a48e-31aeab1688bc",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Historia: los modelos de casas”: Buenísimo  @Javi , Gracias.. La Casa Maiten y la Casa Roble ",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi le puso 👍 a tu comentario: Buenísimo  @Javi , Gracias.. La Casa Maiten y la Casa Roble",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-11T23:03:04.655Z"
+  },
   {
    "id": "9e42cbf0-2b71-477b-8369-f85c1411b881",
    "to": "maca",

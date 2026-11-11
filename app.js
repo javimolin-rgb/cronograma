@@ -103,6 +103,37 @@ function pieceFiles(p, lastOnly) {
 }
 // ¿Esta pieza tiene un orden puesto a mano?
 const tieneOrden = (p) => (p.files || []).some((f) => Number.isFinite(f.orden));
+/* Material de apoyo: una foto de referencia, una captura, el render que mandó el cliente.
+   Vive en la pieza y se puede nombrar en un comentario o bajar, pero NO es una lámina
+   del carrusel, así que no sale ni en el feed ni en lo que se publica. */
+const esApoyo = (f) => !!(f && f.extra);
+const laminas = (p) => pieceFiles(p, true).filter((f) => !esApoyo(f));
+const apoyoDe = (p) => pieceFiles(p, true).filter(esApoyo);
+/* El número que trae el nombre: 01-portada, 2. algo, (3) algo… Es lo que ordena un
+   carrusel exportado de Canva o Figma, y vale más que la hora a la que se subió. */
+function numeroDeNombre(nombre) {
+  const m = String(nombre || '').match(/^\s*[([]?\s*(\d{1,3})\s*[)\].\-_ ]/);
+  return m ? parseInt(m[1], 10) : null;
+}
+// ¿Esta lista viene numerada en los nombres? (al menos dos, y sin repetirse)
+function numerada(arr) {
+  const ns = arr.map((f) => numeroDeNombre(f.name));
+  const buenos = ns.filter((x) => x != null);
+  return buenos.length >= 2 && buenos.length === arr.length && new Set(buenos).size === buenos.length;
+}
+/* Lo que acaba de subirse se acomoda solo: si los nombres vienen numerados, manda ese
+   número; si no, el orden en que se eligieron. Y va DETRÁS de lo que ya estaba, no
+   delante, que es lo que hacía que una foto suelta se pusiera de portada. */
+function acomodarSubidos(d, nuevos) {
+  if (!nuevos.length) return;
+  const previos = (d.files || []).filter((f) => !nuevos.some((x) => x.id === f.id));
+  const orden = numerada(nuevos)
+    ? nuevos.slice().sort((x, y) => numeroDeNombre(x.name) - numeroDeNombre(y.name))
+    : nuevos.slice();
+  // si la pieza ya tenía un orden, estos se suman al final; si no, se numera todo
+  const base = previos.length ? archivosEditor({ files: previos }).todos : [];
+  fijarOrden(d, base.concat(orden));
+}
 /* Deja los números de orden como 0,1,2… siguiendo la lista que se le pasa.
    Se escriben sobre los archivos de verdad de la pieza, no sobre las copias. */
 function fijarOrden(d, lista) {
@@ -1332,7 +1363,7 @@ function viewResultados() {
           <small>${p.date ? esc(cap(fmtLong(p.date))) : 'Sin fecha'}${p.time ? ' · ' + esc(p.time) : ''} · ${esc(formatName(p.format))}</small></div>
         ${hayArtefacto(p) ? `<i class="intchip">${ic('play', 11)} Interactivo</i>` : ''}<span class="badge" style="--c:${st.color}">${esc(st.name)}</span>
       </header>
-      ${carruselHtml(files, p.id)}
+      ${carruselHtml(files.filter((f) => !esApoyo(f)), p.id)}
       <div class="resbody">
         <div class="plats">${p.platforms.map(platBadge).join('')}</div>
         ${artefactoHtml(p, false)}
@@ -1383,7 +1414,7 @@ function viewFeed() {
 // Cuadrícula tipo perfil de Instagram
 function gridHtml(piezas) {
   return `<div class="iggrid">${piezas.map(({ p }) => {
-    const todos = pieceFiles(p, true);
+    const todos = laminas(p).length ? laminas(p) : pieceFiles(p, true);
     const files = todos.filter(esMedia).concat(todos.filter((f) => !esMedia(f)));   // primero lo que se ve
     const st = statusOf(p.status);
     const coms = S.db.comments.filter((c) => c.postId === p.id).length;
@@ -1408,7 +1439,7 @@ function postHtml(p, t) {
     <header class="posth">${ig ? `<span class="logo sm">${marca()}</span>` : av(autor.id, 'md')}
       <div><b>${ig ? esc(CFG.CUENTA || CFG.APP_NAME) : esc(p.title)}</b><small>${ig ? esc(p.title) : `${esc(autor.name)} · ${esc(ago(t))}${p.date ? ' · sale el ' + esc(fmtShort(p.date)) : ''}`}</small></div>
       ${hayArtefacto(p) ? `<i class="intchip">${ic('play', 11)} Interactivo</i>` : ''}<span class="badge" style="--c:${st.color}">${esc(st.name)}</span></header>
-    <div class="postmedia">${files.length ? carruselHtml(files, 'f-' + p.id) : `<div class="postvacio">${ic('image', 30)}<small>Todavía sin archivos</small></div>`}</div>
+    <div class="postmedia">${laminas(p).length ? carruselHtml(laminas(p), 'f-' + p.id) : `<div class="postvacio">${ic('image', 30)}<small>Todavía sin archivos</small></div>`}</div>
     <div class="postside">
       <div class="postacts">
         ${puedeAprobar ? `<button class="btn sm" data-act="feed-aprobar" data-id="${esc(p.id)}">${ic('check', 16)} ${p.status === 'estructura' ? 'Aprobar la estructura' : 'Aprobar'}</button>
@@ -3160,7 +3191,7 @@ function renderEditor() {
     ${historialTextoHtml(d, 'caption')}
     ${old && esAdmin() && store.canWrite ? `<div class="avisobar" id="aviso-texto"${textosCambiados(old, d).length ? '' : ' hidden'}>${ic('send', 18)}<span>Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
 
-    ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
+    ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(laminas(d).length ? laminas(d) : pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>fotos, videos, audios, PDF… cualquier archivo</small></label>
     ${(ED.fallos || []).length ? `<div class="avisobar mal">${ic('alert', 18)}
       <span><b>${ED.fallos.length} archivo${ED.fallos.length === 1 ? ' no se subió' : 's no se subieron'}</b><br>${ED.fallos.map((x) => `${esc(x.nombre)} · ${esc(x.motivo)}`).join('<br>')}</span>
@@ -3170,20 +3201,30 @@ function renderEditor() {
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
-      const { recientes, anteriores, aMano } = archivosEditor(d);
+      const todosEd = archivosEditor(d);
+      const apoyo = todosEd.recientes.filter(esApoyo);
+      const recientes = todosEd.recientes.filter((f) => !esApoyo(f));
+      const anteriores = todosEd.anteriores, aMano = todosEd.aMano;
       const puedeOrdenar = store.canWrite && recientes.length > 1;
       const tile = (f, i, arr) => `<div class="file${puedeOrdenar ? ' ord' : ''}" data-act="ed-view" data-id="${esc(f.id)}" title="${esc(f.name)}">${esMedia(f) ? miniMedia(f)
         : `<span class="fileico">${ic(esAudio(f) ? 'music' : 'paperclip', 24)}<span>${esc(f.name)}</span></span>`}
         ${(f.version || splitName(f.name).version) > 1 ? `<i class="vtag">v${f.version || splitName(f.name).version}</i>` : ''}
-        ${puedeOrdenar ? `<i class="ntag num">${i + 1}</i>
-          <span class="mover">
-            <button class="mv" data-act="ed-mover" data-id="${esc(f.id)}" data-d="-1"${i === 0 ? ' disabled' : ''} aria-label="Moverlo antes" title="Moverlo antes">${ic('left', 14)}</button>
-            <button class="mv" data-act="ed-mover" data-id="${esc(f.id)}" data-d="1"${i === arr.length - 1 ? ' disabled' : ''} aria-label="Moverlo después" title="Moverlo después">${ic('right', 14)}</button>
-          </span>` : ''}
+        ${puedeOrdenar && !esApoyo(f) ? `<i class="ntag num">${i + 1}</i>` : ''}
+        ${store.canWrite ? `<span class="mover">
+          ${puedeOrdenar && !esApoyo(f) ? `<button class="mv" data-act="ed-mover" data-id="${esc(f.id)}" data-d="-1"${i === 0 ? ' disabled' : ''} aria-label="Moverlo antes" title="Moverlo antes">${ic('left', 14)}</button>
+          <button class="mv" data-act="ed-mover" data-id="${esc(f.id)}" data-d="1"${i === arr.length - 1 ? ' disabled' : ''} aria-label="Moverlo después" title="Moverlo después">${ic('right', 14)}</button>` : ''}
+          <button class="mv apoyo${esApoyo(f) ? ' on' : ''}" data-act="ed-apoyo" data-id="${esc(f.id)}" aria-label="${esApoyo(f) ? 'Ponerlo en el carrusel' : 'Sacarlo del carrusel'}" title="${esApoyo(f) ? 'Ponerlo en el carrusel' : 'No va en el carrusel: es material de apoyo'}">${ic(esApoyo(f) ? 'image' : 'eye', 13)}</button>
+        </span>` : ''}
         <button class="x" data-act="ed-rmfile" data-id="${esc(f.id)}" aria-label="Quitar">${ic('x', 14)}</button></div>`;
-      return `${puedeOrdenar ? `<p class="hint ordhint"><b>El número es el orden en que se ven</b>: así se publica el carrusel y así sale en el Feed. Muévelos con las flechas.${aMano ? ` <button class="lnk" data-act="ed-orden-auto">Volver al orden de subida</button>` : ''}</p>` : ''}
+      return `${puedeOrdenar ? `<p class="hint ordhint"><b>El número es el orden en que se ven</b>: así se publica el carrusel y así sale en el Feed. Muévelos con las flechas, y con ${ic('eye', 12)} sacas del carrusel lo que sea material de apoyo.</p>
+        <div class="gridbtn dos ordacts">
+          <button class="chip" data-act="ed-orden-nombre">${ic('list', 14)} Ordenar por nombre</button>
+          <button class="chip" data-act="ed-orden-auto"${aMano ? '' : ' disabled'}>${ic('refresh', 14)} Orden de subida</button>
+        </div>` : ''}
       <div class="files">${recientes.map(tile).join('')}
         <label class="addfile">${ic('plus', 24)}${ED.uploading ? 'Subiendo…' : 'Subir'}<input id="e-file" type="file" multiple></label></div>
+        ${apoyo.length ? `<label class="lbl apoyolbl">Material de apoyo <small>no va en el carrusel</small></label>
+        <div class="files apoyos">${apoyo.map((f, i, arr) => tile(f, i, arr)).join('')}</div>` : ''}
         ${anteriores.length ? `<button class="vermas" data-act="ed-vermas">${ED.verAnteriores ? 'Ocultar' : 'Ver más'} · ${anteriores.length} archivo${anteriores.length === 1 ? '' : 's'} anterior${anteriores.length === 1 ? '' : 'es'} ${ic(ED.verAnteriores ? 'left' : 'right', 14)}</button>
         ${ED.verAnteriores ? `<div class="files anteriores">${anteriores.map(tile).join('')}</div>` : ''}` : ''}`;
     })()}`}
@@ -3386,6 +3427,7 @@ async function subirFotosComentario(post, files) {
       const nuevo = archivoSubido(Object.assign(
         { id: uid(), by: S.me.id, at: nowISO(), base: info.base, version, shaOrigen },
         extra ? { dur: extra.dur, w: extra.w, h: extra.h } : {}, r));
+      nuevo.extra = true;        // una foto mandada en un comentario no es una lámina del carrusel
       nuevos.push(nuevo); ids.push(nuevo.id);
     } catch (e) {
       console.error(e);
@@ -3643,6 +3685,7 @@ async function subirArchivos(files) {
   const ed = ED; if (!ed) return;
   syncDraft();
   if (!files || !files.length) return;
+  const yaEstaban = (ed.d.files || []).map((f) => f.id);
   ed.uploading += files.length; renderEditor();
   toast(`Subiendo ${files.length} archivo${files.length > 1 ? 's' : ''}…`, 10000);
   let bien = 0, repetidos = 0;
@@ -3712,6 +3755,12 @@ async function subirArchivos(files) {
     ed.uploading -= 1;
   }
   ed.subidos = (ed.subidos || 0) + bien;
+  // lo nuevo queda en su orden (por el número del nombre, o como se eligió) y detrás de lo que ya había
+  const recienSubidos = (ed.d.files || []).filter((f) => !yaEstaban.includes(f.id));
+  if (recienSubidos.length) {
+    acomodarSubidos(ed.d, recienSubidos);
+    if (numerada(recienSubidos)) toast(`Quedaron en el orden de sus nombres: 1 a ${recienSubidos.length}`, 4000);
+  }
   if (ED === ed) renderEditor();
   if (bien) {
     const extra = repetidos ? ` · ${repetidos} ya estaba${repetidos === 1 ? '' : 'n'} guardado${repetidos === 1 ? '' : 's'}, no se repitió` : '';
@@ -5663,6 +5712,31 @@ const ACTS = {
     lista.splice(j, 0, lista.splice(i, 1)[0]);
     fijarOrden(d, lista);
     renderEditor();
+  },
+  'ed-apoyo': (el, e) => {
+    if (e) e.stopPropagation();
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const f = (ED.d.files || []).find((x) => x.id === el.dataset.id); if (!f) return;
+    if (f.extra) delete f.extra; else f.extra = true;
+    // al sacarlo o meterlo, los números del carrusel se vuelven a contar
+    const quedan = archivosEditor(ED.d).todos.filter((x) => !esApoyo(x));
+    if (tieneOrden(ED.d)) fijarOrden(ED.d, quedan);
+    renderEditor();
+    toast(f.extra ? 'Fuera del carrusel: queda como material de apoyo' : 'Vuelve al carrusel, al final', 3800);
+  },
+  'ed-orden-nombre': () => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const todos = archivosEditor(ED.d).todos;
+    const laminas = todos.filter((f) => !esApoyo(f)).sort((x, y) => {
+      const a1 = numeroDeNombre(x.name), b1 = numeroDeNombre(y.name);
+      if (a1 != null && b1 != null) return a1 - b1;
+      return String(x.name || '').localeCompare(String(y.name || ''), 'es', { numeric: true });
+    });
+    fijarOrden(ED.d, laminas.concat(todos.filter(esApoyo)));
+    renderEditor();
+    toast(`Ordenadas por nombre · ${laminas.length} lámina${laminas.length === 1 ? '' : 's'}`, 3500);
   },
   'ed-orden-auto': () => {
     if (!ED || !requireWrite()) return;

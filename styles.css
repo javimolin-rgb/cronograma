@@ -1162,3 +1162,9 @@ a.btn{text-decoration:none;align-items:center}
   background:linear-gradient(to top,rgba(20,16,40,.62),transparent);z-index:2}
 .file .mv{width:26px;height:22px;border-radius:7px;background:rgba(255,255,255,.92);color:#141A2B;display:grid;place-items:center;box-shadow:none}
 .file .mv:disabled{opacity:.3;pointer-events:none}
+.ordacts{margin:0 0 8px}
+.file .mover .mv.apoyo{background:rgba(255,255,255,.92)}
+.file .mover .mv.apoyo.on{background:var(--accent);color:var(--accent-ink)}
+.apoyolbl{margin-top:14px}
+.files.apoyos .file{opacity:.9}
+.files.apoyos .file::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 2px var(--line);pointer-events:none}

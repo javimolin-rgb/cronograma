@@ -102,7 +102,22 @@ En un carrusel el orden **es** el contenido: la lámina 1 va primero. Dentro de 
 
 - Ese número es **el orden en que se ve en todas partes**: el carrusel del Feed, la pieza, Entregas y el zip que se descarga. Se acabó tener que subirlas al revés.
 - Mientras nadie los mueva, siguen como siempre (lo último que se subió, primero). **Al mover uno, se fija el orden de todos** y aparecen todos los archivos, no solo los ocho últimos.
-- **“Volver al orden de subida”** deshace el orden manual.
+- **“Ordenar por nombre”** las acomoda de una: si los archivos vienen numerados (`01-portada`, `02-…`, `10-cierre`), se usa ese número; si no, el nombre. **“Orden de subida”** deshace el orden manual.
+
+**Al subir, se acomodan solas.** Si los nombres vienen numerados, el orden sale de ahí, no de la hora: da lo mismo que el teléfono las entregue al revés. Y lo nuevo entra **detrás** de lo que ya había, nunca de portada.
+
+### Material de apoyo: lo que no va en el carrusel
+
+A veces a una pieza se le suman archivos que **no son láminas**: una foto de referencia, una captura, el render que mandó el cliente. Antes se metían al carrusel como una lámina más —y como entraban en una tanda nueva, se ponían de **portada**—.
+
+Ahora cada archivo tiene un botón **👁** para sacarlo del carrusel. Lo que se saca:
+
+- baja al bloque **Material de apoyo**, dentro de la misma pieza;
+- **no sale** en el carrusel del Feed, ni en la entrega, ni en la cuadrícula;
+- sigue estando para bajarlo, nombrarlo en un comentario y en **Entregas**;
+- y las láminas se vuelven a numerar solas, 1 a N.
+
+Las fotos que se mandan **dentro de un comentario** entran directo como material de apoyo: nunca se cuelan en el carrusel.
 
 
 ### Detalle: la planilla para imprimir y para Excel

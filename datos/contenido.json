@@ -41,7 +41,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/10-cierre-v1.webp",
      "sha": "cc179ffdef04aea0fe68a35735731103f81928e2",
      "type": "image/webp",
-     "size": 165420
+     "size": 165420,
+     "orden": 9
     },
     {
      "id": "88c2184d-4ef9-459f-b25c-e40269f0baa9",
@@ -55,7 +56,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/09-riesgos-naturales-v1.webp",
      "sha": "6864cefa4d3ab50fca7269c5fb1f27a0adecd43d",
      "type": "image/webp",
-     "size": 47746
+     "size": 47746,
+     "orden": 8
     },
     {
      "id": "7a01d9d0-9916-4a86-a423-8c700664f9f7",
@@ -69,7 +71,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/08-orientacion-y-sol-v1-2.webp",
      "sha": "3939f5f73c1877eb84d4b8722460cbd63e2010df",
      "type": "image/webp",
-     "size": 103402
+     "size": 103402,
+     "orden": 7
     },
     {
      "id": "7024d5f2-72b6-438a-bf1a-0cb6756df75d",
@@ -83,7 +86,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/07-pendiente-y-suelo-v1-2.webp",
      "sha": "2eb7e358b7ded7c27750f83183b8273234195250",
      "type": "image/webp",
-     "size": 292734
+     "size": 292734,
+     "orden": 6
     },
     {
      "id": "7c06eb38-5c0f-4d6b-92be-c07dfa99db98",
@@ -97,7 +101,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/06-acceso-v1.webp",
      "sha": "2c2b196f0c2176c705676ea86058becc52ce65c4",
      "type": "image/webp",
-     "size": 135604
+     "size": 135604,
+     "orden": 5
     },
     {
      "id": "ef878db7-03b8-4277-ba4a-82e882b2d297",
@@ -111,7 +116,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/05-agua-y-luz-v1-2.webp",
      "sha": "25310235efa86fdd61e2939bee2b1b11934aff54",
      "type": "image/webp",
-     "size": 173412
+     "size": 173412,
+     "orden": 4
     },
     {
      "id": "61a038e7-3a50-4fd9-b9db-402cdfaed55f",
@@ -125,7 +131,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/04-normativa-v1.webp",
      "sha": "a23f462a5faabd835b1d4b1621d0c51e361a6ed0",
      "type": "image/webp",
-     "size": 63844
+     "size": 63844,
+     "orden": 3
     },
     {
      "id": "cd899754-a7d1-4b47-884f-298f6e93408c",
@@ -139,7 +146,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/03-papeles-v1-2.webp",
      "sha": "941627e534b748878e4fbec30434adcd833b2cbc",
      "type": "image/webp",
-     "size": 77754
+     "size": 77754,
+     "orden": 2
     },
     {
      "id": "1bec5dbb-3732-40e3-9d8f-3b76f4bc8ee6",
@@ -153,7 +161,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/02-por-que-importa-v1-2.webp",
      "sha": "40128e7e2e547d087378311ae35c73eac63a6b76",
      "type": "image/webp",
-     "size": 60866
+     "size": 60866,
+     "orden": 1
     },
     {
      "id": "1cdfc85e-e53e-44f1-8dcc-315275b345e4",
@@ -167,7 +176,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/01-portada-v1.webp",
      "sha": "5cd6b1ac4bbea5c329de006db1292b34cf81f668",
      "type": "image/webp",
-     "size": 347312
+     "size": 347312,
+     "orden": 0
     },
     {
      "id": "cc4068d0-c556-4df8-8410-eb3ff7e3d651",
@@ -181,7 +191,9 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/teno_01_plataforma-sobre-pilotes-v1.jpg",
      "sha": "33bb1d4697b67eb47700ff8fa91b2acd9bd5d8aa",
      "type": "image/jpeg",
-     "size": 283366
+     "size": 283366,
+     "orden": 10,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -205,8 +217,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T15:38:03.534Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-11T16:18:43.687Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T15:38:03.534Z",
    "publishedAt": null
   },

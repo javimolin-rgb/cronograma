@@ -168,6 +168,20 @@
      "sha": "5cd6b1ac4bbea5c329de006db1292b34cf81f668",
      "type": "image/webp",
      "size": 347312
+    },
+    {
+     "id": "cc4068d0-c556-4df8-8410-eb3ff7e3d651",
+     "by": "flavio",
+     "at": "2026-11-11T01:14:34.169Z",
+     "base": "teno_01_plataforma-sobre-pilotes",
+     "version": 1,
+     "shaOrigen": "33bb1d4697b67eb47700ff8fa91b2acd9bd5d8aa",
+     "name": "teno_01_plataforma-sobre-pilotes-v1.jpg",
+     "path": "archivos/publicaciones-informativas/teno_01_plataforma-sobre-pilotes-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/teno_01_plataforma-sobre-pilotes-v1.jpg",
+     "sha": "33bb1d4697b67eb47700ff8fa91b2acd9bd5d8aa",
+     "type": "image/jpeg",
+     "size": 283366
     }
    ],
    "checklist": [],
@@ -191,8 +205,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T18:53:36.423Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-11T01:14:34.170Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-11-10T18:53:36.423Z",
    "publishedAt": null
   },
@@ -6932,6 +6946,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f6605852-ba72-48c5-b616-2e9d9ea9a0a0",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "flavio",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-11T01:14:34.170Z"
+  },
   {
    "id": "84191f01-e217-4a13-8d39-592e0e592dca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

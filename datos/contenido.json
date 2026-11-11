@@ -20301,10 +20301,10 @@
    "tipo": "cel",
    "instalada": true,
    "push": true,
-   "version": "2026.11.10-3",
+   "version": "2026.11.11-1",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-10-24T21:01:24.671Z",
-   "lastSeen": "2026-11-10T18:55:55.688Z"
+   "lastSeen": "2026-11-11T22:09:39.875Z"
   },
   {
    "id": "d_005f1d53f0f34e1a",

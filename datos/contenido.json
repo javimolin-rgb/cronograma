@@ -14,9 +14,9 @@
    "date": "2026-11-11",
    "inicio": "",
    "format": "carrusel",
-   "status": "revision",
+   "status": "cambios",
    "priority": "normal",
-   "revisions": 0,
+   "revisions": 1,
    "desarchivada": false,
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "platforms": [
@@ -205,9 +205,9 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T01:16:33.843Z",
-   "updatedBy": "flavio",
-   "statusChangedAt": "2026-11-10T18:53:36.423Z",
+   "updatedAt": "2026-11-11T15:38:03.534Z",
+   "updatedBy": "maca",
+   "statusChangedAt": "2026-11-11T15:38:03.534Z",
    "publishedAt": null
   },
   {
@@ -4770,6 +4770,16 @@
  ],
  "comments": [
   {
+   "id": "7be2eed7-4b53-4cb8-ab05-60b0648334a0",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "maca",
+   "text": "Por favor limpiar la foto",
+   "fileIds": [
+    "7f90bc6c-e714-4eda-b4f4-cc7ba7643488"
+   ],
+   "createdAt": "2026-11-11T15:38:03.525Z"
+  },
+  {
    "id": "4c3e0982-db30-4db9-be2a-f13fa096e092",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "flavio",
@@ -6989,6 +6999,29 @@
   }
  ],
  "activity": [
+  {
+   "id": "9e81336e-2fc2-4fd6-9c33-a0b9cc50f1a5",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "maca",
+   "type": "status",
+   "text": "movió de En revisión a Cambios",
+   "meta": {
+    "from": "revision",
+    "to": "cambios"
+   },
+   "createdAt": "2026-11-11T15:38:03.534Z"
+  },
+  {
+   "id": "1533f84c-d00d-406e-9db8-ff994785a9f0",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-11T15:38:03.531Z"
+  },
   {
    "id": "9e6ea3ee-471b-4516-a536-449e0b1724fb",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -11418,6 +11451,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f6c5ee4d-b41a-4db6-9c02-5fe0d24c54af",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "en “10 puntos que revisar antes de comprar tu terreno”: la movió a Cambios",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca la movió a Cambios",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T15:38:03.535Z"
+  },
+  {
+   "id": "717be95b-a27c-4311-9324-5aeaa440320f",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Cambios",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca la movió a Cambios",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T15:38:03.534Z"
+  },
+  {
+   "id": "6c5580a2-25da-4745-a8d2-eef55fc0336f",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Por favor limpiar la foto",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Por favor limpiar la foto",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T15:38:03.533Z"
+  },
+  {
+   "id": "77512fdb-c040-43b4-9541-62a970e959fd",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Por favor limpiar la foto",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Por favor limpiar la foto",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-11T15:38:03.532Z"
+  },
   {
    "id": "2c6cffd2-2851-47fe-9268-13ebb24cf6f8",
    "to": "javi",

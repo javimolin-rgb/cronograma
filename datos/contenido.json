@@ -5322,6 +5322,14 @@
  ],
  "comments": [
   {
+   "id": "8f18e17f-0571-435c-8beb-6121d7779682",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la siguiente imagen",
+   "fileIds": [],
+   "createdAt": "2026-11-12T17:39:33.800Z"
+  },
+  {
    "id": "20eca8d2-2230-49e9-9231-dc41fd8e419c",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -7746,6 +7754,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "cfdc2eaa-8900-441d-b7b9-053b5cfe8d72",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:39:33.800Z"
+  },
   {
    "id": "89fc81f5-974e-4fcd-8f78-f336c03d26df",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12712,6 +12730,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4e8e6cc5-774d-404c-8a7b-d07f0864ab1c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la sig…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la sig…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T17:39:33.801Z"
+  },
+  {
+   "id": "6c607c18-4188-4fc1-9e2b-a79b33edefca",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la sig…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la sig…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T17:39:33.801Z"
+  },
   {
    "id": "5966fbcf-2cb6-48c8-b6d2-4aabaf5e531d",
    "to": "flavio",

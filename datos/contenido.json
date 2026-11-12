@@ -2555,6 +2555,8 @@
     ],
     "voz": 1
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Modelos",
    "time": "",
    "date": "2026-11-18",
@@ -2945,8 +2947,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-10T19:05:35.968Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T15:29:19.660Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-04T14:39:45.131Z",
@@ -2961,9 +2963,7 @@
      "by": "javi"
     }
    ],
-   "marca": [],
-   "guionNotas": [],
-   "spotify": ""
+   "marca": []
   },
   {
    "title": "Casa Peumo",
@@ -5259,6 +5259,14 @@
   }
  ],
  "comments": [
+  {
+   "id": "3e365950-783c-4c6d-b8c3-6693e8213e13",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "@javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” porque cómo quedará para siempre en  las historias destacadas se ve mejor sin.",
+   "fileIds": [],
+   "createdAt": "2026-11-12T15:29:19.664Z"
+  },
   {
    "id": "d109da98-8fc6-4cd6-a9e3-189bc76d16e3",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -7612,6 +7620,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c8c2093c-91e6-4d61-9751-171b19e13285",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T15:29:19.671Z"
+  },
   {
    "id": "5b7679ef-97af-4ed6-9dc3-66ac0a6d090a",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -12435,6 +12453,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "46a00ccd-e0e2-47b2-a3a3-0e15b9611196",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” p…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: @javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” p…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-12T15:29:19.673Z"
+  },
+  {
+   "id": "6a1b080d-7489-4d45-a5bf-cfb8aebe34a0",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” p…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca te mencionó: @javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” p…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-12T15:29:19.672Z"
+  },
   {
    "id": "503dca84-8f9a-4bbd-bdd8-6421bc424541",
    "to": "javi",
@@ -21698,9 +21746,9 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-12T15:25:54.108Z",
-   "hasta": "2026-11-10T19:05:35.968Z",
-   "que": "pieza"
+   "at": "2026-11-12T15:29:19.663Z",
+   "hasta": "2026-11-12T15:29:19.660Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",

@@ -5484,7 +5484,10 @@
     "e3771cc1-1de9-4eb5-b2bc-7f10eecc9c63",
     "23dc60ff-2cb9-4474-9d56-324636189015"
    ],
-   "createdAt": "2026-11-12T14:10:30.721Z"
+   "createdAt": "2026-11-12T14:10:30.721Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "65dd6b6b-0d91-4e96-8fc1-5b93362b54c2",
@@ -12860,6 +12863,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "103a449e-1a0b-47ba-b130-2e6211c906d2",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Historia: los modelos de casas”: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi le puso 👍 a tu comentario: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T18:13:26.453Z"
+  },
   {
    "id": "d82d0eab-aff1-4ab3-b2cb-8475ba2113af",
    "to": "flavio",

@@ -1376,7 +1376,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T15:41:00.123Z",
+   "updatedAt": "2026-11-12T15:43:06.198Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
@@ -5260,6 +5260,14 @@
  ],
  "comments": [
   {
+   "id": "96ed9894-4fdc-42d2-9d81-bddcedf04953",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "El verdadero lujo es vivir bien. Es clara, memorable y tiene fuerza como cierre.\n* El verdadero lujo es el bienestar. Es más conceptual y conecta directamente con el posicionamiento de Neorigen.\n* Vivir bien. Ese es el verdadero lujo. Tiene más ritmo, una pausa que le da fuerza y funciona muy bien visualmente.",
+   "fileIds": [],
+   "createdAt": "2026-11-12T15:43:06.201Z"
+  },
+  {
    "id": "9f154f4b-b74a-48a9-85e2-bec8dd81a14d",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -7628,6 +7636,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c03bb532-4b04-4955-8248-99b26fe670ae",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T15:43:06.203Z"
+  },
   {
    "id": "6d70968e-5a0f-4f14-99d3-90cc0b5aba7b",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12471,6 +12489,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4c00acab-83ca-499e-8761-56ef8556cd77",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: El verdadero lujo es vivir bien. Es clara, memorable y tiene fuerza como cierre.…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: El verdadero lujo es vivir bien. Es clara, memorable y tiene fuerza como cierre.…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T15:43:06.205Z"
+  },
   {
    "id": "445b8f0e-3a71-4605-86f7-30ae63bcdaf6",
    "to": "javi",
@@ -21781,8 +21814,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T15:41:00.128Z",
-   "hasta": "2026-11-12T15:41:00.123Z",
+   "at": "2026-11-12T15:43:06.200Z",
+   "hasta": "2026-11-12T15:43:06.198Z",
    "que": "comentario"
   },
   {

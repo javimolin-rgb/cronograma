@@ -276,7 +276,7 @@
    "guionTabla": null,
    "guionNotas": [],
    "spotify": "",
-   "campaign": "Publicaciones informativas",
+   "campaign": "Modelos",
    "time": "",
    "date": "2026-11-13",
    "inicio": "",
@@ -573,7 +573,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T00:42:49.498Z",
+   "updatedAt": "2026-11-11T23:53:17.530Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
@@ -7536,16 +7536,6 @@
   }
  ],
  "activity": [
-  {
-   "id": "f3247551-1fcd-432a-b3ef-a8cb4abcc8ce",
-   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "postTitle": "Historia: los modelos de casas",
-   "actor": "javi",
-   "type": "edit",
-   "text": "movió “Historia: los modelos de casas” a la campaña Publicaciones informativas",
-   "meta": null,
-   "createdAt": "2026-11-12T00:42:49.498Z"
-  },
   {
    "id": "c3d6729d-7dde-4fb4-8e49-d886bc49d669",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
@@ -21440,8 +21430,8 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "javi",
-   "at": "2026-11-12T00:24:06.280Z",
-   "hasta": "2026-11-11T23:53:17.530Z",
+   "at": "2026-11-12T00:43:06.744Z",
+   "hasta": "2026-11-12T00:42:49.498Z",
    "que": "pieza"
   },
   {

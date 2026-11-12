@@ -14,7 +14,7 @@
    "date": "2026-11-12",
    "inicio": "",
    "format": "carrusel",
-   "status": "programado",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -262,10 +262,10 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T18:48:34.305Z",
+   "updatedAt": "2026-11-12T21:56:35.931Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-12T18:12:53.541Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-11-12T21:56:35.931Z",
+   "publishedAt": "2026-11-12T21:56:35.931Z"
   },
   {
    "title": "Historia: los modelos de casas",
@@ -7823,6 +7823,19 @@
  ],
  "activity": [
   {
+   "id": "e534cc25-58ef-49dd-b7fa-9d5626663d1c",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Programado a Publicado",
+   "meta": {
+    "from": "programado",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-12T21:56:35.933Z"
+  },
+  {
    "id": "bc6c6565-2d68-4902-a4c9-42f5fbe7fb36",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -12914,6 +12927,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "524c2e58-124b-491a-94ff-64a91dabf01c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T21:56:35.934Z"
+  },
+  {
+   "id": "71c397eb-9d8e-4d8f-91ab-d327ceaf80ff",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T21:56:35.934Z"
+  },
   {
    "id": "1289a46a-2177-488d-b0b3-3343e893e2e8",
    "to": "flavio",

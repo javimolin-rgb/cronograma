@@ -8,7 +8,7 @@
    "guion": "",
    "guionTabla": null,
    "guionNotas": [],
-   "spotify": "https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW?si=37f5e6cf14464946",
+   "spotify": "https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
    "campaign": "Publicaciones informativas",
    "time": "17:00",
    "date": "2026-11-12",
@@ -262,7 +262,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T18:33:50.113Z",
+   "updatedAt": "2026-11-12T18:48:34.305Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-12T18:12:53.541Z",
    "publishedAt": null
@@ -7823,6 +7823,16 @@
  ],
  "activity": [
   {
+   "id": "bc6c6565-2d68-4902-a4c9-42f5fbe7fb36",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó la canción",
+   "meta": null,
+   "createdAt": "2026-11-12T18:48:34.308Z"
+  },
+  {
    "id": "1e2bb739-1c7c-496e-94b1-243bbbe6efbe",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -12904,6 +12914,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1289a46a-2177-488d-b0b3-3343e893e2e8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (la canción)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó la canción",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T18:48:34.309Z"
+  },
+  {
+   "id": "0e7c01ba-7cd0-4104-9ee4-af398e220c4f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (la canción)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó la canción",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T18:48:34.309Z"
+  },
   {
    "id": "6337cb22-658d-48db-808b-a9a5a3352e79",
    "to": "flavio",

@@ -1217,6 +1217,8 @@
     ],
     "voz": 2
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Publicaciones informativas",
    "time": "",
    "date": "",
@@ -1225,6 +1227,7 @@
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "platforms": [
     "instagram"
@@ -1247,12 +1250,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T17:59:18.715Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "Un domingo en el refugio",
@@ -5322,6 +5323,14 @@
  ],
  "comments": [
   {
+   "id": "942a5cf0-89ca-4546-aad2-35e0e86f20c2",
+   "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "author": "maca",
+   "text": "@javi,  no hablar de precio… siempre de valor.",
+   "fileIds": [],
+   "createdAt": "2026-11-12T17:59:18.718Z"
+  },
+  {
    "id": "5da9fb50-2e52-4195-8254-e2adcb27af3e",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -7802,6 +7811,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "08d0d5b7-2412-4b12-a44f-e20969f38dc4",
+   "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "postTitle": "Cómo se arma el precio de tu casa",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:59:18.725Z"
+  },
   {
    "id": "5474ccad-b0af-4005-8615-dadd1de75f04",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -12828,6 +12847,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "22cbd100-9d99-4f2e-acdd-0eb5db433169",
+   "to": "javi",
+   "from": "maca",
+   "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "type": "mention",
+   "text": "te mencionó en “Cómo se arma el precio de tu casa”: @javi,  no hablar de precio… siempre de valor.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Cómo se arma el precio de tu casa",
+   "body": "Maca te mencionó: @javi,  no hablar de precio… siempre de valor.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "createdAt": "2026-11-12T17:59:18.726Z"
+  },
   {
    "id": "318beab9-ce5f-4f62-a94d-61eeb8237202",
    "to": "javi",
@@ -22613,9 +22647,9 @@
    "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf|maca",
    "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "person": "maca",
-   "at": "2026-11-12T17:57:27.074Z",
-   "hasta": "2026-11-10T19:05:35.968Z",
-   "que": "pieza"
+   "at": "2026-11-12T17:59:18.718Z",
+   "hasta": "2026-11-12T17:59:18.715Z",
+   "que": "comentario"
   },
   {
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",

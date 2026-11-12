@@ -2527,7 +2527,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-12T17:52:27.677Z",
+   "updatedAt": "2026-11-12T17:53:55.375Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -5322,6 +5322,16 @@
  ],
  "comments": [
   {
+   "id": "5da9fb50-2e52-4195-8254-e2adcb27af3e",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no moleste visualmente",
+   "fileIds": [
+    "c8e0a54c-c1c6-4b3b-95b6-594a643c9ce7"
+   ],
+   "createdAt": "2026-11-12T17:53:55.376Z"
+  },
+  {
    "id": "1d6eea02-804a-4540-a0af-4abd84ecb266",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -7792,6 +7802,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5474ccad-b0af-4005-8615-dadd1de75f04",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:53:55.377Z"
+  },
   {
    "id": "1979700b-8c41-476b-bb33-0e2d64f3e336",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -12808,6 +12828,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "318beab9-ce5f-4f62-a94d-61eeb8237202",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:53:55.377Z"
+  },
+  {
+   "id": "1b975ee5-bd23-4c93-bdeb-b6a732f5db02",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:53:55.377Z"
+  },
   {
    "id": "1ab2b821-b067-442d-918c-c5ecc3d251ef",
    "to": "javi",
@@ -22563,8 +22613,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-12T17:52:27.680Z",
-   "hasta": "2026-11-12T17:52:27.677Z",
+   "at": "2026-11-12T17:53:55.376Z",
+   "hasta": "2026-11-12T17:53:55.375Z",
    "que": "comentario"
   },
   {

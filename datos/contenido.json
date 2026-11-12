@@ -898,7 +898,9 @@
     ],
     "voz": 3
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Videos lifestyle",
    "time": "",
    "date": "2026-12-06",
    "inicio": "",
@@ -906,6 +908,7 @@
    "status": "estructura",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "549a3272-d695-4f76-9011-a252831ac96c",
    "platforms": [
     "instagram"
@@ -933,12 +936,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-12T00:42:32.272Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:08.735Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "Aire nuevo sin abrir la ventana",
@@ -7535,6 +7536,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c3d6729d-7dde-4fb4-8e49-d886bc49d669",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "edit",
+   "text": "movió “Del primer mensaje a la obra, en 6 pasos” a la campaña Videos lifestyle",
+   "meta": null,
+   "createdAt": "2026-11-12T00:42:32.272Z"
+  },
   {
    "id": "1ac0897a-5b0c-44b5-a595-e667083a4f68",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

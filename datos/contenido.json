@@ -21375,6 +21375,22 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "person": "javi",
+   "at": "2026-11-12T00:29:46.273Z",
+   "hasta": "2026-11-11T23:02:37.530Z",
+   "que": "pieza"
+  },
+  {
+   "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "person": "javi",
+   "at": "2026-11-12T00:29:34.285Z",
+   "hasta": "2026-11-11T15:53:37.836Z",
+   "que": "pieza"
+  },
+  {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "javi",

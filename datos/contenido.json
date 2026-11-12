@@ -618,8 +618,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T14:10:46.951Z",
-   "updatedBy": "flavio",
+   "updatedAt": "2026-11-12T18:23:33.614Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
   },
@@ -5323,6 +5323,14 @@
  ],
  "comments": [
   {
+   "id": "70593a6b-f39d-485b-92b9-1554cdf54833",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "javi",
+   "text": "Buenísimo! De la Ciprés y la Boldo tendrán las vistas del otro lado? No he logrado encontrar",
+   "fileIds": [],
+   "createdAt": "2026-11-12T18:23:33.617Z"
+  },
+  {
    "id": "942a5cf0-89ca-4546-aad2-35e0e86f20c2",
    "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "author": "maca",
@@ -7814,6 +7822,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "eaf5b55a-c18f-4b3c-b392-af1bc9017631",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T18:23:33.619Z"
+  },
   {
    "id": "86943c90-9733-48e1-8db3-bb8c76108f71",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -12863,6 +12881,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2b08b907-8965-4fba-9071-ea44032786a5",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: Buenísimo! De la Ciprés y la Boldo tendrán las vistas del otro lado? No he logra…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi comentó: Buenísimo! De la Ciprés y la Boldo tendrán las vistas del otro lado? No he logra…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T18:23:33.620Z"
+  },
+  {
+   "id": "6b32b4ad-3a5b-4a7e-b829-e5a35b54228e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: Buenísimo! De la Ciprés y la Boldo tendrán las vistas del otro lado? No he logra…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi comentó: Buenísimo! De la Ciprés y la Boldo tendrán las vistas del otro lado? No he logra…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T18:23:33.620Z"
+  },
   {
    "id": "103a449e-1a0b-47ba-b130-2e6211c906d2",
    "to": "flavio",
@@ -22830,9 +22878,9 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "javi",
-   "at": "2026-11-12T18:12:56.851Z",
-   "hasta": "2026-11-12T14:10:46.951Z",
-   "que": "pieza"
+   "at": "2026-11-12T18:23:33.617Z",
+   "hasta": "2026-11-12T18:23:33.614Z",
+   "que": "comentario"
   },
   {
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|javi",

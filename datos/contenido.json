@@ -5230,6 +5230,18 @@
  ],
  "comments": [
   {
+   "id": "0d5f30af-d056-4c08-bbc5-59623acee0a0",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "flavio",
+   "text": "Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
+   "fileIds": [
+    "e17cfc8b-3182-4da9-9432-42e724f3f4ca",
+    "e3771cc1-1de9-4eb5-b2bc-7f10eecc9c63",
+    "23dc60ff-2cb9-4474-9d56-324636189015"
+   ],
+   "createdAt": "2026-11-12T14:10:30.721Z"
+  },
+  {
    "id": "65dd6b6b-0d91-4e96-8fc1-5b93362b54c2",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "javi",
@@ -7551,6 +7563,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "28ab78af-b2c0-4163-8432-80f889781b1b",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T14:10:30.723Z"
+  },
   {
    "id": "765c4f70-09b4-425b-b6e9-13ea090a6aed",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12344,6 +12366,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cfbc9f96-9380-4db9-88cf-879ab2b3c530",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "supervision",
+   "text": "comentó en “Historia: los modelos de casas”: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Flavio comentó: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T14:10:30.724Z"
+  },
+  {
+   "id": "45c4e726-bb2b-4228-b3ce-cff778efbc30",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Flavio comentó: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T14:10:30.724Z"
+  },
   {
    "id": "9a236e6c-7704-4762-b3ee-288cfd866fdf",
    "to": "flavio",

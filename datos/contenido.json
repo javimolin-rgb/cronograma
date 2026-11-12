@@ -276,9 +276,9 @@
    "guionTabla": null,
    "guionNotas": [],
    "spotify": "",
-   "campaign": "Modelos",
+   "campaign": "Publicaciones informativas",
    "time": "",
-   "date": "2026-11-13",
+   "date": "2026-11-14",
    "inicio": "",
    "format": "story",
    "status": "revision",
@@ -573,7 +573,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T23:53:17.530Z",
+   "updatedAt": "2026-11-12T00:43:21.466Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
@@ -7537,6 +7537,19 @@
  ],
  "activity": [
   {
+   "id": "3855ea27-5d9b-4072-8ebc-6bd3657e1b98",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 13 nov a 14 nov",
+   "meta": {
+    "from": "2026-11-13",
+    "to": "2026-11-14"
+   },
+   "createdAt": "2026-11-12T00:43:21.466Z"
+  },
+  {
    "id": "c3d6729d-7dde-4fb4-8e49-d886bc49d669",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -12306,6 +12319,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9a236e6c-7704-4762-b3ee-288cfd866fdf",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Historia: los modelos de casas” a 14 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi cambió la fecha a 14 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T00:43:21.467Z"
+  },
+  {
+   "id": "b70b0539-b12f-4cdb-86a0-ab7cf025b4b5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "reschedule",
+   "text": "cambió la fecha de “Historia: los modelos de casas” a 14 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi cambió la fecha a 14 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-12T00:43:21.467Z"
+  },
   {
    "id": "543a921d-89b0-46df-a9ad-3687526eab2d",
    "to": "maca",

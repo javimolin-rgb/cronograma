@@ -565,6 +565,21 @@
      "type": "image/webp",
      "size": 317834,
      "orden": 17
+    },
+    {
+     "id": "e17cfc8b-3182-4da9-9432-42e724f3f4ca",
+     "by": "flavio",
+     "at": "2026-11-12T14:09:49.350Z",
+     "base": "render-4",
+     "version": 1,
+     "shaOrigen": "009a77c8edf26e3d31020d8cd97e7dc427d90baf",
+     "name": "render-4-v1.webp",
+     "path": "archivos/publicaciones-informativas/render-4-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/render-4-v1.webp",
+     "sha": "2a3c08095e08764ecb8858593ff4e8a0648bd8ea",
+     "type": "image/webp",
+     "size": 316526,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -573,8 +588,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T00:43:21.466Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T14:09:49.350Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
   },
@@ -7536,6 +7551,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "765c4f70-09b4-425b-b6e9-13ea090a6aed",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "flavio",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-12T14:09:49.350Z"
+  },
   {
    "id": "3855ea27-5d9b-4072-8ebc-6bd3657e1b98",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",

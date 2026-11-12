@@ -359,8 +359,15 @@ Cuando llega el día de publicar, no hace falta andar juntando cosas: dentro de 
 Se abre una pantalla con todo lo que se necesita para ir a Instagram y publicar:
 
 - **El texto listo para pegar**: el copy con los hashtags debajo, con su cuenta de caracteres y de hashtags. **Copiar todo**, **Solo el copy** o **Solo los hashtags**, según cómo prefieras pegarlo.
-- **Las láminas finales, en su orden**, numeradas `01`, `02`, `03`… Son las últimas versiones de cada archivo y respetan el orden que les pusiste a mano. Tocas una y se baja sola; con **Descargar todo** se baja el `.zip` con todas numeradas y, adentro, el texto en **texto.txt**.
-- En el celular, cuando el teléfono lo permite, aparece **Compartir…**: manda las fotos o el video directo a Instagram, WhatsApp o la galería, sin pasar por la carpeta de descargas.
+- **Las láminas finales, en su orden**, numeradas `01`, `02`, `03`… Son las últimas versiones de cada archivo y respetan el orden que les pusiste a mano. Tocando la miniatura se ven en grande.
+- **Guardar en la galería** (el botón principal en el celular): deja las fotos o el video en **Fotos**, que es de donde sube Instagram. Cada lámina tiene además su propio botón **Galería**, para guardarlas de a una.
+- **Bajar** / **Descargar todo**: el archivo suelto o el `.zip` con todas numeradas y, adentro, el texto en **texto.txt**. Esto va a la carpeta **Archivos** del teléfono (o a las descargas del computador), que sirve para guardar y mandar por correo, pero **no** para subir a Instagram desde el iPhone.
+
+### Por qué “Guardar en la galería” y no “Descargar”
+
+En el iPhone, lo que se baja desde Safari cae en **Archivos**, e Instagram sube desde **Fotos**: por eso no basta con descargar. El botón abre el menú de compartir del teléfono, donde eliges **Guardar imagen** (o *Guardar 3 imágenes*, *Guardar video*…) y quedan en el carrete. En ese mismo menú aparece Instagram, así que también se puede mandar directo sin pasar por la galería.
+
+Los archivos se van preparando apenas se abre la pantalla —mientras tanto el botón dice *Preparando la galería…*—, porque si se piden después de tocarlo, iOS no deja abrir el menú. Si el navegador no sabe hacerlo (un computador, por ejemplo), el botón no aparece y queda la descarga de siempre.
 - **Avisa si algo no cuadra**: el texto pasado de 2.200 caracteres, más de 30 hashtags o más de 20 láminas, que es lo que acepta Instagram.
 
 Lo que **no** se lleva: el **material de apoyo** (referencias, capturas) y los archivos que no son foto ni video (un PDF, un .psd). Los nombra para que sepas que quedaron fuera, pero no se cuelan en lo que se publica.

@@ -3156,6 +3156,30 @@ function palabraLamina(p, n) {
 const LIMITE_TEXTO = 2200, LIMITE_TAGS = 30, LIMITE_LAMINAS = 20;   // lo que aguanta Instagram
 const cuentaTags = (s) => (String(s || '').match(/#[^\s#]+/g) || []).length;
 
+/* Guardar en la galería. En el iPhone, bajar un archivo desde Safari lo deja en
+   Archivos, y Instagram sube desde Fotos: la única vía para que llegue al carrete
+   es el menú de compartir del teléfono, donde sale “Guardar imagen”. Así que esa
+   es la acción principal, y los archivos se dejan leídos de antemano porque iOS
+   no deja abrir ese menú si se piden después de tocar el botón. */
+const galeriaLista = () => !!(EXP && EXP.files && EXP.files.length);
+const esApple = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (/mac/i.test(navigator.platform || '') && navigator.maxTouchPoints > 1);
+// Cómo se llama en el menú del teléfono lo que hay que tocar
+function opcionGuardar(medios) {
+  const total = medios.length;
+  if (!esApple()) return '<b>Guardar</b> o <b>Fotos</b>';
+  if (medios.every(isVideo)) return total > 1 ? `<b>Guardar ${total} videos</b>` : '<b>Guardar video</b>';
+  if (medios.every(isImg)) return total > 1 ? `<b>Guardar ${total} imágenes</b>` : '<b>Guardar imagen</b>';
+  return '<b>Guardar en Fotos</b>';
+}
+function galeriaHintHtml(medios) {
+  const total = medios.length, varios = total > 1;
+  if (!galeriaLista()) {
+    return EXP && EXP.preparando ? '<p class="hint">Preparando la galería…</p>'
+      : `<p class="hint">${ic('alert', 14)} Este navegador no deja guardar en la galería desde aquí. Baja ${varios ? 'los archivos' : 'el archivo'}${esApple() ? ` y pása${varios ? 'los' : 'lo'} a Fotos desde Archivos, o abre el cronograma en Safari` : ''}.</p>`;
+  }
+  return `<p class="hint">${ic('image', 14)} <b>Guardar en la galería</b> abre el menú del teléfono: elige ${opcionGuardar(medios)} y ${varios ? 'quedan' : 'queda'} en Fotos, que es de donde sube Instagram. En ese mismo menú está Instagram, para mandar${varios ? 'las' : 'la'} directo. <b>Bajar</b> no sirve para eso: deja ${varios ? 'los archivos' : 'el archivo'} en la carpeta Archivos del teléfono, no en Fotos.</p>`;
+}
+
 function exportarPieza(id) {
   if (!esAdmin()) return;
   const p = (ED && ED.d && ED.d.id === id) ? ED.d : S.db.posts.find((x) => x.id === id);
@@ -3214,21 +3238,27 @@ function renderExport() {
       </div>` : '<p class="hint">Ponle el copy en la pieza y aparece aquí listo para copiar.</p>'}
 
       <label class="lbl">${cap(palabra)} <small>${total ? 'en el orden en que se publican' : 'todavía no hay'}</small></label>
-      ${total ? `<div class="expfotos">${medios.map((f, i) => `<button class="expfoto" data-act="exp-una" data-f="${esc(f.id)}" title="${esc(nombreExport(f, i, total))}">
-          <span class="expthumb">${miniArchivo(f)}${total > 1 ? `<i class="expn">${pad(i + 1)}</i>` : ''}</span>
-          <span class="expbaja">${ic('download', 14)} ${esc(prettySize(f.size) || 'Bajar')}</span></button>`).join('')}</div>
-        <p class="hint">${total > 1 ? 'Toca una para bajarla sola: salen numeradas (01, 02…) para que no se pierda el orden' : 'Tócalo para bajarlo'}${texto ? '. El zip trae además el texto en <b>texto.txt</b>' : ''}.</p>`
-      : `<p class="hint">Sube las fotos o el video a la pieza y aquí quedan listos para bajar.</p>`}
+      ${total ? `<div class="expfotos">${medios.map((f, i) => `<div class="expfoto">
+          <button class="expthumb" data-act="exp-ver" data-f="${esc(f.id)}" aria-label="Ver ${esc(f.name)}" title="${esc(nombreExport(f, i, total))}">${miniArchivo(f)}${total > 1 ? `<i class="expn">${pad(i + 1)}</i>` : ''}</button>
+          <div class="expacts">
+            ${galeriaLista() ? `<button class="expact" data-act="exp-galeria" data-f="${esc(f.id)}">${ic('image', 13)} Galería</button>` : ''}
+            <button class="expact" data-act="exp-una" data-f="${esc(f.id)}" title="${esc(prettySize(f.size) || '')}">${ic('download', 13)} Bajar</button>
+          </div></div>`).join('')}</div>
+        ${galeriaHintHtml(medios)}
+        <p class="hint">${total > 1 ? 'Bajar las deja numeradas (01, 02…) en los archivos del teléfono, para no perder el orden' : 'Bajar lo deja en los archivos del teléfono'}${texto ? ', y el zip trae además el texto en <b>texto.txt</b>' : ''}. Tocando la miniatura se ve en grande.</p>`
+      : `<p class="hint">Sube las fotos o el video a la pieza y aquí quedan listos para publicar.</p>`}
 
       ${otros.length ? `<p class="hint">${ic('alert', 14)} ${otros.length} archivo${otros.length === 1 ? '' : 's'} de la pieza no ${otros.length === 1 ? 'es' : 'son'} foto ni video (${esc(otros.map((f) => f.name).join(', '))}): no ${otros.length === 1 ? 'va' : 'van'} en lo que se publica.</p>` : ''}
       ${apoyo.length ? `<p class="hint">${apoyo.length} de material de apoyo ${apoyo.length === 1 ? 'queda' : 'quedan'} fuera, como corresponde.</p>` : ''}
       ${total ? `<p class="hint">${total} ${palabra}${peso ? ' · ' + prettySize(peso) : ''}</p>` : ''}
     </div>
     <div class="pf">
-      ${EXP.files ? `<button class="btn ghost" data-act="exp-compartir">${ic('share', 17)} Compartir…</button>`
-        : EXP.preparando ? `<button class="btn ghost" disabled>${ic('share', 17)} Preparando…</button>` : ''}
-      ${total ? `<button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`
-        : `<button class="btn" data-act="exp-copiar" data-v="todo"${texto ? '' : ' disabled'}>${ic('copy', 17)} Copiar el texto</button>`}
+      ${!total ? `<button class="btn" data-act="exp-copiar" data-v="todo"${texto ? '' : ' disabled'}>${ic('copy', 17)} Copiar el texto</button>`
+        : galeriaLista() ? `<button class="btn ghost" data-act="exp-zip" aria-label="Descargar" title="${total > 1 || texto ? 'Descargar todo en un zip' : 'Descargar'}">${ic('download', 17)}</button>
+          <button class="btn" data-act="exp-galeria">${ic('image', 17)} Guardar ${total > 1 ? `las ${total}` : ''} en la galería</button>`
+        : EXP.preparando ? `<button class="btn ghost" disabled>${ic('image', 17)} Preparando la galería…</button>
+          <button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`
+        : `<button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`}
     </div>`, true);
   if ($('#pb')) $('#pb').scrollTop = sc;
 }
@@ -6042,10 +6072,25 @@ const ACTS = {
     if (texto) entries.push({ name: 'texto.txt', file: { name: 'texto.txt', blob: new Blob([texto], { type: 'text/plain;charset=utf-8' }) } });
     await downloadZip(entries, slugify(p.title, 'pieza') + '-para-publicar');
   },
-  'exp-compartir': async () => {
-    const p = expPieza(); if (!p || !EXP || !EXP.files) return;
-    try { await navigator.share({ files: EXP.files, title: p.title, text: textoPublicacion(p) }); }
-    catch (e) { if (e && e.name !== 'AbortError') toast('No se pudo abrir el menú de compartir; usa Descargar', 4000); }
+  /* Al carrete del teléfono: se abre el menú de compartir con los archivos ya leídos.
+     Con data-f va solo esa; sin nada, todas las de la pieza. */
+  'exp-galeria': async (el) => {
+    const p = expPieza(); if (!p || !EXP || !EXP.files) { toast('Todavía se están preparando los archivos', 3000); return; }
+    const medios = expMedios(p);
+    let files = EXP.files;
+    if (el && el.dataset.f) {
+      const i = medios.findIndex((x) => x.id === el.dataset.f);
+      if (i < 0 || !EXP.files[i]) return;
+      files = [EXP.files[i]];
+    }
+    if (navigator.canShare && !navigator.canShare({ files })) { toast('Este teléfono no deja guardar estos archivos en la galería', 4000); return; }
+    try { await navigator.share({ files }); }   // sin texto: con texto, iOS esconde “Guardar imagen”
+    catch (e) { if (e && e.name !== 'AbortError') toast('No se pudo abrir el menú para guardar; usa Bajar', 4000); }
+  },
+  'exp-ver': (el) => {
+    const p = expPieza(); if (!p) return;
+    const medios = expMedios(p), i = medios.findIndex((x) => x.id === el.dataset.f);
+    if (i >= 0) abrirGaleria(medios, i);
   },
   'copiar-texto': async (el, e) => {
     if (e) e.stopPropagation();

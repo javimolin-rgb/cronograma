@@ -1438,8 +1438,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T16:18:46.344Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T17:37:54.474Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-12T16:18:46.344Z",
    "publishedAt": null
   },
@@ -5322,6 +5322,14 @@
  ],
  "comments": [
   {
+   "id": "20eca8d2-2230-49e9-9231-dc41fd8e419c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "@javi, las imágenes que no son lo que aparece en el guion. La idea de este post es algo q refleje bienestar y sensación rica de día domingo relajado, como lo conversamos. \nEstas imágenes guárdalas para otro post y ahora pon imágenes con personas , disfrutando, el café humeando… etc .",
+   "fileIds": [],
+   "createdAt": "2026-11-12T17:37:54.477Z"
+  },
+  {
    "id": "8d7f078e-60ce-470e-a044-186b49c70b3a",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "maca",
@@ -7738,6 +7746,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "89fc81f5-974e-4fcd-8f78-f336c03d26df",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:37:54.486Z"
+  },
   {
    "id": "dde3f378-5433-4d82-ad57-7edf095d0b29",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -12694,6 +12712,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5966fbcf-2cb6-48c8-b6d2-4aabaf5e531d",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @javi, las imágenes que no son lo que aparece en el guion. La idea de este post …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: @javi, las imágenes que no son lo que aparece en el guion. La idea de este post …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T17:37:54.488Z"
+  },
+  {
+   "id": "7bcac885-652f-4b6c-8e4e-5e1d93d6cd65",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @javi, las imágenes que no son lo que aparece en el guion. La idea de este post …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca te mencionó: @javi, las imágenes que no son lo que aparece en el guion. La idea de este post …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T17:37:54.488Z"
+  },
   {
    "id": "608fc585-b01e-44f2-b046-4658ed2906e1",
    "to": "flavio",
@@ -22277,9 +22325,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T17:30:04.030Z",
-   "hasta": "2026-11-12T16:18:46.344Z",
-   "que": "pieza"
+   "at": "2026-11-12T17:37:54.476Z",
+   "hasta": "2026-11-12T17:37:54.474Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

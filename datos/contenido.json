@@ -1438,7 +1438,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T17:37:54.474Z",
+   "updatedAt": "2026-11-12T17:42:46.164Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-12T16:18:46.344Z",
    "publishedAt": null
@@ -5322,6 +5322,16 @@
  ],
  "comments": [
   {
+   "id": "a07adbae-174e-42c5-bd81-4181eca2650a",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. Habría q evaluar si se pone en la descripción, pero no en las imágenes",
+   "fileIds": [
+    "088aa319-8b4e-4aab-a0cc-2c3d2b5e2d7b"
+   ],
+   "createdAt": "2026-11-12T17:42:46.165Z"
+  },
+  {
    "id": "8f18e17f-0571-435c-8beb-6121d7779682",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -7754,6 +7764,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c629221a-0581-4665-ae7c-dfc8c8fc155d",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:42:46.170Z"
+  },
   {
    "id": "cfdc2eaa-8900-441d-b7b9-053b5cfe8d72",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12730,6 +12750,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f9f88ee2-1e3a-49a7-99d3-e52522042059",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T17:42:46.170Z"
+  },
+  {
+   "id": "8c0a3ac2-d890-4681-aa80-8e5ba3d1a8e5",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T17:42:46.170Z"
+  },
   {
    "id": "4e8e6cc5-774d-404c-8a7b-d07f0864ab1c",
    "to": "javi",
@@ -22373,8 +22423,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T17:37:54.476Z",
-   "hasta": "2026-11-12T17:37:54.474Z",
+   "at": "2026-11-12T17:42:46.165Z",
+   "hasta": "2026-11-12T17:42:46.164Z",
    "que": "comentario"
   },
   {

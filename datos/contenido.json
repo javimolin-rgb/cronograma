@@ -5214,6 +5214,14 @@
  ],
  "comments": [
   {
+   "id": "65dd6b6b-0d91-4e96-8fc1-5b93362b54c2",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "javi",
+   "text": "@Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
+   "fileIds": [],
+   "createdAt": "2026-11-12T00:04:00.106Z"
+  },
+  {
    "id": "271be6a7-aa5a-468b-a02a-29a9ea4acb1e",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "maca",
@@ -7527,6 +7535,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5bb20690-6967-4388-89d2-1e6adee05799",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T00:04:00.112Z"
+  },
   {
    "id": "b83edac9-e7e5-4aa5-a6e0-367c7003a6d3",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -12244,6 +12262,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ea92a090-af82-4dc8-ad84-a4d50961638a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: @Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi comentó: @Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T00:04:00.114Z"
+  },
+  {
+   "id": "29d4d396-c2ee-4609-a145-aecb554866b4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi te mencionó: @Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T00:04:00.113Z"
+  },
   {
    "id": "70105cd3-7e73-4f2e-a72d-f314505b050a",
    "to": "javi",

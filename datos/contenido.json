@@ -10,7 +10,7 @@
    "guionNotas": [],
    "spotify": "https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW?si=37f5e6cf14464946",
    "campaign": "Publicaciones informativas",
-   "time": "21:29",
+   "time": "17:00",
    "date": "2026-11-12",
    "inicio": "",
    "format": "carrusel",
@@ -262,7 +262,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T18:12:53.541Z",
+   "updatedAt": "2026-11-12T18:33:50.113Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-12T18:12:53.541Z",
    "publishedAt": null
@@ -7823,6 +7823,16 @@
  ],
  "activity": [
   {
+   "id": "1e2bb739-1c7c-496e-94b1-243bbbe6efbe",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó hora",
+   "meta": null,
+   "createdAt": "2026-11-12T18:33:50.114Z"
+  },
+  {
    "id": "6378daa8-d662-4520-ad33-d6bb9831c4be",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -12894,6 +12904,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6337cb22-658d-48db-808b-a9a5a3352e79",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T18:33:50.115Z"
+  },
+  {
+   "id": "09844394-cbda-4203-b523-14b28252ef43",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T18:33:50.115Z"
+  },
   {
    "id": "9b59202e-f321-472c-a0c6-5e7bb05981f3",
    "to": "flavio",

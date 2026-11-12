@@ -262,7 +262,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T16:31:39.125Z",
+   "updatedAt": "2026-11-12T16:33:22.623Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-11T16:33:20.271Z",
    "publishedAt": null
@@ -5322,6 +5322,14 @@
  ],
  "comments": [
   {
+   "id": "8d7f078e-60ce-470e-a044-186b49c70b3a",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "maca",
+   "text": "Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta tb? Y eliges . Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-12T16:33:22.625Z"
+  },
+  {
    "id": "360cb117-45b2-472d-bca3-4a78559d6a7d",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "maca",
@@ -7730,6 +7738,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "dde3f378-5433-4d82-ad57-7edf095d0b29",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T16:33:22.632Z"
+  },
   {
    "id": "1c1fbc7e-ad8e-468a-8a73-6df4d9be68fb",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -12676,6 +12694,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "608fc585-b01e-44f2-b046-4658ed2906e1",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T16:33:22.633Z"
+  },
+  {
+   "id": "dcf86c85-5c77-488b-ba39-e0418bf6a9b7",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "mention",
+   "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca te mencionó: Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T16:33:22.633Z"
+  },
   {
    "id": "00ede648-03cb-4f61-a579-77f7e06fda10",
    "to": "javi",
@@ -22250,8 +22298,8 @@
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "person": "maca",
-   "at": "2026-11-12T16:31:39.130Z",
-   "hasta": "2026-11-12T16:31:39.125Z",
+   "at": "2026-11-12T16:33:22.624Z",
+   "hasta": "2026-11-12T16:33:22.623Z",
    "que": "comentario"
   },
   {

@@ -10,8 +10,8 @@
    "guionNotas": [],
    "spotify": "",
    "campaign": "Publicaciones informativas",
-   "time": "",
-   "date": "2026-11-11",
+   "time": "21:29",
+   "date": "2026-11-12",
    "inicio": "",
    "format": "carrusel",
    "status": "revision",
@@ -262,7 +262,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T00:04:10.099Z",
+   "updatedAt": "2026-11-12T00:29:31.989Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T16:33:20.271Z",
    "publishedAt": null
@@ -7536,6 +7536,29 @@
  ],
  "activity": [
   {
+   "id": "ee9bd96f-bee0-4956-ad10-fc9b1af1cdff",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó hora",
+   "meta": null,
+   "createdAt": "2026-11-12T00:29:31.995Z"
+  },
+  {
+   "id": "87221313-7cb3-498c-acad-ddc4fa25f3be",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 11 nov a 12 nov",
+   "meta": {
+    "from": "2026-11-11",
+    "to": "2026-11-12"
+   },
+   "createdAt": "2026-11-12T00:29:31.993Z"
+  },
+  {
    "id": "5bb20690-6967-4388-89d2-1e6adee05799",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -12262,6 +12285,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d64ceeca-e799-41ac-9096-841cfbfcb124",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T00:29:31.996Z"
+  },
+  {
+   "id": "2694a6ae-08f2-4741-ba44-936c921a132f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "update",
+   "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T00:29:31.996Z"
+  },
+  {
+   "id": "b597458c-fa89-4010-8064-a09fad1c5f62",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "reschedule",
+   "text": "cambió la fecha de “10 puntos que revisar antes de comprar tu terreno” a 12 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi cambió la fecha a 12 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T00:29:31.995Z"
+  },
+  {
+   "id": "de9e77a5-9d8f-4574-9ceb-4ab708ee1ea6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "reschedule",
+   "text": "cambió la fecha de “10 puntos que revisar antes de comprar tu terreno” a 12 nov",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi cambió la fecha a 12 nov",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T00:29:31.994Z"
+  },
   {
    "id": "ea92a090-af82-4dc8-ad84-a4d50961638a",
    "to": "flavio",

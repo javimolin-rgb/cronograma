@@ -21985,6 +21985,14 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "person": "javi",
+   "at": "2026-11-12T16:12:39.311Z",
+   "hasta": "2026-11-12T15:29:19.660Z",
+   "que": "pieza"
+  },
+  {
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",

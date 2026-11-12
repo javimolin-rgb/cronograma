@@ -352,6 +352,21 @@ También se comparte **una carpeta entera de Marca**: su enlace abre el cronogra
 
 Para alguien de fuera del equipo conviene mandar el **enlace del archivo**, no el de la pieza: va directo a lo que quieres mostrar.
 
+## Para publicar: la pieza lista en una pantalla (solo Javi)
+
+Cuando llega el día de publicar, no hace falta andar juntando cosas: dentro de la pieza, debajo de los archivos, está el botón **“Para publicar: bajar los archivos y copiar el texto”**. También está en el **Feed** (el ícono de bajar, al lado del de compartir) y en **Entregas**, en cada pieza.
+
+Se abre una pantalla con todo lo que se necesita para ir a Instagram y publicar:
+
+- **El texto listo para pegar**: el copy con los hashtags debajo, con su cuenta de caracteres y de hashtags. **Copiar todo**, **Solo el copy** o **Solo los hashtags**, según cómo prefieras pegarlo.
+- **Las láminas finales, en su orden**, numeradas `01`, `02`, `03`… Son las últimas versiones de cada archivo y respetan el orden que les pusiste a mano. Tocas una y se baja sola; con **Descargar todo** se baja el `.zip` con todas numeradas y, adentro, el texto en **texto.txt**.
+- En el celular, cuando el teléfono lo permite, aparece **Compartir…**: manda las fotos o el video directo a Instagram, WhatsApp o la galería, sin pasar por la carpeta de descargas.
+- **Avisa si algo no cuadra**: el texto pasado de 2.200 caracteres, más de 30 hashtags o más de 20 láminas, que es lo que acepta Instagram.
+
+Lo que **no** se lleva: el **material de apoyo** (referencias, capturas) y los archivos que no son foto ni video (un PDF, un .psd). Los nombra para que sepas que quedaron fuera, pero no se cuelan en lo que se publica.
+
+Si entras desde la pieza, arriba a la izquierda queda la flecha **volver**: regresas a la pieza con lo que estabas escribiendo intacto, aunque no lo hayas guardado.
+
 ## Copiar el copy de una pieza
 
 Junto a *Copy / texto* hay dos atajos: **Copiar**, que se lleva el copy entero listo para pegar en Instagram (te dice cuántos caracteres), y **Seleccionar todo**, para reemplazarlo de una sin pelear con el dedo.

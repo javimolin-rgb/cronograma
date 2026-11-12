@@ -1216,7 +1216,8 @@ function viewFiles() {
             <div class="fgrid">${t.files.map(fileTile).join('')}</div></div>`).join('') : '<p class="hint">Sin archivos subidos.</p>'}
           ${links.length ? `<div class="flinks">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${ic('link', 15)}${esc(l.label || l.url)}</a>`).join('')}</div>` : ''}
           <div class="pzacts">
-            ${files.length ? `<button class="btn ghost sm" data-act="dl-piece" data-id="${esc(post.id)}">${ic('download', 15)} Descargar pieza</button>` : ''}
+            ${files.length ? `<button class="btn ghost sm" data-act="exp-open" data-id="${esc(post.id)}">${ic('download', 15)} Para publicar</button>
+            <button class="btn ghost sm" data-act="dl-piece" data-id="${esc(post.id)}">${ic('download', 15)} Descargar pieza</button>` : ''}
             <button class="btn ghost sm" data-act="pr-open" data-id="${esc(post.id)}">${ic('copy', 15)} Prompt IA</button>
             <button class="btn ghost sm" data-act="open-post" data-id="${esc(post.id)}">Abrir pieza</button></div>
         </div></details>`;
@@ -1526,7 +1527,8 @@ function postHtml(p, t) {
         ${puedeAprobar ? `<button class="btn sm" data-act="feed-aprobar" data-id="${esc(p.id)}">${ic('check', 16)} ${p.status === 'estructura' ? 'Aprobar la estructura' : 'Aprobar'}</button>
         <button class="btn ghost sm" data-act="feed-cambios" data-id="${esc(p.id)}">Pedir cambios</button>` : `<span class="postok">${ic('check', 16)} ${esc(st.name)}</span>`}
         <button class="btn ghost sm postabrir" data-act="open-post" data-id="${esc(p.id)}">Abrir</button>
-        ${esAdmin() ? `<button class="iconbtn" data-act="compartir-pieza" data-id="${esc(p.id)}" aria-label="Compartir" title="Compartir">${ic('share', 16)}</button>` : ''}
+        ${esAdmin() ? `<button class="iconbtn" data-act="exp-open" data-id="${esc(p.id)}" aria-label="Para publicar" title="Para publicar: bajar los archivos y copiar el texto">${ic('download', 16)}</button>
+        <button class="iconbtn" data-act="compartir-pieza" data-id="${esc(p.id)}" aria-label="Compartir" title="Compartir">${ic('share', 16)}</button>` : ''}
       </div>
       ${artefactoHtml(p, false)}
       ${marcaEnPiezaHtml(p, false)}
@@ -2749,7 +2751,7 @@ function openSheet(html, full) {
 }
 function closeSheet(fromPop) {
   if (!sheetOpen) return;
-  sheetOpen = false; ED = null;
+  sheetOpen = false; ED = null; EXP = null;
   if (IMP) { IMP.msgs.forEach(soltarFoto); IMP = null; if (S.compartidos) setTimeout(renderBanner, 0); }
   $('#sheet').hidden = true; $('#panel').innerHTML = ''; ZUM = null;
   document.body.style.overflow = '';
@@ -3131,6 +3133,105 @@ function compartirPieza(id) {
 }
 let COMPARTIR = null;
 
+
+/* ---------- exportar: la pieza lista para llegar y publicar ----------
+   Lo que hace falta para ir a Instagram y publicarla: las láminas finales en el
+   orden en que se ven —numeradas 01, 02…, así no hay dudas al subirlas— y el
+   texto listo para pegar. El material de apoyo no va: eso es para trabajar. */
+let EXP = null;
+const expPieza = () => EXP && ((ED && ED.d && ED.d.id === EXP.id) ? ED.d : S.db.posts.find((x) => x.id === EXP.id));
+// Lo que de verdad se sube a la red: fotos y videos, sin el material de apoyo
+const expMedios = (p) => laminas(p).filter(esMedia);
+// Cómo se llama al bajarlo: primero el número, que es el orden del carrusel
+function nombreExport(f, i, total) {
+  const info = splitName(f.name);
+  return `${total > 1 ? pad(i + 1) + '-' : ''}${info.base || 'archivo'}${info.ext ? '.' + info.ext : ''}`;
+}
+function palabraLamina(p, n) {
+  if (p.format === 'carrusel') return n === 1 ? 'lámina' : 'láminas';
+  if (p.format === 'reel' || p.format === 'video') return n === 1 ? 'video' : 'videos';
+  if (p.format === 'story') return n === 1 ? 'historia' : 'historias';
+  return n === 1 ? 'archivo' : 'archivos';
+}
+const LIMITE_TEXTO = 2200, LIMITE_TAGS = 30, LIMITE_LAMINAS = 20;   // lo que aguanta Instagram
+const cuentaTags = (s) => (String(s || '').match(/#[^\s#]+/g) || []).length;
+
+function exportarPieza(id) {
+  if (!esAdmin()) return;
+  const p = (ED && ED.d && ED.d.id === id) ? ED.d : S.db.posts.find((x) => x.id === id);
+  if (!p) return;
+  EXP = { id: p.id, files: null, preparando: false, desdeEditor: !!(ED && ED.d && ED.d.id === id) };
+  renderExport();
+  prepararCompartir(p);
+}
+/* El menú de compartir del teléfono necesita los archivos ya leídos: si se piden
+   después de tocar el botón, iOS no lo deja abrir. Así que se van juntando desde
+   que se abre la hoja y el botón aparece recién cuando están listos. */
+async function prepararCompartir(p) {
+  const medios = expMedios(p);
+  if (!navigator.canShare || !medios.length || medios.length > 12) return;
+  if (medios.reduce((a, f) => a + (f.size || 0), 0) > 60 * 1024 * 1024) return;   // muy pesado: queda el zip
+  if (EXP) { EXP.preparando = true; renderExport(); }
+  try {
+    const files = [];
+    for (let i = 0; i < medios.length; i++) {
+      const b = await fetchFile(medios[i]);
+      files.push(new File([b], nombreExport(medios[i], i, medios.length), { type: b.type || medios[i].type || 'application/octet-stream' }));
+    }
+    if (!navigator.canShare({ files })) return;
+    if (EXP && EXP.id === p.id) { EXP.files = files; }
+  } catch (e) { /* si no se pudieron leer, queda la descarga */ }
+  finally { if (EXP && EXP.id === p.id) { EXP.preparando = false; renderExport(); } }
+}
+
+function renderExport() {
+  const p = expPieza(); if (!p) return;
+  const medios = expMedios(p), total = medios.length;
+  const apoyo = apoyoDe(p), otros = laminas(p).filter((f) => !esMedia(f));
+  const texto = textoPublicacion(p), copy = (p.caption || '').trim(), tags = (p.hashtags || '').trim();
+  const nTags = cuentaTags(tags), peso = medios.reduce((a, f) => a + (f.size || 0), 0);
+  const palabra = palabraLamina(p, total);
+  const avisos = [];
+  if (!texto) avisos.push('Esta pieza todavía no tiene copy ni hashtags.');
+  if (texto.length > LIMITE_TEXTO) avisos.push(`El texto tiene ${texto.length} caracteres y en Instagram caben ${LIMITE_TEXTO}.`);
+  if (nTags > LIMITE_TAGS) avisos.push(`Son ${nTags} hashtags: Instagram acepta hasta ${LIMITE_TAGS}.`);
+  if (total > LIMITE_LAMINAS) avisos.push(`Son ${total} ${palabra} y en un carrusel entran ${LIMITE_LAMINAS}.`);
+  const sc = $('#pb') ? $('#pb').scrollTop : 0;
+  openSheet(`<div class="ph">${EXP.desdeEditor
+      ? `<button class="iconbtn" data-act="exp-volver" aria-label="Volver a la pieza" title="Volver a la pieza">${ic('left', 22)}</button>`
+      : `<button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button>`}
+      <h2>Para publicar</h2><span style="width:40px"></span></div>
+    <div class="pb">
+      <p class="hint" style="margin-top:0"><b>${esc(p.title)}</b><br>${esc([p.platforms.map((x) => platOf(x).name).join(', '), formatName(p.format), p.date ? 'sale el ' + fmtShort(p.date) + (p.time ? ' · ' + p.time : '') : 'sin fecha'].filter(Boolean).join(' · '))}</p>
+      ${avisos.length ? `<div class="avisobar mal">${ic('alert', 18)}<span>${avisos.map(esc).join('<br>')}</span></div>` : ''}
+
+      <label class="lbl">El texto <small>${texto.length} caracteres${nTags ? ` · ${nTags} hashtag${nTags === 1 ? '' : 's'}` : ''}</small></label>
+      ${texto ? `<textarea class="area" id="exp-texto" readonly style="min-height:130px">${esc(texto)}</textarea>
+      <div class="chips">
+        <button class="chip" data-act="exp-copiar" data-v="todo">${ic('copy', 14)} Copiar todo</button>
+        ${copy && tags ? `<button class="chip" data-act="exp-copiar" data-v="copy">Solo el copy</button>
+        <button class="chip" data-act="exp-copiar" data-v="tags">Solo los hashtags</button>` : ''}
+      </div>` : '<p class="hint">Ponle el copy en la pieza y aparece aquí listo para copiar.</p>'}
+
+      <label class="lbl">${cap(palabra)} <small>${total ? 'en el orden en que se publican' : 'todavía no hay'}</small></label>
+      ${total ? `<div class="expfotos">${medios.map((f, i) => `<button class="expfoto" data-act="exp-una" data-f="${esc(f.id)}" title="${esc(nombreExport(f, i, total))}">
+          <span class="expthumb">${miniArchivo(f)}${total > 1 ? `<i class="expn">${pad(i + 1)}</i>` : ''}</span>
+          <span class="expbaja">${ic('download', 14)} ${esc(prettySize(f.size) || 'Bajar')}</span></button>`).join('')}</div>
+        <p class="hint">${total > 1 ? 'Toca una para bajarla sola: salen numeradas (01, 02…) para que no se pierda el orden' : 'Tócalo para bajarlo'}${texto ? '. El zip trae además el texto en <b>texto.txt</b>' : ''}.</p>`
+      : `<p class="hint">Sube las fotos o el video a la pieza y aquí quedan listos para bajar.</p>`}
+
+      ${otros.length ? `<p class="hint">${ic('alert', 14)} ${otros.length} archivo${otros.length === 1 ? '' : 's'} de la pieza no ${otros.length === 1 ? 'es' : 'son'} foto ni video (${esc(otros.map((f) => f.name).join(', '))}): no ${otros.length === 1 ? 'va' : 'van'} en lo que se publica.</p>` : ''}
+      ${apoyo.length ? `<p class="hint">${apoyo.length} de material de apoyo ${apoyo.length === 1 ? 'queda' : 'quedan'} fuera, como corresponde.</p>` : ''}
+      ${total ? `<p class="hint">${total} ${palabra}${peso ? ' · ' + prettySize(peso) : ''}</p>` : ''}
+    </div>
+    <div class="pf">
+      ${EXP.files ? `<button class="btn ghost" data-act="exp-compartir">${ic('share', 17)} Compartir…</button>`
+        : EXP.preparando ? `<button class="btn ghost" disabled>${ic('share', 17)} Preparando…</button>` : ''}
+      ${total ? `<button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`
+        : `<button class="btn" data-act="exp-copiar" data-v="todo"${texto ? '' : ' disabled'}>${ic('copy', 17)} Copiar el texto</button>`}
+    </div>`, true);
+  if ($('#pb')) $('#pb').scrollTop = sc;
+}
 // Lo que se pega en Instagram: el copy y, debajo, los hashtags
 function textoPublicacion(p) {
   const copy = (p.caption || '').trim(), tags = (p.hashtags || '').trim();
@@ -3315,6 +3416,7 @@ function renderEditor() {
     ${ED.comprimiendo ? `<div class="avisobar"><span id="comprimiendo">Comprimiendo “${esc(ED.comprimiendo.nombre)}”… ${Math.round((ED.comprimiendo.pct || 0) * 100)}%</span></div>` : ''}
 
     ${publicadoHtml(d)}
+    ${old && esAdmin() ? `<button class="btn ghost block" data-act="exp-open" data-id="${esc(d.id)}" style="margin-top:14px">${ic('download', 17)} Para publicar: bajar los archivos y copiar el texto</button>` : ''}
 
     ${bloque('estructura', 'Estructura', tablaValida(d.guionTabla),
       tablaValida(d.guionTabla) ? `${d.guionTabla.filas.length} fila${d.guionTabla.filas.length === 1 ? '' : 's'} · ${d.guionTabla.cols.length} columnas${(d.guionNotas || []).length ? ` · ${(d.guionNotas || []).length} comentario${(d.guionNotas || []).length === 1 ? '' : 's'}` : ''}` : '', () =>
@@ -5908,6 +6010,42 @@ const ACTS = {
     const c = COMPARTIR && COMPARTIR.cosas[+el.dataset.i]; if (!c) return;
     if (c.texto && !c.url) { toast(await copiarTexto(c.texto) ? `Copiado · ${c.texto.length} caracteres` : 'No se pudo copiar', 3000); return; }
     await compartir(c.url, c.titulo || c.que, '');
+  },
+  /* exportar para publicar */
+  'exp-open': (el, e) => {
+    if (e) e.stopPropagation();
+    if (!esAdmin()) return;
+    if (ED && ED.d && ED.d.id === el.dataset.id) syncDraft();   // lo que esté escrito ahora
+    exportarPieza(el.dataset.id);
+  },
+  'exp-volver': () => { EXP = null; if (ED) renderEditor(); else closeSheet(); },
+  'exp-copiar': async (el) => {
+    const p = expPieza(); if (!p) return;
+    const v = el.dataset.v || 'todo';
+    const txt = (v === 'copy' ? (p.caption || '') : v === 'tags' ? (p.hashtags || '') : textoPublicacion(p)).trim();
+    if (!txt) { toast('No hay nada que copiar'); return; }
+    toast(await copiarTexto(txt) ? `Copiado · ${txt.length} caracteres` : 'No se pudo copiar', 3000);
+  },
+  'exp-una': async (el) => {
+    const p = expPieza(); if (!p) return;
+    const medios = expMedios(p), i = medios.findIndex((x) => x.id === el.dataset.f);
+    if (i < 0) return;
+    await downloadOne(Object.assign({}, medios[i], { name: nombreExport(medios[i], i, medios.length) }));
+  },
+  'exp-zip': async () => {
+    const p = expPieza(); if (!p) return;
+    const medios = expMedios(p);
+    if (!medios.length) { toast('Esta pieza todavía no tiene fotos ni videos'); return; }
+    const texto = textoPublicacion(p);
+    if (medios.length === 1 && !texto) { await downloadOne(Object.assign({}, medios[0], { name: nombreExport(medios[0], 0, 1) })); return; }
+    const entries = medios.map((f, i) => ({ name: nombreExport(f, i, medios.length), file: f }));
+    if (texto) entries.push({ name: 'texto.txt', file: { name: 'texto.txt', blob: new Blob([texto], { type: 'text/plain;charset=utf-8' }) } });
+    await downloadZip(entries, slugify(p.title, 'pieza') + '-para-publicar');
+  },
+  'exp-compartir': async () => {
+    const p = expPieza(); if (!p || !EXP || !EXP.files) return;
+    try { await navigator.share({ files: EXP.files, title: p.title, text: textoPublicacion(p) }); }
+    catch (e) { if (e && e.name !== 'AbortError') toast('No se pudo abrir el menú de compartir; usa Descargar', 4000); }
   },
   'copiar-texto': async (el, e) => {
     if (e) e.stopPropagation();

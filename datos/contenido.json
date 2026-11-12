@@ -262,8 +262,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T16:09:53.009Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T16:31:39.125Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-11T16:33:20.271Z",
    "publishedAt": null
   },
@@ -5322,6 +5322,14 @@
  ],
  "comments": [
   {
+   "id": "360cb117-45b2-472d-bca3-4a78559d6a7d",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "maca",
+   "text": "https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
+   "fileIds": [],
+   "createdAt": "2026-11-12T16:31:39.130Z"
+  },
+  {
    "id": "0f59f00d-9444-4d49-8bf1-60e0b7d9c232",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "author": "javi",
@@ -7722,6 +7730,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "1c1fbc7e-ad8e-468a-8a73-6df4d9be68fb",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T16:31:39.134Z"
+  },
   {
    "id": "f19deaeb-e984-4ae5-9129-b096c339fd9c",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12658,6 +12676,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "00ede648-03cb-4f61-a579-77f7e06fda10",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T16:31:39.138Z"
+  },
+  {
+   "id": "dbd68339-69d0-4156-834b-2597e090bdf8",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T16:31:39.137Z"
+  },
   {
    "id": "9fb2d44c-a843-453a-8249-fa41e1c4a868",
    "to": "maca",
@@ -22202,9 +22250,9 @@
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "person": "maca",
-   "at": "2026-11-12T16:23:31.440Z",
-   "hasta": "2026-11-12T16:09:53.009Z",
-   "que": "pieza"
+   "at": "2026-11-12T16:31:39.130Z",
+   "hasta": "2026-11-12T16:31:39.125Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|flavio",

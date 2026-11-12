@@ -323,7 +323,7 @@ const S = {
   compartidos: 0,
   marcaRuta: '',   // en qué carpeta de Marca está parada
   marcaTodo: false, // ver también lo que hay en las carpetas de adentro
-  db: { posts: [], comments: [], activity: [], notifications: [], prefs: [], push_subs: [], dispositivos: [], recursos: [], carpetas: [] }
+  db: { posts: [], comments: [], activity: [], notifications: [], prefs: [], push_subs: [], dispositivos: [], recursos: [], carpetas: [], vistas: [] }
 };
 let store, ED = null, sheetOpen = false, toastT;
 
@@ -337,7 +337,7 @@ function normalize(db) {
   }, p, {
     platforms: p.platforms || [], assignees: p.assignees || [], files: p.files || [], links: p.links || [], checklist: p.checklist || [], artefactos: p.artefactos || [], versionesTexto: p.versionesTexto || [], marca: p.marca || []
   }));
-  ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos', 'carpetas'].forEach((t) => { db[t] = db[t] || []; });
+  ['comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos', 'carpetas', 'vistas'].forEach((t) => { db[t] = db[t] || []; });
   return db;
 }
 
@@ -463,6 +463,53 @@ async function notify(type, post, targets, text, frase) {
     } catch (e) { /* ya avisado */ }
   }
   return avisados;
+}
+
+/* ===== Quién vio qué =====
+   Cada pieza guarda, por persona, cuándo la abrió por última vez y qué versión alcanzó
+   a ver. Sirve para saber si lo que mandaste ya lo miraron, sin tener que preguntar.
+   No se anota cada vez que se abre: solo si pasó media hora o si la pieza cambió desde
+   la última vez, para no llenar el historial de guardados. */
+const VISTA_CADA = 30 * 60 * 1000;
+const vistaId = (postId, person) => `${postId}|${person}`;
+const vistaDe = (postId, person) => (S.db.vistas || []).find((v) => v.id === vistaId(postId, person));
+const vistasDe = (postId) => (S.db.vistas || []).filter((v) => v.postId === postId);
+async function verPieza(post, que) {
+  if (!post || !S.me || !store.canWrite) return;
+  const prev = vistaDe(post.id, S.me.id);
+  const ahora = Date.now();
+  const cambio = prev && String(post.updatedAt || '') > String(prev.hasta || '');
+  const viejo = !prev || (ahora - (Date.parse(prev.at) || 0)) > VISTA_CADA;
+  if (!cambio && !viejo) return;
+  try {
+    await save('vistas', {
+      id: vistaId(post.id, S.me.id), postId: post.id, person: S.me.id,
+      at: nowISO(), hasta: post.updatedAt || '', que: que || 'pieza'
+    });
+  } catch (e) { /* si no se pudo, no pasa nada: es solo informativo */ }
+}
+// Cómo se muestra: quién la abrió, cuándo, y si alcanzó a ver lo último
+/* El último aviso que yo le mandé a alguien por esta pieza, y si lo leyó */
+function ultimoAviso(postId, person) {
+  return (S.db.notifications || [])
+    .filter((n) => n.postId === postId && n.to === person && n.from === S.me.id)
+    .sort(descBy('createdAt'))[0] || null;
+}
+function vistoPorHtml(post) {
+  if (!post) return '';
+  const otros = P.filter((x) => x.id !== S.me.id);
+  if (!otros.length) return '';
+  const filas = otros.map((x) => {
+    const v = vistaDe(post.id, x.id);
+    const av2 = ultimoAviso(post.id, x.id);
+    const aviso = av2 ? (av2.read
+      ? `<i class="vav si">${ic('check', 11)} leyó tu aviso${av2.readAt ? ' ' + esc(ago(av2.readAt)) : ''}</i>`
+      : `<i class="vav no">${ic('send', 11)} aviso sin abrir</i>`) : '';
+    if (!v) return `<span class="vp no">${av(x.id)}<b>${esc(x.name)}</b><small>todavía no la abre</small>${aviso}</span>`;
+    const vieja = String(post.updatedAt || '') > String(v.hasta || '');
+    return `<span class="vp${vieja ? ' vieja' : ' si'}">${av(x.id)}<b>${esc(x.name)}</b><small>${esc(ago(v.at))}${vieja ? ' · antes del último cambio' : ''}</small>${aviso}</span>`;
+  }).join('');
+  return `<div class="vistopor"><span class="vplbl">${ic('eye', 14)} Visto por</span>${filas}</div>`;
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
@@ -2588,7 +2635,7 @@ function verVencimientos(posts) {
 // Al abrir la pieza que gatilló el aviso, ese aviso deja de contar
 function marcarVisto(postId) {
   const pend = myNotifs().filter((n) => !n.read && n.postId === postId);
-  pend.forEach((n) => { n.read = true; save('notifications', n).catch(() => {}); });
+  pend.forEach((n) => { n.read = true; n.readAt = n.readAt || nowISO(); save('notifications', n).catch(() => {}); });
   const post = S.db.posts.find((x) => x.id === postId);
   const venc = post && deadlineAlerts().some((x) => x.id === postId) ? verVencimientos([post]) : false;
   if (pend.length || venc) setTimeout(renderHeader, 30);
@@ -2729,7 +2776,7 @@ function openBell() {
     <div class="pf">${esAdmin() ? `<button class="btn ghost" data-act="msg-abrir">${ic('send', 17)} Avisar</button>` : ''}
       <button class="btn ghost" data-act="me">Ajustes de avisos</button></div>`);
   // marcar como leídas después de mostrarlas
-  mine.filter((n) => unreadIds.includes(n.id)).forEach((n) => { n.read = true; save('notifications', n).catch(() => {}); });
+  mine.filter((n) => unreadIds.includes(n.id)).forEach((n) => { n.read = true; n.readAt = n.readAt || nowISO(); save('notifications', n).catch(() => {}); });
   verVencimientos(dl);
   setTimeout(renderHeader, 50);
 }
@@ -2982,7 +3029,7 @@ async function savePrefs() {
 function openEditor(id, preset = {}) {
   const old = id ? S.db.posts.find((p) => p.id === id) : null;
   if (id && !old) { toast('Esa pieza ya no existe'); return; }
-  if (old) marcarVisto(old.id);
+  if (old) { marcarVisto(old.id); verPieza(old, 'pieza'); }
   const d = old ? clone(old) : {
     id: uid(), title: '', caption: '', notes: '', hashtags: '', guion: '', guionTabla: null, campaign: '', date: preset.date || (S.view === 'calendar' ? S.sel : today()), time: '',
     platforms: [], format: 'post', status: 'idea', assignees: [S.me.id], inicio: '', priority: 'normal', links: [], files: [], checklist: []
@@ -3160,6 +3207,7 @@ function renderEditor() {
         <div class="chips gente">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}" title="${esc(x.name)}" aria-label="${esc(x.name)}">${av(x.id)}</button>`).join('')}</div></div>
     </div>
     ${old ? `<div class="stage" style="--c:${st.color}"><i></i>${esc(statusOf(old.status).name)} desde ${ago(old.statusChangedAt || old.createdAt)}${isStalled(old) ? ' · <b class="stuck">estancada</b>' : ''}</div>` : ''}
+    ${old ? vistoPorHtml(old) : ''}
     ${old && archivada(old) ? `<div class="archbox">${ic('archive', 17)}<span><b>Guardada en el archivo</b>${archivadaDesde(old) ? ` desde ${esc(ago(archivadaDesde(old)))}` : ''}. Ya está publicada: no sale en Piezas ni en el calendario, pero sigue entera en el Feed y en Entregas.</span>${store.canWrite ? `<button class="btn sm" data-act="ed-desarchivar">Sacar del archivo</button>` : ''}</div>` : ''}
 
     <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
@@ -3340,7 +3388,7 @@ function renderEditor() {
   <div class="pf">${old && esAdmin() ? `<button class="btn ghost" data-act="compartir-pieza" data-id="${esc(d.id)}" aria-label="Compartir" title="Compartir con enlace">${ic('share', 18)}</button>
     <button class="btn ghost" data-act="pr-open" data-id="${esc(d.id)}" aria-label="Prompt para la IA">${ic('copy', 18)}</button>` : ''}
     ${esAdmin() && store.canWrite ? `<button class="btn ghost" data-act="aviso-abrir" aria-label="Avisar para revisar" title="Avisar para revisar">${ic('send', 18)}</button>` : ''}
-    <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}</button></div>`;
+    <button class="btn block" data-act="ed-save">${old ? 'Guardar cambios' : 'Crear pieza'}${old && ((ED.comment || '').trim() || (ED.comFiles || []).length) ? ' y comentar' : ''}</button></div>`;
   $('#panel').innerHTML = html;
   if ($('#pb')) $('#pb').scrollTop = sc;
   ajustarCeldas();
@@ -3389,9 +3437,21 @@ async function saveEditor() {
   if (ED.newCheck.trim()) d.checklist.push({ id: uid(), text: ED.newCheck.trim(), done: false });
   const btn = $('[data-act="ed-save"]'); if (btn) btn.disabled = true;
   const wasNew = !ED.old;
+  /* Si quedó un comentario escrito y nadie tocó “Comentar”, se manda igual: nada de lo
+     que alguien se tomó el trabajo de escribir se pierde por apretar el botón de al lado. */
+  const comPendiente = (ED.comment || '').trim();
+  const comFiles = (ED.comFiles || []).filter((x) => archivoDeComentario(x, d));
+  const hayComentario = !!(ED.old && (comPendiente || comFiles.length));
   try { await commitPost(ED.old, d); } catch (e) { if (btn) btn.disabled = false; return; }
+  if (hayComentario) {
+    try {
+      await comentar(S.db.posts.find((p) => p.id === d.id) || d, comPendiente, comFiles);
+      ED.comment = ''; ED.comFiles = [];
+    } catch (e) { /* ya avisado */ }
+  }
   closeSheet(); renderAll();
-  toast(wasNew ? 'Pieza creada' : 'Cambios guardados');
+  toast(hayComentario ? (wasNew ? 'Pieza creada y comentario enviado' : 'Cambios guardados y comentario enviado')
+    : (wasNew ? 'Pieza creada' : 'Cambios guardados'), hayComentario ? 4000 : 2600);
 }
 
 // Comentario en una pieza (desde el editor o desde el feed), con sus avisos
@@ -3466,6 +3526,7 @@ async function fotosDeComentario(input) {
 
 async function comentar(p, text, fileIds) {
   const fids = (fileIds || []).filter(Boolean);
+  verPieza(p, 'comentario');
   await save('comments', { id: uid(), postId: p.id, author: S.me.id, text, fileIds: fids, createdAt: nowISO() });
   const ments = P.filter((x) => new RegExp('@' + x.name + '(?![\\p{L}])', 'iu').test(text)).map((x) => x.id);
   await log(p, 'comment', 'comentó');
@@ -5958,6 +6019,15 @@ document.addEventListener('input', (e) => {
   }
   if (e.target.id === 'e-guion' && ED) ED.guionMano = true;   // manda el cuadro del guión
   if (e.target.id === 'e-caption') { const c = $('#e-count'); if (c) c.textContent = `${e.target.value.length} caracteres`; }
+  if (e.target.id === 'e-comment' && ED && ED.old) {
+    // el botón avisa que, al guardar, el comentario también se manda
+    const b = $('[data-act="ed-save"]');
+    if (b) {
+      const hay = !!(e.target.value.trim() || (ED.comFiles || []).length);
+      const quiere = 'Guardar cambios' + (hay ? ' y comentar' : '');
+      if (b.textContent.trim() !== quiere) b.textContent = quiere;
+    }
+  }
   if (e.target.id === 'e-spotify' && ED) {
     const antes = (spotifyDatos(ED.d.spotify) || {}).embed || '';
     syncDraft();

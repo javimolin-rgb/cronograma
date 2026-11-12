@@ -51,6 +51,12 @@ Cómo se ve cada cosa:
 
 Un audio pasa tal cual (no se recomprime); el tope de 24 MB por archivo sigue siendo el mismo para todos. Un .zip con un `index.html` adentro sigue quedando como **interactivo**, no como archivo suelto.
 
+## El comentario escrito no se pierde al guardar
+
+Si escribiste un comentario y aprietas **“Guardar cambios”** sin haber tocado *Comentar*, **el comentario se manda igual** (con sus archivos nombrados, si marcaste alguno) y llega su aviso como siempre. Mientras hay algo escrito, el botón pasa a decir **“Guardar cambios y comentar”**, así se ve antes de apretarlo.
+
+Era la forma más fácil de perder una respuesta: escribirla, guardar la pieza y que se borrara sin que nadie se diera cuenta.
+
 ## Nombrar un archivo en un comentario (también lo de Marca)
 
 Debajo del cuadro de comentario, en cada pieza, están las miniaturas de **todo lo que se puede nombrar**: primero los archivos de la pieza —fotos, videos, audios y documentos— y después **todo lo que hay en Marca** (los logos, la música, las tipografías, el manual…), que se reconocen por la **estrella** en la esquina. Al tocar uno (o varios) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es.
@@ -70,6 +76,18 @@ La primera miniatura es un **clip**: abre la galería, la cámara o los archivos
 - En el Feed, antes de mandar, lo elegido se ve arriba del casillero con una **✕** para sacarlo del comentario (del archivo de la pieza no se borra).
 
 Lo pueden usar los tres, no solo Javi: es la forma de que Flavio o Maca manden una referencia, una captura o una nota de voz sin salirse de la conversación. En modo solo lectura el botón no aparece.
+
+## Quién vio la pieza
+
+Dentro de cada pieza, arriba, hay una línea **“Visto por”** con las otras dos personas del equipo y qué pasó con cada una:
+
+- **cuándo la abrió por última vez** (“hace 2 h”), o **“todavía no la abre”**;
+- si la vio **antes del último cambio**, lo dice en ámbar: lo que miró no es lo que hay ahora;
+- y, si le mandaste un aviso o un zumbido por esa pieza, si **leyó tu aviso** (con la hora) o sigue **sin abrir**.
+
+Se anota al **abrir la pieza** y al **comentar**. No se guarda cada vez que alguien entra: solo si pasó media hora o si la pieza cambió desde su última visita, para no llenar el historial de guardados. La ve todo el equipo, no es un registro escondido: a los tres les sirve igual para saber si lo que mandaron ya lo miraron.
+
+En modo solo lectura (sin la clave) no se anota nada.
 
 ## Pulgar arriba o abajo
 

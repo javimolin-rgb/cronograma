@@ -1168,3 +1168,18 @@ a.btn{text-decoration:none;align-items:center}
 .apoyolbl{margin-top:14px}
 .files.apoyos .file{opacity:.9}
 .files.apoyos .file::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 2px var(--line);pointer-events:none}
+
+/* ===== Quién vio la pieza, y qué pasó con el aviso que le mandaste ===== */
+.vistopor{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:10px 0 0;padding:10px 12px;border-radius:12px;
+  background:var(--surface2);box-shadow:inset 0 0 0 1px var(--line);font-size:0.75rem}
+.vplbl{display:inline-flex;align-items:center;gap:5px;flex:0 0 100%;font-size:0.625rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.vp{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.vp b{font-weight:700}
+.vp small{color:var(--muted)}
+.vp.no b,.vp.no small{opacity:.65}
+.vp.vieja small{color:var(--warn)}
+.vav{display:inline-flex;align-items:center;gap:3px;font-style:normal;font-size:0.625rem;font-weight:700;
+  padding:2px 7px;border-radius:999px;white-space:nowrap}
+.vav.si{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.vav.no{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}

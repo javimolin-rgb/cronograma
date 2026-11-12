@@ -12532,13 +12532,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "comment",
    "text": "comentó en “Historia: los modelos de casas”: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Flavio comentó: Si, me aparecen bien! Gracias!\nAdjunto renders de casa Roble en otros angulos.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-12T14:10:30.724Z"
+   "createdAt": "2026-11-12T14:10:30.724Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "9a236e6c-7704-4762-b3ee-288cfd866fdf",
@@ -12563,13 +12564,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "reschedule",
    "text": "cambió la fecha de “Historia: los modelos de casas” a 14 nov",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi cambió la fecha a 14 nov",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-12T00:43:21.467Z"
+   "createdAt": "2026-11-12T00:43:21.467Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "543a921d-89b0-46df-a9ad-3687526eab2d",
@@ -12733,13 +12735,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T23:53:17.532Z"
+   "createdAt": "2026-11-11T23:53:17.532Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "a386e1f8-f82e-458c-8737-0728d30fb602",
@@ -12748,13 +12751,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "comment",
    "text": "comentó en “Historia: los modelos de casas”: @Flavio Ahí te aparecen?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi comentó: @Flavio Ahí te aparecen?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T23:53:07.243Z"
+   "createdAt": "2026-11-11T23:53:07.243Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "4831bbd5-ebef-441a-a55c-940fe51fad54",
@@ -12795,13 +12799,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T23:52:20.366Z"
+   "createdAt": "2026-11-11T23:52:20.366Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "cb901df0-351b-4caf-8ab1-82b9663e2c19",
@@ -12810,13 +12815,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "comment",
    "text": "comentó en “Historia: los modelos de casas”: @Javi no veo las nuevas imagenes.. me parece que son las mismas.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Flavio comentó: @Javi no veo las nuevas imagenes.. me parece que son las mismas.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T23:48:50.634Z"
+   "createdAt": "2026-11-11T23:48:50.634Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "6bd3b4b0-6534-40fd-9502-b09ee6abbea9",
@@ -12840,13 +12846,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "comment",
    "text": "comentó en “Historia: los modelos de casas”: @Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Mait…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi comentó: @Flavio Ahí actualicé las imagenes, con el logo y el ajuste de las fotos de Mait…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T23:18:33.437Z"
+   "createdAt": "2026-11-11T23:18:33.437Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "225c2608-7f69-4916-928e-d39d51d816b1",
@@ -13021,13 +13028,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a Cambios",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Flavio la movió a Cambios",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T22:10:24.921Z"
+   "createdAt": "2026-11-11T22:10:24.921Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "205a0691-663a-47a9-aa1f-e30e80b687e4",
@@ -13036,13 +13044,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "comment",
    "text": "comentó en “Historia: los modelos de casas”: Buenísimo  @Javi , Gracias.. La Casa Maiten y la Casa Roble tienen imagenes repe…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Flavio comentó: Buenísimo  @Javi , Gracias.. La Casa Maiten y la Casa Roble tienen imagenes repe…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T22:08:59.535Z"
+   "createdAt": "2026-11-11T22:08:59.535Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "b96917cf-d1f9-4428-bb7c-e999e79e4e24",
@@ -13096,13 +13105,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "review",
    "text": "subió 9 archivos en “Historia: los modelos de casas” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi subió 9 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T20:38:04.696Z"
+   "createdAt": "2026-11-11T20:38:04.696Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "69bf1a02-f932-441e-9e7f-a577824b56fa",
@@ -13126,13 +13136,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T20:38:04.695Z"
+   "createdAt": "2026-11-11T20:38:04.695Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "b4747293-442a-4e82-92c4-0ab043c31b0b",
@@ -13141,13 +13152,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-11T20:38:04.694Z"
+   "createdAt": "2026-11-11T20:38:04.694Z",
+   "readAt": "2026-11-12T15:21:44.901Z"
   },
   {
    "id": "3b194b07-321b-4f40-8c55-39df13626225",
@@ -21682,6 +21694,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "person": "maca",
+   "at": "2026-11-12T15:21:44.902Z",
+   "hasta": "2026-11-12T14:10:46.951Z",
+   "que": "pieza"
+  },
   {
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",

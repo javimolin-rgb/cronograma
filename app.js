@@ -480,13 +480,38 @@ async function verPieza(post, que) {
   const ahora = Date.now();
   const cambio = prev && String(post.updatedAt || '') > String(prev.hasta || '');
   const viejo = !prev || (ahora - (Date.parse(prev.at) || 0)) > VISTA_CADA;
-  if (!cambio && !viejo) return;
+  /* Si hay comentarios que esta persona todavía no alcanzaba a ver, se anota igual
+     aunque haya pasado poco rato: de eso depende que el “Visto” de cada comentario
+     diga la verdad. */
+  const comNuevo = (S.db.comments || []).some((c) => c.postId === post.id
+    && c.author !== S.me.id && (!prev || String(c.createdAt) > String(prev.at)));
+  if (!cambio && !viejo && !comNuevo) return;
   try {
     await save('vistas', {
       id: vistaId(post.id, S.me.id), postId: post.id, person: S.me.id,
       at: nowISO(), hasta: post.updatedAt || '', que: que || 'pieza'
     });
   } catch (e) { /* si no se pudo, no pasa nada: es solo informativo */ }
+}
+// La hora, corta: si es de hoy basta la hora; si no, también el día
+function horaCorta(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return '';
+  const hm = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  return ymd(d) === today() ? hm : `${fmtShort(ymd(d))} ${hm}`;
+}
+/* El visto de UN comentario: alguien lo vio si abrió la pieza después de que se
+   escribió. Va chiquitito, abajo a la derecha del comentario. */
+function vistoComentarioHtml(c, post) {
+  if (!c || !post) return '';
+  const quienes = P.filter((x) => x.id !== c.author && x.id !== S.me.id);
+  if (!quienes.length) return '';
+  const partes = quienes.map((x) => {
+    const v = vistaDe(post.id, x.id);
+    const visto = v && String(v.at) > String(c.createdAt);
+    return `<span class="${visto ? 'si' : 'no'}">${esc(x.name)}: ${visto ? esc(horaCorta(v.at)) : 'aún no'}</span>`;
+  });
+  return `<div class="vistocom"><b>Visto</b> ${partes.join(' · ')}</div>`;
 }
 // Cómo se muestra: quién la abrió, cuándo, y si alcanzó a ver lo último
 /* El último aviso que yo le mandé a alguien por esta pieza, y si lo leyó */
@@ -495,21 +520,30 @@ function ultimoAviso(postId, person) {
     .filter((n) => n.postId === postId && n.to === person && n.from === S.me.id)
     .sort(descBy('createdAt'))[0] || null;
 }
-function vistoPorHtml(post) {
+/* Arriba de la pieza, en letra chica: la última vez que cada uno la abrió.
+   Lo de los avisos va detrás de un botón, para no ocupar lugar. */
+function vistoArribaHtml(post) {
   if (!post) return '';
   const otros = P.filter((x) => x.id !== S.me.id);
   if (!otros.length) return '';
-  const filas = otros.map((x) => {
+  const linea = otros.map((x) => {
     const v = vistaDe(post.id, x.id);
-    const av2 = ultimoAviso(post.id, x.id);
-    const aviso = av2 ? (av2.read
-      ? `<i class="vav si">${ic('check', 11)} leyó tu aviso${av2.readAt ? ' ' + esc(ago(av2.readAt)) : ''}</i>`
-      : `<i class="vav no">${ic('send', 11)} aviso sin abrir</i>`) : '';
-    if (!v) return `<span class="vp no">${av(x.id)}<b>${esc(x.name)}</b><small>todavía no la abre</small>${aviso}</span>`;
+    if (!v) return `<span class="no">${esc(x.name)}: aún no</span>`;
     const vieja = String(post.updatedAt || '') > String(v.hasta || '');
-    return `<span class="vp${vieja ? ' vieja' : ' si'}">${av(x.id)}<b>${esc(x.name)}</b><small>${esc(ago(v.at))}${vieja ? ' · antes del último cambio' : ''}</small>${aviso}</span>`;
-  }).join('');
-  return `<div class="vistopor"><span class="vplbl">${ic('eye', 14)} Visto por</span>${filas}</div>`;
+    return `<span class="${vieja ? 'vieja' : 'si'}"${vieja ? ' title="Lo que vio no es lo que hay ahora"' : ''}>${esc(x.name)}: ${esc(horaCorta(v.at))}</span>`;
+  }).join(' · ');
+  const hayViejas = otros.some((x) => { const v = vistaDe(post.id, x.id); return v && String(post.updatedAt || '') > String(v.hasta || ''); });
+  const hayAvisos = otros.some((x) => ultimoAviso(post.id, x.id)) || hayViejas;
+  return `<div class="vistotop">${ic('eye', 12)}<span class="vtl">${linea}</span>
+    ${hayAvisos ? `<button class="lnk vtmas" data-act="ed-vistas">${ED && ED.verVistas ? 'Ocultar' : 'Avisos'}</button>` : ''}
+  </div>
+  ${ED && ED.verVistas && hayAvisos ? `<div class="vistadet">${otros.map((x) => {
+    const n = ultimoAviso(post.id, x.id), v = vistaDe(post.id, x.id);
+    const vieja = v && String(post.updatedAt || '') > String(v.hasta || '');
+    if (!n && !vieja) return '';
+    return `<div>${av(x.id, 'sm')}<span><b>${esc(x.name)}</b>${vieja ? ' · vio una versión anterior a tu último cambio' : ''}${n ? `${vieja ? '. ' : ' · '}${esc(n.type === 'zumbido' ? 'Zumbido' : 'Aviso')} de ${esc(horaCorta(n.createdAt))}` : ''}</span>
+      ${n ? `<i class="vav ${n.read ? 'si' : 'no'}">${n.read ? `${ic('check', 11)} leído${n.readAt ? ' ' + esc(horaCorta(n.readAt)) : ''}` : `${ic('send', 11)} sin abrir`}</i>` : ''}</div>`;
+  }).filter(Boolean).join('')}</div>` : ''}`;
 }
 
 /* ---------- guardar pieza (con seguimiento y avisos) ---------- */
@@ -1507,7 +1541,7 @@ function postHtml(p, t) {
           return `<div class="pcom">${av(c.author, 'sm')}<div><p><b>${esc(person(c.author).name)}</b> ${mentionHtml(c.text)}</p>
             ${fotos.length ? `<div class="cmfotos">${fotos.map((x, k) => comFotoHtml(x, '', ` data-act="gal-com" data-c="${esc(c.id)}" data-i="${k}"`)).join('')}</div>` : ''}
             <small>${esc(ago(c.createdAt))}${c.editedAt ? ' · corregido' : ''}${puedeEditarComentario(c) ? ` · <button class="lnk" data-act="cm-abrir" data-id="${esc(c.id)}" data-p="${esc(p.id)}">Editar</button>` : ''}${puedeBorrarComentario(c) ? ` · <button class="lnk borrar" data-act="cm-borrar" data-id="${esc(c.id)}">Borrar</button>` : ''}</small>
-            <div class="cmacts">${reacHtml(c, p.id)}</div></div></div>`;
+            <div class="cmacts">${reacHtml(c, p.id)}${vistoComentarioHtml(c, p)}</div></div></div>`;
         }).join('') || '<p class="hint">Sin comentarios todavía.</p>'}
       </div>
       <div class="postpie">
@@ -3207,7 +3241,7 @@ function renderEditor() {
         <div class="chips gente">${P.map((x) => `<button class="person${d.assignees.includes(x.id) ? ' on' : ''}" style="--c:${x.color}" data-act="ed-person" data-v="${x.id}" title="${esc(x.name)}" aria-label="${esc(x.name)}">${av(x.id)}</button>`).join('')}</div></div>
     </div>
     ${old ? `<div class="stage" style="--c:${st.color}"><i></i>${esc(statusOf(old.status).name)} desde ${ago(old.statusChangedAt || old.createdAt)}${isStalled(old) ? ' · <b class="stuck">estancada</b>' : ''}</div>` : ''}
-    ${old ? vistoPorHtml(old) : ''}
+    ${old ? vistoArribaHtml(old) : ''}
     ${old && archivada(old) ? `<div class="archbox">${ic('archive', 17)}<span><b>Guardada en el archivo</b>${archivadaDesde(old) ? ` desde ${esc(ago(archivadaDesde(old)))}` : ''}. Ya está publicada: no sale en Piezas ni en el calendario, pero sigue entera en el Feed y en Entregas.</span>${store.canWrite ? `<button class="btn sm" data-act="ed-desarchivar">Sacar del archivo</button>` : ''}</div>` : ''}
 
     <label class="lbl">Cuándo se publica${d.date ? '' : ' <small>sin fecha límite</small>'}</label>
@@ -3363,6 +3397,7 @@ function renderEditor() {
           ${puedeEditarComentario(c) ? `<button class="lnk" data-act="cm-editar" data-id="${esc(c.id)}">Editar</button>` : ''}
           ${puedeBorrarComentario(c) ? `<button class="lnk borrar" data-act="cm-borrar" data-id="${esc(c.id)}">Borrar</button>` : ''}
           ${vers ? `<button class="lnk" data-act="cm-versiones" data-id="${esc(c.id)}">${ED.versionesDe === c.id ? 'Ocultar' : 'Cómo decía antes'} (${vers})</button>` : ''}
+          ${vistoComentarioHtml(c, d)}
         </div>
         ${ED.versionesDe === c.id ? `<div class="cmvers">${(c.versiones || []).slice().reverse().map((v) => `<div><small>Hasta ${esc(ago(v.hasta))}${v.by ? ' · lo cambió ' + esc(person(v.by).name) : ''}</small>${mentionHtml(v.text)}</div>`).join('')}</div>` : ''}
       </div></div>`;
@@ -5806,6 +5841,7 @@ const ACTS = {
     renderEditor();
     toast('Vuelve el orden por fecha de subida (lo último, primero)', 3500);
   },
+  'ed-vistas': () => { if (!ED) return; syncDraft(); ED.verVistas = !ED.verVistas; renderEditor(); },
   'ed-sel-guion': () => { const t = $('#e-guion'); if (!t) return; t.focus(); t.setSelectionRange(0, t.value.length); },
   'ed-copiar-guion': async () => {
     if (!ED) return;
@@ -5929,7 +5965,12 @@ const ACTS = {
     renderAll(); window.scrollTo(0, 0);
   },
   'piezas-vista': (el) => { S.piezasVista = el.dataset.v; localStorage.setItem('crono_piezas_vista', S.piezasVista); renderAll(); window.scrollTo(0, 0); },
-  'feed-mas': (el) => { S.feedAbiertos[el.dataset.id] = true; renderMain(); },
+  'feed-mas': (el) => {
+    S.feedAbiertos[el.dataset.id] = true;
+    const p = S.db.posts.find((x) => x.id === el.dataset.id);
+    if (p) verPieza(p, 'comentarios');            // abrir los comentarios es haberlos leído
+    renderMain();
+  },
   'feed-enviar': (el) => feedEnviar(el.dataset.id),
   // abrir o cerrar el elegidor de archivos para etiquetar en el feed
   'feed-etiquetar': (el) => {

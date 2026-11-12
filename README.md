@@ -79,13 +79,15 @@ Lo pueden usar los tres, no solo Javi: es la forma de que Flavio o Maca manden u
 
 ## Quién vio la pieza
 
-Dentro de cada pieza, arriba, hay una línea **“Visto por”** con las otras dos personas del equipo y qué pasó con cada una:
+Hay dos lugares, los dos en letra chica:
 
-- **cuándo la abrió por última vez** (“hace 2 h”), o **“todavía no la abre”**;
-- si la vio **antes del último cambio**, lo dice en ámbar: lo que miró no es lo que hay ahora;
-- y, si le mandaste un aviso o un zumbido por esa pieza, si **leyó tu aviso** (con la hora) o sigue **sin abrir**.
+**Arriba de la pieza**, una sola línea: la última vez que cada uno la abrió (`Flavio: aún no · Maca: 00:30`). Si alguien la vio **antes de tu último cambio**, su nombre queda en ámbar.
 
-Se anota al **abrir la pieza** y al **comentar**. No se guarda cada vez que alguien entra: solo si pasó media hora o si la pieza cambió desde su última visita, para no llenar el historial de guardados. La ve todo el equipo, no es un registro escondido: a los tres les sirve igual para saber si lo que mandaron ya lo miraron.
+**Abajo a la derecha de cada comentario**, quién lo alcanzó a ver: `VISTO  Flavio: aún no · Maca: 00:30`. Se cuenta como visto si abrió la pieza después de que escribiste ese comentario. No sale quien lo escribió ni tú.
+
+**Lo de los avisos va escondido** detrás del botón *Avisos* de esa línea de arriba, para que no ocupe espacio: ahí se ve, por persona, si **leyó** tu aviso o zumbido (con la hora) o sigue **sin abrir**, y si vio una versión anterior.
+
+Se anota al **abrir la pieza**, al **comentar** y al **abrir los comentarios en el Feed**. No se guarda cada vez que alguien entra: solo si pasó media hora, si la pieza cambió, o **si hay comentarios que esa persona todavía no alcanzaba a ver** —de eso depende que el “Visto” de cada comentario diga la verdad—, para no llenar el historial de guardados. La ve todo el equipo, no es un registro escondido: a los tres les sirve igual para saber si lo que mandaron ya lo miraron.
 
 En modo solo lectura (sin la clave) no se anota nada.
 

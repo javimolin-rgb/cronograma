@@ -1376,7 +1376,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T15:43:06.198Z",
+   "updatedAt": "2026-11-12T15:45:04.329Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
@@ -5260,6 +5260,14 @@
  ],
  "comments": [
   {
+   "id": "a9732900-6d0c-49bd-911b-d63583ebd850",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Ahí  van 4 alternativas de cierre. Siguiendo la línea de porpuedta de la Javi. Le di vueltas y mantendría lujo… pero bajo alguna de estas 4 opciones.",
+   "fileIds": [],
+   "createdAt": "2026-11-12T15:45:04.330Z"
+  },
+  {
    "id": "96ed9894-4fdc-42d2-9d81-bddcedf04953",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -7636,6 +7644,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d7448d07-2d61-413b-8aa7-bdab1f486c17",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T15:45:04.335Z"
+  },
   {
    "id": "c03bb532-4b04-4955-8248-99b26fe670ae",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12489,6 +12507,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "42097667-0520-4229-a17e-313e8f518ae4",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Ahí  van 4 alternativas de cierre. Siguiendo la línea de porpuedta de la Javi. L…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Ahí  van 4 alternativas de cierre. Siguiendo la línea de porpuedta de la Javi. L…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T15:45:04.335Z"
+  },
   {
    "id": "4c00acab-83ca-499e-8761-56ef8556cd77",
    "to": "javi",
@@ -21814,8 +21847,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T15:43:06.200Z",
-   "hasta": "2026-11-12T15:43:06.198Z",
+   "at": "2026-11-12T15:45:04.330Z",
+   "hasta": "2026-11-12T15:45:04.329Z",
    "que": "comentario"
   },
   {

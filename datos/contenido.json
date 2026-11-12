@@ -2527,7 +2527,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-12T17:49:55.070Z",
+   "updatedAt": "2026-11-12T17:52:27.677Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -5322,6 +5322,16 @@
  ],
  "comments": [
   {
+   "id": "1d6eea02-804a-4540-a0af-4abd84ecb266",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Se ve la casa con luces de noche y afuera de día",
+   "fileIds": [
+    "99a61183-59f6-4b76-86e1-f3ef04b04d76"
+   ],
+   "createdAt": "2026-11-12T17:52:27.680Z"
+  },
+  {
    "id": "bbcd1a39-299b-473c-98cb-59c05c350060",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -7782,6 +7792,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "1979700b-8c41-476b-bb33-0e2d64f3e336",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:52:27.681Z"
+  },
   {
    "id": "dcad9c3f-df04-48c1-afe2-7991cd39f3e0",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -12788,6 +12808,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1ab2b821-b067-442d-918c-c5ecc3d251ef",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Se ve la casa con luces de noche y afuera de día",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Se ve la casa con luces de noche y afuera de día",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:52:27.682Z"
+  },
+  {
+   "id": "135b0aa7-3c0d-4bcc-8413-f87859eb8ac8",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Se ve la casa con luces de noche y afuera de día",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Se ve la casa con luces de noche y afuera de día",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:52:27.682Z"
+  },
   {
    "id": "1b24ee34-a35c-47ad-a4f6-71938b33d40c",
    "to": "javi",
@@ -22513,8 +22563,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-12T17:49:55.071Z",
-   "hasta": "2026-11-12T17:49:55.070Z",
+   "at": "2026-11-12T17:52:27.680Z",
+   "hasta": "2026-11-12T17:52:27.677Z",
    "que": "comentario"
   },
   {

@@ -12792,13 +12792,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó hora",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T00:29:31.996Z"
+   "createdAt": "2026-11-12T00:29:31.996Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "b597458c-fa89-4010-8064-a09fad1c5f62",
@@ -12823,13 +12824,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "reschedule",
    "text": "cambió la fecha de “10 puntos que revisar antes de comprar tu terreno” a 12 nov",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi cambió la fecha a 12 nov",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T00:29:31.994Z"
+   "createdAt": "2026-11-12T00:29:31.994Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "ea92a090-af82-4dc8-ad84-a4d50961638a",
@@ -12854,13 +12856,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "mention",
    "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi te mencionó: @Maca Me puedes mandar el enlace de esa playlist porfis que no la tengo",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T00:04:00.113Z"
+   "createdAt": "2026-11-12T00:04:00.113Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "70105cd3-7e73-4f2e-a72d-f314505b050a",
@@ -13073,13 +13076,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "review",
    "text": "subió 6 archivos en “Casa Mañío” para revisar: Vistas render casa Mañio",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi te pide revisar: Vistas render casa Mañio",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-11T23:02:37.533Z"
+   "createdAt": "2026-11-11T23:02:37.533Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "eea3aeee-da3e-4875-94d0-c99fd486fce3",
@@ -13103,13 +13107,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-11T23:02:37.532Z"
+   "createdAt": "2026-11-11T23:02:37.532Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "947cf3e4-b571-4399-8826-d6b780b2e3ad",
@@ -13118,13 +13123,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "status",
    "text": "movió “Casa Mañío” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-11T23:02:37.532Z"
+   "createdAt": "2026-11-11T23:02:37.532Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "a3f87457-68be-4699-a8f4-a814c894236a",
@@ -13650,13 +13656,14 @@
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "type": "mention",
    "text": "te mencionó en “Del primer mensaje a la obra, en 6 pasos”: @Javi  @Maca Hice cambios en el guión, basicamente la voz en off , el Copy y alg…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "body": "Flavio te mencionó: @Javi  @Maca Hice cambios en el guión, basicamente la voz en off , el Copy y alg…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
-   "createdAt": "2026-11-11T13:43:25.926Z"
+   "createdAt": "2026-11-11T13:43:25.926Z",
+   "readAt": "2026-11-12T15:46:43.664Z"
   },
   {
    "id": "37a41e90-d7e4-4888-9e58-8433a3e34d60",
@@ -13680,13 +13687,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "mention",
    "text": "te mencionó en “Aire nuevo sin abrir la ventana”: @Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio te mencionó: @Maca  @Javi .. Estructura de reel aprobada.. puede servir de base para generar …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-11T13:27:44.313Z"
+   "createdAt": "2026-11-11T13:27:44.313Z",
+   "readAt": "2026-11-12T15:46:43.665Z"
   },
   {
    "id": "2e11818a-e133-48d0-a78e-dd62984249a2",
@@ -14476,13 +14484,14 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "status",
    "text": "movió “¿Son prefabricadas?” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "¿Son prefabricadas?",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
-   "createdAt": "2026-11-09T00:13:29.922Z"
+   "createdAt": "2026-11-09T00:13:29.922Z",
+   "readAt": "2026-11-12T15:46:43.665Z"
   },
   {
    "id": "2ab13e7a-f62e-4e05-b69f-5682875247ca",
@@ -14506,13 +14515,14 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "status",
    "text": "movió “¿Son prefabricadas?” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "¿Son prefabricadas?",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
-   "createdAt": "2026-11-07T00:00:34.041Z"
+   "createdAt": "2026-11-07T00:00:34.041Z",
+   "readAt": "2026-11-12T15:46:43.665Z"
   },
   {
    "id": "771dc841-593d-49c9-9d18-a7bffce10ae0",
@@ -14536,13 +14546,14 @@
    "postId": "a013c4e6-c3bb-4d47-9667-5ee418b19336",
    "type": "status",
    "text": "movió “¿Son prefabricadas?” a Aprobado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "¿Son prefabricadas?",
    "body": "Javi la movió a Aprobado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=a013c4e6-c3bb-4d47-9667-5ee418b19336",
-   "createdAt": "2026-11-06T23:59:56.154Z"
+   "createdAt": "2026-11-06T23:59:56.154Z",
+   "readAt": "2026-11-12T15:46:43.665Z"
   },
   {
    "id": "2e6a5827-8cae-4f00-9d01-c79a55312425",

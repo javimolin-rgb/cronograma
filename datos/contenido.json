@@ -262,8 +262,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T00:29:31.989Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T15:19:20.666Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-11T16:33:20.271Z",
    "publishedAt": null
   },
@@ -5260,6 +5260,14 @@
  ],
  "comments": [
   {
+   "id": "f8c4bb85-5178-44a1-8df0-552884021561",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "author": "maca",
+   "text": "Nos cuentas si sirve alguna canción de la playlist 😘",
+   "fileIds": [],
+   "createdAt": "2026-11-12T15:19:20.669Z"
+  },
+  {
    "id": "0d5f30af-d056-4c08-bbc5-59623acee0a0",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "flavio",
@@ -7596,6 +7604,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "bf650727-f55e-45ef-b261-b1be7197bf28",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T15:19:20.677Z"
+  },
   {
    "id": "28ab78af-b2c0-4163-8432-80f889781b1b",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12399,6 +12417,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7ae7a048-4f32-479b-ae82-54a3ec792966",
+   "to": "javi",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "supervision",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Nos cuentas si sirve alguna canción de la playlist 😘",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Nos cuentas si sirve alguna canción de la playlist 😘",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T15:19:20.679Z"
+  },
+  {
+   "id": "96bbd75a-3c4f-4e39-9e10-4f6d8ea4f0b0",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "comment",
+   "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Nos cuentas si sirve alguna canción de la playlist 😘",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Maca comentó: Nos cuentas si sirve alguna canción de la playlist 😘",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T15:19:20.678Z"
+  },
   {
    "id": "f548255e-8c60-45d7-b28c-fb629020d43f",
    "to": "javi",
@@ -21586,6 +21634,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "person": "maca",
+   "at": "2026-11-12T15:19:20.668Z",
+   "hasta": "2026-11-12T15:19:20.666Z",
+   "que": "comentario"
+  },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|flavio",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",

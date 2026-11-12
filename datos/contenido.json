@@ -2527,8 +2527,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-11T23:02:37.530Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T17:47:42.472Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-11T23:02:37.530Z",
@@ -5322,6 +5322,14 @@
  ],
  "comments": [
   {
+   "id": "94ccc29a-969e-4fe9-87b8-d216dec92aff",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "@javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “ más condominio estilo Maitencillo” pero esto no refleja eso 🙏\nSacar postes de Luz , calle grande de cemento , casas todas iguales atrás .",
+   "fileIds": [],
+   "createdAt": "2026-11-12T17:47:42.476Z"
+  },
+  {
    "id": "a07adbae-174e-42c5-bd81-4181eca2650a",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -7764,6 +7772,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4cf41f60-0a36-4440-8aa4-99a4562a0af0",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:47:42.476Z"
+  },
   {
    "id": "c629221a-0581-4665-ae7c-dfc8c8fc155d",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12750,6 +12768,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "26c5c729-b927-49e4-bbcf-f63114ec5f2a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: @javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: @javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:47:42.477Z"
+  },
+  {
+   "id": "c64e9757-26f0-429d-b0a6-274d639bb0e9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "mention",
+   "text": "te mencionó en “Casa Mañío”: @javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca te mencionó: @javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:47:42.476Z"
+  },
   {
    "id": "f9f88ee2-1e3a-49a7-99d3-e52522042059",
    "to": "javi",
@@ -22415,9 +22463,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-12T17:43:14.117Z",
-   "hasta": "2026-11-11T23:02:37.530Z",
-   "que": "pieza"
+   "at": "2026-11-12T17:47:42.475Z",
+   "hasta": "2026-11-12T17:47:42.472Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

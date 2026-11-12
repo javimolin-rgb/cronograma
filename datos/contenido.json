@@ -580,6 +580,36 @@
      "type": "image/webp",
      "size": 316526,
      "extra": true
+    },
+    {
+     "id": "e3771cc1-1de9-4eb5-b2bc-7f10eecc9c63",
+     "by": "flavio",
+     "at": "2026-11-12T14:10:17.300Z",
+     "base": "render-22",
+     "version": 1,
+     "shaOrigen": "63721793b4d6bee0ce8b3fab7a0537b7e565be01",
+     "name": "render-22-v1.webp",
+     "path": "archivos/publicaciones-informativas/render-22-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/render-22-v1.webp",
+     "sha": "659442c4587cec27c7c3dcf486358f9df6b707ea",
+     "type": "image/webp",
+     "size": 261100,
+     "extra": true
+    },
+    {
+     "id": "23dc60ff-2cb9-4474-9d56-324636189015",
+     "by": "flavio",
+     "at": "2026-11-12T14:10:19.755Z",
+     "base": "render-23",
+     "version": 1,
+     "shaOrigen": "ebb5b692af0a47147facd2c9b7753dab680a1dd7",
+     "name": "render-23-v1.webp",
+     "path": "archivos/publicaciones-informativas/render-23-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/render-23-v1.webp",
+     "sha": "139f6b57e4138d055faffc1bd20a2a31186de65f",
+     "type": "image/webp",
+     "size": 140822,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -588,7 +618,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T14:09:49.350Z",
+   "updatedAt": "2026-11-12T14:10:46.951Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null

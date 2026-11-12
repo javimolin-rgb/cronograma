@@ -14,7 +14,7 @@
    "date": "2026-11-12",
    "inicio": "",
    "format": "carrusel",
-   "status": "revision",
+   "status": "programado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -262,9 +262,9 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T16:33:22.623Z",
-   "updatedBy": "maca",
-   "statusChangedAt": "2026-11-11T16:33:20.271Z",
+   "updatedAt": "2026-11-12T18:12:53.541Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-12T18:12:53.541Z",
    "publishedAt": null
   },
   {
@@ -7812,6 +7812,19 @@
  ],
  "activity": [
   {
+   "id": "86943c90-9733-48e1-8db3-bb8c76108f71",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "postTitle": "10 puntos que revisar antes de comprar tu terreno",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Programado",
+   "meta": {
+    "from": "revision",
+    "to": "programado"
+   },
+   "createdAt": "2026-11-12T18:12:53.542Z"
+  },
+  {
    "id": "08d0d5b7-2412-4b12-a44f-e20969f38dc4",
    "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
    "postTitle": "Cómo se arma el precio de tu casa",
@@ -12847,6 +12860,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d82d0eab-aff1-4ab3-b2cb-8475ba2113af",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Programado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a Programado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T18:12:53.543Z"
+  },
+  {
+   "id": "a9c40592-4d6f-4d4e-bd95-cddfac4eff68",
+   "to": "maca",
+   "from": "javi",
+   "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "type": "status",
+   "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Programado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "10 puntos que revisar antes de comprar tu terreno",
+   "body": "Javi la movió a Programado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
+   "createdAt": "2026-11-12T18:12:53.543Z"
+  },
   {
    "id": "22cbd100-9d99-4f2e-acdd-0eb5db433169",
    "to": "javi",

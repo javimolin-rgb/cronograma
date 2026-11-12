@@ -22719,10 +22719,10 @@
    "tipo": "pc",
    "instalada": true,
    "push": true,
-   "version": "2026.11.12-2",
+   "version": "2026.11.12-4",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-12T16:07:30.410Z"
+   "lastSeen": "2026-11-12T20:13:00.320Z"
   }
  ],
  "recursos": [

@@ -12755,13 +12755,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "mention",
    "text": "te mencionó en “10 puntos que revisar antes de comprar tu terreno”: @Maca sii, ahí en el apartado de canción mas arribita puse una de las de la play…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi te mencionó: @Maca sii, ahí en el apartado de canción mas arribita puse una de las de la play…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T16:09:53.012Z"
+   "createdAt": "2026-11-12T16:09:53.012Z",
+   "readAt": "2026-11-12T16:23:31.436Z"
   },
   {
    "id": "d3bb6083-bfe3-4624-81e2-7284feb427ab",
@@ -12785,13 +12786,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (la canción)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó la canción",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T16:09:53.010Z"
+   "createdAt": "2026-11-12T16:09:53.010Z",
+   "readAt": "2026-11-12T16:23:31.438Z"
   },
   {
    "id": "9c43f72a-ca02-48ce-b303-f387d64e4d08",
@@ -22200,9 +22202,9 @@
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "person": "maca",
-   "at": "2026-11-12T15:21:25.923Z",
-   "hasta": "2026-11-12T15:21:25.919Z",
-   "que": "comentario"
+   "at": "2026-11-12T16:23:31.440Z",
+   "hasta": "2026-11-12T16:09:53.009Z",
+   "que": "pieza"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|flavio",

@@ -1376,7 +1376,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T15:45:04.329Z",
+   "updatedAt": "2026-11-12T15:46:17.342Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
@@ -5260,6 +5260,14 @@
  ],
  "comments": [
   {
+   "id": "25ffd2ae-0420-4c10-b5dd-96366f414e60",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Cuál es más potente a su parecer? A mi me gusta la primera",
+   "fileIds": [],
+   "createdAt": "2026-11-12T15:46:17.344Z"
+  },
+  {
    "id": "a9732900-6d0c-49bd-911b-d63583ebd850",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -7644,6 +7652,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ab899566-495b-4661-89bc-48a718664a00",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T15:46:17.344Z"
+  },
   {
    "id": "d7448d07-2d61-413b-8aa7-bdab1f486c17",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -12507,6 +12525,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9c43f72a-ca02-48ce-b303-f387d64e4d08",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Cuál es más potente a su parecer? A mi me gusta la primera",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Cuál es más potente a su parecer? A mi me gusta la primera",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T15:46:17.344Z"
+  },
   {
    "id": "42097667-0520-4229-a17e-313e8f518ae4",
    "to": "javi",
@@ -21847,8 +21880,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T15:45:04.330Z",
-   "hasta": "2026-11-12T15:45:04.329Z",
+   "at": "2026-11-12T15:46:17.344Z",
+   "hasta": "2026-11-12T15:46:17.342Z",
    "que": "comentario"
   },
   {

@@ -1272,7 +1272,7 @@
     }
    ],
    "spotify": "",
-   "campaign": "Publicaciones informativas",
+   "campaign": "Videos lifestyle",
    "time": "",
    "date": "2026-11-22",
    "inicio": "",
@@ -1330,8 +1330,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-11T15:53:37.836Z",
-   "updatedBy": "flavio",
+   "updatedAt": "2026-11-12T00:42:20.413Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
   },
@@ -7536,6 +7536,16 @@
  ],
  "activity": [
   {
+   "id": "1ac0897a-5b0c-44b5-a595-e667083a4f68",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó campaña",
+   "meta": null,
+   "createdAt": "2026-11-12T00:42:20.414Z"
+  },
+  {
    "id": "ee9bd96f-bee0-4956-ad10-fc9b1af1cdff",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -12285,6 +12295,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "543a921d-89b0-46df-a9ad-3687526eab2d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (campaña)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó campaña",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T00:42:20.416Z"
+  },
   {
    "id": "d64ceeca-e799-41ac-9096-841cfbfcb124",
    "to": "flavio",

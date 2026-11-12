@@ -21246,12 +21246,12 @@
    "equipo": "Mac",
    "navegador": "Chrome",
    "tipo": "pc",
-   "instalada": true,
+   "instalada": false,
    "push": true,
-   "version": "2026.11.11-1",
+   "version": "2026.11.12-2",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-26T12:14:30.832Z",
-   "lastSeen": "2026-11-11T16:37:58.178Z"
+   "lastSeen": "2026-11-12T14:05:51.031Z"
   },
   {
    "id": "d_5888b1e332884189",

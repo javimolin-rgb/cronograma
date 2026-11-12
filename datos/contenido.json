@@ -12761,13 +12761,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 4 archivos en “Un domingo en el refugio” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi subió 4 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T16:18:46.349Z"
+   "createdAt": "2026-11-12T16:18:46.349Z",
+   "readAt": "2026-11-12T17:30:04.027Z"
   },
   {
    "id": "613d6e27-2b2a-4698-996c-c9c4e2c0c394",
@@ -12791,13 +12792,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T16:18:46.348Z"
+   "createdAt": "2026-11-12T16:18:46.348Z",
+   "readAt": "2026-11-12T17:30:04.029Z"
   },
   {
    "id": "bd70372f-1d77-48fb-ae31-5901344c7915",
@@ -12806,13 +12808,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T16:18:46.347Z"
+   "createdAt": "2026-11-12T16:18:46.347Z",
+   "readAt": "2026-11-12T17:30:04.029Z"
   },
   {
    "id": "a0d03648-2911-434f-91a8-1fe8d57b8b3a",
@@ -22274,9 +22277,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T15:46:17.344Z",
-   "hasta": "2026-11-12T15:46:17.342Z",
-   "que": "comentario"
+   "at": "2026-11-12T17:30:04.030Z",
+   "hasta": "2026-11-12T16:18:46.344Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

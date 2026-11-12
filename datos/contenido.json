@@ -1376,8 +1376,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T00:42:20.413Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-12T15:41:00.123Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-10T19:03:06.450Z",
    "publishedAt": null
   },
@@ -5260,6 +5260,14 @@
  ],
  "comments": [
   {
+   "id": "9f154f4b-b74a-48a9-85e2-bec8dd81a14d",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "EL BIENESTAR ES EL VERDADERO LUJO.\n\nEs más contundente, pone el bienestar en el centro y permite que Neorigen se apropie de una idea que tiene relación directa con su propuesta arquitectónica.\n\nY una última observación estratégica: no explicaría esta frase debajo ni agregaría otra bajada. La dejaría sola, con una imagen arquitectónica potente. Que cierre el carrusel y permanezca en la cabeza.",
+   "fileIds": [],
+   "createdAt": "2026-11-12T15:41:00.129Z"
+  },
+  {
    "id": "3e365950-783c-4c6d-b8c3-6693e8213e13",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -7620,6 +7628,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "6d70968e-5a0f-4f14-99d3-90cc0b5aba7b",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T15:41:00.134Z"
+  },
   {
    "id": "c8c2093c-91e6-4d61-9751-171b19e13285",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -12453,6 +12471,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "445b8f0e-3a71-4605-86f7-30ae63bcdaf6",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: EL BIENESTAR ES EL VERDADERO LUJO.\n\nEs más contundente, pone el bienestar en el …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: EL BIENESTAR ES EL VERDADERO LUJO.\n\nEs más contundente, pone el bienestar en el …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T15:41:00.137Z"
+  },
   {
    "id": "46a00ccd-e0e2-47b2-a3a3-0e15b9611196",
    "to": "flavio",
@@ -21748,9 +21781,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-12T15:30:07.406Z",
-   "hasta": "2026-11-12T00:42:20.413Z",
-   "que": "pieza"
+   "at": "2026-11-12T15:41:00.128Z",
+   "hasta": "2026-11-12T15:41:00.123Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

@@ -1323,7 +1323,7 @@
    "date": "2026-11-22",
    "inicio": "",
    "format": "carrusel",
-   "status": "cambios",
+   "status": "revision",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -1333,7 +1333,8 @@
    ],
    "assignees": [
     "javi",
-    "maca"
+    "maca",
+    "flavio"
    ],
    "links": [
     {
@@ -1347,7 +1348,68 @@
      "url": "https://www.neorigen.cl/post/vivir-de-forma-sustentable-el-nuevo-est%C3%A1ndar-en-las-casas-de-neorigen"
     }
    ],
-   "files": [],
+   "files": [
+    {
+     "id": "d384ceba-2780-4a2c-b94f-95592cbd7745",
+     "by": "javi",
+     "at": "2026-11-12T16:18:34.126Z",
+     "base": "un-domingo-en-el-refugio-04-cierre",
+     "version": 1,
+     "shaOrigen": "3ca165d8525174b3a5d0a63aaf5e2398a4dd69a1",
+     "name": "un-domingo-en-el-refugio-04-cierre-v1.webp",
+     "path": "archivos/videos-lifestyle/un-domingo-en-el-refugio-04-cierre-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/videos-lifestyle/un-domingo-en-el-refugio-04-cierre-v1.webp",
+     "sha": "2c5526c2d537ceca36fae8c5509f01c0c0d34974",
+     "type": "image/webp",
+     "size": 133060,
+     "orden": 0
+    },
+    {
+     "id": "088aa319-8b4e-4aab-a0cc-2c3d2b5e2d7b",
+     "by": "javi",
+     "at": "2026-11-12T16:18:37.116Z",
+     "base": "un-domingo-en-el-refugio-03-terraza",
+     "version": 1,
+     "shaOrigen": "8439bf55fb644429fd2f292f756d0080fe42c045",
+     "name": "un-domingo-en-el-refugio-03-terraza-v1.webp",
+     "path": "archivos/videos-lifestyle/un-domingo-en-el-refugio-03-terraza-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/videos-lifestyle/un-domingo-en-el-refugio-03-terraza-v1.webp",
+     "sha": "523b80fba0a6a789cced8e7e3d016e3d17366840",
+     "type": "image/webp",
+     "size": 152752,
+     "orden": 1
+    },
+    {
+     "id": "7d7e0222-1504-4de5-a484-45d3957d4633",
+     "by": "javi",
+     "at": "2026-11-12T16:18:39.992Z",
+     "base": "un-domingo-en-el-refugio-02-luz",
+     "version": 1,
+     "shaOrigen": "0ff53e46d1896ff661068b26e785d5ffd9fbe0ea",
+     "name": "un-domingo-en-el-refugio-02-luz-v1.webp",
+     "path": "archivos/videos-lifestyle/un-domingo-en-el-refugio-02-luz-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/videos-lifestyle/un-domingo-en-el-refugio-02-luz-v1.webp",
+     "sha": "a0eb1b1c7c45d445c7e5f51021bc417fc45bc14e",
+     "type": "image/webp",
+     "size": 159602,
+     "orden": 2
+    },
+    {
+     "id": "6500ca68-28f7-4898-aed0-89d183bee8fe",
+     "by": "javi",
+     "at": "2026-11-12T16:18:42.921Z",
+     "base": "un-domingo-en-el-refugio-01-portada",
+     "version": 1,
+     "shaOrigen": "2f6720bc35f1f0cb015ca5791f8315a8dfefc19a",
+     "name": "un-domingo-en-el-refugio-01-portada-v1.webp",
+     "path": "archivos/videos-lifestyle/un-domingo-en-el-refugio-01-portada-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/videos-lifestyle/un-domingo-en-el-refugio-01-portada-v1.webp",
+     "sha": "d5aa71a3785bbcda8b9136219471c37e25e2275e",
+     "type": "image/webp",
+     "size": 51982,
+     "orden": 3
+    }
+   ],
    "checklist": [],
    "artefactos": [],
    "versionesTexto": [
@@ -1376,9 +1438,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T15:46:17.342Z",
-   "updatedBy": "maca",
-   "statusChangedAt": "2026-11-10T19:03:06.450Z",
+   "updatedAt": "2026-11-12T16:18:46.344Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-12T16:18:46.344Z",
    "publishedAt": null
   },
   {
@@ -7661,6 +7723,49 @@
  ],
  "activity": [
   {
+   "id": "f19deaeb-e984-4ae5-9129-b096c339fd9c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-12T16:18:46.349Z"
+  },
+  {
+   "id": "497362bc-b012-4ed9-b658-e57e7116d4c0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-12T16:18:46.348Z"
+  },
+  {
+   "id": "e96e56a5-6201-4a8e-8b94-ea3cd072c460",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Cambios a En revisión",
+   "meta": {
+    "from": "cambios",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-12T16:18:46.347Z"
+  },
+  {
+   "id": "ab41ae9e-5eec-46bd-aef6-3f7838e7e8b3",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "tag",
+   "text": "etiquetó a Flavio",
+   "meta": null,
+   "createdAt": "2026-11-12T16:18:46.345Z"
+  },
+  {
    "id": "0a6cb750-7570-4805-a86b-20b0cd693c14",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "postTitle": "10 puntos que revisar antes de comprar tu terreno",
@@ -12553,6 +12658,81 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9fb2d44c-a843-453a-8249-fa41e1c4a868",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "review",
+   "text": "subió 4 archivos en “Un domingo en el refugio” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi subió 4 archivos para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T16:18:46.349Z"
+  },
+  {
+   "id": "613d6e27-2b2a-4698-996c-c9c4e2c0c394",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "review",
+   "text": "subió 4 archivos en “Un domingo en el refugio” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi subió 4 archivos para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T16:18:46.349Z"
+  },
+  {
+   "id": "4594a7d0-4c93-4652-82ef-225a974de930",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T16:18:46.348Z"
+  },
+  {
+   "id": "bd70372f-1d77-48fb-ae31-5901344c7915",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T16:18:46.347Z"
+  },
+  {
+   "id": "a0d03648-2911-434f-91a8-1fe8d57b8b3a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "tagged",
+   "text": "te etiquetó en “Un domingo en el refugio”",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te etiquetó como responsable",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-12T16:18:46.346Z"
+  },
   {
    "id": "279ecdbb-2d16-499b-96be-6262c8c4a4d3",
    "to": "flavio",

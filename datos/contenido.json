@@ -2625,7 +2625,7 @@
    "date": "2026-11-18",
    "inicio": "",
    "format": "story",
-   "status": "revision",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3010,11 +3010,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-12T15:29:19.660Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-12T18:24:51.799Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-04T14:39:45.131Z",
+   "statusChangedAt": "2026-11-12T18:24:51.799Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -7822,6 +7822,19 @@
   }
  ],
  "activity": [
+  {
+   "id": "6378daa8-d662-4520-ad33-d6bb9831c4be",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a En diseño",
+   "meta": {
+    "from": "revision",
+    "to": "diseno"
+   },
+   "createdAt": "2026-11-12T18:24:51.801Z"
+  },
   {
    "id": "eaf5b55a-c18f-4b3c-b392-af1bc9017631",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12881,6 +12894,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9b59202e-f321-472c-a0c6-5e7bb05981f3",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-12T18:24:51.802Z"
+  },
+  {
+   "id": "beb6cad7-e51b-4de0-89ba-596ecd2d448c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-12T18:24:51.802Z"
+  },
   {
    "id": "2b08b907-8965-4fba-9071-ea44032786a5",
    "to": "flavio",

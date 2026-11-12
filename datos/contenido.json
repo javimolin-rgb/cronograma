@@ -2527,7 +2527,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-12T17:47:42.472Z",
+   "updatedAt": "2026-11-12T17:49:55.070Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -5322,6 +5322,16 @@
  ],
  "comments": [
   {
+   "id": "bbcd1a39-299b-473c-98cb-59c05c350060",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Tiene que ser más preponderante la casa que el camino de cemento, sacar postes de luz ( ahora se hacen bajo tierra) acercar la casa para darle protagonismo.",
+   "fileIds": [
+    "99a61183-59f6-4b76-86e1-f3ef04b04d76"
+   ],
+   "createdAt": "2026-11-12T17:49:55.071Z"
+  },
+  {
    "id": "94ccc29a-969e-4fe9-87b8-d216dec92aff",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -7772,6 +7782,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "dcad9c3f-df04-48c1-afe2-7991cd39f3e0",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-12T17:49:55.071Z"
+  },
   {
    "id": "4cf41f60-0a36-4440-8aa4-99a4562a0af0",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -12768,6 +12788,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1b24ee34-a35c-47ad-a4f6-71938b33d40c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Tiene que ser más preponderante la casa que el camino de cemento, sacar postes d…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Tiene que ser más preponderante la casa que el camino de cemento, sacar postes d…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:49:55.072Z"
+  },
+  {
+   "id": "8bdb9ad1-5fb1-4a9c-b69b-875315defa9a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Tiene que ser más preponderante la casa que el camino de cemento, sacar postes d…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Tiene que ser más preponderante la casa que el camino de cemento, sacar postes d…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-12T17:49:55.072Z"
+  },
   {
    "id": "26c5c729-b927-49e4-bbcf-f63114ec5f2a",
    "to": "flavio",
@@ -22463,8 +22513,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-12T17:47:42.475Z",
-   "hasta": "2026-11-12T17:47:42.472Z",
+   "at": "2026-11-12T17:49:55.071Z",
+   "hasta": "2026-11-12T17:49:55.070Z",
    "que": "comentario"
   },
   {

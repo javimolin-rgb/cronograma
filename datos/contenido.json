@@ -12934,13 +12934,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "status",
    "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T21:56:35.934Z"
+   "createdAt": "2026-11-12T21:56:35.934Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "71c397eb-9d8e-4d8f-91ab-d327ceaf80ff",
@@ -12964,13 +12965,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (la canción)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó la canción",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T18:48:34.309Z"
+   "createdAt": "2026-11-12T18:48:34.309Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "0e7c01ba-7cd0-4104-9ee4-af398e220c4f",
@@ -12994,13 +12996,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó hora",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T18:33:50.115Z"
+   "createdAt": "2026-11-12T18:33:50.115Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "09844394-cbda-4203-b523-14b28252ef43",
@@ -13024,13 +13027,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-12T18:24:51.802Z"
+   "createdAt": "2026-11-12T18:24:51.802Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "beb6cad7-e51b-4de0-89ba-596ecd2d448c",
@@ -13101,13 +13105,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "status",
    "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Programado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi la movió a Programado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T18:12:53.543Z"
+   "createdAt": "2026-11-12T18:12:53.543Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "a9c40592-4d6f-4d4e-bd95-cddfac4eff68",
@@ -13163,13 +13168,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Podemos alejar el camino q no esté tan pegado a la casa por atrás , para que no …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-12T17:53:55.377Z"
+   "createdAt": "2026-11-12T17:53:55.377Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "1ab2b821-b067-442d-918c-c5ecc3d251ef",
@@ -13194,13 +13200,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Se ve la casa con luces de noche y afuera de día",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Se ve la casa con luces de noche y afuera de día",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-12T17:52:27.682Z"
+   "createdAt": "2026-11-12T17:52:27.682Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "1b24ee34-a35c-47ad-a4f6-71938b33d40c",
@@ -13225,13 +13232,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Tiene que ser más preponderante la casa que el camino de cemento, sacar postes d…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Tiene que ser más preponderante la casa que el camino de cemento, sacar postes d…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-12T17:49:55.072Z"
+   "createdAt": "2026-11-12T17:49:55.072Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "26c5c729-b927-49e4-bbcf-f63114ec5f2a",
@@ -13240,13 +13248,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: @javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: @javi, tenemos varios ajustes que hacer a estas imágenes 😬\nLa idea es que sea “…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-12T17:47:42.477Z"
+   "createdAt": "2026-11-12T17:47:42.477Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "c64e9757-26f0-429d-b0a6-274d639bb0e9",
@@ -13287,13 +13296,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Incluso el texto descriptivo no tiene mucha relación con la línea del carrusel. …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T17:42:46.170Z"
+   "createdAt": "2026-11-12T17:42:46.170Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "4e8e6cc5-774d-404c-8a7b-d07f0864ab1c",
@@ -13318,13 +13328,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la sig…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Tiene a ser un “ cuento, una historia “ que den ganas de seguir pasando a la sig…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T17:39:33.801Z"
+   "createdAt": "2026-11-12T17:39:33.801Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "5966fbcf-2cb6-48c8-b6d2-4aabaf5e531d",
@@ -13333,13 +13344,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @javi, las imágenes que no son lo que aparece en el guion. La idea de este post …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: @javi, las imágenes que no son lo que aparece en el guion. La idea de este post …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T17:37:54.488Z"
+   "createdAt": "2026-11-12T17:37:54.488Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "7bcac885-652f-4b6c-8e4e-5e1d93d6cd65",
@@ -13364,13 +13376,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "comment",
    "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Maca comentó: Gracias @Javi!!!! Creo que escuché la q era 🤪. 🙌\nPuedes probar como queda esta…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T16:33:22.633Z"
+   "createdAt": "2026-11-12T16:33:22.633Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "dcf86c85-5c77-488b-ba39-e0418bf6a9b7",
@@ -13411,13 +13424,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "comment",
    "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Maca comentó: https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T16:31:39.137Z"
+   "createdAt": "2026-11-12T16:31:39.137Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "9fb2d44c-a843-453a-8249-fa41e1c4a868",
@@ -13442,13 +13456,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 4 archivos en “Un domingo en el refugio” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi subió 4 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T16:18:46.349Z"
+   "createdAt": "2026-11-12T16:18:46.349Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "4594a7d0-4c93-4652-82ef-225a974de930",
@@ -13489,13 +13504,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "tagged",
    "text": "te etiquetó en “Un domingo en el refugio”",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te etiquetó como responsable",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T16:18:46.346Z"
+   "createdAt": "2026-11-12T16:18:46.346Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "279ecdbb-2d16-499b-96be-6262c8c4a4d3",
@@ -13504,13 +13520,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "comment",
    "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: @Maca sii, ahí en el apartado de canción mas arribita puse una de las de la play…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi comentó: @Maca sii, ahí en el apartado de canción mas arribita puse una de las de la play…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T16:09:53.012Z"
+   "createdAt": "2026-11-12T16:09:53.012Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "4f5e229d-9e40-4870-9397-305356b7a18d",
@@ -13535,13 +13552,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (la canción)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó la canción",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T16:09:53.011Z"
+   "createdAt": "2026-11-12T16:09:53.011Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "921cd07f-1f6a-4cc1-b648-836d405ea112",
@@ -13630,13 +13648,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: @javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” p…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: @javi mejor sacar desde este render en adelante “ Nuestro Modelo de la semana” p…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-12T15:29:19.673Z"
+   "createdAt": "2026-11-12T15:29:19.673Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "6a1b080d-7489-4d45-a5bf-cfb8aebe34a0",
@@ -13677,13 +13696,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "comment",
    "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Gracias por el cambio de guardar y comentarios !!!!",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Maca comentó: Gracias por el cambio de guardar y comentarios !!!!",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T15:21:25.930Z"
+   "createdAt": "2026-11-12T15:21:25.930Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "7ae7a048-4f32-479b-ae82-54a3ec792966",
@@ -13708,13 +13728,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "comment",
    "text": "comentó en “10 puntos que revisar antes de comprar tu terreno”: Nos cuentas si sirve alguna canción de la playlist 😘",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Maca comentó: Nos cuentas si sirve alguna canción de la playlist 😘",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T15:19:20.678Z"
+   "createdAt": "2026-11-12T15:19:20.678Z",
+   "readAt": "2026-11-12T22:01:02.201Z"
   },
   {
    "id": "f548255e-8c60-45d7-b28c-fb629020d43f",

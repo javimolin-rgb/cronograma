@@ -12628,13 +12628,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (campaña)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó campaña",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-12T00:42:20.416Z"
+   "createdAt": "2026-11-12T00:42:20.416Z",
+   "readAt": "2026-11-12T15:30:07.403Z"
   },
   {
    "id": "d64ceeca-e799-41ac-9096-841cfbfcb124",
@@ -13366,13 +13367,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (copy, los comentarios de la estructura)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Flavio editó copy, los comentarios de la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-11T15:53:37.838Z"
+   "createdAt": "2026-11-11T15:53:37.838Z",
+   "readAt": "2026-11-12T15:30:07.403Z"
   },
   {
    "id": "32410b79-3127-4f2c-beb1-07bdf9747525",
@@ -21742,6 +21744,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "person": "maca",
+   "at": "2026-11-12T15:30:07.406Z",
+   "hasta": "2026-11-12T00:42:20.413Z",
+   "que": "pieza"
+  },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

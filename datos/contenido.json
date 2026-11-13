@@ -618,8 +618,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-13T15:49:21.104Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-13T16:20:41.986Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
   },
@@ -5323,6 +5323,14 @@
  ],
  "comments": [
   {
+   "id": "5b0acfff-bc0b-4590-9bd2-0691a4b45bfb",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "javi",
+   "text": "@Maca no, no le he preguntado, faltan esas fotos nomás, a menos que encuentres algo que falte corregir",
+   "fileIds": [],
+   "createdAt": "2026-11-13T16:20:41.990Z"
+  },
+  {
    "id": "8b071a51-cd6f-43a2-9bbf-18965d7c674b",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "maca",
@@ -7838,6 +7846,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "67aad8d7-e84d-47a7-8876-70632fe6df96",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-13T16:20:41.994Z"
+  },
   {
    "id": "397eb771-4163-46d0-b9df-24ddfed4701b",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12963,6 +12981,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "47e4a1da-3d13-4054-ab99-56c0d7054555",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: @Maca no, no le he preguntado, faltan esas fotos nomás, a menos que encuentres a…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi comentó: @Maca no, no le he preguntado, faltan esas fotos nomás, a menos que encuentres a…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-13T16:20:41.997Z"
+  },
+  {
+   "id": "252e2a48-294f-4488-8fad-b3d8e04566f0",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "mention",
+   "text": "te mencionó en “Historia: los modelos de casas”: @Maca no, no le he preguntado, faltan esas fotos nomás, a menos que encuentres a…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi te mencionó: @Maca no, no le he preguntado, faltan esas fotos nomás, a menos que encuentres a…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-13T16:20:41.996Z"
+  },
   {
    "id": "89a4f96f-ba55-4914-80a1-d5a1b221a1a3",
    "to": "javi",
@@ -23166,9 +23214,9 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "javi",
-   "at": "2026-11-13T16:20:02.946Z",
-   "hasta": "2026-11-13T15:49:21.104Z",
-   "que": "pieza"
+   "at": "2026-11-13T16:20:41.988Z",
+   "hasta": "2026-11-13T16:20:41.986Z",
+   "que": "comentario"
   },
   {
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|javi",

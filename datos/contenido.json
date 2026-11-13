@@ -618,7 +618,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-13T15:48:35.110Z",
+   "updatedAt": "2026-11-13T15:49:21.104Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
@@ -5323,6 +5323,14 @@
  ],
  "comments": [
   {
+   "id": "8b071a51-cd6f-43a2-9bbf-18965d7c674b",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "maca",
+   "text": "Que más faltaría para dar ok a esta publicación?",
+   "fileIds": [],
+   "createdAt": "2026-11-13T15:49:21.106Z"
+  },
+  {
    "id": "cadb22f9-9553-4872-867e-0073874d75c3",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "maca",
@@ -7830,6 +7838,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "397eb771-4163-46d0-b9df-24ddfed4701b",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-13T15:49:21.106Z"
+  },
   {
    "id": "9254ba12-b5e8-4518-8cda-0d179c127098",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -12945,6 +12963,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "89a4f96f-ba55-4914-80a1-d5a1b221a1a3",
+   "to": "javi",
+   "from": "maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "supervision",
+   "text": "comentó en “Historia: los modelos de casas”: Que más faltaría para dar ok a esta publicación?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Maca comentó: Que más faltaría para dar ok a esta publicación?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-13T15:49:21.107Z"
+  },
+  {
+   "id": "f45b74ce-7c5b-40b8-a0d1-92bd698f047b",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: Que más faltaría para dar ok a esta publicación?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Maca comentó: Que más faltaría para dar ok a esta publicación?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-13T15:49:21.106Z"
+  },
   {
    "id": "673b229a-c73a-499a-a1ad-0d57d31ef92d",
    "to": "javi",
@@ -23060,8 +23108,8 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "maca",
-   "at": "2026-11-13T15:48:35.113Z",
-   "hasta": "2026-11-13T15:48:35.110Z",
+   "at": "2026-11-13T15:49:21.106Z",
+   "hasta": "2026-11-13T15:49:21.104Z",
    "que": "comentario"
   },
   {

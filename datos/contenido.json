@@ -13238,13 +13238,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-12T18:24:51.802Z"
+   "createdAt": "2026-11-12T18:24:51.802Z",
+   "readAt": "2026-11-13T18:29:48.356Z"
   },
   {
    "id": "2b08b907-8965-4fba-9071-ea44032786a5",
@@ -23200,8 +23201,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-12T17:42:56.944Z",
-   "hasta": "2026-11-12T15:29:19.660Z",
+   "at": "2026-11-13T18:29:48.359Z",
+   "hasta": "2026-11-12T18:24:51.799Z",
    "que": "pieza"
   },
   {

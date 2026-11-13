@@ -13006,13 +13006,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "supervision",
    "text": "comentó en “Historia: los modelos de casas”: Flavio anda con ella en terreno. Pregúntale 😉 y éste va con música o no?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Maca comentó: Flavio anda con ella en terreno. Pregúntale 😉 y éste va con música o no?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-13T17:45:56.697Z"
+   "createdAt": "2026-11-13T17:45:56.697Z",
+   "readAt": "2026-11-13T19:46:50.602Z"
   },
   {
    "id": "63e60896-7007-44f8-8cf9-ff60e044697c",
@@ -22986,7 +22987,7 @@
    "version": "2026.11.12-4",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-12T20:13:00.320Z"
+   "lastSeen": "2026-11-13T19:46:50.904Z"
   }
  ],
  "recursos": [

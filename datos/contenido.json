@@ -618,8 +618,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T18:23:33.614Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-13T15:48:35.110Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
   },
@@ -5323,6 +5323,14 @@
  ],
  "comments": [
   {
+   "id": "cadb22f9-9553-4872-867e-0073874d75c3",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "maca",
+   "text": "Hola Javi, la Maca puede saber. Le preguntaste?",
+   "fileIds": [],
+   "createdAt": "2026-11-13T15:48:35.114Z"
+  },
+  {
    "id": "70593a6b-f39d-485b-92b9-1554cdf54833",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "javi",
@@ -7822,6 +7830,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "9254ba12-b5e8-4518-8cda-0d179c127098",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-13T15:48:35.119Z"
+  },
   {
    "id": "e534cc25-58ef-49dd-b7fa-9d5626663d1c",
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
@@ -12927,6 +12945,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "673b229a-c73a-499a-a1ad-0d57d31ef92d",
+   "to": "javi",
+   "from": "maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "supervision",
+   "text": "comentó en “Historia: los modelos de casas”: Hola Javi, la Maca puede saber. Le preguntaste?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Maca comentó: Hola Javi, la Maca puede saber. Le preguntaste?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-13T15:48:35.122Z"
+  },
+  {
+   "id": "29b935ee-8eff-4826-b3fa-2f5f7f9c5ac1",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: Hola Javi, la Maca puede saber. Le preguntaste?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Maca comentó: Hola Javi, la Maca puede saber. Le preguntaste?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-13T15:48:35.121Z"
+  },
   {
    "id": "524c2e58-124b-491a-94ff-64a91dabf01c",
    "to": "flavio",
@@ -23012,9 +23060,9 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "maca",
-   "at": "2026-11-12T17:30:41.582Z",
-   "hasta": "2026-11-12T14:10:46.951Z",
-   "que": "pieza"
+   "at": "2026-11-13T15:48:35.113Z",
+   "hasta": "2026-11-13T15:48:35.110Z",
+   "que": "comentario"
   },
   {
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",

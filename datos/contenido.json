@@ -22550,7 +22550,8 @@
    },
    "createdAt": "2026-10-22T20:38:02.121Z",
    "silenciadas": [
-    "e-fotos-itahue"
+    "e-fotos-itahue",
+    "db10db45-7eea-498b-bef7-0fc0093ab3b8"
    ],
    "seguidas": []
   }
@@ -22775,7 +22776,7 @@
    "version": "2026.11.12-4",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-10-24T21:01:24.671Z",
-   "lastSeen": "2026-11-12T20:14:22.685Z"
+   "lastSeen": "2026-11-13T14:23:10.537Z"
   },
   {
    "id": "d_005f1d53f0f34e1a",

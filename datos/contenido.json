@@ -12970,13 +12970,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "supervision",
    "text": "comentó en “Historia: los modelos de casas”: Que más faltaría para dar ok a esta publicación?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Maca comentó: Que más faltaría para dar ok a esta publicación?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-13T15:49:21.107Z"
+   "createdAt": "2026-11-13T15:49:21.107Z",
+   "readAt": "2026-11-13T16:20:02.945Z"
   },
   {
    "id": "f45b74ce-7c5b-40b8-a0d1-92bd698f047b",
@@ -13000,13 +13001,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "supervision",
    "text": "comentó en “Historia: los modelos de casas”: Hola Javi, la Maca puede saber. Le preguntaste?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Maca comentó: Hola Javi, la Maca puede saber. Le preguntaste?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-13T15:48:35.122Z"
+   "createdAt": "2026-11-13T15:48:35.122Z",
+   "readAt": "2026-11-13T16:20:02.946Z"
   },
   {
    "id": "29b935ee-8eff-4826-b3fa-2f5f7f9c5ac1",
@@ -23164,8 +23166,8 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "javi",
-   "at": "2026-11-13T14:23:09.850Z",
-   "hasta": "2026-11-12T18:23:33.614Z",
+   "at": "2026-11-13T16:20:02.946Z",
+   "hasta": "2026-11-13T15:49:21.104Z",
    "que": "pieza"
   },
   {

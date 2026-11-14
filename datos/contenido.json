@@ -2808,7 +2808,7 @@
    "date": "2026-11-18",
    "inicio": "",
    "format": "story",
-   "status": "revision",
+   "status": "espera",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3243,11 +3243,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-14T17:28:36.015Z",
+   "updatedAt": "2026-11-14T18:33:15.988Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-14T17:28:36.015Z",
+   "statusChangedAt": "2026-11-14T18:33:15.988Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -8113,6 +8113,19 @@
   }
  ],
  "activity": [
+  {
+   "id": "ce71185e-427d-4b4a-9f01-6e6ed25abeeb",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Esperando aprobación",
+   "meta": {
+    "from": "revision",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-14T18:33:15.988Z"
+  },
   {
    "id": "c3c10216-1c0d-431e-bc38-5f7180501084",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -13394,6 +13407,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e77e2029-4b05-41a8-99d5-f6d8b419ec66",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T18:33:15.989Z"
+  },
+  {
+   "id": "47d6bc2b-9573-4cfb-a64f-44a1475aa6ee",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T18:33:15.988Z"
+  },
   {
    "id": "287d5b19-93c0-4561-be2e-a51e09e86f22",
    "to": "flavio",

@@ -2625,7 +2625,7 @@
    "date": "2026-11-18",
    "inicio": "",
    "format": "story",
-   "status": "diseno",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -2650,7 +2650,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v1.webp",
      "sha": "16532d8a0d6282330c553193b2dcb65df3b0a0c7",
      "type": "image/webp",
-     "size": 85778
+     "size": 85778,
+     "orden": 1013
     },
     {
      "id": "f9130570-46bc-4d00-927d-4dbc6df6f120",
@@ -2664,7 +2665,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v1.webp",
      "sha": "92a6299e7579fe11bfefa7ed7739aafe54013e4b",
      "type": "image/webp",
-     "size": 111034
+     "size": 111034,
+     "orden": 1014
     },
     {
      "id": "13375c22-84ce-4c0d-95f1-b954c75f7abe",
@@ -2678,7 +2680,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v1.webp",
      "sha": "ebc107012e6835d6d1e903800e52da938b1e6b2f",
      "type": "image/webp",
-     "size": 107798
+     "size": 107798,
+     "orden": 1015
     },
     {
      "id": "f4538125-0fdd-4810-a030-ebde63af624e",
@@ -2692,7 +2695,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-1-v1.jpg",
      "sha": "8d66a9c1f61a72ca1b0dcd3b936c6007be858b4d",
      "type": "image/jpeg",
-     "size": 260083
+     "size": 260083,
+     "orden": 10
     },
     {
      "id": "0b0d7516-097e-4b2b-b995-6aefba8caf8b",
@@ -2706,7 +2710,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-3-v1.jpg",
      "sha": "34835f5f762ca4c73b50e903a1b09c929d2d1cf4",
      "type": "image/jpeg",
-     "size": 277451
+     "size": 277451,
+     "orden": 9
     },
     {
      "id": "b1fdffab-6173-49cb-91cd-86c422923f39",
@@ -2720,7 +2725,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-5-v1.jpg",
      "sha": "8b2e4de7142eee472f2fe9b2cf42e208a920ebd0",
      "type": "image/jpeg",
-     "size": 279329
+     "size": 279329,
+     "orden": 1016
     },
     {
      "id": "2d701d6a-9443-4a12-b3f0-3a5da652075b",
@@ -2734,7 +2740,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v2.webp",
      "sha": "c58fe1ab2181fcd23fa45ce9dd9a36b5792dff60",
      "type": "image/webp",
-     "size": 97992
+     "size": 97992,
+     "orden": 1017
     },
     {
      "id": "340ab011-a227-449f-a804-7c60fb34478d",
@@ -2748,7 +2755,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v2.webp",
      "sha": "0332ea440118607b735c22245f4030d6f4ff81f8",
      "type": "image/webp",
-     "size": 110296
+     "size": 110296,
+     "orden": 1018
     },
     {
      "id": "f5011bbd-ca29-4d72-91c3-cb59fe323dc6",
@@ -2762,7 +2770,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v2.webp",
      "sha": "ac7d926c99d67129f64d745fd4384ed046e4a26e",
      "type": "image/webp",
-     "size": 117964
+     "size": 117964,
+     "orden": 1019
     },
     {
      "id": "2456e684-ef16-419a-a99b-3f973e9a695d",
@@ -2776,7 +2785,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v3.webp",
      "sha": "6914bdfb438332cb4628e2c46125540095213453",
      "type": "image/webp",
-     "size": 96964
+     "size": 96964,
+     "orden": 1020
     },
     {
      "id": "ddbd6f46-4a39-46a7-8d6d-2a9d4e919622",
@@ -2790,7 +2800,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v3.webp",
      "sha": "0834df4159507cc09d4a8dee480aebdb4c7612e8",
      "type": "image/webp",
-     "size": 109524
+     "size": 109524,
+     "orden": 1021
     },
     {
      "id": "b7003560-57d8-45ad-b344-8e3adb6c079d",
@@ -2804,7 +2815,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v3.webp",
      "sha": "3af1f1fb2a4b3a149b2b127995e60c478a3a3855",
      "type": "image/webp",
-     "size": 117144
+     "size": 117144,
+     "orden": 1022
     },
     {
      "id": "ae0f1091-d55a-424d-88ff-73ed20c2b256",
@@ -2818,7 +2830,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v4.webp",
      "sha": "4ec442f600265a7f79f9878bf551a6f2c762dee4",
      "type": "image/webp",
-     "size": 96900
+     "size": 96900,
+     "orden": 1023
     },
     {
      "id": "d4dcc3d0-96bc-41c0-a4db-3f1c018645a2",
@@ -2832,7 +2845,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v4.webp",
      "sha": "a518afb84768fb43bee4d52fbdad0ae2bad9d886",
      "type": "image/webp",
-     "size": 109792
+     "size": 109792,
+     "orden": 1024
     },
     {
      "id": "f129e8fe-4409-446c-8f0d-ecf040d9f99d",
@@ -2846,7 +2860,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v4.webp",
      "sha": "f91d900c5ffc9bb99c3cd4be7fda09c3b5694868",
      "type": "image/webp",
-     "size": 117570
+     "size": 117570,
+     "orden": 1025
     },
     {
      "id": "b816749c-bf30-421a-9264-a932e1c5cc83",
@@ -2860,7 +2875,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v5.webp",
      "sha": "cefdaf51b948d57926bdbf360c457e57eb12c09f",
      "type": "image/webp",
-     "size": 97472
+     "size": 97472,
+     "orden": 1026
     },
     {
      "id": "03ee43a1-8630-4e31-95dd-e3d0b169063d",
@@ -2874,7 +2890,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-v5.webp",
      "sha": "008cd084849cd7e98b89c7f619fc87957e34372e",
      "type": "image/webp",
-     "size": 111014
+     "size": 111014,
+     "orden": 8
     },
     {
      "id": "5468eed2-46d5-44dc-bf6c-cef80c877ce1",
@@ -2888,7 +2905,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-v5.webp",
      "sha": "9b582dc13265a3801b991c0cb6fe79ba7d10b6a7",
      "type": "image/webp",
-     "size": 118646
+     "size": 118646,
+     "orden": 7
     },
     {
      "id": "f5ca4c23-a809-4781-9e34-fe4e416eeb6c",
@@ -2902,7 +2920,9 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/atras-v6.webp",
      "sha": "6f7ac8472a3c7bc28c2206a03be69d43cc4e5231",
      "type": "image/webp",
-     "size": 97488
+     "size": 97488,
+     "extra": true,
+     "orden": 6
     },
     {
      "id": "7aba207d-f3b9-4790-8a7c-743223c38e2a",
@@ -2919,7 +2939,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/reel_casa_boldo-v1.mp4",
      "sha": "c8bc3e460afe55bc2e91b1bcee4f4e11bbcd97f2",
      "type": "video/mp4",
-     "size": 8429208
+     "size": 8429208,
+     "orden": 1027
     },
     {
      "id": "12ef978d-d9be-481e-800c-7cff7d7dcf5d",
@@ -2936,7 +2957,8 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/reel_casa_boldo-v2.mp4",
      "sha": "119922fb62fba9ef5ff2b0991378401fc2e855ea",
      "type": "video/mp4",
-     "size": 7348165
+     "size": 7348165,
+     "orden": 5
     },
     {
      "id": "caf7628a-cffa-4f45-b1cd-e47f28158bca",
@@ -2950,7 +2972,9 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-4-v1.jpeg",
      "sha": "794fe779d4fbfbb4d6a8820e32d93b43ffd9aa58",
      "type": "image/jpeg",
-     "size": 258409
+     "size": 258409,
+     "extra": true,
+     "orden": 4
     },
     {
      "id": "66213d8b-d382-473b-9082-f2ccb2d5e2d4",
@@ -2964,7 +2988,9 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-5-v2.jpeg",
      "sha": "ce799527d0e6c2b6a50934a8ab0e6710b6772d0b",
      "type": "image/jpeg",
-     "size": 190482
+     "size": 190482,
+     "extra": true,
+     "orden": 3
     },
     {
      "id": "8b557210-0495-4ffd-950f-91624b614864",
@@ -2978,7 +3004,9 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-6-v1.jpeg",
      "sha": "822170b2dfb9d0c7cc79a07cc71959abb4e0bbc1",
      "type": "image/jpeg",
-     "size": 267784
+     "size": 267784,
+     "extra": true,
+     "orden": 2
     },
     {
      "id": "d56d8c59-6a0c-4d0e-9e2e-81e2c84b2889",
@@ -2992,7 +3020,9 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-7-v1.jpeg",
      "sha": "2264b3d256506245a92635d5f27801487c8ca376",
      "type": "image/jpeg",
-     "size": 242548
+     "size": 242548,
+     "extra": true,
+     "orden": 1
     },
     {
      "id": "45e49f1b-99cd-492e-806d-18bb49fb5076",
@@ -3006,15 +3036,35 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/casa-boldo-8-v1.jpeg",
      "sha": "7ccc846041c78a72492755cdf817fc5c8f074f21",
      "type": "image/jpeg",
-     "size": 254692
+     "size": 254692,
+     "extra": true,
+     "orden": 0
+    },
+    {
+     "id": "36fe31b0-be79-43cc-9423-2984013b23cd",
+     "by": "javi",
+     "at": "2026-11-14T17:28:28.047Z",
+     "base": "reel_casa_boldo-1",
+     "version": 1,
+     "shaOrigen": "5289db18c23691271a0764c953cb9483061ee598",
+     "dur": 45.299,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_boldo-1-v1.mp4",
+     "path": "archivos/modelos/reel_casa_boldo-1-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/reel_casa_boldo-1-v1.mp4",
+     "sha": "5289db18c23691271a0764c953cb9483061ee598",
+     "type": "video/mp4",
+     "size": 9374180,
+     "orden": 11
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-12T18:24:51.799Z",
+   "updatedAt": "2026-11-14T17:28:36.015Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-12T18:24:51.799Z",
+   "statusChangedAt": "2026-11-14T17:28:36.015Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -7872,6 +7922,39 @@
   }
  ],
  "activity": [
+  {
+   "id": "6e5bfdd4-d811-41f8-b41e-83d117c393bd",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-14T17:28:36.020Z"
+  },
+  {
+   "id": "b8d571fe-77a7-4352-80f1-70b161b23f45",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-14T17:28:36.019Z"
+  },
+  {
+   "id": "fb7d4f6f-6669-4f4d-8f59-b1d41a02886b",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En diseño a En revisión",
+   "meta": {
+    "from": "diseno",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-14T17:28:36.017Z"
+  },
   {
    "id": "e2ed4bba-62f5-46a7-a795-7559e64efbe1",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -13037,6 +13120,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d0d22637-77fe-4255-b64b-4a97ac861e46",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Boldo” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi subió 1 archivo para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T17:28:36.020Z"
+  },
+  {
+   "id": "6dcac1b4-9325-4dcb-993a-e45c06173e13",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Boldo” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi subió 1 archivo para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T17:28:36.020Z"
+  },
+  {
+   "id": "aa4fc99d-c0df-4d15-bfb8-787895efc72c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T17:28:36.019Z"
+  },
+  {
+   "id": "753ec64f-1c8b-4284-ae35-ab7ce6fc230f",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T17:28:36.019Z"
+  },
+  {
+   "id": "3cb0c308-0dbb-4ef8-9f78-a8618f2c6169",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T17:28:36.018Z"
+  },
+  {
+   "id": "d64e453f-a4cc-4eab-ab5e-3228b5ba64ac",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-14T17:28:36.018Z"
+  },
   {
    "id": "c18b17ea-6924-4788-b5d1-0ebcaab715a1",
    "to": "javi",

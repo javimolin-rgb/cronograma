@@ -13044,13 +13044,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "supervision",
    "text": "comentó en “Historia: los modelos de casas”: Déjalas sin música entonces, como lo habías pensado 😘",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Maca comentó: Déjalas sin música entonces, como lo habías pensado 😘",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T01:24:25.948Z"
+   "createdAt": "2026-11-14T01:24:25.948Z",
+   "readAt": "2026-11-14T17:14:37.505Z"
   },
   {
    "id": "845d8336-2977-49e4-8b7a-7bd91de26038",
@@ -23371,9 +23372,9 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "javi",
-   "at": "2026-11-13T19:48:32.709Z",
-   "hasta": "2026-11-13T19:48:32.706Z",
-   "que": "comentario"
+   "at": "2026-11-14T17:14:37.507Z",
+   "hasta": "2026-11-14T01:24:25.931Z",
+   "que": "pieza"
   },
   {
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|javi",

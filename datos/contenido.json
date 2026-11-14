@@ -8114,6 +8114,16 @@
  ],
  "activity": [
   {
+   "id": "7ee2d948-8c8f-4de0-a988-28a151b9a42c",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: está esperando tu respuesta",
+   "meta": null,
+   "createdAt": "2026-11-14T19:08:29.036Z"
+  },
+  {
    "id": "0efc7a26-b82e-4a1b-840d-fb9822621679",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13420,6 +13430,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a5702b41-7597-4945-8d60-2e102b6575e1",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Historia: los modelos de casas”: está esperando tu respuesta",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi está esperando tu respuesta",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-14T19:08:29.035Z"
+  },
   {
    "id": "7cb13ccb-2099-4405-9eb5-df6763c9cdf6",
    "to": "flavio",

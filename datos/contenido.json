@@ -281,7 +281,7 @@
    "date": "2026-11-14",
    "inicio": "",
    "format": "story",
-   "status": "revision",
+   "status": "espera",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -711,9 +711,9 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-14T17:54:50.740Z",
+   "updatedAt": "2026-11-14T18:02:35.614Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-11T23:53:17.530Z",
+   "statusChangedAt": "2026-11-14T18:02:35.614Z",
    "publishedAt": null
   },
   {
@@ -8016,6 +8016,19 @@
  ],
  "activity": [
   {
+   "id": "26e25dad-6b48-4cf1-94ed-54ea8dbdda27",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Esperando aprobación",
+   "meta": {
+    "from": "revision",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-14T18:02:35.614Z"
+  },
+  {
    "id": "32db4db9-65fd-49d2-aee7-9a17297ade8b",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "postTitle": "Historia: los modelos de casas",
@@ -13253,6 +13266,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "041771cf-f37f-4554-b10f-b09b15cbab21",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "status",
+   "text": "movió “Historia: los modelos de casas” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-14T18:02:35.616Z"
+  },
+  {
+   "id": "9a234b01-4e18-44c3-8ead-f5683b96327a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "status",
+   "text": "movió “Historia: los modelos de casas” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-14T18:02:35.615Z"
+  },
   {
    "id": "73ed36b0-a0c6-4610-b37f-0b8b1661bfab",
    "to": "flavio",
@@ -23529,10 +23572,10 @@
    "tipo": "pc",
    "instalada": true,
    "push": true,
-   "version": "2026.11.12-4",
+   "version": "2026.11.14-1",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-13T19:46:50.904Z"
+   "lastSeen": "2026-11-14T18:02:30.747Z"
   }
  ],
  "recursos": [

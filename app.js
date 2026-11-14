@@ -637,7 +637,7 @@ async function changeStatus(id, status) {
 }
 
 /* ---------- vistas: piezas ---------- */
-const isStalled = (p) => ['estructura', 'diseno', 'revision', 'cambios'].includes(p.status) && daysSince(p.statusChangedAt || p.updatedAt || nowISO()) >= 3;
+const isStalled = (p) => ['estructura', 'diseno', 'revision', 'cambios', 'espera'].includes(p.status) && daysSince(p.statusChangedAt || p.updatedAt || nowISO()) >= 3;
 const av = (pid, cls = '') => { const p = person(pid); return `<span class="av ${cls}" style="--c:${p.color}" title="${esc(p.name)}">${esc(p.name[0])}</span>`; };
 const platBadge = (id) => { const p = platOf(id); return `<span class="plat" style="--c:${p.color}">${esc(p.short)}</span>`; };
 const sortPosts = (a, b) => ((a.date || '9999') + (a.time || '99:99') + a.title).localeCompare((b.date || '9999') + (b.time || '99:99') + b.title);
@@ -1481,7 +1481,7 @@ function viewFeed() {
   const f = S.feedFiltro;
   const piezas = filtered(true)
     .filter((p) => p.status !== 'idea' || p.files.length)
-    .filter((p) => f === 'todo' || (f === 'revisar' ? ['diseno', 'revision', 'cambios'].includes(p.status) : f === 'aprobado' ? ['aprobado', 'programado'].includes(p.status) : p.status === 'publicado'))
+    .filter((p) => f === 'todo' || (f === 'revisar' ? ['diseno', 'revision', 'cambios', 'espera'].includes(p.status) : f === 'aprobado' ? ['aprobado', 'programado'].includes(p.status) : p.status === 'publicado'))
     .map((p) => ({ p, t: ultimaActividad(p) }))
     .sort((a, b) => b.t.localeCompare(a.t));
   const head = `<div class="feedtop">
@@ -2585,10 +2585,10 @@ function viewDash() {
   const pct = month.length ? Math.round((mPub / month.length) * 100) : 0;
   const overdue = all.filter((p) => p.date && p.date < t && p.status !== 'publicado').sort(sortPosts);
   const week = all.filter((p) => p.date && p.date >= t && p.date <= addDays(t, 6) && p.status !== 'publicado');
-  const review = all.filter((p) => p.status === 'revision' || p.status === 'cambios');
+  const review = all.filter((p) => ['revision', 'cambios', 'espera'].includes(p.status));
   const stalled = all.filter(isStalled);
   const unassigned = all.filter((p) => !p.assignees.length && p.status !== 'publicado');
-  const noFile = all.filter((p) => ['revision', 'aprobado', 'programado'].includes(p.status) && !p.files.length);
+  const noFile = all.filter((p) => ['revision', 'espera', 'aprobado', 'programado'].includes(p.status) && !p.files.length);
   const pubs = all.filter((p) => p.status === 'publicado' && p.publishedAt);
   const onTime = pubs.length ? Math.round((pubs.filter((p) => !p.date || ymd(new Date(p.publishedAt)) <= p.date).length / pubs.length) * 100) : null;
   const cycle = pubs.length ? (pubs.reduce((a, p) => a + (new Date(p.publishedAt) - new Date(p.createdAt)) / 864e5, 0) / pubs.length).toFixed(1) : null;
@@ -2621,7 +2621,7 @@ function viewDash() {
     <div class="kpi wide"><small>Publicado este mes</small><b>${mPub} <span>de ${month.length} planificadas</span></b><div class="meter"><i style="width:${pct}%"></i></div></div>
     <div class="kpi ${overdue.length ? 'bad' : ''}"><small>Atrasadas</small><b>${overdue.length}</b><span>pasaron su fecha</span></div>
     <div class="kpi"><small>Próximos 7 días</small><b>${week.length}</b><span>por publicar</span></div>
-    <div class="kpi"><small>En revisión / cambios</small><b>${review.length}</b><span>esperando feedback</span></div>
+    <div class="kpi"><small>Esperando respuesta</small><b>${review.length}</b><span>en revisión, cambios o aprobación</span></div>
     <div class="kpi"><small>Estancadas</small><b>${stalled.length}</b><span>≥ 3 días sin avanzar</span></div>
   </div>
 
@@ -4011,6 +4011,9 @@ function openAviso() {
     };
   }
   const A = ED.aviso;
+  /* Si la pieza venía de “Cambios”, el aviso es “ya lo arreglé”: queda esperando
+     aprobación. En cualquier otro caso, lo que corresponde es pasarla a revisión. */
+  A.destino = d.status === 'cambios' ? 'espera' : 'revision';
   const panel = $('#panel');
   let c = $('#avisocapa');
   if (!c) { c = document.createElement('div'); c.id = 'avisocapa'; panel.appendChild(c); }
@@ -4022,7 +4025,7 @@ function openAviso() {
       <p class="hint">${otros.map((x) => `${esc(x.name)}: ${recibeEnCelular(x.id) ? 'le llega al celular 🔔' : 'solo lo verá en la campana de la app (no activó las notificaciones)'}`).join('<br>')}</p>
       <label class="lbl">Mensaje <small>opcional</small></label>
       <textarea class="area" id="aviso-msg" style="min-height:80px" placeholder="Ej. Subí la versión con los cambios de la foto 2">${esc(A.msg)}</textarea>
-      ${d.status !== 'revision' ? `<label class="imppend" style="color:var(--ink)"><input type="checkbox" id="aviso-rev"${A.revision ? ' checked' : ''}> Pasar la pieza a “En revisión”</label>` : ''}
+      ${d.status !== A.destino ? `<label class="imppend" style="color:var(--ink)"><input type="checkbox" id="aviso-rev"${A.revision ? ' checked' : ''}> Pasar la pieza a “${esc(statusOf(A.destino).name)}”</label>` : ''}
       <p class="hint">${ED.old ? 'Al enviar se guardan también los cambios de la pieza.' : 'Al enviar se crea la pieza.'} Este aviso llega aunque hayan apagado los avisos de “editan contenido”.</p>
     </div>
     <div class="pf"><button class="btn ghost" data-act="aviso-cerrar">Cancelar</button><button class="btn" data-act="aviso-enviar">${ic('send', 17)} Enviar aviso</button></div>
@@ -4044,7 +4047,7 @@ async function enviarAviso() {
   try {
     // 1) se guarda la pieza (con los archivos recién subidos) y, si se pidió, pasa a revisión
     d.title = d.title.trim();
-    if (A.revision && d.status !== 'revision') d.status = 'revision';
+    if (A.revision && d.status !== A.destino) d.status = A.destino;
     A.para.forEach((x) => { if (!d.assignees.includes(x)) d.assignees.push(x); });
     await commitPost(ED.old, d);
     // 2) el aviso directo, al celular y a la campana
@@ -4460,7 +4463,7 @@ function candidatas(msgs) {
     if (pts && propias.length && !propias.some((w) => dichas.has(w))) pts *= 0.6;
     if (pts && formatos.size && !formatos.has(p.format)) pts *= 0.35;
     if (pts && pideNueva) pts *= 0.4;
-    if (pts && ['diseno', 'revision', 'cambios', 'aprobado', 'idea'].includes(p.status)) pts *= 1.25; // lo que está en curso
+    if (pts && ['diseno', 'revision', 'cambios', 'espera', 'aprobado', 'idea'].includes(p.status)) pts *= 1.25; // lo que está en curso
     if (pts && ahora - new Date(p.updatedAt || 0).getTime() < 7 * 864e5) pts *= 1.1;                // y lo reciente
     return { post: p, pts };
   }).filter((x) => x.pts > 0).sort((a, b) => b.pts - a.pts);

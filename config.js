@@ -76,6 +76,7 @@ window.CRONO_CONFIG = {
     { id: "diseno",     name: "En diseño",   color: "#3E6FEF" },
     { id: "revision",   name: "En revisión", color: "#D37E01" },
     { id: "cambios",    name: "Cambios",     color: "#BE2327" },
+    { id: "espera",     name: "Esperando aprobación", color: "#DB3A9B" },
     { id: "aprobado",   name: "Aprobado",    color: "#47AA62" },
     { id: "programado", name: "Programado",  color: "#01A2C5" },
     { id: "publicado",  name: "Publicado",   color: "#03734A" }

@@ -253,7 +253,7 @@ Entre **Idea** y **En diseño** hay un paso más: **Estructura por aprobar**. Es
 
 ## Los colores de los estados
 
-Los ocho estados tienen ahora **un color por familia de tono**, elegidos para que se distingan de verdad —el morado y el gris de antes se parecían demasiado—:
+Los nueve estados tienen ahora **un color por familia de tono**, elegidos para que se distingan de verdad —el morado y el gris de antes se parecían demasiado—:
 
 | Estado | Color |
 |---|---|
@@ -262,9 +262,12 @@ Los ocho estados tienen ahora **un color por familia de tono**, elegidos para qu
 | En diseño | azul |
 | En revisión | ámbar |
 | Cambios | rojo |
+| Esperando aprobación | magenta |
 | Aprobado | verde |
 | Programado | celeste |
 | Publicado | verde oscuro |
+
+**Esperando aprobación** es el estado que va entre *Cambios* y *Aprobado*: ya hiciste lo que te pidieron y la pieza queda esperando el visto bueno. Cuenta como “Por revisar” en el Feed, suma en *Esperando respuesta* del Panel y, si pasan tres días sin moverse, aparece en *Estancadas*. Cuando mandas el aviso de “Avisar para revisar” desde una pieza que estaba en *Cambios*, la casilla ya ofrece pasarla a *Esperando aprobación* en vez de a *En revisión*.
 
 No es a ojo: la paleta está medida con el validador de color (distancia ΔE de OKLab). Entre **todos** los pares hay ≥ 15 de diferencia a vista normal —antes el peor par, morado contra azul, tenía 5,5— y ≥ 7 simulando daltonismo, con todos los tonos dentro de la claridad que se ve bien tanto en modo claro como en oscuro. Donde el color va solo (los puntitos del calendario) siempre está además el nombre del estado al abrir el día.
 
@@ -384,7 +387,7 @@ En la vista de resultado, cada entrega tiene **Copiar texto**: así Flavio o Mac
 
 Igual que al subir archivos: apenas cambias el **copy**, el **título** o el **guión** de una pieza ya guardada, aparece la barra *“Cambiaste el texto de la pieza. ¿Les avisas para que lo revisen?”* con el botón **Avisar**.
 
-Ese aviso guarda la pieza, puede pasarla a *En revisión* y manda una notificación directa —al celular y a la campana— que dice qué cambió: “cambió el copy en «Pilotes» para revisar”, o “subió 2 archivos y cambió el copy…” si hiciste las dos cosas. Llega aunque tengan apagados los avisos de “editan contenido”. Las notas internas no cuentan: son tuyas.
+Ese aviso guarda la pieza, puede pasarla a *En revisión* (o a *Esperando aprobación*, si venía de *Cambios*) y manda una notificación directa —al celular y a la campana— que dice qué cambió: “cambió el copy en «Pilotes» para revisar”, o “subió 2 archivos y cambió el copy…” si hiciste las dos cosas. Llega aunque tengan apagados los avisos de “editan contenido”. Las notas internas no cuentan: son tuyas.
 
 ## Versiones del copy y los textos
 
@@ -629,7 +632,7 @@ Al elegir **Javi** en *¿Quién eres?* la app pide la contraseña. Queda recorda
 
 ## Avisar para revisar (solo Javi)
 
-Al subir archivos a una pieza aparece *“Subiste N archivos. ¿Les avisas para que lo revisen?”* → **Avisar** (también está el botón de avión de papel abajo, en cualquier pieza). Eliges a quién (por defecto Flavio y Maca), escribes un mensaje si quieres y, si corresponde, la pieza pasa a **En revisión**. Al enviar se guarda la pieza y les llega una notificación directa *“Para revisar”* al celular y a la campana, aunque tengan apagados los avisos de “editan contenido”. La pantalla muestra a quién le llega al celular y a quién solo en la app (si no activó las notificaciones).
+Al subir archivos a una pieza aparece *“Subiste N archivos. ¿Les avisas para que lo revisen?”* → **Avisar** (también está el botón de avión de papel abajo, en cualquier pieza). Eliges a quién (por defecto Flavio y Maca), escribes un mensaje si quieres y, si corresponde, la pieza pasa a **En revisión** —o a **Esperando aprobación**, si venía de *Cambios*: ahí el aviso es “ya lo arreglé”—. Al enviar se guarda la pieza y les llega una notificación directa *“Para revisar”* al celular y a la campana, aunque tengan apagados los avisos de “editan contenido”. La pantalla muestra a quién le llega al celular y a quién solo en la app (si no activó las notificaciones).
 
 ## Dispositivos (solo Javi)
 

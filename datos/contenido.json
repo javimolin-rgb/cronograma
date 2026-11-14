@@ -2711,7 +2711,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-14T18:30:22.067Z",
+   "updatedAt": "2026-11-14T18:33:00.489Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -5556,6 +5556,14 @@
  ],
  "comments": [
   {
+   "id": "18faf0bc-f911-477c-8778-5a86ceff9f60",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "javi",
+   "text": "@Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se ve lo suficiente \"maitencillo\" o cualquier ajuste, necesito que seas mucho mas precisa; como te comenté ajustar cosas en los renders toma muchísimo tiempo y si trato de achuntarle a lo que te refieres puede que no terminemos nunca jaja",
+   "fileIds": [],
+   "createdAt": "2026-11-14T18:33:00.489Z"
+  },
+  {
    "id": "53c8dc8d-b66a-4650-b40e-2b1ab6bc8a32",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "author": "maca",
@@ -8105,6 +8113,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c3c10216-1c0d-431e-bc38-5f7180501084",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-14T18:33:00.493Z"
+  },
   {
    "id": "475f7325-e77d-465a-9617-16981d376612",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -13376,6 +13394,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "287d5b19-93c0-4561-be2e-a51e09e86f22",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: @Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi comentó: @Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-14T18:33:00.493Z"
+  },
+  {
+   "id": "6fceb44a-b884-436a-9c3d-ea74121accf5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "mention",
+   "text": "te mencionó en “Casa Mañío”: @Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi te mencionó: @Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-14T18:33:00.493Z"
+  },
   {
    "id": "02a5166d-717e-4bfd-8f69-23e5a4af21ec",
    "to": "maca",
@@ -24008,9 +24056,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "javi",
-   "at": "2026-11-14T18:29:50.117Z",
-   "hasta": "2026-11-12T17:53:55.375Z",
-   "que": "pieza"
+   "at": "2026-11-14T18:33:00.489Z",
+   "hasta": "2026-11-14T18:33:00.489Z",
+   "que": "comentario"
   },
   {
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",

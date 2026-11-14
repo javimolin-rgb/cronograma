@@ -226,7 +226,7 @@ Ahora la app lo dice en claro:
 
 Para cuando hace falta de verdad y no se puede esperar. Dentro de una pieza, arriba a la derecha, está el **rayo ⚡**.
 
-- Se elige **a quién** (Flavio, Maca o los dos) y **qué decir**: hay cuatro frases listas —*“está esperando tu respuesta”*, *“necesita que revises esto hoy”*, *“te está esperando para poder seguir”*, *“necesita esto con urgencia”*— o se escribe cualquier otra cosa.
+- Se elige **a quién** (Flavio, Maca o los dos) y **qué decir**: hay cinco frases listas —*“está esperando tu respuesta”*, *“está esperando tu aprobación para poder publicar”*, *“necesita que revises esto hoy”*, *“te está esperando para poder seguir”*, *“necesita esto con urgencia”*— o se escribe cualquier otra cosa.
 - Abajo se ve **tal cual le va a llegar** al celular antes de mandarlo.
 - Llega como una notificación **aparte de las demás**: no se junta con los otros avisos de esa pieza, vibra distinto y **se queda en la pantalla** hasta que la tocan. Llega aunque tengan apagados los avisos de esa pieza.
 - En la campana de la app queda marcada con un **⚡** y una raya al costado.

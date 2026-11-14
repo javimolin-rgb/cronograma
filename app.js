@@ -4080,6 +4080,7 @@ async function enviarAviso() {
    avisos de esa pieza, así que se usa solo cuando de verdad hace falta. */
 const ZUMBIDOS = [
   'está esperando tu respuesta',
+  'está esperando tu aprobación para poder publicar',
   'necesita que revises esto hoy',
   'te está esperando para poder seguir',
   'necesita esto con urgencia'

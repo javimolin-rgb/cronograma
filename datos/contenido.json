@@ -13041,13 +13041,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "mention",
    "text": "te mencionó en “Historia: los modelos de casas”: @Maca Si si le escribí pero por lo mismo no ha podido mandarme nada. estas no la…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi te mencionó: @Maca Si si le escribí pero por lo mismo no ha podido mandarme nada. estas no la…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-13T19:48:32.710Z"
+   "createdAt": "2026-11-13T19:48:32.710Z",
+   "readAt": "2026-11-14T01:22:49.355Z"
   },
   {
    "id": "58025a52-b4c7-4021-a5c3-ac8924e66060",
@@ -23260,8 +23261,8 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "maca",
-   "at": "2026-11-13T18:29:36.523Z",
-   "hasta": "2026-11-13T17:45:56.687Z",
+   "at": "2026-11-14T01:22:49.359Z",
+   "hasta": "2026-11-13T19:48:32.706Z",
    "que": "pieza"
   },
   {

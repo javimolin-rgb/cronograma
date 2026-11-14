@@ -309,7 +309,7 @@
      "sha": "5ef52bb38bba948d23615c962ee34b71b3dd0389",
      "type": "image/webp",
      "size": 295116,
-     "orden": 1017
+     "orden": 1014
     },
     {
      "id": "5d305005-251d-4e0f-9527-0092bc5a1b8a",
@@ -324,7 +324,7 @@
      "sha": "5018d00d22b566a489f0116535124f63d4db2bcb",
      "type": "image/webp",
      "size": 282630,
-     "orden": 1018
+     "orden": 1015
     },
     {
      "id": "aa8c54fb-a3c1-4399-b613-9a0368f5671a",
@@ -339,7 +339,7 @@
      "sha": "e3fec84a748e092aff2508f66ae4e23eb2e6f948",
      "type": "image/webp",
      "size": 202040,
-     "orden": 1019
+     "orden": 1016
     },
     {
      "id": "82000a14-4a3b-4646-a0fa-1bbb7279859a",
@@ -354,7 +354,7 @@
      "sha": "c6bc4b284e339ba3757998ef45db337341e4370c",
      "type": "image/webp",
      "size": 153926,
-     "orden": 1020
+     "orden": 1017
     },
     {
      "id": "e05cec2e-d7cc-496b-b70c-2f75df9fcf05",
@@ -369,7 +369,7 @@
      "sha": "6ca8e944116487d043e7aa61fbc63b3e6770b6a4",
      "type": "image/webp",
      "size": 243364,
-     "orden": 1021
+     "orden": 1018
     },
     {
      "id": "6d1df9e2-eb76-4cea-8629-f059823ade9a",
@@ -384,7 +384,7 @@
      "sha": "23f6f45c65e816381cab2beb442ed702ed60f60b",
      "type": "image/webp",
      "size": 220710,
-     "orden": 1022
+     "orden": 1019
     },
     {
      "id": "57a182a2-06f9-4f2e-9c64-30d4ef0d6114",
@@ -399,7 +399,7 @@
      "sha": "e63eb903e53481549ef4d8d5b8b64840df92e4c1",
      "type": "image/webp",
      "size": 265248,
-     "orden": 1023
+     "orden": 1020
     },
     {
      "id": "f2b2e5f7-7185-4d3a-9663-dc4e31b7ab3d",
@@ -414,7 +414,7 @@
      "sha": "02abba8976334bcc3d0d764a685089752447e65b",
      "type": "image/webp",
      "size": 267870,
-     "orden": 1024
+     "orden": 1021
     },
     {
      "id": "58d7fac7-9d6c-41ee-b041-d9cf861df9b4",
@@ -429,7 +429,7 @@
      "sha": "4f09d890cd8b0a74c9df8bb86f266710dc2b9050",
      "type": "image/webp",
      "size": 319886,
-     "orden": 1025
+     "orden": 1022
     },
     {
      "id": "2b15b4f3-1907-4caa-8812-2baff1537ac8",
@@ -489,7 +489,7 @@
      "sha": "a499d8a4cc928c019534e6268dcbabef09aaa068",
      "type": "image/webp",
      "size": 156258,
-     "orden": 3
+     "orden": 1023
     },
     {
      "id": "33b568d5-ac0a-476d-a279-b2686c2d192e",
@@ -504,7 +504,7 @@
      "sha": "62dedcf83d8371befe64f99ed2cc3c1586775f81",
      "type": "image/webp",
      "size": 246200,
-     "orden": 4
+     "orden": 3
     },
     {
      "id": "83f926c2-6419-47a9-9c4d-0f942fa59903",
@@ -519,7 +519,7 @@
      "sha": "3aebfb5520dfad134950bd613c2ddc4580d442ba",
      "type": "image/webp",
      "size": 189486,
-     "orden": 5
+     "orden": 1024
     },
     {
      "id": "c3a25fb4-352a-4f44-a26f-84e72aa61344",
@@ -534,7 +534,7 @@
      "sha": "285435f35a55762e968a81abec7f6e317fb9fc26",
      "type": "image/webp",
      "size": 286572,
-     "orden": 6
+     "orden": 4
     },
     {
      "id": "a3629739-7df4-491b-b012-61fbb6771449",
@@ -549,7 +549,7 @@
      "sha": "9f59cab188b2a44889e6888e60cce407205896d5",
      "type": "image/webp",
      "size": 270090,
-     "orden": 7
+     "orden": 1025
     },
     {
      "id": "64b4752a-4914-474e-a474-6b24e6c84b6c",
@@ -564,7 +564,7 @@
      "sha": "63391fe9ed1562e233cc23751ba0c815b622de93",
      "type": "image/webp",
      "size": 317834,
-     "orden": 8
+     "orden": 1026
     },
     {
      "id": "e17cfc8b-3182-4da9-9432-42e724f3f4ca",
@@ -580,7 +580,7 @@
      "type": "image/webp",
      "size": 316526,
      "extra": true,
-     "orden": 9
+     "orden": 5
     },
     {
      "id": "e3771cc1-1de9-4eb5-b2bc-7f10eecc9c63",
@@ -596,7 +596,7 @@
      "type": "image/webp",
      "size": 261100,
      "extra": true,
-     "orden": 10
+     "orden": 6
     },
     {
      "id": "23dc60ff-2cb9-4474-9d56-324636189015",
@@ -612,7 +612,7 @@
      "type": "image/webp",
      "size": 140822,
      "extra": true,
-     "orden": 11
+     "orden": 7
     },
     {
      "id": "847d6e1d-5c03-4249-88d6-37e60186cb7f",
@@ -627,7 +627,7 @@
      "sha": "5fa1afadb73a894da6077b3556e89df125cbb17a",
      "type": "image/webp",
      "size": 230766,
-     "orden": 12
+     "orden": 8
     },
     {
      "id": "1606ec6b-5117-4d76-8b32-e888c35dadc1",
@@ -642,7 +642,7 @@
      "sha": "20705eada3e8fb8ea30a2634b2698db66a99cdbc",
      "type": "image/webp",
      "size": 248748,
-     "orden": 13
+     "orden": 9
     },
     {
      "id": "1003178d-4aa8-47c3-bfe4-07b1954741bd",
@@ -657,7 +657,7 @@
      "sha": "bfb026adf9a44989dcb3fd2eddf6fdffff7f7b7e",
      "type": "image/webp",
      "size": 267820,
-     "orden": 14
+     "orden": 10
     },
     {
      "id": "840b6645-b138-4aea-840b-f43d9494ded0",
@@ -672,7 +672,22 @@
      "sha": "56336f787bc32b7f5aaf452c12f40405035fbbea",
      "type": "image/webp",
      "size": 324306,
-     "orden": 15
+     "orden": 11
+    },
+    {
+     "id": "25018282-5da1-4b37-8f91-72507157a58e",
+     "by": "javi",
+     "at": "2026-11-14T17:52:13.699Z",
+     "base": "02-huingan",
+     "version": 3,
+     "shaOrigen": "cfb0f5a448829d976eb1da7cb3c869e7506979c4",
+     "name": "02-huingan-v3.webp",
+     "path": "archivos/publicaciones-informativas/02-huingan-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/02-huingan-v3.webp",
+     "sha": "0e855f7a5a441c0bd60d0db89f96b6ce034f0c48",
+     "type": "image/webp",
+     "size": 299466,
+     "orden": 12
     }
    ],
    "checklist": [],
@@ -681,7 +696,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-14T17:49:02.082Z",
+   "updatedAt": "2026-11-14T17:52:15.203Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-11T23:53:17.530Z",
    "publishedAt": null
@@ -7986,6 +8001,16 @@
  ],
  "activity": [
   {
+   "id": "5429d328-8d15-4f41-bb03-5d5d2d476a8d",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-14T17:52:15.204Z"
+  },
+  {
    "id": "e82a404d-f966-423f-8c16-6517eb2de6b4",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "postTitle": "Historia: los modelos de casas",
@@ -13203,6 +13228,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a660e536-dece-4a06-8106-451336f503f4",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "update",
+   "text": "editó “Historia: los modelos de casas” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-14T17:52:15.205Z"
+  },
+  {
+   "id": "a878989b-9d92-4f96-8edd-fd8a85cb9885",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "update",
+   "text": "editó “Historia: los modelos de casas” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-14T17:52:15.205Z"
+  },
   {
    "id": "cde7d215-cfc9-4f66-901b-6c9d51b95949",
    "to": "maca",

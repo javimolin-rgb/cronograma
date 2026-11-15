@@ -2159,7 +2159,7 @@
    "campaign": "Modelos",
    "time": "",
    "date": "2026-12-16",
-   "inicio": "2026-12-09",
+   "inicio": "2026-12-03",
    "format": "story",
    "status": "idea",
    "priority": "normal",
@@ -2174,7 +2174,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-15T21:08:54.678Z",
+   "updatedAt": "2026-11-15T21:09:35.184Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
@@ -8126,6 +8126,16 @@
  ],
  "activity": [
   {
+   "id": "a5425df9-103b-4efc-9c48-61a2c1d2b4e3",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-15T21:09:35.184Z"
+  },
+  {
    "id": "e581c385-4bb5-4263-8e20-d08ece4ad61a",
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "postTitle": "Casa Coihue",
@@ -13525,6 +13535,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4024cbaf-533e-4922-8735-01269a84c071",
+   "to": "maca",
+   "from": "javi",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "type": "update",
+   "text": "editó “Casa Coihue” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Coihue",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "createdAt": "2026-11-15T21:09:35.184Z"
+  },
   {
    "id": "32d7111b-4b02-4ae4-a2f0-0dfd233af52e",
    "to": "maca",

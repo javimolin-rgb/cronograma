@@ -2390,14 +2390,17 @@
     ],
     "voz": 3
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Modelos",
    "time": "",
    "date": "2026-12-02",
-   "inicio": "",
+   "inicio": "2026-11-19",
    "format": "story",
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "platforms": [],
    "assignees": [
@@ -2407,7 +2410,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-15T21:07:20.270Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -2423,9 +2426,7 @@
      "by": "javi"
     }
    ],
-   "marca": [],
-   "guionNotas": [],
-   "spotify": ""
+   "marca": []
   },
   {
    "title": "Casa Mañío",
@@ -8122,6 +8123,16 @@
  ],
  "activity": [
   {
+   "id": "6c5a2301-a134-47e9-9aec-34549e901957",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-15T21:07:20.270Z"
+  },
+  {
    "id": "5eef73f9-3c8d-45c1-9d72-fbd5468d1bd3",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -13471,6 +13482,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "dea2df51-d7cd-4516-80f8-18c0eb3ba001",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-15T21:07:20.270Z"
+  },
   {
    "id": "66900191-1f40-4266-8074-16eca98e95c8",
    "to": "flavio",

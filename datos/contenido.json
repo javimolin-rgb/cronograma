@@ -2153,14 +2153,17 @@
     ],
     "voz": 3
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Modelos",
    "time": "",
    "date": "2026-12-16",
-   "inicio": "",
+   "inicio": "2026-11-03",
    "format": "story",
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "platforms": [],
    "assignees": [
@@ -2170,7 +2173,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-15T21:08:03.103Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:44.081Z",
    "createdBy": "javi",
@@ -2186,9 +2189,7 @@
      "by": "javi"
     }
    ],
-   "marca": [],
-   "guionNotas": [],
-   "spotify": ""
+   "marca": []
   },
   {
    "title": "Casa Maitén",
@@ -8124,6 +8125,16 @@
  ],
  "activity": [
   {
+   "id": "f19ee054-2535-46e5-bdc8-cbc234820ce0",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "postTitle": "Casa Coihue",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-15T21:08:03.103Z"
+  },
+  {
    "id": "b7da2f6f-3938-43cd-bbef-39f85b789bb2",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -13493,6 +13504,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "95482312-95aa-4e99-b337-acad36b15a2c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "type": "update",
+   "text": "editó “Casa Coihue” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Coihue",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "createdAt": "2026-11-15T21:08:03.104Z"
+  },
   {
    "id": "dea2df51-d7cd-4516-80f8-18c0eb3ba001",
    "to": "maca",

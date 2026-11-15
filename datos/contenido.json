@@ -2272,14 +2272,17 @@
     ],
     "voz": 3
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Modelos",
    "time": "",
    "date": "2026-12-08",
-   "inicio": "",
+   "inicio": "2026-11-25",
    "format": "story",
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "platforms": [],
    "assignees": [
@@ -2288,7 +2291,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-15T21:07:35.296Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -2304,9 +2307,7 @@
      "by": "javi"
     }
    ],
-   "marca": [],
-   "guionNotas": [],
-   "spotify": ""
+   "marca": []
   },
   {
    "title": "Casa Roble",
@@ -8122,6 +8123,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "b7da2f6f-3938-43cd-bbef-39f85b789bb2",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-15T21:07:35.296Z"
+  },
   {
    "id": "6c5a2301-a134-47e9-9aec-34549e901957",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -24237,6 +24248,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "person": "javi",
+   "at": "2026-11-15T21:07:23.562Z",
+   "hasta": "2026-11-10T19:05:35.968Z",
+   "que": "pieza"
+  },
   {
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|javi",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",

@@ -2035,14 +2035,17 @@
     ],
     "voz": 3
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Modelos",
    "time": "",
    "date": "2026-12-22",
-   "inicio": "",
+   "inicio": "2026-12-09",
    "format": "story",
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
    "platforms": [],
    "assignees": [
@@ -2051,7 +2054,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-15T21:08:12.628Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:55.027Z",
    "createdBy": "javi",
@@ -2067,9 +2070,7 @@
      "by": "javi"
     }
    ],
-   "marca": [],
-   "guionNotas": [],
-   "spotify": ""
+   "marca": []
   },
   {
    "title": "Casa Coihue",
@@ -8124,6 +8125,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c7b62236-7010-4c39-b00f-1f58ad650ccc",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "postTitle": "Casa Ciprés",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-15T21:08:12.629Z"
+  },
   {
    "id": "f19ee054-2535-46e5-bdc8-cbc234820ce0",
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
@@ -24274,6 +24285,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "323a4823-a2d6-4dcf-ba09-8d0f60536507|javi",
+   "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",
+   "person": "javi",
+   "at": "2026-11-15T21:08:05.792Z",
+   "hasta": "2026-11-10T19:05:35.968Z",
+   "que": "pieza"
+  },
   {
    "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f|javi",
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",

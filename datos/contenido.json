@@ -13547,13 +13547,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T18:33:15.988Z"
+   "createdAt": "2026-11-14T18:33:15.988Z",
+   "readAt": "2026-11-15T13:23:31.455Z"
   },
   {
    "id": "287d5b19-93c0-4561-be2e-a51e09e86f22",
@@ -13807,13 +13808,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "review",
    "text": "subió 1 archivo en “Casa Boldo” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T17:28:36.020Z"
+   "createdAt": "2026-11-14T17:28:36.020Z",
+   "readAt": "2026-11-15T13:23:31.457Z"
   },
   {
    "id": "6dcac1b4-9325-4dcb-993a-e45c06173e13",
@@ -13852,13 +13854,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T17:28:36.019Z"
+   "createdAt": "2026-11-14T17:28:36.019Z",
+   "readAt": "2026-11-15T13:23:31.457Z"
   },
   {
    "id": "3cb0c308-0dbb-4ef8-9f78-a8618f2c6169",
@@ -13882,13 +13885,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T17:28:36.018Z"
+   "createdAt": "2026-11-14T17:28:36.018Z",
+   "readAt": "2026-11-15T13:23:31.457Z"
   },
   {
    "id": "c18b17ea-6924-4788-b5d1-0ebcaab715a1",
@@ -24174,8 +24178,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-13T18:29:48.359Z",
-   "hasta": "2026-11-12T18:24:51.799Z",
+   "at": "2026-11-15T13:23:31.458Z",
+   "hasta": "2026-11-14T18:33:15.988Z",
    "que": "pieza"
   },
   {

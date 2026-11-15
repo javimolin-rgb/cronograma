@@ -281,7 +281,7 @@
    "date": "2026-11-14",
    "inicio": "",
    "format": "story",
-   "status": "espera",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -711,10 +711,10 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-15T13:19:47.017Z",
-   "updatedBy": "maca",
-   "statusChangedAt": "2026-11-14T18:02:35.614Z",
-   "publishedAt": null
+   "updatedAt": "2026-11-15T21:06:52.318Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-15T21:06:52.318Z",
+   "publishedAt": "2026-11-15T21:06:52.318Z"
   },
   {
    "title": "Reel de prueba y subida de modelos",
@@ -8122,6 +8122,19 @@
  ],
  "activity": [
   {
+   "id": "7d59d042-94c3-44e5-96ee-16bc7ed6dc66",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Esperando aprobación a Publicado",
+   "meta": {
+    "from": "espera",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-15T21:06:52.319Z"
+  },
+  {
    "id": "813c855a-e89c-400f-8d20-982725492601",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "postTitle": "Historia: los modelos de casas",
@@ -13448,6 +13461,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "df85fdd9-2a2c-4f2f-80ea-c44ad9af402f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "status",
+   "text": "movió “Historia: los modelos de casas” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-15T21:06:52.319Z"
+  },
+  {
+   "id": "005e01df-892a-4351-9164-95b5474e446e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "status",
+   "text": "movió “Historia: los modelos de casas” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-15T21:06:52.319Z"
+  },
   {
    "id": "67c538cc-14c4-4f32-8898-ecd8b8d4f128",
    "to": "javi",

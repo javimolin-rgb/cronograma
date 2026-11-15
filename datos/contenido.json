@@ -13517,13 +13517,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-14T18:33:23.736Z"
+   "createdAt": "2026-11-14T18:33:23.736Z",
+   "readAt": "2026-11-15T13:25:51.476Z"
   },
   {
    "id": "e77e2029-4b05-41a8-99d5-f6d8b419ec66",
@@ -24170,8 +24171,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-13T18:30:14.568Z",
-   "hasta": "2026-11-12T17:42:46.164Z",
+   "at": "2026-11-15T13:25:51.478Z",
+   "hasta": "2026-11-14T18:33:23.736Z",
    "que": "pieza"
   },
   {

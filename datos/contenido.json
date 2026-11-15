@@ -2514,7 +2514,7 @@
    "campaign": "Modelos",
    "time": "",
    "date": "2026-11-24",
-   "inicio": "",
+   "inicio": "2026-11-09",
    "format": "story",
    "status": "revision",
    "priority": "normal",
@@ -2711,7 +2711,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-14T18:33:00.489Z",
+   "updatedAt": "2026-11-15T21:07:09.046Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -8122,6 +8122,16 @@
  ],
  "activity": [
   {
+   "id": "5eef73f9-3c8d-45c1-9d72-fbd5468d1bd3",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-15T21:07:09.046Z"
+  },
+  {
    "id": "7d59d042-94c3-44e5-96ee-16bc7ed6dc66",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "postTitle": "Historia: los modelos de casas",
@@ -13461,6 +13471,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "66900191-1f40-4266-8074-16eca98e95c8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-15T21:07:09.046Z"
+  },
+  {
+   "id": "dd0fd702-346c-4e8b-bd06-8ecf08543df1",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-15T21:07:09.046Z"
+  },
   {
    "id": "df85fdd9-2a2c-4f2f-80ea-c44ad9af402f",
    "to": "flavio",
@@ -24271,9 +24311,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "javi",
-   "at": "2026-11-15T21:07:00.826Z",
+   "at": "2026-11-14T18:33:00.489Z",
    "hasta": "2026-11-14T18:33:00.489Z",
-   "que": "pieza"
+   "que": "comentario"
   },
   {
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",

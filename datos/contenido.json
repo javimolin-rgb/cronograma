@@ -711,8 +711,8 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-14T18:02:35.614Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-15T13:19:47.017Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-14T18:02:35.614Z",
    "publishedAt": null
   },
@@ -5556,6 +5556,14 @@
  ],
  "comments": [
   {
+   "id": "9e767f0f-5eaa-498b-8830-2dbb5bbe009d",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "author": "maca",
+   "text": "Hola Javi, estamos ok. Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-15T13:19:47.021Z"
+  },
+  {
    "id": "18faf0bc-f911-477c-8778-5a86ceff9f60",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "javi",
@@ -8113,6 +8121,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "813c855a-e89c-400f-8d20-982725492601",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "postTitle": "Historia: los modelos de casas",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-15T13:19:47.026Z"
+  },
   {
    "id": "7ee2d948-8c8f-4de0-a988-28a151b9a42c",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -13430,6 +13448,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "67c538cc-14c4-4f32-8898-ecd8b8d4f128",
+   "to": "javi",
+   "from": "maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "supervision",
+   "text": "comentó en “Historia: los modelos de casas”: Hola Javi, estamos ok. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Historia: los modelos de casas",
+   "body": "Maca comentó: Hola Javi, estamos ok. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-15T13:19:47.029Z"
+  },
+  {
+   "id": "140d8a35-b473-44fb-a062-5c787a07e07f",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "type": "comment",
+   "text": "comentó en “Historia: los modelos de casas”: Hola Javi, estamos ok. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Historia: los modelos de casas",
+   "body": "Maca comentó: Hola Javi, estamos ok. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
+   "createdAt": "2026-11-15T13:19:47.028Z"
+  },
   {
    "id": "a5702b41-7597-4945-8d60-2e102b6575e1",
    "to": "maca",
@@ -24134,9 +24182,9 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "maca",
-   "at": "2026-11-15T13:15:30.580Z",
-   "hasta": "2026-11-14T18:02:35.614Z",
-   "que": "pieza"
+   "at": "2026-11-15T13:19:47.020Z",
+   "hasta": "2026-11-15T13:19:47.017Z",
+   "que": "comentario"
   },
   {
    "id": "5acaad61-db8d-4625-9fc2-112f3b8a0b94|maca",

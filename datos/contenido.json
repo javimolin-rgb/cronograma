@@ -24249,6 +24249,14 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "bb42e33d-36ab-4a0d-a913-b8b5185b775f|javi",
+   "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
+   "person": "javi",
+   "at": "2026-11-15T21:07:58.941Z",
+   "hasta": "2026-11-10T19:05:35.968Z",
+   "que": "pieza"
+  },
+  {
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|javi",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "javi",

@@ -3163,6 +3163,12 @@ const cuentaTags = (s) => (String(s || '').match(/#[^\s#]+/g) || []).length;
    no deja abrir ese menú si se piden después de tocar el botón. */
 const galeriaLista = () => !!(EXP && EXP.files && EXP.files.length);
 const esApple = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (/mac/i.test(navigator.platform || '') && navigator.maxTouchPoints > 1);
+/* En el computador no hay carrete: “compartir” abre AirDrop / Mensajes / Agregar a
+   Fotos y no deja el archivo en el disco. Así que ahí la acción principal es
+   descargar de toda la vida, y compartir queda al lado. */
+const esTelefono = () => /iphone|ipad|ipod|android/i.test(navigator.userAgent)
+  || (navigator.maxTouchPoints > 1 && /mac/i.test(navigator.platform || ''));
+const dondeQueda = () => esTelefono() ? 'en los archivos del teléfono' : 'en la carpeta de descargas del computador';
 // Cómo se llama en el menú del teléfono lo que hay que tocar
 function opcionGuardar(medios) {
   const total = medios.length;
@@ -3173,6 +3179,11 @@ function opcionGuardar(medios) {
 }
 function galeriaHintHtml(medios) {
   const total = medios.length, varios = total > 1;
+  if (!esTelefono()) {
+    return galeriaLista()
+      ? `<p class="hint">${ic('download', 14)} <b>Bajar</b> guarda ${varios ? 'los archivos' : 'el archivo'} ${dondeQueda()}, como cualquier descarga. <b>Compartir</b> abre el menú del computador (AirDrop, Mensajes, Agregar a Fotos): sirve para pasár${varios ? 'selas' : 'sela'} al teléfono, no para guardar${varios ? 'las' : 'la'} aquí.</p>`
+      : '';
+  }
   if (!galeriaLista()) {
     return EXP && EXP.preparando ? '<p class="hint">Preparando la galería…</p>'
       : `<p class="hint">${ic('alert', 14)} Este navegador no deja guardar en la galería desde aquí. Baja ${varios ? 'los archivos' : 'el archivo'}${esApple() ? ` y pása${varios ? 'los' : 'lo'} a Fotos desde Archivos, o abre el cronograma en Safari` : ''}.</p>`;
@@ -3241,11 +3252,12 @@ function renderExport() {
       ${total ? `<div class="expfotos">${medios.map((f, i) => `<div class="expfoto">
           <button class="expthumb" data-act="exp-ver" data-f="${esc(f.id)}" aria-label="Ver ${esc(f.name)}" title="${esc(nombreExport(f, i, total))}">${miniArchivo(f)}${total > 1 ? `<i class="expn">${pad(i + 1)}</i>` : ''}</button>
           <div class="expacts">
-            ${galeriaLista() ? `<button class="expact" data-act="exp-galeria" data-f="${esc(f.id)}">${ic('image', 13)} Galería</button>` : ''}
+            ${galeriaLista() && esTelefono() ? `<button class="expact" data-act="exp-galeria" data-f="${esc(f.id)}">${ic('image', 13)} Galería</button>` : ''}
             <button class="expact" data-act="exp-una" data-f="${esc(f.id)}" title="${esc(prettySize(f.size) || '')}">${ic('download', 13)} Bajar</button>
+            ${galeriaLista() && !esTelefono() ? `<button class="expact solo" data-act="exp-galeria" data-f="${esc(f.id)}" title="Compartir: AirDrop, Mensajes, Agregar a Fotos" aria-label="Compartir ${esc(f.name)}">${ic('share', 14)}</button>` : ''}
           </div></div>`).join('')}</div>
         ${galeriaHintHtml(medios)}
-        <p class="hint">${total > 1 ? 'Bajar las deja numeradas (01, 02…) en los archivos del teléfono, para no perder el orden' : 'Bajar lo deja en los archivos del teléfono'}${texto ? ', y el zip trae además el texto en <b>texto.txt</b>' : ''}. Tocando la miniatura se ve en grande.</p>`
+        <p class="hint">${total > 1 ? `Bajar las deja numeradas (01, 02…) ${dondeQueda()}, para no perder el orden` : `Bajar lo deja ${dondeQueda()}`}${texto ? ', y el zip trae además el texto en <b>texto.txt</b>' : ''}. Tocando la miniatura se ve en grande.</p>`
       : `<p class="hint">Sube las fotos o el video a la pieza y aquí quedan listos para publicar.</p>`}
 
       ${otros.length ? `<p class="hint">${ic('alert', 14)} ${otros.length} archivo${otros.length === 1 ? '' : 's'} de la pieza no ${otros.length === 1 ? 'es' : 'son'} foto ni video (${esc(otros.map((f) => f.name).join(', '))}): no ${otros.length === 1 ? 'va' : 'van'} en lo que se publica.</p>` : ''}
@@ -3254,9 +3266,11 @@ function renderExport() {
     </div>
     <div class="pf">
       ${!total ? `<button class="btn" data-act="exp-copiar" data-v="todo"${texto ? '' : ' disabled'}>${ic('copy', 17)} Copiar el texto</button>`
-        : galeriaLista() ? `<button class="btn ghost" data-act="exp-zip" aria-label="Descargar" title="${total > 1 || texto ? 'Descargar todo en un zip' : 'Descargar'}">${ic('download', 17)}</button>
+        : galeriaLista() && esTelefono() ? `<button class="btn ghost" data-act="exp-zip" aria-label="Descargar" title="${total > 1 || texto ? 'Descargar todo en un zip' : 'Descargar'}">${ic('download', 17)}</button>
           <button class="btn" data-act="exp-galeria">${ic('image', 17)} Guardar ${total > 1 ? `las ${total}` : ''} en la galería</button>`
-        : EXP.preparando ? `<button class="btn ghost" disabled>${ic('image', 17)} Preparando la galería…</button>
+        : galeriaLista() ? `<button class="btn ghost" data-act="exp-galeria" aria-label="Compartir" title="Compartir: AirDrop, Mensajes, Agregar a Fotos">${ic('share', 17)}</button>
+          <button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`
+        : EXP.preparando && esTelefono() ? `<button class="btn ghost" disabled>${ic('image', 17)} Preparando la galería…</button>
           <button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`
         : `<button class="btn" data-act="exp-zip">${ic('download', 17)} ${total > 1 || texto ? 'Descargar todo' : 'Descargar'}</button>`}
     </div>`, true);

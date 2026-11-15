@@ -13455,13 +13455,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "supervision",
    "text": "comentó en “Historia: los modelos de casas”: Hola Javi, estamos ok. Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Maca comentó: Hola Javi, estamos ok. Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-15T13:19:47.029Z"
+   "createdAt": "2026-11-15T13:19:47.029Z",
+   "readAt": "2026-11-15T20:59:31.966Z"
   },
   {
    "id": "140d8a35-b473-44fb-a062-5c787a07e07f",
@@ -23961,10 +23962,10 @@
    "tipo": "pc",
    "instalada": true,
    "push": true,
-   "version": "2026.11.14-1",
+   "version": "2026.11.14-2",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-14T18:02:30.747Z"
+   "lastSeen": "2026-11-15T20:59:32.410Z"
   }
  ],
  "recursos": [

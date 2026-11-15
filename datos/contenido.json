@@ -13437,14 +13437,15 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Historia: los modelos de casas”: está esperando tu respuesta",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi está esperando tu respuesta",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T19:08:29.035Z"
+   "createdAt": "2026-11-14T19:08:29.035Z",
+   "readAt": "2026-11-15T13:15:30.576Z"
   },
   {
    "id": "7cb13ccb-2099-4405-9eb5-df6763c9cdf6",
@@ -13618,13 +13619,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T18:02:35.615Z"
+   "createdAt": "2026-11-14T18:02:35.615Z",
+   "readAt": "2026-11-15T13:15:30.578Z"
   },
   {
    "id": "73ed36b0-a0c6-4610-b37f-0b8b1661bfab",
@@ -13648,13 +13650,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:54:50.741Z"
+   "createdAt": "2026-11-14T17:54:50.741Z",
+   "readAt": "2026-11-15T13:15:30.578Z"
   },
   {
    "id": "a660e536-dece-4a06-8106-451336f503f4",
@@ -13678,13 +13681,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:52:15.205Z"
+   "createdAt": "2026-11-14T17:52:15.205Z",
+   "readAt": "2026-11-15T13:15:30.578Z"
   },
   {
    "id": "cde7d215-cfc9-4f66-901b-6c9d51b95949",
@@ -13693,13 +13697,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "review",
    "text": "subió 9 archivos en “Historia: los modelos de casas” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi subió 9 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:49:02.091Z"
+   "createdAt": "2026-11-14T17:49:02.091Z",
+   "readAt": "2026-11-15T13:15:30.578Z"
   },
   {
    "id": "18083d55-c11f-4c52-8cb4-ea426436da94",
@@ -13738,13 +13743,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:49:02.090Z"
+   "createdAt": "2026-11-14T17:49:02.090Z",
+   "readAt": "2026-11-15T13:15:30.578Z"
   },
   {
    "id": "d0d22637-77fe-4255-b64b-4a97ac861e46",
@@ -23824,10 +23830,10 @@
    "tipo": "cel",
    "instalada": true,
    "push": true,
-   "version": "2026.11.12-4",
+   "version": "2026.11.14-2",
    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Mobile/15E148 Safari/604.1",
    "firstSeen": "2026-11-03T18:21:22.854Z",
-   "lastSeen": "2026-11-13T15:47:16.591Z"
+   "lastSeen": "2026-11-15T13:15:30.651Z"
   },
   {
    "id": "d_b27bedff18f84af3",
@@ -24128,8 +24134,8 @@
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "person": "maca",
-   "at": "2026-11-14T02:23:17.067Z",
-   "hasta": "2026-11-14T01:24:25.931Z",
+   "at": "2026-11-15T13:15:30.580Z",
+   "hasta": "2026-11-14T18:02:35.614Z",
    "que": "pieza"
   },
   {

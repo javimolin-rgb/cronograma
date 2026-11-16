@@ -3274,7 +3274,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-16T16:46:12.640Z",
+   "updatedAt": "2026-11-16T16:47:00.555Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -5586,6 +5586,14 @@
   }
  ],
  "comments": [
+  {
+   "id": "71a1752e-42fe-4e5a-88c8-6a1ca4dc5d65",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Sólo hay q modificar los números",
+   "fileIds": [],
+   "createdAt": "2026-11-16T16:47:00.557Z"
+  },
   {
    "id": "0a15dfa3-8451-485a-ae02-2445d323a1f0",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8176,6 +8184,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "88bfa8e2-72c1-4ca4-a491-7cc6858267bf",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-16T16:47:00.557Z"
+  },
   {
    "id": "1f1fe45c-edb8-4e0a-8fc2-71bdb6094fd2",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -13669,6 +13687,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "52b8f567-5f7c-40c6-bf4f-db581faedbeb",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Sólo hay q modificar los números",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Sólo hay q modificar los números",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T16:47:00.558Z"
+  },
+  {
+   "id": "e6cd4362-6ad0-4f52-beb3-d88bafa47cb3",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Sólo hay q modificar los números",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Sólo hay q modificar los números",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T16:47:00.557Z"
+  },
   {
    "id": "9b29fe1b-9709-4e16-9b38-61ca6e5c8f5f",
    "to": "javi",
@@ -24781,8 +24829,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-16T16:46:12.642Z",
-   "hasta": "2026-11-16T16:46:12.640Z",
+   "at": "2026-11-16T16:47:00.557Z",
+   "hasta": "2026-11-16T16:47:00.555Z",
    "que": "comentario"
   },
   {

@@ -8126,6 +8126,16 @@
  ],
  "activity": [
   {
+   "id": "a63c71e3-010e-4100-89c1-8fb23794ca53",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: está esperando tu respuesta",
+   "meta": null,
+   "createdAt": "2026-11-16T13:59:03.918Z"
+  },
+  {
    "id": "a5425df9-103b-4efc-9c48-61a2c1d2b4e3",
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "postTitle": "Casa Coihue",
@@ -13535,6 +13545,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6ef489ff-0e05-4093-958f-89158f853995",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Boldo”: está esperando tu respuesta",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Boldo",
+   "body": "Javi está esperando tu respuesta",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T13:59:03.917Z"
+  },
   {
    "id": "4024cbaf-533e-4922-8735-01269a84c071",
    "to": "maca",

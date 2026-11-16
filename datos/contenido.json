@@ -13913,13 +13913,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: Sólo hay q modificar los números",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: Sólo hay q modificar los números",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-16T16:47:00.557Z"
+   "createdAt": "2026-11-16T16:47:00.557Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "9b29fe1b-9709-4e16-9b38-61ca6e5c8f5f",
@@ -13944,13 +13945,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: OJO ‼️ acabo de darme cuenta que hay que ajustar los metrajes en la info del ren…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: OJO ‼️ acabo de darme cuenta que hay que ajustar los metrajes en la info del ren…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-16T16:46:12.642Z"
+   "createdAt": "2026-11-16T16:46:12.642Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "8b437d43-047e-4277-87f9-f9fa81b03b20",
@@ -13959,13 +13961,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: @Javi, hola! Texto descriptivo para utilizar.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: @Javi, hola! Texto descriptivo para utilizar.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-16T16:43:11.125Z"
+   "createdAt": "2026-11-16T16:43:11.125Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "4469b4e8-374c-4b62-a5b6-605d29f99b05",
@@ -14006,13 +14009,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfru…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfru…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-16T16:40:33.910Z"
+   "createdAt": "2026-11-16T16:40:33.910Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "b456274f-be26-4e08-ae4b-c119b44f18e5",
@@ -14114,13 +14118,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-16T14:00:34.720Z"
+   "createdAt": "2026-11-16T14:00:34.720Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "f504da8d-f46c-48bf-a0a6-48aab6021475",
@@ -14368,13 +14373,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T18:33:15.989Z"
+   "createdAt": "2026-11-14T18:33:15.989Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "47d6bc2b-9573-4cfb-a64f-44a1475aa6ee",
@@ -14666,13 +14672,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "review",
    "text": "subió 1 archivo en “Casa Boldo” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T17:28:36.020Z"
+   "createdAt": "2026-11-14T17:28:36.020Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "aa4fc99d-c0df-4d15-bfb8-787895efc72c",
@@ -14681,13 +14688,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T17:28:36.019Z"
+   "createdAt": "2026-11-14T17:28:36.019Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "753ec64f-1c8b-4284-ae35-ab7ce6fc230f",
@@ -14712,13 +14720,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-14T17:28:36.018Z"
+   "createdAt": "2026-11-14T17:28:36.018Z",
+   "readAt": "2026-11-16T22:11:31.931Z"
   },
   {
    "id": "d64e453f-a4cc-4eab-ab5e-3228b5ba64ac",
@@ -24972,6 +24981,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "03b2da82-2617-417b-8081-df3dadaefb31|flavio",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "person": "flavio",
+   "at": "2026-11-16T22:11:31.931Z",
+   "hasta": "2026-11-16T16:47:00.555Z",
+   "que": "pieza"
+  },
   {
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|flavio",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",

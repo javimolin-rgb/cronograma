@@ -14109,13 +14109,14 @@
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "type": "update",
    "text": "editó “Casa Coihue” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Coihue",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=bb42e33d-36ab-4a0d-a913-b8b5185b775f",
-   "createdAt": "2026-11-15T21:09:35.184Z"
+   "createdAt": "2026-11-15T21:09:35.184Z",
+   "readAt": "2026-11-16T20:54:41.274Z"
   },
   {
    "id": "32d7111b-4b02-4ae4-a2f0-0dfd233af52e",
@@ -14124,13 +14125,14 @@
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "type": "update",
    "text": "editó “Casa Coihue” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Coihue",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=bb42e33d-36ab-4a0d-a913-b8b5185b775f",
-   "createdAt": "2026-11-15T21:08:40.570Z"
+   "createdAt": "2026-11-15T21:08:40.570Z",
+   "readAt": "2026-11-16T20:54:41.274Z"
   },
   {
    "id": "95482312-95aa-4e99-b337-acad36b15a2c",
@@ -14139,13 +14141,14 @@
    "postId": "bb42e33d-36ab-4a0d-a913-b8b5185b775f",
    "type": "update",
    "text": "editó “Casa Coihue” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Coihue",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=bb42e33d-36ab-4a0d-a913-b8b5185b775f",
-   "createdAt": "2026-11-15T21:08:03.104Z"
+   "createdAt": "2026-11-15T21:08:03.104Z",
+   "readAt": "2026-11-16T20:54:41.274Z"
   },
   {
    "id": "dea2df51-d7cd-4516-80f8-18c0eb3ba001",
@@ -14154,13 +14157,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-15T21:07:20.270Z"
+   "createdAt": "2026-11-15T21:07:20.270Z",
+   "readAt": "2026-11-16T20:54:41.275Z"
   },
   {
    "id": "66900191-1f40-4266-8074-16eca98e95c8",
@@ -14215,13 +14219,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-15T21:06:52.319Z"
+   "createdAt": "2026-11-15T21:06:52.319Z",
+   "readAt": "2026-11-16T20:54:41.275Z"
   },
   {
    "id": "67c538cc-14c4-4f32-8898-ecd8b8d4f128",
@@ -14889,13 +14894,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "status",
    "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T21:56:35.934Z"
+   "createdAt": "2026-11-12T21:56:35.934Z",
+   "readAt": "2026-11-16T20:54:41.275Z"
   },
   {
    "id": "1289a46a-2177-488d-b0b3-3343e893e2e8",
@@ -14920,13 +14926,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (la canción)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó la canción",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T18:48:34.309Z"
+   "createdAt": "2026-11-12T18:48:34.309Z",
+   "readAt": "2026-11-16T20:54:41.275Z"
   },
   {
    "id": "6337cb22-658d-48db-808b-a9a5a3352e79",
@@ -14951,13 +14958,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "update",
    "text": "editó “10 puntos que revisar antes de comprar tu terreno” (hora)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi editó hora",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T18:33:50.115Z"
+   "createdAt": "2026-11-12T18:33:50.115Z",
+   "readAt": "2026-11-16T20:54:41.275Z"
   },
   {
    "id": "9b59202e-f321-472c-a0c6-5e7bb05981f3",
@@ -15062,13 +15070,14 @@
    "postId": "5acaad61-db8d-4625-9fc2-112f3b8a0b94",
    "type": "status",
    "text": "movió “10 puntos que revisar antes de comprar tu terreno” a Programado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "10 puntos que revisar antes de comprar tu terreno",
    "body": "Javi la movió a Programado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5acaad61-db8d-4625-9fc2-112f3b8a0b94",
-   "createdAt": "2026-11-12T18:12:53.543Z"
+   "createdAt": "2026-11-12T18:12:53.543Z",
+   "readAt": "2026-11-16T20:54:41.275Z"
   },
   {
    "id": "22cbd100-9d99-4f2e-acdd-0eb5db433169",

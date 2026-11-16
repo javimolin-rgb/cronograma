@@ -2737,7 +2737,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-16T16:54:48.144Z",
+   "updatedAt": "2026-11-16T16:55:43.751Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -5587,6 +5587,14 @@
  ],
  "comments": [
   {
+   "id": "7cf97eef-0714-45a5-b549-33f0bca5475a",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Reviso los textos y te los mando corregidos",
+   "fileIds": [],
+   "createdAt": "2026-11-16T16:55:43.753Z"
+  },
+  {
    "id": "d915ff3e-8b7d-438e-b611-c51690672cfe",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -8203,6 +8211,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "de06cdba-99ea-4cb7-b559-adedcc1346a6",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-16T16:55:43.753Z"
+  },
   {
    "id": "615a97a0-7d0e-4d4c-8f22-e093abbfc73d",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -13726,6 +13744,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d08bb87a-481b-4330-a2db-b5adfc8a58ba",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Reviso los textos y te los mando corregidos",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Reviso los textos y te los mando corregidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-16T16:55:43.755Z"
+  },
+  {
+   "id": "71cf3862-8106-4f67-9be0-2a6d1df41f23",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Reviso los textos y te los mando corregidos",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Reviso los textos y te los mando corregidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-16T16:55:43.754Z"
+  },
   {
    "id": "531949c4-7064-4bc5-975d-73b7c03957f5",
    "to": "javi",
@@ -24911,8 +24959,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-16T16:54:48.146Z",
-   "hasta": "2026-11-16T16:54:48.144Z",
+   "at": "2026-11-16T16:55:43.753Z",
+   "hasta": "2026-11-16T16:55:43.751Z",
    "que": "comentario"
   },
   {

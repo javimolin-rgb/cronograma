@@ -13771,13 +13771,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @Javi, me parece bien que sea un vídeo cortito. Tratemos sea estilo “ Nescafé “ …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: @Javi, me parece bien que sea un vídeo cortito. Tratemos sea estilo “ Nescafé “ …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T21:07:58.988Z"
+   "createdAt": "2026-11-16T21:07:58.988Z",
+   "readAt": "2026-11-16T22:13:43.999Z"
   },
   {
    "id": "bb7f3e5a-8ea2-4e2f-971b-373ee76e2b3c",
@@ -14041,13 +14042,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 1 archivo en “Un domingo en el refugio” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T14:49:44.488Z"
+   "createdAt": "2026-11-16T14:49:44.488Z",
+   "readAt": "2026-11-16T22:13:43.999Z"
   },
   {
    "id": "5baf99f7-44a4-49cc-882f-7343145e31cd",
@@ -14056,13 +14058,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T14:49:44.488Z"
+   "createdAt": "2026-11-16T14:49:44.488Z",
+   "readAt": "2026-11-16T22:13:43.999Z"
   },
   {
    "id": "c8d53ae4-ba43-41cb-90b9-2f528b2d4259",
@@ -14087,13 +14090,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T14:49:44.487Z"
+   "createdAt": "2026-11-16T14:49:44.487Z",
+   "readAt": "2026-11-16T22:13:43.999Z"
   },
   {
    "id": "ce4b02a5-1cca-4ed8-bcc5-f39939ba5b30",
@@ -14342,13 +14346,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-14T18:33:23.737Z"
+   "createdAt": "2026-11-14T18:33:23.737Z",
+   "readAt": "2026-11-16T22:13:43.999Z"
   },
   {
    "id": "a7a4ef4c-dcf4-4f45-97a0-4da1b844c901",
@@ -24981,6 +24986,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "person": "flavio",
+   "at": "2026-11-16T22:13:43.999Z",
+   "hasta": "2026-11-16T21:07:58.973Z",
+   "que": "pieza"
+  },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|flavio",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

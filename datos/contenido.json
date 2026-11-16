@@ -13751,13 +13751,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Reviso los textos y te los mando corregidos",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Reviso los textos y te los mando corregidos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-16T16:55:43.755Z"
+   "createdAt": "2026-11-16T16:55:43.755Z",
+   "readAt": "2026-11-16T17:39:44.588Z"
   },
   {
    "id": "71cf3862-8106-4f67-9be0-2a6d1df41f23",
@@ -13781,13 +13782,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Sólo la “ blanca “ chica.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Sólo la “ blanca “ chica.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-16T16:54:48.147Z"
+   "createdAt": "2026-11-16T16:54:48.147Z",
+   "readAt": "2026-11-16T17:39:44.589Z"
   },
   {
    "id": "0fb4e5bd-f9bc-486e-aa5f-dce232549b92",
@@ -13811,13 +13813,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-16T16:53:43.041Z"
+   "createdAt": "2026-11-16T16:53:43.041Z",
+   "readAt": "2026-11-16T17:39:44.589Z"
   },
   {
    "id": "e6ef9812-f3d9-48c9-8953-f0943cd9a8e9",

@@ -2737,8 +2737,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-15T21:07:09.046Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-16T16:53:43.034Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-11T23:02:37.530Z",
@@ -5587,6 +5587,17 @@
  ],
  "comments": [
   {
+   "id": "07fc93ef-5283-445f-8457-ddc36a065c54",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
+   "fileIds": [
+    "f311b63e-fafe-4f09-8f05-dc6475de7e06",
+    "60d680ad-3f20-4af0-b24c-383f1b74fb83"
+   ],
+   "createdAt": "2026-11-16T16:53:43.039Z"
+  },
+  {
    "id": "71a1752e-42fe-4e5a-88c8-6a1ca4dc5d65",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -8184,6 +8195,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ca19ebdf-6a70-48aa-9f97-ab22131b9d9a",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-16T16:53:43.040Z"
+  },
   {
    "id": "88bfa8e2-72c1-4ca4-a491-7cc6858267bf",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -13687,6 +13708,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "aad02e6b-bb1a-4f73-bf57-705af21b498f",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-16T16:53:43.041Z"
+  },
+  {
+   "id": "e6ef9812-f3d9-48c9-8953-f0943cd9a8e9",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-16T16:53:43.041Z"
+  },
   {
    "id": "52b8f567-5f7c-40c6-bf4f-db581faedbeb",
    "to": "javi",
@@ -24812,9 +24863,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-16T16:47:46.028Z",
-   "hasta": "2026-11-15T21:07:09.046Z",
-   "que": "pieza"
+   "at": "2026-11-16T16:53:43.037Z",
+   "hasta": "2026-11-16T16:53:43.034Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

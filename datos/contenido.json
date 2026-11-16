@@ -2737,7 +2737,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-16T16:53:43.034Z",
+   "updatedAt": "2026-11-16T16:54:48.144Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -5587,6 +5587,14 @@
  ],
  "comments": [
   {
+   "id": "d915ff3e-8b7d-438e-b611-c51690672cfe",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Sólo la “ blanca “ chica.",
+   "fileIds": [],
+   "createdAt": "2026-11-16T16:54:48.146Z"
+  },
+  {
    "id": "07fc93ef-5283-445f-8457-ddc36a065c54",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -8195,6 +8203,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "615a97a0-7d0e-4d4c-8f22-e093abbfc73d",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-16T16:54:48.146Z"
+  },
   {
    "id": "ca19ebdf-6a70-48aa-9f97-ab22131b9d9a",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -13708,6 +13726,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "531949c4-7064-4bc5-975d-73b7c03957f5",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Sólo la “ blanca “ chica.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Sólo la “ blanca “ chica.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-16T16:54:48.147Z"
+  },
+  {
+   "id": "0fb4e5bd-f9bc-486e-aa5f-dce232549b92",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Sólo la “ blanca “ chica.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Sólo la “ blanca “ chica.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-16T16:54:48.147Z"
+  },
   {
    "id": "aad02e6b-bb1a-4f73-bf57-705af21b498f",
    "to": "javi",
@@ -24863,8 +24911,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-16T16:53:43.037Z",
-   "hasta": "2026-11-16T16:53:43.034Z",
+   "at": "2026-11-16T16:54:48.146Z",
+   "hasta": "2026-11-16T16:54:48.144Z",
    "que": "comentario"
   },
   {

@@ -3274,8 +3274,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-16T14:00:34.719Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-16T16:40:33.895Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-14T18:33:15.988Z",
@@ -5586,6 +5586,14 @@
   }
  ],
  "comments": [
+  {
+   "id": "a9a69f5a-4045-4f3b-a64f-52c0be59fe95",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfrutar del entorno. Sus grandes ventanales incorporan el paisaje y la luz natural a los espacios interiores, creando una conexión permanente con la naturaleza.\n\nEn sus dos pisos, los espacios se conectan para disfrutar de la vida en común sin perder la privacidad.\n\n4 dormitorios, 2 baños y 103,9 m² útiles. Entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaBoldo #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+   "fileIds": [],
+   "createdAt": "2026-11-16T16:40:33.902Z"
+  },
   {
    "id": "9e767f0f-5eaa-498b-8830-2dbb5bbe009d",
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
@@ -8152,6 +8160,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "fc126aaf-5a39-440b-959f-05c05bbee866",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-16T16:40:33.909Z"
+  },
   {
    "id": "e6dc7f34-85cd-4181-ba92-31626f8797f0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -13615,6 +13633,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "41054015-fd7f-473b-8a3e-babe4ef54221",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfru…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfru…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T16:40:33.911Z"
+  },
+  {
+   "id": "d1d633b6-4e76-46e2-821c-d773b0af0dc0",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfru…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfru…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T16:40:33.910Z"
+  },
   {
    "id": "b456274f-be26-4e08-ae4b-c119b44f18e5",
    "to": "maca",
@@ -24637,9 +24685,9 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-16T16:03:07.057Z",
-   "hasta": "2026-11-16T14:00:34.719Z",
-   "que": "pieza"
+   "at": "2026-11-16T16:40:33.901Z",
+   "hasta": "2026-11-16T16:40:33.895Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",

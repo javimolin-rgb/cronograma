@@ -13814,13 +13814,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 1 archivo en “Un domingo en el refugio” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T14:49:44.488Z"
+   "createdAt": "2026-11-16T14:49:44.488Z",
+   "readAt": "2026-11-16T16:47:23.661Z"
   },
   {
    "id": "2eaff1ac-c21f-4c7b-8d24-200428b9f9bf",
@@ -13859,13 +13860,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T14:49:44.488Z"
+   "createdAt": "2026-11-16T14:49:44.488Z",
+   "readAt": "2026-11-16T16:47:23.661Z"
   },
   {
    "id": "4a64afd4-ec1d-4a2c-a3d4-09d45d57b568",
@@ -13889,13 +13891,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T14:49:44.487Z"
+   "createdAt": "2026-11-16T14:49:44.487Z",
+   "readAt": "2026-11-16T16:47:23.661Z"
   },
   {
    "id": "563622c7-b006-41c0-bde5-2c943a1b6b16",
@@ -24821,8 +24824,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-15T13:25:51.478Z",
-   "hasta": "2026-11-14T18:33:23.736Z",
+   "at": "2026-11-16T16:47:23.662Z",
+   "hasta": "2026-11-16T14:49:44.486Z",
    "que": "pieza"
   },
   {

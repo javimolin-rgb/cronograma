@@ -13817,13 +13817,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Reviso los textos y te los mando corregidos",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Reviso los textos y te los mando corregidos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-16T16:55:43.754Z"
+   "createdAt": "2026-11-16T16:55:43.754Z",
+   "readAt": "2026-11-16T22:11:24.329Z"
   },
   {
    "id": "531949c4-7064-4bc5-975d-73b7c03957f5",
@@ -13848,13 +13849,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Sólo la “ blanca “ chica.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Sólo la “ blanca “ chica.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-16T16:54:48.147Z"
+   "createdAt": "2026-11-16T16:54:48.147Z",
+   "readAt": "2026-11-16T22:11:24.330Z"
   },
   {
    "id": "aad02e6b-bb1a-4f73-bf57-705af21b498f",
@@ -13879,13 +13881,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Gracias Javi, ok el render sólo si puedes elimina la casita del fondo",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-16T16:53:43.041Z"
+   "createdAt": "2026-11-16T16:53:43.041Z",
+   "readAt": "2026-11-16T22:11:24.330Z"
   },
   {
    "id": "52b8f567-5f7c-40c6-bf4f-db581faedbeb",
@@ -14223,13 +14226,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-15T21:07:09.046Z"
+   "createdAt": "2026-11-15T21:07:09.046Z",
+   "readAt": "2026-11-16T22:11:24.330Z"
   },
   {
    "id": "dd0fd702-346c-4e8b-bd06-8ecf08543df1",
@@ -14395,13 +14399,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: @Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi comentó: @Maca Ahí subí imagenes con el render y los cambios. Si encuentras que aún no se…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-14T18:33:00.493Z"
+   "createdAt": "2026-11-14T18:33:00.493Z",
+   "readAt": "2026-11-16T22:11:24.330Z"
   },
   {
    "id": "6fceb44a-b884-436a-9c3d-ea74121accf5",
@@ -14442,13 +14447,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "review",
    "text": "subió 6 archivos en “Casa Mañío” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi subió 6 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-14T18:30:22.072Z"
+   "createdAt": "2026-11-14T18:30:22.072Z",
+   "readAt": "2026-11-16T22:11:24.330Z"
   },
   {
    "id": "f3e55939-a987-4b51-8515-f776a551b450",
@@ -14457,13 +14463,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-14T18:30:22.072Z"
+   "createdAt": "2026-11-14T18:30:22.072Z",
+   "readAt": "2026-11-16T22:11:24.330Z"
   },
   {
    "id": "7d7a79a5-1f35-48e1-8f0a-2559205aca22",
@@ -24965,6 +24972,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "804906ab-7f99-4598-afc6-ef726afa4e20|flavio",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "person": "flavio",
+   "at": "2026-11-16T22:11:24.331Z",
+   "hasta": "2026-11-16T16:55:43.751Z",
+   "que": "pieza"
+  },
   {
    "id": "323a4823-a2d6-4dcf-ba09-8d0f60536507|javi",
    "postId": "323a4823-a2d6-4dcf-ba09-8d0f60536507",

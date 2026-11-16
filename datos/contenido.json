@@ -3274,7 +3274,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-16T16:40:33.895Z",
+   "updatedAt": "2026-11-16T16:43:11.117Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -5586,6 +5586,14 @@
   }
  ],
  "comments": [
+  {
+   "id": "1c198c7b-d101-4ee8-b96c-2e75174eb3a7",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "@Javi, hola! Texto descriptivo para utilizar.",
+   "fileIds": [],
+   "createdAt": "2026-11-16T16:43:11.120Z"
+  },
   {
    "id": "a9a69f5a-4045-4f3b-a64f-52c0be59fe95",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -8160,6 +8168,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "1b6d8158-ea5e-460f-81dc-150348114116",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-16T16:43:11.123Z"
+  },
   {
    "id": "fc126aaf-5a39-440b-959f-05c05bbee866",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -13633,6 +13651,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8b437d43-047e-4277-87f9-f9fa81b03b20",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: @Javi, hola! Texto descriptivo para utilizar.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: @Javi, hola! Texto descriptivo para utilizar.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T16:43:11.125Z"
+  },
+  {
+   "id": "4469b4e8-374c-4b62-a5b6-605d29f99b05",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Javi, hola! Texto descriptivo para utilizar.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca te mencionó: @Javi, hola! Texto descriptivo para utilizar.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-16T16:43:11.124Z"
+  },
   {
    "id": "41054015-fd7f-473b-8a3e-babe4ef54221",
    "to": "javi",
@@ -24685,8 +24733,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-16T16:40:33.901Z",
-   "hasta": "2026-11-16T16:40:33.895Z",
+   "at": "2026-11-16T16:43:11.120Z",
+   "hasta": "2026-11-16T16:43:11.117Z",
    "que": "comentario"
   },
   {

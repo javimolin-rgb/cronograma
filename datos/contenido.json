@@ -14238,13 +14238,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Están ok gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Están ok gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T21:19:43.319Z"
+   "createdAt": "2026-11-17T21:19:43.319Z",
+   "readAt": "2026-11-17T21:22:07.603Z"
   },
   {
    "id": "5ea2af70-a207-427e-9f2a-897eb7bad007",
@@ -14268,13 +14269,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: Esos son los correctos . Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Maca comentó: Esos son los correctos . Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T21:18:52.605Z"
+   "createdAt": "2026-11-17T21:18:52.605Z",
+   "readAt": "2026-11-17T21:22:07.603Z"
   },
   {
    "id": "7ccbadb3-41bd-4dcc-8686-6df711c49dfb",

@@ -1524,6 +1524,24 @@
      "type": "video/mp4",
      "size": 5477727,
      "orden": 0
+    },
+    {
+     "id": "855968ef-1442-4edc-9f74-06e93458106c",
+     "by": "javi",
+     "at": "2026-11-17T13:53:47.562Z",
+     "base": "whatsapp-video-2026-11-17-at-09.43.43",
+     "version": 1,
+     "shaOrigen": "4c92bf5cff621caf2babfb93345b90b168024338",
+     "dur": 43.6,
+     "w": 480,
+     "h": 848,
+     "name": "whatsapp-video-2026-11-17-at-09.43.43-v1.mp4",
+     "path": "archivos/videos-lifestyle/whatsapp-video-2026-11-17-at-09.43.43-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/videos-lifestyle/whatsapp-video-2026-11-17-at-09.43.43-v1.mp4",
+     "sha": "4c92bf5cff621caf2babfb93345b90b168024338",
+     "type": "video/mp4",
+     "size": 4252411,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -1554,8 +1572,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-17T12:42:39.975Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-17T13:53:47.562Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
   },
@@ -8229,6 +8247,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "fb29f14d-4688-4f9e-af67-a2c210570de7",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-17T13:53:47.563Z"
+  },
   {
    "id": "d72662c1-84f6-4f8c-8140-a32e8dade957",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

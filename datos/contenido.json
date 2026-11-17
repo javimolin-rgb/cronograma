@@ -14218,13 +14218,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T20:05:27.534Z"
+   "createdAt": "2026-11-17T20:05:27.534Z",
+   "readAt": "2026-11-17T20:52:55.255Z"
   },
   {
    "id": "66ab1aae-a618-4e34-a43f-744df5467f08",
@@ -14233,13 +14234,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 3 archivos en “Un domingo en el refugio” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi subió 3 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T20:05:01.405Z"
+   "createdAt": "2026-11-17T20:05:01.405Z",
+   "readAt": "2026-11-17T20:52:55.255Z"
   },
   {
    "id": "d90aa0e3-667e-4ba8-9cce-3d9420c42ea8",
@@ -14280,13 +14282,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T20:05:01.402Z"
+   "createdAt": "2026-11-17T20:05:01.402Z",
+   "readAt": "2026-11-17T20:52:55.255Z"
   },
   {
    "id": "2aca1e5f-8673-4f11-a0a8-2eddfff47da2",
@@ -25423,6 +25426,50 @@
  ],
  "prefs": [
   {
+   "id": "maca",
+   "events": {
+    "tagged": {
+     "app": 1,
+     "push": 1
+    },
+    "mention": {
+     "app": 1,
+     "push": 1
+    },
+    "comment": {
+     "app": 1,
+     "push": 0
+    },
+    "status": {
+     "app": 1,
+     "push": 0
+    },
+    "reschedule": {
+     "app": 1,
+     "push": 1
+    },
+    "update": {
+     "app": 1,
+     "push": 0
+    },
+    "deadline": {
+     "app": 1,
+     "push": 0
+    },
+    "reaccion": {
+     "app": 1,
+     "push": 0
+    },
+    "supervision": {
+     "app": 1,
+     "push": 1
+    }
+   },
+   "createdAt": "2026-11-17T20:52:37.647Z",
+   "silenciadas": [],
+   "seguidas": []
+  },
+  {
    "id": "flavio",
    "events": {
     "tagged": {
@@ -26033,8 +26080,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-17T16:18:40.806Z",
-   "hasta": "2026-11-17T13:53:47.562Z",
+   "at": "2026-11-17T20:52:55.256Z",
+   "hasta": "2026-11-17T20:05:27.534Z",
    "que": "pieza"
   },
   {

@@ -14314,13 +14314,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T17:58:13.894Z"
+   "createdAt": "2026-11-17T17:58:13.894Z",
+   "readAt": "2026-11-17T21:17:21.304Z"
   },
   {
    "id": "46ee0a9c-11ec-43e6-a97c-c3088b7f3237",
@@ -14441,13 +14442,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (copy)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi editó copy",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T15:25:30.214Z"
+   "createdAt": "2026-11-17T15:25:30.214Z",
+   "readAt": "2026-11-17T21:17:21.305Z"
   },
   {
    "id": "4b4da985-efa1-4838-bf24-870d57e913eb",
@@ -14456,13 +14458,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "review",
    "text": "subió 1 archivo en “Casa Boldo” para revisar: Video actualizado subido. me avisan si esos datos son los correctos.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi te pide revisar: Video actualizado subido. me avisan si esos datos son los correctos.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T15:25:01.156Z"
+   "createdAt": "2026-11-17T15:25:01.156Z",
+   "readAt": "2026-11-17T21:17:21.305Z"
   },
   {
    "id": "0bd3c451-a704-4be7-a18f-c1bdee0f96ae",
@@ -14503,13 +14506,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T15:25:01.155Z"
+   "createdAt": "2026-11-17T15:25:01.155Z",
+   "readAt": "2026-11-17T21:17:21.305Z"
   },
   {
    "id": "8a38b570-6b1c-467b-ac81-02fa26d0f727",
@@ -14534,13 +14538,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T15:25:01.154Z"
+   "createdAt": "2026-11-17T15:25:01.154Z",
+   "readAt": "2026-11-17T21:17:21.305Z"
   },
   {
    "id": "f22ec55c-b97a-4e48-a60e-4fcddcf077eb",
@@ -14549,13 +14554,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "mention",
    "text": "te mencionó en “Casa Boldo”: @Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contr…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi te mencionó: @Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contr…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T14:50:16.674Z"
+   "createdAt": "2026-11-17T14:50:16.674Z",
+   "readAt": "2026-11-17T21:17:21.305Z"
   },
   {
    "id": "e8097e73-1d1d-47d9-9e51-8cc0ece08f7a",
@@ -26091,8 +26097,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-16T19:15:22.920Z",
-   "hasta": "2026-11-16T16:47:00.555Z",
+   "at": "2026-11-17T21:17:21.307Z",
+   "hasta": "2026-11-17T17:58:13.893Z",
    "que": "pieza"
   },
   {

@@ -3469,8 +3469,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-17T17:58:13.893Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-17T21:18:52.597Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-17T15:25:01.150Z",
@@ -5788,6 +5788,14 @@
   }
  ],
  "comments": [
+  {
+   "id": "7ead1dcb-57e9-44ec-9554-558c00a45bab",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Esos son los correctos . Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-17T21:18:52.600Z"
+  },
   {
    "id": "d390898b-279f-4634-8759-8220c6b54b2a",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -8479,6 +8487,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "75243ac0-883c-4229-ad1a-cee450abd527",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-17T21:18:52.604Z"
+  },
   {
    "id": "2e334d34-f06c-499c-9df1-9b7d77a7d9f6",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14195,6 +14213,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d9750a49-9fcb-417c-a666-cbe66a23ad1a",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Esos son los correctos . Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Esos son los correctos . Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T21:18:52.605Z"
+  },
+  {
+   "id": "7ccbadb3-41bd-4dcc-8686-6df711c49dfb",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Esos son los correctos . Gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Esos son los correctos . Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T21:18:52.605Z"
+  },
   {
    "id": "72b5d65e-d26a-40be-8ef3-63ee1a790757",
    "to": "flavio",
@@ -26097,9 +26145,9 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-17T21:17:21.307Z",
-   "hasta": "2026-11-17T17:58:13.893Z",
-   "que": "pieza"
+   "at": "2026-11-17T21:18:52.599Z",
+   "hasta": "2026-11-17T21:18:52.597Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",

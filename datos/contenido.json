@@ -14202,13 +14202,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T20:05:27.535Z"
+   "createdAt": "2026-11-17T20:05:27.535Z",
+   "readAt": "2026-11-17T20:45:44.748Z"
   },
   {
    "id": "d5f5c895-9b32-433e-8106-7c601fa205d6",
@@ -14247,13 +14248,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 3 archivos en “Un domingo en el refugio” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi subió 3 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T20:05:01.404Z"
+   "createdAt": "2026-11-17T20:05:01.404Z",
+   "readAt": "2026-11-17T20:45:44.748Z"
   },
   {
    "id": "a44fb6a2-3b19-46c0-9109-4d3d8cb47636",
@@ -14262,13 +14264,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T20:05:01.403Z"
+   "createdAt": "2026-11-17T20:05:01.403Z",
+   "readAt": "2026-11-17T20:45:44.749Z"
   },
   {
    "id": "0175fb98-b536-41ff-a6cb-a241735a78e0",
@@ -14562,13 +14565,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi comentó: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T14:47:14.095Z"
+   "createdAt": "2026-11-17T14:47:14.095Z",
+   "readAt": "2026-11-17T20:45:44.749Z"
   },
   {
    "id": "555a7ce9-4d9f-4a23-841a-5b224a3efb32",
@@ -14593,13 +14597,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi comentó: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T13:54:20.694Z"
+   "createdAt": "2026-11-17T13:54:20.694Z",
+   "readAt": "2026-11-17T20:45:44.749Z"
   },
   {
    "id": "baa1eb74-9c10-4f80-a44b-de15bef2c9b4",
@@ -14624,13 +14629,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi comentó: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T13:53:51.299Z"
+   "createdAt": "2026-11-17T13:53:51.299Z",
+   "readAt": "2026-11-17T20:45:44.749Z"
   },
   {
    "id": "17916f96-38f5-4fe6-9818-406d9c8fe2a4",
@@ -14655,13 +14661,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @javi, estuvimos “jugando” tratando de crear más o menos lo que queremos transmi…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: @javi, estuvimos “jugando” tratando de crear más o menos lo que queremos transmi…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T12:42:39.989Z"
+   "createdAt": "2026-11-17T12:42:39.989Z",
+   "readAt": "2026-11-17T20:45:44.749Z"
   },
   {
    "id": "85f0ff27-8815-4c3b-b66a-6dad28727dcc",
@@ -25906,8 +25913,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-16T22:13:43.999Z",
-   "hasta": "2026-11-16T21:07:58.973Z",
+   "at": "2026-11-17T20:45:44.749Z",
+   "hasta": "2026-11-17T20:05:27.534Z",
    "que": "pieza"
   },
   {

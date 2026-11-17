@@ -2586,7 +2586,7 @@
      "sha": "3dafdcf8477126885aa84c1e9c5da061b2227403",
      "type": "image/webp",
      "size": 84492,
-     "orden": 0
+     "orden": 1013
     },
     {
      "id": "c8e0a54c-c1c6-4b3b-95b6-594a643c9ce7",
@@ -2601,7 +2601,7 @@
      "sha": "6a2d29eef921e09a5adbfbd3b4d89c5ec72f6a3b",
      "type": "image/webp",
      "size": 69790,
-     "orden": 1
+     "orden": 1014
     },
     {
      "id": "0ee62adf-84d5-44f6-91e7-400c84574dcc",
@@ -2616,7 +2616,7 @@
      "sha": "df9761083ec23b32314b6827dcd60593fe0e617a",
      "type": "image/webp",
      "size": 102376,
-     "orden": 2
+     "orden": 1015
     },
     {
      "id": "acdae51f-1054-4f25-84de-ef9d9b3097d6",
@@ -2631,7 +2631,7 @@
      "sha": "6035b98fb9ab12f28e0b7af26047d60d1a77e1f0",
      "type": "image/webp",
      "size": 62296,
-     "orden": 3
+     "orden": 1016
     },
     {
      "id": "46842364-1b67-444e-8bf8-486a31ef3066",
@@ -2646,7 +2646,7 @@
      "sha": "88efbd948ff030fc584447e7860e3d06bf0326c5",
      "type": "image/webp",
      "size": 79816,
-     "orden": 4
+     "orden": 1017
     },
     {
      "id": "b63c7c93-243d-42f2-a100-4ef98bdf1c2e",
@@ -2661,7 +2661,7 @@
      "sha": "39fedb19a790f844f2c0ba6d903451cdadb634de",
      "type": "image/webp",
      "size": 57180,
-     "orden": 5
+     "orden": 1018
     },
     {
      "id": "d7dd7674-c5c1-4a19-a69b-5f23f85b42b5",
@@ -2676,7 +2676,7 @@
      "sha": "765652b6d2feb21b9b2a2e365fd7a895a1f16f66",
      "type": "image/webp",
      "size": 66754,
-     "orden": 6
+     "orden": 0
     },
     {
      "id": "9d09d0fd-fa39-487f-8556-e9a7cc4bc3d2",
@@ -2691,7 +2691,7 @@
      "sha": "4247b3ea968fb9da3cc37fadf45220ee922387a4",
      "type": "image/webp",
      "size": 81604,
-     "orden": 7
+     "orden": 1
     },
     {
      "id": "09ab37da-af4d-4f86-9f1c-07ad793a920b",
@@ -2706,7 +2706,7 @@
      "sha": "4f6429e4cbdd9ae56878656806152baa68576fc0",
      "type": "image/webp",
      "size": 111486,
-     "orden": 8
+     "orden": 2
     },
     {
      "id": "60d680ad-3f20-4af0-b24c-383f1b74fb83",
@@ -2721,7 +2721,7 @@
      "sha": "028c6a426416405259410b17b5e7679157ab3993",
      "type": "image/webp",
      "size": 73414,
-     "orden": 9
+     "orden": 3
     },
     {
      "id": "78c8cb39-fd44-4002-9c27-0f4fb67bbdc6",
@@ -2736,7 +2736,7 @@
      "sha": "33b09e13136641d228c40f83c1be6a061f050497",
      "type": "image/webp",
      "size": 97150,
-     "orden": 10
+     "orden": 4
     },
     {
      "id": "f311b63e-fafe-4f09-8f05-dc6475de7e06",
@@ -2751,12 +2751,102 @@
      "sha": "e35337040c43270038b7e92a39b18084e494c48d",
      "type": "image/webp",
      "size": 72038,
+     "orden": 5
+    },
+    {
+     "id": "37242808-df9a-4183-993e-b5938007a5c3",
+     "by": "javi",
+     "at": "2026-11-17T15:26:29.030Z",
+     "base": "calle-1",
+     "version": 1,
+     "shaOrigen": "e39032f6f4115ef25ea80b9c8f7ea356bab02d79",
+     "name": "calle-1-v1.webp",
+     "path": "archivos/modelos/calle-1-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/calle-1-v1.webp",
+     "sha": "84066a932ca8d2e822139158feafe71b188ed938",
+     "type": "image/webp",
+     "size": 66708,
+     "orden": 6
+    },
+    {
+     "id": "98e352dc-dfcd-4246-8151-a0cc9a37ab2a",
+     "by": "javi",
+     "at": "2026-11-17T15:26:32.230Z",
+     "base": "izq_atras-1",
+     "version": 1,
+     "shaOrigen": "1c51c7e07a15ca14010d83773ae3754c70f33a7d",
+     "name": "izq_atras-1-v1.webp",
+     "path": "archivos/modelos/izq_atras-1-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq_atras-1-v1.webp",
+     "sha": "c5a2a3a5cd58301f3a9234546e9da773149e7d8e",
+     "type": "image/webp",
+     "size": 81634,
+     "orden": 7
+    },
+    {
+     "id": "bb45a9ac-0a96-46d4-b200-1aa891c0d51e",
+     "by": "javi",
+     "at": "2026-11-17T15:26:35.394Z",
+     "base": "cerca-1",
+     "version": 1,
+     "shaOrigen": "54160c2924585c356ab91a9777c374ff2b1390b4",
+     "name": "cerca-1-v1.webp",
+     "path": "archivos/modelos/cerca-1-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/cerca-1-v1.webp",
+     "sha": "3151c7308cb6cb1e44254a1dab57c09c30b58747",
+     "type": "image/webp",
+     "size": 111654,
+     "orden": 8
+    },
+    {
+     "id": "9b2aad73-e060-40df-9d98-742953c7a535",
+     "by": "javi",
+     "at": "2026-11-17T15:26:38.731Z",
+     "base": "der-1",
+     "version": 1,
+     "shaOrigen": "60bf7da8d215b4eeb2bbb6439ad25ad4fd2ee18d",
+     "name": "der-1-v1.webp",
+     "path": "archivos/modelos/der-1-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/der-1-v1.webp",
+     "sha": "adacb32e1641609f8f924ac683962cd1f1113858",
+     "type": "image/webp",
+     "size": 97146,
+     "orden": 9
+    },
+    {
+     "id": "1a90e22e-7a7f-4f97-8891-5224a84e60f1",
+     "by": "javi",
+     "at": "2026-11-17T15:26:42.921Z",
+     "base": "frente-1",
+     "version": 1,
+     "shaOrigen": "c6fc342fb1fff63a442bfbe03067f7017388bfb2",
+     "name": "frente-1-v1.webp",
+     "path": "archivos/modelos/frente-1-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/frente-1-v1.webp",
+     "sha": "e2e230f45c8abd02415f30f821e4af27b35c3006",
+     "type": "image/webp",
+     "size": 73232,
+     "orden": 10
+    },
+    {
+     "id": "a1822636-e936-450b-9c27-30ca54ee6c2b",
+     "by": "javi",
+     "at": "2026-11-17T15:26:46.234Z",
+     "base": "izq-1",
+     "version": 1,
+     "shaOrigen": "fe0fbdb4e832ed3937774871e838645ba6e21dfb",
+     "name": "izq-1-v1.webp",
+     "path": "archivos/modelos/izq-1-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos/izq-1-v1.webp",
+     "sha": "3d957abfdfe3c46f876df843a81f7db490418256",
+     "type": "image/webp",
+     "size": 71956,
      "orden": 11
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-16T16:55:43.751Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-17T15:27:02.523Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-11T23:02:37.530Z",
@@ -5630,6 +5720,13 @@
  ],
  "comments": [
   {
+   "id": "d390898b-279f-4634-8759-8220c6b54b2a",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "javi",
+   "text": "Vistas actualizadas. confirmar si están okay para empezar a renderizar",
+   "createdAt": "2026-11-17T15:27:02.525Z"
+  },
+  {
    "id": "c70a8314-f9e7-479e-a3c4-eefef5b07cf1",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -8313,6 +8410,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "76cbe090-1c09-474f-915b-bf13f72c1337",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-17T15:27:02.525Z"
+  },
+  {
+   "id": "8c55b0ef-db97-4b76-babb-d524a8564cea",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-17T15:27:02.524Z"
+  },
   {
    "id": "f62b1f25-4086-4771-9c6f-dda4a793c8ec",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -13959,6 +14076,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3c98af17-018a-4e21-9714-e8a42bdd326c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 6 archivos en “Casa Mañío” para revisar: Vistas actualizadas. confirmar si están okay para empezar a renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi te pide revisar: Vistas actualizadas. confirmar si están okay para empezar a renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-17T15:27:02.525Z"
+  },
+  {
+   "id": "6c04aa64-767d-4b09-a3ec-30d84e526ea4",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 6 archivos en “Casa Mañío” para revisar: Vistas actualizadas. confirmar si están okay para empezar a renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi te pide revisar: Vistas actualizadas. confirmar si están okay para empezar a renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-17T15:27:02.525Z"
+  },
+  {
+   "id": "75c6f50b-2b4f-4bd5-aa17-1ac953dae0b8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-17T15:27:02.525Z"
+  },
+  {
+   "id": "12b9398e-a03d-4bd9-80e1-ef134d71e483",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-17T15:27:02.525Z"
+  },
   {
    "id": "924265f2-d56f-4ea5-821d-b8af69a34b67",
    "to": "flavio",

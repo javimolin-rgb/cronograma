@@ -2981,7 +2981,7 @@
      "sha": "16532d8a0d6282330c553193b2dcb65df3b0a0c7",
      "type": "image/webp",
      "size": 85778,
-     "orden": 1014
+     "orden": 1002
     },
     {
      "id": "f9130570-46bc-4d00-927d-4dbc6df6f120",
@@ -2996,7 +2996,7 @@
      "sha": "92a6299e7579fe11bfefa7ed7739aafe54013e4b",
      "type": "image/webp",
      "size": 111034,
-     "orden": 1015
+     "orden": 1003
     },
     {
      "id": "13375c22-84ce-4c0d-95f1-b954c75f7abe",
@@ -3011,7 +3011,7 @@
      "sha": "ebc107012e6835d6d1e903800e52da938b1e6b2f",
      "type": "image/webp",
      "size": 107798,
-     "orden": 1016
+     "orden": 1004
     },
     {
      "id": "f4538125-0fdd-4810-a030-ebde63af624e",
@@ -3026,7 +3026,7 @@
      "sha": "8d66a9c1f61a72ca1b0dcd3b936c6007be858b4d",
      "type": "image/jpeg",
      "size": 260083,
-     "orden": 1,
+     "orden": 1005,
      "extra": true
     },
     {
@@ -3042,7 +3042,7 @@
      "sha": "34835f5f762ca4c73b50e903a1b09c929d2d1cf4",
      "type": "image/jpeg",
      "size": 277451,
-     "orden": 2,
+     "orden": 1006,
      "extra": true
     },
     {
@@ -3058,7 +3058,7 @@
      "sha": "8b2e4de7142eee472f2fe9b2cf42e208a920ebd0",
      "type": "image/jpeg",
      "size": 279329,
-     "orden": 1017
+     "orden": 1007
     },
     {
      "id": "2d701d6a-9443-4a12-b3f0-3a5da652075b",
@@ -3073,7 +3073,7 @@
      "sha": "c58fe1ab2181fcd23fa45ce9dd9a36b5792dff60",
      "type": "image/webp",
      "size": 97992,
-     "orden": 1018
+     "orden": 1008
     },
     {
      "id": "340ab011-a227-449f-a804-7c60fb34478d",
@@ -3088,7 +3088,7 @@
      "sha": "0332ea440118607b735c22245f4030d6f4ff81f8",
      "type": "image/webp",
      "size": 110296,
-     "orden": 1019
+     "orden": 1009
     },
     {
      "id": "f5011bbd-ca29-4d72-91c3-cb59fe323dc6",
@@ -3103,7 +3103,7 @@
      "sha": "ac7d926c99d67129f64d745fd4384ed046e4a26e",
      "type": "image/webp",
      "size": 117964,
-     "orden": 1020
+     "orden": 1010
     },
     {
      "id": "2456e684-ef16-419a-a99b-3f973e9a695d",
@@ -3118,7 +3118,7 @@
      "sha": "6914bdfb438332cb4628e2c46125540095213453",
      "type": "image/webp",
      "size": 96964,
-     "orden": 1021
+     "orden": 1011
     },
     {
      "id": "ddbd6f46-4a39-46a7-8d6d-2a9d4e919622",
@@ -3133,7 +3133,7 @@
      "sha": "0834df4159507cc09d4a8dee480aebdb4c7612e8",
      "type": "image/webp",
      "size": 109524,
-     "orden": 1022
+     "orden": 1012
     },
     {
      "id": "b7003560-57d8-45ad-b344-8e3adb6c079d",
@@ -3148,7 +3148,7 @@
      "sha": "3af1f1fb2a4b3a149b2b127995e60c478a3a3855",
      "type": "image/webp",
      "size": 117144,
-     "orden": 1023
+     "orden": 1013
     },
     {
      "id": "ae0f1091-d55a-424d-88ff-73ed20c2b256",
@@ -3163,7 +3163,7 @@
      "sha": "4ec442f600265a7f79f9878bf551a6f2c762dee4",
      "type": "image/webp",
      "size": 96900,
-     "orden": 1024
+     "orden": 1014
     },
     {
      "id": "d4dcc3d0-96bc-41c0-a4db-3f1c018645a2",
@@ -3178,7 +3178,7 @@
      "sha": "a518afb84768fb43bee4d52fbdad0ae2bad9d886",
      "type": "image/webp",
      "size": 109792,
-     "orden": 1025
+     "orden": 1015
     },
     {
      "id": "f129e8fe-4409-446c-8f0d-ecf040d9f99d",
@@ -3193,7 +3193,7 @@
      "sha": "f91d900c5ffc9bb99c3cd4be7fda09c3b5694868",
      "type": "image/webp",
      "size": 117570,
-     "orden": 1026
+     "orden": 1016
     },
     {
      "id": "b816749c-bf30-421a-9264-a932e1c5cc83",
@@ -3208,7 +3208,7 @@
      "sha": "cefdaf51b948d57926bdbf360c457e57eb12c09f",
      "type": "image/webp",
      "size": 97472,
-     "orden": 1027
+     "orden": 1017
     },
     {
      "id": "03ee43a1-8630-4e31-95dd-e3d0b169063d",
@@ -3223,7 +3223,7 @@
      "sha": "008cd084849cd7e98b89c7f619fc87957e34372e",
      "type": "image/webp",
      "size": 111014,
-     "orden": 3,
+     "orden": 1018,
      "extra": true
     },
     {
@@ -3239,7 +3239,7 @@
      "sha": "9b582dc13265a3801b991c0cb6fe79ba7d10b6a7",
      "type": "image/webp",
      "size": 118646,
-     "orden": 4,
+     "orden": 1019,
      "extra": true
     },
     {
@@ -3256,7 +3256,7 @@
      "type": "image/webp",
      "size": 97488,
      "extra": true,
-     "orden": 5
+     "orden": 1020
     },
     {
      "id": "7aba207d-f3b9-4790-8a7c-743223c38e2a",
@@ -3274,7 +3274,7 @@
      "sha": "c8bc3e460afe55bc2e91b1bcee4f4e11bbcd97f2",
      "type": "video/mp4",
      "size": 8429208,
-     "orden": 1028
+     "orden": 1021
     },
     {
      "id": "12ef978d-d9be-481e-800c-7cff7d7dcf5d",
@@ -3292,7 +3292,7 @@
      "sha": "119922fb62fba9ef5ff2b0991378401fc2e855ea",
      "type": "video/mp4",
      "size": 7348165,
-     "orden": 6,
+     "orden": 1022,
      "extra": true
     },
     {
@@ -3309,7 +3309,7 @@
      "type": "image/jpeg",
      "size": 258409,
      "extra": true,
-     "orden": 7
+     "orden": 1023
     },
     {
      "id": "66213d8b-d382-473b-9082-f2ccb2d5e2d4",
@@ -3325,7 +3325,7 @@
      "type": "image/jpeg",
      "size": 190482,
      "extra": true,
-     "orden": 8
+     "orden": 1024
     },
     {
      "id": "8b557210-0495-4ffd-950f-91624b614864",
@@ -3341,7 +3341,7 @@
      "type": "image/jpeg",
      "size": 267784,
      "extra": true,
-     "orden": 9
+     "orden": 1025
     },
     {
      "id": "d56d8c59-6a0c-4d0e-9e2e-81e2c84b2889",
@@ -3357,7 +3357,7 @@
      "type": "image/jpeg",
      "size": 242548,
      "extra": true,
-     "orden": 10
+     "orden": 1026
     },
     {
      "id": "45e49f1b-99cd-492e-806d-18bb49fb5076",
@@ -3373,7 +3373,7 @@
      "type": "image/jpeg",
      "size": 254692,
      "extra": true,
-     "orden": 11
+     "orden": 1027
     },
     {
      "id": "36fe31b0-be79-43cc-9423-2984013b23cd",
@@ -3391,7 +3391,8 @@
      "sha": "5289db18c23691271a0764c953cb9483061ee598",
      "type": "video/mp4",
      "size": 9374180,
-     "orden": 0
+     "orden": 1028,
+     "extra": true
     },
     {
      "id": "08470c8f-d732-4784-9092-0fae40146855",
@@ -3409,11 +3410,11 @@
      "sha": "9f3bf5dfe3b6a256fd85f830512cc2d7efe5c699",
      "type": "video/mp4",
      "size": 7634224,
-     "orden": 12
+     "orden": 0
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-17T15:25:30.209Z",
+   "updatedAt": "2026-11-17T17:58:13.893Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -8423,6 +8424,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "4d9aedf2-c4d0-414b-a579-56ab6a5511c7",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-17T17:58:13.893Z"
+  },
   {
    "id": "e8376c3e-e9c5-43ae-8aad-f139596cef16",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -14099,6 +14110,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2aca1e5f-8673-4f11-a0a8-2eddfff47da2",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T17:58:13.894Z"
+  },
+  {
+   "id": "a4014508-49e6-4fad-89a8-2b0e8209616a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T17:58:13.894Z"
+  },
   {
    "id": "46ee0a9c-11ec-43e6-a97c-c3088b7f3237",
    "to": "flavio",
@@ -25778,8 +25819,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "javi",
-   "at": "2026-11-17T15:25:05.192Z",
-   "hasta": "2026-11-17T15:25:01.150Z",
+   "at": "2026-11-17T17:57:48.584Z",
+   "hasta": "2026-11-17T15:25:30.209Z",
    "que": "pieza"
   },
   {

@@ -26080,6 +26080,14 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "person": "flavio",
+   "at": "2026-11-17T21:33:50.987Z",
+   "hasta": "2026-11-10T19:05:35.968Z",
+   "que": "pieza"
+  },
+  {
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|flavio",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "flavio",

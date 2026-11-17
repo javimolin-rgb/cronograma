@@ -5605,6 +5605,14 @@
  ],
  "comments": [
   {
+   "id": "19452762-4521-427b-9bba-53eb5969beec",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que es voz en off, eso ya no lo quieres con voz? o que diga y salga escrito lo mismo?",
+   "fileIds": [],
+   "createdAt": "2026-11-17T14:47:14.085Z"
+  },
+  {
    "id": "48a2977f-2823-4d95-9d3f-9dd4bae51316",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -8265,6 +8273,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f3178149-3b46-47f5-a6c2-117f0e03d253",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-17T14:47:14.088Z"
+  },
   {
    "id": "ec3d592f-a02c-4cbf-a4c0-dbc987bcd3c8",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -13848,6 +13866,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "09bfedda-d0f2-4fad-b679-3bada3bd96cd",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T14:47:14.095Z"
+  },
+  {
+   "id": "555a7ce9-4d9f-4a23-841a-5b224a3efb32",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T14:47:14.090Z"
+  },
   {
    "id": "dfbe5a61-5bf7-4257-b7cc-50f943c6005a",
    "to": "flavio",

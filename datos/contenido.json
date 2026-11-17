@@ -2473,7 +2473,7 @@
   },
   {
    "title": "Casa Mañío",
-   "caption": "Casa Mañío, nuestro modelo de la semana 🌊\n\nHay casas con una ventana al mar; esta es toda ventana. Su fachada vidriada corre de punta a punta y la terraza la sigue entera: del living al exterior hay solo un paso.\n\nToda en un solo nivel, baja y tendida, deja ver el paisaje y cuida tu privacidad.\n\n3 dormitorios, 2 baños y 106 m² útiles en un piso, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMañío #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+   "caption": "Casa Mañío, nuestro modelo de la semana 🌊\n\nHay casas con una ventana al mar; esta es toda ventana. Su fachada vidriada corre de punta a punta y la terraza la sigue entera: del living al exterior hay solo un paso.\n\nToda en un solo nivel, baja y tendida, deja ver el paisaje y cuida tu privacidad.\n\n3 dormitorios, 2 baños y 106 m² útiles en un piso, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMañío #ViveLoNatural #CasasPrediseñadas #CasasSustentables ",
    "notes": "",
    "hashtags": "",
    "guion": "Hay casas con una ventana al mar… esta es toda ventana.\n\nToda en un solo nivel, sin escaleras, sin barreras.\n\nLa fachada vidriada corre a lo largo, y la luz llega a cada rincón.\n\nBaja y tendida, deja ver el paisaje y cuida tu privacidad.\n\nTres dormitorios, y todo a un paso.\n\nDel living a la terraza hay solo un paso, y el día se vive afuera.\n\nPara la familia que vive hacia afuera, con los pies en la arena.\n\nCasa Mañío. La casa que se abre entera.\n\nDescúbrela en neorigen.cl",
@@ -2851,7 +2851,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-17T17:57:30.854Z",
+   "updatedAt": "2026-11-17T17:57:46.828Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -2864,6 +2864,13 @@
      "campo": "caption",
      "text": "",
      "hasta": "2026-11-03T14:37:41.263Z",
+     "by": "javi"
+    },
+    {
+     "id": "1801e7dc-946a-4473-aaf0-6c21aeddce43",
+     "campo": "caption",
+     "text": "Casa Mañío, nuestro modelo de la semana 🌊\n\nHay casas con una ventana al mar; esta es toda ventana. Su fachada vidriada corre de punta a punta y la terraza la sigue entera: del living al exterior hay solo un paso.\n\nToda en un solo nivel, baja y tendida, deja ver el paisaje y cuida tu privacidad.\n\n3 dormitorios, 2 baños y 106 m² útiles en un piso, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaMañío #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+     "hasta": "2026-11-17T17:57:46.828Z",
      "by": "javi"
     }
    ],
@@ -8417,14 +8424,14 @@
  ],
  "activity": [
   {
-   "id": "7c5a612b-3e3e-44eb-8702-f795c52764ad",
+   "id": "e8376c3e-e9c5-43ae-8aad-f139596cef16",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
    "actor": "javi",
    "type": "edit",
-   "text": "editó archivos",
+   "text": "editó copy",
    "meta": null,
-   "createdAt": "2026-11-17T17:57:30.855Z"
+   "createdAt": "2026-11-17T17:57:46.830Z"
   },
   {
    "id": "76cbe090-1c09-474f-915b-bf13f72c1337",
@@ -14093,34 +14100,34 @@
  ],
  "notifications": [
   {
-   "id": "234fc3a6-4b46-4e56-9fe2-9d3dae3aa679",
+   "id": "46ee0a9c-11ec-43e6-a97c-c3088b7f3237",
    "to": "flavio",
    "from": "javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
-   "text": "editó “Casa Mañío” (archivos)",
+   "text": "editó “Casa Mañío” (copy)",
    "read": false,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
-   "body": "Javi editó archivos",
+   "body": "Javi editó copy",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T17:57:30.855Z"
+   "createdAt": "2026-11-17T17:57:46.830Z"
   },
   {
-   "id": "156faf85-ab5b-4e2a-84fa-17fe22599672",
+   "id": "6a7c198a-a6c5-40c1-b3a4-d1ea5c49b892",
    "to": "maca",
    "from": "javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
-   "text": "editó “Casa Mañío” (archivos)",
+   "text": "editó “Casa Mañío” (copy)",
    "read": false,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
-   "body": "Javi editó archivos",
+   "body": "Javi editó copy",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T17:57:30.855Z"
+   "createdAt": "2026-11-17T17:57:46.830Z"
   },
   {
    "id": "3c98af17-018a-4e21-9714-e8a42bdd326c",
@@ -25835,8 +25842,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "javi",
-   "at": "2026-11-17T17:57:17.775Z",
-   "hasta": "2026-11-17T15:27:02.523Z",
+   "at": "2026-11-17T17:57:33.344Z",
+   "hasta": "2026-11-17T17:57:30.854Z",
    "que": "pieza"
   },
   {

@@ -2775,7 +2775,7 @@
   },
   {
    "title": "Casa Boldo",
-   "caption": "Casa Boldo, nuestro modelo de la semana 🌿\n\nHay casas que miran a todas partes; esta mira a un solo lugar. Larga y serena, toda la casa se orienta hacia el agua y su ventanal enmarca el lago como una pintura.\n\nCuatro dormitorios repartidos en dos pisos, para la familia grande que se junta todas las vacaciones.\n\n4 dormitorios, 2 baños y 96,6 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaBoldo #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+   "caption": "Casa Boldo, nuestro modelo de la semana 🌿\n\nUna arquitectura que invita a disfrutar del entorno. Sus grandes ventanales incorporan el paisaje y la luz natural a los espacios interiores, creando una conexión permanente con la naturaleza.\n\nEn sus dos pisos, los espacios se conectan para disfrutar de la vida en común sin perder la privacidad.\n\n4 dormitorios, 2 baños y 103,9 m² útiles. Entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaBoldo #ViveLoNatural #CasasPrediseñadas #CasasSustentables",
    "notes": "",
    "hashtags": "",
    "guion": "Hay lugares donde el tiempo…\n\nDonde despertar con el lago…\n\nDe esa idea nace Casa Boldo. Una arquitectura alargada…\n\n…donde un gran ventanal conecta el interior…\n\n…los espacios invitan a compartir\n\n…un lugar para disfrutar de un momento propio.\n\nSus cuatro dormitorios y dos baños…\n\n¿Te imaginas viviendo aquí? Conversemos…\n\nDescubre Casa Boldo en neorigen.cl.",
@@ -3310,7 +3310,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-17T15:25:01.150Z",
+   "updatedAt": "2026-11-17T15:25:30.209Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -3323,6 +3323,13 @@
      "campo": "caption",
      "text": "",
      "hasta": "2026-11-03T14:36:53.883Z",
+     "by": "javi"
+    },
+    {
+     "id": "61e65823-7bf8-4570-880a-dba2703307a3",
+     "campo": "caption",
+     "text": "Casa Boldo, nuestro modelo de la semana 🌿\n\nHay casas que miran a todas partes; esta mira a un solo lugar. Larga y serena, toda la casa se orienta hacia el agua y su ventanal enmarca el lago como una pintura.\n\nCuatro dormitorios repartidos en dos pisos, para la familia grande que se junta todas las vacaciones.\n\n4 dormitorios, 2 baños y 96,6 m² útiles, con entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaBoldo #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+     "hasta": "2026-11-17T15:25:30.209Z",
      "by": "javi"
     }
    ],
@@ -8306,6 +8313,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "f62b1f25-4086-4771-9c6f-dda4a793c8ec",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-11-17T15:25:30.214Z"
+  },
   {
    "id": "c5eda9b8-e66f-4e13-b8f8-537b67456d0a",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -13942,6 +13959,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "924265f2-d56f-4ea5-821d-b8af69a34b67",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T15:25:30.215Z"
+  },
+  {
+   "id": "d4a58330-6c50-4a45-aed2-b11ae2cebfe3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T15:25:30.214Z"
+  },
   {
    "id": "4b4da985-efa1-4838-bf24-870d57e913eb",
    "to": "maca",

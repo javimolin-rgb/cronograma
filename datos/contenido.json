@@ -14326,13 +14326,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (copy)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi editó copy",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T17:57:46.830Z"
+   "createdAt": "2026-11-17T17:57:46.830Z",
+   "readAt": "2026-11-17T20:48:21.626Z"
   },
   {
    "id": "6a7c198a-a6c5-40c1-b3a4-d1ea5c49b892",
@@ -14371,13 +14372,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "review",
    "text": "subió 6 archivos en “Casa Mañío” para revisar: Vistas actualizadas. confirmar si están okay para empezar a renderizar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi te pide revisar: Vistas actualizadas. confirmar si están okay para empezar a renderizar",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T15:27:02.525Z"
+   "createdAt": "2026-11-17T15:27:02.525Z",
+   "readAt": "2026-11-17T20:48:21.626Z"
   },
   {
    "id": "75c6f50b-2b4f-4bd5-aa17-1ac953dae0b8",
@@ -14386,13 +14388,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T15:27:02.525Z"
+   "createdAt": "2026-11-17T15:27:02.525Z",
+   "readAt": "2026-11-17T20:48:21.626Z"
   },
   {
    "id": "12b9398e-a03d-4bd9-80e1-ef134d71e483",
@@ -15196,13 +15199,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-15T21:06:52.319Z"
+   "createdAt": "2026-11-15T21:06:52.319Z",
+   "readAt": "2026-11-17T20:48:21.626Z"
   },
   {
    "id": "005e01df-892a-4351-9164-95b5474e446e",
@@ -15243,13 +15247,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "comment",
    "text": "comentó en “Historia: los modelos de casas”: Hola Javi, estamos ok. Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Maca comentó: Hola Javi, estamos ok. Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-15T13:19:47.028Z"
+   "createdAt": "2026-11-15T13:19:47.028Z",
+   "readAt": "2026-11-17T20:48:21.626Z"
   },
   {
    "id": "a5702b41-7597-4945-8d60-2e102b6575e1",
@@ -15435,13 +15440,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "status",
    "text": "movió “Historia: los modelos de casas” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Historia: los modelos de casas",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T18:02:35.616Z"
+   "createdAt": "2026-11-14T18:02:35.616Z",
+   "readAt": "2026-11-17T20:48:21.627Z"
   },
   {
    "id": "9a234b01-4e18-44c3-8ead-f5683b96327a",
@@ -15466,13 +15472,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:54:50.742Z"
+   "createdAt": "2026-11-14T17:54:50.742Z",
+   "readAt": "2026-11-17T20:48:21.627Z"
   },
   {
    "id": "6b63d7ed-b415-48b8-8198-d23ede0a85b4",
@@ -15497,13 +15504,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:52:15.205Z"
+   "createdAt": "2026-11-14T17:52:15.205Z",
+   "readAt": "2026-11-17T20:48:21.627Z"
   },
   {
    "id": "a878989b-9d92-4f96-8edd-fd8a85cb9885",
@@ -15544,13 +15552,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "review",
    "text": "subió 9 archivos en “Historia: los modelos de casas” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi subió 9 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:49:02.091Z"
+   "createdAt": "2026-11-14T17:49:02.091Z",
+   "readAt": "2026-11-17T20:48:21.627Z"
   },
   {
    "id": "2758644a-80e8-42b5-ade7-0f9be9eea7fa",
@@ -15559,13 +15568,14 @@
    "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "type": "update",
    "text": "editó “Historia: los modelos de casas” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Historia: los modelos de casas",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-14T17:49:02.091Z"
+   "createdAt": "2026-11-14T17:49:02.091Z",
+   "readAt": "2026-11-17T20:48:21.627Z"
   },
   {
    "id": "5e3663ad-175d-43c7-b69a-00097e56a631",

@@ -14308,13 +14308,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Maca No me queda claro, en tu referencia pusiste escrito lo que se supone que e…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T14:47:14.090Z"
+   "createdAt": "2026-11-17T14:47:14.090Z",
+   "readAt": "2026-11-17T16:18:40.803Z"
   },
   {
    "id": "dfbe5a61-5bf7-4257-b7cc-50f943c6005a",
@@ -14338,13 +14339,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T13:54:20.694Z"
+   "createdAt": "2026-11-17T13:54:20.694Z",
+   "readAt": "2026-11-17T16:18:40.805Z"
   },
   {
    "id": "52e084a7-836c-4690-97b1-8909dadd1183",
@@ -14368,13 +14370,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi comentó: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T13:53:51.299Z"
+   "createdAt": "2026-11-17T13:53:51.299Z",
+   "readAt": "2026-11-17T16:18:40.805Z"
   },
   {
    "id": "4d6d22f3-22be-4281-9601-55992f468faa",
@@ -25730,9 +25733,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-17T12:42:39.980Z",
-   "hasta": "2026-11-17T12:42:39.975Z",
-   "que": "comentario"
+   "at": "2026-11-17T16:18:40.806Z",
+   "hasta": "2026-11-17T13:53:47.562Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

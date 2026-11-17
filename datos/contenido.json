@@ -13804,13 +13804,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @javi, estuvimos “jugando” tratando de crear más o menos lo que queremos transmi…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca te mencionó: @javi, estuvimos “jugando” tratando de crear más o menos lo que queremos transmi…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-17T12:42:39.989Z"
+   "createdAt": "2026-11-17T12:42:39.989Z",
+   "readAt": "2026-11-17T12:43:16.459Z"
   },
   {
    "id": "7fb18fc6-80cb-4261-9d24-0ab6f4077f57",
@@ -13835,13 +13836,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Javi, me parece bien que sea un vídeo cortito. Tratemos sea estilo “ Nescafé “ …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca te mencionó: @Javi, me parece bien que sea un vídeo cortito. Tratemos sea estilo “ Nescafé “ …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-16T21:07:58.988Z"
+   "createdAt": "2026-11-16T21:07:58.988Z",
+   "readAt": "2026-11-17T12:43:16.459Z"
   },
   {
    "id": "d08bb87a-481b-4330-a2db-b5adfc8a58ba",
@@ -25198,8 +25200,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-16T17:30:14.717Z",
-   "hasta": "2026-11-16T14:49:44.486Z",
+   "at": "2026-11-17T12:43:16.459Z",
+   "hasta": "2026-11-17T12:42:39.975Z",
    "que": "pieza"
   },
   {

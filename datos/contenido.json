@@ -1140,14 +1140,17 @@
     ],
     "voz": 3
    },
+   "guionNotas": [],
+   "spotify": "",
    "campaign": "Publicaciones informativas",
    "time": "",
    "date": "2026-11-26",
    "inicio": "",
-   "format": "reel",
+   "format": "carrusel",
    "status": "estructura",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "platforms": [
     "instagram"
@@ -1175,12 +1178,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-17T21:34:03.576Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "La casa que respira",
@@ -8496,6 +8497,16 @@
  ],
  "activity": [
   {
+   "id": "2c49073f-39e9-4b1e-ae2e-e2f7f4899a1a",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó formato",
+   "meta": null,
+   "createdAt": "2026-11-17T21:34:03.577Z"
+  },
+  {
    "id": "75e63f6b-8a31-4295-ad23-0342318c58ea",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14231,6 +14242,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b30244ae-f65a-475c-a021-b6c506223ce3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "update",
+   "text": "editó “Aire nuevo sin abrir la ventana” (formato)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi editó formato",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-17T21:34:03.577Z"
+  },
   {
    "id": "79bd35e8-78d0-4452-9d82-81aea3dca8cc",
    "to": "javi",

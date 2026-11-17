@@ -2906,8 +2906,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-17T17:57:46.828Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-17T21:19:43.316Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-11T23:02:37.530Z",
@@ -5789,6 +5789,14 @@
  ],
  "comments": [
   {
+   "id": "b0a6eee0-499d-4bf2-a5a8-2c9ff1e196c9",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Están ok gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-17T21:19:43.318Z"
+  },
+  {
    "id": "7ead1dcb-57e9-44ec-9554-558c00a45bab",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -8487,6 +8495,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "75e63f6b-8a31-4295-ad23-0342318c58ea",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-17T21:19:43.318Z"
+  },
   {
    "id": "75243ac0-883c-4229-ad1a-cee450abd527",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -14213,6 +14231,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "79bd35e8-78d0-4452-9d82-81aea3dca8cc",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Están ok gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Están ok gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-17T21:19:43.319Z"
+  },
+  {
+   "id": "5ea2af70-a207-427e-9f2a-897eb7bad007",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Están ok gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Están ok gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-17T21:19:43.318Z"
+  },
   {
    "id": "d9750a49-9fcb-417c-a666-cbe66a23ad1a",
    "to": "javi",
@@ -26121,9 +26169,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-17T21:08:26.817Z",
-   "hasta": "2026-11-17T17:57:46.828Z",
-   "que": "pieza"
+   "at": "2026-11-17T21:19:43.317Z",
+   "hasta": "2026-11-17T21:19:43.316Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

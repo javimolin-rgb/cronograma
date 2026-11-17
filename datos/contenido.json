@@ -5605,6 +5605,14 @@
  ],
  "comments": [
   {
+   "id": "991a8b2c-9252-4e9e-90cd-8495f27e3373",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "@Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contradice: el bloque de datos dice 96,6 m² útiles y la descripción dice 103,9 m² útiles",
+   "fileIds": [],
+   "createdAt": "2026-11-17T14:50:16.672Z"
+  },
+  {
    "id": "19452762-4521-427b-9bba-53eb5969beec",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -8273,6 +8281,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "cb66582a-cb44-4602-94b2-92bed4675e87",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-17T14:50:16.674Z"
+  },
   {
    "id": "f3178149-3b46-47f5-a6c2-117f0e03d253",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -13866,6 +13884,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f22ec55c-b97a-4e48-a60e-4fcddcf077eb",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contr…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T14:50:16.674Z"
+  },
+  {
+   "id": "e8097e73-1d1d-47d9-9e51-8cc0ece08f7a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "mention",
+   "text": "te mencionó en “Casa Boldo”: @Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contr…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te mencionó: @Maca  @Flavio cuales son los datos correctos? neorigen.cl/modelo-boldo se contr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-17T14:50:16.674Z"
+  },
   {
    "id": "09bfedda-d0f2-4fad-b679-3bada3bd96cd",
    "to": "flavio",

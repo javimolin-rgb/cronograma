@@ -1456,7 +1456,7 @@
      "sha": "2c5526c2d537ceca36fae8c5509f01c0c0d34974",
      "type": "image/webp",
      "size": 133060,
-     "orden": 1,
+     "orden": 1005,
      "extra": true
     },
     {
@@ -1472,7 +1472,7 @@
      "sha": "523b80fba0a6a789cced8e7e3d016e3d17366840",
      "type": "image/webp",
      "size": 152752,
-     "orden": 2,
+     "orden": 1006,
      "extra": true
     },
     {
@@ -1488,7 +1488,7 @@
      "sha": "a0eb1b1c7c45d445c7e5f51021bc417fc45bc14e",
      "type": "image/webp",
      "size": 159602,
-     "orden": 3,
+     "orden": 1007,
      "extra": true
     },
     {
@@ -1504,7 +1504,7 @@
      "sha": "d5aa71a3785bbcda8b9136219471c37e25e2275e",
      "type": "image/webp",
      "size": 51982,
-     "orden": 4,
+     "orden": 1008,
      "extra": true
     },
     {
@@ -1523,7 +1523,7 @@
      "sha": "4e03250785b6376fbe69854f4d0bfdb717905bec",
      "type": "video/mp4",
      "size": 5477727,
-     "orden": 0
+     "orden": 3
     },
     {
      "id": "855968ef-1442-4edc-9f74-06e93458106c",
@@ -1542,7 +1542,7 @@
      "type": "video/mp4",
      "size": 4252411,
      "extra": true,
-     "orden": 5
+     "orden": 1009
     },
     {
      "id": "45cb8e56-4be6-492e-a8ed-2eabd99deb74",
@@ -1560,7 +1560,7 @@
      "sha": "71897d04b982870c7eab2e88fa62d39ccb9cf8e0",
      "type": "video/mp4",
      "size": 7673485,
-     "orden": 6
+     "orden": 0
     },
     {
      "id": "8c245b80-349a-4f0c-96f7-3eba7c7b6420",
@@ -1578,7 +1578,7 @@
      "sha": "b71a5b23ee82f47c06bc6efdbe0fe847d7768cb2",
      "type": "video/mp4",
      "size": 8934210,
-     "orden": 7
+     "orden": 1
     },
     {
      "id": "dbc86d12-dc3b-4ea2-becf-e268e5406f1d",
@@ -1596,7 +1596,7 @@
      "sha": "4a5f3c222577d06ba0eb89da35769966891e5239",
      "type": "video/mp4",
      "size": 8616121,
-     "orden": 8
+     "orden": 2
     }
    ],
    "checklist": [],
@@ -1627,7 +1627,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-17T20:05:01.400Z",
+   "updatedAt": "2026-11-17T20:05:27.534Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -8480,6 +8480,16 @@
  ],
  "activity": [
   {
+   "id": "2e334d34-f06c-499c-9df1-9b7d77a7d9f6",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-17T20:05:27.534Z"
+  },
+  {
    "id": "b26b9fef-39ae-4a82-a0be-25f41cb19628",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -14185,6 +14195,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "72b5d65e-d26a-40be-8ef3-63ee1a790757",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T20:05:27.535Z"
+  },
+  {
+   "id": "d5f5c895-9b32-433e-8106-7c601fa205d6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T20:05:27.534Z"
+  },
   {
    "id": "66ab1aae-a618-4e34-a43f-744df5467f08",
    "to": "maca",

@@ -5605,6 +5605,24 @@
  ],
  "comments": [
   {
+   "id": "48a2977f-2823-4d95-9d3f-9dd4bae51316",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis tratar de seguir orden",
+   "fileIds": [],
+   "createdAt": "2026-11-17T13:54:20.693Z"
+  },
+  {
+   "id": "f435d926-f2bf-4938-a293-50a4b44cf9e2",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero la idea es algo asiii . Las letras no son las nuestras.",
+   "fileIds": [
+    "855968ef-1442-4edc-9f74-06e93458106c"
+   ],
+   "createdAt": "2026-11-17T13:53:51.293Z"
+  },
+  {
    "id": "69fa0545-3804-4c52-b622-7828ad0b8f5c",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -8247,6 +8265,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "ec3d592f-a02c-4cbf-a4c0-dbc987bcd3c8",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-17T13:54:20.694Z"
+  },
+  {
+   "id": "7e432c4b-5628-437e-98bf-0dec3ac24d9c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-17T13:53:51.298Z"
+  },
   {
    "id": "fb29f14d-4688-4f9e-af67-a2c210570de7",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -13810,6 +13848,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "dfbe5a61-5bf7-4257-b7cc-50f943c6005a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T13:54:20.694Z"
+  },
+  {
+   "id": "baa1eb74-9c10-4f80-a44b-de15bef2c9b4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca Dejé acá tu mensaje de whatsapp para que no se pierdan las cosas, porfis t…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T13:54:20.694Z"
+  },
+  {
+   "id": "52e084a7-836c-4690-97b1-8909dadd1183",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T13:53:51.299Z"
+  },
+  {
+   "id": "17916f96-38f5-4fe6-9818-406d9c8fe2a4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Maca: Hola Javi, mira estuvimos jugando …. La música y audio son malos 😂, pero …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-17T13:53:51.299Z"
+  },
   {
    "id": "4d6d22f3-22be-4281-9601-55992f468faa",
    "to": "flavio",

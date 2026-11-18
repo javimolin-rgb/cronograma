@@ -27583,6 +27583,14 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|javi",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "person": "javi",
+   "at": "2026-11-18T20:04:19.893Z",
+   "hasta": "2026-11-18T20:01:25.052Z",
+   "que": "pieza"
+  },
+  {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|flavio",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "flavio",

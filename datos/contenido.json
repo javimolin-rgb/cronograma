@@ -7526,6 +7526,14 @@
  ],
  "comments": [
   {
+   "id": "417f27fc-7c47-45a7-b65f-715ebf9e1799",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Estamos ok",
+   "fileIds": [],
+   "createdAt": "2026-11-18T21:45:35.334Z"
+  },
+  {
    "id": "16339e93-5d65-42a4-b849-09009036df7f",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -10255,6 +10263,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "57446f76-0695-40e5-af85-a24ffc2478ee",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-18T21:45:35.336Z"
+  },
   {
    "id": "538e93e8-2e80-4f28-a443-399911bf4103",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -16204,6 +16222,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3b450e91-1910-4412-8cbc-dbfc5802b8b2",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Estamos ok",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Estamos ok",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:45:35.337Z"
+  },
+  {
+   "id": "624b5172-24e1-401b-8555-1d1939dfff43",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Estamos ok",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Estamos ok",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:45:35.337Z"
+  },
   {
    "id": "3d78e024-f4d9-4465-866b-d5d3d3cb349e",
    "to": "maca",

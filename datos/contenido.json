@@ -6490,7 +6490,7 @@
    "spotify": "",
    "campaign": "2. Carruseles informativos",
    "time": "",
-   "date": "2027-01-07",
+   "date": "2026-12-31",
    "inicio": "",
    "format": "carrusel",
    "status": "revision",
@@ -6681,7 +6681,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:01:27.052Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.119Z",
+   "updatedAt": "2026-11-18T23:12:36.884Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:01:27.052Z",
    "publishedAt": null
@@ -6762,7 +6762,7 @@
    "spotify": "",
    "campaign": "2. Carruseles informativos",
    "time": "",
-   "date": "2027-02-04",
+   "date": "2027-01-14",
    "inicio": "",
    "format": "carrusel",
    "status": "idea",
@@ -6797,7 +6797,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:01:28.052Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.119Z",
+   "updatedAt": "2026-11-18T23:12:36.885Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:01:28.052Z",
    "publishedAt": null
@@ -6884,7 +6884,7 @@
    "spotify": "",
    "campaign": "2. Carruseles informativos",
    "time": "",
-   "date": "2027-01-21",
+   "date": "2027-01-07",
    "inicio": "",
    "format": "carrusel",
    "status": "revision",
@@ -7075,7 +7075,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:01:29.052Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.119Z",
+   "updatedAt": "2026-11-18T23:12:36.886Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:01:29.052Z",
    "publishedAt": null
@@ -7318,7 +7318,7 @@
    "spotify": "",
    "campaign": "3. Videos lifestyle",
    "time": "",
-   "date": "2027-01-17",
+   "date": "2027-01-10",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -7352,7 +7352,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:20:22.500Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:20:22.500Z",
+   "updatedAt": "2026-11-18T23:12:36.889Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:20:22.500Z"
   },
@@ -7414,7 +7414,7 @@
    "spotify": "",
    "campaign": "3. Videos lifestyle",
    "time": "",
-   "date": "2027-01-31",
+   "date": "2027-01-17",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -7443,7 +7443,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:20:23.500Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:20:23.500Z",
+   "updatedAt": "2026-11-18T23:12:36.890Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:20:23.500Z"
   },
@@ -7505,7 +7505,7 @@
    "spotify": "",
    "campaign": "3. Videos lifestyle",
    "time": "",
-   "date": "2027-02-14",
+   "date": "2027-01-24",
    "inicio": "",
    "format": "reel",
    "status": "idea",
@@ -7534,7 +7534,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:20:24.500Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:20:24.500Z",
+   "updatedAt": "2026-11-18T23:12:36.891Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:20:24.500Z"
   }
@@ -10304,6 +10304,84 @@
   }
  ],
  "activity": [
+  {
+   "id": "5e176d33-b77b-4195-a8af-bf84a7aa04d8",
+   "postId": "1da2d0ca-ec53-4847-81f7-32b741a367a8",
+   "postTitle": "La primera noche",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 14 feb a 24 ene",
+   "meta": {
+    "from": "2027-02-14",
+    "to": "2027-01-24"
+   },
+   "createdAt": "2026-11-18T23:12:36.891Z"
+  },
+  {
+   "id": "94025e53-c3b7-4a5a-b68f-81a3b806371b",
+   "postId": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
+   "postTitle": "Mi oficina tiene ventana al bosque",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 31 ene a 17 ene",
+   "meta": {
+    "from": "2027-01-31",
+    "to": "2027-01-17"
+   },
+   "createdAt": "2026-11-18T23:12:36.890Z"
+  },
+  {
+   "id": "784e9cee-398d-40d6-8cdf-6ffd0d47d315",
+   "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "postTitle": "La siesta de enero",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 17 ene a 10 ene",
+   "meta": {
+    "from": "2027-01-17",
+    "to": "2027-01-10"
+   },
+   "createdAt": "2026-11-18T23:12:36.889Z"
+  },
+  {
+   "id": "b9722d0a-dbb2-452e-b394-17da7474597a",
+   "postId": "86d5909b-6bb8-4cba-b38d-8bb6eddfacfc",
+   "postTitle": "Prepara tu casa para el invierno",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 21 ene a 7 ene",
+   "meta": {
+    "from": "2027-01-21",
+    "to": "2027-01-07"
+   },
+   "createdAt": "2026-11-18T23:12:36.886Z"
+  },
+  {
+   "id": "e4dce5ac-51eb-49e4-8a1b-1c7c12efdcdf",
+   "postId": "176039f8-8a42-41b9-8b21-f01a7cce8d03",
+   "postTitle": "Caso real: de la cotización a la entrega",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 4 feb a 14 ene",
+   "meta": {
+    "from": "2027-02-04",
+    "to": "2027-01-14"
+   },
+   "createdAt": "2026-11-18T23:12:36.885Z"
+  },
+  {
+   "id": "87613472-e232-4e2d-a794-7e1e6d0cd703",
+   "postId": "09ab3948-b5bb-47ba-971a-812561698e9b",
+   "postTitle": "Tradicional, prefabricada o prediseñada",
+   "actor": "javi",
+   "type": "reschedule",
+   "text": "cambió la fecha de 7 ene a 31 dic",
+   "meta": {
+    "from": "2027-01-07",
+    "to": "2026-12-31"
+   },
+   "createdAt": "2026-11-18T23:12:36.884Z"
+  },
   {
    "id": "f4513d84-a3ac-40f4-8ded-796d8fe82b4a",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

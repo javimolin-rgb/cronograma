@@ -1679,7 +1679,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T22:44:20.384Z",
+   "updatedAt": "2026-11-18T22:45:47.703Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -7541,6 +7541,16 @@
  ],
  "comments": [
   {
+   "id": "c48d0fe5-6eca-426f-8b63-defe6b45d136",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "flavio",
+   "text": "Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas detallado que pudimos, sacamos  algunas imagenes de los mismos videos ya hechos y otras imagenes que subi al drive, tanmbien estan indicadas. Cualquier cosa nos comentas. Gracias!",
+   "fileIds": [
+    "9dda8511-77aa-4612-8d57-57016b66abc2"
+   ],
+   "createdAt": "2026-11-18T22:45:47.703Z"
+  },
+  {
    "id": "417f27fc-7c47-45a7-b65f-715ebf9e1799",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -10278,6 +10288,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "e81399bf-ef9b-44ea-9499-ccb096d65d85",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-18T22:45:47.704Z"
+  },
   {
    "id": "0012644b-9b1d-403a-93bd-6804e0e44a37",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16260,6 +16280,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1b7cbba7-7e5d-47b1-ae1c-315a1d018635",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio comentó: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-18T22:45:47.704Z"
+  },
+  {
+   "id": "a65991a9-dc97-47e2-a094-e70e00cc0b08",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio comentó: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-18T22:45:47.704Z"
+  },
   {
    "id": "273042ec-2566-4185-a194-d6464208520a",
    "to": "flavio",
@@ -28451,9 +28501,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-18T22:02:07.860Z",
-   "hasta": "2026-11-18T20:08:25.565Z",
-   "que": "pieza"
+   "at": "2026-11-18T22:45:47.703Z",
+   "hasta": "2026-11-18T22:45:47.703Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|flavio",

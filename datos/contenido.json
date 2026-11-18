@@ -3523,7 +3523,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-18T21:37:16.986Z",
+   "updatedAt": "2026-11-18T21:38:57.853Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -7510,6 +7510,14 @@
  ],
  "comments": [
   {
+   "id": "16339e93-5d65-42a4-b849-09009036df7f",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Solo dejarlo en el texto descriptivo que va en el feed",
+   "fileIds": [],
+   "createdAt": "2026-11-18T21:38:57.855Z"
+  },
+  {
    "id": "6a54876f-2a32-4e84-9d6a-e397a13bfb12",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "maca",
@@ -10231,6 +10239,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "aac80267-2e23-4e32-a288-1796a3489ba1",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-18T21:38:57.855Z"
+  },
   {
    "id": "5f8fcce9-dde9-41fc-97e6-7407e1f56c56",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -16150,6 +16168,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "33ca25c7-b9d1-492d-8172-2ad9c9375fdb",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Solo dejarlo en el texto descriptivo que va en el feed",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Solo dejarlo en el texto descriptivo que va en el feed",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:38:57.856Z"
+  },
+  {
+   "id": "814fe758-cbe2-4f09-924b-1f993e770769",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Solo dejarlo en el texto descriptivo que va en el feed",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Solo dejarlo en el texto descriptivo que va en el feed",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:38:57.856Z"
+  },
   {
    "id": "019978d9-908f-4eea-ad97-e6c2df9e025e",
    "to": "javi",
@@ -28306,8 +28354,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-18T21:37:16.988Z",
-   "hasta": "2026-11-18T21:37:16.986Z",
+   "at": "2026-11-18T21:38:57.855Z",
+   "hasta": "2026-11-18T21:38:57.853Z",
    "que": "comentario"
   },
   {

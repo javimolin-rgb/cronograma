@@ -9766,6 +9766,16 @@
  ],
  "activity": [
   {
+   "id": "9e452588-69a2-4894-8304-921090b36600",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: está esperando tu aprobación para poder publicar",
+   "meta": null,
+   "createdAt": "2026-11-18T20:19:36.316Z"
+  },
+  {
    "id": "c0ee6f27-03bd-4880-8e74-2abe09a85c0b",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -15614,6 +15624,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "dcbe8602-d456-4d98-b327-1a598f5d1e5a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Boldo”: está esperando tu aprobación para poder publicar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Boldo",
+   "body": "Javi está esperando tu aprobación para poder publicar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T20:19:36.315Z"
+  },
   {
    "id": "04cfd8e5-fd71-41d2-92e6-b35ee74b2db9",
    "to": "flavio",
@@ -27698,8 +27724,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "javi",
-   "at": "2026-11-18T20:07:21.740Z",
-   "hasta": "2026-11-18T19:50:47.022Z",
+   "at": "2026-11-18T20:19:29.446Z",
+   "hasta": "2026-11-18T20:08:10.793Z",
    "que": "pieza"
   },
   {

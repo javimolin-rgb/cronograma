@@ -1634,6 +1634,21 @@
      "type": "video/mp4",
      "size": 8616121,
      "orden": 2
+    },
+    {
+     "id": "9dda8511-77aa-4612-8d57-57016b66abc2",
+     "by": "flavio",
+     "at": "2026-11-18T22:44:20.384Z",
+     "base": "reel-domngo-neo",
+     "version": 1,
+     "shaOrigen": "7d0184168cf89799b16ec8ee2aa388fde58dace6",
+     "name": "reel-domngo-neo-v1.xlsx",
+     "path": "archivos/3.-videos-lifestyle/reel-domngo-neo-v1.xlsx",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/reel-domngo-neo-v1.xlsx",
+     "sha": "7d0184168cf89799b16ec8ee2aa388fde58dace6",
+     "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+     "size": 12102358,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -1664,8 +1679,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:25.565Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-18T22:44:20.384Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
   },
@@ -10263,6 +10278,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "0012644b-9b1d-403a-93bd-6804e0e44a37",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-18T22:44:20.385Z"
+  },
   {
    "id": "3ff144f5-3e70-41eb-abec-ab5b89939441",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",

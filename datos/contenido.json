@@ -16320,13 +16320,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Flavio comentó: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-18T22:58:42.817Z"
+   "createdAt": "2026-11-18T22:58:42.817Z",
+   "readAt": "2026-11-18T22:59:14.641Z"
   },
   {
    "id": "1b7cbba7-7e5d-47b1-ae1c-315a1d018635",
@@ -16350,13 +16351,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Flavio comentó: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-18T22:45:47.704Z"
+   "createdAt": "2026-11-18T22:45:47.704Z",
+   "readAt": "2026-11-18T22:59:14.642Z"
   },
   {
    "id": "273042ec-2566-4185-a194-d6464208520a",
@@ -28645,8 +28647,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-17T20:52:55.256Z",
-   "hasta": "2026-11-17T20:05:27.534Z",
+   "at": "2026-11-18T22:59:14.644Z",
+   "hasta": "2026-11-18T22:58:42.816Z",
    "que": "pieza"
   },
   {

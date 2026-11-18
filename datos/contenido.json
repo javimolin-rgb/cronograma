@@ -3523,8 +3523,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-18T20:08:10.793Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-18T21:37:16.986Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-18T00:32:47.929Z",
@@ -7510,6 +7510,14 @@
  ],
  "comments": [
   {
+   "id": "6a54876f-2a32-4e84-9d6a-e397a13bfb12",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "maca",
+   "text": "Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arriba… porque como quedan en historias después todas dicen modelo de la semana, y con eso estamos OK",
+   "fileIds": [],
+   "createdAt": "2026-11-18T21:37:16.989Z"
+  },
+  {
    "id": "d64ecc77-0d2a-4c51-a108-2b714802d350",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "author": "javi",
@@ -10223,6 +10231,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5f8fcce9-dde9-41fc-97e6-7407e1f56c56",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-18T21:37:16.993Z"
+  },
   {
    "id": "9e452588-69a2-4894-8304-921090b36600",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -16132,6 +16150,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "019978d9-908f-4eea-ad97-e6c2df9e025e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "supervision",
+   "text": "comentó en “Casa Boldo”: Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arr…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:37:16.995Z"
+  },
+  {
+   "id": "148fdcbc-7336-472d-b43f-85e7eed0a442",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "comment",
+   "text": "comentó en “Casa Boldo”: Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arr…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Maca comentó: Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:37:16.994Z"
+  },
   {
    "id": "dcbe8602-d456-4d98-b327-1a598f5d1e5a",
    "to": "maca",
@@ -28258,9 +28306,9 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-18T21:33:10.760Z",
-   "hasta": "2026-11-18T20:08:10.793Z",
-   "que": "pieza"
+   "at": "2026-11-18T21:37:16.988Z",
+   "hasta": "2026-11-18T21:37:16.986Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",

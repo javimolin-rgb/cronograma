@@ -3049,7 +3049,7 @@
    "date": "2026-11-18",
    "inicio": "",
    "format": "story",
-   "status": "aprobado",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3539,12 +3539,12 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-18T21:42:42.006Z",
+   "updatedAt": "2026-11-18T21:47:42.597Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-18T00:32:47.929Z",
-   "publishedAt": null,
+   "statusChangedAt": "2026-11-18T21:47:42.597Z",
+   "publishedAt": "2026-11-18T21:47:42.597Z",
    "artefactos": [],
    "versionesTexto": [
     {
@@ -10264,6 +10264,19 @@
  ],
  "activity": [
   {
+   "id": "3ff144f5-3e70-41eb-abec-ab5b89939441",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a Publicado",
+   "meta": {
+    "from": "aprobado",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-18T21:47:42.598Z"
+  },
+  {
    "id": "57446f76-0695-40e5-af85-a24ffc2478ee",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "postTitle": "Casa Boldo",
@@ -16222,6 +16235,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "273042ec-2566-4185-a194-d6464208520a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:47:42.598Z"
+  },
+  {
+   "id": "8829828e-6fb8-4c6f-8d9c-a9fda57331c3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "status",
+   "text": "movió “Casa Boldo” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T21:47:42.598Z"
+  },
   {
    "id": "3b450e91-1910-4412-8cbc-dbfc5802b8b2",
    "to": "javi",

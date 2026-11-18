@@ -1083,64 +1083,75 @@
   },
   {
    "title": "Aire nuevo sin abrir la ventana",
-   "caption": "¿Ventilar sin dejar entrar el polen, el polvo ni el calor de afuera? Eso hace un recuperador de calor: renueva el aire sin abrir ventanas y lo entrega ya templado. Es una de las soluciones que podemos incorporar en tu proyecto. Envíaselo a quien vive estornudando en primavera. 🌬️\n\n#Neorigen #CasasPrediseñadas #RecuperadorDeCalor #CalidadDelAire #CasaSustentable #EficienciaEnergética #Alergias #CasaSaludable",
-   "notes": "Reel · POV de primavera · 35 s · busca envíos\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. POV de alguien que se acerca a abrir una ventana con polen en el aire a contraluz, se detiene y la deja cerrada. Luego un esquema animado de la casa: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
+   "caption": "¿Ventilar sin dejar entrar el polen, el polvo ni el calor de afuera? Eso hace un recuperador de calor: renueva el aire sin abrir ventanas y lo entrega ya templado. Desliza para ver cómo funciona en 3 pasos. Es una de las soluciones que podemos incorporar en tu proyecto. Guárdalo o envíaselo a quien vive estornudando en primavera. 🌬️\n\n#Neorigen #CasasPrediseñadas #RecuperadorDeCalor #CalidadDelAire #CasaSustentable #EficienciaEnergética #Alergias #CasaSaludable",
+   "notes": "Carrusel · 9 láminas · busca guardados y envíos (adaptado del reel de 35 s aprobado por Flavio)\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. Portada con foto real (ventana cerrada, luz de primavera). Láminas 03 a 06 con el mismo esquema de la casa, destacando un paso por lámina: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
    "hashtags": "",
-   "guion": "—\n\nRespirar hondo en tu propia casa.\n\nSin estornudos al despertar, sin polvo en el velador.\n\nY la temperatura justo donde la dejaste.\n\nAire nuevo, todo el día, con la ventana cerrada.\n\nPara que tu casa se sienta liviana.",
+   "guion": "Aire nuevo sin abrir la ventana\nCómo ventilar en primavera sin que entre el polen\n\nEn primavera, abrir la ventana es dejar entrar polen y polvo. Cerrarla es encerrarse.\n\nUn recuperador de calor renueva el aire sin abrir ventanas.\n\n1 · Extracción\nSe saca el aire viciado de cocina y baños.\n\n2 · Recuperación\nUn intercambiador le pasa su temperatura al aire limpio que entra.\n\n3 · Impulsión\nEl aire nuevo llega ya templado a dormitorios y living.\n\nInvierno: el aire entra templado con el calor recuperado.\nVerano: entra más fresco gracias al aire de adentro.\n\nMuchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo.\n\nEs una solución que podemos incorporar en tu proyecto.\nCada proyecto se evalúa según ubicación, clima, orientación y objetivos.\nneorigen.cl",
    "guionTabla": {
     "cols": [
-     "Tiempo",
+     "Lámina",
      "Imagen",
-     "Texto en pantalla",
-     "Voz en off"
+     "Texto en pantalla"
     ],
     "filas": [
      [
-      "0–3 s",
-      "Mano en la manilla, polen a contraluz",
-      "POV: quieres ventilar, pero es primavera",
-      "—"
+      "01 · Portada",
+      "Foto del Drive: interior Neorigen con ventana grande cerrada y luz de primavera detrás",
+      "Aire nuevo sin abrir la ventana\nCómo ventilar en primavera sin que entre el polen"
      ],
      [
-      "3–9 s",
-      "Esquema: sale aire de cocina y baño",
-      "1 · Se extrae el aire viciado de cocina y baños",
-      "Respirar hondo en tu propia casa."
+      "02 · El problema",
+      "Ventana con vegetación florida afuera, polen a contraluz",
+      "En primavera, abrir la ventana es dejar entrar polen y polvo. Cerrarla es encerrarse."
      ],
      [
-      "9–16 s",
-      "El flujo cruza el intercambiador",
-      "2 · Un intercambiador traspasa su temperatura al aire que entra",
-      "Sin estornudos al despertar, sin polvo en el velador."
+      "03 · La solución",
+      "Esquema completo de la casa, flujos en gris",
+      "Un recuperador de calor renueva el aire sin abrir ventanas."
      ],
      [
-      "16–23 s",
-      "Aire limpio llega a dormitorio y living",
-      "3 · El aire nuevo llega ya templado a dormitorios y living",
-      "Y la temperatura justo donde la dejaste."
+      "04 · Paso 1",
+      "Mismo esquema, destacada la salida de cocina y baños",
+      "1 · Extracción\nSe saca el aire viciado de cocina y baños."
      ],
      [
-      "23–29 s",
+      "05 · Paso 2",
+      "Mismo esquema, destacado el intercambiador",
+      "2 · Recuperación\nUn intercambiador le pasa su temperatura al aire limpio que entra."
+     ],
+     [
+      "06 · Paso 3",
+      "Mismo esquema, destacados dormitorios y living",
+      "3 · Impulsión\nEl aire nuevo llega ya templado a dormitorios y living."
+     ],
+     [
+      "07 · Todo el año",
+      "Esquema dividido: invierno / verano",
+      "Invierno: el aire entra templado con el calor recuperado.\nVerano: entra más fresco gracias al aire de adentro."
+     ],
+     [
+      "08 · Filtros",
       "Filtro en primer plano",
-      "Muchos equipos traen filtros para polen y partículas",
-      "Aire nuevo, todo el día, con la ventana cerrada."
+      "Muchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo."
      ],
      [
-      "29–35 s",
+      "09 · Cierre",
       "Dormitorio tranquilo + logo",
-      "Solución que se puede incorporar según cada proyecto",
-      "Para que tu casa se sienta liviana."
+      "Es una solución que podemos incorporar en tu proyecto.\nCada proyecto se evalúa según ubicación, clima, orientación y objetivos.\nneorigen.cl"
      ]
     ],
     "ids": [
-     "c523cd8c-0137-451e-a43f-15a3430c5faa",
-     "fc293f2f-f7cd-45f2-963d-8285e9cf5658",
-     "20476d3e-6d58-42e6-b049-66e6c5cae59d",
-     "c55bd0a4-866b-4f73-9db8-fa77df5c003f",
-     "c745c815-3f3f-4f99-b1ae-f49396abfda8",
-     "94d803a1-ed7d-4557-8aa3-b2410c21be8f"
+     "fcddac7a-4e50-4fc3-88c7-1a5f74d523c5",
+     "bde12fc6-533f-4a6b-a1d8-5bc84dfa90e9",
+     "4e7348b2-9a9b-4333-ac1b-aa3fd25f57d7",
+     "55f17cd0-c8a0-4ee7-a6c9-469bd1b37080",
+     "11c20e5c-cdac-4543-827e-5a1aa3a1fd1c",
+     "6f1f83a3-0fc3-470b-98fb-001e82e7d5cb",
+     "648fda0c-ce9a-4ca2-9d6c-a6416223acc4",
+     "db62c983-d389-427a-8f9f-0025c0857fc9",
+     "d3dc71a7-841e-460d-8ec6-03b06f36af4d"
     ],
-    "voz": 3
+    "voz": 2
    },
    "guionNotas": [],
    "spotify": "",
@@ -1176,11 +1187,33 @@
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "6757f08b-d243-426d-8aa4-83ae2cc8776d",
+     "campo": "caption",
+     "text": "¿Ventilar sin dejar entrar el polen, el polvo ni el calor de afuera? Eso hace un recuperador de calor: renueva el aire sin abrir ventanas y lo entrega ya templado. Es una de las soluciones que podemos incorporar en tu proyecto. Envíaselo a quien vive estornudando en primavera. 🌬️\n\n#Neorigen #CasasPrediseñadas #RecuperadorDeCalor #CalidadDelAire #CasaSustentable #EficienciaEnergética #Alergias #CasaSaludable",
+     "hasta": "2026-11-18T19:32:20.000Z",
+     "by": "javi"
+    },
+    {
+     "id": "ecc4f9d7-cacc-4d19-b4bb-b17872fa4f93",
+     "campo": "guion",
+     "text": "—\n\nRespirar hondo en tu propia casa.\n\nSin estornudos al despertar, sin polvo en el velador.\n\nY la temperatura justo donde la dejaste.\n\nAire nuevo, todo el día, con la ventana cerrada.\n\nPara que tu casa se sienta liviana.",
+     "hasta": "2026-11-18T19:32:20.000Z",
+     "by": "javi"
+    },
+    {
+     "id": "592c3084-274a-421a-a6d8-cc947b9021f3",
+     "campo": "notes",
+     "text": "Reel · POV de primavera · 35 s · busca envíos\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. POV de alguien que se acerca a abrir una ventana con polen en el aire a contraluz, se detiene y la deja cerrada. Luego un esquema animado de la casa: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
+     "hasta": "2026-11-18T19:32:20.000Z",
+     "by": "javi"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T19:30:22.987Z",
+   "updatedAt": "2026-11-18T19:32:20.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
@@ -14259,6 +14292,16 @@
    "text": "registró la entrega",
    "meta": null,
    "createdAt": "2026-10-21T10:00:00.000Z"
+  },
+  {
+   "id": "367d3778-978d-4f71-b8f4-ce9e7bdf9bed",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "edit",
+   "text": "adaptó la estructura y el copy a carrusel de 9 láminas",
+   "meta": null,
+   "createdAt": "2026-11-18T19:32:20.000Z"
   }
  ],
  "notifications": [

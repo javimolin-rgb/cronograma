@@ -7048,6 +7048,464 @@
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:01:29.052Z",
    "publishedAt": null
+  },
+  {
+   "title": "La mesa larga",
+   "caption": "Lo mejor de estas fechas no se envuelve: se sienta a la mesa. ¿A quién invitarías primero? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #CasaDeCampo #Parcela",
+   "notes": "Reel · historia de una tarde · 22 s · busca envíos\n\nIdea. Para las fiestas de fin de año: amigos y familia llegan a la parcela, se arma una mesa larga afuera y la tarde se hace noche. La casa aparece como el lugar donde todos caben, y el dato de los metros queda en pantalla sin que la voz hable de tamaños.\n\nImagen. Planos en movimiento suave, con cámara en mano. Autos que llegan por un camino de tierra; manos que juntan dos mesas en la terraza; niños que salen corriendo por el ventanal abierto; luces colgadas que se encienden al atardecer; la casa iluminada de noche vista desde el pasto. Portada: plano cenital de la mesa servida, con el título en Fraunces sobre el mantel. Música: pista \"terraza\".\n\nFuente. Preguntas frecuentes (modelos de 57 a 167 m², personalizables; espacios luminosos).",
+   "hashtags": "",
+   "guion": "—\n\nSiempre llega alguien más de lo que esperabas.\n\nY la casa se abre para que nadie quede afuera.\n\nHay tardes que se quedan para siempre.\n\nQue tu casa tenga lugar para todos.",
+   "guionTabla": {
+    "cols": [
+     "Tiempo",
+     "Imagen",
+     "Texto en pantalla",
+     "Voz en off"
+    ],
+    "filas": [
+     [
+      "0–3 s",
+      "Autos llegando, alguien abre la puerta sonriendo",
+      "¿Para cuántos es tu casa?",
+      "—"
+     ],
+     [
+      "3–8 s",
+      "Manos juntando dos mesas en la terraza",
+      "Modelos de 57 a 167 m²",
+      "Siempre llega alguien más de lo que esperabas."
+     ],
+     [
+      "8–13 s",
+      "Niños corriendo desde el ventanal al pasto",
+      "Casas prediseñadas y personalizables",
+      "Y la casa se abre para que nadie quede afuera."
+     ],
+     [
+      "13–18 s",
+      "Mesa al atardecer, risas, luces que se encienden",
+      "Espacios luminosos, adentro y afuera",
+      "Hay tardes que se quedan para siempre."
+     ],
+     [
+      "18–22 s",
+      "Casa iluminada de noche + logo",
+      "neorigen.cl",
+      "Que tu casa tenga lugar para todos."
+     ]
+    ],
+    "ids": [
+     "35b4e1f6-25b3-4442-b924-c7d385636aea",
+     "0cfb06aa-77fb-4caa-8a26-5f4bfe6b2fff",
+     "49b66918-8ace-4863-a558-3b4b795dd44f",
+     "f641ef8a-a191-4112-9396-662f39be791a",
+     "aee2322f-cf98-497b-af70-716fa0df9309"
+    ],
+    "voz": 3
+   },
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "3. Videos lifestyle",
+   "time": "",
+   "date": "2026-12-20",
+   "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "id": "22ba5b64-b19b-4472-95f1-79b70966fa28",
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [
+    {
+     "id": "ec98c898-4614-4f96-8253-c96b004d51ee",
+     "label": "Preguntas frecuentes",
+     "url": "https://www.neorigen.cl/preguntas-frecuentes"
+    }
+   ],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-18T20:20:20.500Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-18T20:20:20.500Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-18T20:20:20.500Z"
+  },
+  {
+   "title": "Volver",
+   "caption": "Hay viajes que se miden en kilómetros y otros en lo que tardas en sacarte los zapatos. Guárdalo para tus próximas vacaciones.\n\n#Neorigen #CasasPrediseñadas #CasaDeCampo #VivirEnLaNaturaleza #ConstruirEnChile",
+   "notes": "Reel · trayecto · 20 s · busca guardados\n\nIdea. Vacaciones de verano: la sensación de dejar la ciudad y llegar a la casa propia en el campo. Refuerza, sin explicarlo, que la casa se construye en el terreno de cada uno y se integra al paisaje. La frase de cierre es la que queda dando vueltas.\n\nImagen. POV desde el asiento del copiloto: carretera, luego camino de tierra entre árboles con la ventana abajo y una mano afuera; la casa aparece entre los árboles; mochilas al suelo y niños entrando corriendo; alguien se saca los zapatos en la terraza y mira el paisaje. Portada: la casa vista a través del parabrisas, con el título en la franja del cielo. Música: pista \"pino\".\n\nFuente. Preguntas frecuentes (se construyen en el mismo terreno, adaptadas al lugar) y blog Inspiración y Estilo de Vida Neorigen (casas que se integran al paisaje).",
+   "hashtags": "",
+   "guion": "—\n\nSe baja la ventana y cambia el aire.\n\nY ahí está, esperándote.\n\nNadie pregunta cuánto falta.\n\nHay lugares a los que no se llega. Se vuelve.",
+   "guionTabla": {
+    "cols": [
+     "Tiempo",
+     "Imagen",
+     "Texto en pantalla",
+     "Voz en off"
+    ],
+    "filas": [
+     [
+      "0–3 s",
+      "Carretera dejando atrás la ciudad",
+      "Las vacaciones empiezan antes de llegar",
+      "—"
+     ],
+     [
+      "3–7 s",
+      "Camino de tierra, mano fuera de la ventana",
+      "Construida en tu terreno",
+      "Se baja la ventana y cambia el aire."
+     ],
+     [
+      "7–12 s",
+      "La casa aparece entre los árboles",
+      "Adaptada al lugar, integrada al paisaje",
+      "Y ahí está, esperándote."
+     ],
+     [
+      "12–16 s",
+      "Puerta abierta, mochilas al suelo, niños entrando",
+      "Prediseñada, construida en obra",
+      "Nadie pregunta cuánto falta."
+     ],
+     [
+      "16–20 s",
+      "Pies descalzos en la terraza, paisaje + logo",
+      "neorigen.cl",
+      "Hay lugares a los que no se llega. Se vuelve."
+     ]
+    ],
+    "ids": [
+     "8c9cd8df-2f10-4420-b78e-3c910d5ed2f0",
+     "f594d3f2-0873-4ba0-b03e-1c0cbda5b3ad",
+     "e112bbd1-e6a7-4aa5-95c6-d6e52403c48e",
+     "2af16a86-58da-4d8b-a9e6-c980c1dd67c1",
+     "d0777037-09f3-44d2-a361-d046be5d6656"
+    ],
+    "voz": 3
+   },
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "3. Videos lifestyle",
+   "time": "",
+   "date": "2027-01-03",
+   "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "id": "5e8167b4-6659-4af9-af95-5739523291f0",
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [
+    {
+     "id": "8a73fce6-841c-4df3-b96e-3173158a352c",
+     "label": "Preguntas frecuentes",
+     "url": "https://www.neorigen.cl/preguntas-frecuentes"
+    },
+    {
+     "id": "434bacd5-e356-45eb-8013-57d56baebfdb",
+     "label": "Inspiración y Estilo de Vida Neorigen",
+     "url": "https://www.neorigen.cl/post/inspiraci%C3%B3n-y-estilo-de-vida-neorigen"
+    }
+   ],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-18T20:20:21.500Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-18T20:20:21.500Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-18T20:20:21.500Z"
+  },
+  {
+   "title": "La siesta de enero",
+   "caption": "Enero también se vive adentro: fresco, en silencio y sin apuro. Mándaselo a quien se merece esta siesta.\n\n#Neorigen #CasasPrediseñadas #CasaSustentable #SlowLiving #VidaDeRefugio",
+   "notes": "Reel · contraste afuera/adentro · 18 s · busca envíos\n\nIdea. Pleno verano: afuera el sol pega fuerte; adentro la casa está fresca y en silencio. Muestra el confort térmico como una sensación (la siesta que nadie interrumpe) y deja el dato del termopanel en pantalla.\n\nImagen. Contraste de luz: exterior quemado de mediodía, con pasto seco y sonido de chicharras; al cruzar la puerta, interior en penumbra suave y una cortina que se mueve; alguien dormido en el sofá con un libro abierto sobre el pecho; al atardecer se abren los ventanales y entra la brisa. Portada: dos mitades, sol fuerte afuera y sombra fresca adentro, divididas por el marco de la puerta. Música: pista \"niebla\".\n\nFuente. Blog Vivir de forma sustentable (ventanales de termopanel: menos pérdida de temperatura y menos ruido) y blog Inspiración y Estilo de Vida Neorigen (confort térmico durante todo el año).",
+   "hashtags": "",
+   "guion": "—\n\nAdentro, el verano baja la voz.\n\nNadie apura nada.\n\nLa tarde vuelve cuando tú quieras.",
+   "guionTabla": {
+    "cols": [
+     "Tiempo",
+     "Imagen",
+     "Texto en pantalla",
+     "Voz en off"
+    ],
+    "filas": [
+     [
+      "0–3 s",
+      "Exterior a mediodía, sol fuerte",
+      "Enero, tres de la tarde",
+      "—"
+     ],
+     [
+      "3–8 s",
+      "Se cruza la puerta: penumbra, cortina que se mueve",
+      "Ventanales termopanel · menos pérdida de temperatura",
+      "Adentro, el verano baja la voz."
+     ],
+     [
+      "8–13 s",
+      "Siesta en el sofá, libro sobre el pecho",
+      "Y menos ruido de afuera",
+      "Nadie apura nada."
+     ],
+     [
+      "13–18 s",
+      "Ventanales que se abren al atardecer + logo",
+      "Confort térmico todo el año · neorigen.cl",
+      "La tarde vuelve cuando tú quieras."
+     ]
+    ],
+    "ids": [
+     "b260bc9a-127a-4d6f-908f-ba429ca9328f",
+     "f0c90416-2acf-4568-8323-609b7256b318",
+     "78db79b0-94f2-4f66-b586-624d847de311",
+     "0493b916-2997-42e1-ae01-7c587cead233"
+    ],
+    "voz": 3
+   },
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "3. Videos lifestyle",
+   "time": "",
+   "date": "2027-01-17",
+   "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "id": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [
+    {
+     "id": "ae8c974e-5dc7-463e-ada7-e6c34d212512",
+     "label": "Vivir de forma sustentable",
+     "url": "https://www.neorigen.cl/post/vivir-de-forma-sustentable-el-nuevo-est%C3%A1ndar-en-las-casas-de-neorigen"
+    },
+    {
+     "id": "0d068064-43f1-4dfa-8163-1996307bbe3f",
+     "label": "Inspiración y Estilo de Vida Neorigen",
+     "url": "https://www.neorigen.cl/post/inspiraci%C3%B3n-y-estilo-de-vida-neorigen"
+    }
+   ],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-18T20:20:22.500Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-18T20:20:22.500Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-18T20:20:22.500Z"
+  },
+  {
+   "title": "Mi oficina tiene ventana al bosque",
+   "caption": "Si tu trabajo cabe en un notebook, tu oficina puede tener ventana al bosque. Guárdalo para cuando decidas dar el paso.\n\n#Neorigen #CasasPrediseñadas #Teletrabajo #VivirEnLaNaturaleza #CasaDeCampo",
+   "notes": "Reel · POV teletrabajo · 20 s · busca guardados\n\nIdea. Para quien teletrabaja y fantasea con irse a la parcela, justo antes de que en marzo se retomen los planes. Muestra un día de trabajo normal, con la diferencia de que las pausas son en la terraza y al cerrar el notebook ya estás en casa.\n\nImagen. Notebook abierto con el ventanal y los árboles de fondo; videollamada en curso mientras la persona mira un pájaro por la ventana; pausa descalza en la terraza con el teléfono; cierra el notebook y se suma a quien está cocinando; casa en el bosque al atardecer. Portada: el notebook en primer plano y el bosque ocupando el resto del cuadro, con el título en la pantalla del notebook. Música: pista \"origen\".\n\nFuente. Preguntas frecuentes (espacios luminosos; diseño personalizable; modelos prediseñados adaptados a cada cliente).",
+   "hashtags": "",
+   "guion": "—\n\nLa reunión puede esperar un segundo.\n\nEl descanso queda a un paso de la puerta.\n\nY cuando terminas, ya estás en casa.\n\nTrabajar igual. Vivir distinto.",
+   "guionTabla": {
+    "cols": [
+     "Tiempo",
+     "Imagen",
+     "Texto en pantalla",
+     "Voz en off"
+    ],
+    "filas": [
+     [
+      "0–3 s",
+      "Notebook con el bosque detrás, aviso de reunión",
+      "POV: tu oficina tiene ventana al bosque",
+      "—"
+     ],
+     [
+      "3–8 s",
+      "Videollamada, mirada que se va a la ventana",
+      "Espacios luminosos",
+      "La reunión puede esperar un segundo."
+     ],
+     [
+      "8–13 s",
+      "Pausa descalza en la terraza",
+      "Distribución personalizable · un espacio para trabajar",
+      "El descanso queda a un paso de la puerta."
+     ],
+     [
+      "13–17 s",
+      "Cierra el notebook, se suma a la cocina",
+      "Prediseñada, adaptada a cómo vives",
+      "Y cuando terminas, ya estás en casa."
+     ],
+     [
+      "17–20 s",
+      "Casa en el bosque al atardecer + logo",
+      "neorigen.cl",
+      "Trabajar igual. Vivir distinto."
+     ]
+    ],
+    "ids": [
+     "6b5dfd12-c647-497c-8103-97adbad3cae3",
+     "26c461bd-cd4f-435c-a937-8a1646aca6fb",
+     "4b462824-e66e-48de-bcdf-7d71721b507d",
+     "c8d6b20b-3605-44a7-b229-87f07925e2a5",
+     "3ef773d5-3070-49d2-8c82-8dbf48052d35"
+    ],
+    "voz": 3
+   },
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "3. Videos lifestyle",
+   "time": "",
+   "date": "2027-01-31",
+   "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "id": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [
+    {
+     "id": "f3934b75-9476-461c-885a-59ca6c36acf4",
+     "label": "Preguntas frecuentes",
+     "url": "https://www.neorigen.cl/preguntas-frecuentes"
+    }
+   ],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-18T20:20:23.500Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-18T20:20:23.500Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-18T20:20:23.500Z"
+  },
+  {
+   "title": "La primera noche",
+   "caption": "La primera noche nunca está ordenada, y justo por eso se recuerda. ¿Con quién la pasarías? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #CasaPropia #ConstruirTuCasa #VidaDeRefugio",
+   "notes": "Reel · historia de pareja · 22 s · busca envíos\n\nIdea. La entrega contada desde lo emocional: la primera noche en la casa nueva, con las cajas todavía sin abrir. Sale cerca del 14 de febrero sin mencionarlo. En pantalla van los datos reales de la entrega (revisión conjunta, documentación, garantía y postventa), y la voz se queda con lo que se siente.\n\nImagen. Llave que gira en la cerradura con luz de tarde; la pareja recorre la casa y abre un ventanal por primera vez; cena improvisada sobre una caja en el suelo; colchón en el living mirando el ventanal hacia las estrellas; la casa desde afuera con una sola luz encendida. Portada: la llave en la cerradura, en primer plano, con el título en el muro. Música: pista \"madera\".\n\nFuente. Preguntas frecuentes (entrega final: revisión conjunta de terminaciones y funcionamiento, documentación, garantía y postventa).",
+   "hashtags": "",
+   "guion": "—\n\nCada rincón, por primera vez.\n\nLas cajas pueden esperar.\n\nEsta noche ya es casa.\n\nLa primera de muchas.",
+   "guionTabla": {
+    "cols": [
+     "Tiempo",
+     "Imagen",
+     "Texto en pantalla",
+     "Voz en off"
+    ],
+    "filas": [
+     [
+      "0–3 s",
+      "Llave girando en la cerradura",
+      "Día de entrega",
+      "—"
+     ],
+     [
+      "3–8 s",
+      "Recorren la casa, abren un ventanal",
+      "Revisamos juntos terminaciones y funcionamiento",
+      "Cada rincón, por primera vez."
+     ],
+     [
+      "8–13 s",
+      "Cena sobre una caja, entre cajas sin abrir",
+      "Entrega con documentación y garantía",
+      "Las cajas pueden esperar."
+     ],
+     [
+      "13–18 s",
+      "Colchón en el living, estrellas por el ventanal",
+      "Y acompañamiento después de la entrega",
+      "Esta noche ya es casa."
+     ],
+     [
+      "18–22 s",
+      "La casa desde afuera, una luz encendida + logo",
+      "neorigen.cl",
+      "La primera de muchas."
+     ]
+    ],
+    "ids": [
+     "af1a6eae-0f72-4ed6-b3d6-bbcda3bb357d",
+     "061f28a1-f5ec-4693-bff3-d13a6532ff30",
+     "958be8f5-841c-46c3-8b83-094cb3550e4b",
+     "2f1320ed-2ebc-462b-bd4a-207bf6c18d20",
+     "e64423bc-c40f-45ed-894f-8d80ab287cd5"
+    ],
+    "voz": 3
+   },
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "3. Videos lifestyle",
+   "time": "",
+   "date": "2027-02-14",
+   "inicio": "",
+   "format": "reel",
+   "status": "idea",
+   "priority": "normal",
+   "revisions": 0,
+   "desarchivada": false,
+   "id": "1da2d0ca-ec53-4847-81f7-32b741a367a8",
+   "platforms": [
+    "instagram"
+   ],
+   "assignees": [
+    "javi",
+    "maca"
+   ],
+   "links": [
+    {
+     "id": "8436b250-3c70-40ea-812c-de35b6678f44",
+     "label": "Preguntas frecuentes",
+     "url": "https://www.neorigen.cl/preguntas-frecuentes"
+    }
+   ],
+   "files": [],
+   "checklist": [],
+   "artefactos": [],
+   "versionesTexto": [],
+   "marca": [],
+   "createdAt": "2026-11-18T20:20:24.500Z",
+   "createdBy": "javi",
+   "updatedAt": "2026-11-18T20:20:24.500Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-18T20:20:24.500Z"
   }
  ],
  "comments": [
@@ -15621,6 +16079,56 @@
    "text": "creó la pieza",
    "meta": null,
    "createdAt": "2026-11-18T20:01:29.052Z"
+  },
+  {
+   "id": "bd317d2e-70b7-4380-9b46-cb27d1da50a8",
+   "postId": "22ba5b64-b19b-4472-95f1-79b70966fa28",
+   "postTitle": "La mesa larga",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-18T20:20:20.500Z"
+  },
+  {
+   "id": "350ded84-6e34-4bd6-af67-02b837d3ef93",
+   "postId": "5e8167b4-6659-4af9-af95-5739523291f0",
+   "postTitle": "Volver",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-18T20:20:21.500Z"
+  },
+  {
+   "id": "2d5aacb4-abc5-4993-b249-918bb4e6da85",
+   "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "postTitle": "La siesta de enero",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-18T20:20:22.500Z"
+  },
+  {
+   "id": "8e219e48-ae7b-4fc8-a23c-e211d6f24fb0",
+   "postId": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
+   "postTitle": "Mi oficina tiene ventana al bosque",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-18T20:20:23.500Z"
+  },
+  {
+   "id": "c5c1a40b-0fb9-4da4-8c69-479c5375cfc9",
+   "postId": "1da2d0ca-ec53-4847-81f7-32b741a367a8",
+   "postTitle": "La primera noche",
+   "actor": "javi",
+   "type": "created",
+   "text": "creó la pieza",
+   "meta": null,
+   "createdAt": "2026-11-18T20:20:24.500Z"
   }
  ],
  "notifications": [

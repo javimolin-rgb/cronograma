@@ -3075,7 +3075,7 @@
      "sha": "16532d8a0d6282330c553193b2dcb65df3b0a0c7",
      "type": "image/webp",
      "size": 85778,
-     "orden": 1002
+     "orden": 1015
     },
     {
      "id": "f9130570-46bc-4d00-927d-4dbc6df6f120",
@@ -3090,7 +3090,7 @@
      "sha": "92a6299e7579fe11bfefa7ed7739aafe54013e4b",
      "type": "image/webp",
      "size": 111034,
-     "orden": 1003
+     "orden": 1016
     },
     {
      "id": "13375c22-84ce-4c0d-95f1-b954c75f7abe",
@@ -3105,7 +3105,7 @@
      "sha": "ebc107012e6835d6d1e903800e52da938b1e6b2f",
      "type": "image/webp",
      "size": 107798,
-     "orden": 1004
+     "orden": 1017
     },
     {
      "id": "f4538125-0fdd-4810-a030-ebde63af624e",
@@ -3120,7 +3120,7 @@
      "sha": "8d66a9c1f61a72ca1b0dcd3b936c6007be858b4d",
      "type": "image/jpeg",
      "size": 260083,
-     "orden": 1005,
+     "orden": 1,
      "extra": true
     },
     {
@@ -3136,7 +3136,7 @@
      "sha": "34835f5f762ca4c73b50e903a1b09c929d2d1cf4",
      "type": "image/jpeg",
      "size": 277451,
-     "orden": 1006,
+     "orden": 2,
      "extra": true
     },
     {
@@ -3152,7 +3152,7 @@
      "sha": "8b2e4de7142eee472f2fe9b2cf42e208a920ebd0",
      "type": "image/jpeg",
      "size": 279329,
-     "orden": 1007
+     "orden": 1018
     },
     {
      "id": "2d701d6a-9443-4a12-b3f0-3a5da652075b",
@@ -3167,7 +3167,7 @@
      "sha": "c58fe1ab2181fcd23fa45ce9dd9a36b5792dff60",
      "type": "image/webp",
      "size": 97992,
-     "orden": 1008
+     "orden": 1019
     },
     {
      "id": "340ab011-a227-449f-a804-7c60fb34478d",
@@ -3182,7 +3182,7 @@
      "sha": "0332ea440118607b735c22245f4030d6f4ff81f8",
      "type": "image/webp",
      "size": 110296,
-     "orden": 1009
+     "orden": 1020
     },
     {
      "id": "f5011bbd-ca29-4d72-91c3-cb59fe323dc6",
@@ -3197,7 +3197,7 @@
      "sha": "ac7d926c99d67129f64d745fd4384ed046e4a26e",
      "type": "image/webp",
      "size": 117964,
-     "orden": 1010
+     "orden": 1021
     },
     {
      "id": "2456e684-ef16-419a-a99b-3f973e9a695d",
@@ -3212,7 +3212,7 @@
      "sha": "6914bdfb438332cb4628e2c46125540095213453",
      "type": "image/webp",
      "size": 96964,
-     "orden": 1011
+     "orden": 1022
     },
     {
      "id": "ddbd6f46-4a39-46a7-8d6d-2a9d4e919622",
@@ -3227,7 +3227,7 @@
      "sha": "0834df4159507cc09d4a8dee480aebdb4c7612e8",
      "type": "image/webp",
      "size": 109524,
-     "orden": 1012
+     "orden": 1023
     },
     {
      "id": "b7003560-57d8-45ad-b344-8e3adb6c079d",
@@ -3242,7 +3242,7 @@
      "sha": "3af1f1fb2a4b3a149b2b127995e60c478a3a3855",
      "type": "image/webp",
      "size": 117144,
-     "orden": 1013
+     "orden": 1024
     },
     {
      "id": "ae0f1091-d55a-424d-88ff-73ed20c2b256",
@@ -3257,7 +3257,7 @@
      "sha": "4ec442f600265a7f79f9878bf551a6f2c762dee4",
      "type": "image/webp",
      "size": 96900,
-     "orden": 1014
+     "orden": 1025
     },
     {
      "id": "d4dcc3d0-96bc-41c0-a4db-3f1c018645a2",
@@ -3272,7 +3272,7 @@
      "sha": "a518afb84768fb43bee4d52fbdad0ae2bad9d886",
      "type": "image/webp",
      "size": 109792,
-     "orden": 1015
+     "orden": 1026
     },
     {
      "id": "f129e8fe-4409-446c-8f0d-ecf040d9f99d",
@@ -3287,7 +3287,7 @@
      "sha": "f91d900c5ffc9bb99c3cd4be7fda09c3b5694868",
      "type": "image/webp",
      "size": 117570,
-     "orden": 1016
+     "orden": 1027
     },
     {
      "id": "b816749c-bf30-421a-9264-a932e1c5cc83",
@@ -3302,7 +3302,7 @@
      "sha": "cefdaf51b948d57926bdbf360c457e57eb12c09f",
      "type": "image/webp",
      "size": 97472,
-     "orden": 1017
+     "orden": 1028
     },
     {
      "id": "03ee43a1-8630-4e31-95dd-e3d0b169063d",
@@ -3317,7 +3317,7 @@
      "sha": "008cd084849cd7e98b89c7f619fc87957e34372e",
      "type": "image/webp",
      "size": 111014,
-     "orden": 1018,
+     "orden": 3,
      "extra": true
     },
     {
@@ -3333,7 +3333,7 @@
      "sha": "9b582dc13265a3801b991c0cb6fe79ba7d10b6a7",
      "type": "image/webp",
      "size": 118646,
-     "orden": 1019,
+     "orden": 4,
      "extra": true
     },
     {
@@ -3350,7 +3350,7 @@
      "type": "image/webp",
      "size": 97488,
      "extra": true,
-     "orden": 1020
+     "orden": 5
     },
     {
      "id": "7aba207d-f3b9-4790-8a7c-743223c38e2a",
@@ -3368,7 +3368,7 @@
      "sha": "c8bc3e460afe55bc2e91b1bcee4f4e11bbcd97f2",
      "type": "video/mp4",
      "size": 8429208,
-     "orden": 1021
+     "orden": 1029
     },
     {
      "id": "12ef978d-d9be-481e-800c-7cff7d7dcf5d",
@@ -3386,7 +3386,7 @@
      "sha": "119922fb62fba9ef5ff2b0991378401fc2e855ea",
      "type": "video/mp4",
      "size": 7348165,
-     "orden": 1022,
+     "orden": 6,
      "extra": true
     },
     {
@@ -3403,7 +3403,7 @@
      "type": "image/jpeg",
      "size": 258409,
      "extra": true,
-     "orden": 1023
+     "orden": 7
     },
     {
      "id": "66213d8b-d382-473b-9082-f2ccb2d5e2d4",
@@ -3419,7 +3419,7 @@
      "type": "image/jpeg",
      "size": 190482,
      "extra": true,
-     "orden": 1024
+     "orden": 8
     },
     {
      "id": "8b557210-0495-4ffd-950f-91624b614864",
@@ -3435,7 +3435,7 @@
      "type": "image/jpeg",
      "size": 267784,
      "extra": true,
-     "orden": 1025
+     "orden": 9
     },
     {
      "id": "d56d8c59-6a0c-4d0e-9e2e-81e2c84b2889",
@@ -3451,7 +3451,7 @@
      "type": "image/jpeg",
      "size": 242548,
      "extra": true,
-     "orden": 1026
+     "orden": 10
     },
     {
      "id": "45e49f1b-99cd-492e-806d-18bb49fb5076",
@@ -3467,7 +3467,7 @@
      "type": "image/jpeg",
      "size": 254692,
      "extra": true,
-     "orden": 1027
+     "orden": 11
     },
     {
      "id": "36fe31b0-be79-43cc-9423-2984013b23cd",
@@ -3485,7 +3485,7 @@
      "sha": "5289db18c23691271a0764c953cb9483061ee598",
      "type": "video/mp4",
      "size": 9374180,
-     "orden": 1028,
+     "orden": 12,
      "extra": true
     },
     {
@@ -3505,10 +3505,25 @@
      "type": "video/mp4",
      "size": 7634224,
      "orden": 0
+    },
+    {
+     "id": "a188221a-85cb-4e8d-b45f-872702613602",
+     "by": "javi",
+     "at": "2026-11-18T19:47:19.117Z",
+     "base": "portada_reel_casa_boldo",
+     "version": 1,
+     "shaOrigen": "d7787a5c40806c4d7a3ed436eec3cbb471be4a88",
+     "name": "portada_reel_casa_boldo-v1.webp",
+     "path": "archivos/modelos-3d/portada_reel_casa_boldo-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/modelos-3d/portada_reel_casa_boldo-v1.webp",
+     "sha": "a0b9ad48e56ee92ef76d727cd0eee1c269ee2fc2",
+     "type": "image/webp",
+     "size": 118646,
+     "orden": 13
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-18T19:30:30.507Z",
+   "updatedAt": "2026-11-18T19:47:45.122Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -5829,6 +5844,13 @@
   }
  ],
  "comments": [
+  {
+   "id": "d64ecc77-0d2a-4c51-a108-2b714802d350",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "author": "javi",
+   "text": "Macaa creo que no habíamos aprobado la portada, para que me confirmes si está okay!",
+   "createdAt": "2026-11-18T19:47:45.130Z"
+  },
   {
    "id": "b0a6eee0-499d-4bf2-a5a8-2c9ff1e196c9",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -8536,6 +8558,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "ad6977e3-be3b-4de6-9f62-e30315e0113e",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-18T19:47:45.129Z"
+  },
+  {
+   "id": "2efa3c10-f664-4f69-a2d6-0a8c46d148b9",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-18T19:47:45.123Z"
+  },
   {
    "id": "bf8ec82a-98e0-41ba-a9a2-dfd2b61ab0c1",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -14305,6 +14347,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "46e2a5ef-5419-4136-a30d-678034ae56db",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Boldo” para revisar: Macaa creo que no habíamos aprobado la portada, para que me confirmes si está okay!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi te pide revisar: Macaa creo que no habíamos aprobado la portada, para que me confirmes si está okay!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T19:47:45.129Z"
+  },
+  {
+   "id": "7d17035d-0af7-45be-bb7d-d8fbd5a8d254",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T19:47:45.129Z"
+  },
+  {
+   "id": "172e61f8-7d63-43e6-aa3c-7ad658c5076c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T19:47:45.128Z"
+  },
   {
    "id": "511af6b5-baf5-4068-aa93-ed9df9e495f5",
    "to": "flavio",

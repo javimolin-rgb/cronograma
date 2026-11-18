@@ -16294,13 +16294,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "comment",
    "text": "comentó en “Casa Mañío”: Están ok gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Maca comentó: Están ok gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-17T21:19:43.318Z"
+   "createdAt": "2026-11-17T21:19:43.318Z",
+   "readAt": "2026-11-18T21:05:14.200Z"
   },
   {
    "id": "d9750a49-9fcb-417c-a666-cbe66a23ad1a",
@@ -28164,8 +28165,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|flavio",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "flavio",
-   "at": "2026-11-17T20:50:42.709Z",
-   "hasta": "2026-11-17T17:57:46.828Z",
+   "at": "2026-11-18T21:05:14.201Z",
+   "hasta": "2026-11-18T20:08:10.793Z",
    "que": "pieza"
   },
   {

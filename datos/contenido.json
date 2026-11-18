@@ -1679,7 +1679,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T22:45:47.703Z",
+   "updatedAt": "2026-11-18T22:58:42.816Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -7541,6 +7541,14 @@
  ],
  "comments": [
   {
+   "id": "63b52b07-2a6c-42b4-a57e-78e478db6ce3",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "flavio",
+   "text": "https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458b\n\nCANCION para Reel comenzar en los 0.40 seg y terminar en el  1.10",
+   "fileIds": [],
+   "createdAt": "2026-11-18T22:58:42.817Z"
+  },
+  {
    "id": "c48d0fe5-6eca-426f-8b63-defe6b45d136",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "flavio",
@@ -10288,6 +10296,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "0b085759-8d32-4c5f-8b7f-92f3f0cb0886",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-18T22:58:42.817Z"
+  },
   {
    "id": "e81399bf-ef9b-44ea-9499-ccb096d65d85",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16280,6 +16298,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0936be5b-be7c-4a2c-976a-c2f195b18c43",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio comentó: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-18T22:58:42.818Z"
+  },
+  {
+   "id": "cd0bfce5-70d5-4a10-8ef3-9e031506e62c",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio comentó: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-18T22:58:42.817Z"
+  },
   {
    "id": "1b7cbba7-7e5d-47b1-ae1c-315a1d018635",
    "to": "javi",
@@ -28501,8 +28549,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-18T22:45:47.703Z",
-   "hasta": "2026-11-18T22:45:47.703Z",
+   "at": "2026-11-18T22:58:42.816Z",
+   "hasta": "2026-11-18T22:58:42.816Z",
    "que": "comentario"
   },
   {

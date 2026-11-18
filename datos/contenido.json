@@ -16582,13 +16582,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Calculamos que podía durar 30 seg. El reel por eso ese tiempo en la canción, de …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Calculamos que podía durar 30 seg. El reel por eso ese tiempo en la canción, de …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-18T23:00:45.241Z"
+   "createdAt": "2026-11-18T23:00:45.241Z",
+   "readAt": "2026-11-18T23:21:58.098Z"
   },
   {
    "id": "d3c80e06-5d30-4ff5-8097-bd6dd1f65f7b",
@@ -16612,13 +16613,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Flavio comentó: https://open.spotify.com/intl-es/track/38jy6kRlPt8z1GUS9WXeNh?si=515c90b001ef458…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-18T22:58:42.818Z"
+   "createdAt": "2026-11-18T22:58:42.818Z",
+   "readAt": "2026-11-18T23:21:58.102Z"
   },
   {
    "id": "cd0bfce5-70d5-4a10-8ef3-9e031506e62c",
@@ -16643,13 +16645,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Flavio comentó: Hola JAvi, decidimos no usar voz en off, te dejo excel con indicaciones lo mas d…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-18T22:45:47.704Z"
+   "createdAt": "2026-11-18T22:45:47.704Z",
+   "readAt": "2026-11-18T23:21:58.102Z"
   },
   {
    "id": "a65991a9-dc97-47e2-a094-e70e00cc0b08",
@@ -16704,13 +16707,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "supervision",
    "text": "comentó en “Casa Boldo”: Estamos ok",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Maca comentó: Estamos ok",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:45:35.337Z"
+   "createdAt": "2026-11-18T21:45:35.337Z",
+   "readAt": "2026-11-18T23:21:58.102Z"
   },
   {
    "id": "624b5172-24e1-401b-8555-1d1939dfff43",

@@ -3485,7 +3485,7 @@
      "sha": "5289db18c23691271a0764c953cb9483061ee598",
      "type": "video/mp4",
      "size": 9374180,
-     "orden": 12,
+     "orden": 13,
      "extra": true
     },
     {
@@ -3519,11 +3519,11 @@
      "sha": "a0b9ad48e56ee92ef76d727cd0eee1c269ee2fc2",
      "type": "image/webp",
      "size": 118646,
-     "orden": 13
+     "orden": 12
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-18T19:47:45.122Z",
+   "updatedAt": "2026-11-18T19:50:47.022Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:35.732Z",
    "createdBy": "javi",
@@ -8558,6 +8558,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c0ee6f27-03bd-4880-8e74-2abe09a85c0b",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "postTitle": "Casa Boldo",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-18T19:50:47.023Z"
+  },
   {
    "id": "ad6977e3-be3b-4de6-9f62-e30315e0113e",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
@@ -14347,6 +14357,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "04cfd8e5-fd71-41d2-92e6-b35ee74b2db9",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T19:50:47.024Z"
+  },
+  {
+   "id": "d449ebd0-452c-4973-9879-e65880aa1383",
+   "to": "maca",
+   "from": "javi",
+   "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
+   "type": "update",
+   "text": "editó “Casa Boldo” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Boldo",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
+   "createdAt": "2026-11-18T19:50:47.024Z"
+  },
   {
    "id": "46e2a5ef-5419-4136-a30d-678034ae56db",
    "to": "maca",

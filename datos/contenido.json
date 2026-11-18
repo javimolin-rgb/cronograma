@@ -9,7 +9,7 @@
    "guionTabla": null,
    "guionNotas": [],
    "spotify": "https://open.spotify.com/track/38jy6kRlPt8z1GUS9WXeNh?si=LDXFgsByQaunOUTw11n3dw",
-   "campaign": "Publicaciones informativas",
+   "campaign": "Carruseles informativas",
    "time": "17:00",
    "date": "2026-11-12",
    "inicio": "",
@@ -262,7 +262,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T21:56:35.931Z",
+   "updatedAt": "2026-11-18T19:27:31.595Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-12T21:56:35.931Z",
    "publishedAt": "2026-11-12T21:56:35.931Z"
@@ -276,7 +276,7 @@
    "guionTabla": null,
    "guionNotas": [],
    "spotify": "",
-   "campaign": "Publicaciones informativas",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "2026-11-14",
    "inicio": "",
@@ -711,7 +711,7 @@
    "marca": [],
    "createdAt": "2026-11-10T18:36:15.730Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-15T21:06:52.318Z",
+   "updatedAt": "2026-11-18T19:27:31.597Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-15T21:06:52.318Z",
    "publishedAt": "2026-11-15T21:06:52.318Z"
@@ -844,7 +844,9 @@
     ],
     "voz": 3
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "",
    "inicio": "",
@@ -852,6 +854,7 @@
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",
    "platforms": [
     "instagram"
@@ -884,12 +887,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-18T19:27:31.598Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "¿Qué casa calza con tu familia?",
@@ -921,7 +922,9 @@
     ],
     "voz": 2
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "",
    "inicio": "",
@@ -929,6 +932,7 @@
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
    "platforms": [
     "instagram"
@@ -961,12 +965,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-18T19:27:31.598Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "Del primer mensaje a la obra, en 6 pasos",
@@ -1142,7 +1144,7 @@
    },
    "guionNotas": [],
    "spotify": "",
-   "campaign": "Publicaciones informativas",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "2026-11-26",
    "inicio": "",
@@ -1178,7 +1180,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-17T21:34:03.576Z",
+   "updatedAt": "2026-11-18T19:27:31.598Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
@@ -1244,7 +1246,9 @@
     ],
     "voz": 3
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "",
    "inicio": "",
@@ -1252,6 +1256,7 @@
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd",
    "platforms": [
     "instagram"
@@ -1274,12 +1279,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-18T19:27:31.598Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "Cómo se arma el precio de tu casa",
@@ -1313,7 +1316,7 @@
    },
    "guionNotas": [],
    "spotify": "",
-   "campaign": "Publicaciones informativas",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "",
    "inicio": "",
@@ -1344,8 +1347,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-12T17:59:18.715Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-18T19:27:31.599Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
   },
@@ -1694,7 +1697,9 @@
     ],
     "voz": 3
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "",
    "inicio": "",
@@ -1702,6 +1707,7 @@
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "30efd072-8377-4a3a-96f6-e2a60dab643d",
    "platforms": [
     "instagram"
@@ -1729,12 +1735,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-18T19:27:31.599Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "Tu terreno no tiene luz ni alcantarillado",
@@ -1766,7 +1770,9 @@
     ],
     "voz": 2
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "",
    "inicio": "",
@@ -1774,6 +1780,7 @@
    "status": "idea",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
    "platforms": [
     "instagram"
@@ -1796,12 +1803,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-18T19:27:31.599Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
-   "publishedAt": null,
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": null
   },
   {
    "title": "¿Son prefabricadas?",
@@ -1857,7 +1862,9 @@
     ],
     "voz": 3
    },
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "18:13",
    "date": "2026-11-08",
    "inicio": "",
@@ -2042,12 +2049,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-10T19:05:35.968Z",
+   "updatedAt": "2026-11-18T19:27:31.599Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-09T00:13:29.920Z",
-   "publishedAt": "2026-11-09T00:13:29.920Z",
-   "guionNotas": [],
-   "spotify": ""
+   "publishedAt": "2026-11-09T00:13:29.920Z"
   },
   {
    "title": "Casa Ciprés",
@@ -3825,7 +3830,9 @@
    "hashtags": "",
    "guion": "",
    "guionTabla": null,
-   "campaign": "Publicaciones informativas",
+   "guionNotas": [],
+   "spotify": "",
+   "campaign": "Carruseles informativas",
    "time": "",
    "date": "2026-11-01",
    "inicio": "",
@@ -3833,6 +3840,7 @@
    "status": "publicado",
    "priority": "normal",
    "revisions": 0,
+   "desarchivada": false,
    "id": "aa409560-033d-4424-b548-ce59905530cd",
    "platforms": [],
    "assignees": [
@@ -3961,7 +3969,7 @@
      "done": true
     }
    ],
-   "updatedAt": "2026-11-03T15:32:29.507Z",
+   "updatedAt": "2026-11-18T19:27:31.599Z",
    "updatedBy": "javi",
    "createdAt": "2026-10-27T16:47:56.617Z",
    "createdBy": "javi",
@@ -3977,9 +3985,7 @@
      "by": "javi"
     }
    ],
-   "marca": [],
-   "guionNotas": [],
-   "spotify": ""
+   "marca": []
   },
   {
    "title": "Cambio de modulo - Web Neorigen",

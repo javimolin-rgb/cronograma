@@ -16211,13 +16211,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "review",
    "text": "subió 1 archivo en “Casa Boldo” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:42:42.010Z"
+   "createdAt": "2026-11-18T21:42:42.010Z",
+   "readAt": "2026-11-18T21:44:27.837Z"
   },
   {
    "id": "407e8fd6-76a8-495a-bf69-d4204f2ba00a",
@@ -16241,13 +16242,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:42:42.009Z"
+   "createdAt": "2026-11-18T21:42:42.009Z",
+   "readAt": "2026-11-18T21:44:27.842Z"
   },
   {
    "id": "33ca25c7-b9d1-492d-8172-2ad9c9375fdb",
@@ -28437,9 +28439,9 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-18T21:38:57.855Z",
-   "hasta": "2026-11-18T21:38:57.853Z",
-   "que": "comentario"
+   "at": "2026-11-18T21:44:27.844Z",
+   "hasta": "2026-11-18T21:42:42.006Z",
+   "que": "pieza"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|maca",

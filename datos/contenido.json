@@ -16155,13 +16155,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T19:50:47.024Z"
+   "createdAt": "2026-11-18T19:50:47.024Z",
+   "readAt": "2026-11-18T21:05:06.464Z"
   },
   {
    "id": "d449ebd0-452c-4973-9879-e65880aa1383",
@@ -16200,13 +16201,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T19:47:45.129Z"
+   "createdAt": "2026-11-18T19:47:45.129Z",
+   "readAt": "2026-11-18T21:05:06.465Z"
   },
   {
    "id": "172e61f8-7d63-43e6-aa3c-7ad658c5076c",
@@ -16230,13 +16232,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a Aprobado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a Aprobado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T00:32:47.934Z"
+   "createdAt": "2026-11-18T00:32:47.934Z",
+   "readAt": "2026-11-18T21:05:06.465Z"
   },
   {
    "id": "65cf38ca-ff4f-45d3-8a7a-6c00b6ec3674",
@@ -16322,13 +16325,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: Esos son los correctos . Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: Esos son los correctos . Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-17T21:18:52.605Z"
+   "createdAt": "2026-11-17T21:18:52.605Z",
+   "readAt": "2026-11-18T21:05:06.465Z"
   },
   {
    "id": "72b5d65e-d26a-40be-8ef3-63ee1a790757",
@@ -28152,8 +28156,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|flavio",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "flavio",
-   "at": "2026-11-17T20:48:10.887Z",
-   "hasta": "2026-11-17T17:58:13.893Z",
+   "at": "2026-11-18T21:05:06.466Z",
+   "hasta": "2026-11-18T20:08:10.793Z",
    "que": "pieza"
   },
   {

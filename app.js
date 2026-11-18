@@ -1894,6 +1894,7 @@ const RE_VOZ = /(voz|locuci|narrac|gui[oó]n|off|audio)/i;
 // Qué columna es la voz: la que lo diga en su título y, si ninguna lo dice, la última
 function colVoz(t) {
   if (!tablaValida(t)) return -1;
+  if (t.voz === -1) return -1;                       // “— ninguna”: la pieza no lleva voz en off (carruseles)
   if (Number.isInteger(t.voz) && t.voz >= 0 && t.voz < t.cols.length) return t.voz;
   const i = t.cols.findIndex((c) => RE_VOZ.test(String(c || '')));
   return i >= 0 ? i : t.cols.length - 1;
@@ -2144,7 +2145,10 @@ function miraSeccion(sec, anio) {
   const cuerpo = sec.cuerpo || [];
   const trozos = trozosEtiquetados(cuerpo);
   const tablas = tablasDe(cuerpo);
-  const guion = tablas.find((t) => t.cols.some((c) => /voz/i.test(c))) || null;
+  // La estructura: la tabla con voz en off o, en un carrusel, la de las láminas (esa no lleva voz)
+  const tablaLaminas = tablas.find((t) => t.cols.some((c) => /l[áa]mina/i.test(c)) && t.cols.some((c) => /pantalla/i.test(c)));
+  const guion = tablas.find((t) => t.cols.some((c) => /voz/i.test(c)))
+    || (tablaLaminas ? Object.assign(tablaLaminas, { voz: -1 }) : null);
   const numero = (sec.h.match(/^\s*(\d{1,2})\s*[.)]\s*/) || [])[1] || '';
   const titulo = sinMd(sec.h.replace(/^\s*\d{1,2}\s*[.)]\s*/, '')).replace(/^["“'«]|["”'»]$/g, '').trim();
   const lineaFormato = cuerpo.map((l) => l.trim()).find((l) => /^\*\*.+\*\*$/.test(l) && /reel|carrusel|story|historia|post\b/i.test(l) && l.includes('·')) || '';

@@ -38,6 +38,18 @@
     return new TextDecoder().decode(txt);
   }
 
+  /* El sha con el que git nombra un archivo: sha1("blob <bytes>\0" + contenido).
+     Sirve para comprobar que el texto que llegó es de verdad el que GitHub dice
+     que es, y no una copia atrasada de alguna caché. */
+  async function shaDeTexto(texto) {
+    const cuerpo = new TextEncoder().encode(texto);
+    const cab = new TextEncoder().encode('blob ' + cuerpo.length + '\0');
+    const todo = new Uint8Array(cab.length + cuerpo.length);
+    todo.set(cab); todo.set(cuerpo, cab.length);
+    const h = await crypto.subtle.digest('SHA-1', todo);
+    return [...new Uint8Array(h)].map((b) => b.toString(16).padStart(2, '0')).join('');
+  }
+
   const uid = () => (window.crypto && crypto.randomUUID)
     ? crypto.randomUUID()
     : Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
@@ -191,10 +203,12 @@
     db: null,
     sha: null,        // sha actual de datos/contenido.json
     etag: null,
-    dirty: new Set(), // "tabla:id" pendientes de subir
+    dirty: new Map(),  // "tabla:id" -> la fila, pendientes de subir
+    atrasado: false,   // lo último que se leyó no coincidía con su sha: no se puede guardar encima
     gone: new Set(),
     saving: false,
     again: false,
+    reintento: null,
     onChange: null,
 
     get canWrite() { return !!this.token && !this.caducada; },
@@ -318,6 +332,19 @@
     },
     emptyDb() { const o = {}; TABLES.forEach((t) => { o[t] = []; }); return o; },
 
+    /* Un archivo de más de 1 MB viene sin contenido en la ficha: hay que pedirlo aparte.
+       Por su sha es lo seguro, porque el sha ES el contenido: no existe una versión
+       atrasada de un sha. (La copia publicada en raw pasa por una caché que puede ir
+       minutos atrás, y leer eso con el sha nuevo era lo que hacía que al guardar se
+       borraran en silencio los comentarios y cambios recién subidos por otra persona.) */
+    async leerBlob(sha) {
+      const c = this.cfg;
+      const r = await fetch(`${API}/repos/${c.owner}/${c.repo}/git/blobs/${sha}`, { headers: this.headers(), cache: 'no-store' });
+      if (!r.ok) return null;
+      const j = await r.json();
+      return j && j.content ? b64ToUtf8(j.content) : null;
+    },
+
     async load() {
       const c = this.cfg;
       const r = await fetch(`${this.contentsUrl(c.data)}?ref=${encodeURIComponent(c.branch)}`, {
@@ -335,18 +362,36 @@
         const raw = await fetch(this.rawUrl(c.data) + '?t=' + Date.now(), { cache: 'no-store' });
         if (!raw.ok) throw new Error('no se pudieron leer los datos (error ' + r.status + ')');
         this.db = this.normalizeDb(await raw.json());
+        this.aplicarPendientes();
+        this.atrasado = true;   // copia publicada: puede ir atrasada (de todas formas es solo lectura)
         return clone(this.db);
       }
       if (!r.ok) throw new Error('no se pudieron leer los datos (error ' + r.status + ')');
       this.etag = r.headers.get('ETag');
       const j = await r.json();
+      let text = j.content ? b64ToUtf8(j.content) : null;
+      const aparte = text === null;             // archivo grande: el contenido hubo que pedirlo por separado
+      if (aparte && j.sha) text = await this.leerBlob(j.sha);
+      let porRaw = false;
+      if (text === null) {
+        const sep = String(j.download_url || '').includes('?') ? '&' : '?';
+        text = await (await fetch(j.download_url + sep + 't=' + Date.now(), { cache: 'no-store' })).text();
+        porRaw = true;
+      }
+      /* Si el contenido vino por separado, se comprueba que sea de verdad el que dice
+         el sha. La copia publicada (raw) pasa por una caché que puede ir minutos atrás:
+         leer eso y quedarse con el sha nuevo es lo que hacía que, al guardar, se
+         borraran en silencio los comentarios y cambios recién subidos por otra persona. */
+      let ok = true;
+      if (aparte && j.sha) {
+        try { ok = (await shaDeTexto(text)) === j.sha; } catch (e) { ok = !porRaw; }
+      }
+      this.atrasado = !ok;
       this.sha = j.sha;
-      let text;
-      if (j.content) text = b64ToUtf8(j.content);
-      else text = await (await fetch(j.download_url, { cache: 'no-store' })).text();
       let parsed = {};
       try { parsed = JSON.parse(text); } catch (e) { throw new Error('El archivo de datos está dañado'); }
       this.db = this.normalizeDb(parsed);
+      this.aplicarPendientes();
       return clone(this.db);
     },
     normalizeDb(o) {
@@ -370,7 +415,9 @@
       const i = a.findIndex((x) => x.id === o.id);
       if (i >= 0) { o = this.fusionar(t, a[i], o); a[i] = clone(o); } else a.unshift(clone(o));
       if (!this.token) throw new Error('modo solo lectura');
-      this.dirty.add(t + ':' + o.id);
+      // se guarda una copia de la fila: así sigue estando aunque entremedio
+      // se vuelva a leer el archivo del repositorio
+      this.dirty.set(t + ':' + o.id, clone(o));
       this.gone.delete(t + ':' + o.id);
       this.queueSave(); // se sube en segundo plano, junto con los demás cambios
     },
@@ -394,35 +441,52 @@
           } while (this.again || this.dirty.size || this.gone.size);
         } catch (e) {
           if (this.onError) this.onError(e); else console.error(e);
+          // quedó algo sin subir: se reintenta solo, para que no dependa de que
+          // la persona vuelva a tocar algo
+          if ((this.dirty.size || this.gone.size) && !this.reintento) {
+            this.reintento = setTimeout(() => { this.reintento = null; this.queueSave(); }, 20000);
+          }
         } finally { this.saving = false; }
       })();
       return this.savingPromise;
     },
     async flushNow() { if (this.pending()) { this.again = true; await this.queueSave(); } },
     // Vuelve a traer la versión del repositorio y le aplica encima lo que cambié yo
-    async rebase() {
-      const mine = {};
-      this.dirty.forEach((k) => {
-        const i = k.indexOf(':'), t = k.slice(0, i), id = k.slice(i + 1);
-        const row = (this.db[t] || []).find((x) => x.id === id);
-        if (row) (mine[t] = mine[t] || []).push(clone(row));
+    /* Lo que todavía no se ha subido se vuelve a poner encima de lo que acaba de
+       llegar del repositorio. Se hace dentro de load(), así que da igual quién lo
+       llame —el repaso de fondo, volver a la app, un reintento—: nunca se queda
+       fuera un comentario recién escrito. */
+    aplicarPendientes() {
+      this.dirty.forEach((row, k) => {
+        const t = k.slice(0, k.indexOf(':'));
+        const a = this.db[t] = this.db[t] || [];
+        const i = a.findIndex((x) => x.id === row.id);
+        if (i >= 0) a[i] = this.fusionar(t, a[i], clone(row)); else a.unshift(clone(row));
       });
-      const gone = [...this.gone];
-      this.etag = null;
-      await this.load();
-      Object.keys(mine).forEach((t) => {
-        mine[t].forEach((row) => {
-          const a = this.db[t], i = a.findIndex((x) => x.id === row.id);
-          if (i >= 0) a[i] = this.fusionar(t, a[i], row); else a.unshift(row);
-        });
-      });
-      gone.forEach((k) => {
+      this.gone.forEach((k) => {
         const i = k.indexOf(':'), t = k.slice(0, i), id = k.slice(i + 1);
         this.db[t] = (this.db[t] || []).filter((x) => x.id !== id);
       });
     },
+    // Trae la versión del repositorio y le vuelve a poner encima lo mío
+    async rebase() {
+      this.etag = null;
+      await this.load();
+    },
     async commit(intento = 0) {
       if (!this.dirty.size && !this.gone.size) return;
+      /* Si lo último que se leyó venía atrasado, guardar encima borraría lo que
+         subieron los demás. Primero se vuelve a leer; si sigue atrasado, se deja
+         pendiente y se reintenta más tarde: nada se pierde. */
+      if (this.atrasado) {
+        await this.rebase();
+        if (this.atrasado) {
+          if (intento < 4) { await sleep(1200 + intento * 1200); return this.commit(intento + 1); }
+          throw new Error('los datos llegaron atrasados; tus cambios quedaron pendientes y se suben solos en cuanto GitHub responda al día');
+        }
+      }
+      // lo que de verdad va en este envío: lo que llegue mientras se sube queda para el siguiente
+      const enviadas = [...this.dirty.keys()], borradas = [...this.gone];
       const body = {
         message: 'Cronograma: cambios desde la app',
         content: utf8ToB64(JSON.stringify(this.db, null, 1)),
@@ -436,7 +500,9 @@
         const j = await r.json();
         this.sha = j.content && j.content.sha;
         this.etag = null;
-        this.dirty.clear(); this.gone.clear();
+        this.atrasado = false;      // viene de la respuesta de GitHub: está al día por definición
+        enviadas.forEach((k) => this.dirty.delete(k));
+        borradas.forEach((k) => this.gone.delete(k));
         return;
       }
       if ((r.status === 409 || r.status === 422) && intento < 4) { // alguien guardó antes: reintentamos sobre lo suyo
@@ -571,7 +637,7 @@
     subscribe(cb) {
       this.onChange = cb;
       const tick = async () => {
-        if (document.hidden || this.saving) return;
+        if (document.hidden || this.saving || this.pending()) return;
         try {
           const before = this.sha;
           await this.load();

@@ -2472,7 +2472,7 @@
   },
   {
    "title": "Casa Roble",
-   "caption": "Casa Roble, nuestro modelo de la semana ❄️\n\nEn la montaña, la forma no es un capricho: su silueta triangular deja que la nieve resbale sola, y su frente vidriado mira directo a la montaña.\n\nBotas en la entrada, algo caliente en la mesa y espacio para todos: \n\n4 dormitorios, 3 baños y 142 m² útiles en 2 pisos,  entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaRoble #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+   "caption": "Casa Roble, nuestro modelo de la semana ❄️\n\nEn la montaña, la forma no es un capricho: su silueta a dos aguas deja que la nieve y la lluvia resbale sola, y su frente vidriado mira directo a la montaña.\n\nBotas en la entrada, algo caliente en la mesa y espacio para todos: \n\n4 dormitorios, 3 baños y 142 m² útiles en 2 pisos,  entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaRoble #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
    "notes": "",
    "hashtags": "",
    "guion": "En la montaña, la forma no es un capricho… es lo que te protege.\n\nEspacio de sobra para llegar con todos, y con todo.\n\nSu silueta deja que la nieve resbale, sola.\n\nY adentro, el calor de hogar mientras afuera todo es blanco.\n\nBotas en la entrada, algo caliente en la mesa, y la nieve detrás del vidrio.\n\nCuatro dormitorios, tres baños, y un amplio estar comedor.\n\nPara la familia, los amigos, y las temporadas que se vuelven tradición.\n\nCasa Roble. Una alternativa familiar.\n\nDescúbrela en neorigen.cl",
@@ -2564,7 +2564,9 @@
    "revisions": 0,
    "desarchivada": false,
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "platforms": [],
+   "platforms": [
+    "instagram"
+   ],
    "assignees": [
     "javi",
     "maca"
@@ -2572,7 +2574,7 @@
    "links": [],
    "files": [],
    "checklist": [],
-   "updatedAt": "2026-11-19T13:53:24.604Z",
+   "updatedAt": "2026-11-19T14:52:20.761Z",
    "updatedBy": "flavio",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -2599,6 +2601,13 @@
      "campo": "guion",
      "text": "En la montaña, la forma no es un capricho… es lo que te protege.\n\nEspacio de sobra para llegar con todos, y con todo.\n\nSu silueta deja que la nieve resbale, sola.\n\nY adentro, el calor de hogar mientras afuera todo es blanco.\n\nBotas en la entrada, algo caliente en la mesa, y la nieve detrás del vidrio.\n\nCuatro dormitorios y tres baños, para que nadie haga fila después del ski.\n\nPara la familia, los amigos, y las temporadas que se vuelven tradición.\n\nCasa Roble. Tu lugar en la nieve.\n\nDescúbrela en neorigen.cl",
      "hasta": "2026-11-19T13:53:24.604Z",
+     "by": "flavio"
+    },
+    {
+     "id": "f62126e2-10a4-4c13-8e1b-f067f8afda94",
+     "campo": "caption",
+     "text": "Casa Roble, nuestro modelo de la semana ❄️\n\nEn la montaña, la forma no es un capricho: su silueta triangular deja que la nieve resbale sola, y su frente vidriado mira directo a la montaña.\n\nBotas en la entrada, algo caliente en la mesa y espacio para todos: \n\n4 dormitorios, 3 baños y 142 m² útiles en 2 pisos,  entrega llave en mano.\n\n¿Te imaginas viviendo aquí? Conversemos.\nDescubre todos sus detalles en neorigen.cl\n\n#Neorigen #CasaRoble #ViveLoNatural #CasasPrediseñadas #CasasSustentables #LlaveEnMano",
+     "hasta": "2026-11-19T14:52:20.761Z",
      "by": "flavio"
     }
    ],
@@ -7565,6 +7574,38 @@
  ],
  "comments": [
   {
+   "id": "c6e9aa59-0ea7-42a3-bda5-1a021bfac654",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "flavio",
+   "text": "@Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:56:46.164Z"
+  },
+  {
+   "id": "c9f14226-749d-40b4-af74-29a361bb44fd",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "flavio",
+   "text": "OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en off.. Quedamos a la espera del modelo",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:52:20.764Z"
+  },
+  {
+   "id": "65baaca6-67e9-4a15-a1d6-309d80dee6b9",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Javi, lo veo y te aviso. No te compliques.",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:51:11.798Z"
+  },
+  {
+   "id": "fb8a5ad4-62bc-4f11-92ed-5eeb6c8691ef",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "author": "maca",
+   "text": "Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos faltó cachar q lo q estaba escrito en “voz en off “pasaría a estar escrito. Gracias por la aclaración",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:25:40.556Z"
+  },
+  {
    "id": "0bb62936-bab5-459e-a49d-f1fe0a4f3266",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10392,6 +10433,66 @@
   }
  ],
  "activity": [
+  {
+   "id": "d389b409-9a39-43a1-a785-c0e250634f57",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:56:46.164Z"
+  },
+  {
+   "id": "587fda0a-ece0-45cd-9344-0cc58cfce0dc",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:52:20.765Z"
+  },
+  {
+   "id": "83bf93cc-11ea-4b02-9fa1-b7ed1c61d5e7",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó copy, plataformas",
+   "meta": null,
+   "createdAt": "2026-11-19T14:52:20.762Z"
+  },
+  {
+   "id": "c1e2b8a5-6a51-4b2e-b3d5-38be2a8e9194",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:51:11.802Z"
+  },
+  {
+   "id": "2a46e3ce-0481-433a-8209-2c302e5accdc",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:25:40.556Z"
+  },
+  {
+   "id": "a8f26324-307b-4ece-8a85-ccd8a337500d",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "edit",
+   "text": "quitó el guión / voz en off: es carrusel",
+   "meta": null,
+   "createdAt": "2026-11-19T13:43:39.000Z"
+  },
   {
    "id": "700a1986-53fb-4dee-a0ad-7e4dc68cc3b7",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16773,6 +16874,141 @@
   }
  ],
  "notifications": [
+  {
+   "id": "2e56dc6c-09b0-45c3-b0cd-7e464c0b00be",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio te mencionó: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:56:46.165Z"
+  },
+  {
+   "id": "70ed25eb-3eea-4fe3-bbac-14cd1f46b865",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio te mencionó: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:56:46.165Z"
+  },
+  {
+   "id": "85fef2e0-e5f7-492c-93ba-1d23b8cebb96",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en o…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Flavio te mencionó: OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en o…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-19T14:52:20.765Z"
+  },
+  {
+   "id": "ee4762a8-97d3-435f-a47d-f774d14f1ea7",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en o…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Flavio comentó: OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en o…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-19T14:52:20.765Z"
+  },
+  {
+   "id": "c84cf750-6f1a-42ce-8ac8-c9cb5bf1d46c",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "en “Casa Roble”: editó copy, plataformas",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Flavio editó copy, plataformas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-19T14:52:20.764Z"
+  },
+  {
+   "id": "94b770f7-77f8-492b-8e4e-7673e9f0b651",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (copy, plataformas)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Flavio editó copy, plataformas",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-19T14:52:20.763Z"
+  },
+  {
+   "id": "85a2d5fd-b96e-4885-ba56-1a615aa4c852",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Javi, lo veo y te aviso. No te compliques.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Javi, lo veo y te aviso. No te compliques.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:51:11.804Z"
+  },
+  {
+   "id": "464b886b-b8eb-4b8f-a6e6-50660b2230a8",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Javi, lo veo y te aviso. No te compliques.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Javi, lo veo y te aviso. No te compliques.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:51:11.804Z"
+  },
+  {
+   "id": "fe91acd9-1e08-45b7-9cc8-5a33b81029e7",
+   "to": "javi",
+   "from": "maca",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "comentó en “Aire nuevo sin abrir la ventana”: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Maca comentó: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T14:25:40.557Z"
+  },
   {
    "id": "39591126-8a4c-449d-bb28-b18a7cb91ec1",
    "to": "flavio",

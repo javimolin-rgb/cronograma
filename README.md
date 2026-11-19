@@ -57,6 +57,24 @@ Si escribiste un comentario y aprietas **“Guardar cambios”** sin haber tocad
 
 Era la forma más fácil de perder una respuesta: escribirla, guardar la pieza y que se borrara sin que nadie se diera cuenta.
 
+## Nada se pierde al guardar: cómo se escribe en GitHub
+
+El 19 de noviembre pasó algo que no se podía dejar así: llegaba el aviso al celular de un comentario de Flavio o de Maca, se entraba a la pieza y el comentario no estaba. Se perdieron **cinco comentarios** y **una edición** (el copy y la plataforma de *Casa Roble*) en cinco episodios distintos, todos el mismo día.
+
+**Por qué pasaba.** Los datos viven en un archivo, `datos/contenido.json`. Ese día el archivo pasó de **1 MB**, y GitHub, con los archivos de más de 1 MB, deja de mandar el contenido junto con la ficha: manda la ficha —con el número de versión al día— y un enlace a la copia publicada. La app leía esa copia, que pasa por una caché que puede ir **minutos atrasada**. Resultado: el teléfono se quedaba con datos viejos pero con el número de versión nuevo, así que al guardar GitHub no tenía motivo para rechazarlo y **el archivo entero volvía atrás**, borrando en silencio lo que otra persona acababa de escribir. El aviso ya había salido al celular, por eso llegaba la notificación de un comentario que ya no existía.
+
+**Qué se hizo.**
+
+- El contenido se pide ahora **por su número de versión** (`git/blobs`), que es el contenido mismo: de un número de versión no existe una copia atrasada.
+- Si por lo que sea hubo que leer la copia publicada, se **comprueba** que el texto corresponda a esa versión. Si no corresponde, la app lo muestra pero **no deja guardar encima**: vuelve a leer, y si sigue atrasada deja los cambios pendientes y se suben solos.
+- **Lo pendiente nunca se queda fuera.** Al releer el archivo —cada 45 segundos, al volver a la app, o al reintentar— lo que todavía no se ha subido se vuelve a poner encima de lo que llegó. Antes, si entremedio se releía, el comentario recién escrito desaparecía de la copia que se iba a subir.
+- Si al subir GitHub no contesta, los cambios **quedan pendientes y se reintentan solos** a los 20 segundos, sin que haya que tocar nada.
+- Un comentario escrito mientras se está subiendo otra cosa ya no se da por subido antes de tiempo: solo se marca como guardado lo que de verdad iba en ese envío.
+
+**Lo que se perdió, se repuso**: los cinco comentarios (de Maca y de Flavio), sus avisos, el historial y la edición de *Casa Roble* se recuperaron del historial del repositorio y están de vuelta en la pieza, con su hora original.
+
+Hay una prueba automática que reproduce exactamente lo que pasó —archivo de más de 1 MB, copia publicada atrasada, dos personas escribiendo— y comprueba que ya no se pierde nada.
+
 ## Nombrar un archivo en un comentario (también lo de Marca)
 
 Debajo del cuadro de comentario, en cada pieza, están las miniaturas de **todo lo que se puede nombrar**: primero los archivos de la pieza —fotos, videos, audios y documentos— y después **todo lo que hay en Marca** (los logos, la música, las tipografías, el manual…), que se reconocen por la **estrella** en la esquina. Al tocar uno (o varios) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es.

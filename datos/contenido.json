@@ -1986,7 +1986,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:03:12.162Z",
+   "updatedAt": "2026-11-19T18:06:34.637Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7885,6 +7885,14 @@
  ],
  "comments": [
   {
+   "id": "21071efc-d5c4-4207-bbed-b46639b568b3",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Indie folk pop\nWarm\nIndie folk vocals \nAcoustic indie pop",
+   "fileIds": [],
+   "createdAt": "2026-11-19T18:06:34.643Z"
+  },
+  {
    "id": "14db428e-2e63-437e-a2dc-462f31ea020e",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10720,6 +10728,16 @@
  ],
  "activity": [
   {
+   "id": "2fac66ec-7517-495d-b4e4-20077bd4fffc",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:06:34.646Z"
+  },
+  {
    "id": "6bef1f72-d941-496b-a168-ffe583710e57",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13525,6 +13543,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0237aa37-3335-4400-bd0a-f61daa35dd77",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Indie folk pop\nWarm\nIndie folk vocals \nAcoustic indie pop",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Indie folk pop\nWarm\nIndie folk vocals \nAcoustic indie pop",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:06:34.647Z"
+  },
+  {
+   "id": "9a14f8b6-56e5-43ae-8098-356381ec3e5c",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Indie folk pop\nWarm\nIndie folk vocals \nAcoustic indie pop",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Indie folk pop\nWarm\nIndie folk vocals \nAcoustic indie pop",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:06:34.647Z"
+  },
   {
    "id": "a6800898-1915-40f5-80d7-c8e483864f10",
    "to": "javi",
@@ -20315,8 +20363,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T18:03:12.164Z",
-   "hasta": "2026-11-19T18:03:12.162Z",
+   "at": "2026-11-19T18:06:34.642Z",
+   "hasta": "2026-11-19T18:06:34.637Z",
    "que": "comentario"
   },
   {

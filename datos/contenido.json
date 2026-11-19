@@ -1644,7 +1644,6 @@
    ],
    "assignees": [
     "javi",
-    "maca",
     "flavio"
    ],
    "links": [
@@ -2129,8 +2128,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T20:22:08.030Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T20:50:12.708Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -8028,6 +8027,14 @@
  ],
  "comments": [
   {
+   "id": "95d362f4-4f00-4446-8b3b-ed23c725c435",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "@Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se corta😬. Arreglando eso estamos ok !!!!!",
+   "fileIds": [],
+   "createdAt": "2026-11-19T20:50:12.715Z"
+  },
+  {
    "id": "3d8f9802-46c3-4b4a-8805-b14c2457a249",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10985,6 +10992,26 @@
   }
  ],
  "activity": [
+  {
+   "id": "b5f344a4-1558-469d-ac4c-c36d6f0a5fcf",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T20:50:12.719Z"
+  },
+  {
+   "id": "69890afa-979f-4da8-b0ac-f35e0ce1d0fb",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "untag",
+   "text": "quitó a Maca",
+   "meta": null,
+   "createdAt": "2026-11-19T20:50:12.712Z"
+  },
   {
    "id": "12ee7374-49bf-4dfa-aabb-5652f700aedb",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -13961,6 +13988,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "87062133-7ad0-4db0-9950-29b37846a769",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:50:12.720Z"
+  },
+  {
+   "id": "6527f072-faac-44f8-8f41-1583214a435e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca te mencionó: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:50:12.720Z"
+  },
   {
    "id": "cce8b642-7d7e-41c3-92a1-6944ab5b5e1b",
    "to": "javi",
@@ -21318,9 +21375,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T20:45:01.843Z",
-   "hasta": "2026-11-19T20:22:08.030Z",
-   "que": "pieza"
+   "at": "2026-11-19T20:50:12.715Z",
+   "hasta": "2026-11-19T20:50:12.708Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

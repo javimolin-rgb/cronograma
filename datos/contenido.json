@@ -16693,13 +16693,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:47:42.598Z"
+   "createdAt": "2026-11-18T21:47:42.598Z",
+   "readAt": "2026-11-19T12:11:11.030Z"
   },
   {
    "id": "3b450e91-1910-4412-8cbc-dbfc5802b8b2",
@@ -28967,8 +28968,8 @@
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "person": "maca",
-   "at": "2026-11-18T21:44:27.844Z",
-   "hasta": "2026-11-18T21:42:42.006Z",
+   "at": "2026-11-19T12:11:11.033Z",
+   "hasta": "2026-11-18T21:47:42.597Z",
    "que": "pieza"
   },
   {

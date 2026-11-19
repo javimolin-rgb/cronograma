@@ -1,0 +1,266 @@
+{
+ "actualizado": "2026-11-19T15:43:42.308Z",
+ "meses": [
+  "2026-08",
+  "2026-09",
+  "2026-10",
+  "2026-11"
+ ],
+ "total": {
+  "comments": 16,
+  "activity": 378,
+  "notifications": 444
+ },
+ "piezas": {
+  "e-c1": {
+   "comments": 2,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-web-propuesta": {
+   "comments": 1,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c2": {
+   "comments": 4,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-cotizador-v1": {
+   "comments": 2,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c3": {
+   "comments": 5,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-web-wix": {
+   "comments": 2,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-diagnostico": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-resumen-marca": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c4": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-web-textos": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-cotizador-correos": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c-web": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c-fachada": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c-cipres": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-carpeta-1": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-carpeta-2": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-carpeta-3": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-c-personalizables": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-iconos-ig": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-web-portada": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-cotizador-manio": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-render-lingue": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-carpeta-imprenta": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-fotos-itahue": {
+   "comments": 0,
+   "activity": 10,
+   "notifications": 1
+  },
+  "e-carpetas-impresas": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "p-reel-obra": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "p-carrusel-procesos": {
+   "comments": 0,
+   "activity": 2,
+   "notifications": 0
+  },
+  "e-web-formulario": {
+   "comments": 0,
+   "activity": 4,
+   "notifications": 3
+  },
+  "2dc5fa67-ce5c-49f6-bb01-b3dcdcd7a181": {
+   "comments": 0,
+   "activity": 35,
+   "notifications": 55
+  },
+  "ec3bd573-ce00-4354-8349-7c18087e12ed": {
+   "comments": 0,
+   "activity": 5,
+   "notifications": 3
+  },
+  "aa409560-033d-4424-b548-ce59905530cd": {
+   "comments": 0,
+   "activity": 27,
+   "notifications": 42
+  },
+  "309f771f-1276-4384-95ed-3e597aac5756": {
+   "comments": 0,
+   "activity": 15,
+   "notifications": 21
+  },
+  "5ebdd461-a506-4c8c-b849-34c2290c0ae1": {
+   "comments": 0,
+   "activity": 41,
+   "notifications": 77
+  },
+  "03b2da82-2617-417b-8081-df3dadaefb31": {
+   "comments": 0,
+   "activity": 69,
+   "notifications": 117
+  },
+  "804906ab-7f99-4598-afc6-ef726afa4e20": {
+   "comments": 0,
+   "activity": 4,
+   "notifications": 1
+  },
+  "e2e69c7f-c96f-41d1-9f29-6f57e2be4125": {
+   "comments": 0,
+   "activity": 4,
+   "notifications": 1
+  },
+  "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 0
+  },
+  "bb42e33d-36ab-4a0d-a913-b8b5185b775f": {
+   "comments": 0,
+   "activity": 4,
+   "notifications": 1
+  },
+  "323a4823-a2d6-4dcf-ba09-8d0f60536507": {
+   "comments": 0,
+   "activity": 4,
+   "notifications": 0
+  },
+  "b7258377-7bcd-4a03-b7d4-ed25bf0220e4": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 2
+  },
+  "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 2
+  },
+  "549a3272-d695-4f76-9011-a252831ac96c": {
+   "comments": 0,
+   "activity": 6,
+   "notifications": 5
+  },
+  "2fa98f13-69ae-40b5-9cea-3d63c396c517": {
+   "comments": 0,
+   "activity": 6,
+   "notifications": 5
+  },
+  "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 2
+  },
+  "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 2
+  },
+  "c14e3171-4bf1-4be7-a2db-acec3a3fce60": {
+   "comments": 0,
+   "activity": 5,
+   "notifications": 4
+  },
+  "30efd072-8377-4a3a-96f6-e2a60dab643d": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 2
+  },
+  "b9d0787e-0ba6-48a3-b13a-64bc5242e57f": {
+   "comments": 0,
+   "activity": 3,
+   "notifications": 2
+  },
+  "a013c4e6-c3bb-4d47-9667-5ee418b19336": {
+   "comments": 0,
+   "activity": 61,
+   "notifications": 78
+  },
+  "d803aa90-d8cb-42e9-bf3e-71e3511878f7": {
+   "comments": 0,
+   "activity": 5,
+   "notifications": 9
+  }
+ }
+}

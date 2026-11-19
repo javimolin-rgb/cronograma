@@ -1,0 +1,320 @@
+{
+ "comments": [
+  {
+   "id": "e-web-propuesta-c1",
+   "postId": "e-web-propuesta",
+   "author": "maca",
+   "text": "Fondo un poco menos oscuro. Evaluar otras fotos para llave en mano, ventanas termopanel, etc.",
+   "createdAt": "2026-09-01T16:24:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-c2-d1",
+   "postId": "e-c2",
+   "author": "maca",
+   "text": "Aparecen 7 casas y la Lingue se repite: deben estar todos los modelos. La primera de la izquierda no corresponde a ninguno.",
+   "createdAt": "2026-09-03T17:51:00.000Z"
+  },
+  {
+   "id": "e-c2-d2",
+   "postId": "e-c2",
+   "author": "maca",
+   "text": "Probar con luz de atardecer: destaca los ventanales, que son el sello, y se ve menos render.",
+   "createdAt": "2026-09-03T18:00:00.000Z"
+  },
+  {
+   "id": "e-c2-d3",
+   "postId": "e-c2",
+   "author": "maca",
+   "text": "En la descripción, no hablar de “otra forma de vivir”: lo que cambia es el estilo y el tipo de familia, no la conexión con la naturaleza.",
+   "createdAt": "2026-09-03T18:10:00.000Z"
+  },
+  {
+   "id": "e-c2-c1",
+   "postId": "e-c2",
+   "author": "maca",
+   "text": "Aprobado.",
+   "createdAt": "2026-09-03T19:59:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-cotizador-v1-c1",
+   "postId": "e-cotizador-v1",
+   "author": "flavio",
+   "text": "Automatizar la fecha. Los campos dicen «Vendedor», pero corresponde a «Cliente»: corregir la etiqueta. Falta el total en UF con IVA incluido.",
+   "createdAt": "2026-09-09T13:45:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-c3-d1",
+   "postId": "e-c3",
+   "author": "maca",
+   "text": "Nombrar los lugares como Punta Peuque / Chiloé, Roblerías / Teno y El Claro / Maitencillo, en tamaño menor.",
+   "createdAt": "2026-09-10T17:44:00.000Z"
+  },
+  {
+   "id": "e-c3-d2",
+   "postId": "e-c3",
+   "author": "maca",
+   "text": "Agrandar Punta Peuque, Roblerías y El Claro; achicar Chiloé, Teno y Maitencillo. Sacar el rectángulo blanco o achicarlo.",
+   "createdAt": "2026-09-10T18:22:00.000Z"
+  },
+  {
+   "id": "e-c3-d3",
+   "postId": "e-c3",
+   "author": "maca",
+   "text": "La última foto de cada proyecto debe mostrar la obra más terminada. Bajar el desorden visual de las fotos de proceso.",
+   "createdAt": "2026-09-10T18:30:00.000Z"
+  },
+  {
+   "id": "e-c3-d4",
+   "postId": "e-c3",
+   "author": "maca",
+   "text": "Agrandar “3 lugares distintos” y achicar “1 mismo modelo”.",
+   "createdAt": "2026-09-10T19:31:00.000Z"
+  },
+  {
+   "id": "e-c3-c1",
+   "postId": "e-c3",
+   "author": "maca",
+   "text": "Copy final para la publicación: «Un mismo modelo. Tres lugares. Tres casas con identidad propia.»",
+   "createdAt": "2026-09-10T20:49:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-cotizador-v1-c2",
+   "postId": "e-cotizador-v1",
+   "author": "flavio",
+   "text": "Cotizador probado: funciona correctamente.",
+   "createdAt": "2026-09-14T12:29:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-web-wix-d3",
+   "postId": "e-web-wix",
+   "author": "flavio",
+   "text": "En la página de casas, mantener las mismas imágenes elegidas para el home y agregar el plazo estimado de construcción por modelo.",
+   "createdAt": "2026-09-15T11:49:00.000Z"
+  },
+  {
+   "id": "e-web-wix-d2",
+   "postId": "e-web-wix",
+   "author": "flavio",
+   "text": "Esconder la pestaña Promociones mientras no haya nada que comunicar: sirve solo para publicar las bases legales.",
+   "createdAt": "2026-09-15T19:14:00.000Z"
+  }
+ ],
+ "activity": [
+  {
+   "id": "e-diagnostico-a1",
+   "postId": "e-diagnostico",
+   "postTitle": "Diagnóstico integral de marca (39 páginas)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-01T10:00:00.000Z"
+  },
+  {
+   "id": "e-resumen-marca-a1",
+   "postId": "e-resumen-marca",
+   "postTitle": "Resumen de marca (una página)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-01T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-propuesta-a1",
+   "postId": "e-web-propuesta",
+   "postTitle": "Propuesta de sitio web (maqueta navegable)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-01T10:00:00.000Z"
+  },
+  {
+   "id": "e-diagnostico-a2",
+   "postId": "e-diagnostico",
+   "postTitle": "Diagnóstico integral de marca (39 páginas)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-01T19:05:00.000Z"
+  },
+  {
+   "id": "e-resumen-marca-a2",
+   "postId": "e-resumen-marca",
+   "postTitle": "Resumen de marca (una página)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-01T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-propuesta-a2",
+   "postId": "e-web-propuesta",
+   "postTitle": "Propuesta de sitio web (maqueta navegable)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-01T19:05:00.000Z"
+  },
+  {
+   "id": "e-c2-a1",
+   "postId": "e-c2",
+   "postTitle": "Carrusel: los modelos y sus metros cuadrados",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-03T10:00:00.000Z"
+  },
+  {
+   "id": "e-c2-a2",
+   "postId": "e-c2",
+   "postTitle": "Carrusel: los modelos y sus metros cuadrados",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-03T19:05:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1-a1",
+   "postId": "e-cotizador-v1",
+   "postTitle": "Cotizador web — primera versión",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-08T10:00:00.000Z"
+  },
+  {
+   "id": "e-c3-a1",
+   "postId": "e-c3",
+   "postTitle": "Carrusel: un mismo modelo, tres lugares (Maitén)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-10T10:00:00.000Z"
+  },
+  {
+   "id": "e-c3-a2",
+   "postId": "e-c3",
+   "postTitle": "Carrusel: un mismo modelo, tres lugares (Maitén)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-10T19:05:00.000Z"
+  },
+  {
+   "id": "e-c4-a1",
+   "postId": "e-c4",
+   "postTitle": "Carrusel: terminaciones y llave en mano",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-11T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-textos-a1",
+   "postId": "e-web-textos",
+   "postTitle": "Sitio web — textos nuevos (misión, visión, quiénes somos, FAQ)",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-14T10:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-v1-a2",
+   "postId": "e-cotizador-v1",
+   "postTitle": "Cotizador web — primera versión",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-14T19:05:00.000Z"
+  },
+  {
+   "id": "e-web-wix-a1",
+   "postId": "e-web-wix",
+   "postTitle": "Sitio web Neorigen en Wix — publicado",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-16T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-wix-a2",
+   "postId": "e-web-wix",
+   "postTitle": "Sitio web Neorigen en Wix — publicado",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-23T19:05:00.000Z"
+  },
+  {
+   "id": "e-cotizador-correos-a1",
+   "postId": "e-cotizador-correos",
+   "postTitle": "Cotizador — correos y teléfono predeterminados, valor neto y total",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-28T10:00:00.000Z"
+  },
+  {
+   "id": "e-cotizador-correos-a2",
+   "postId": "e-cotizador-correos",
+   "postTitle": "Cotizador — correos y teléfono predeterminados, valor neto y total",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-28T19:05:00.000Z"
+  },
+  {
+   "id": "e-c-web-a1",
+   "postId": "e-c-web",
+   "postTitle": "Carrusel: estrenamos nueva web",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-09-29T10:00:00.000Z"
+  },
+  {
+   "id": "e-web-textos-a2",
+   "postId": "e-web-textos",
+   "postTitle": "Sitio web — textos nuevos (misión, visión, quiénes somos, FAQ)",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-30T19:05:00.000Z"
+  },
+  {
+   "id": "e-c-web-a2",
+   "postId": "e-c-web",
+   "postTitle": "Carrusel: estrenamos nueva web",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-09-30T19:05:00.000Z"
+  }
+ ],
+ "notifications": []
+}

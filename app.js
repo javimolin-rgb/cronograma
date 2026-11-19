@@ -349,6 +349,7 @@ function requireWrite() {
   return false;
 }
 async function save(table, obj) {
+  if (obj && obj._arch) return;      // viene del historial: es de solo mirar
   const arr = S.db[table];
   const i = arr.findIndex((x) => x.id === obj.id);
   if (i >= 0) arr[i] = obj; else arr.unshift(obj);
@@ -668,7 +669,7 @@ function card(p, o = {}) {
   const overdue = p.date && p.date < t && p.status !== 'publicado';
   const img = p.files.find((f) => (f.type || '').startsWith('image/')) || p.files.find(isVideo);
   const done = p.checklist.filter((c) => c.done).length;
-  const nc = S.db.comments.filter((c) => c.postId === p.id).length;
+  const nc = S.db.comments.filter((c) => c.postId === p.id).length + nArchivadas(p.id, 'comments');
   const when = p.date ? (o.noDate ? (p.time || '') : `${fmtShort(p.date)}${p.time ? ' · ' + p.time : ''}`) : 'Sin fecha';
   return `<article class="card${overdue ? ' overdue' : ''}" data-act="open-post" data-id="${esc(p.id)}"${o.drag ? ' draggable="true"' : ''} style="--c:${st.color}">
     <div class="thumb">${img ? (isVideo(img) ? miniMedia(img) : `<img loading="lazy" alt="" src="${esc(img.thumb || fileSrc(img))}">`) : ic('image', 22)}</div>
@@ -1499,7 +1500,7 @@ function gridHtml(piezas) {
     const todos = laminas(p).length ? laminas(p) : pieceFiles(p, true);
     const files = todos.filter(esMedia).concat(todos.filter((f) => !esMedia(f)));   // primero lo que se ve
     const st = statusOf(p.status);
-    const coms = S.db.comments.filter((c) => c.postId === p.id).length;
+    const coms = S.db.comments.filter((c) => c.postId === p.id).length + nArchivadas(p.id, 'comments');
     return `<button class="igcell" data-act="open-post" data-id="${esc(p.id)}" style="--c:${st.color}" title="${esc(p.title)}">
       ${files.length ? miniArchivo(files[0]) : `<span class="igvacia">${ic('image', 24)}</span>`}
       ${files.length > 1 ? `<i class="igmulti">${ic('copy', 13)}</i>` : ''}
@@ -2801,9 +2802,70 @@ function openFilters() {
     <div class="pf"><button class="btn ghost" data-act="clear-filters">Limpiar</button><button class="btn" data-act="sheet-close">Listo</button></div>`);
 }
 
+/* ---------- lo que está guardado aparte ----------
+   Los avisos y movimientos viejos, y los comentarios de hace más de dos meses,
+   viven en datos/historial/<año-mes>.json para que el archivo de datos no crezca
+   sin fin (ver el README). No se borró nada: aquí se traen de vuelta cuando
+   alguien quiere ver lo anterior, y se quedan hasta que se cierre la app. */
+const ARCHIVO = { indice: null, meses: {}, cargado: false, cargando: false };
+const TABLAS_ARCHIVO = ['comments', 'activity', 'notifications'];
+// Los meses guardados se leen de la propia página publicada, que es donde están
+const urlHistorial = (f, v) => location.origin + location.pathname.replace(/[^/]*$/, '')
+  + 'datos/historial/' + f + (v ? '?v=' + encodeURIComponent(v) : '');
+// Cuántas filas de esta pieza hay guardadas aparte (0 si ya están traídas)
+function nArchivadas(postId, tabla) {
+  if (!ARCHIVO.indice || ARCHIVO.cargado) return 0;
+  const p = (ARCHIVO.indice.piezas || {})[postId];
+  return (p && p[tabla]) || 0;
+}
+const hayArchivo = () => !!(ARCHIVO.indice && !ARCHIVO.cargado
+  && TABLAS_ARCHIVO.some((t) => ((ARCHIVO.indice.total || {})[t] || 0) > 0));
+async function leerIndiceArchivo() {
+  try {
+    const r = await fetch(urlHistorial('indice.json') + '?t=' + Date.now(), { cache: 'no-store' });
+    if (r.ok) ARCHIVO.indice = await r.json();
+  } catch (e) { /* sin historial aparte: no pasa nada */ }
+}
+// Trae todos los meses guardados y los deja junto al resto
+async function cargarArchivo() {
+  if (ARCHIVO.cargado || ARCHIVO.cargando || !ARCHIVO.indice) return;
+  ARCHIVO.cargando = true;
+  toast('Trayendo lo anterior…', 4000);
+  try {
+    for (const mes of (ARCHIVO.indice.meses || []).slice().reverse()) {
+      if (ARCHIVO.meses[mes]) continue;
+      // la marca de tiempo del índice hace de versión: se puede cachear sin quedarse atrás
+      const r = await fetch(urlHistorial(mes + '.json', ARCHIVO.indice.actualizado));
+      if (r.ok) ARCHIVO.meses[mes] = await r.json();
+    }
+    ARCHIVO.cargado = true;
+    mezclarArchivo();
+    toast('Listo: ahora se ve todo', 2500);
+  } catch (e) {
+    toast('No se pudo traer lo anterior: ' + (e.message || e), 5000);
+  } finally { ARCHIVO.cargando = false; }
+}
+/* Las filas traídas se marcan con _arch: son de solo mirar. Así no vuelven a
+   escribirse en el archivo de datos (si se volvieran a guardar, saldrían del
+   historial y el archivo volvería a crecer). */
+function mezclarArchivo() {
+  if (!ARCHIVO.cargado || !S.db) return;
+  TABLAS_ARCHIVO.forEach((t) => {
+    const hay = new Set((S.db[t] || []).map((x) => x.id));
+    Object.keys(ARCHIVO.meses).forEach((mes) => {
+      (ARCHIVO.meses[mes][t] || []).forEach((r) => {
+        if (hay.has(r.id)) return;
+        hay.add(r.id);
+        S.db[t].push(Object.assign({}, r, { _arch: true }));
+      });
+    });
+  });
+}
+const botonArchivo = (texto) => `<button class="lnk verant" data-act="ver-archivo">${ic('archive', 13)} ${esc(texto)}</button>`;
+
 /* ---------- notificaciones ---------- */
 function openBell() {
-  const mine = myNotifs().sort(descBy('createdAt')).slice(0, 60);
+  const mine = myNotifs().sort(descBy('createdAt')).slice(0, ARCHIVO.cargado ? 400 : 60);
   const dl = deadlineAlerts(), t = today();
   const dlTxt = (p) => p.date < t ? `Atrasada ${diffDays(t, p.date)} d` : p.date === t ? 'Vence hoy' : 'Vence mañana';
   const unreadIds = mine.filter((n) => !n.read).map((n) => n.id);
@@ -2812,6 +2874,7 @@ function openBell() {
       ${dl.length ? `<div class="nh">Vencimientos</div>${dl.map((p) => `<div class="nrow alert" data-act="open-post" data-id="${esc(p.id)}"><span>${ic('alert', 22)}</span><div><b>${esc(p.title)}</b><small>${dlTxt(p)} · ${statusOf(p.status).name}</small></div></div>`).join('')}` : ''}
       <div class="nh">Avisos</div>
       ${mine.length ? mine.map((n) => `<div class="nrow${n.read ? '' : ' unread'}${n.type === 'zumbido' ? ' zum' : ''}"${n.postId ? ` data-act="open-post" data-id="${esc(n.postId)}"` : ''}>${av(n.from, 'md')}<div><b>${esc(person(n.from).name)}</b> ${esc(n.text)}<small>${ago(n.createdAt)}</small></div></div>`).join('') : '<div class="empty">Sin avisos todavía.<br>Aquí verás cuando te etiqueten o comenten.</div>'}
+      ${hayArchivo() ? `<div class="verantfila"><button class="lnk verant" data-act="ver-archivo-avisos">${ic('archive', 13)} Ver los avisos anteriores</button></div>` : ''}
     </div>
     <div class="pf">${esAdmin() ? `<button class="btn ghost" data-act="msg-abrir">${ic('send', 17)} Avisar</button>` : ''}
       <button class="btn ghost" data-act="me">Ajustes de avisos</button></div>`);
@@ -3529,9 +3592,10 @@ function renderEditor() {
       <div><span>Rondas de cambios</span><b>${old.revisions || 0}</b></div>
       <div><span>Publicación</span><b>${old.publishedAt ? (old.date && ymd(new Date(old.publishedAt)) > old.date ? 'Tarde · ' : 'A tiempo · ') + fmtShort(ymd(new Date(old.publishedAt))) : 'Pendiente'}</b></div>
     </div>
-    <details class="hist"><summary>Historial de cambios (${acts.length})</summary><ul>${acts.map((a) => `<li>${av(a.actor, 'sm')} <b>${esc(person(a.actor).name)}</b> ${esc(a.text)}<br><small>${ago(a.createdAt)}</small></li>`).join('') || '<li><small>Sin movimientos</small></li>'}</ul></details>
+    <details class="hist"><summary>Historial de cambios (${acts.length + nArchivadas(d.id, 'activity')})</summary><ul>${acts.map((a) => `<li>${av(a.actor, 'sm')} <b>${esc(person(a.actor).name)}</b> ${esc(a.text)}<br><small>${ago(a.createdAt)}</small></li>`).join('') || '<li><small>Sin movimientos</small></li>'}</ul>${nArchivadas(d.id, 'activity') ? `<div class="verantfila">${botonArchivo(`Ver los ${nArchivadas(d.id, 'activity')} movimientos anteriores`)}</div>` : ''}</details>
 
-    <label class="lbl">Comentarios <small>${comments.length}</small></label>
+    <label class="lbl">Comentarios <small>${comments.length + nArchivadas(d.id, 'comments')}</small></label>
+    ${nArchivadas(d.id, 'comments') ? `<div class="verantfila">${botonArchivo(`Ver los ${nArchivadas(d.id, 'comments')} comentarios anteriores`)}</div>` : ''}
     ${comments.map((c) => {
       const fotos = archivosDeComentario(c, d);
       if (ED.editando === c.id) {
@@ -6206,6 +6270,13 @@ const ACTS = {
     const i = document.querySelector(`[data-feed-com="${CSS.escape(el.dataset.id)}"]`);
     if (i) { i.focus(); toast('Escribe qué cambiarías: al enviarlo, la pieza pasa a “Cambios”', 3500); }
   },
+  'ver-archivo-avisos': async () => { await cargarArchivo(); renderAll(); openBell(); },
+  'ver-archivo': async () => {
+    if (ED) syncDraft();
+    await cargarArchivo();
+    renderAll();
+    if (ED && sheetOpen) renderEditor();
+  },
   'ed-vermas': () => { syncDraft(); ED.verAnteriores = !ED.verAnteriores; renderEditor(); },
   'aviso-abrir': () => openAviso(),
   'aviso-cerrar': () => { syncAviso(); const c = $('#avisocapa'); if (c) c.remove(); },
@@ -6585,7 +6656,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 async function reload() {
-  try { S.db = normalize(await store.load()); if (S.me) { if (!(document.activeElement && document.activeElement.matches('#main input,#main textarea'))) renderAll(); if (ED && sheetOpen && !$('#avisocapa') && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
+  try { S.db = normalize(await store.load()); mezclarArchivo(); if (S.me) { if (!(document.activeElement && document.activeElement.matches('#main input,#main textarea'))) renderAll(); if (ED && sheetOpen && !$('#avisocapa') && !(document.activeElement && document.activeElement.matches('input,textarea,select'))) { syncDraft(); renderEditor(); } } }
   catch (e) { console.warn('No se pudo refrescar', e); }
 }
 /* ---------- mantenerse al día ---------- */
@@ -6667,6 +6738,8 @@ async function boot() {
     store = window.Store.local; S.db = normalize(await store.init());
   }
   if (store.mode === 'local' && store.isFirstRun() && !S.db.posts.length) await seedDemo();
+  // en segundo plano: solo para saber qué hay guardado aparte y poder ofrecerlo
+  if (store.mode === 'github') leerIndiceArchivo().then(() => { if (S.me && hayArchivo()) renderAll(); });
   aplicarUI();
   store.onError = (e) => toast('No se pudo guardar: ' + (e.message || e), 6000);
   watchSaving();

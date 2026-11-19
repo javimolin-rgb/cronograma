@@ -1,0 +1,49 @@
+# Guarda aparte lo viejo para que el archivo de datos no crezca sin fin.
+# Nada se borra: todo queda en datos/historial/<año-mes>.json y la app lo trae
+# de vuelta cuando alguien toca “ver lo anterior”. Por qué hace falta: está
+# contado en el README, en “Nada se pierde al guardar”.
+name: Guardar el historial aparte
+
+on:
+  schedule:
+    - cron: '17 8 * * *'   # 05:17 en Chile, cuando no hay nadie escribiendo
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: historial
+  cancel-in-progress: false
+
+jobs:
+  archivar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Mover al historial lo que ya nadie mira
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          intento=1
+          while [ $intento -le 3 ]; do
+            node .github/scripts/archivar.mjs
+            if [ -z "$(git status --porcelain datos)" ]; then
+              echo "nada que hacer"
+              exit 0
+            fi
+            git add datos
+            git commit -m "Historial guardado aparte [skip ci]"
+            if git push; then exit 0; fi
+            # Alguien guardó desde la app en el mismo momento: se vuelve a
+            # empezar con lo último que hay, para no pisar lo que escribió.
+            echo "guardaron al mismo tiempo: se reintenta sobre lo último"
+            git fetch origin main
+            git reset --hard origin/main
+            sleep 5
+            intento=$((intento + 1))
+          done
+          echo "no se pudo esta vez; mañana se vuelve a intentar"

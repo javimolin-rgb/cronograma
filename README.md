@@ -75,6 +75,23 @@ El 19 de noviembre pasó algo que no se podía dejar así: llegaba el aviso al c
 
 Hay una prueba automática que reproduce exactamente lo que pasó —archivo de más de 1 MB, copia publicada atrasada, dos personas escribiendo— y comprueba que ya no se pierde nada.
 
+### Y para que el archivo no vuelva a crecer sin fin
+
+Todo vive en un solo archivo que se sube entero cada vez que alguien guarda, así que mientras más grande, más lento en el celular. Ahora hay una tarea que corre **sola todas las madrugadas** (5:17 de la mañana, cuando no hay nadie escribiendo) y guarda aparte lo que ya nadie mira:
+
+| Qué | Se queda a mano | Se guarda aparte |
+|---|---|---|
+| Avisos | los últimos 10 días (y los que no has abierto, hasta 45 días) | el resto |
+| Movimientos (el historial de cambios) | los últimos 10 días | el resto |
+| Comentarios | los últimos **2 meses** | los más viejos |
+| Piezas, archivos, recursos, Marca, ajustes | **todo, siempre** | nunca |
+
+**No se borra nada.** Cada fila queda en `datos/historial/<año-mes>.json`, un archivo por mes que solo crece. En la app, donde haya algo guardado aparte aparece **“Ver los 5 comentarios anteriores”** (o los movimientos, o los avisos): se tocan y vuelven a estar todos a la vista, con su hora y su autor. El número de comentarios de cada pieza sigue contando los guardados, así que nunca parece que falte algo.
+
+Lo que se trae del historial es **de solo mirar**: no se vuelve a escribir en el archivo de datos, para que no vuelva a engordar.
+
+Con esto el archivo pasó de **1,05 MB a 694 KB** de una, y de ahí en adelante se mantiene solo.
+
 ## Nombrar un archivo en un comentario (también lo de Marca)
 
 Debajo del cuadro de comentario, en cada pieza, están las miniaturas de **todo lo que se puede nombrar**: primero los archivos de la pieza —fotos, videos, audios y documentos— y después **todo lo que hay en Marca** (los logos, la música, las tipografías, el manual…), que se reconocen por la **estrella** en la esquina. Al tocar uno (o varios) el comentario queda enganchado a ese archivo, y las miniaturas aparecen dentro del comentario para que no haya dudas de cuál es.
@@ -685,6 +702,7 @@ No hace falta conectar ninguna cuenta ni crear claves: Instagram deja mostrar as
 | Qué | Dónde |
 |---|---|
 | Piezas, comentarios, historial, avisos | `datos/contenido.json` |
+| Lo viejo del historial (avisos, movimientos, comentarios de más de 2 meses) | `datos/historial/<año-mes>.json` |
 | Archivos subidos | `archivos/<proyecto>/<archivo>-v1.jpg` |
 | Clave del equipo (cifrada) | `datos/acceso.json` |
 | Envío de notificaciones | `.github/workflows/avisos.yml` |

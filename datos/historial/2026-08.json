@@ -1,0 +1,42 @@
+{
+ "comments": [
+  {
+   "id": "e-c1-c1",
+   "postId": "e-c1",
+   "author": "maca",
+   "text": "Sacar la frase «El modelo probado se mantiene» y eliminar un párrafo. Con esos ajustes, se publica.",
+   "createdAt": "2026-08-30T20:54:00.000Z",
+   "via": "imp"
+  },
+  {
+   "id": "e-c1-d1",
+   "postId": "e-c1",
+   "author": "maca",
+   "text": "Sacar la frase “El modelo probado se mantiene” y eliminar el párrafo marcado. Dejar: “Elegir un modelo prediseñado tiene todas las ventajas.”",
+   "createdAt": "2026-08-30T20:58:00.000Z"
+  }
+ ],
+ "activity": [
+  {
+   "id": "e-c1-a1",
+   "postId": "e-c1",
+   "postTitle": "Carrusel: elegir un modelo prediseñado",
+   "actor": "javi",
+   "type": "created",
+   "text": "registró la entrega",
+   "meta": null,
+   "createdAt": "2026-08-30T10:00:00.000Z"
+  },
+  {
+   "id": "e-c1-a2",
+   "postId": "e-c1",
+   "postTitle": "Carrusel: elegir un modelo prediseñado",
+   "actor": "javi",
+   "type": "status",
+   "text": "marcó la entrega como publicada",
+   "meta": null,
+   "createdAt": "2026-08-30T19:05:00.000Z"
+  }
+ ],
+ "notifications": []
+}

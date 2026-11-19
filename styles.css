@@ -762,6 +762,9 @@ html{overscroll-behavior-y:none}
 .expfoto .expn{position:absolute;top:6px;left:6px;min-width:23px;height:23px;padding:0 6px;border-radius:12px;
   background:rgba(20,16,40,.74);color:#fff;font-size:0.72rem;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums}
 .expacts{display:flex;border-top:1px solid var(--line)}
+.verantfila{display:flex;justify-content:center;padding:6px 0}
+.verant{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--muted);font-weight:600}
+.verant:hover{color:var(--accent)}
 .expact{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:4px;padding:8px 4px;font-size:0.7rem;font-weight:700;color:var(--ink);min-height:38px;
   white-space:nowrap;overflow:hidden}
 .expact.solo{flex:0 0 40px;color:var(--muted)}

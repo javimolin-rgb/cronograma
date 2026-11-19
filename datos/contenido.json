@@ -1867,6 +1867,51 @@
      "type": "image/webp",
      "size": 155646,
      "orden": 11
+    },
+    {
+     "id": "6e9aba63-aa46-4f26-8064-21bbc45a8913",
+     "by": "flavio",
+     "at": "2026-11-19T16:32:21.437Z",
+     "base": "captura-de-pantalla-2026-11-19-a-las-13.30.11",
+     "version": 1,
+     "shaOrigen": "18a65858c56669648f2bd77c823154ceb5cee14b",
+     "name": "captura-de-pantalla-2026-11-19-a-las-13.30.11-v1.webp",
+     "path": "archivos/3.-videos-lifestyle/captura-de-pantalla-2026-11-19-a-las-13.30.11-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/captura-de-pantalla-2026-11-19-a-las-13.30.11-v1.webp",
+     "sha": "adb911e0b4ba134f894b884128b1fa08e43f4485",
+     "type": "image/webp",
+     "size": 63622,
+     "extra": true
+    },
+    {
+     "id": "edfe7281-0c2a-4b6f-b4c2-fdba2bf70483",
+     "by": "flavio",
+     "at": "2026-11-19T16:32:23.975Z",
+     "base": "captura-de-pantalla-2026-11-19-a-las-13.30.32",
+     "version": 1,
+     "shaOrigen": "8c5579ee6a2bd766e447e9e374a99c6d02d9fd7d",
+     "name": "captura-de-pantalla-2026-11-19-a-las-13.30.32-v1.webp",
+     "path": "archivos/3.-videos-lifestyle/captura-de-pantalla-2026-11-19-a-las-13.30.32-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/captura-de-pantalla-2026-11-19-a-las-13.30.32-v1.webp",
+     "sha": "c549a7a982a32405979348b84c0bda99f21aeee2",
+     "type": "image/webp",
+     "size": 105382,
+     "extra": true
+    },
+    {
+     "id": "e05aa154-8b25-4b63-841a-0584f3f30734",
+     "by": "flavio",
+     "at": "2026-11-19T16:32:26.306Z",
+     "base": "captura-de-pantalla-2026-11-19-a-las-13.31.41",
+     "version": 1,
+     "shaOrigen": "dc5b08775d31de140905c2ed8ecb8cd365f1beab",
+     "name": "captura-de-pantalla-2026-11-19-a-las-13.31.41-v1.webp",
+     "path": "archivos/3.-videos-lifestyle/captura-de-pantalla-2026-11-19-a-las-13.31.41-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/captura-de-pantalla-2026-11-19-a-las-13.31.41-v1.webp",
+     "sha": "2cbd5f6a1177ce0fe6d74bf67808bb7bdd600be6",
+     "type": "image/webp",
+     "size": 54748,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -1911,8 +1956,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:16:32.414Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T16:32:26.306Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -10558,6 +10603,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c5945ef4-ce64-440c-95fd-609908cea0f4",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "file",
+   "text": "subió 3 archivos desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-19T16:32:26.307Z"
+  },
   {
    "id": "b1748517-b88c-4eec-82a3-93f32902ac44",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

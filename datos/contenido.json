@@ -2091,8 +2091,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:19:51.721Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T18:22:24.914Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "2743fd75-444a-4b6f-8286-27dc2b94eb21",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Sii, ahora aparecen . Las veo",
+   "fileIds": [],
+   "createdAt": "2026-11-19T18:22:24.921Z"
+  },
+  {
    "id": "e822bc51-ddfa-491b-9741-e84f11b42c0f",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10864,6 +10872,16 @@
  ],
  "activity": [
   {
+   "id": "9fa02359-e4ac-48dc-bffb-14e9f4e0f8e4",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:22:24.924Z"
+  },
+  {
    "id": "81d80dfc-30c9-4e8d-b3b3-76eb1ebb9fb9",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13719,6 +13737,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "573a9063-c7aa-42ee-bdfd-2d9d7cb9f598",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Sii, ahora aparecen . Las veo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Sii, ahora aparecen . Las veo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:22:24.926Z"
+  },
+  {
+   "id": "be49b976-0d00-46cd-9e51-60718df9e665",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Sii, ahora aparecen . Las veo",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Sii, ahora aparecen . Las veo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:22:24.926Z"
+  },
   {
    "id": "6567cb2d-383d-4285-8dd0-3f8c171be138",
    "to": "flavio",
@@ -20665,9 +20713,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T18:20:52.389Z",
-   "hasta": "2026-11-19T18:19:51.721Z",
-   "que": "pieza"
+   "at": "2026-11-19T18:22:24.920Z",
+   "hasta": "2026-11-19T18:22:24.914Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

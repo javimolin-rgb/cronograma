@@ -1956,7 +1956,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:52:38.245Z",
+   "updatedAt": "2026-11-19T16:55:51.170Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7855,6 +7855,14 @@
  ],
  "comments": [
   {
+   "id": "1a5de749-c5ee-453f-99f8-442d570d835f",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Con respecto a la portada no hay relación del titulo con la imagen . Porfavor ocupar imagen con la que inicia el video, así queda en el feed imagen de casa (refugio) real.",
+   "fileIds": [],
+   "createdAt": "2026-11-19T16:55:51.171Z"
+  },
+  {
    "id": "6c41339f-70d2-466f-928c-132829e30804",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10624,6 +10632,16 @@
  ],
  "activity": [
   {
+   "id": "d4427922-3fed-4b02-8c06-104a98c2ffa0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T16:55:51.172Z"
+  },
+  {
    "id": "86466c46-caeb-48a7-ad47-b3ec0aeca829",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13309,6 +13327,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5ade982b-6e1e-4d7c-939b-82c332f46256",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Con respecto a la portada no hay relación del titulo con la imagen . Porfavor oc…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Con respecto a la portada no hay relación del titulo con la imagen . Porfavor oc…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:55:51.172Z"
+  },
+  {
+   "id": "e95ce63a-dcfe-4102-b9ab-671463cf6bbe",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Con respecto a la portada no hay relación del titulo con la imagen . Porfavor oc…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Con respecto a la portada no hay relación del titulo con la imagen . Porfavor oc…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:55:51.172Z"
+  },
   {
    "id": "e19ea745-596a-47f3-8cd2-8dfbfb9a84cf",
    "to": "flavio",
@@ -19779,8 +19827,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T16:52:38.251Z",
-   "hasta": "2026-11-19T16:52:38.245Z",
+   "at": "2026-11-19T16:55:51.171Z",
+   "hasta": "2026-11-19T16:55:51.170Z",
    "que": "comentario"
   },
   {

@@ -1689,7 +1689,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:27:39.096Z",
+   "updatedAt": "2026-11-19T14:43:35.657Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -7565,6 +7565,14 @@
  ],
  "comments": [
   {
+   "id": "ded3b055-da8a-49c7-a635-43b279d6b6fd",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que logran modificar lo suficiente  el fragmento que queríamos utilizar para que cuidar el copyright . Lo voy a ver y te cuento",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:43:35.664Z"
+  },
+  {
    "id": "c64e02b1-a55b-4003-b168-839eb85c691a",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10376,6 +10384,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d17d6f32-eec0-4b26-8ed9-c12d2e8f0c37",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:43:35.667Z"
+  },
   {
    "id": "5f5b7ce4-86ef-4dae-a6c4-25b1b518bfa9",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16738,6 +16756,36 @@
  ],
  "notifications": [
   {
+   "id": "948d7e99-ee03-4bf5-899e-25bbb6689632",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que l…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que l…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:43:35.669Z"
+  },
+  {
+   "id": "79a6eb70-200c-40ef-a423-cf8bb5df07df",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que l…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que l…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:43:35.668Z"
+  },
+  {
    "id": "3522dc55-70a9-40a9-a4b7-2668d7095862",
    "to": "flavio",
    "from": "javi",
@@ -16759,14 +16807,13 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que c…",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que c…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:33:02.150Z",
-   "readAt": "2026-11-19T14:33:47.557Z"
+   "createdAt": "2026-11-19T14:33:02.150Z"
   },
   {
    "id": "b52aa18d-82dc-4309-b29a-844d9360cbfc",
@@ -16835,14 +16882,13 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:16:44.902Z",
-   "readAt": "2026-11-19T14:33:47.560Z"
+   "createdAt": "2026-11-19T14:16:44.902Z"
   },
   {
    "id": "511b91ad-bfc3-4e52-8f02-95f4eb6f4768",
@@ -29405,9 +29451,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T14:33:47.561Z",
-   "hasta": "2026-11-19T14:27:39.096Z",
-   "que": "pieza"
+   "at": "2026-11-19T14:43:35.663Z",
+   "hasta": "2026-11-19T14:43:35.657Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

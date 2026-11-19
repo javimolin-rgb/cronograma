@@ -13999,13 +13999,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:11:43.265Z"
+   "createdAt": "2026-11-19T20:11:43.265Z",
+   "readAt": "2026-11-19T20:45:01.839Z"
   },
   {
    "id": "e7f91e77-664a-49ad-b209-982e6699f486",
@@ -14014,13 +14015,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una plataforma de pago que NO es de uso liberado, para que lo revises bien porfa. siempre que me mandes una cancion ideal que sea con el enlace, ya que solo la foto de la miniatura lo hace mucho más dificil de encontrar.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te pide revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una ",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:11:19.405Z"
+   "createdAt": "2026-11-19T20:11:19.405Z",
+   "readAt": "2026-11-19T20:45:01.841Z"
   },
   {
    "id": "95503a63-5bf0-4e1f-9b3a-6f7dafcf7362",
@@ -14061,13 +14063,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:11:19.404Z"
+   "createdAt": "2026-11-19T20:11:19.404Z",
+   "readAt": "2026-11-19T20:45:01.842Z"
   },
   {
    "id": "ad780f3f-caae-4266-be90-03ad49539894",
@@ -21315,9 +21318,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T19:42:49.998Z",
-   "hasta": "2026-11-19T19:42:49.992Z",
-   "que": "comentario"
+   "at": "2026-11-19T20:45:01.843Z",
+   "hasta": "2026-11-19T20:22:08.030Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

@@ -16645,13 +16645,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "mention",
    "text": "te mencionó en “Aire nuevo sin abrir la ventana”: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio te mencionó: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:20:07.308Z"
+   "createdAt": "2026-11-19T13:20:07.308Z",
+   "readAt": "2026-11-19T13:22:31.332Z"
   },
   {
    "id": "83966ac5-fb73-4d52-ad84-7a2aa2a4424f",
@@ -16660,13 +16661,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "supervision",
    "text": "en “Aire nuevo sin abrir la ventana”: editó la estructura",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio editó la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:17:56.214Z"
+   "createdAt": "2026-11-19T13:17:56.214Z",
+   "readAt": "2026-11-19T13:22:31.333Z"
   },
   {
    "id": "8c00b72b-95d1-485c-9e23-7ec3f9f54210",
@@ -16690,13 +16692,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "supervision",
    "text": "en “Aire nuevo sin abrir la ventana”: editó la estructura",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio editó la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:07:12.804Z"
+   "createdAt": "2026-11-19T13:07:12.804Z",
+   "readAt": "2026-11-19T13:22:31.333Z"
   },
   {
    "id": "d6705e06-22c1-406a-95c4-5ca947e0e228",
@@ -29154,8 +29157,8 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|javi",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "javi",
-   "at": "2026-11-18T00:35:18.061Z",
-   "hasta": "2026-11-17T21:34:03.576Z",
+   "at": "2026-11-19T13:22:31.333Z",
+   "hasta": "2026-11-19T13:20:09.525Z",
    "que": "pieza"
   },
   {

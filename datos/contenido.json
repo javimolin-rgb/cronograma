@@ -7984,6 +7984,21 @@
  ],
  "comments": [
   {
+   "id": "e822bc51-ddfa-491b-9741-e84f11b42c0f",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "Estas @Maca",
+   "fileIds": [
+    "3a6833c6-514c-4751-b914-cda6fc124e54",
+    "0869e812-c14d-4b83-9d4b-41403389a129",
+    "c9311856-3610-490f-a13f-4d787b9c9301",
+    "e7c9d60f-34b9-4667-b673-0d713963d77e",
+    "f5c0828d-6688-43f2-94a7-df17dfdd8626",
+    "1d88c39e-adfc-4cb0-befb-eee94de49148"
+   ],
+   "createdAt": "2026-11-19T18:19:01.372Z"
+  },
+  {
    "id": "f9950fe6-6b20-4282-9f8c-3f7ab3401f81",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10843,6 +10858,16 @@
  ],
  "activity": [
   {
+   "id": "b82f19c2-bd67-4817-9cb4-9ae14210bfd5",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:19:01.374Z"
+  },
+  {
    "id": "1d15a2b4-dba9-4e81-b17c-ebb2888ab1ce",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13678,6 +13703,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7198ccae-d811-465f-abca-f7e876da9eeb",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Estas @Maca",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Estas @Maca",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:19:01.375Z"
+  },
+  {
+   "id": "63cba090-f48a-466b-90cd-bdc666370c3c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: Estas @Maca",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: Estas @Maca",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:19:01.375Z"
+  },
   {
    "id": "43332110-b3b3-49a2-acdf-607cf9ee63b5",
    "to": "flavio",

@@ -1673,7 +1673,7 @@
      "sha": "2c5526c2d537ceca36fae8c5509f01c0c0d34974",
      "type": "image/webp",
      "size": 133060,
-     "orden": 1007,
+     "orden": 6,
      "extra": true
     },
     {
@@ -1689,7 +1689,7 @@
      "sha": "523b80fba0a6a789cced8e7e3d016e3d17366840",
      "type": "image/webp",
      "size": 152752,
-     "orden": 1008,
+     "orden": 7,
      "extra": true
     },
     {
@@ -1705,7 +1705,7 @@
      "sha": "a0eb1b1c7c45d445c7e5f51021bc417fc45bc14e",
      "type": "image/webp",
      "size": 159602,
-     "orden": 1009,
+     "orden": 8,
      "extra": true
     },
     {
@@ -1721,7 +1721,7 @@
      "sha": "d5aa71a3785bbcda8b9136219471c37e25e2275e",
      "type": "image/webp",
      "size": 51982,
-     "orden": 1010,
+     "orden": 9,
      "extra": true
     },
     {
@@ -1740,7 +1740,7 @@
      "sha": "4e03250785b6376fbe69854f4d0bfdb717905bec",
      "type": "video/mp4",
      "size": 5477727,
-     "orden": 1011,
+     "orden": 10,
      "extra": true
     },
     {
@@ -1760,7 +1760,7 @@
      "type": "video/mp4",
      "size": 4252411,
      "extra": true,
-     "orden": 1012
+     "orden": 11
     },
     {
      "id": "45cb8e56-4be6-492e-a8ed-2eabd99deb74",
@@ -1778,7 +1778,7 @@
      "sha": "71897d04b982870c7eab2e88fa62d39ccb9cf8e0",
      "type": "video/mp4",
      "size": 7673485,
-     "orden": 1013,
+     "orden": 12,
      "extra": true
     },
     {
@@ -1797,7 +1797,7 @@
      "sha": "b71a5b23ee82f47c06bc6efdbe0fe847d7768cb2",
      "type": "video/mp4",
      "size": 8934210,
-     "orden": 1014,
+     "orden": 13,
      "extra": true
     },
     {
@@ -1816,7 +1816,7 @@
      "sha": "4a5f3c222577d06ba0eb89da35769966891e5239",
      "type": "video/mp4",
      "size": 8616121,
-     "orden": 1015,
+     "orden": 14,
      "extra": true
     },
     {
@@ -1833,7 +1833,7 @@
      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
      "size": 12102358,
      "extra": true,
-     "orden": 1016
+     "orden": 15
     },
     {
      "id": "76f0aba6-ab98-42c9-aaca-46ee90598ce8",
@@ -1851,7 +1851,7 @@
      "sha": "07546f82abe5a96de5d1bd110d122ec000886e11",
      "type": "video/mp4",
      "size": 6169887,
-     "orden": 1017,
+     "orden": 16,
      "extra": true
     },
     {
@@ -1867,7 +1867,7 @@
      "sha": "87f93dab84cb85b85d3eebf61540fa59fb56ac83",
      "type": "image/webp",
      "size": 155646,
-     "orden": 1018
+     "orden": 1025
     },
     {
      "id": "6e9aba63-aa46-4f26-8064-21bbc45a8913",
@@ -1883,7 +1883,7 @@
      "type": "image/webp",
      "size": 63622,
      "extra": true,
-     "orden": 1019
+     "orden": 17
     },
     {
      "id": "edfe7281-0c2a-4b6f-b4c2-fdba2bf70483",
@@ -1899,7 +1899,7 @@
      "type": "image/webp",
      "size": 105382,
      "extra": true,
-     "orden": 1020
+     "orden": 18
     },
     {
      "id": "e05aa154-8b25-4b63-841a-0584f3f30734",
@@ -1915,7 +1915,7 @@
      "type": "image/webp",
      "size": 54748,
      "extra": true,
-     "orden": 1021
+     "orden": 19
     },
     {
      "id": "36c39ca0-9ebd-43b7-8570-5fbdd1918989",
@@ -1931,7 +1931,7 @@
      "type": "image/jpeg",
      "size": 745127,
      "extra": true,
-     "orden": 1022
+     "orden": 20
     },
     {
      "id": "4a17f07c-c19b-458f-b8e7-1b85bb0c9511",
@@ -1947,7 +1947,7 @@
      "type": "image/jpeg",
      "size": 745127,
      "extra": true,
-     "orden": 1023
+     "orden": 21
     },
     {
      "id": "3a6833c6-514c-4751-b914-cda6fc124e54",
@@ -2047,6 +2047,39 @@
      "type": "image/webp",
      "size": 355476,
      "orden": 5
+    },
+    {
+     "id": "79f2e9ec-bd5c-441e-b49c-e625499be881",
+     "by": "javi",
+     "at": "2026-11-19T20:08:38.610Z",
+     "base": "portada-un-domingo-en-el-refugio",
+     "version": 3,
+     "shaOrigen": "a8f43883c1a0211a5c55c835b36e6030367460c0",
+     "name": "portada-un-domingo-en-el-refugio-v3.webp",
+     "path": "archivos/3.-videos-lifestyle/portada-un-domingo-en-el-refugio-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/portada-un-domingo-en-el-refugio-v3.webp",
+     "sha": "596641b89c5b7103a344d8feb6306f55aea261dc",
+     "type": "image/webp",
+     "size": 377704,
+     "orden": 22
+    },
+    {
+     "id": "872f9478-2de8-41dc-bc2c-c4d6646de9a7",
+     "by": "javi",
+     "at": "2026-11-19T20:09:27.319Z",
+     "base": "un-domingo-en-el-refugio-v26-sweet-embrace",
+     "version": 1,
+     "shaOrigen": "581404ae3b3524bfd481cfd1f712d6f140abe2a5",
+     "dur": 30,
+     "w": 1080,
+     "h": 1920,
+     "name": "un-domingo-en-el-refugio-v26-sweet-embrace-v1.mp4",
+     "path": "archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v26-sweet-embrace-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v26-sweet-embrace-v1.mp4",
+     "sha": "581404ae3b3524bfd481cfd1f712d6f140abe2a5",
+     "type": "video/mp4",
+     "size": 5854117,
+     "orden": 23
     }
    ],
    "checklist": [],
@@ -2091,8 +2124,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T19:42:49.992Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-19T20:11:19.399Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7990,6 +8023,13 @@
  ],
  "comments": [
   {
+   "id": "3d8f9802-46c3-4b4a-8805-b14c2457a249",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una plataforma de pago que NO es de uso liberado, para que lo revises bien porfa. siempre que me mandes una cancion ideal que sea con el enlace, ya que solo la foto de la miniatura lo hace mucho más dificil de encontrar.",
+   "createdAt": "2026-11-19T20:11:19.405Z"
+  },
+  {
    "id": "31d8057f-6849-4e09-a9f6-921ac21f51b6",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10938,6 +10978,26 @@
  ],
  "activity": [
   {
+   "id": "d7a165db-fdb8-4c52-8a83-e9fb66b0669c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-19T20:11:19.405Z"
+  },
+  {
+   "id": "b09826cc-c4a0-4a17-ac06-5f81d234b6a9",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-19T20:11:19.402Z"
+  },
+  {
    "id": "4606148d-3a3d-4bef-90ff-01e466b665b5",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13883,6 +13943,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e7f91e77-664a-49ad-b209-982e6699f486",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "review",
+   "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una plataforma de pago que NO es de uso liberado, para que lo revises bien porfa. siempre que me mandes una cancion ideal que sea con el enlace, ya que solo la foto de la miniatura lo hace mucho más dificil de encontrar.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te pide revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una ",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:11:19.405Z"
+  },
+  {
+   "id": "95503a63-5bf0-4e1f-9b3a-6f7dafcf7362",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "review",
+   "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una plataforma de pago que NO es de uso liberado, para que lo revises bien porfa. siempre que me mandes una cancion ideal que sea con el enlace, ya que solo la foto de la miniatura lo hace mucho más dificil de encontrar.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te pide revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una ",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:11:19.405Z"
+  },
+  {
+   "id": "8b604bac-7eed-45ef-9aa0-c4dd8f5036ec",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:11:19.404Z"
+  },
+  {
+   "id": "fd5f8eb1-658e-4e7a-9adb-0911b50504fd",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:11:19.404Z"
+  },
   {
    "id": "ad780f3f-caae-4266-be90-03ad49539894",
    "to": "javi",

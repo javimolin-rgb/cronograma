@@ -1986,7 +1986,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:09:39.488Z",
+   "updatedAt": "2026-11-19T18:12:35.846Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7885,6 +7885,14 @@
  ],
  "comments": [
   {
+   "id": "f9950fe6-6b20-4282-9f8c-3f7ab3401f81",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "@Javi no me aparece nada nuevo.",
+   "fileIds": [],
+   "createdAt": "2026-11-19T18:12:35.852Z"
+  },
+  {
    "id": "2ddcca03-aeaa-42f3-b689-7b123891ab2f",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10736,6 +10744,16 @@
  ],
  "activity": [
   {
+   "id": "1d15a2b4-dba9-4e81-b17c-ebb2888ab1ce",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:12:35.855Z"
+  },
+  {
    "id": "99ef07ca-c2c6-4398-bb28-c7921e2aa37f",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13561,6 +13579,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "43332110-b3b3-49a2-acdf-607cf9ee63b5",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Javi no me aparece nada nuevo.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: @Javi no me aparece nada nuevo.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:12:35.856Z"
+  },
+  {
+   "id": "8494bdfa-e719-495f-abdb-c41022b23b7e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Javi no me aparece nada nuevo.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca te mencionó: @Javi no me aparece nada nuevo.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:12:35.855Z"
+  },
   {
    "id": "c62ae739-d0bf-46ee-ab3b-058d4b8785e1",
    "to": "javi",
@@ -20414,8 +20462,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T18:09:39.493Z",
-   "hasta": "2026-11-19T18:09:39.488Z",
+   "at": "2026-11-19T18:12:35.851Z",
+   "hasta": "2026-11-19T18:12:35.846Z",
    "que": "comentario"
   },
   {

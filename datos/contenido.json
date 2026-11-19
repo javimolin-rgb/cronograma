@@ -1091,53 +1091,63 @@
     "cols": [
      "Lámina",
      "Imagen",
-     "Texto en pantalla"
+     "Texto en pantalla",
+     ""
     ],
     "filas": [
      [
       "01 · Portada",
       "Foto del Drive: interior Neorigen con ventana grande cerrada y luz de primavera detrás",
-      "Aire nuevo sin abrir la ventana\nCómo ventilar en primavera sin que entre el polen"
+      "Aire nuevo sin abrir la ventana\nCómo ventilar en primavera sin que entre el polen",
+      ""
      ],
      [
       "02 · El problema",
       "Ventana con vegetación florida afuera, polen a contraluz",
-      "En primavera, abrir la ventana es dejar entrar polen y polvo. Cerrarla es encerrarse."
+      "En primavera, abrir la ventana es dejar entrar polen y polvo. Cerrarla es encerrarse.",
+      ""
      ],
      [
       "03 · La solución",
       "Esquema completo de la casa, flujos en gris",
-      "Un recuperador de calor renueva el aire sin abrir ventanas."
+      "Un recuperador de calor renueva el aire sin abrir ventanas.",
+      ""
      ],
      [
       "04 · Paso 1",
       "Mismo esquema, destacada la salida de cocina y baños",
-      "1 · Extracción\nSe saca el aire viciado de cocina y baños."
+      "1 · Extracción\nSe saca el aire viciado de cocina y baños.",
+      ""
      ],
      [
       "05 · Paso 2",
       "Mismo esquema, destacado el intercambiador",
-      "2 · Recuperación\nUn intercambiador le pasa su temperatura al aire limpio que entra."
+      "2 · Recuperación\nUn intercambiador le pasa su temperatura al aire limpio que entra.",
+      ""
      ],
      [
       "06 · Paso 3",
       "Mismo esquema, destacados dormitorios y living",
-      "3 · Impulsión\nEl aire nuevo llega ya templado a dormitorios y living."
+      "3 · Impulsión\nEl aire nuevo llega ya templado a dormitorios y living.",
+      ""
      ],
      [
       "07 · Todo el año",
       "Esquema dividido: invierno / verano",
-      "Invierno: el aire entra templado con el calor recuperado.\nVerano: entra más fresco gracias al aire de adentro."
+      "Invierno: el aire entra templado con el calor recuperado.\nVerano: entra más fresco gracias al aire de adentro.",
+      ""
      ],
      [
       "08 · Filtros",
       "Filtro en primer plano",
-      "Muchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo."
+      "Muchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo.",
+      "Este lo sacaría,"
      ],
      [
       "09 · Cierre",
       "Dormitorio tranquilo + logo",
-      "Es una solución que podemos incorporar en tu proyecto.\nCada proyecto se evalúa según ubicación, clima, orientación y objetivos.\nneorigen.cl"
+      "Es una solución que podemos incorporar en tu proyecto.\nCada proyecto se evalúa según ubicación, clima, orientación y objetivos.\nneorigen.cl",
+      "Terminar con un cierre de fondo negro o azul con logo Neorigen y datos de contacto.\n"
      ]
     ],
     "ids": [
@@ -1213,8 +1223,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.117Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T13:07:12.801Z",
+   "updatedBy": "flavio",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
   },
@@ -10305,6 +10315,16 @@
  ],
  "activity": [
   {
+   "id": "c0f996fc-f717-4c52-bf29-8e14ca2f0eae",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó la estructura",
+   "meta": null,
+   "createdAt": "2026-11-19T13:07:12.803Z"
+  },
+  {
    "id": "d777a64b-14f4-4724-a5db-2b71ddea1d08",
    "postId": "1da2d0ca-ec53-4847-81f7-32b741a367a8",
    "postTitle": "La primera noche",
@@ -16575,6 +16595,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d3e62a01-57fc-4a97-b7c0-8d4a368892c8",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "en “Aire nuevo sin abrir la ventana”: editó la estructura",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio editó la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T13:07:12.804Z"
+  },
+  {
+   "id": "d6705e06-22c1-406a-95c4-5ca947e0e228",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "update",
+   "text": "editó “Aire nuevo sin abrir la ventana” (la estructura)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio editó la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T13:07:12.803Z"
+  },
   {
    "id": "9300778f-7268-4430-95c2-17fd132cbeb4",
    "to": "javi",

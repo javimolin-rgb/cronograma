@@ -13890,13 +13890,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Dame un rato q lamentablemente ahora no puedo",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Dame un rato q lamentablemente ahora no puedo",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T19:42:50.004Z"
+   "createdAt": "2026-11-19T19:42:50.004Z",
+   "readAt": "2026-11-19T19:54:48.041Z"
   },
   {
    "id": "c4a0c397-e3cd-4aa4-83a9-0c285c238624",

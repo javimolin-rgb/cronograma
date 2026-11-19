@@ -12857,13 +12857,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Flavio te mencionó: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:56:46.165Z"
+   "createdAt": "2026-11-19T14:56:46.165Z",
+   "readAt": "2026-11-19T15:46:45.733Z"
   },
   {
    "id": "85fef2e0-e5f7-492c-93ba-1d23b8cebb96",
@@ -12872,13 +12873,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "mention",
    "text": "te mencionó en “Casa Roble”: OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en o…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Flavio te mencionó: OK  @Javi  por mi parte! hice algunas modificaciones menores al texto y voz en o…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-19T14:52:20.765Z"
+   "createdAt": "2026-11-19T14:52:20.765Z",
+   "readAt": "2026-11-19T15:46:45.733Z"
   },
   {
    "id": "ee4762a8-97d3-435f-a47d-f774d14f1ea7",
@@ -12902,13 +12904,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "en “Casa Roble”: editó copy, plataformas",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Flavio editó copy, plataformas",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-19T14:52:20.764Z"
+   "createdAt": "2026-11-19T14:52:20.764Z",
+   "readAt": "2026-11-19T15:46:45.733Z"
   },
   {
    "id": "94b770f7-77f8-492b-8e4e-7673e9f0b651",
@@ -12947,13 +12950,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Javi, lo veo y te aviso. No te compliques.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Javi, lo veo y te aviso. No te compliques.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:51:11.804Z"
+   "createdAt": "2026-11-19T14:51:11.804Z",
+   "readAt": "2026-11-19T15:46:45.733Z"
   },
   {
    "id": "fe91acd9-1e08-45b7-9cc8-5a33b81029e7",
@@ -12962,13 +12966,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "supervision",
    "text": "comentó en “Aire nuevo sin abrir la ventana”: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Maca comentó: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T14:25:40.557Z"
+   "createdAt": "2026-11-19T14:25:40.557Z",
+   "readAt": "2026-11-19T15:46:45.733Z"
   },
   {
    "id": "39591126-8a4c-449d-bb28-b18a7cb91ec1",

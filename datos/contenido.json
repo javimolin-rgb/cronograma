@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "793b47d2-1807-4d94-baa9-a0cc61566304",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca Y de los videos?",
+   "fileIds": [],
+   "createdAt": "2026-11-19T18:36:14.069Z"
+  },
+  {
    "id": "381a9549-d5a8-42d5-8f0a-c206800772b0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10882,6 +10890,16 @@
  ],
  "activity": [
   {
+   "id": "1a79f624-f83b-4f2e-8d73-1761ae2951f5",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:36:14.074Z"
+  },
+  {
    "id": "71a0011c-7622-43d9-bf0a-e0f87dc27691",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13757,6 +13775,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e5d9f49b-3836-47d1-975d-6a0a16a52278",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca Y de los videos?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca Y de los videos?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:36:14.076Z"
+  },
+  {
+   "id": "72990f24-0d78-4c51-a9aa-37418a304966",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca Y de los videos?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca Y de los videos?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:36:14.076Z"
+  },
   {
    "id": "32ccd445-61a7-4721-a82a-8f4a21a7dd60",
    "to": "javi",

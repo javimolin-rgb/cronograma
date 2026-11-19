@@ -1927,6 +1927,21 @@
      "type": "image/jpeg",
      "size": 745127,
      "extra": true
+    },
+    {
+     "id": "4a17f07c-c19b-458f-b8e7-1b85bb0c9511",
+     "by": "maca",
+     "at": "2026-11-19T18:02:40.316Z",
+     "base": "un-domingo-en-el-refugio-11",
+     "version": 1,
+     "shaOrigen": "84b763280f6f187be873d3767c8fd8e27d468114",
+     "name": "un-domingo-en-el-refugio-11-v1.jpg",
+     "path": "archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-11-v1.jpg",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-11-v1.jpg",
+     "sha": "4097c4c6a8355ae9fb67613ea4cfcdcb66834883",
+     "type": "image/jpeg",
+     "size": 745127,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -1971,7 +1986,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:01:25.571Z",
+   "updatedAt": "2026-11-19T18:02:40.316Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -10693,6 +10708,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "890238b8-199b-480a-ac88-9607a17e5197",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "file",
+   "text": "subió 1 archivo desde un comentario",
+   "meta": null,
+   "createdAt": "2026-11-19T18:02:40.318Z"
+  },
   {
    "id": "831eaf63-1d2c-4b35-911e-e1ca120dabcf",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",

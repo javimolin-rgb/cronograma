@@ -1503,7 +1503,7 @@
      "sha": "2c5526c2d537ceca36fae8c5509f01c0c0d34974",
      "type": "image/webp",
      "size": 133060,
-     "orden": 1005,
+     "orden": 0,
      "extra": true
     },
     {
@@ -1519,7 +1519,7 @@
      "sha": "523b80fba0a6a789cced8e7e3d016e3d17366840",
      "type": "image/webp",
      "size": 152752,
-     "orden": 1006,
+     "orden": 1,
      "extra": true
     },
     {
@@ -1535,7 +1535,7 @@
      "sha": "a0eb1b1c7c45d445c7e5f51021bc417fc45bc14e",
      "type": "image/webp",
      "size": 159602,
-     "orden": 1007,
+     "orden": 2,
      "extra": true
     },
     {
@@ -1551,7 +1551,7 @@
      "sha": "d5aa71a3785bbcda8b9136219471c37e25e2275e",
      "type": "image/webp",
      "size": 51982,
-     "orden": 1008,
+     "orden": 3,
      "extra": true
     },
     {
@@ -1570,7 +1570,8 @@
      "sha": "4e03250785b6376fbe69854f4d0bfdb717905bec",
      "type": "video/mp4",
      "size": 5477727,
-     "orden": 3
+     "orden": 4,
+     "extra": true
     },
     {
      "id": "855968ef-1442-4edc-9f74-06e93458106c",
@@ -1589,7 +1590,7 @@
      "type": "video/mp4",
      "size": 4252411,
      "extra": true,
-     "orden": 1009
+     "orden": 5
     },
     {
      "id": "45cb8e56-4be6-492e-a8ed-2eabd99deb74",
@@ -1607,7 +1608,8 @@
      "sha": "71897d04b982870c7eab2e88fa62d39ccb9cf8e0",
      "type": "video/mp4",
      "size": 7673485,
-     "orden": 0
+     "orden": 6,
+     "extra": true
     },
     {
      "id": "8c245b80-349a-4f0c-96f7-3eba7c7b6420",
@@ -1625,7 +1627,8 @@
      "sha": "b71a5b23ee82f47c06bc6efdbe0fe847d7768cb2",
      "type": "video/mp4",
      "size": 8934210,
-     "orden": 1
+     "orden": 7,
+     "extra": true
     },
     {
      "id": "dbc86d12-dc3b-4ea2-becf-e268e5406f1d",
@@ -1643,7 +1646,8 @@
      "sha": "4a5f3c222577d06ba0eb89da35769966891e5239",
      "type": "video/mp4",
      "size": 8616121,
-     "orden": 2
+     "orden": 8,
+     "extra": true
     },
     {
      "id": "9dda8511-77aa-4612-8d57-57016b66abc2",
@@ -1658,7 +1662,41 @@
      "sha": "7d0184168cf89799b16ec8ee2aa388fde58dace6",
      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
      "size": 12102358,
-     "extra": true
+     "extra": true,
+     "orden": 9
+    },
+    {
+     "id": "76f0aba6-ab98-42c9-aaca-46ee90598ce8",
+     "by": "javi",
+     "at": "2026-11-19T16:07:33.599Z",
+     "base": "un-domingo-en-el-refugio",
+     "version": 22,
+     "shaOrigen": "07546f82abe5a96de5d1bd110d122ec000886e11",
+     "dur": 30,
+     "w": 1080,
+     "h": 1920,
+     "name": "un-domingo-en-el-refugio-v22.mp4",
+     "path": "archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v22.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v22.mp4",
+     "sha": "07546f82abe5a96de5d1bd110d122ec000886e11",
+     "type": "video/mp4",
+     "size": 6169887,
+     "orden": 10
+    },
+    {
+     "id": "e8a807d8-2075-4e65-ad89-ce9739e0f022",
+     "by": "javi",
+     "at": "2026-11-19T16:07:38.126Z",
+     "base": "portada-un-domingo-en-el-refugio",
+     "version": 1,
+     "shaOrigen": "7517b76f228dd4d514a3a7e3d8369b7aebac35f2",
+     "name": "portada-un-domingo-en-el-refugio-v1.webp",
+     "path": "archivos/3.-videos-lifestyle/portada-un-domingo-en-el-refugio-v1.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/portada-un-domingo-en-el-refugio-v1.webp",
+     "sha": "87f93dab84cb85b85d3eebf61540fa59fb56ac83",
+     "type": "image/webp",
+     "size": 155646,
+     "orden": 11
     }
    ],
    "checklist": [],
@@ -1689,8 +1727,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:43:35.657Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-19T16:07:55.755Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
   },
@@ -7574,6 +7612,13 @@
  ],
  "comments": [
   {
+   "id": "8cec3adc-d92a-4770-9805-e111b59739be",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "Subí portada y video con música alternativa, me avisan si está okay",
+   "createdAt": "2026-11-19T16:07:55.761Z"
+  },
+  {
    "id": "c6e9aa59-0ea7-42a3-bda5-1a021bfac654",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "flavio",
@@ -10316,6 +10361,26 @@
  ],
  "activity": [
   {
+   "id": "4ed9eb5e-f30c-483a-8926-5396e500612e",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-19T16:07:55.761Z"
+  },
+  {
+   "id": "72031023-22cb-4de2-bafd-5391a0fb1d88",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-19T16:07:55.758Z"
+  },
+  {
    "id": "d389b409-9a39-43a1-a785-c0e250634f57",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -12835,6 +12900,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "3be00a18-6d88-43f6-a088-8a4b21bcbe5c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "review",
+   "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: Subí portada y video con música alternativa, me avisan si está okay",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te pide revisar: Subí portada y video con música alternativa, me avisan si está okay",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:07:55.760Z"
+  },
+  {
+   "id": "a335fdef-3df0-4304-9f6a-21ab74b8e5b6",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "review",
+   "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: Subí portada y video con música alternativa, me avisan si está okay",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te pide revisar: Subí portada y video con música alternativa, me avisan si está okay",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:07:55.760Z"
+  },
+  {
+   "id": "b25cc69c-5483-4c78-a0cb-9b0157e476f7",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:07:55.759Z"
+  },
+  {
+   "id": "dd5d6679-9a68-4254-bf13-d692dfce2047",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:07:55.759Z"
+  },
   {
    "id": "2e56dc6c-09b0-45c3-b0cd-7e464c0b00be",
    "to": "maca",

@@ -13800,13 +13800,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Ahí te mandé una canción para probar y el estilo de música q puede andar mejor c…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Ahí te mandé una canción para probar y el estilo de música q puede andar mejor c…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T18:56:33.758Z"
+   "createdAt": "2026-11-19T18:56:33.758Z",
+   "readAt": "2026-11-19T19:04:43.425Z"
   },
   {
    "id": "4be2c85c-505f-407f-b419-b1446ba29373",

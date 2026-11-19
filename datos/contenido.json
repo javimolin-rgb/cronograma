@@ -1414,7 +1414,7 @@
   },
   {
    "title": "Un domingo en el refugio",
-   "caption": "Tu refugio soñado se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
+   "caption": "Tu refugio soñado se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo ",
    "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.\n\nEstaba escrito en el guión (no era voz en off):\nVeamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
    "hashtags": "",
    "guion": "",
@@ -1741,12 +1741,19 @@
      "text": "Un café sin apuro.\n\nLa luz entra sola, y nadie tiene que irse a ninguna parte.\n\nUna conversación que se alarga hasta la tarde.\n\nHoy el lujo es esto: vivir bien.",
      "hasta": "2026-11-19T16:13:10.000Z",
      "by": "javi"
+    },
+    {
+     "id": "3717a0ed-b91a-46bb-a79f-0d0232a4d457",
+     "campo": "caption",
+     "text": "Tu refugio soñado se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
+     "hasta": "2026-11-19T16:16:32.414Z",
+     "by": "javi"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:14:36.063Z",
+   "updatedAt": "2026-11-19T16:16:32.414Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -10394,6 +10401,16 @@
  ],
  "activity": [
   {
+   "id": "b1748517-b88c-4eec-82a3-93f32902ac44",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó copy",
+   "meta": null,
+   "createdAt": "2026-11-19T16:16:32.414Z"
+  },
+  {
    "id": "836d26ca-4e78-4724-abed-59eaf821d5b9",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13019,6 +13036,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "45d51a7c-5012-48c1-8fc1-bcba1dd1e273",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:16:32.415Z"
+  },
+  {
+   "id": "9b99b7bd-1467-40bc-80fe-703d106e0924",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (copy)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó copy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:16:32.414Z"
+  },
   {
    "id": "470a057d-a348-4dd0-bc01-d20797bc46aa",
    "to": "flavio",

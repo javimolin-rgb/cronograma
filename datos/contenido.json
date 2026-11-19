@@ -8032,7 +8032,10 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
    "text": "creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una plataforma de pago que NO es de uso liberado, para que lo revises bien porfa. siempre que me mandes una cancion ideal que sea con el enlace, ya que solo la foto de la miniatura lo hace mucho más dificil de encontrar.",
-   "createdAt": "2026-11-19T20:11:19.405Z"
+   "createdAt": "2026-11-19T20:11:19.405Z",
+   "reacciones": {
+    "flavio": "up"
+   }
   },
   {
    "id": "31d8057f-6849-4e09-a9f6-921ac21f51b6",
@@ -13958,6 +13961,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cce8b642-7d7e-41c3-92a1-6944ab5b5e1b",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Un domingo en el refugio”: creo que encontré la que sale en tu foto, pero la que tengo ",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio le puso 👍 a tu comentario: creo que encontré la que sale en tu foto, pero la que tengo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T20:44:56.299Z"
+  },
   {
    "id": "27c27453-1578-4289-9f54-13e3c8279a1f",
    "to": "flavio",

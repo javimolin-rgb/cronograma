@@ -1223,8 +1223,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:25:40.555Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-19T13:23:21.917Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
   },
@@ -1689,7 +1689,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:21:37.387Z",
+   "updatedAt": "2026-11-19T14:27:39.096Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -7565,12 +7565,12 @@
  ],
  "comments": [
   {
-   "id": "fb8a5ad4-62bc-4f11-92ed-5eeb6c8691ef",
-   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "id": "144b3f8e-cfe1-49af-b54c-fd97dac58236",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
-   "text": "Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos faltó cachar q lo q estaba escrito en “voz en off “pasaría a estar escrito. Gracias por la aclaración",
+   "text": "Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar algo q se asemeje",
    "fileIds": [],
-   "createdAt": "2026-11-19T14:25:40.556Z"
+   "createdAt": "2026-11-19T14:27:39.097Z"
   },
   {
    "id": "0ffbe205-d48b-4cd8-9b96-469c30a95a33",
@@ -10369,14 +10369,14 @@
  ],
  "activity": [
   {
-   "id": "2a46e3ce-0481-433a-8209-2c302e5accdc",
-   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "postTitle": "Aire nuevo sin abrir la ventana",
+   "id": "0f58422f-3f6b-49ee-ae24-083a589d596d",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
    "actor": "maca",
    "type": "comment",
    "text": "comentó",
    "meta": null,
-   "createdAt": "2026-11-19T14:25:40.556Z"
+   "createdAt": "2026-11-19T14:27:39.102Z"
   },
   {
    "id": "53dc7bf6-b257-4de8-bde4-6469d9d6b0a0",
@@ -16720,19 +16720,34 @@
  ],
  "notifications": [
   {
-   "id": "fe91acd9-1e08-45b7-9cc8-5a33b81029e7",
+   "id": "b52aa18d-82dc-4309-b29a-844d9360cbfc",
    "to": "javi",
    "from": "maca",
-   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
-   "text": "comentó en “Aire nuevo sin abrir la ventana”: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
+   "text": "comentó en “Un domingo en el refugio”: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
    "read": false,
    "inApp": true,
    "push": true,
-   "title": "Aire nuevo sin abrir la ventana",
-   "body": "Maca comentó: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
-   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T14:25:40.557Z"
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:27:39.103Z"
+  },
+  {
+   "id": "e5d9c1e5-2ce2-48f8-acd2-64d1d8c5ddf5",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:27:39.103Z"
   },
   {
    "id": "30dd5c0a-0a5c-4e17-8252-1b9ca2fd858d",
@@ -29316,9 +29331,9 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "maca",
-   "at": "2026-11-19T14:25:40.556Z",
-   "hasta": "2026-11-19T14:25:40.555Z",
-   "que": "comentario"
+   "at": "2026-11-12T17:56:35.284Z",
+   "hasta": "2026-11-10T19:05:35.968Z",
+   "que": "pieza"
   },
   {
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
@@ -29340,8 +29355,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T14:21:37.389Z",
-   "hasta": "2026-11-19T14:21:37.387Z",
+   "at": "2026-11-19T14:27:39.097Z",
+   "hasta": "2026-11-19T14:27:39.096Z",
    "que": "comentario"
   },
   {

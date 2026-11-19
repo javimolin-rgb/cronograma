@@ -2091,8 +2091,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:36:17.421Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T18:56:33.745Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "f4804fcf-d20b-4cec-84d5-37f16a9e1a4a",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Ahí te mandé una canción para probar y el estilo de música q puede andar mejor con el estilo Neorigen",
+   "fileIds": [],
+   "createdAt": "2026-11-19T18:56:33.753Z"
+  },
+  {
    "id": "793b47d2-1807-4d94-baa9-a0cc61566304",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10890,6 +10898,16 @@
  ],
  "activity": [
   {
+   "id": "059a244b-1c7b-4152-923f-3d50717ea2bb",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:56:33.756Z"
+  },
+  {
    "id": "1a79f624-f83b-4f2e-8d73-1761ae2951f5",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13775,6 +13793,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8bc1aa8a-1180-4389-b7f3-328bf1cdf303",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Ahí te mandé una canción para probar y el estilo de música q puede andar mejor c…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Ahí te mandé una canción para probar y el estilo de música q puede andar mejor c…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:56:33.758Z"
+  },
+  {
+   "id": "4be2c85c-505f-407f-b419-b1446ba29373",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Ahí te mandé una canción para probar y el estilo de música q puede andar mejor c…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Ahí te mandé una canción para probar y el estilo de música q puede andar mejor c…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:56:33.758Z"
+  },
   {
    "id": "e5d9f49b-3836-47d1-975d-6a0a16a52278",
    "to": "flavio",
@@ -20813,8 +20861,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T18:28:44.856Z",
-   "hasta": "2026-11-19T18:28:44.850Z",
+   "at": "2026-11-19T18:56:33.751Z",
+   "hasta": "2026-11-19T18:56:33.745Z",
    "que": "comentario"
   },
   {

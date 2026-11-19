@@ -1956,8 +1956,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:34:27.701Z",
-   "updatedBy": "flavio",
+   "updatedAt": "2026-11-19T16:52:38.245Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7855,6 +7855,14 @@
  ],
  "comments": [
   {
+   "id": "6c41339f-70d2-466f-928c-132829e30804",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "@Javi la música que elegimos podría ser modifica en Capcut pero es tiempo que no tenemos para hacer, porfa mándame link desde donde hay canciones que pueden ser reproducidas para elegir .",
+   "fileIds": [],
+   "createdAt": "2026-11-19T16:52:38.251Z"
+  },
+  {
    "id": "e2c6da1e-be89-4d2a-b886-c0ec805d9bb7",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "flavio",
@@ -10616,6 +10624,16 @@
  ],
  "activity": [
   {
+   "id": "86466c46-caeb-48a7-ad47-b3ec0aeca829",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T16:52:38.254Z"
+  },
+  {
    "id": "0380fcfe-3cf2-43fe-afbe-27707d75972c",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13291,6 +13309,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e19ea745-596a-47f3-8cd2-8dfbfb9a84cf",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Javi la música que elegimos podría ser modifica en Capcut pero es tiempo que no…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: @Javi la música que elegimos podría ser modifica en Capcut pero es tiempo que no…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:52:38.255Z"
+  },
+  {
+   "id": "05aa81f0-80c2-4b0e-88d8-0e3a9cb1361c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Javi la música que elegimos podría ser modifica en Capcut pero es tiempo que no…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca te mencionó: @Javi la música que elegimos podría ser modifica en Capcut pero es tiempo que no…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:52:38.255Z"
+  },
   {
    "id": "667dd5a4-14ea-4953-82be-ee0b7aa74deb",
    "to": "maca",
@@ -19729,9 +19777,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T16:39:08.714Z",
-   "hasta": "2026-11-19T16:34:27.701Z",
-   "que": "pieza"
+   "at": "2026-11-19T16:52:38.251Z",
+   "hasta": "2026-11-19T16:52:38.245Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

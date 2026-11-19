@@ -1956,7 +1956,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:32:26.306Z",
+   "updatedAt": "2026-11-19T16:34:27.701Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7855,6 +7855,18 @@
  ],
  "comments": [
   {
+   "id": "e2c6da1e-be89-4d2a-b886-c0ec805d9bb7",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "flavio",
+   "text": "@Javi por favor cambiar estas imagenes del video y si te faltan imagenes para completar el tiempo puedes usar  alguna de las interiores que estan en IA de la carpeta Fotos y videos.\nEstamos viendo una música para reemplazarla tambien, esperanos que te la enviamos. Gracias!",
+   "fileIds": [
+    "6e9aba63-aa46-4f26-8064-21bbc45a8913",
+    "edfe7281-0c2a-4b6f-b4c2-fdba2bf70483",
+    "e05aa154-8b25-4b63-841a-0584f3f30734"
+   ],
+   "createdAt": "2026-11-19T16:34:27.702Z"
+  },
+  {
    "id": "8cec3adc-d92a-4770-9805-e111b59739be",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10604,6 +10616,16 @@
  ],
  "activity": [
   {
+   "id": "0380fcfe-3cf2-43fe-afbe-27707d75972c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T16:34:27.703Z"
+  },
+  {
    "id": "c5945ef4-ce64-440c-95fd-609908cea0f4",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13269,6 +13291,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "667dd5a4-14ea-4953-82be-ee0b7aa74deb",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Javi por favor cambiar estas imagenes del video y si te faltan imagenes para co…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio comentó: @Javi por favor cambiar estas imagenes del video y si te faltan imagenes para co…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:34:27.704Z"
+  },
+  {
+   "id": "0d79f526-ef21-4061-a871-38d2b660bed4",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Javi por favor cambiar estas imagenes del video y si te faltan imagenes para co…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Flavio te mencionó: @Javi por favor cambiar estas imagenes del video y si te faltan imagenes para co…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:34:27.704Z"
+  },
   {
    "id": "45d51a7c-5012-48c1-8fc1-bcba1dd1e273",
    "to": "flavio",
@@ -19580,9 +19632,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-19T16:28:26.422Z",
-   "hasta": "2026-11-19T16:16:32.414Z",
-   "que": "pieza"
+   "at": "2026-11-19T16:34:27.702Z",
+   "hasta": "2026-11-19T16:34:27.701Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|flavio",

@@ -1986,7 +1986,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:02:40.316Z",
+   "updatedAt": "2026-11-19T18:03:12.162Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7885,6 +7885,17 @@
  ],
  "comments": [
   {
+   "id": "14db428e-2e63-437e-a2dc-462f31ea020e",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "La primera canción podría ser",
+   "fileIds": [
+    "36c39ca0-9ebd-43b7-8570-5fbdd1918989",
+    "4a17f07c-c19b-458f-b8e7-1b85bb0c9511"
+   ],
+   "createdAt": "2026-11-19T18:03:12.164Z"
+  },
+  {
    "id": "cf510d56-8e3d-42cf-b21d-b9213408b6b9",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10709,6 +10720,16 @@
  ],
  "activity": [
   {
+   "id": "6bef1f72-d941-496b-a168-ffe583710e57",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:03:12.167Z"
+  },
+  {
    "id": "890238b8-199b-480a-ac88-9607a17e5197",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13504,6 +13525,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a6800898-1915-40f5-80d7-c8e483864f10",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: La primera canción podría ser",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: La primera canción podría ser",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:03:12.168Z"
+  },
+  {
+   "id": "adcb28a7-5b3e-4ab1-841a-b5c3fb4b7aa7",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: La primera canción podría ser",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: La primera canción podría ser",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:03:12.168Z"
+  },
   {
    "id": "c6192d32-af1e-452a-b2ec-9c31777735a7",
    "to": "javi",
@@ -20264,8 +20315,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T17:59:55.586Z",
-   "hasta": "2026-11-19T17:59:55.584Z",
+   "at": "2026-11-19T18:03:12.164Z",
+   "hasta": "2026-11-19T18:03:12.162Z",
    "que": "comentario"
   },
   {

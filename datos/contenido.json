@@ -13298,13 +13298,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @Javi por favor cambiar estas imagenes del video y si te faltan imagenes para co…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Flavio comentó: @Javi por favor cambiar estas imagenes del video y si te faltan imagenes para co…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:34:27.704Z"
+   "createdAt": "2026-11-19T16:34:27.704Z",
+   "readAt": "2026-11-19T16:39:08.711Z"
   },
   {
    "id": "0d79f526-ef21-4061-a871-38d2b660bed4",
@@ -19728,8 +19729,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T16:24:37.343Z",
-   "hasta": "2026-11-19T16:16:32.414Z",
+   "at": "2026-11-19T16:39:08.714Z",
+   "hasta": "2026-11-19T16:34:27.701Z",
    "que": "pieza"
   },
   {

@@ -7565,6 +7565,14 @@
  ],
  "comments": [
   {
+   "id": "eca121bd-0bbf-4845-baad-5097a1f685ee",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si usamos esa sin voz en off ni nada más, instagram muy probablemente la baje por copyright.",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:16:44.890Z"
+  },
+  {
    "id": "38141162-9b4e-44b1-a17f-e778b0603516",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "author": "javi",
@@ -10344,6 +10352,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "dd4c404a-76b3-43b2-b59e-278709485b16",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:16:44.895Z"
+  },
   {
    "id": "095480e3-f5b9-4eb0-8a07-7516d32c64c1",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -16666,20 +16684,49 @@
  ],
  "notifications": [
   {
+   "id": "69853556-49c4-42da-b523-8539e5c85b2a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:16:44.902Z"
+  },
+  {
+   "id": "511b91ad-bfc3-4e52-8f02-95f4eb6f4768",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:16:44.899Z"
+  },
+  {
    "id": "3156957e-6276-4277-88d0-3f3601fb34e4",
    "to": "javi",
    "from": "flavio",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "en “Casa Roble”: editó copy, guión / voz en off, la estructura",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Flavio editó copy, guión / voz en off, la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-19T13:53:24.607Z",
-   "readAt": "2026-11-19T14:14:57.847Z"
+   "createdAt": "2026-11-19T13:53:24.607Z"
   },
   {
    "id": "a5717e67-c1fc-4785-a98f-4b048fa6b96b",
@@ -29276,7 +29323,7 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-19T14:15:03.309Z",
+   "at": "2026-11-19T13:23:34.147Z",
    "hasta": "2026-11-18T23:00:45.234Z",
    "que": "pieza"
   },

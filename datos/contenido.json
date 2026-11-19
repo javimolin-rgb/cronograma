@@ -13965,13 +13965,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:11:43.265Z"
+   "createdAt": "2026-11-19T20:11:43.265Z",
+   "readAt": "2026-11-19T20:42:31.681Z"
   },
   {
    "id": "e9d4569e-5999-4fbd-a849-d15581fd04f0",
@@ -14010,13 +14011,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una plataforma de pago que NO es de uso liberado, para que lo revises bien porfa. siempre que me mandes una cancion ideal que sea con el enlace, ya que solo la foto de la miniatura lo hace mucho más dificil de encontrar.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te pide revisar: creo que encontré la que sale en tu foto, pero la que tengo yo es de https://www.epidemicsound.com/artists/go-for-howell/ , una ",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:11:19.405Z"
+   "createdAt": "2026-11-19T20:11:19.405Z",
+   "readAt": "2026-11-19T20:42:31.682Z"
   },
   {
    "id": "8b604bac-7eed-45ef-9aa0-c4dd8f5036ec",
@@ -14025,13 +14027,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:11:19.404Z"
+   "createdAt": "2026-11-19T20:11:19.404Z",
+   "readAt": "2026-11-19T20:42:31.682Z"
   },
   {
    "id": "fd5f8eb1-658e-4e7a-9adb-0911b50504fd",
@@ -21198,8 +21201,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-19T20:11:54.207Z",
-   "hasta": "2026-11-19T19:42:49.992Z",
+   "at": "2026-11-19T20:42:31.683Z",
+   "hasta": "2026-11-19T20:22:08.030Z",
    "que": "pieza"
   },
   {

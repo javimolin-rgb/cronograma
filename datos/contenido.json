@@ -1956,7 +1956,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T17:57:29.478Z",
+   "updatedAt": "2026-11-19T17:59:55.584Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7855,6 +7855,14 @@
  ],
  "comments": [
   {
+   "id": "cf510d56-8e3d-42cf-b21d-b9213408b6b9",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede servirnos es indie folk vocals",
+   "fileIds": [],
+   "createdAt": "2026-11-19T17:59:55.587Z"
+  },
+  {
    "id": "0201b3f7-7675-45ce-902a-94da21c5cffc",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10671,6 +10679,16 @@
  ],
  "activity": [
   {
+   "id": "cc62e24e-c2a3-4bf5-ba82-8a9a8ba1e297",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T17:59:55.587Z"
+  },
+  {
    "id": "2e462e55-435b-45c4-b432-ab3ec7c0e8a6",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13436,6 +13454,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c6192d32-af1e-452a-b2ec-9c31777735a7",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T17:59:55.588Z"
+  },
+  {
+   "id": "7bd09473-d52e-49ee-bbc5-412be1500791",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T17:59:55.588Z"
+  },
   {
    "id": "5d11680c-c9aa-477f-a6c9-0791d31eec0a",
    "to": "javi",
@@ -20165,8 +20213,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T17:57:29.483Z",
-   "hasta": "2026-11-19T17:57:29.478Z",
+   "at": "2026-11-19T17:59:55.586Z",
+   "hasta": "2026-11-19T17:59:55.584Z",
    "que": "comentario"
   },
   {

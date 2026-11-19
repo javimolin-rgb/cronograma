@@ -2091,8 +2091,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T19:05:21.859Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T19:18:54.264Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "5e09e751-8e78-4446-a30d-d582283e382b",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Si , gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-19T19:18:54.266Z"
+  },
+  {
    "id": "80f92374-6c9d-452a-8c15-c7effb6ccd59",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10906,6 +10914,16 @@
  ],
  "activity": [
   {
+   "id": "b2877665-57bb-49db-860a-5f88c916149f",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T19:18:54.267Z"
+  },
+  {
    "id": "d80e52ff-db41-4537-b7d8-d566779501e0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13811,6 +13829,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "987b65bf-d522-4cd5-902c-fcccfe478ae6",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Si , gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Si , gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:18:54.270Z"
+  },
+  {
+   "id": "8f799952-ad96-4e43-80fb-90130c7e8c3f",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Si , gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Si , gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:18:54.269Z"
+  },
   {
    "id": "e44cc48d-2f2e-422d-a568-51618d20bb30",
    "to": "flavio",
@@ -20912,9 +20960,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T19:18:15.728Z",
-   "hasta": "2026-11-19T19:05:21.859Z",
-   "que": "pieza"
+   "at": "2026-11-19T19:18:54.266Z",
+   "hasta": "2026-11-19T19:18:54.264Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

@@ -2740,7 +2740,7 @@
    "date": "2026-11-24",
    "inicio": "2026-11-09",
    "format": "story",
-   "status": "revision",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3031,11 +3031,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-18T20:08:10.793Z",
+   "updatedAt": "2026-11-19T16:11:17.208Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-11T23:02:37.530Z",
+   "statusChangedAt": "2026-11-19T16:11:17.208Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -10361,6 +10361,19 @@
  ],
  "activity": [
   {
+   "id": "9370f8bb-b55d-44a0-84eb-968e9b620380",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a En diseño",
+   "meta": {
+    "from": "revision",
+    "to": "diseno"
+   },
+   "createdAt": "2026-11-19T16:11:17.208Z"
+  },
+  {
    "id": "64f80bd1-959f-49ad-867d-519d867b53b0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -12913,6 +12926,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a865b4f7-b231-404b-a591-052a38a02939",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-19T16:11:17.208Z"
+  },
+  {
+   "id": "7c3f380e-fe28-4b1c-9b63-04f598ba9927",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-19T16:11:17.208Z"
+  },
   {
    "id": "e0a7375f-b83c-44a9-9615-82f517f8ec7c",
    "to": "flavio",

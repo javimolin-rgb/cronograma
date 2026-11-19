@@ -7565,6 +7565,14 @@
  ],
  "comments": [
   {
+   "id": "c64e02b1-a55b-4003-b168-839eb85c691a",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que cuando se utiliza voz en off puede tapar la música y podria pasar, pero como no hay voz en off no se que tipo de modifciacion te imaginas.",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:33:02.147Z"
+  },
+  {
    "id": "144b3f8e-cfe1-49af-b54c-fd97dac58236",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10368,6 +10376,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5f5b7ce4-86ef-4dae-a6c4-25b1b518bfa9",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:33:02.149Z"
+  },
   {
    "id": "0f58422f-3f6b-49ee-ae24-083a589d596d",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16720,20 +16738,49 @@
  ],
  "notifications": [
   {
+   "id": "3522dc55-70a9-40a9-a4b7-2668d7095862",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que c…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que c…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:33:02.150Z"
+  },
+  {
+   "id": "82d77eea-ea71-4ea9-856f-cefb13e26beb",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que c…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca Modificación de que tipo te refieres? Porque lo que yo mencionaba es que c…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:33:02.150Z"
+  },
+  {
    "id": "b52aa18d-82dc-4309-b29a-844d9360cbfc",
    "to": "javi",
    "from": "maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:27:39.103Z",
-   "readAt": "2026-11-19T14:28:42.287Z"
+   "createdAt": "2026-11-19T14:27:39.103Z"
   },
   {
    "id": "e5d9c1e5-2ce2-48f8-acd2-64d1d8c5ddf5",
@@ -16757,14 +16804,13 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:21:37.397Z",
-   "readAt": "2026-11-19T14:28:42.287Z"
+   "createdAt": "2026-11-19T14:21:37.397Z"
   },
   {
    "id": "cee05637-ca32-44a4-99f0-09651bc5682f",
@@ -16818,14 +16864,13 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "en “Casa Roble”: editó copy, guión / voz en off, la estructura",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Flavio editó copy, guión / voz en off, la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-19T13:53:24.607Z",
-   "readAt": "2026-11-19T14:28:42.287Z"
+   "createdAt": "2026-11-19T13:53:24.607Z"
   },
   {
    "id": "a5717e67-c1fc-4785-a98f-4b048fa6b96b",

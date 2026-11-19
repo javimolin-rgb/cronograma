@@ -14010,13 +14010,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca te mencionó: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:50:12.720Z"
+   "createdAt": "2026-11-19T20:50:12.720Z",
+   "readAt": "2026-11-19T22:30:23.902Z"
   },
   {
    "id": "cce8b642-7d7e-41c3-92a1-6944ab5b5e1b",
@@ -14025,13 +14026,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "reaccion",
    "text": "le puso 👍 a tu comentario en “Un domingo en el refugio”: creo que encontré la que sale en tu foto, pero la que tengo ",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Flavio le puso 👍 a tu comentario: creo que encontré la que sale en tu foto, pero la que tengo",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:44:56.299Z"
+   "createdAt": "2026-11-19T20:44:56.299Z",
+   "readAt": "2026-11-19T22:30:23.905Z"
   },
   {
    "id": "27c27453-1578-4289-9f54-13e3c8279a1f",

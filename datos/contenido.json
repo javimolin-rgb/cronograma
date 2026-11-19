@@ -1475,7 +1475,7 @@
    "time": "",
    "date": "2026-11-22",
    "inicio": "",
-   "format": "carrusel",
+   "format": "reel",
    "status": "espera",
    "priority": "normal",
    "revisions": 1,
@@ -1746,7 +1746,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:13:10.000Z",
+   "updatedAt": "2026-11-19T16:14:36.063Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -10394,6 +10394,16 @@
  ],
  "activity": [
   {
+   "id": "836d26ca-4e78-4724-abed-59eaf821d5b9",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó formato",
+   "meta": null,
+   "createdAt": "2026-11-19T16:14:36.064Z"
+  },
+  {
    "id": "9370f8bb-b55d-44a0-84eb-968e9b620380",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -13009,6 +13019,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "470a057d-a348-4dd0-bc01-d20797bc46aa",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (formato)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó formato",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:14:36.065Z"
+  },
+  {
+   "id": "691d23c3-30b2-4fdb-b830-0fa9dc476dbf",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (formato)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó formato",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:14:36.064Z"
+  },
   {
    "id": "a865b4f7-b231-404b-a591-052a38a02939",
    "to": "flavio",

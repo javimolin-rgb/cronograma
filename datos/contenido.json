@@ -7565,6 +7565,14 @@
  ],
  "comments": [
   {
+   "id": "0bb62936-bab5-459e-a49d-f1fe0a4f3266",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambiando los tonos, o alterando que especificamente; ya que mencionas \"con IA\" pero la IA de frentón no te altera una canción asi nomás debido a que es ilegal",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:48:43.658Z"
+  },
+  {
    "id": "ded3b055-da8a-49c7-a635-43b279d6b6fd",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10384,6 +10392,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "700a1986-53fb-4dee-a0ad-7e4dc68cc3b7",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:48:43.660Z"
+  },
   {
    "id": "d17d6f32-eec0-4b26-8ed9-c12d2e8f0c37",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16755,6 +16773,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "39591126-8a4c-449d-bb28-b18a7cb91ec1",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambia…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambia…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:48:43.661Z"
+  },
+  {
+   "id": "3818bedc-3842-4fe3-8386-666b9ae2f85c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambia…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambia…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:48:43.661Z"
+  },
   {
    "id": "948d7e99-ee03-4bf5-899e-25bbb6689632",
    "to": "javi",
@@ -29517,9 +29565,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-19T13:23:34.147Z",
-   "hasta": "2026-11-18T23:00:45.234Z",
-   "que": "pieza"
+   "at": "2026-11-19T14:48:43.656Z",
+   "hasta": "2026-11-19T14:27:39.096Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",

@@ -13488,13 +13488,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T17:56:51.112Z"
+   "createdAt": "2026-11-19T17:56:51.112Z",
+   "readAt": "2026-11-19T17:57:31.926Z"
   },
   {
    "id": "f629ca70-8f46-47b4-ad06-f8342ea1417c",
@@ -13503,13 +13504,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 6 archivos en “Un domingo en el refugio” para revisar: Portadas y videos con alternativas subidos",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te pide revisar: Portadas y videos con alternativas subidos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T17:56:32.916Z"
+   "createdAt": "2026-11-19T17:56:32.916Z",
+   "readAt": "2026-11-19T17:57:31.927Z"
   },
   {
    "id": "d84d2fb9-3654-499c-9491-89a218856ba2",
@@ -13548,13 +13550,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T17:56:32.909Z"
+   "createdAt": "2026-11-19T17:56:32.909Z",
+   "readAt": "2026-11-19T17:57:31.927Z"
   },
   {
    "id": "10a34a51-62f5-4151-a0a8-e4a89d559b43",

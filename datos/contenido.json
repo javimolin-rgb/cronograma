@@ -1689,7 +1689,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:21:37.387Z",
+   "updatedAt": "2026-11-18T23:00:45.234Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -7565,14 +7565,6 @@
  ],
  "comments": [
   {
-   "id": "0ffbe205-d48b-4cd8-9b96-469c30a95a33",
-   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "author": "maca",
-   "text": "Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se podía intentar haciendo alguna pequeña modificación o algo… al menos eso entendí.",
-   "fileIds": [],
-   "createdAt": "2026-11-19T14:21:37.391Z"
-  },
-  {
    "id": "eca121bd-0bbf-4845-baad-5097a1f685ee",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10360,16 +10352,6 @@
   }
  ],
  "activity": [
-  {
-   "id": "53dc7bf6-b257-4de8-bde4-6469d9d6b0a0",
-   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "postTitle": "Un domingo en el refugio",
-   "actor": "maca",
-   "type": "comment",
-   "text": "comentó",
-   "meta": null,
-   "createdAt": "2026-11-19T14:21:37.395Z"
-  },
   {
    "id": "dd4c404a-76b3-43b2-b59e-278709485b16",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16701,36 +16683,6 @@
   }
  ],
  "notifications": [
-  {
-   "id": "30dd5c0a-0a5c-4e17-8252-1b9ca2fd858d",
-   "to": "javi",
-   "from": "maca",
-   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "type": "supervision",
-   "text": "comentó en “Un domingo en el refugio”: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
-   "read": false,
-   "inApp": true,
-   "push": true,
-   "title": "Un domingo en el refugio",
-   "body": "Maca comentó: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
-   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:21:37.397Z"
-  },
-  {
-   "id": "cee05637-ca32-44a4-99f0-09651bc5682f",
-   "to": "flavio",
-   "from": "maca",
-   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "type": "comment",
-   "text": "comentó en “Un domingo en el refugio”: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
-   "read": false,
-   "inApp": true,
-   "push": false,
-   "title": "Un domingo en el refugio",
-   "body": "Maca comentó: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
-   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:21:37.396Z"
-  },
   {
    "id": "69853556-49c4-42da-b523-8539e5c85b2a",
    "to": "maca",
@@ -29291,9 +29243,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-17T21:19:43.317Z",
-   "hasta": "2026-11-17T21:19:43.316Z",
-   "que": "comentario"
+   "at": "2026-11-19T14:22:24.888Z",
+   "hasta": "2026-11-18T20:08:10.793Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",
@@ -29307,8 +29259,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T14:21:37.389Z",
-   "hasta": "2026-11-19T14:21:37.387Z",
+   "at": "2026-11-18T23:00:45.236Z",
+   "hasta": "2026-11-18T23:00:45.234Z",
    "que": "comentario"
   },
   {

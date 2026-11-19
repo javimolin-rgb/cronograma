@@ -13592,13 +13592,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "status",
    "text": "movió “Casa Mañío” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-19T16:11:17.208Z"
+   "createdAt": "2026-11-19T16:11:17.208Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "7c3f380e-fe28-4b1c-9b63-04f598ba9927",
@@ -14098,13 +14099,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "mention",
    "text": "te mencionó en “Aire nuevo sin abrir la ventana”: @Flavio no! Como te mencioné todo lo que es carrusel no lleva voz en off y los t…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi te mencionó: @Flavio no! Como te mencioné todo lo que es carrusel no lleva voz en off y los t…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:23:21.924Z"
+   "createdAt": "2026-11-19T13:23:21.924Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "d3187286-77b4-4105-9586-bc472b005476",
@@ -14302,13 +14304,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "status",
    "text": "movió “Casa Boldo” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:47:42.598Z"
+   "createdAt": "2026-11-18T21:47:42.598Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "8829828e-6fb8-4c6f-8d9c-a9fda57331c3",
@@ -14349,13 +14352,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: Estamos ok",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: Estamos ok",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:45:35.337Z"
+   "createdAt": "2026-11-18T21:45:35.337Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "3d78e024-f4d9-4465-866b-d5d3d3cb349e",
@@ -14380,13 +14384,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "update",
    "text": "editó “Casa Boldo” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Boldo",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:42:42.009Z"
+   "createdAt": "2026-11-18T21:42:42.009Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "03413a9b-42f1-432c-99a5-0db096747533",
@@ -14427,13 +14432,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: Solo dejarlo en el texto descriptivo que va en el feed",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: Solo dejarlo en el texto descriptivo que va en el feed",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:38:57.856Z"
+   "createdAt": "2026-11-18T21:38:57.856Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "019978d9-908f-4eea-ad97-e6c2df9e025e",
@@ -14458,13 +14464,14 @@
    "postId": "03b2da82-2617-417b-8081-df3dadaefb31",
    "type": "comment",
    "text": "comentó en “Casa Boldo”: Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arr…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Boldo",
    "body": "Maca comentó: Hola Javi, solo habría q sacar “ el modelo de la semana” , Clmo quedamos más arr…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=03b2da82-2617-417b-8081-df3dadaefb31",
-   "createdAt": "2026-11-18T21:37:16.994Z"
+   "createdAt": "2026-11-18T21:37:16.994Z",
+   "readAt": "2026-11-19T17:33:32.395Z"
   },
   {
    "id": "dcbe8602-d456-4d98-b327-1a598f5d1e5a",

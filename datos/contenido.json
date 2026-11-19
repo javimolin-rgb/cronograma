@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "80f92374-6c9d-452a-8c15-c7effb6ccd59",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca descarto entonces las 3 variantes que les envié?",
+   "fileIds": [],
+   "createdAt": "2026-11-19T19:05:14.719Z"
+  },
+  {
    "id": "f4804fcf-d20b-4cec-84d5-37f16a9e1a4a",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10898,6 +10906,16 @@
  ],
  "activity": [
   {
+   "id": "d80e52ff-db41-4537-b7d8-d566779501e0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T19:05:14.721Z"
+  },
+  {
    "id": "059a244b-1c7b-4152-923f-3d50717ea2bb",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13793,6 +13811,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e44cc48d-2f2e-422d-a568-51618d20bb30",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca descarto entonces las 3 variantes que les envié?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca descarto entonces las 3 variantes que les envié?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:05:14.723Z"
+  },
+  {
+   "id": "fd51d4ca-2e9e-4443-aac5-c3e15bda9e0d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca descarto entonces las 3 variantes que les envié?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca descarto entonces las 3 variantes que les envié?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:05:14.722Z"
+  },
   {
    "id": "8bc1aa8a-1180-4389-b7f3-328bf1cdf303",
    "to": "javi",

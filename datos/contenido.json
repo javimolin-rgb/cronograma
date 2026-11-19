@@ -16810,13 +16810,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que l…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Pensé en intervenciones con IA. Tengo entendido hay ciertas intervenciones que l…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:43:35.669Z"
+   "createdAt": "2026-11-19T14:43:35.669Z",
+   "readAt": "2026-11-19T14:56:02.454Z"
   },
   {
    "id": "79a6eb70-200c-40ef-a423-cf8bb5df07df",
@@ -16871,13 +16872,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Cuéntanos si puedes hacer alguna modificación para ser usada , sino para buscar …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:27:39.103Z"
+   "createdAt": "2026-11-19T14:27:39.103Z",
+   "readAt": "2026-11-19T14:56:02.454Z"
   },
   {
    "id": "e5d9c1e5-2ce2-48f8-acd2-64d1d8c5ddf5",
@@ -16901,13 +16903,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Gracias Javi, siiii! Lo tenemos súper claro, pero como es vídeo hablamos q se po…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:21:37.397Z"
+   "createdAt": "2026-11-19T14:21:37.397Z",
+   "readAt": "2026-11-19T14:56:02.454Z"
   },
   {
    "id": "cee05637-ca32-44a4-99f0-09651bc5682f",

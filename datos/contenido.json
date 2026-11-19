@@ -1223,8 +1223,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T13:23:21.917Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T14:25:40.555Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
   },
@@ -7565,6 +7565,14 @@
  ],
  "comments": [
   {
+   "id": "fb8a5ad4-62bc-4f11-92ed-5eeb6c8691ef",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "author": "maca",
+   "text": "Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos faltó cachar q lo q estaba escrito en “voz en off “pasaría a estar escrito. Gracias por la aclaración",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:25:40.556Z"
+  },
+  {
    "id": "0ffbe205-d48b-4cd8-9b96-469c30a95a33",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10360,6 +10368,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "2a46e3ce-0481-433a-8209-2c302e5accdc",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:25:40.556Z"
+  },
   {
    "id": "53dc7bf6-b257-4de8-bde4-6469d9d6b0a0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16702,6 +16720,21 @@
  ],
  "notifications": [
   {
+   "id": "fe91acd9-1e08-45b7-9cc8-5a33b81029e7",
+   "to": "javi",
+   "from": "maca",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "comentó en “Aire nuevo sin abrir la ventana”: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Maca comentó: Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T14:25:40.557Z"
+  },
+  {
    "id": "30dd5c0a-0a5c-4e17-8252-1b9ca2fd858d",
    "to": "javi",
    "from": "maca",
@@ -16798,14 +16831,13 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "comment",
    "text": "comentó en “Aire nuevo sin abrir la ventana”: @Flavio no! Como te mencioné todo lo que es carrusel no lleva voz en off y los t…",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi comentó: @Flavio no! Como te mencioné todo lo que es carrusel no lleva voz en off y los t…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:23:21.925Z",
-   "readAt": "2026-11-19T14:23:05.496Z"
+   "createdAt": "2026-11-19T13:23:21.925Z"
   },
   {
    "id": "c758821a-1a73-4ecd-831a-a542a032f4bc",
@@ -16829,14 +16861,13 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "comment",
    "text": "comentó en “Aire nuevo sin abrir la ventana”: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio comentó: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:20:07.309Z",
-   "readAt": "2026-11-19T14:23:05.496Z"
+   "createdAt": "2026-11-19T13:20:07.309Z"
   },
   {
    "id": "004b0030-96d8-41a4-87c4-05fa9f83b92e",
@@ -16877,14 +16908,13 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "update",
    "text": "editó “Aire nuevo sin abrir la ventana” (la estructura)",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio editó la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:17:56.213Z",
-   "readAt": "2026-11-19T14:23:05.497Z"
+   "createdAt": "2026-11-19T13:17:56.213Z"
   },
   {
    "id": "d3e62a01-57fc-4a97-b7c0-8d4a368892c8",
@@ -16909,14 +16939,13 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "update",
    "text": "editó “Aire nuevo sin abrir la ventana” (la estructura)",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio editó la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-19T13:07:12.803Z",
-   "readAt": "2026-11-19T14:23:05.497Z"
+   "createdAt": "2026-11-19T13:07:12.803Z"
   },
   {
    "id": "9300778f-7268-4430-95c2-17fd132cbeb4",
@@ -17321,14 +17350,13 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "update",
    "text": "editó “Aire nuevo sin abrir la ventana” (formato)",
-   "read": true,
+   "read": false,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi editó formato",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-17T21:34:03.577Z",
-   "readAt": "2026-11-19T14:23:05.497Z"
+   "createdAt": "2026-11-17T21:34:03.577Z"
   },
   {
    "id": "79bd35e8-78d0-4452-9d82-81aea3dca8cc",
@@ -29288,9 +29316,9 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "maca",
-   "at": "2026-11-19T14:23:05.498Z",
-   "hasta": "2026-11-19T13:23:21.917Z",
-   "que": "pieza"
+   "at": "2026-11-19T14:25:40.556Z",
+   "hasta": "2026-11-19T14:25:40.555Z",
+   "que": "comentario"
   },
   {
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",

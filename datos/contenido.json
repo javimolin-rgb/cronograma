@@ -1673,7 +1673,7 @@
      "sha": "2c5526c2d537ceca36fae8c5509f01c0c0d34974",
      "type": "image/webp",
      "size": 133060,
-     "orden": 1007,
+     "orden": 0,
      "extra": true
     },
     {
@@ -1689,7 +1689,7 @@
      "sha": "523b80fba0a6a789cced8e7e3d016e3d17366840",
      "type": "image/webp",
      "size": 152752,
-     "orden": 1008,
+     "orden": 1,
      "extra": true
     },
     {
@@ -1705,7 +1705,7 @@
      "sha": "a0eb1b1c7c45d445c7e5f51021bc417fc45bc14e",
      "type": "image/webp",
      "size": 159602,
-     "orden": 1009,
+     "orden": 2,
      "extra": true
     },
     {
@@ -1721,7 +1721,7 @@
      "sha": "d5aa71a3785bbcda8b9136219471c37e25e2275e",
      "type": "image/webp",
      "size": 51982,
-     "orden": 1010,
+     "orden": 3,
      "extra": true
     },
     {
@@ -1740,7 +1740,7 @@
      "sha": "4e03250785b6376fbe69854f4d0bfdb717905bec",
      "type": "video/mp4",
      "size": 5477727,
-     "orden": 1011,
+     "orden": 4,
      "extra": true
     },
     {
@@ -1760,7 +1760,7 @@
      "type": "video/mp4",
      "size": 4252411,
      "extra": true,
-     "orden": 1012
+     "orden": 5
     },
     {
      "id": "45cb8e56-4be6-492e-a8ed-2eabd99deb74",
@@ -1778,7 +1778,7 @@
      "sha": "71897d04b982870c7eab2e88fa62d39ccb9cf8e0",
      "type": "video/mp4",
      "size": 7673485,
-     "orden": 1013,
+     "orden": 6,
      "extra": true
     },
     {
@@ -1797,7 +1797,7 @@
      "sha": "b71a5b23ee82f47c06bc6efdbe0fe847d7768cb2",
      "type": "video/mp4",
      "size": 8934210,
-     "orden": 1014,
+     "orden": 7,
      "extra": true
     },
     {
@@ -1816,7 +1816,7 @@
      "sha": "4a5f3c222577d06ba0eb89da35769966891e5239",
      "type": "video/mp4",
      "size": 8616121,
-     "orden": 1015,
+     "orden": 8,
      "extra": true
     },
     {
@@ -1833,7 +1833,7 @@
      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
      "size": 12102358,
      "extra": true,
-     "orden": 1016
+     "orden": 9
     },
     {
      "id": "76f0aba6-ab98-42c9-aaca-46ee90598ce8",
@@ -1851,8 +1851,7 @@
      "sha": "07546f82abe5a96de5d1bd110d122ec000886e11",
      "type": "video/mp4",
      "size": 6169887,
-     "orden": 1017,
-     "extra": true
+     "orden": 10
     },
     {
      "id": "e8a807d8-2075-4e65-ad89-ce9739e0f022",
@@ -1867,7 +1866,7 @@
      "sha": "87f93dab84cb85b85d3eebf61540fa59fb56ac83",
      "type": "image/webp",
      "size": 155646,
-     "orden": 1018
+     "orden": 11
     },
     {
      "id": "6e9aba63-aa46-4f26-8064-21bbc45a8913",
@@ -1882,8 +1881,7 @@
      "sha": "adb911e0b4ba134f894b884128b1fa08e43f4485",
      "type": "image/webp",
      "size": 63622,
-     "extra": true,
-     "orden": 1019
+     "extra": true
     },
     {
      "id": "edfe7281-0c2a-4b6f-b4c2-fdba2bf70483",
@@ -1898,8 +1896,7 @@
      "sha": "c549a7a982a32405979348b84c0bda99f21aeee2",
      "type": "image/webp",
      "size": 105382,
-     "extra": true,
-     "orden": 1020
+     "extra": true
     },
     {
      "id": "e05aa154-8b25-4b63-841a-0584f3f30734",
@@ -1914,107 +1911,7 @@
      "sha": "2cbd5f6a1177ce0fe6d74bf67808bb7bdd600be6",
      "type": "image/webp",
      "size": 54748,
-     "extra": true,
-     "orden": 1021
-    },
-    {
-     "id": "3a6833c6-514c-4751-b914-cda6fc124e54",
-     "by": "javi",
-     "at": "2026-11-19T17:53:21.077Z",
-     "base": "un-domingo-en-el-refugio-v24-smile",
-     "version": 1,
-     "shaOrigen": "7a8f652ba0f01a5e96a800a74bcecd6c5189f71c",
-     "dur": 30,
-     "w": 1080,
-     "h": 1920,
-     "name": "un-domingo-en-el-refugio-v24-smile-v1.mp4",
-     "path": "archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v24-smile-v1.mp4",
-     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v24-smile-v1.mp4",
-     "sha": "7a8f652ba0f01a5e96a800a74bcecd6c5189f71c",
-     "type": "video/mp4",
-     "size": 6273523,
-     "orden": 0
-    },
-    {
-     "id": "0869e812-c14d-4b83-9d4b-41403389a129",
-     "by": "javi",
-     "at": "2026-11-19T17:54:29.303Z",
-     "base": "un-domingo-en-el-refugio-v24-a-happy-child",
-     "version": 1,
-     "shaOrigen": "8e47d9deb75e9c03a69bd8eb78a8f1a2bf92d793",
-     "dur": 30,
-     "w": 1080,
-     "h": 1920,
-     "name": "un-domingo-en-el-refugio-v24-a-happy-child-v1.mp4",
-     "path": "archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v24-a-happy-child-v1.mp4",
-     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v24-a-happy-child-v1.mp4",
-     "sha": "8e47d9deb75e9c03a69bd8eb78a8f1a2bf92d793",
-     "type": "video/mp4",
-     "size": 5944478,
-     "orden": 1
-    },
-    {
-     "id": "c9311856-3610-490f-a13f-4d787b9c9301",
-     "by": "javi",
-     "at": "2026-11-19T17:55:33.338Z",
-     "base": "un-domingo-en-el-refugio-v24-happy-home",
-     "version": 1,
-     "shaOrigen": "f3f88d707d247570b490df31d19e4e716e09847e",
-     "dur": 30,
-     "w": 1080,
-     "h": 1920,
-     "name": "un-domingo-en-el-refugio-v24-happy-home-v1.mp4",
-     "path": "archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v24-happy-home-v1.mp4",
-     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/un-domingo-en-el-refugio-v24-happy-home-v1.mp4",
-     "sha": "f3f88d707d247570b490df31d19e4e716e09847e",
-     "type": "video/mp4",
-     "size": 8159047,
-     "orden": 2
-    },
-    {
-     "id": "e7c9d60f-34b9-4667-b673-0d713963d77e",
-     "by": "javi",
-     "at": "2026-11-19T17:55:44.444Z",
-     "base": "portada-un-domingo-en-el-refugio",
-     "version": 2,
-     "shaOrigen": "41347174f12c38e7baab145ace3490194f3618c2",
-     "name": "portada-un-domingo-en-el-refugio-v2.webp",
-     "path": "archivos/3.-videos-lifestyle/portada-un-domingo-en-el-refugio-v2.webp",
-     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/portada-un-domingo-en-el-refugio-v2.webp",
-     "sha": "d7619ff884c1bcead9b8d0579fc264ff07202812",
-     "type": "image/webp",
-     "size": 378212,
-     "orden": 3
-    },
-    {
-     "id": "f5c0828d-6688-43f2-94a7-df17dfdd8626",
-     "by": "javi",
-     "at": "2026-11-19T17:56:00.063Z",
-     "base": "portada-a-banda-azul",
-     "version": 1,
-     "shaOrigen": "a08e6bee9e808c9f88c0ded651cdb6a6e38d4971",
-     "name": "portada-a-banda-azul-v1.webp",
-     "path": "archivos/3.-videos-lifestyle/portada-a-banda-azul-v1.webp",
-     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/portada-a-banda-azul-v1.webp",
-     "sha": "6c171af54306438a378bf71d3e5de0ae2329dca4",
-     "type": "image/webp",
-     "size": 320910,
-     "orden": 4
-    },
-    {
-     "id": "1d88c39e-adfc-4cb0-befb-eee94de49148",
-     "by": "javi",
-     "at": "2026-11-19T17:56:07.494Z",
-     "base": "portada-c-tarjeta",
-     "version": 1,
-     "shaOrigen": "d2bec4615546b1174ba7b264b0bb293a4b01ef04",
-     "name": "portada-c-tarjeta-v1.webp",
-     "path": "archivos/3.-videos-lifestyle/portada-c-tarjeta-v1.webp",
-     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/3.-videos-lifestyle/portada-c-tarjeta-v1.webp",
-     "sha": "783e58af7f095857401f07474185bc1b573f0194",
-     "type": "image/webp",
-     "size": 355476,
-     "orden": 5
+     "extra": true
     }
    ],
    "checklist": [],
@@ -2059,8 +1956,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T17:56:51.112Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T17:57:29.478Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7958,6 +7855,14 @@
  ],
  "comments": [
   {
+   "id": "0201b3f7-7675-45ce-902a-94da21c5cffc",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Lo reviso",
+   "fileIds": [],
+   "createdAt": "2026-11-19T17:57:29.483Z"
+  },
+  {
    "id": "085dbfbf-1b8c-4047-8d27-4d8232ecaad0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10766,6 +10671,16 @@
  ],
  "activity": [
   {
+   "id": "2e462e55-435b-45c4-b432-ab3ec7c0e8a6",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T17:57:29.485Z"
+  },
+  {
    "id": "4ed9bcfa-e70d-43ce-b026-6d7fdd1b89a4",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13521,6 +13436,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5d11680c-c9aa-477f-a6c9-0791d31eec0a",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Lo reviso",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Lo reviso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T17:57:29.487Z"
+  },
+  {
+   "id": "23e45bf4-73bc-4a5f-ac73-6481c53dc22e",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Lo reviso",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Lo reviso",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T17:57:29.486Z"
+  },
   {
    "id": "a298a04a-f24f-41f3-8dc1-4a2487e32d9f",
    "to": "flavio",
@@ -20216,8 +20161,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T17:39:36.978Z",
-   "hasta": "2026-11-19T17:39:36.973Z",
+   "at": "2026-11-19T17:57:29.483Z",
+   "hasta": "2026-11-19T17:57:29.478Z",
    "que": "comentario"
   },
   {

@@ -13443,13 +13443,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Lo reviso",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Lo reviso",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T17:57:29.487Z"
+   "createdAt": "2026-11-19T17:57:29.487Z",
+   "readAt": "2026-11-19T17:59:16.470Z"
   },
   {
    "id": "23e45bf4-73bc-4a5f-ac73-6481c53dc22e",

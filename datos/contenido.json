@@ -1689,8 +1689,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:16:59.154Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-18T23:00:45.234Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
   },
@@ -16690,13 +16690,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Flavio  @Maca Recuerden que no podemos usar música registrada de famosos. Si us…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:16:44.902Z"
+   "createdAt": "2026-11-19T14:16:44.902Z",
+   "readAt": "2026-11-19T14:19:29.627Z"
   },
   {
    "id": "511b91ad-bfc3-4e52-8f02-95f4eb6f4768",
@@ -29259,9 +29260,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-18T23:00:45.236Z",
+   "at": "2026-11-19T14:19:29.630Z",
    "hasta": "2026-11-18T23:00:45.234Z",
-   "que": "comentario"
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

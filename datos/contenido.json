@@ -2091,8 +2091,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T19:40:23.332Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-19T19:42:49.992Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "31d8057f-6849-4e09-a9f6-921ac21f51b6",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Dame un rato q lamentablemente ahora no puedo",
+   "fileIds": [],
+   "createdAt": "2026-11-19T19:42:50.000Z"
+  },
+  {
    "id": "48ed6433-2cb2-4a65-b2f1-d809ee69c706",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10930,6 +10938,16 @@
  ],
  "activity": [
   {
+   "id": "4606148d-3a3d-4bef-90ff-01e466b665b5",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T19:42:50.002Z"
+  },
+  {
    "id": "293b693c-1921-482c-8aad-87a83958a8be",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13865,6 +13883,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ad780f3f-caae-4266-be90-03ad49539894",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Dame un rato q lamentablemente ahora no puedo",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Dame un rato q lamentablemente ahora no puedo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:42:50.004Z"
+  },
+  {
+   "id": "c4a0c397-e3cd-4aa4-83a9-0c285c238624",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Dame un rato q lamentablemente ahora no puedo",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Dame un rato q lamentablemente ahora no puedo",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:42:50.003Z"
+  },
   {
    "id": "c6f6311e-d1b6-4dae-b167-1cbf57a8731b",
    "to": "flavio",
@@ -21059,9 +21107,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T19:39:53.643Z",
-   "hasta": "2026-11-19T19:20:03.188Z",
-   "que": "pieza"
+   "at": "2026-11-19T19:42:49.998Z",
+   "hasta": "2026-11-19T19:42:49.992Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

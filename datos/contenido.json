@@ -1141,7 +1141,7 @@
       "08 · Filtros",
       "Filtro en primer plano",
       "Muchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo.",
-      "Este lo sacaría,"
+      ""
      ],
      [
       "09 · Cierre",
@@ -1223,7 +1223,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T13:07:12.801Z",
+   "updatedAt": "2026-11-19T13:17:56.211Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
@@ -10315,6 +10315,16 @@
  ],
  "activity": [
   {
+   "id": "359089b4-96f9-4afa-aec2-d7c3ee634c5b",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó la estructura",
+   "meta": null,
+   "createdAt": "2026-11-19T13:17:56.212Z"
+  },
+  {
    "id": "c0f996fc-f717-4c52-bf29-8e14ca2f0eae",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -16595,6 +16605,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "83966ac5-fb73-4d52-ad84-7a2aa2a4424f",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "en “Aire nuevo sin abrir la ventana”: editó la estructura",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio editó la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T13:17:56.214Z"
+  },
+  {
+   "id": "8c00b72b-95d1-485c-9e23-7ec3f9f54210",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "update",
+   "text": "editó “Aire nuevo sin abrir la ventana” (la estructura)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio editó la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T13:17:56.213Z"
+  },
   {
    "id": "d3e62a01-57fc-4a97-b7c0-8d4a368892c8",
    "to": "javi",

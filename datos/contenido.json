@@ -13236,13 +13236,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (copy)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó copy",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:16:32.414Z"
+   "createdAt": "2026-11-19T16:16:32.414Z",
+   "readAt": "2026-11-19T16:24:37.341Z"
   },
   {
    "id": "470a057d-a348-4dd0-bc01-d20797bc46aa",
@@ -19619,8 +19620,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T16:16:13.325Z",
-   "hasta": "2026-11-19T16:14:36.063Z",
+   "at": "2026-11-19T16:24:37.343Z",
+   "hasta": "2026-11-19T16:16:32.414Z",
    "que": "pieza"
   },
   {

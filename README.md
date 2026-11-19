@@ -29,7 +29,7 @@ Además de fotos y videos, una pieza puede llevar una **página interactiva**: p
 
 **Si la subida se corta** (se cae la señal, se bloquea el teléfono, se cierra la app), no queda nada a medias: el `index.html` se sube **al final**, así que el interactivo que ya estaba sigue funcionando igual. En la pieza aparece el aviso rojo diciendo en qué archivo se cortó, y **Reintentar** retoma desde ahí: lo que ya había llegado no se vuelve a subir. Mientras sube, la app pide que el teléfono no se duerma y muestra cuántos MB van.
 
-Antes de empezar una subida grande (más de 60 MB) la app avisa cuánto pesa y cuántos archivos son, para que sepas que va a tardar. Cada archivo suelto tiene que pesar menos de 24 MB: si uno se pasa, no se sube nada y la app dice cuál es.
+Antes de empezar una subida grande (más de 60 MB) la app avisa cuánto pesa y cuántos archivos son, para que sepas que va a tardar. Cada archivo suelto tiene que pesar menos de 40 MB: si uno se pasa, no se sube nada y la app dice cuál es.
 
 **Para actualizarla:** se toca **Actualizar** en la tarjeta del interactivo y se elige el **.zip completo nuevo**. No se duplica: se reemplaza lo que cambió, se borra lo que el zip nuevo ya no trae, y la versión sube a 2, 3… Los archivos que siguen iguales (el video, por ejemplo) no se vuelven a subir, así que actualizar solo los textos es cuestión de segundos.
 
@@ -37,7 +37,7 @@ Antes de empezar una subida grande (más de 60 MB) la app avisa cuánto pesa y c
 
 **El enlace del original (solo lo ve quien administra):** en la tarjeta se puede guardar el enlace de donde salió el interactivo (por ejemplo el artefacto en Claude). Flavio y Maca no lo ven —a ellos les queda el botón *Abrir* y nada más—, y cualquier enlace a Claude que se pegue en *Enlaces* también queda oculto para ellos, porque sin la cuenta de Javi no les serviría. Sirve para volver a él cuando haya que exportar una versión nueva, pero **no se actualiza solo**: Claude no deja que sus artefactos se muestren dentro de otra página ni que se descarguen sin la sesión de uno, así que el contenido vive siempre en el repositorio. El camino corto para actualizar es: en Claude, descargar el .zip → soltarlo sobre la pieza (o *Actualizar*) → *Guardar cambios*.
 
-Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a la clave de la app (si guarda algo “recordado”, como la última pista elegida, no lo va a recordar). Cada archivo puede pesar hasta 24 MB, y como todo queda en el repositorio, conviene no dejar interactivos que ya no se usan: **Quitar** borra también sus archivos.
+Un par de cuidados: la página se abre **aislada**, sin acceso a los datos ni a la clave de la app (si guarda algo “recordado”, como la última pista elegida, no lo va a recordar). Cada archivo puede pesar hasta 40 MB, y como todo queda en el repositorio, conviene no dejar interactivos que ya no se usan: **Quitar** borra también sus archivos.
 
 ## Cualquier tipo de archivo en una pieza
 
@@ -49,7 +49,7 @@ Cómo se ve cada cosa:
 - **Lo que no se puede ver** (una planilla, un .psd): muestra su extensión y el nombre, y al tocarlo se descarga.
 - Los **PDF** se siguen viendo dentro de la app.
 
-Un audio pasa tal cual (no se recomprime); el tope de 24 MB por archivo sigue siendo el mismo para todos. Un .zip con un `index.html` adentro sigue quedando como **interactivo**, no como archivo suelto.
+Un audio pasa tal cual (no se recomprime); el tope de 40 MB por archivo sigue siendo el mismo para todos. Un .zip con un `index.html` adentro sigue quedando como **interactivo**, no como archivo suelto.
 
 ## Ver cualquier documento sin bajarlo
 
@@ -499,13 +499,30 @@ Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*
 
 ## Archivos pesados
 
-Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Los audios y los documentos se suben tal cual, sin tocarlos. Un **video de más de 24 MB se comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio, y se sube esa copia. Tarda lo que dura el video, y mientras tanto se ve el avance.
+Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Los audios y los documentos se suben tal cual, sin tocarlos.
+
+**Los videos se suben tal cual hasta 40 MB.** Un reel de 30 s en 1080×1920 bien exportado pesa entre 20 y 40 MB, así que en la práctica llega entero, con sus 30 fotogramas por segundo y su tamaño original. Solo si se pasa de ahí (o si viene en 4K, o con un bitrate desproporcionado) se **comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio. Tarda lo que dura el video y se ve el avance. Y si GitHub igual lo rechaza por tamaño, recién ahí se achica y se vuelve a intentar, para no perder calidad por adelantado.
+
+### Por qué el tope es 40 MB y no 24
+
+El 19 de noviembre, Maca avisó que un reel “entre el segundo 1 y 3 se corta”. No era el video de Javi: era la app. Con el tope anterior, ese reel se pasaba y se volvía a grabar aquí dentro — y esa regrabación **se hace en vivo**, reproduciendo el video y capturando lo que se alcanza a ver. Todo lo que al navegador le cueste queda grabado tal cual.
+
+Midiendo el archivo que había quedado guardado: **1,77 segundos congelados a partir del segundo 0,87**, 559 fotogramas donde debían ir 944 (17,8 por segundo en vez de 30) y **608×1080 en vez de 1080×1920** —porque la medida se tomaba del lado largo en vez del corto—. Los otros reels de esa semana tenían lo mismo en menor grado.
+
+Lo que cambió:
+
+- el tope subió a **40 MB**, y ahora solo se comprime lo que de verdad no entra (antes bastaba con pasar de 6 MB y ~4,5 Mbps, que es un 1080p normal);
+- cuando hay que comprimir, la grabación **empieza recién con el primer fotograma dibujado**, y si el video se atasca **se pausa la grabación** y sigue cuando vuelve: el atasco ya no queda congelado dentro del archivo;
+- el tamaño se calcula por el **lado corto**, así un vertical de 1080×1920 ya no queda en la mitad;
+- al terminar se compara la duración con la del original y, si se perdió más de medio segundo, **la app lo dice** en la pieza en vez de dejarlo pasar.
+
+Los videos que ya estaban subidos antes de este arreglo son esas copias degradadas: para tenerlos bien hay que **volver a subir el original**.
 
 Cuando el computador no deja leer el archivo (pasa si se eligió mientras todavía se descargaba, o si está en iCloud/Drive sin bajar), la app lo intenta una segunda vez sola y, si tampoco, lo dice con esas palabras en vez de un error técnico.
 
 Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o tú desde dos aparatos) guardan al mismo tiempo, la app reintenta sola en vez de fallar con un error de GitHub.
 
-**Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 25 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
+**Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 45 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 
@@ -557,7 +574,7 @@ Todo vive en el repositorio, así que la app cuida el espacio sola:
 
 - **Las fotos se guardan en el formato más liviano** que el navegador sepa escribir (normalmente **WebP**, que pesa como la mitad de un JPEG igual de bueno) y achicadas a 1800 px. En las pruebas, una foto de 180 KB quedó en 106 KB sin que se note. Funciona igual desde el teléfono: si la foto viene sin tipo (pasa en iPhone) se reconoce por el nombre, y si es tan grande que Safari no la puede abrir de una, se abre de la otra forma en vez de rendirse.
 - **No se guarda dos veces lo mismo.** Antes de subir, la app compara el contenido con lo que ya está: si ese archivo exacto ya existe —en esta pieza o en otra— no lo vuelve a subir, lo enlaza. Al quitar un archivo que otra pieza también usa, solo se saca de la pieza, no se borra.
-- **Los videos se comprimen cuando conviene**, no solo cuando no entran: si vienen en 4K o con mucho más dato del necesario (más de ~4,5 Mbps), se vuelven a grabar más livianos. Un video que ya está bien no se toca, para no perder calidad por nada.
+- **Los videos se suben tal cual** hasta 40 MB: comprimir aquí dentro siempre cuesta calidad (ver *Por qué el tope es 40 MB*), así que solo se hace con lo que no entra, con el 4K o con un bitrate desproporcionado (más de ~14 Mbps).
 - **Los nombres del teléfono se arreglan solos.** iOS entrega los archivos como `0232b0d2-556c-…mov`; la app los guarda con el nombre de la pieza (`video-3d-huingan-1`) para poder reconocerlos después.
 - **Si subes un video que parece el mismo** que ya está en la pieza (igual duración y tamaño), la app pregunta antes de repetirlo.
 
@@ -763,5 +780,5 @@ No hace falta conectar ninguna cuenta ni crear claves: Instagram deja mostrar as
 
 - Esto es público: todo lo que se suba lo puede ver cualquiera con el link. Nada de datos de clientes, precios reservados ni capturas con nombres o correos. Para eso, el archivo al Drive y aquí solo el enlace.
 - Lo mismo al importar mensajes: desmarca lo que no quieras que quede a la vista.
-- Hasta 24 MB por archivo. Las fotos grandes se achican solas al subirlas; los videos pesados, mejor al Drive.
+- Hasta 40 MB por archivo. Las fotos grandes se achican solas al subirlas; los videos de más de 40 MB, mejor al Drive.
 - Si abajo dice **“Guardando…”**, espera un segundo antes de cerrar.

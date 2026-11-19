@@ -2665,7 +2665,7 @@ async function subirAMarca(input) {
       if (await convieneComprimir(f)) {
         c.estado = 'comprimiendo…'; pintarCola(cola);
         const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (p) => { c.pct = p * 0.4; pintarCola(cola); });
-        if (chico) archivo = chico;
+        if (chico) { archivo = chico; if (chico.aviso) toast(chico.aviso, 9000); }
       }
       c.estado = ''; c.pct = 0; pintarCola(cola);
       const r = await store.upload(archivo, {
@@ -3749,6 +3749,7 @@ function renderEditor() {
       <button class="btn sm" data-act="ed-reintentar">Reintentar</button>
       <button class="iconbtn" data-act="ed-fallo-ok" aria-label="Entendido">${ic('x', 16)}</button></div>` : ''}
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
+    ${(ED.avisosVideo || []).length ? `<div class="avisobar">${ic('alert', 18)}<span>${ED.avisosVideo.map(esc).join('<br>')}</span><button class="btn sm ghost" data-act="ed-aviso-video-ok">Entendido</button></div>` : ''}
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
       const todosEd = archivosEditor(d);
@@ -3976,7 +3977,7 @@ async function subirFotosComentario(post, files) {
       if (await convieneComprimir(f)) {
         toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo…`, 8000);
         const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8);
-        if (chico) archivo = chico;
+        if (chico) { archivo = chico; if (chico.aviso) toast(chico.aviso, 9000); }
       }
       const shaOrigen = await shaGit(archivo).catch(() => '');
       // el mismo archivo dos veces en la misma pieza no se vuelve a subir: se usa el que ya está
@@ -4117,7 +4118,10 @@ async function addComment() {
 /* Si un video pesa más de lo que GitHub aguanta de una, se vuelve a grabar más liviano
    aquí mismo: se reproduce sin que se oiga, se dibuja en un lienzo más chico y se graba.
    Tarda lo que dura el video. Si algo no se puede (o se perdería el audio), no se toca. */
-const LIMITE_SUBIDA = 24 * 1024 * 1024;
+/* Hasta aquí el archivo sube tal cual, sin tocarlo. Un reel de 30 s en 1080×1920
+   bien exportado pesa entre 20 y 40 MB: recomprimirlo aquí lo estropeaba (ver
+   comprimirVideo), así que el tope se dejó alto y comprimir es el último recurso. */
+const LIMITE_SUBIDA = (window.Store && window.Store.MAX) || 40 * 1024 * 1024;
 const esVideoArchivo = (f) => /^video\//.test(f.type || '') || /\.(mp4|mov|m4v|webm|3gp|avi|mkv)$/i.test(f.name || '');
 // Duración y tamaño de un video, sin descargarlo entero
 function datosVideo(file) {
@@ -4134,14 +4138,17 @@ function datosVideo(file) {
 }
 /* ¿Vale la pena volver a grabarlo más liviano? Solo si de verdad se gana:
    lo que no entra, lo que viene en 4K, o lo que trae mucho más dato del necesario. */
+/* Comprimir aquí siempre pierde calidad (se vuelve a grabar en vivo), así que solo
+   se hace cuando el archivo de verdad no cabe, o cuando es desproporcionado: 4K, o
+   un bitrate altísimo para lo que dura. Un 1080×1920 normal sube entero. */
 async function convieneComprimir(file) {
   if (!esVideoArchivo(file)) return false;
   if (file.size > LIMITE_SUBIDA) return true;
-  if (file.size < 6 * 1024 * 1024) return false;          // chico: ya está bien
+  if (file.size < 20 * 1024 * 1024) return false;         // cabe de sobra: no se toca
   const m = await datosVideo(file);
   if (!m || !m.dur) return false;
   const bits = (file.size * 8) / m.dur;
-  return Math.max(m.w, m.h) > 1920 || bits > 4500000;     // 4K, o más de ~4,5 Mbps
+  return Math.max(m.w, m.h) > 2200 || bits > 14000000;    // 4K, o más de ~14 Mbps
 }
 /* El teléfono entrega los archivos con nombres inservibles (un UUID, IMG_1234…).
    Se les pone el nombre de la pieza para poder reconocerlos después. */
@@ -4163,7 +4170,13 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     await new Promise((ok, mal) => { v.onloadedmetadata = ok; v.onerror = () => mal(new Error('no se pudo leer el video')); });
     const dur = v.duration || 0;
     if (!dur || !isFinite(dur) || !v.videoWidth) throw new Error('video sin duración');
-    const r = Math.min(1, 1080 / Math.max(v.videoWidth, v.videoHeight));
+    /* El lado corto manda: un vertical de 1080×1920 se quedaba en 608×1080 porque se
+       miraba el lado largo. Si para el tamaño que hay que alcanzar no alcanzan los
+       bits, se baja a 720 o a 540 de lado corto, que se ve mejor que 1080 ahogado. */
+    const corto = Math.min(v.videoWidth, v.videoHeight);
+    const bitsPrevios = Math.max(900000, Math.min(6000000, Math.round(((objetivo - 96000 * dur / 8) * 8) / dur)));
+    const ladoCorto = bitsPrevios >= 3500000 ? 1080 : bitsPrevios >= 1800000 ? 720 : 540;
+    const r = Math.min(1, ladoCorto / corto);
     const c = document.createElement('canvas');
     c.width = Math.max(2, Math.round(v.videoWidth * r / 2) * 2);
     c.height = Math.max(2, Math.round(v.videoHeight * r / 2) * 2);
@@ -4179,33 +4192,72 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     destino.stream.getAudioTracks().forEach((t) => stream.addTrack(t));
     const tipo = ['video/mp4;codecs=avc1.4d002a,mp4a.40.2', 'video/mp4', 'video/webm;codecs=vp9,opus', 'video/webm']
       .find((m) => { try { return MediaRecorder.isTypeSupported(m); } catch (e) { return false; } }) || '';
-    const bits = Math.max(900000, Math.min(6000000, Math.round(((objetivo - 96000 * dur / 8) * 8) / dur)));
-    const rec = new MediaRecorder(stream, Object.assign({ videoBitsPerSecond: bits, audioBitsPerSecond: 96000 }, tipo ? { mimeType: tipo } : {}));
+    const rec = new MediaRecorder(stream, Object.assign({ videoBitsPerSecond: bitsPrevios, audioBitsPerSecond: 96000 }, tipo ? { mimeType: tipo } : {}));
     const trozos = [];
     rec.ondataavailable = (e) => { if (e.data && e.data.size) trozos.push(e.data); };
     const listo = new Promise((ok) => { rec.onstop = ok; });
-    rec.start(600);
+
+    /* Esto graba lo que se ve, en vivo: todo lo que al reproductor le cueste queda
+       grabado tal cual. Así se perdían los primeros segundos de los reels (el video
+       se quedaba congelado 1,8 s mientras el navegador terminaba de abrirlo). Por eso:
+         · se espera a que el video esté de verdad listo antes de empezar;
+         · la grabación empieza recién con el primer fotograma dibujado;
+         · si el video se atasca, se pausa la grabación y se sigue cuando vuelve. */
+    const esperar = (ev, ms) => new Promise((ok) => {
+      let t = setTimeout(() => { v.removeEventListener(ev, fin); ok(false); }, ms);
+      const fin = () => { clearTimeout(t); v.removeEventListener(ev, fin); ok(true); };
+      v.addEventListener(ev, fin);
+    });
+    if (v.readyState < 4) await Promise.race([esperar('canplaythrough', 8000), esperar('canplay', 8000)]);
     await v.play();
+    // el primer fotograma dibujado: a partir de aquí sí hay algo que grabar
+    await new Promise((ok) => {
+      const uno = () => { ctx.drawImage(v, 0, 0, c.width, c.height); ok(); };
+      if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(uno);
+      else setTimeout(uno, 120);
+    });
+    rec.start(600);
+    let atascos = 0, atascoDesde = 0, perdido = 0;
+    const atascarse = () => {
+      if (rec.state !== 'recording') return;
+      rec.pause(); atascos++; atascoDesde = Date.now();
+    };
+    const seguir = () => {
+      if (rec.state !== 'paused') return;
+      perdido += Date.now() - atascoDesde;
+      rec.resume();
+    };
+    ['waiting', 'stalled', 'suspend'].forEach((ev) => v.addEventListener(ev, atascarse));
+    ['playing', 'canplaythrough'].forEach((ev) => v.addEventListener(ev, seguir));
     await new Promise((ok) => {
       let ultimo = 0;
       const paso = () => {
-        if (v.ended || v.paused) return ok();
+        if (v.ended || (v.paused && !v.seeking)) return ok();
         ctx.drawImage(v, 0, 0, c.width, c.height);
+        if (rec.state === 'paused') seguir();          // volvió a haber fotogramas
         if (alAvanzar && v.currentTime - ultimo > 0.4) { ultimo = v.currentTime; alAvanzar(Math.min(0.99, v.currentTime / dur)); }
         if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(paso); else requestAnimationFrame(paso);
       };
       v.onended = ok;
       paso();
     });
+    if (rec.state === 'paused') rec.resume();
     rec.stop();
     await listo;
+    if (atascos) console.warn(`el video se atascó ${atascos} ${atascos === 1 ? 'vez' : 'veces'} al comprimir (${Math.round(perdido / 100) / 10}s)`);
     try { actx.close(); } catch (e) { /* nada */ }
     limpiar();
     const salida = tipo.startsWith('video/mp4') ? 'video/mp4' : 'video/webm';
     const blob = new Blob(trozos, { type: salida });
     if (!blob.size || blob.size >= file.size) return null;
     const nombre = (file.name || 'video').replace(/\.[^.]+$/, '') + (salida === 'video/mp4' ? '.mp4' : '.webm');
-    return new File([blob], nombre, { type: salida });
+    const out = new File([blob], nombre, { type: salida });
+    // ¿quedó entero? Si se perdió más de medio segundo por el camino, hay que decirlo
+    const m2 = await datosVideo(out).catch(() => null);
+    if (m2 && m2.dur && Math.abs(m2.dur - dur) > 0.5) {
+      out.aviso = `“${file.name}”: al achicarlo se perdieron ${Math.abs(Math.round((dur - m2.dur) * 10) / 10)} s. Si lo necesitas exacto, expórtalo más liviano (menos de ${prettySize(LIMITE_SUBIDA)}) y vuelve a subirlo.`;
+    }
+    return out;
   } catch (e) {
     limpiar();
     console.warn('no se pudo comprimir', e);
@@ -4267,7 +4319,11 @@ async function subirArchivos(files) {
             if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Comprimiendo “${f.name}”… ${Math.round(pc * 100)}%`; }
           });
           ed.comprimiendo = null; renderEditor();
-          if (chico) { toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000); archivo = chico; }
+          if (chico) {
+            archivo = chico;
+            toast(chico.aviso || `Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, chico.aviso ? 9000 : 4000);
+            if (chico.aviso) ed.avisosVideo = (ed.avisosVideo || []).filter((x) => x !== chico.aviso).concat([chico.aviso]);
+          }
         }
         const info = splitName(archivo.name);
         info.base = nombreUtil(archivo, ed.d, bien);
@@ -4294,13 +4350,31 @@ async function subirArchivos(files) {
           const cola = ed.cola = [{ nombre: f.name, pct: 0, estado: '' }];
           renderEditor();
           const avance = { onProgreso: (p) => { cola[0].pct = p; cola[0].estado = p >= 1 ? 'guardando…' : ''; pintarCola(cola); } };
-          let r;
-          try { r = await store.upload(archivo, Object.assign({ dir: projectName(ed.d), name: nombre }, avance)); }
+          let r, nombreSubida = nombre;
+          const subir = () => store.upload(archivo, Object.assign({ dir: projectName(ed.d), name: nombreSubida }, avance));
+          try { r = await subir(); }
           catch (e1) {
-            if (!/leer el archivo|no está donde estaba/i.test((e1 && e1.message) || '')) throw e1;
-            toast(`“${f.name}” no se dejó leer; lo intento otra vez…`, 3000);   // suele pasar si recién se descargaba
-            await new Promise((ok) => setTimeout(ok, 2500));
-            r = await store.upload(archivo, Object.assign({ dir: projectName(ed.d), name: nombre }, avance));
+            const msg = (e1 && e1.message) || '';
+            if (/pesa demasiado|too large|413/i.test(msg) && esVideoArchivo(archivo)) {
+              /* GitHub no lo aceptó por tamaño. Recién aquí se achica: así se intenta
+                 primero con el archivo tal cual, que es el que se ve bien. */
+              toast(`“${f.name}” no entró entero; lo achico y lo vuelvo a subir…`, 6000);
+              ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
+              const chico2 = await comprimirVideo(archivo, LIMITE_SUBIDA * 0.6, (pc) => {
+                if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Achicando “${f.name}”… ${Math.round(pc * 100)}%`; }
+              });
+              ed.comprimiendo = null; renderEditor();
+              if (!chico2) throw e1;
+              archivo = chico2;
+              const ext2 = (chico2.name.match(/\.([a-z0-9]+)$/i) || [, ''])[1];
+              if (ext2) nombreSubida = nombre.replace(/\.[^.]+$/, '') + '.' + ext2;
+              if (chico2.aviso) ed.avisosVideo = (ed.avisosVideo || []).filter((x) => x !== chico2.aviso).concat([chico2.aviso]);
+              r = await subir();
+            } else if (/leer el archivo|no está donde estaba/i.test(msg)) {
+              toast(`“${f.name}” no se dejó leer; lo intento otra vez…`, 3000);   // suele pasar si recién se descargaba
+              await new Promise((ok) => setTimeout(ok, 2500));
+              r = await subir();
+            } else throw e1;
           }
           ed.cola = [];
           const extra = f.__video ? { dur: f.__video.dur, w: f.__video.w, h: f.__video.h } : {};
@@ -6571,6 +6645,7 @@ const ACTS = {
     renderAll();
     if (ED && sheetOpen) renderEditor();
   },
+  'ed-aviso-video-ok': () => { if (!ED) return; syncDraft(); ED.avisosVideo = []; renderEditor(); },
   'ed-vermas': () => { syncDraft(); ED.verAnteriores = !ED.verAnteriores; renderEditor(); },
   'aviso-abrir': () => openAviso(),
   'aviso-cerrar': () => { syncAviso(); const c = $('#avisocapa'); if (c) c.remove(); },

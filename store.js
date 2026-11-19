@@ -11,6 +11,10 @@
 (function () {
   'use strict';
   const TABLES = ['posts', 'comments', 'activity', 'notifications', 'prefs', 'push_subs', 'dispositivos', 'recursos', 'carpetas', 'vistas'];
+  /* Lo más pesado que se sube tal cual. Un reel de 30 s en 1080×1920 bien exportado
+     anda entre 20 y 40 MB: por debajo de este tope no se toca, porque recomprimirlo
+     en el navegador le come fotogramas (ver comprimirVideo en app.js). */
+  const MAX_SUBIDA = 40 * 1024 * 1024;
   const LS_KEY = 'crono_db_v1';
   const TOKEN_KEY = 'crono_gh_token';
   const API = 'https://api.github.com';
@@ -559,7 +563,8 @@
         x.send(JSON.stringify(body));
       });
       if (r.status >= 200 && r.status < 300) { try { return JSON.parse(r.texto); } catch (e) { return {}; } }
-      let msg = r.status ? 'error ' + r.status : 'se cortó la conexión';
+      let msg = r.status === 413 ? 'GitHub no aceptó el archivo: pesa demasiado para subirlo así'
+        : r.status ? 'error ' + r.status : 'se cortó la conexión';
       try { const e = JSON.parse(r.texto); if (e && e.message) msg = e.message; } catch (e) { /* sin detalle */ }
       // "is at X but expected Y" = alguien más escribió en el repositorio en el mismo momento
       const choque = r.status === 409 || r.status === 422 || /but expected|is at /i.test(msg);
@@ -572,7 +577,7 @@
     },
     async upload(file, opts = {}) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
-      const max = 24 * 1024 * 1024;
+      const max = MAX_SUBIDA;
       const small = await resize(file, 1800, 0.84);
       let blob = small || file;
       // Una foto que sigue pesando demasiado se achica un poco más, hasta que entre
@@ -583,7 +588,7 @@
           if (blob.size <= max) break;
         }
       }
-      if (blob.size > max) throw new Error('pesa más de 24 MB y no se pudo achicar; súbelo a Drive y pega el enlace');
+      if (blob.size > max) throw new Error(`pesa más de ${Math.round(max / 1048576)} MB y no se pudo achicar; súbelo a Drive y pega el enlace`);
       const dir = this.cfg.files + '/' + slug(opts.dir, 'general');
       let name = safeFileName(opts.name || file.name);
       const extNueva = blob !== file && EXT_TIPO[blob.type];
@@ -629,7 +634,7 @@
     },
     async putPath(path, blob, mensaje, shaPrevio, alAvanzar) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
-      if (blob.size > 24 * 1024 * 1024) throw new Error('“' + path.split('/').pop() + '” pesa más de 24 MB');
+      if (blob.size > MAX_SUBIDA) throw new Error('“' + path.split('/').pop() + `” pesa más de ${Math.round(MAX_SUBIDA / 1048576)} MB`);
       const body = { message: mensaje || ('Cronograma: ' + path), content: await toBase64(blob), branch: this.cfg.branch };
       const sha = shaPrevio || await this.shaDe(path);
       if (sha) body.sha = sha;
@@ -697,7 +702,7 @@
   }
 
   window.Store = {
-    uid, slug, safeFileName,
+    uid, slug, safeFileName, MAX: MAX_SUBIDA,
     create(cfg) {
       const r = detectRepo(cfg);
       if (r && !(cfg.GITHUB && cfg.GITHUB.OFF)) { Gh.cfg = r; return Gh; }

@@ -1464,7 +1464,7 @@
    "date": "2026-11-22",
    "inicio": "",
    "format": "carrusel",
-   "status": "revision",
+   "status": "espera",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -1727,9 +1727,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:07:55.755Z",
+   "updatedAt": "2026-11-19T16:11:07.804Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-16T14:49:44.486Z",
+   "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
   {
@@ -10361,6 +10361,19 @@
  ],
  "activity": [
   {
+   "id": "64f80bd1-959f-49ad-867d-519d867b53b0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Esperando aprobación",
+   "meta": {
+    "from": "revision",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-19T16:11:07.834Z"
+  },
+  {
    "id": "4ed9eb5e-f30c-483a-8926-5396e500612e",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -12900,6 +12913,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e0a7375f-b83c-44a9-9615-82f517f8ec7c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:11:07.844Z"
+  },
+  {
+   "id": "c427c205-6a43-4e86-9c64-c95a50ddd76e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:11:07.844Z"
+  },
   {
    "id": "3be00a18-6d88-43f6-a088-8a4b21bcbe5c",
    "to": "maca",
@@ -19224,7 +19267,7 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "javi",
-   "at": "2026-11-18T20:19:26.395Z",
+   "at": "2026-11-19T16:11:11.043Z",
    "hasta": "2026-11-18T20:08:10.793Z",
    "que": "pieza"
   },

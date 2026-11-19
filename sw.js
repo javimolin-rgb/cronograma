@@ -2,7 +2,7 @@
    Al cambiar VERSION, todas las apps instaladas se actualizan solas la próxima vez que se abren. */
 const VERSION = '2026.11.19-3';
 const CACHE = 'crono-' + VERSION;
-const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'store.js', 'zip.js', 'whatsapp.js', 'app.js', 'icon.svg', 'icon-192.png'];
+const SHELL = ['./', 'index.html', 'styles.css', 'config.js', 'store.js', 'zip.js', 'documentos.js', 'whatsapp.js', 'app.js', 'icon.svg', 'icon-192.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).catch(() => {}));

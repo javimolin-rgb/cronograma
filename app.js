@@ -164,6 +164,11 @@ function tandaLabel(t) {
 }
 const findFile = (fid) => {
   for (const p of S.db.posts) { const f = (p.files || []).find((x) => x.id === fid); if (f) return { post: p, file: f }; }
+  // uno recién subido todavía no está guardado en la pieza: se mira el borrador abierto
+  if (typeof ED !== 'undefined' && ED && ED.d) {
+    const f = (ED.d.files || []).find((x) => x.id === fid);
+    if (f) return { post: ED.d, file: f };
+  }
   return null;
 };
 const projectName = (p) => (p.campaign || '').trim() || 'Sin proyecto';
@@ -1250,6 +1255,162 @@ function entriesOfProject(name, lastOnly) {
 }
 
 /* ---------- ver un archivo ---------- */
+/* ---------- ver un documento sin bajarlo ----------
+   Las planillas, los documentos y las presentaciones se abren aquí mismo
+   (documentos.js los lee por dentro). Lo que no se sabe abrir sigue teniendo
+   su botón de descargar. */
+let DOCV = null;   // { fid, nombre, datos, hoja }
+const verDocAqui = (f) => !!(f && window.Doc && !esMediaOAudio(f) && !isPdf(f) && Doc.puedeVer(f.name));
+function soltarDoc() { if (DOCV) { try { Doc.soltar(DOCV.datos); } catch (e) { /* nada */ } DOCV = null; } }
+
+async function abrirDocumento(file) {
+  const caja = $('#docvisor');
+  if (!caja) return;
+  try {
+    const blob = await fetchFile(file);
+    const datos = await Doc.ver(blob, file.name);
+    if (!$('#docvisor')) { Doc.soltar(datos); return; }     // cerraron la hoja mientras tanto
+    soltarDoc();
+    DOCV = { fid: file.id, nombre: file.name, datos, hoja: 0 };
+    pintarDocumento();
+  } catch (e) {
+    caja.innerHTML = `<div class="noprev"><span class="ext">${esc((extOf(file) || '?').toUpperCase())}</span>
+      <p class="hint">No se pudo abrir aquí: ${esc(e.message || e)}. Descárgalo para verlo.</p></div>`;
+  }
+}
+function pintarDocumento() {
+  const caja = $('#docvisor');
+  if (!caja || !DOCV) return;
+  caja.innerHTML = docHtml(DOCV.datos, DOCV.hoja);
+  caja.scrollTop = 0;
+  // una planilla se puede traer a la pieza tal cual, con sus imágenes
+  const pf = $('#pfarchivo');
+  if (pf && DOCV.datos.tipo === 'hoja' && esAdmin() && store.canWrite && !$('[data-act="doc-aestructura"]')) {
+    pf.insertAdjacentHTML('afterbegin', `<button class="btn ghost" data-act="doc-aestructura" data-f="${esc(DOCV.fid)}" title="Traer esta hoja a la Estructura de la pieza">${ic('table', 17)} A la Estructura</button>`);
+  }
+}
+function docHtml(d, cual) {
+  if (!d) return '';
+  const aviso = d.aviso ? `<p class="hint">${ic('alert', 14)} ${esc(d.aviso)}</p>` : '';
+  if (d.tipo === 'hoja') {
+    const h = d.hojas[Math.min(cual || 0, d.hojas.length - 1)] || d.hojas[0];
+    const saltar = {};                                       // celdas que se comió una unión
+    (h.unidas || []).forEach((u) => {
+      for (let f = u.f1; f <= u.f2; f++) for (let c = u.c1; c <= u.c2; c++) if (f !== u.f1 || c !== u.c1) saltar[f + ':' + c] = true;
+    });
+    const union = {};
+    (h.unidas || []).forEach((u) => { union[u.f1 + ':' + u.c1] = u; });
+    const celda = (txt, imgs, f, c) => {
+      const u = union[f + ':' + c];
+      const span = u ? `${u.c2 > u.c1 ? ` colspan="${u.c2 - u.c1 + 1}"` : ''}${u.f2 > u.f1 ? ` rowspan="${u.f2 - u.f1 + 1}"` : ''}` : '';
+      const fotos = (imgs || []).map((m) => `<img src="${esc(m.url)}" alt="" loading="lazy" data-act="doc-foto" data-u="${esc(m.url)}">`).join('');
+      return `<td${span}>${fotos ? `<div class="docimgs">${fotos}</div>` : ''}${esc(txt).replace(/\n/g, '<br>')}</td>`;
+    };
+    const filas = h.filas.map((fila, f) => `<tr>${fila.map((txt, c) => (saltar[f + ':' + c] ? '' : celda(txt, (h.imgs || {})[f + ':' + c], f, c))).join('')}</tr>`).join('');
+    return `${aviso}${d.hojas.length > 1 ? `<div class="dochojas">${d.hojas.map((x, i) => `<button class="chip${i === (cual || 0) ? ' on' : ''}" data-act="doc-hoja" data-i="${i}">${esc(x.nombre)}</button>`).join('')}</div>` : ''}
+      <div class="dochoja"><table class="docxls">${filas}</table></div>`;
+  }
+  if (d.tipo === 'doc') {
+    return aviso + `<div class="docpapel">${d.partes.map((p) => {
+      if (p.que === 'tabla') return `<table class="docxls">${p.filas.map((f) => `<tr>${f.map((c) => `<td>${esc(c).replace(/\n/g, '<br>')}</td>`).join('')}</tr>`).join('')}</table>`;
+      const fotos = (p.imgs || []).map((m) => `<img src="${esc(m.url)}" alt="" loading="lazy" data-act="doc-foto" data-u="${esc(m.url)}">`).join('');
+      const t = esc(p.txt).replace(/\n/g, '<br>');
+      if (p.titulo) return `<h${Math.min(p.titulo + 1, 4)}>${t}</h${Math.min(p.titulo + 1, 4)}>${fotos}`;
+      return `<p${p.lista ? ' class="docli"' : ''}>${t}</p>${fotos}`;
+    }).join('')}</div>`;
+  }
+  if (d.tipo === 'diapos') {
+    return aviso + `<div class="docdiapos">${d.diapos.map((s) => `<div class="docdiapo"><b>${s.n}</b>
+      ${(s.imgs || []).map((m) => `<img src="${esc(m.url)}" alt="" loading="lazy" data-act="doc-foto" data-u="${esc(m.url)}">`).join('')}
+      ${s.textos.map((t) => `<p>${esc(t).replace(/\n/g, '<br>')}</p>`).join('') || '<p class="hint">(sin texto)</p>'}</div>`).join('')}</div>`;
+  }
+  if (d.tipo === 'texto') return aviso + `<pre class="doctexto">${esc(d.txt)}</pre>`;
+  if (d.tipo === 'lista') {
+    return aviso + `<div class="doclista">${d.archivos.map((f) => `<div><span>${esc(f.nombre)}</span><small>${esc(prettySize(f.peso))}</small></div>`).join('')}</div>`;
+  }
+  return '';
+}
+
+/* De la planilla a la Estructura de la pieza: las filas con su texto y, en las
+   casillas donde había una imagen pegada, la misma imagen (que se sube a la pieza
+   como material de apoyo). Es lo que antes había que rehacer a mano. */
+async function traerHojaAEstructura(fid) {
+  const hit = findFile(fid);
+  if (!hit || !DOCV || !DOCV.datos || DOCV.datos.tipo !== 'hoja') return;
+  if (!esAdmin() || !requireWrite()) return;
+  const post = S.db.posts.find((p) => p.id === hit.post.id) || hit.post;
+  const h = DOCV.datos.hojas[DOCV.hoja] || DOCV.datos.hojas[0];
+  const imgs = h.imgs || {};
+  const tieneImg = (f, c) => !!(imgs[f + ':' + c] || []).length;
+
+  // filas y columnas que de verdad traen algo (las vacías de la planilla no sirven aquí)
+  const filas = h.filas.map((f, i) => i).filter((i) => (h.filas[i] || []).some((c) => String(c).trim()) || (h.filas[i] || []).some((c, j) => tieneImg(i, j)));
+  const cols = [];
+  for (let c = 0; c < h.ancho; c++) {
+    if (filas.some((i) => String((h.filas[i] || [])[c] || '').trim() || tieneImg(i, c))) cols.push(c);
+  }
+  if (filas.length < 2 || !cols.length) { toast('Esa hoja no tiene una tabla que traer', 4000); return; }
+  if (tablaValida(post.guionTabla) && !confirm('Esta pieza ya tiene una estructura.\n\n¿La reemplazo con la de la planilla? (el guión de voz en off se vuelve a armar con la columna que corresponda)')) return;
+
+  const cab = filas[0], cuerpo = filas.slice(1);
+  /* En la planilla el título suele estar en una celda unida (IMAGEN ocupa A y B):
+     la columna de al lado hereda ese nombre en vez de quedar como “Columna 2”. */
+  const tituloCol = (c, i) => {
+    const propio = String((h.filas[cab] || [])[c] || '').trim();
+    if (propio) return propio;
+    const u = (h.unidas || []).find((x) => x.f1 <= cab && x.f2 >= cab && x.c1 <= c && x.c2 >= c);
+    const heredado = u ? String((h.filas[u.f1] || [])[u.c1] || '').trim() : '';
+    if (heredado) return `${heredado} (${c - (u ? u.c1 : c) + 1})`;
+    return 'Columna ' + (i + 1);
+  };
+  const t = {
+    cols: cols.map((c, i) => tituloCol(c, i)),
+    filas: cuerpo.map((i) => cols.map((c) => String((h.filas[i] || [])[c] || ''))),
+    ids: cuerpo.map(() => uid())
+  };
+
+  // las imágenes pegadas se suben a la pieza y quedan apuntadas en su casilla
+  const pendientes = [];
+  cuerpo.forEach((i, fi) => cols.forEach((c, ci) => {
+    (imgs[i + ':' + c] || []).forEach((m) => pendientes.push({ fi, ci, m }));
+  }));
+  // también las que estaban en la fila del título: se bajan a la primera fila
+  cols.forEach((c, ci) => (imgs[cab + ':' + c] || []).forEach((m) => { if (t.filas.length) pendientes.push({ fi: 0, ci, m }); }));
+
+  if (pendientes.length) {
+    const base = slugify(post.title, 'estructura');
+    const archivos = pendientes.map((p, k) => new File([p.m.blob], `${base}-ref-${pad(k + 1)}.${(p.m.nombre.match(/\.([a-z0-9]+)$/i) || [, 'png'])[1].toLowerCase()}`, { type: p.m.blob.type || 'image/png' }));
+    toast(`Subiendo ${archivos.length} ${archivos.length === 1 ? 'imagen' : 'imágenes'} de la planilla…`, 12000);
+    const ids = await subirFotosComentario(post, archivos);
+    pendientes.forEach((p, k) => {
+      const id = ids[k];
+      if (!id) return;
+      const fid2 = t.ids[p.fi];
+      ponerImgCelda(t, fid2, p.ci, imgsPorClave(t, fid2, p.ci).concat([id]));
+    });
+  }
+
+  const guardada = S.db.posts.find((p) => p.id === post.id) || post;
+  const d = clone(guardada);
+  const vozVieja = String(d.guion || '').trim();
+  d.guionTabla = podarTabla(t);
+  // un carrusel no lleva voz en off: la columna queda marcada como “ninguna”
+  if (sinVoz(d)) d.guionTabla.voz = -1;
+  /* Si la planilla trae la columna de voz vacía, no se pisa el guión que ya estaba:
+     se vuelve a repartir ese texto en la tabla nueva. */
+  const cv = colVoz(d.guionTabla);
+  const vozVacia = cv < 0 || d.guionTabla.filas.every((f) => !String(f[cv] || '').trim());
+  // columna de voz vacía y nada que recuperar: la pieza queda sin voz en off, no con rayas
+  if (vozVacia && !vozVieja) d.guionTabla.voz = -1;
+  sincronizarGuion(d, !!(vozVacia && vozVieja));
+  d.updatedAt = nowISO(); d.updatedBy = S.me.id;
+  await save('posts', d);
+  await log(d, 'edit', `trajo la estructura desde “${DOCV.nombre}”`);
+  toast(`Listo: ${t.filas.length} filas en la Estructura de “${d.title}”`, 5000);
+  closeSheet();
+  setTimeout(() => openEditor(d.id), 60);
+}
+
 function openFilePreview(fid) {
   const hit = findFile(fid);
   if (!hit) { toast('Ese archivo ya no está'); return; }
@@ -1263,6 +1424,7 @@ function openFilePreview(fid) {
   else if (isPdf(file)) media = `<iframe src="${esc(src)}" title="${esc(file.name)}"></iframe>`;
   else if (isAudio(file)) media = `<div class="sonido"><span class="disco">${ic('music', 34)}</span><b>${esc(file.name)}</b>
     <audio src="${esc(src)}" controls preload="metadata"></audio></div>`;
+  else if (verDocAqui(file)) media = `<div class="docvisor" id="docvisor"><p class="hint">Abriendo ${esc(Doc.comoSeLlama(file.name))}…</p></div>`;
   else media = `<div class="noprev"><span class="ext">${esc((extOf(file) || '?').toUpperCase())}</span><p class="hint">Este tipo de archivo no se puede ver aquí. Descárgalo para abrirlo.</p></div>`;
   openSheet(`<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button>
       <h2>${esc(esAdmin() ? file.name : post.title)}</h2><span style="width:40px"></span></div>
@@ -1278,9 +1440,10 @@ function openFilePreview(fid) {
       </div>
       ${esAdmin() && all.length > 1 ? `<label class="lbl">Otras versiones</label><div class="vlist">${all.map((v) => `<button class="vrow${v.id === file.id ? ' on' : ''}" data-act="file-open" data-f="${esc(v.id)}"><b>v${v.version}</b><span>${esc(v.name)}</span><small>${esc(prettySize(v.size))}</small></button>`).join('')}</div>` : ''}
     </div>
-    <div class="pf">${esAdmin() ? `<button class="btn ghost" data-act="file-compartir" data-f="${esc(file.id)}" aria-label="Compartir enlace" title="Compartir enlace">${ic('share', 18)}</button>` : ''}
+    <div class="pf" id="pfarchivo">${esAdmin() ? `<button class="btn ghost" data-act="file-compartir" data-f="${esc(file.id)}" aria-label="Compartir enlace" title="Compartir enlace">${ic('share', 18)}</button>` : ''}
       <button class="btn ghost" data-act="open-post" data-id="${esc(post.id)}">Ver pieza</button>
       <button class="btn" data-act="file-dl" data-f="${esc(file.id)}">${ic('download', 18)} Descargar</button></div>`, true);
+  if (verDocAqui(file)) abrirDocumento(file);
 }
 
 /* ---------- multimedia: vistas previas y galería a pantalla completa ---------- */
@@ -1910,6 +2073,34 @@ function asegurarIds(t) {
   if (t.ids.length > t.filas.length) t.ids = t.ids.slice(0, t.filas.length);
   return t;
 }
+/* Imágenes dentro de las celdas de la estructura: igual que en la planilla que
+   manda Flavio, pero aquí. En la tabla solo se guarda a qué archivo de la pieza
+   apunta cada celda (t.imgs), así la foto vive una sola vez, en los archivos del
+   proyecto, y se puede ver en grande como cualquier otra. */
+const claveCelda = (fid, ci) => `${fid}:${ci}`;
+function imgsCelda(t, d, fi, ci) {
+  const fid = (t.ids || [])[fi];
+  if (!fid || !t.imgs) return [];
+  return (t.imgs[claveCelda(fid, ci)] || [])
+    .map((id) => (d.files || []).find((f) => f.id === id)).filter(Boolean);
+}
+function ponerImgCelda(t, fid, ci, ids) {
+  t.imgs = t.imgs || {};
+  const k = claveCelda(fid, ci);
+  if (ids && ids.length) t.imgs[k] = ids; else delete t.imgs[k];
+  if (!Object.keys(t.imgs).length) delete t.imgs;
+}
+const imgsPorClave = (t, fid, ci) => ((t.imgs || {})[claveCelda(fid, ci)] || []).slice();
+// Todas las imágenes de la tabla, en orden de lectura: para verlas de corrido
+function imgsTabla(t, d) {
+  const out = [];
+  if (!tablaValida(t)) return out;
+  t.filas.forEach((f, fi) => f.forEach((c, ci) => imgsCelda(t, d, fi, ci).forEach((x) => { if (!out.some((y) => y.id === x.id)) out.push(x); })));
+  return out;
+}
+const miniCelda = (f) => `<button class="gimg" data-act="gt-ver" data-id="${esc(f.id)}" title="${esc(f.name)}" aria-label="Ver ${esc(f.name)}">${miniMedia(f) || ic('image', 16)}</button>`;
+const imgsCeldaHtml = (lista) => (lista.length ? `<div class="gimgs">${lista.map(miniCelda).join('')}</div>` : '');
+
 const PARTE = '\n\n';
 const SOLO_RAYA = /^[—–-]+$/;
 /* Tabla → texto: una fila, un párrafo, SIEMPRE en el mismo orden. Una fila sin voz
@@ -1998,7 +2189,7 @@ function tablaHtml(t, d) {
     <thead><tr>${t.cols.map((c, i) => `<th${i === v ? ' class="colvoz"' : ''}>${esc(c)}</th>`).join('')}</tr></thead>
     <tbody>${t.filas.map((f, fi) => {
       const notas = d ? notasDe(d, ids[fi]) : [];
-      return `<tr>${f.map((c, ci) => `<td${ci === v ? ' class="colvoz"' : ''}>${esc(c).replace(/\n/g, '<br>')}${ci === 0 && notas.length ? `<i class="ntag" title="${esc(notas.length + (notas.length === 1 ? ' comentario' : ' comentarios'))}">${ic('msg', 11)}${notas.length}</i>` : ''}</td>`).join('')}</tr>`;
+      return `<tr>${f.map((c, ci) => `<td${ci === v ? ' class="colvoz"' : ''}>${d ? imgsCeldaHtml(imgsCelda(t, d, fi, ci)) : ''}${esc(c).replace(/\n/g, '<br>')}${ci === 0 && notas.length ? `<i class="ntag" title="${esc(notas.length + (notas.length === 1 ? ' comentario' : ' comentarios'))}">${ic('msg', 11)}${notas.length}</i>` : ''}</td>`).join('')}</tr>`;
     }).join('')}</tbody>
   </table></div>${d && (d.guionNotas || []).length ? `<div class="gnotastodas">${t.filas.map((f, fi) => {
     const ns = d ? notasDe(d, ids[fi]) : [];
@@ -2014,7 +2205,11 @@ function tablaEditorHtml(t, d) {
     <thead><tr>${t.cols.map((c, i) => `<th${i === v ? ' class="colvoz"' : ''}><input class="gcel" data-f="-1" data-c="${i}" value="${esc(c)}" aria-label="Título de la columna ${i + 1}">${i === v ? '<i class="vozt">voz en off</i>' : ''}</th>`).join('')}<th class="gacc"></th></tr></thead>
     <tbody>${t.filas.map((f, fi) => {
       const fid = t.ids[fi], ns = notasDe(d, fid), abierta = ED && ED.notaFila === fid;
-      return `<tr${abierta ? ' class="filanota"' : ''}>${f.map((c, ci) => `<td${ci === v ? ' class="colvoz"' : ''}><textarea class="gcel" data-f="${fi}" data-c="${ci}" rows="1" aria-label="Fila ${fi + 1}, columna ${ci + 1}">${esc(c)}</textarea></td>`).join('')}
+      return `<tr${abierta ? ' class="filanota"' : ''}>${f.map((c, ci) => {
+        const fotos = imgsCelda(t, d, fi, ci);
+        const eligiendo = ED && ED.celdaFoto && ED.celdaFoto.f === fi && ED.celdaFoto.c === ci;
+        return `<td class="${ci === v ? 'colvoz ' : ''}${fotos.length ? 'conimg ' : ''}${eligiendo ? 'eligiendo' : ''}">${imgsCeldaHtml(fotos)}<textarea class="gcel" data-f="${fi}" data-c="${ci}" rows="1" aria-label="Fila ${fi + 1}, columna ${ci + 1}">${esc(c)}</textarea>${puede ? `<button class="gfoto${eligiendo ? ' on' : ''}" data-act="gt-foto" data-f="${fi}" data-c="${ci}" aria-label="Poner una imagen en esta casilla" title="Poner una imagen en esta casilla">${ic('image', 13)}${fotos.length ? `<i>${fotos.length}</i>` : ''}</button>` : ''}</td>`;
+      }).join('')}
       <td class="gacc">
         ${puede ? `<button class="iconbtn gnotab${ns.length ? ' con' : ''}${abierta ? ' on' : ''}" data-act="gt-nota" data-id="${esc(fid)}" aria-label="Comentar esta fila" title="Comentar esta fila sin cambiarla">${ic('msg', 15)}${ns.length ? `<i>${ns.length}</i>` : ''}</button>` : ''}
         ${puede ? `<button class="iconbtn" data-act="gt-quitar-fila" data-f="${fi}" aria-label="Quitar esta fila" title="Quitar esta fila">${ic('x', 15)}</button>` : ''}
@@ -2031,6 +2226,22 @@ function tablaEditorHtml(t, d) {
       ${ED && ED.notaFila === fid ? `<div class="addrow"><input class="field" id="gt-nota-txt" placeholder="Ej. acá iría un plano más cerrado" autocomplete="off"><button class="btn sm" data-act="gt-nota-guardar" data-id="${esc(fid)}">Comentar</button></div>` : ''}
     </div>`).join('')}</div>`;
   })()}
+  ${(() => {
+    if (!ED || !ED.celdaFoto || !puede) return '';
+    const { f: fi, c: ci } = ED.celdaFoto;
+    if (!t.filas[fi]) return '';
+    const fid = t.ids[fi], puestas = imgsPorClave(t, fid, ci);
+    const disponibles = (d.files || []).filter((x) => esMedia(x));
+    return `<div class="celdafotos">
+      <div class="cfcab"><b>${ic('image', 14)} Imágenes en la casilla</b>
+        <small>fila ${fi + 1} · ${esc(t.cols[ci] || 'columna ' + (ci + 1))}</small>
+        <button class="iconbtn" data-act="gt-foto-cerrar" aria-label="Cerrar">${ic('x', 15)}</button></div>
+      ${disponibles.length ? `<div class="cfgrid">${disponibles.map((x) => `<button class="cfimg${puestas.includes(x.id) ? ' on' : ''}" data-act="gt-foto-elegir" data-id="${esc(x.id)}" title="${esc(x.name)}">${miniMedia(x) || ic('image', 18)}${puestas.includes(x.id) ? `<i>${ic('check', 12)}</i>` : ''}</button>`).join('')}</div>`
+        : '<p class="hint">Esta pieza todavía no tiene imágenes. Sube una aquí abajo.</p>'}
+      <label class="addfile sm">${ic('plus', 18)}${ED.subiendoCelda ? 'Subiendo…' : 'Subir una imagen'}<input id="gt-foto-file" type="file" accept="image/*,video/*" multiple></label>
+      <p class="hint">Lo que subas aquí queda como <b>material de apoyo</b> de la pieza: se ve en la tabla, pero no entra en el carrusel. También puedes pegar una imagen con la casilla elegida.</p>
+    </div>`;
+  })()}
   ${sinVoz(d) ? '' : `<div class="vozsel">
     <label for="gt-voz">Columna de la voz en off</label>
     <select class="sel" id="gt-voz">${t.cols.map((c, i) => `<option value="${i}"${i === v ? ' selected' : ''}>${esc(c || 'Columna ' + (i + 1))}</option>`).join('')}
@@ -2043,6 +2254,15 @@ function tablaEditorHtml(t, d) {
     <button class="chip" data-act="gt-quitar">${ic('trash', 14)} Quitar la tabla</button>
   </div>`;
 }
+// Con una casilla elegida, pegar una imagen la mete ahí
+document.addEventListener('paste', (e) => {
+  if (!ED || !ED.celdaFoto || !e.clipboardData) return;
+  const fotos = [...(e.clipboardData.files || [])].filter((f) => /^image\//.test(f.type || ''));
+  if (!fotos.length) return;
+  e.preventDefault();
+  ponerFotosEnCelda(fotos);
+}, true);
+
 // Pegar una tabla dentro del guión: llega entera, con sus columnas
 document.addEventListener('paste', (e) => {
   if (!ED || !e.target || (e.target.id !== 'e-guion' && e.target.id !== 'e-estructura')) return;
@@ -2762,6 +2982,7 @@ function closeSheet(fromPop) {
   sheetOpen = false; ED = null; EXP = null;
   if (IMP) { IMP.msgs.forEach(soltarFoto); IMP = null; if (S.compartidos) setTimeout(renderBanner, 0); }
   $('#sheet').hidden = true; $('#panel').innerHTML = ''; ZUM = null;
+  soltarDoc();
   document.body.style.overflow = '';
   if (!fromPop) history.back();
 }
@@ -2803,6 +3024,29 @@ function openFilters() {
     <label class="imppend" style="color:var(--ink)"><input type="checkbox" id="f-archivadas"${S.f.archivadas ? ' checked' : ''}> Ver también las archivadas <b style="margin-left:auto">${archivadas()}</b></label>
     <p class="hint">Cuando una pieza pasa a <b>Publicado</b> se archiva sola: deja de aparecer en <b>Piezas</b> ni en el <b>calendario</b>, para no tener delante lo que ya está hecho. Sigue entera en <b>Feed</b>, en <b>Entregas</b> y aquí: no se borra nada. Si necesitas volver a trabajarla, ábrela y toca “Sacar del archivo”.</p></div>
     <div class="pf"><button class="btn ghost" data-act="clear-filters">Limpiar</button><button class="btn" data-act="sheet-close">Listo</button></div>`);
+}
+
+/* Una imagen que llega a una casilla de la estructura: se sube a la pieza como
+   material de apoyo y queda apuntada en esa casilla. */
+async function ponerFotosEnCelda(files) {
+  if (!ED || !ED.celdaFoto || !files || !files.length) return;
+  const t = ED.d.guionTabla;
+  if (!tablaValida(t)) return;
+  asegurarIds(t);
+  const { f: fi, c: ci } = ED.celdaFoto, fid = t.ids[fi];
+  ED.subiendoCelda = true; renderEditor();
+  try {
+    const ids = await subirFotosComentario(ED.old || ED.d, files);
+    if (ED && ED.d.guionTabla && ids && ids.length) {
+      const t2 = ED.d.guionTabla;
+      ponerImgCelda(t2, fid, ci, imgsPorClave(t2, fid, ci).concat(ids.filter((x) => !imgsPorClave(t2, fid, ci).includes(x))));
+    }
+  } finally { if (ED) { ED.subiendoCelda = false; renderEditor(); } }
+}
+function fotosDeCelda(input) {
+  const files = [...(input.files || [])];
+  input.value = '';
+  ponerFotosEnCelda(files);
 }
 
 /* ---------- lo que está guardado aparte ----------
@@ -5827,6 +6071,12 @@ const ACTS = {
   'toggle-last': () => { S.lastOnly = !S.lastOnly; localStorage.setItem('crono_last_only', S.lastOnly ? '1' : '0'); renderMain(); },
   'toggle-project': (el) => { S.openProject = S.openProject === el.dataset.p ? '' : el.dataset.p; localStorage.setItem('crono_open_project', S.openProject); renderMain(); },
   'file-open': (el, e) => { if (e) e.stopPropagation(); openFilePreview(el.dataset.f); },
+  'doc-hoja': (el) => { if (!DOCV) return; DOCV.hoja = +el.dataset.i || 0; pintarDocumento(); },
+  'doc-aestructura': async (el) => {
+    const b = el; b.disabled = true;
+    try { await traerHojaAEstructura(el.dataset.f); } catch (e) { toast('No se pudo traer: ' + (e.message || e), 5000); b.disabled = false; }
+  },
+  'doc-foto': (el) => abrirGaleria([{ id: 'doc', name: DOCV ? DOCV.nombre : '', type: 'image/png', url: el.dataset.u }], 0),
   'file-dl': (el, e) => { if (e) e.stopPropagation(); const h = findFile(el.dataset.f); if (h) downloadOne(h.file); },
   'file-zoom': (el) => { const h = findFile(el.dataset.f); if (h) abrirGaleria([h.file]); else verFoto(el.getAttribute('src')); },
   'gal-carru': (el, e) => { if (e) e.stopPropagation(); abrirGaleria(CARRU[el.dataset.c] || [], +el.dataset.i); },
@@ -5964,6 +6214,32 @@ const ACTS = {
     t.filas.forEach((f) => f.push(''));
     renderEditor();
   },
+  'gt-foto': (el) => {
+    if (!ED || !requireWrite()) return;
+    syncDraft();
+    const f = +el.dataset.f, c = +el.dataset.c;
+    ED.celdaFoto = (ED.celdaFoto && ED.celdaFoto.f === f && ED.celdaFoto.c === c) ? null : { f, c };
+    renderEditor();
+  },
+  'gt-foto-cerrar': () => { if (!ED) return; syncDraft(); ED.celdaFoto = null; renderEditor(); },
+  'gt-foto-elegir': (el) => {
+    if (!ED || !ED.celdaFoto || !requireWrite()) return;
+    syncDraft();
+    const t = ED.d.guionTabla; if (!tablaValida(t)) return;
+    asegurarIds(t);
+    const { f: fi, c: ci } = ED.celdaFoto, fid = t.ids[fi], id = el.dataset.id;
+    const ya = imgsPorClave(t, fid, ci);
+    ponerImgCelda(t, fid, ci, ya.includes(id) ? ya.filter((x) => x !== id) : ya.concat([id]));
+    renderEditor();
+  },
+  'gt-ver': (el) => {
+    const d = ED ? ED.d : null;
+    const f = d && (d.files || []).find((x) => x.id === el.dataset.id);
+    if (!f) { const h = findFile(el.dataset.id); if (h) abrirGaleria([h.file], 0); return; }
+    const lista = imgsTabla(d.guionTabla, d);
+    const i = lista.findIndex((x) => x.id === f.id);
+    abrirGaleria(i >= 0 ? lista : [f], Math.max(0, i));
+  },
   'gt-quitar-fila': (el) => {
     if (!ED || !requireWrite()) return;
     syncDraft();
@@ -5974,6 +6250,8 @@ const ACTS = {
     t.filas.splice(f, 1);
     if (Array.isArray(t.ids)) t.ids.splice(f, 1);
     if (fid) ED.d.guionNotas = (ED.d.guionNotas || []).filter((n) => n.fila !== fid);
+    if (fid && t.imgs) { Object.keys(t.imgs).forEach((k) => { if (k.startsWith(fid + ':')) delete t.imgs[k]; }); if (!Object.keys(t.imgs).length) delete t.imgs; }
+    if (ED.celdaFoto) ED.celdaFoto = null;
     if (!t.filas.length) ED.d.guionTabla = null;
     sincronizarGuion(ED.d, false);
     renderEditor();
@@ -6096,6 +6374,7 @@ const ACTS = {
   },
   'ed-view': (el) => {
     const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;
+    if (isPdf(f) || verDocAqui(f)) { openFilePreview(f.id); return; }   // se ve aquí mismo
     if (!esMediaOAudio(f)) { downloadOne(f); return; }
     // se desliza por los archivos en el mismo orden en que se ven
     const { recientes, anteriores } = archivosEditor(ED.d);
@@ -6437,6 +6716,7 @@ document.addEventListener('change', (e) => {
   if (t.dataset && t.dataset.filter) { S.f[t.dataset.filter] = t.value; renderToolbar(); renderMain(); }
   else if (t.dataset && t.dataset.ev) savePrefs();
   else if (t.id === 'e-file') onFiles(t);
+  else if (t.id === 'gt-foto-file') fotosDeCelda(t);
   else if (t.id === 'cm-file') fotosDeComentario(t);
   else if (t.dataset && t.dataset.feedFoto) feedFoto(t);
   else if (t.dataset && t.dataset.marcaFile) subirAMarca(t);

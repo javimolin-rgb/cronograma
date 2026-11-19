@@ -51,6 +51,32 @@ Cómo se ve cada cosa:
 
 Un audio pasa tal cual (no se recomprime); el tope de 24 MB por archivo sigue siendo el mismo para todos. Un .zip con un `index.html` adentro sigue quedando como **interactivo**, no como archivo suelto.
 
+## Ver cualquier documento sin bajarlo
+
+Una planilla, un documento o una presentación **se abren dentro de la app**, igual que una foto. No hay que descargarlos, ni salir a Excel, ni pelear con el celular.
+
+| Qué | Cómo se ve |
+|---|---|
+| **Planillas** `.xlsx` | la tabla completa, **con las imágenes pegadas en sus celdas**, y las pestañas de abajo para cambiar de hoja |
+| **Documentos** `.docx` | el texto con sus títulos, sus listas, sus tablas y sus imágenes |
+| **Presentaciones** `.pptx` | una tarjeta por diapositiva, con su texto y sus imágenes |
+| **Texto** `.csv`, `.txt`, `.md`, `.json`, `.srt`… | el csv como tabla (respetando comillas y comas); el resto, tal cual |
+| **PDF, fotos, videos, audios** | como siempre |
+| Cualquier otro `.zip` | la lista de lo que trae adentro |
+
+Las imágenes del documento se abren en grande con un toque. Todo pasa **dentro del teléfono**: el archivo se lee por dentro con el mismo lector de `.zip` que ya tenía la app (un `.xlsx` es un `.zip` con XML adentro), no se manda a ningún servicio y no hace falta instalar nada.
+
+### De la planilla a la Estructura, en un toque
+
+Cuando lo que se abre es una planilla aparece el botón **“A la Estructura”**. Lo que hace:
+
+1. toma la hoja que estás viendo y la deja como **Estructura de la pieza** (las columnas con su nombre, una fila por fila);
+2. **sube las imágenes que estaban pegadas** en las celdas y las deja en la casilla que les corresponde, como material de apoyo;
+3. salta las filas y columnas vacías de la planilla, y arma solo el **guión de voz en off** con la columna que corresponda;
+4. si la planilla trae esa columna vacía, **no se pisa el guión que ya estaba**: se vuelve a repartir en la tabla nueva.
+
+Si la pieza ya tenía una estructura, pregunta antes de reemplazarla. Es exactamente lo que antes había que rehacer a mano, celda por celda.
+
 ## El comentario escrito no se pierde al guardar
 
 Si escribiste un comentario y aprietas **“Guardar cambios”** sin haber tocado *Comentar*, **el comentario se manda igual** (con sus archivos nombrados, si marcaste alguno) y llega su aviso como siempre. Mientras hay algo escrito, el botón pasa a decir **“Guardar cambios y comentar”**, así se ve antes de apretarlo.
@@ -340,6 +366,16 @@ Lo que antes era “el guión con una tabla adentro” ahora son **dos bloques q
 **La raya.** Una fila sin voz (la portada, el cierre con el logo) aparece en el guión como una **raya `—`**. Está para que las filas no se corran de lugar al volver a la tabla: si la borras, el párrafo siguiente se sube de fila. Al tocar **Copiar para la voz IA** las rayas **no se copian**: al generador de voz llega solo lo que se dice.
 
 Todas las piezas que ya existían quedaron puestas al día: su tabla con identificador por fila (para poder comentarla), su columna de voz elegida y su guión armado.
+
+### Imágenes dentro de las casillas
+
+Como en la planilla de Excel que manda Flavio: **cada casilla de la Estructura puede llevar imágenes**, no solo texto. Al tocar una casilla aparece abajo a la derecha un botón de imagen; se abre el elegidor y desde ahí se puede:
+
+- **elegir una imagen o un video que ya está en la pieza** (las láminas del carrusel, un render, una referencia que mandaron por comentario), o
+- **subir una nueva**, que queda guardada como **material de apoyo** del proyecto: se ve en la tabla, pero no entra en el carrusel ni en lo que se publica.
+- Con la casilla elegida también se puede **pegar** una imagen del portapapeles (⌘V / Ctrl+V).
+
+Las miniaturas se ven dentro de la casilla —también en el **Feed**, para Flavio y Maca— y al tocarlas se abren en grande, pasando de una a otra. La imagen **vive una sola vez**, en los archivos de la pieza: la casilla solo apunta a ella, así que no se duplica el peso ni se pierde si se mueve la fila.
 
 ### Comentar una fila sin editarla
 

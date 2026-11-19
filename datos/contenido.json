@@ -13700,13 +13700,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Javi no me aparece nada nuevo.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca te mencionó: @Javi no me aparece nada nuevo.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T18:12:35.855Z"
+   "createdAt": "2026-11-19T18:12:35.855Z",
+   "readAt": "2026-11-19T18:18:39.663Z"
   },
   {
    "id": "c62ae739-d0bf-46ee-ab3b-058d4b8785e1",
@@ -20625,8 +20626,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-19T18:11:11.684Z",
-   "hasta": "2026-11-19T18:09:39.488Z",
+   "at": "2026-11-19T18:18:39.663Z",
+   "hasta": "2026-11-19T18:12:35.846Z",
    "que": "pieza"
   },
   {

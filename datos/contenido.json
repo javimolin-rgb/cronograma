@@ -16598,13 +16598,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: Calculamos que podía durar 30 seg. El reel por eso ese tiempo en la canción, de …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Calculamos que podía durar 30 seg. El reel por eso ese tiempo en la canción, de …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-18T23:00:45.241Z"
+   "createdAt": "2026-11-18T23:00:45.241Z",
+   "readAt": "2026-11-19T01:07:04.653Z"
   },
   {
    "id": "0936be5b-be7c-4a2c-976a-c2f195b18c43",
@@ -28862,9 +28863,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-18T22:58:42.816Z",
-   "hasta": "2026-11-18T22:58:42.816Z",
-   "que": "comentario"
+   "at": "2026-11-19T01:07:04.654Z",
+   "hasta": "2026-11-18T23:00:45.234Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|flavio",

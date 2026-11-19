@@ -13887,13 +13887,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pix…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pix…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T19:38:42.572Z"
+   "createdAt": "2026-11-19T19:38:42.572Z",
+   "readAt": "2026-11-19T19:39:53.641Z"
   },
   {
    "id": "fc7b0e26-f805-477f-a740-e1b6d85bf642",
@@ -21058,9 +21059,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T19:20:03.193Z",
+   "at": "2026-11-19T19:39:53.643Z",
    "hasta": "2026-11-19T19:20:03.188Z",
-   "que": "comentario"
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

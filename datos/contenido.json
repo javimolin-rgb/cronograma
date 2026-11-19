@@ -16672,13 +16672,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "en “Casa Roble”: editó copy, guión / voz en off, la estructura",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Flavio editó copy, guión / voz en off, la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-19T13:53:24.607Z"
+   "createdAt": "2026-11-19T13:53:24.607Z",
+   "readAt": "2026-11-19T14:14:57.847Z"
   },
   {
    "id": "a5717e67-c1fc-4785-a98f-4b048fa6b96b",

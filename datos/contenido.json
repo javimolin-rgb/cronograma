@@ -2091,7 +2091,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T18:22:24.914Z",
+   "updatedAt": "2026-11-19T18:28:44.850Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -7990,6 +7990,16 @@
  ],
  "comments": [
   {
+   "id": "381a9549-d5a8-42d5-8f0a-c206800772b0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Esa de portada, pero sin POV … entiendo es como “ más entretenido” pero para el target nuestro no aplica",
+   "fileIds": [
+    "e7c9d60f-34b9-4667-b673-0d713963d77e"
+   ],
+   "createdAt": "2026-11-19T18:28:44.857Z"
+  },
+  {
    "id": "2743fd75-444a-4b6f-8286-27dc2b94eb21",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10872,6 +10882,16 @@
  ],
  "activity": [
   {
+   "id": "71a0011c-7622-43d9-bf0a-e0f87dc27691",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T18:28:44.862Z"
+  },
+  {
    "id": "9fa02359-e4ac-48dc-bffb-14e9f4e0f8e4",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13737,6 +13757,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "32ccd445-61a7-4721-a82a-8f4a21a7dd60",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Esa de portada, pero sin POV … entiendo es como “ más entretenido” pero para el …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Esa de portada, pero sin POV … entiendo es como “ más entretenido” pero para el …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:28:44.863Z"
+  },
+  {
+   "id": "92737c23-95d3-48c8-83da-14d1ef124e10",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Esa de portada, pero sin POV … entiendo es como “ más entretenido” pero para el …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Esa de portada, pero sin POV … entiendo es como “ más entretenido” pero para el …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T18:28:44.863Z"
+  },
   {
    "id": "573a9063-c7aa-42ee-bdfd-2d9d7cb9f598",
    "to": "javi",
@@ -20713,8 +20763,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T18:22:24.920Z",
-   "hasta": "2026-11-19T18:22:24.914Z",
+   "at": "2026-11-19T18:28:44.856Z",
+   "hasta": "2026-11-19T18:28:44.850Z",
    "que": "comentario"
   },
   {

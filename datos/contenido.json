@@ -13995,13 +13995,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "comment",
    "text": "comentó en “Un domingo en el refugio”: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: @Javi , gracias. Quo bueno la encontraste. Entre el segundo 1 y 3 aprox  se cort…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T20:50:12.720Z"
+   "createdAt": "2026-11-19T20:50:12.720Z",
+   "readAt": "2026-11-19T23:17:20.637Z"
   },
   {
    "id": "6527f072-faac-44f8-8f41-1583214a435e",
@@ -21281,8 +21282,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|flavio",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "flavio",
-   "at": "2026-11-19T20:42:31.683Z",
-   "hasta": "2026-11-19T20:22:08.030Z",
+   "at": "2026-11-19T23:17:20.639Z",
+   "hasta": "2026-11-19T20:50:12.708Z",
    "que": "pieza"
   },
   {

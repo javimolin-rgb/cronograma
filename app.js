@@ -883,7 +883,7 @@ const DET_COLS = [
   ['estructura', 'Estructura', (p) => (tablaValida(p.guionTabla)
     ? p.guionTabla.filas.map((f) => f.map((c, i) => (String(c || '').trim() ? `${p.guionTabla.cols[i] || ''}: ${String(c).trim()}` : '')).filter(Boolean).join(' · ')).join('\n')
     : '')],
-  ['guion', 'Guión / voz en off', (p) => textoVoz(p.guion)],
+  ['guion', 'Guión / voz en off', (p) => (sinVoz(p) ? '' : textoVoz(p.guion))],
   ['spotify', 'Canción', (p) => { const s = spotifyDatos(p.spotify); return s ? `${SPOTI_NOMBRE[s.tipo]}: ${s.url}` : ''; }],
   ['notas', 'Comentarios de la estructura', (p) => (p.guionNotas || []).map((n) => `${person(n.by).name}: ${n.text}`).join(' · ')],
   ['enlaces', 'Enlaces', (p) => (p.links || []).map((l) => `${l.label || ''} ${l.url}`.trim()).join(' · ')],
@@ -1439,7 +1439,7 @@ function viewResultados() {
   return cab + `<div class="resfeed">${piezas.map((p) => {
     const files = pieceFiles(p, true); // solo la versión final de cada archivo
     const st = statusOf(p.status);
-    const gui = textoVoz(p.guion);   // sin las rayas de las filas sin voz
+    const gui = sinVoz(p) ? '' : textoVoz(p.guion);   // sin las rayas de las filas sin voz
     return `<article class="res" style="--c:${st.color}">
       <header>
         <div><h3>${esc(p.title)}</h3>
@@ -1516,7 +1516,7 @@ function postHtml(p, t) {
   const vis = abiertos ? coms : coms.slice(-3);
   const autor = person(p.updatedBy || p.createdBy);
   const puedeAprobar = !['aprobado', 'programado', 'publicado'].includes(p.status);
-  const gui = textoVoz(p.guion);   // sin las rayas de las filas sin voz
+  const gui = sinVoz(p) ? '' : textoVoz(p.guion);   // sin las rayas de las filas sin voz
   const ig = S.feedVista === 'ig';
   return `<article class="post" style="--c:${st.color}">
     <header class="posth">${ig ? `<span class="logo sm">${marca()}</span>` : av(autor.id, 'md')}
@@ -1893,6 +1893,8 @@ const tablaValida = (t) => !!(t && Array.isArray(t.cols) && Array.isArray(t.fila
    vuelve a la columna, fila por fila, separando por líneas en blanco. ===== */
 const RE_VOZ = /(voz|locuci|narrac|gui[oó]n|off|audio)/i;
 // Qué columna es la voz: la que lo diga en su título y, si ninguna lo dice, la última
+// Los carruseles no llevan guión ni voz en off: solo láminas con su texto en pantalla
+const sinVoz = (p) => !!p && p.format === 'carrusel';
 function colVoz(t) {
   if (!tablaValida(t)) return -1;
   if (t.voz === -1) return -1;                       // “— ninguna”: la pieza no lleva voz en off (carruseles)
@@ -1973,6 +1975,7 @@ function repintarVoz(d, veniaDelTexto) {
   }
 }
 function sincronizarGuion(d, desdeTexto) {
+  if (sinVoz(d)) { d.guion = ''; if (tablaValida(d.guionTabla)) { asegurarIds(d.guionTabla); d.guionTabla.voz = -1; } return; }
   if (!tablaValida(d.guionTabla)) return;
   asegurarIds(d.guionTabla);
   if (desdeTexto) vozATabla(d.guionTabla, d.guion);
@@ -1989,7 +1992,7 @@ const tablaTexto = (t) => (tablaValida(t) ? [t.cols].concat(t.filas).map((f) => 
 // Cómo se ve la tabla para quien solo la lee
 function tablaHtml(t, d) {
   if (!tablaValida(t)) return '';
-  const v = colVoz(t);
+  const v = sinVoz(d) ? -1 : colVoz(t);
   const ids = (t.ids || []);
   return `<div class="tablabox"><table class="gtabla">
     <thead><tr>${t.cols.map((c, i) => `<th${i === v ? ' class="colvoz"' : ''}>${esc(c)}</th>`).join('')}</tr></thead>
@@ -2006,7 +2009,7 @@ function tablaHtml(t, d) {
 function tablaEditorHtml(t, d) {
   if (!tablaValida(t)) return '';
   asegurarIds(t);
-  const v = colVoz(t), puede = store.canWrite;
+  const v = sinVoz(d) ? -1 : colVoz(t), puede = store.canWrite;
   return `<div class="tablabox"><table class="gtabla edit">
     <thead><tr>${t.cols.map((c, i) => `<th${i === v ? ' class="colvoz"' : ''}><input class="gcel" data-f="-1" data-c="${i}" value="${esc(c)}" aria-label="Título de la columna ${i + 1}">${i === v ? '<i class="vozt">voz en off</i>' : ''}</th>`).join('')}<th class="gacc"></th></tr></thead>
     <tbody>${t.filas.map((f, fi) => {
@@ -2028,11 +2031,11 @@ function tablaEditorHtml(t, d) {
       ${ED && ED.notaFila === fid ? `<div class="addrow"><input class="field" id="gt-nota-txt" placeholder="Ej. acá iría un plano más cerrado" autocomplete="off"><button class="btn sm" data-act="gt-nota-guardar" data-id="${esc(fid)}">Comentar</button></div>` : ''}
     </div>`).join('')}</div>`;
   })()}
-  <div class="vozsel">
+  ${sinVoz(d) ? '' : `<div class="vozsel">
     <label for="gt-voz">Columna de la voz en off</label>
     <select class="sel" id="gt-voz">${t.cols.map((c, i) => `<option value="${i}"${i === v ? ' selected' : ''}>${esc(c || 'Columna ' + (i + 1))}</option>`).join('')}
       <option value="-1"${v < 0 ? ' selected' : ''}>— ninguna</option></select>
-  </div>
+  </div>`}
   <div class="gridbtn tablaacts">
     <button class="chip" data-act="gt-fila">${ic('plus', 14)} Fila</button>
     <button class="chip" data-act="gt-col">${ic('plus', 14)} Columna</button>
@@ -3533,11 +3536,11 @@ function renderEditor() {
       tablaValida(d.guionTabla) ? `${d.guionTabla.filas.length} fila${d.guionTabla.filas.length === 1 ? '' : 's'} · ${d.guionTabla.cols.length} columnas${(d.guionNotas || []).length ? ` · ${(d.guionNotas || []).length} comentario${(d.guionNotas || []).length === 1 ? '' : 's'}` : ''}` : '', () =>
       (tablaValida(d.guionTabla)
         ? `${tablaEditorHtml(d.guionTabla, d)}
-           <p class="hint">Cada fila es un momento del contenido. El botón ${ic('msg', 12)} deja un comentario en esa fila <b>sin cambiar lo que dice</b>. La columna marcada como <b>voz en off</b> es la que arma el guión de más abajo.</p>`
+           <p class="hint">Cada fila es un momento del contenido. El botón ${ic('msg', 12)} deja un comentario en esa fila <b>sin cambiar lo que dice</b>.${sinVoz(d) ? ' En un carrusel cada fila es una lámina: no lleva voz en off.' : ' La columna marcada como <b>voz en off</b> es la que arma el guión de más abajo.'}</p>`
         : `<textarea class="area" id="e-estructura" style="min-height:92px" placeholder="Pega aquí la tabla (Word, Google Docs, Sheets, Notion, Claude)…"></textarea>
-           <p class="hint">Pega la tabla de tu guión aquí: se guarda como tabla de verdad, con sus columnas. Una de ellas —la de la voz— arma sola el guión de voz en off.</p>`))}
+           <p class="hint">${sinVoz(d) ? 'Pega aquí la tabla de las láminas: se guarda como tabla de verdad, con sus columnas.' : 'Pega la tabla de tu guión aquí: se guarda como tabla de verdad, con sus columnas. Una de ellas —la de la voz— arma sola el guión de voz en off.'}</p>`))}
 
-    ${bloque('guion', 'Guión / voz en off', !!textoVoz(d.guion),
+    ${sinVoz(d) ? '' : bloque('guion', 'Guión / voz en off', !!textoVoz(d.guion),
       textoVoz(d.guion) ? `${textoVoz(d.guion).split(/\s+/).length} palabras` : '', () => `
       ${tablaValida(d.guionTabla) && colVoz(d.guionTabla) >= 0 ? `<p class="hint hintvoz">${ic('refresh', 13)} Es la columna <b>${esc(d.guionTabla.cols[colVoz(d.guionTabla)] || '')}</b> de la Estructura, <b>una fila por párrafo</b>. Lo que cambies acá vuelve a la tabla, y al revés. La <b>raya</b> marca una fila sin voz; al copiar no se va.</p>` : ''}
       <div class="lblacts solo"><button class="lnk" data-act="ed-sel-guion">Seleccionar todo</button><button class="lnk" data-act="ed-copiar-guion">${ic('copy', 13)} Copiar para la voz IA</button></div>

@@ -897,30 +897,27 @@
    "caption": "Nueve casas prediseñadas, de 57 a 167 m² útiles, ordenadas por dormitorios para que encuentres tu punto de partida. Todas se ajustan a tu terreno y se entregan llave en mano. Guárdalo y envíaselo a quien va a vivir contigo.\n\n#Neorigen #CasasPrediseñadas #ModelosDeCasas #CasaFamiliar #CasaLlaveEnMano #CasaSustentable #ConstruirEnChile #PlanosDeCasas",
    "notes": "Carrusel mixto · 10 láminas (la 2 es video de 10 s) · busca guardados\n\nIdea. Una guía para elegir entre los 9 modelos agrupados por dormitorios, con los datos tal cual están en la página Casas. El feed muestra modelos de a uno (y la serie de historias sigue con Boldo); nunca los ha puesto lado a lado. Es la pieza que se guarda y se envía al grupo familiar antes de cotizar.\n\nLáminas:\n1. Portada (imagen): fila de casas en el paisaje. \"¿Qué casa calza con tu familia?\" · bajada: \"9 modelos, de 57 a 167 m² útiles.\"\n2. Video (10 s): recorrido 3D rápido que pasa de un modelo a otro.\n3. 1 dormitorio · Casa Lingue: 1 baño · 57 m² útiles · 6 meses de obra.\n4. 2 dormitorios · Huingán y Peumo: Huingán 2 baños · 73 m² · 7 meses — Peumo 2 baños · 87 m² · 7 meses.\n5. 2 dormitorios · Casa Ciprés (nuevo diseño): 2 baños · 95 m² · 7 meses.\n6. 3 y 4 dormitorios · Mañío y Boldo: Mañío 3D · 2 baños · 106 m² · un piso · 8 meses — Boldo 4D · 2 baños · ver dato por confirmar · 8 meses.\n7. 4 dormitorios · Roble y Maitén: Roble 3 baños · 142 m² · 9 meses — Maitén 4 baños · 145 m² · 10 meses.\n8. 3 dormitorios, el más amplio · Casa Coihue: 3 baños · 167 m² · 10 meses.\n9. ¿Ninguno calza? Cada modelo se ajusta a tu terreno, y también se diseñan casas a medida.\n10. Cierre: \"Todos con el mismo estándar llave en mano\" · \"Guárdalo y envíaselo a quien va a vivir contigo\" · logo.\n\nFuente. Casas (dormitorios, baños, m² útiles y plazo de cada modelo), Casa Mañío (un piso) y Diseño a medida.",
    "hashtags": "",
-   "guion": "Una casa para empezar, una para la familia que crece…\n\n…y una para cuando llegan todos. ¿Cuál es la de ustedes?",
+   "guion": "",
    "guionTabla": {
     "cols": [
      "Tiempo",
-     "Texto en pantalla",
-     "Voz en off"
+     "Texto en pantalla"
     ],
     "filas": [
      [
       "0–5 s",
-      "9 modelos · de 57 a 167 m² útiles",
-      "Una casa para empezar, una para la familia que crece…"
+      "9 modelos · de 57 a 167 m² útiles"
      ],
      [
       "5–10 s",
-      "Llave en mano",
-      "…y una para cuando llegan todos. ¿Cuál es la de ustedes?"
+      "Llave en mano"
      ]
     ],
     "ids": [
      "b6598449-f80b-44c5-8df6-e7232c5ea236",
      "83bd61c6-4291-46c4-8d84-8f1ebab419a6"
     ],
-    "voz": 2
+    "voz": -1
    },
    "guionNotas": [],
    "spotify": "",
@@ -961,11 +958,19 @@
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "27fb9f19-052a-4c4f-b211-5bb594b514a6",
+     "campo": "guion",
+     "text": "Una casa para empezar, una para la familia que crece…\n\n…y una para cuando llegan todos. ¿Cuál es la de ustedes?",
+     "hasta": "2026-11-19T16:13:10.000Z",
+     "by": "javi"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T23:14:54.603Z",
+   "updatedAt": "2026-11-19T16:13:10.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -1086,7 +1091,7 @@
    "caption": "¿Ventilar sin dejar entrar el polen, el polvo ni el calor de afuera? Eso hace un recuperador de calor: renueva el aire sin abrir ventanas y lo entrega ya templado. Desliza para ver cómo funciona en 3 pasos. Es una de las soluciones que podemos incorporar en tu proyecto. Guárdalo o envíaselo a quien vive estornudando en primavera. 🌬️\n\n#Neorigen #CasasPrediseñadas #RecuperadorDeCalor #CalidadDelAire #CasaSustentable #EficienciaEnergética #Alergias #CasaSaludable",
    "notes": "Carrusel · 9 láminas · busca guardados y envíos (adaptado del reel de 35 s aprobado por Flavio)\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. Portada con foto real (ventana cerrada, luz de primavera). Láminas 03 a 06 con el mismo esquema de la casa, destacando un paso por lámina: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
    "hashtags": "",
-   "guion": "Aire nuevo sin abrir la ventana\nCómo ventilar en primavera sin que entre el polen\n\nEn primavera, abrir la ventana es dejar entrar polen y polvo. Cerrarla es encerrarse.\n\nUn recuperador de calor renueva el aire sin abrir ventanas.\n\n1 · Extracción\nSe saca el aire viciado de cocina y baños.\n\n2 · Recuperación\nUn intercambiador le pasa su temperatura al aire limpio que entra.\n\n3 · Impulsión\nEl aire nuevo llega ya templado a dormitorios y living.\n\nInvierno: el aire entra templado con el calor recuperado.\nVerano: entra más fresco gracias al aire de adentro.\n\nMuchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo.\n\nEs una solución que podemos incorporar en tu proyecto.\nCada proyecto se evalúa según ubicación, clima, orientación y objetivos.\nneorigen.cl",
+   "guion": "",
    "guionTabla": {
     "cols": [
      "Lámina",
@@ -1161,7 +1166,7 @@
      "db62c983-d389-427a-8f9f-0025c0857fc9",
      "d3dc71a7-841e-460d-8ec6-03b06f36af4d"
     ],
-    "voz": 2
+    "voz": -1
    },
    "guionNotas": [],
    "spotify": "",
@@ -1218,12 +1223,19 @@
      "text": "Reel · POV de primavera · 35 s · busca envíos\n\nIdea. Presentar el recuperador de calor desde un problema de esta época: en primavera abrir la ventana es dejar entrar polen y polvo, y cerrarla es encerrarse. El recuperador renueva el aire sin abrir y, según el blog, lo pre-acondicionado sirve tanto para calentar en invierno como para refrescar en verano. Se envía a la persona alérgica de la familia.\n\nImagen. POV de alguien que se acerca a abrir una ventana con polen en el aire a contraluz, se detiene y la deja cerrada. Luego un esquema animado de la casa: aire viciado sale de cocina y baño, cruza un intercambiador y entra aire limpio a dormitorios y living.\n\nFuente. Blog: Recuperadores de Calor: Eficiencia energética en ambientes naturales; incorporación según proyecto en Preguntas frecuentes.",
      "hasta": "2026-11-18T19:32:20.000Z",
      "by": "javi"
+    },
+    {
+     "id": "c57637a3-39c3-4965-a573-ad6f9a8c6a49",
+     "campo": "guion",
+     "text": "Aire nuevo sin abrir la ventana\nCómo ventilar en primavera sin que entre el polen\n\nEn primavera, abrir la ventana es dejar entrar polen y polvo. Cerrarla es encerrarse.\n\nUn recuperador de calor renueva el aire sin abrir ventanas.\n\n1 · Extracción\nSe saca el aire viciado de cocina y baños.\n\n2 · Recuperación\nUn intercambiador le pasa su temperatura al aire limpio que entra.\n\n3 · Impulsión\nEl aire nuevo llega ya templado a dormitorios y living.\n\nInvierno: el aire entra templado con el calor recuperado.\nVerano: entra más fresco gracias al aire de adentro.\n\nMuchos equipos traen filtros que retienen polen y partículas. Hay que limpiarlos o cambiarlos cada cierto tiempo.\n\nEs una solución que podemos incorporar en tu proyecto.\nCada proyecto se evalúa según ubicación, clima, orientación y objetivos.\nneorigen.cl",
+     "hasta": "2026-11-19T16:13:10.000Z",
+     "by": "javi"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T13:23:21.917Z",
+   "updatedAt": "2026-11-19T16:13:10.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
@@ -1332,30 +1344,27 @@
    "caption": "Sin letra chica: esto es lo que define el valor de una casa Neorigen y lo que queda fijo al firmar. Guárdalo para cuando vayas a cotizar, y si tienes dudas sobre tu caso, escríbenos por DM o WhatsApp.\n\n#Neorigen #CasasPrediseñadas #ConstruirTuCasa #CasaLlaveEnMano #PresupuestoDeObra #CasaSustentable #ConstruirEnChile #ParcelaDeAgrado",
    "notes": "Carrusel mixto · 9 láminas (la 2 es video de 8 s) · busca guardados\n\nIdea. Transparencia de precio sin publicar precios: qué mueve el valor de una casa y qué queda fijo al firmar. Es la duda que frena la compra en una decisión de este tamaño, y el feed no tiene ninguna pieza sobre ella. Formato de \"lo que conviene saber antes de cotizar\", muy guardable.\n\nLáminas:\n1. Portada (imagen): casa terminada con un plano encima. \"¿Cuánto cuesta construir tu casa?\" · bajada: \"Depende de 6 cosas.\"\n2. Video (8 s): manos sobre un plano y una calculadora, luego la casa terminada.\n3. Los 6 factores: tamaño · nivel de terminaciones · ubicación · accesos · características del terreno · personalizaciones.\n4. Punto de partida. Cada modelo tiene un valor base de construcción referencial. Si personalizas, el presupuesto se actualiza.\n5. El terreno cuenta. Se evalúan accesos, factibilidades y condiciones de construcción para que la propuesta calce con la obra real.\n6. Lo que no cambia. Al firmar el contrato, el valor queda establecido en UF. Solo cambia si tú pides cambios, ampliaciones o adicionales, y se cotizan y aprueban antes.\n7. Pagas por avance. Estados de pago asociados al progreso de la obra.\n8. Permisos. Neorigen los gestiona y van incluidos en el contrato. Los derechos que cobra la municipalidad y los certificados de empalme son de cargo del cliente.\n9. Cierre: \"Guárdalo antes de cotizar\" · \"Envíanos: ubicación del terreno, m² aproximados, referencias y presupuesto estimado\" · logo.\n\nFuente. Preguntas frecuentes: \"¿Cuánto cuesta una casa Neorigen?\", \"¿Cómo podré saber el costo final?\", \"¿Trabajan con estados de pago?\", \"¿El precio puede cambiar después de firmar?\", \"¿Se incluyen permisos municipales?\" y \"¿Cómo puedo cotizar?\".",
    "hashtags": "",
-   "guion": "Construir tu casa puede ser la decisión más grande de tu vida.\n\nMereces entender cada número desde el primer día.",
+   "guion": "",
    "guionTabla": {
     "cols": [
      "Tiempo",
-     "Texto en pantalla",
-     "Voz en off"
+     "Texto en pantalla"
     ],
     "filas": [
      [
       "0–4 s",
-      "Presupuesto personalizado",
-      "Construir tu casa puede ser la decisión más grande de tu vida."
+      "Presupuesto personalizado"
      ],
      [
       "4–8 s",
-      "Valor en UF desde la firma",
-      "Mereces entender cada número desde el primer día."
+      "Valor en UF desde la firma"
      ]
     ],
     "ids": [
      "0ad4bc47-9dd3-47c7-8272-a4d0efd1392d",
      "15cc78d7-c220-43d0-a1cd-b8588559bfba"
     ],
-    "voz": 2
+    "voz": -1
    },
    "guionNotas": [],
    "spotify": "",
@@ -1386,11 +1395,19 @@
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "8bb243a2-6929-465d-8f9c-af0be84e3342",
+     "campo": "guion",
+     "text": "Construir tu casa puede ser la decisión más grande de tu vida.\n\nMereces entender cada número desde el primer día.",
+     "hasta": "2026-11-19T16:13:10.000Z",
+     "by": "javi"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.118Z",
+   "updatedAt": "2026-11-19T16:13:10.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -1400,38 +1417,33 @@
    "caption": "Tu refugio soñado se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
    "notes": "Reel · POV de ritmo lento · 18 s · busca envíos\n\nIdea. La pieza aspiracional del lote: un POV de domingo en una casa Neorigen, sin explicar nada, para que se envíe a la persona con quien uno se imagina ahí. Toma la frase central del blog de estilo de vida: el verdadero lujo es vivir bien. Funciona porque es corta (completa la vista) y porque lo emocional se comparte más que lo técnico.\n\nImagen. Cuatro planos fijos, largos, con sonido ambiente real (pájaros, taza, conversación lejana) bajo la música propia. Taza sobre un mesón de madera con luz de mañana; ventanal con paisaje; dos personas conversando en la terraza; la casa desde afuera al atardecer.\n\nFuente. Blog: Inspiración y Estilo de Vida Neorigen; aislación en muros, pisos y cielo en Vivir de forma sustentable.\n\nEstaba escrito en el guión (no era voz en off):\nVeamos que podemos decir para cerrar en vez de lujo… \nMe gusta  que hoy el lujo es el bienestar… pero sin decir lujo 🤪",
    "hashtags": "",
-   "guion": "Un café sin apuro.\n\nLa luz entra sola, y nadie tiene que irse a ninguna parte.\n\nUna conversación que se alarga hasta la tarde.\n\nHoy el lujo es esto: vivir bien.",
+   "guion": "",
    "guionTabla": {
     "cols": [
      "Tiempo",
      "Imagen",
-     "Texto en pantalla",
-     "Voz en off"
+     "Texto en pantalla"
     ],
     "filas": [
      [
       "0–3 s",
       "Taza humeante, luz de ventana",
-      "POV: es domingo en tu refugio",
-      "Un café sin apuro."
+      "POV: es domingo en tu refugio"
      ],
      [
       "3–8 s",
       "Ventanal con paisaje",
-      "Luz natural en cada espacio",
-      "La luz entra sola, y nadie tiene que irse a ninguna parte."
+      "Luz natural en cada espacio"
      ],
      [
       "8–13 s",
       "Terraza, conversación",
-      "Aislación en muros, piso y cielo · fresco en verano, tibio en invierno",
-      "Una conversación que se alarga hasta la tarde."
+      "Aislación en muros, piso y cielo · fresco en verano, tibio en invierno"
      ],
      [
       "13–18 s",
       "Casa al atardecer + logo",
-      "Casas prediseñadas · neorigen.cl",
-      "Hoy el lujo es esto: vivir bien."
+      "Casas prediseñadas · neorigen.cl"
      ]
     ],
     "ids": [
@@ -1440,7 +1452,7 @@
      "00199004-a8d4-4723-8b61-aa4c1a614f29",
      "a45a6193-c0ae-49ba-8b2a-2fa20c6f1f24"
     ],
-    "voz": 3
+    "voz": -1
    },
    "guionNotas": [
     {
@@ -1722,12 +1734,19 @@
      "text": "Un refugio no se mide solo en metros cuadrados. Se mide en mañanas sin apuro, en luz que entra sola y en conversaciones que se alargan. ¿Con quién te imaginas aquí? Envíaselo.\n\n#Neorigen #CasasPrediseñadas #VidaDeRefugio #SlowLiving #CasaDeCampo #VivirEnLaNaturaleza #ArquitecturaChilena #CasaDeMadera",
      "hasta": "2026-11-11T15:53:37.836Z",
      "by": "flavio"
+    },
+    {
+     "id": "ed60bbe6-c974-4ef6-9d07-3ccb0ce075c1",
+     "campo": "guion",
+     "text": "Un café sin apuro.\n\nLa luz entra sola, y nadie tiene que irse a ninguna parte.\n\nUna conversación que se alarga hasta la tarde.\n\nHoy el lujo es esto: vivir bien.",
+     "hasta": "2026-11-19T16:13:10.000Z",
+     "by": "javi"
     }
    ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:11:07.804Z",
+   "updatedAt": "2026-11-19T16:13:10.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
@@ -1841,30 +1860,27 @@
    "caption": "Que tu terreno no tenga red eléctrica ni alcantarillado no significa que no puedas construir. Te dejamos las alternativas que se usan hoy y cómo elegir entre ellas. Guárdalo para cuando vayas a ver parcelas, y envíaselo a quien está buscando contigo.\n\n#Neorigen #CasasPrediseñadas #VivirEnParcela #CasaOffGrid #EnergíaSolar #ParcelaDeAgrado #CasaSustentable #ConstruirEnChile",
    "notes": "Carrusel mixto · 10 láminas (la 2 es video de 10 s) · busca guardados\n\nIdea. Una guía de consulta para quien tiene o está buscando parcela: qué opciones existen cuando no hay red eléctrica ni alcantarillado. Es contenido que se guarda \"para cuando vaya a ver terrenos\" y se envía a la pareja o al socio. Cada lámina con un pictograma propio en trazo redondo, en la línea de las portadas de destacados.\n\nLáminas:\n1. Portada (imagen): casa en paisaje rural, sin postes a la vista. \"¿Tu terreno no tiene luz ni alcantarillado?\" · bajada: \"Igual se puede construir.\"\n2. Video (10 s): dron o caminata por un terreno vacío. Rótulo: \"Sin red eléctrica · sin alcantarillado\".\n3. Energía solar. Paneles que convierten el sol en electricidad, con baterías para la noche y los días nublados.\n4. Viento y agua. Aerogeneradores si hay viento constante; microhidroeléctrica si hay un flujo de agua constante.\n5. Generador. Diésel o gasolina, solo como respaldo: más ruidoso, contaminante y depende de combustible.\n6. Fosa séptica. Separa y descompone sólidos y líquidos; el líquido tratado se filtra al suelo y los sólidos se bombean cada cierto tiempo.\n7. Planta de tratamiento (STAR). Procesos biológicos y químicos; tratamiento más completo, más costoso de instalar y mantener.\n8. Filtro de arena y lodos activados. Capas de arena y grava, eficaz en suelos permeables · microorganismos, como una planta municipal a pequeña escala.\n9. ¿Cuál conviene? Depende de ubicación, consumo estimado, orientación y nivel de autonomía que busques. Se evalúa en cada proyecto.\n10. Cierre: \"Guárdalo para cuando vayas a ver terrenos\" · \"Para cotizar: ubicación del terreno, m² aproximados, dormitorios y baños\" · logo.\n\nFuente. Preguntas frecuentes: \"¿Qué solución me pueden dar si mi terreno no tiene red de alcantarillado?\", \"…acceso a la red eléctrica?\", \"¿Pueden incorporar energía solar?\" y \"¿Cómo puedo cotizar?\".",
    "hashtags": "",
-   "guion": "Ese terreno que te enamoró, lejos de todo…\n\nA veces lo más lindo de un lugar es justo lo que le falta. Y eso tiene solución.",
+   "guion": "",
    "guionTabla": {
     "cols": [
      "Tiempo",
-     "Texto en pantalla",
-     "Voz en off"
+     "Texto en pantalla"
     ],
     "filas": [
      [
       "0–4 s",
-      "Sin red eléctrica",
-      "Ese terreno que te enamoró, lejos de todo…"
+      "Sin red eléctrica"
      ],
      [
       "4–10 s",
-      "Sin alcantarillado",
-      "A veces lo más lindo de un lugar es justo lo que le falta. Y eso tiene solución."
+      "Sin alcantarillado"
      ]
     ],
     "ids": [
      "370ee513-e39d-46e8-bd42-7cfb7b6e8045",
      "3c57539a-c0d6-45a1-b8d5-28d7ebd26654"
     ],
-    "voz": 2
+    "voz": -1
    },
    "guionNotas": [],
    "spotify": "",
@@ -1895,11 +1911,19 @@
    "files": [],
    "checklist": [],
    "artefactos": [],
-   "versionesTexto": [],
+   "versionesTexto": [
+    {
+     "id": "b236bc2a-9da6-410b-acf2-63394ef0f12f",
+     "campo": "guion",
+     "text": "Ese terreno que te enamoró, lejos de todo…\n\nA veces lo más lindo de un lugar es justo lo que le falta. Y eso tiene solución.",
+     "hasta": "2026-11-19T16:13:10.000Z",
+     "by": "javi"
+    }
+   ],
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.118Z",
+   "updatedAt": "2026-11-19T16:13:10.000Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T15:07:28.689Z",
    "publishedAt": null
@@ -4960,7 +4984,8 @@
    "statusChangedAt": "2026-08-30T19:00:00.000Z",
    "publishedAt": "2026-08-30T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-c2",
@@ -5019,7 +5044,8 @@
    "statusChangedAt": "2026-09-03T19:00:00.000Z",
    "publishedAt": "2026-09-03T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-c3",
@@ -5073,7 +5099,8 @@
    "statusChangedAt": "2026-09-10T19:00:00.000Z",
    "publishedAt": "2026-09-10T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "title": "Carrusel: terminaciones y llave en mano",
@@ -5121,7 +5148,8 @@
    "statusChangedAt": "2026-10-22T22:02:34.432Z",
    "publishedAt": "2026-10-22T22:02:34.432Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-c-web",
@@ -5164,7 +5192,8 @@
    "statusChangedAt": "2026-09-30T19:00:00.000Z",
    "publishedAt": "2026-09-30T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-c-fachada",
@@ -5197,7 +5226,8 @@
    "statusChangedAt": "2026-10-08T19:00:00.000Z",
    "publishedAt": "2026-10-08T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-c-cipres",
@@ -5229,7 +5259,8 @@
    "statusChangedAt": "2026-10-05T19:00:00.000Z",
    "publishedAt": "2026-10-05T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-c-personalizables",
@@ -5287,7 +5318,8 @@
    "statusChangedAt": "2026-10-13T19:00:00.000Z",
    "publishedAt": "2026-10-13T19:00:00.000Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-render-lingue",
@@ -5741,7 +5773,8 @@
    "statusChangedAt": "2026-10-24T22:12:50.223Z",
    "publishedAt": "2026-10-24T22:12:50.223Z",
    "guionNotas": [],
-   "spotify": ""
+   "spotify": "",
+   "guion": ""
   },
   {
    "id": "e-carpeta-1",
@@ -12923,6 +12956,56 @@
    "text": "creó la pieza",
    "meta": null,
    "createdAt": "2026-11-18T20:20:24.500Z"
+  },
+  {
+   "id": "1a18888c-6b5f-4326-aa1c-2e8f245d655d",
+   "postId": "f2ba27d2-a4c8-475a-8fc1-32b6e15d7661",
+   "postTitle": "¿Qué casa calza con tu familia?",
+   "actor": "javi",
+   "type": "edit",
+   "text": "quitó el guión / voz en off: los carruseles no llevan",
+   "meta": null,
+   "createdAt": "2026-11-19T16:13:10.000Z"
+  },
+  {
+   "id": "88c77d11-4966-472b-95ee-394c3b2991d0",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "edit",
+   "text": "quitó el guión / voz en off: los carruseles no llevan",
+   "meta": null,
+   "createdAt": "2026-11-19T16:13:10.000Z"
+  },
+  {
+   "id": "5e87faaa-4721-4294-888d-f732eae4bf3e",
+   "postId": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf",
+   "postTitle": "Cómo se arma el precio de tu casa",
+   "actor": "javi",
+   "type": "edit",
+   "text": "quitó el guión / voz en off: los carruseles no llevan",
+   "meta": null,
+   "createdAt": "2026-11-19T16:13:10.000Z"
+  },
+  {
+   "id": "b2dde23c-a57c-4106-92cc-8fbd11837a45",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "quitó el guión / voz en off: los carruseles no llevan",
+   "meta": null,
+   "createdAt": "2026-11-19T16:13:10.000Z"
+  },
+  {
+   "id": "45c4359d-5c2c-4ecd-baf7-3242c8502b20",
+   "postId": "b9d0787e-0ba6-48a3-b13a-64bc5242e57f",
+   "postTitle": "Tu terreno no tiene luz ni alcantarillado",
+   "actor": "javi",
+   "type": "edit",
+   "text": "quitó el guión / voz en off: los carruseles no llevan",
+   "meta": null,
+   "createdAt": "2026-11-19T16:13:10.000Z"
   }
  ],
  "notifications": [

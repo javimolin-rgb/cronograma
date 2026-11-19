@@ -1689,7 +1689,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T14:43:35.657Z",
+   "updatedAt": "2026-11-19T14:51:11.791Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-16T14:49:44.486Z",
    "publishedAt": null
@@ -7565,6 +7565,14 @@
  ],
  "comments": [
   {
+   "id": "65baaca6-67e9-4a15-a1d6-309d80dee6b9",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Javi, lo veo y te aviso. No te compliques.",
+   "fileIds": [],
+   "createdAt": "2026-11-19T14:51:11.798Z"
+  },
+  {
    "id": "0bb62936-bab5-459e-a49d-f1fe0a4f3266",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -10392,6 +10400,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "c1e2b8a5-6a51-4b2e-b3d5-38be2a8e9194",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T14:51:11.802Z"
+  },
   {
    "id": "700a1986-53fb-4dee-a0ad-7e4dc68cc3b7",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -16773,6 +16791,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "464b886b-b8eb-4b8f-a6e6-50660b2230a8",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Javi, lo veo y te aviso. No te compliques.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Javi, lo veo y te aviso. No te compliques.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:51:11.804Z"
+  },
+  {
+   "id": "85a2d5fd-b96e-4885-ba56-1a615aa4c852",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Javi, lo veo y te aviso. No te compliques.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Javi, lo veo y te aviso. No te compliques.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T14:51:11.804Z"
+  },
   {
    "id": "39591126-8a4c-449d-bb28-b18a7cb91ec1",
    "to": "flavio",
@@ -29501,8 +29549,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T14:43:35.663Z",
-   "hasta": "2026-11-19T14:43:35.657Z",
+   "at": "2026-11-19T14:51:11.797Z",
+   "hasta": "2026-11-19T14:51:11.791Z",
    "que": "comentario"
   },
   {

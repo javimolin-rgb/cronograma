@@ -403,23 +403,48 @@
     /* --- escritura --- */
     // Lo que subió otra persona (o yo desde otro aparato) después de que copié la pieza
     // no se pisa al guardar: los interactivos nuevos se conservan.
+    /* Lo que agregó otra persona mientras yo tenía la pieza abierta NO se pisa al
+       guardar. Pasaba esto: Javi subía seis videos a las 17:56 y Maca, que tenía
+       la misma pieza abierta desde antes, comentaba a las 17:57; su copia de la
+       pieza todavía traía la lista de archivos vieja y, al guardarse entera, se
+       llevaba por delante los seis videos.
+
+       Ahora estas listas se juntan en vez de reemplazarse: lo que está guardado y
+       no está en mi copia se conserva. Para que borrar siga funcionando, lo que se
+       quita a propósito queda anotado en “quitados” y no vuelve nunca. */
+    JUNTAN: ['files', 'artefactos', 'guionNotas', 'versionesTexto', 'marca'],
     fusionar(t, previo, nuevo) {
-      if (t !== 'posts' || !previo || !Array.isArray(previo.artefactos) || !previo.artefactos.length) return nuevo;
-      const mios = Array.isArray(nuevo.artefactos) ? nuevo.artefactos : [];
-      const ids = new Set(mios.map((x) => x && x.id));
-      const faltan = previo.artefactos.filter((x) => x && !ids.has(x.id) && String(x.at || '') > String(nuevo.updatedAt || ''));
-      return faltan.length ? Object.assign({}, nuevo, { artefactos: mios.concat(faltan) }) : nuevo;
+      if (t !== 'posts' || !previo || !nuevo) return nuevo;
+      const fuera = new Set([].concat(previo.quitados || [], nuevo.quitados || []));
+      let out = nuevo;
+      for (const campo of this.JUNTAN) {
+        const antes = Array.isArray(previo[campo]) ? previo[campo] : [];
+        if (!antes.length) continue;
+        const mios = Array.isArray(out[campo]) ? out[campo] : [];
+        const ids = new Set(mios.map((x) => x && x.id));
+        const faltan = antes.filter((x) => x && x.id && !ids.has(x.id) && !fuera.has(x.id));
+        if (!faltan.length) continue;
+        let lista = mios.concat(faltan);
+        if (campo === 'versionesTexto') lista = lista.slice(-40);   // el historial de textos tiene tope
+        out = Object.assign({}, out, { [campo]: lista });
+      }
+      // las dos listas de “esto se quitó” también se juntan
+      const todos = [...fuera];
+      if (todos.length !== (nuevo.quitados || []).length) out = Object.assign({}, out, { quitados: todos.slice(-300) });
+      return out;
     },
     async put(t, o) {
       const a = this.db[t];
       const i = a.findIndex((x) => x.id === o.id);
       if (i >= 0) { o = this.fusionar(t, a[i], o); a[i] = clone(o); } else a.unshift(clone(o));
       if (!this.token) throw new Error('modo solo lectura');
+      const guardado = clone(o);              // lo que de verdad va a quedar guardado
       // se guarda una copia de la fila: así sigue estando aunque entremedio
       // se vuelva a leer el archivo del repositorio
       this.dirty.set(t + ':' + o.id, clone(o));
       this.gone.delete(t + ':' + o.id);
       this.queueSave(); // se sube en segundo plano, junto con los demás cambios
+      return guardado;
     },
     async del(t, id) {
       this.db[t] = this.db[t].filter((x) => x.id !== id);

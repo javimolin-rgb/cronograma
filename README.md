@@ -101,6 +101,14 @@ El 19 de noviembre pasó algo que no se podía dejar así: llegaba el aviso al c
 
 Hay una prueba automática que reproduce exactamente lo que pasó —archivo de más de 1 MB, copia publicada atrasada, dos personas escribiendo— y comprueba que ya no se pierde nada.
 
+### Dos personas en la misma pieza
+
+El segundo caso, el mismo día: Javi subía seis videos a las 17:56 y Maca, que tenía esa misma pieza abierta **desde antes**, comentaba a las 17:57. Su copia de la pieza todavía traía la lista de archivos vieja y, al guardarse entera, se llevaba por delante los seis videos. No era la lectura atrasada de antes: era que **cada quien guarda la pieza completa**, y el último en guardar manda.
+
+Ahora las listas de una pieza **se juntan en vez de reemplazarse**: los archivos, los interactivos, los comentarios de la estructura, el historial de textos y lo de Marca. Lo que está guardado y no está en mi copia **se conserva**. Para que borrar siga funcionando, lo que alguien quita a propósito queda anotado en la pieza y no vuelve nunca.
+
+Hay una prueba que hace exactamente eso —Maca abre la pieza, Javi sube dos archivos y guarda, Maca comenta y guarda— y comprueba que los dos archivos siguen ahí, que el comentario también, y que un archivo quitado a propósito no reaparece.
+
 ### Y para que el archivo no vuelva a crecer sin fin
 
 Todo vive en un solo archivo que se sube entero cada vez que alguien guarda, así que mientras más grande, más lento en el celular. Ahora hay una tarea que corre **sola todas las madrugadas** (5:17 de la mañana, cuando no hay nadie escribiendo) y guarda aparte lo que ya nadie mira:

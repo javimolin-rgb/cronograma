@@ -358,8 +358,17 @@ async function save(table, obj) {
   const arr = S.db[table];
   const i = arr.findIndex((x) => x.id === obj.id);
   if (i >= 0) arr[i] = obj; else arr.unshift(obj);
-  try { await store.put(table, obj); }
+  try {
+    // lo guardado puede traer de vuelta lo que subió otra persona entremedio
+    const guardado = await store.put(table, obj);
+    if (guardado) { const j = arr.findIndex((x) => x.id === guardado.id); if (j >= 0) arr[j] = guardado; }
+  }
   catch (e) { console.error(e); toast('No se pudo guardar: ' + (e.message || e)); throw e; }
+}
+// Lo que se quita a propósito queda anotado: así no vuelve cuando se juntan las listas
+function anotarQuitado(d, id) {
+  if (!d || !id) return;
+  d.quitados = (d.quitados || []).filter((x) => x !== id).concat([id]).slice(-300);
 }
 async function removeRow(table, id) {
   S.db[table] = S.db[table].filter((x) => x.id !== id);
@@ -5885,6 +5894,7 @@ const ACTS = {
       for (const [pid, ids] of porPost) {
         const p = S.db.posts.find((x) => x.id === pid); if (!p) continue;
         p.files = (p.files || []).filter((f) => !ids.includes(f.id));
+        ids.forEach((id) => anotarQuitado(p, id));
         await save('posts', p);
       }
     });
@@ -6285,6 +6295,7 @@ const ACTS = {
     if (!ED || !requireWrite()) return;
     syncDraft();
     ED.d.guionNotas = (ED.d.guionNotas || []).filter((n) => n.id !== el.dataset.id);
+    anotarQuitado(ED.d, el.dataset.id);
     renderEditor();
   },
   'copiar-guion': async (el, e) => {
@@ -6367,6 +6378,7 @@ const ACTS = {
     syncDraft();
     const f = ED.d.files.find((x) => x.id === el.dataset.id);
     ED.d.files = ED.d.files.filter((x) => x.id !== el.dataset.id);
+    anotarQuitado(ED.d, el.dataset.id);
     renderEditor();
     // si otra pieza (o una versión anterior) apunta al mismo archivo, solo se saca de aquí
     const compartido = f && S.db.posts.some((p) => (p.files || []).some((x) => x.id !== f.id && x.path === f.path));

@@ -7551,6 +7551,14 @@
  ],
  "comments": [
   {
+   "id": "aec790cb-f3bb-43cb-8568-2b635b02870e",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "author": "flavio",
+   "text": "Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
+   "fileIds": [],
+   "createdAt": "2026-11-19T13:20:07.306Z"
+  },
+  {
    "id": "18195a22-2073-4105-b407-c6c5260f28bc",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10314,6 +10322,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "067142b7-b0a4-4b62-81f6-af4eae09b124",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "flavio",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T13:20:07.308Z"
+  },
   {
    "id": "359089b4-96f9-4afa-aec2-d7c3ee634c5b",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
@@ -16605,6 +16623,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d3187286-77b4-4105-9586-bc472b005476",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "comment",
+   "text": "comentó en “Aire nuevo sin abrir la ventana”: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio comentó: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T13:20:07.309Z"
+  },
+  {
+   "id": "004b0030-96d8-41a4-87c4-05fa9f83b92e",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "mention",
+   "text": "te mencionó en “Aire nuevo sin abrir la ventana”: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio te mencionó: Hola @Javi, buenos días.. si este es un carrusel.... ¿también tiene voz en off?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T13:20:07.308Z"
+  },
   {
    "id": "83966ac5-fb73-4d52-ad84-7a2aa2a4424f",
    "to": "javi",

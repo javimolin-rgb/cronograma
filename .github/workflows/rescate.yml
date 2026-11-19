@@ -1,0 +1,50 @@
+# Si un guardado se llevó por delante algo que ya estaba, lo vuelve a poner.
+# Corre después de cada guardado desde la app. Nunca borra: solo repone.
+# El porqué está en el README, en “Dos personas en la misma pieza”.
+name: Rescatar lo que se cayó
+
+on:
+  push:
+    branches: [main]
+    paths: ['datos/contenido.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rescate
+  cancel-in-progress: false
+
+jobs:
+  rescatar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2          # hace falta la versión anterior para comparar
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comparar con la versión anterior y reponer
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          intento=1
+          while [ $intento -le 3 ]; do
+            node .github/scripts/rescatar.mjs
+            if [ -z "$(git status --porcelain datos/contenido.json)" ]; then
+              echo "nada que reponer"
+              exit 0
+            fi
+            git add datos/contenido.json
+            git commit -m "Rescatado lo que se cayó al guardar [skip ci]"
+            if git push; then exit 0; fi
+            # alguien guardó en el mismo momento: se vuelve a comparar con lo último
+            echo "guardaron al mismo tiempo: se reintenta"
+            git fetch origin main --deepen=2
+            git reset --hard origin/main
+            sleep 4
+            intento=$((intento + 1))
+          done
+          echo "no se pudo esta vez"

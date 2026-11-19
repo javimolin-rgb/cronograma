@@ -109,6 +109,13 @@ Ahora las listas de una pieza **se juntan en vez de reemplazarse**: los archivos
 
 Hay una prueba que hace exactamente eso —Maca abre la pieza, Javi sube dos archivos y guarda, Maca comenta y guarda— y comprueba que los dos archivos siguen ahí, que el comentario también, y que un archivo quitado a propósito no reaparece.
 
+**Y una red de seguridad, por si acaso.** Mientras alguien siga con la versión anterior de la app abierta en su teléfono, su copia vieja todavía puede pisar algo. Así que después de **cada guardado**, en GitHub, se compara con la versión anterior y se repone solo lo que se cayó sin querer:
+
+- un **archivo** que desapareció de una pieza, que nadie anotó como quitado y **cuya copia sigue guardada en el repositorio**. Ese es el detalle que distingue un accidente de un borrado a propósito: cuando se quita un archivo a propósito, la app borra también su copia; si la copia está, no fue a propósito.
+- un **comentario**, un **movimiento** o un **aviso** que desapareció sin que se haya borrado su pieza.
+
+Nunca borra nada: solo repone. Una pieza eliminada se queda eliminada, y un archivo quitado a mano no vuelve.
+
 ### Y para que el archivo no vuelva a crecer sin fin
 
 Todo vive en un solo archivo que se sube entero cada vez que alguien guarda, así que mientras más grande, más lento en el celular. Ahora hay una tarea que corre **sola todas las madrugadas** (5:17 de la mañana, cuando no hay nadie escribiendo) y guarda aparte lo que ya nadie mira:

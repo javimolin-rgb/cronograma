@@ -13461,13 +13461,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Estuvimos escuchando canciones en ese link pixabay.com\nEl estilo de música puede…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T17:59:55.588Z"
+   "createdAt": "2026-11-19T17:59:55.588Z",
+   "readAt": "2026-11-19T18:00:50.908Z"
   },
   {
    "id": "7bd09473-d52e-49ee-bbc5-412be1500791",

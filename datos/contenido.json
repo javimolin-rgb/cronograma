@@ -7990,6 +7990,14 @@
  ],
  "comments": [
   {
+   "id": "48ed6433-2cb2-4a65-b2f1-d809ee69c706",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pixabay",
+   "fileIds": [],
+   "createdAt": "2026-11-19T19:38:42.566Z"
+  },
+  {
    "id": "1dd4c13f-3885-4e94-9015-82dbbfd7eafe",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10922,6 +10930,16 @@
  ],
  "activity": [
   {
+   "id": "293b693c-1921-482c-8aad-87a83958a8be",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T19:38:42.570Z"
+  },
+  {
    "id": "c9aed858-7fc4-46c3-a782-125828844c2d",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13847,6 +13865,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c6f6311e-d1b6-4dae-b167-1cbf57a8731b",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pix…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pix…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:38:42.573Z"
+  },
+  {
+   "id": "4e080bb9-b3f7-47ed-978a-71c474b58596",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pix…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca Me puedes mandar el enlace de la canción? no me aparece al buscarla en pix…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T19:38:42.572Z"
+  },
   {
    "id": "fc7b0e26-f805-477f-a740-e1b6d85bf642",
    "to": "javi",

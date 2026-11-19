@@ -8298,7 +8298,10 @@
    "author": "maca",
    "text": "Si, eso teníamos entendido por eso nos pareció extraño q saliera voz en off. Nos faltó cachar q lo q estaba escrito en “voz en off “pasaría a estar escrito. Gracias por la aclaración",
    "fileIds": [],
-   "createdAt": "2026-11-19T14:25:40.556Z"
+   "createdAt": "2026-11-19T14:25:40.556Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "0bb62936-bab5-459e-a49d-f1fe0a4f3266",
@@ -14016,6 +14019,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b22536c9-72a2-4fac-a2a5-8dc21192d82b",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Aire nuevo sin abrir la ventana”: Si, eso teníamos entendido por eso nos pareció extraño q sal",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi le puso 👍 a tu comentario: Si, eso teníamos entendido por eso nos pareció extraño q sal",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-19T23:20:15.288Z"
+  },
   {
    "id": "8e2c2860-fd30-4c2c-9377-2f2e065d0c80",
    "to": "flavio",

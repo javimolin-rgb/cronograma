@@ -1956,8 +1956,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T16:55:51.170Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-19T17:00:11.295Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -7855,6 +7855,22 @@
  ],
  "comments": [
   {
+   "id": "5bf337cf-c405-4dda-ae79-837eb5038b40",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca si sé cómo se modifican las canciones, lo que no queda claro es cómo quieres que la modifique, ya que debe ser harto el cambio para que no se detecte como copia",
+   "fileIds": [],
+   "createdAt": "2026-11-19T17:00:08.597Z"
+  },
+  {
+   "id": "9f7297df-6dcf-494b-9882-7b6c44023965",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "Desde el enlace que mandó Flavio https://pixabay.com/es/music/search/musica%20sin%20copyright/ se pueden encontrar canciones sin copyright",
+   "fileIds": [],
+   "createdAt": "2026-11-19T16:57:35.505Z"
+  },
+  {
    "id": "1a5de749-c5ee-453f-99f8-442d570d835f",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -10632,6 +10648,26 @@
  ],
  "activity": [
   {
+   "id": "0cd2593c-4aa7-4530-8956-eda51d6a21d5",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T17:00:08.599Z"
+  },
+  {
+   "id": "4afab114-0a15-4305-8f5c-2c3e2221d7c1",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-19T16:57:35.507Z"
+  },
+  {
    "id": "d4427922-3fed-4b02-8c06-104a98c2ffa0",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -13328,19 +13364,80 @@
  ],
  "notifications": [
   {
+   "id": "8f8c5c0f-f012-42ce-976e-a26e2518961c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca si sé cómo se modifican las canciones, lo que no queda claro es cómo quier…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca si sé cómo se modifican las canciones, lo que no queda claro es cómo quier…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T17:00:08.601Z"
+  },
+  {
+   "id": "1e107fe1-5fbd-4f07-8d48-754b9e390912",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca si sé cómo se modifican las canciones, lo que no queda claro es cómo quier…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca si sé cómo se modifican las canciones, lo que no queda claro es cómo quier…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T17:00:08.600Z"
+  },
+  {
+   "id": "cabb09fa-e2dd-494e-9fe2-23e91de22c44",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Desde el enlace que mandó Flavio https://pixabay.com/es/music/search/musica%20si…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Desde el enlace que mandó Flavio https://pixabay.com/es/music/search/musica%20si…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:57:35.509Z"
+  },
+  {
+   "id": "dd48ec6f-0b19-455c-b3d9-792b8ee05bea",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Desde el enlace que mandó Flavio https://pixabay.com/es/music/search/musica%20si…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Desde el enlace que mandó Flavio https://pixabay.com/es/music/search/musica%20si…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-19T16:57:35.508Z"
+  },
+  {
    "id": "5ade982b-6e1e-4d7c-939b-82c332f46256",
    "to": "javi",
    "from": "maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Con respecto a la portada no hay relación del titulo con la imagen . Porfavor oc…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Con respecto a la portada no hay relación del titulo con la imagen . Porfavor oc…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:55:51.172Z"
+   "createdAt": "2026-11-19T16:55:51.172Z",
+   "readAt": "2026-11-19T16:57:03.212Z"
   },
   {
    "id": "e95ce63a-dcfe-4102-b9ab-671463cf6bbe",
@@ -19891,8 +19988,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-19T16:55:10.525Z",
-   "hasta": "2026-11-19T16:52:38.245Z",
+   "at": "2026-11-19T17:31:32.496Z",
+   "hasta": "2026-11-19T17:00:11.295Z",
    "que": "pieza"
   },
   {

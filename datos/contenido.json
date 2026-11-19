@@ -13041,13 +13041,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (formato)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó formato",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:14:36.064Z"
+   "createdAt": "2026-11-19T16:14:36.064Z",
+   "readAt": "2026-11-19T16:16:13.324Z"
   },
   {
    "id": "a865b4f7-b231-404b-a591-052a38a02939",
@@ -13101,13 +13102,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "status",
    "text": "movió “Un domingo en el refugio” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:11:07.844Z"
+   "createdAt": "2026-11-19T16:11:07.844Z",
+   "readAt": "2026-11-19T16:16:13.325Z"
   },
   {
    "id": "3be00a18-6d88-43f6-a088-8a4b21bcbe5c",
@@ -13116,13 +13118,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "review",
    "text": "subió 2 archivos en “Un domingo en el refugio” para revisar: Subí portada y video con música alternativa, me avisan si está okay",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te pide revisar: Subí portada y video con música alternativa, me avisan si está okay",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:07:55.760Z"
+   "createdAt": "2026-11-19T16:07:55.760Z",
+   "readAt": "2026-11-19T16:16:13.325Z"
   },
   {
    "id": "a335fdef-3df0-4304-9f6a-21ab74b8e5b6",
@@ -13161,13 +13164,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "update",
    "text": "editó “Un domingo en el refugio” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T16:07:55.759Z"
+   "createdAt": "2026-11-19T16:07:55.759Z",
+   "readAt": "2026-11-19T16:16:13.325Z"
   },
   {
    "id": "2e56dc6c-09b0-45c3-b0cd-7e464c0b00be",
@@ -13176,13 +13180,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Flavio te mencionó: @Maca  @Javi usemos otra musica por favor buscar alguna y propooner.. Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:56:46.165Z"
+   "createdAt": "2026-11-19T14:56:46.165Z",
+   "readAt": "2026-11-19T16:16:13.325Z"
   },
   {
    "id": "70ed25eb-3eea-4fe3-bbac-14cd1f46b865",
@@ -13331,13 +13336,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambia…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Maca Sigue sin quedarme claro a que tipo de distorsiones te refieres, si cambia…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-19T14:48:43.661Z"
+   "createdAt": "2026-11-19T14:48:43.661Z",
+   "readAt": "2026-11-19T16:16:13.325Z"
   },
   {
    "id": "948d7e99-ee03-4bf5-899e-25bbb6689632",
@@ -19377,9 +19383,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-19T14:43:35.663Z",
-   "hasta": "2026-11-19T14:43:35.657Z",
-   "que": "comentario"
+   "at": "2026-11-19T16:16:13.325Z",
+   "hasta": "2026-11-19T16:14:36.063Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

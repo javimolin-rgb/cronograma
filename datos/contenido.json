@@ -1223,7 +1223,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-19T13:17:56.211Z",
+   "updatedAt": "2026-11-19T13:20:09.525Z",
    "updatedBy": "flavio",
    "statusChangedAt": "2026-11-03T19:57:03.587Z",
    "publishedAt": null
@@ -28974,6 +28974,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "person": "flavio",
+   "at": "2026-11-19T13:20:13.995Z",
+   "hasta": "2026-11-18T20:08:10.793Z",
+   "que": "pieza"
+  },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|javi",
    "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",

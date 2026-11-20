@@ -2146,8 +2146,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T15:24:00.649Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-20T15:43:47.509Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -8045,6 +8045,14 @@
  ],
  "comments": [
   {
+   "id": "1a55f678-347a-4e68-b397-74d4a17aada8",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "@Maca el video no me sale con cortes. Descargue la canción de forma ilegal, podría causar problemas si detecta que no se tiene la licencia",
+   "fileIds": [],
+   "createdAt": "2026-11-20T15:43:47.511Z"
+  },
+  {
    "id": "b426dd3c-998d-41f4-bfdf-1cc46a745209",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -11021,6 +11029,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "50fe3fe7-4624-4050-9d25-b741ed986c00",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T15:43:47.514Z"
+  },
   {
    "id": "155a9b61-bdca-4efe-a320-b4b1afbfb9f5",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14037,6 +14055,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "46d0c407-8183-4bb7-b86a-a5dd984aac54",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: @Maca el video no me sale con cortes. Descargue la canción de forma ilegal, podr…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: @Maca el video no me sale con cortes. Descargue la canción de forma ilegal, podr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:43:47.516Z"
+  },
+  {
+   "id": "943c15c1-b218-4d59-8a21-caa48c4d4e7e",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: @Maca el video no me sale con cortes. Descargue la canción de forma ilegal, podr…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi te mencionó: @Maca el video no me sale con cortes. Descargue la canción de forma ilegal, podr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:43:47.515Z"
+  },
   {
    "id": "f2677cbd-994e-413e-a7a4-f5d6d6c66b20",
    "to": "flavio",
@@ -21552,9 +21600,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-20T15:41:54.837Z",
-   "hasta": "2026-11-20T15:24:00.649Z",
-   "que": "pieza"
+   "at": "2026-11-20T15:43:47.511Z",
+   "hasta": "2026-11-20T15:43:47.509Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",

@@ -513,6 +513,8 @@ Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achic
 | 2 | 720 | 20 | 2,2 Mbps |
 | 3 | 540 | 15 | 1,4 Mbps |
 
+**Antes de grabar se hace una pasada en vacío.** El primer segundo salía a tirones porque al empezar a grabar el aparato recién estaba despertando el decodificador: en el reel de Casa Manío quedaron **0,7 s congelados entre el 0,33 y el 1,04**. Ahora el video corre un segundo sin grabar, se vuelve al principio y recién ahí empieza la grabación, ya en caliente.
+
 Se parte por el primero. Si la copia sale mal, se prueba el siguiente: menos cuadros y menos tamaño es muchísimo menos trabajo, y suele ser la diferencia entre una copia entera y una pegada. Además **solo se dibujan los fotogramas que se van a grabar** —dibujar un 4K sesenta veces por segundo para grabarlo a veinte es justamente lo que hace que el teléfono se quede atrás—. Vale más una copia de 540 que un original de 86 MB ocupando el repositorio para siempre; el original entero queda como último recurso, y la app avisa cuánto va a ocupar.
 
 ### La copia se revisa siempre: o quedó fiel, o no se usa
@@ -521,6 +523,7 @@ Esa regrabación se hace **en vivo** (se reproduce el video y se captura lo que 
 
 - **que dure lo mismo** (se acepta hasta medio segundo de diferencia);
 - **que no se haya congelado** en ninguna parte: se anota a qué momento del video corresponde cada fotograma y un salto de varios cuadros seguidos es imagen que no quedó;
+- **que no se corte al empezar**: se reproducen los dos primeros segundos de la copia ya terminada y se mira a qué momento corresponde cada fotograma que sale. Es la única revisión que mira **lo que quedó grabado** y no lo que se alcanzó a dibujar, que no siempre es lo mismo. Un salto de más de 0,25 s ahí y la copia se descarta;
 - **que no se haya ido quedando atrás**: si el aparato no alcanza a ir al ritmo del video, la grabación (que corre con el reloj de la pared) se atrasa y la copia sale **más larga** que el original — eso es lo que se ve “pegado”. Se mide mientras graba y, apenas se nota, **se corta ahí mismo** en vez de hacer esperar todo el video para nada.
 
 **Perder fotogramas no tumba la copia.** Un video con menos cuadros se ve menos fluido, pero se ve entero y en su tiempo, y eso sirve; lo que no sirve es que quede cortado o pegado. Cuando queda por debajo de 22 cuadros por segundo, la app lo dice al terminar.

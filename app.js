@@ -4197,6 +4197,34 @@ let FALLO_REINTENTABLE = true;
    mirar los saltos entre fotograma y fotograma. Si algo no cuadra, esta copia no
    se usa —se prefiere subir el original, o decirlo, antes que guardar algo cortado—.
    Devuelve el motivo si está mala, o '' si quedó fiel. */
+/* Los dos primeros segundos de la copia, mirados de verdad: se reproduce (sin sonido)
+   y se anota a qué momento corresponde cada fotograma que sale. Un salto grande ahí es
+   el corte del principio que se veía en los reels. Es la única revisión que mira lo que
+   quedó grabado y no lo que se alcanzó a dibujar, que no siempre es lo mismo. */
+async function huecoAlArrancar(copia) {
+  if (!HTMLVideoElement.prototype.requestVideoFrameCallback) return 0;
+  const v = document.createElement('video');
+  v.src = URL.createObjectURL(copia); v.muted = true; v.playsInline = true; v.preload = 'auto';
+  try {
+    await new Promise((ok, mal) => { v.onloadedmetadata = ok; v.onerror = () => mal(new Error('no se pudo abrir')); });
+    const momentos = [];
+    const listo = new Promise((ok) => {
+      const paso = (ahora, meta) => {
+        momentos.push(meta && typeof meta.mediaTime === 'number' ? meta.mediaTime : v.currentTime);
+        if (v.currentTime >= 2.5 || v.ended) return ok();
+        v.requestVideoFrameCallback(paso);
+      };
+      v.requestVideoFrameCallback(paso);
+    });
+    await v.play();
+    await Promise.race([listo, new Promise((ok) => setTimeout(ok, 9000))]);
+    v.pause();
+    let peor = 0;
+    for (let i = 1; i < momentos.length; i++) peor = Math.max(peor, momentos[i] - momentos[i - 1]);
+    return momentos.length > 4 ? peor : 0;      // si no alcanzó a medir, no se inventa nada
+  } catch (e) { return 0; }
+  finally { try { URL.revokeObjectURL(v.src); } catch (e) { /* nada */ } }
+}
 async function revisarCopia(original, copia, dur, saltos, dibujados, vOrigen) {
   FALLO_REINTENTABLE = true;
   const m = await datosVideo(copia).catch(() => null);
@@ -4221,9 +4249,11 @@ async function revisarCopia(original, copia, dur, saltos, dibujados, vOrigen) {
         dos controles de arriba. Igual queda anotado para saber cómo salió. */
   const q = vOrigen && vOrigen.getVideoPlaybackQuality ? vOrigen.getVideoPlaybackQuality() : null;
   const caidos = q && q.totalVideoFrames > 30 ? q.droppedVideoFrames / q.totalVideoFrames : 0;
-  if (malos.length) FALLO_REINTENTABLE = caidos < 0.25;   // si el aparato iba muy ahogado, repetir no ayuda
+  // 4) el arranque, mirando la copia misma
+  const arranque = await huecoAlArrancar(copia);
+  if (arranque > 0.25) malos.push(`se corta ${seg(arranque)} al empezar`);
   const porSeg = +(dibujados / Math.max(dur, 0.1)).toFixed(1);
-  console.info('copia achicada: ' + JSON.stringify({ dur: +dur.toFixed(2), copia: +m.dur.toFixed(2), dibujados, porSeg, congelado: +congelado.toFixed(2), caidos: q ? `${q.droppedVideoFrames}/${q.totalVideoFrames}` : 'n/d', malos }));
+  console.info('copia achicada: ' + JSON.stringify({ dur: +dur.toFixed(2), copia: +m.dur.toFixed(2), dibujados, porSeg, congelado: +congelado.toFixed(2), arranque: +arranque.toFixed(3), caidos: q ? `${q.droppedVideoFrames}/${q.totalVideoFrames}` : 'n/d', malos }));
   copia.porSegundo = porSeg;
   return malos.length ? malos.join('; ') : '';
 }
@@ -4289,12 +4319,37 @@ async function comprimirVideo(file, objetivo, alAvanzar, escalon) {
        justo después de que tocaste algo. Si se demoró en abrir el archivo, se pierde
        ese permiso: entonces hay que decirlo, no quedarse callado. */
     const fallaPermiso = await permiso;
-    try { if (v.currentTime > 0.01) { v.currentTime = 0; } await v.play(); }
+    try { await v.play(); }
     catch (e) {
       FALLO_REINTENTABLE = false;
       throw new Error(fallaPermiso
         ? 'el navegador no dejó reproducir el video para achicarlo (toca Reintentar y no toques nada más mientras trabaja)'
         : `no se pudo reproducir el video para achicarlo (${(e && e.name) || e})`);
+    }
+    /* Arranque en frío: el primer segundo salía a tirones —en el reel de Casa Manío,
+       0,7 s congelados entre el 0,33 y el 1,04— porque al empezar a grabar el aparato
+       recién estaba despertando el decodificador. Así que primero se deja correr un
+       poco EN VACÍO, sin grabar, después se vuelve al principio y recién ahí se graba,
+       ya en caliente. Cuesta un segundo y pico y se gana el arranque entero. */
+    const calentar = Math.min(1.2, dur / 3);
+    if (calentar > 0.15) {
+      await new Promise((ok) => {
+        const hasta = performance.now() + 5000;
+        const mirar = () => {
+          if (v.currentTime >= calentar || v.ended || performance.now() > hasta) return ok();
+          if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(mirar); else setTimeout(mirar, 40);
+        };
+        mirar();
+      });
+      v.pause();
+      await new Promise((ok) => {
+        const fin = () => { v.removeEventListener('seeked', fin); ok(); };
+        v.addEventListener('seeked', fin);
+        v.currentTime = 0;
+        setTimeout(fin, 3000);
+      });
+      try { await v.play(); }
+      catch (e) { FALLO_REINTENTABLE = false; throw new Error('el navegador no dejó volver a empezar el video'); }
     }
     // el primer fotograma dibujado: a partir de aquí sí hay algo que grabar
     await new Promise((ok) => {

@@ -1175,7 +1175,7 @@
    "date": "2026-11-26",
    "inicio": "",
    "format": "carrusel",
-   "status": "estructura",
+   "status": "espera",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1393,9 +1393,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T18:05:32.858Z",
+   "updatedAt": "2026-11-20T18:45:23.917Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-03T19:57:03.587Z",
+   "statusChangedAt": "2026-11-20T18:45:23.917Z",
    "publishedAt": null
   },
   {
@@ -11191,6 +11191,19 @@
  ],
  "activity": [
   {
+   "id": "1e6aba67-1cff-4265-8aa4-b789570a518c",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Estructura por aprobar a Esperando aprobación",
+   "meta": {
+    "from": "estructura",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-20T18:45:23.918Z"
+  },
+  {
    "id": "00079048-3b49-4fe6-b6ad-17b6cc19024c",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -14132,6 +14145,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4ef42582-5842-4740-a19e-20fe8eb71b31",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "status",
+   "text": "movió “Aire nuevo sin abrir la ventana” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-20T18:45:23.919Z"
+  },
   {
    "id": "eb6a2f9b-cd7c-400e-8ded-01dff5c1c4b5",
    "to": "flavio",

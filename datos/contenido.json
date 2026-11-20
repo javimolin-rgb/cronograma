@@ -8050,7 +8050,10 @@
    "author": "maca",
    "text": "Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb encontré del estilo musical.",
    "fileIds": [],
-   "createdAt": "2026-11-20T15:58:18.013Z"
+   "createdAt": "2026-11-20T15:58:18.013Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "1a0f673c-2d19-4030-8173-dd4c93f76507",
@@ -14145,6 +14148,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "77716e6f-7462-464e-b8b6-bd2cb3bf5702",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Un domingo en el refugio”: Y claro , era Epidemic sound y no pixabay , es que en ésta  ",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi le puso 👍 a tu comentario: Y claro , era Epidemic sound y no pixabay , es que en ésta",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T17:00:18.457Z"
+  },
   {
    "id": "52f40dcc-62a7-4ebd-b4e6-3dd3e9b82aa9",
    "to": "javi",

@@ -509,11 +509,13 @@ Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achic
 
 | | Tamaño | Cuadros por segundo | Bits |
 |---|---|---|---|
-| 1 | 1080 de lado corto | 24 | 3,5 Mbps |
+| 1 | 1080 de lado corto | 20 | 3,5 Mbps |
 | 2 | 720 | 20 | 2,2 Mbps |
 | 3 | 540 | 15 | 1,4 Mbps |
 
-**Antes de grabar se hace una pasada en vacío.** El primer segundo salía a tirones porque al empezar a grabar el aparato recién estaba despertando el decodificador: en el reel de Casa Manío quedaron **0,7 s congelados entre el 0,33 y el 1,04**. Ahora el video corre un segundo sin grabar, se vuelve al principio y recién ahí empieza la grabación, ya en caliente.
+**Antes de grabar se hace una pasada en vacío.** El primer segundo salía a tirones porque al empezar a grabar el aparato recién estaba despertando el decodificador: en el reel de Casa Manío quedaron **0,7 s congelados entre el 0,33 y el 1,04**. Ahora el video corre **tres segundos sin grabar**, se vuelve al principio, **espera otro poco quieto** —volver atrás vacía lo que el aparato tenía listo— y recién ahí empieza la grabación, ya en caliente. Con la primera versión (un segundo de calentamiento) el tirón del arranque bajó de 0,7 s a 0,22 s; con esta no debería quedar nada.
+
+Y solo se dibujan los fotogramas que corresponden al escalón, con un turno de reloj fijo: de un original de 30 por segundo a un escalón de 20 salen 20 justos, no 15 por saltarse uno sí y uno no.
 
 Se parte por el primero. Si la copia sale mal, se prueba el siguiente: menos cuadros y menos tamaño es muchísimo menos trabajo, y suele ser la diferencia entre una copia entera y una pegada. Además **solo se dibujan los fotogramas que se van a grabar** —dibujar un 4K sesenta veces por segundo para grabarlo a veinte es justamente lo que hace que el teléfono se quede atrás—. Vale más una copia de 540 que un original de 86 MB ocupando el repositorio para siempre; el original entero queda como último recurso, y la app avisa cuánto va a ocupar.
 

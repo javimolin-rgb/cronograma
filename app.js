@@ -4154,7 +4154,7 @@ function datosVideo(file) {
    el teléfono, y es la diferencia entre una copia entera y una que sale pegada. Peor
    una copia de 540 que un original de 86 MB ocupando el repositorio para siempre. */
 const ESCALONES = [
-  { lado: 1080, fps: 24, bits: 3500000 },
+  { lado: 1080, fps: 20, bits: 3500000 },
   { lado: 720, fps: 20, bits: 2200000 },
   { lado: 540, fps: 15, bits: 1400000 }
 ];
@@ -4240,9 +4240,9 @@ async function revisarCopia(original, copia, dur, saltos, dibujados, vOrigen) {
         cuentan los saltos de verdad. */
   const orden = saltos.filter((x) => x > 0).sort((a, b) => a - b);
   const tipico = orden.length ? orden[Math.floor(orden.length / 2)] : 1 / 30;
-  const hueco = Math.max(0.25, tipico * 6);
+  const hueco = Math.max(0.16, tipico * 4);
   const congelado = saltos.reduce((a, x) => a + (x > hueco ? x - tipico : 0), 0);
-  if (congelado > 0.4) malos.push(`se congeló ${seg(congelado)}`);
+  if (congelado > 0.25) malos.push(`se congeló ${seg(congelado)} en total`);
   /* 3) Los fotogramas que el aparato no alcanzó a dibujar NO tumban la copia: un video
         con menos cuadros se ve menos fluido, pero se ve entero y en su tiempo, y eso
         sirve. Lo que no sirve es que quede cortado o pegado, y de eso se encargan los
@@ -4251,7 +4251,7 @@ async function revisarCopia(original, copia, dur, saltos, dibujados, vOrigen) {
   const caidos = q && q.totalVideoFrames > 30 ? q.droppedVideoFrames / q.totalVideoFrames : 0;
   // 4) el arranque, mirando la copia misma
   const arranque = await huecoAlArrancar(copia);
-  if (arranque > 0.25) malos.push(`se corta ${seg(arranque)} al empezar`);
+  if (arranque > 0.18) malos.push(`se traba ${seg(arranque)} al empezar`);
   const porSeg = +(dibujados / Math.max(dur, 0.1)).toFixed(1);
   console.info('copia achicada: ' + JSON.stringify({ dur: +dur.toFixed(2), copia: +m.dur.toFixed(2), dibujados, porSeg, congelado: +congelado.toFixed(2), arranque: +arranque.toFixed(3), caidos: q ? `${q.droppedVideoFrames}/${q.totalVideoFrames}` : 'n/d', malos }));
   copia.porSegundo = porSeg;
@@ -4331,7 +4331,7 @@ async function comprimirVideo(file, objetivo, alAvanzar, escalon) {
        recién estaba despertando el decodificador. Así que primero se deja correr un
        poco EN VACÍO, sin grabar, después se vuelve al principio y recién ahí se graba,
        ya en caliente. Cuesta un segundo y pico y se gana el arranque entero. */
-    const calentar = Math.min(1.2, dur / 3);
+    const calentar = Math.min(3, dur / 3);
     if (calentar > 0.15) {
       await new Promise((ok) => {
         const hasta = performance.now() + 5000;
@@ -4348,6 +4348,10 @@ async function comprimirVideo(file, objetivo, alAvanzar, escalon) {
         v.currentTime = 0;
         setTimeout(fin, 3000);
       });
+      /* Y una pausa más, ya parado en el cero: volver atrás vacía lo que el aparato
+         tenía listo, y si se graba de inmediato los primeros fotogramas no alcanzan a
+         salir. Quieto no se pierde nada de video, solo se espera. */
+      await new Promise((ok) => setTimeout(ok, 800));
       try { await v.play(); }
       catch (e) { FALLO_REINTENTABLE = false; throw new Error('el navegador no dejó volver a empezar el video'); }
     }
@@ -4396,20 +4400,23 @@ async function comprimirVideo(file, objetivo, alAvanzar, escalon) {
        al ritmo del escalón, así que dibujar 60 veces por segundo para grabar 20 es
        trabajo tirado —y dibujar un 4K es justamente lo que hace que el teléfono se
        quede atrás—. Se dibuja lo que se va a grabar y nada más. */
-    /* El margen es amplio a propósito: con un original de 30 por segundo y un escalón de
-       24, pedir el intervalo exacto haría saltarse uno sí y uno no, y quedaría en 15.
-       Así nunca se dibuja menos de lo que el escalón va a grabar. */
-    const cadaCuanto = 0.75 / paso.fps;
+    // cada cuánto toca dibujar, en tiempo del video
+    const cadaCuanto = 1 / paso.fps;
     await new Promise((ok) => {
-      let ultimo = 0, previo = -1, ultimoDibujo = -1;
+      let ultimo = 0, previo = -1, proximo = -1;
       const dibujar = (ahora, meta) => {
         if (v.ended || (v.paused && !v.seeking)) return ok();
         const t = (meta && typeof meta.mediaTime === 'number') ? meta.mediaTime : v.currentTime;
-        if (ultimoDibujo >= 0 && t - ultimoDibujo < cadaCuanto && !v.ended) {
+        /* Se dibuja el primer fotograma que llega en cada turno. El turno avanza siempre
+           lo mismo (no se cuenta desde el último dibujo), que es lo que da el ritmo justo:
+           de un original de 30 a un escalón de 20 salen 20, y no 15 por saltarse uno sí
+           y uno no. Si el aparato se atrasa no se acumula deuda: el turno se pone al día. */
+        if (proximo < 0) proximo = t;
+        if (t + 0.0001 < proximo) {
           if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(dibujar); else requestAnimationFrame(dibujar);
           return;
         }
-        ultimoDibujo = t;
+        proximo = Math.max(proximo + cadaCuanto, t + cadaCuanto * 0.5);
         ctx.drawImage(v, 0, 0, c.width, c.height);
         dibujados++;
         if (previo >= 0 && t > previo) saltos.push(t - previo);

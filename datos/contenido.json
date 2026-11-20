@@ -14080,13 +14080,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Porque de forma ilegal si es una plataforma que permite usar la música?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Porque de forma ilegal si es una plataforma que permite usar la música?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T15:47:35.506Z"
+   "createdAt": "2026-11-20T15:47:35.506Z",
+   "readAt": "2026-11-20T15:51:19.485Z"
   },
   {
    "id": "c9c6a810-679c-4499-9b60-32197b260c5c",

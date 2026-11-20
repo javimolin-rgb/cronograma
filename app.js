@@ -190,7 +190,7 @@ function projects(lastOnly) {
 async function fetchFile(f) {
   if (f.blob) return f.blob; // contenido armado aquí mismo, no hay que ir a buscarlo
   const tries = [fileSrc(f)];
-  if (f.path) tries.push(f.path.split('/').map(encodeURIComponent).join('/')); // copia publicada en esta misma página
+  if (f.path && !f.externo) tries.push(f.path.split('/').map(encodeURIComponent).join('/')); // copia publicada en esta misma página
   for (const u of tries) {
     if (!u) continue;
     try {
@@ -1804,7 +1804,16 @@ async function analizarEspacio() {
   arbol.forEach((x) => { (porSha[x.sha] = porSha[x.sha] || []).push(x); });
   const duplicados = Object.values(porSha).filter((g) => g.length > 1);
   const peso = (lista) => lista.reduce((a, x) => a + ((porPath.get(x.path) || x).size || 0), 0);
+  /* Lo que ya se mudó al repositorio de archivo: no está aquí, pero sigue
+     guardado y la app lo muestra igual. Se lee para poder decirlo en pantalla. */
+  let mudado = null;
+  try {
+    const u = location.origin + location.pathname.replace(/[^/]*$/, '') + 'datos/mudanzas.json?t=' + Date.now();
+    const r = await fetch(u, { cache: 'no-store' });
+    if (r.ok) mudado = await r.json();
+  } catch (e) { /* todavía no se ha mudado nada */ }
   return {
+    mudado,
     total: arbol.reduce((a, x) => a + x.size, 0), archivos: arbol.length,
     viejas: viejasReales, pesoViejas: peso(viejasReales),
     sueltos, pesoSueltos: peso(sueltos),
@@ -1830,11 +1839,12 @@ function renderEspacio(estado) {
   $('#panel').innerHTML = `<div class="ph"><button class="iconbtn" data-act="sheet-close" aria-label="Cerrar">${ic('x')}</button><h2>Espacio</h2><span style="width:40px"></span></div>
     <div class="pb">
       <div class="kpis"><div class="kpi"><small>Guardado en total</small><b>${esc(prettySize(E.total))}</b><span>${E.archivos} archivos · ${usado}% de 1 GB</span></div>
-        <div class="kpi"><small>Se podría soltar</small><b>${esc(prettySize(E.pesoViejas + E.pesoSueltos + E.pesoDuplicados))}</b></div></div>
+        <div class="kpi"><small>Se podría soltar</small><b>${esc(prettySize(E.pesoViejas + E.pesoSueltos + E.pesoDuplicados))}</b></div>
+        ${E.mudado && E.mudado.total && E.mudado.total.archivos ? `<div class="kpi wide"><small>Guardado en el archivo (no pesa aquí)</small><b>${esc(prettySize(E.mudado.total.bytes))}</b><span>${E.mudado.total.archivos} archivos en ${esc(E.mudado.repo || 'el repositorio de archivo')} · se siguen viendo en la app, no se perdió nada</span></div>` : ''}</div>
       ${usado >= 75 ? `<div class="avisobar${usado >= 90 ? ' mal' : ''}">${ic('alert', 18)}<span>El sitio va en el <b>${usado}% de 1 GB</b>, que es lo máximo que GitHub publica. Quedan ${esc(prettySize(Math.max(0, TOPE_SITIO - E.total)))}: conviene soltar lo que ya no se usa.</span></div>` : ''}
       ${estado ? `<div class="avisobar">${ic('send', 18)}<span>${esc(estado)}</span></div>` : ''}
-      ${grupo('Versiones anteriores', E.viejas.length, E.pesoViejas, 'Archivos que quedaron atrás cuando subiste una versión nueva. Se queda siempre la última de cada uno.', 'esp-viejas', 'Soltar')}
-      ${grupo('Archivos sueltos', E.sueltos.length, E.pesoSueltos, 'Están en el repositorio pero ninguna pieza los usa: sobras de subidas que no terminaron.', 'esp-sueltos', 'Soltar')}
+      ${grupo('Versiones anteriores', E.viejas.length, E.pesoViejas, 'Archivos que quedaron atrás cuando subiste una versión nueva. Se queda siempre la última de cada uno. <b>No hace falta soltarlas:</b> cada madrugada se mudan solas al repositorio de archivo, donde no pesan aquí y se siguen viendo.', 'esp-viejas', 'Soltar')}
+      ${grupo('Archivos sueltos', E.sueltos.length, E.pesoSueltos, 'Están en el repositorio pero ninguna pieza los usa: sobras de subidas que no terminaron. Si prefieres guardarlos en vez de borrarlos, se pueden mudar al archivo desde Actions → “Mudar lo viejo al archivo”.', 'esp-sueltos', 'Soltar')}
       ${grupo('Repetidos', E.duplicados.length, E.pesoDuplicados, 'El mismo contenido guardado más de una vez. Se deja una copia y las piezas apuntan a ella.', 'esp-dupes', 'Unir')}
       <p class="hint">Lo que se suelta se borra del repositorio y no se puede deshacer desde aquí (queda en el historial de GitHub).</p>
     </div>`;
@@ -3432,7 +3442,10 @@ function compartir(url, titulo, texto) {
   return true;
 }
 const urlPublica = (ruta) => (siteBase().replace(/\/?$/, '/')) + String(ruta || '').split('/').map(encodeURIComponent).join('/');
-const urlArchivo = (f) => f && (f.path ? urlPublica(f.path) : (f.url || ''));
+/* El enlace directo a un archivo sale del sitio publicado, salvo que el
+   archivo se haya mudado al repositorio de archivo: ahí ya no está en el
+   sitio, así que vale la dirección guardada (ver “Mudar lo viejo”). */
+const urlArchivo = (f) => f && (f.path && !f.externo ? urlPublica(f.path) : (f.url || ''));
 /* Todo lo que se puede compartir de una pieza: ella misma, su texto, sus archivos, su interactivo */
 function cosasDeLaPieza(p) {
   const out = [{ que: 'La pieza', titulo: p.title, det: 'Se abre en el cronograma, en esta misma pieza', url: siteLink(p.id), icono: 'link' }];
@@ -6214,7 +6227,7 @@ const ACTS = {
       const queda = g[0];
       g.slice(1).forEach((otro) => {
         S.db.posts.forEach((p) => (p.files || []).forEach((f) => {
-          if (f.path === otro.path) { f.path = queda.path; f.url = store.rawUrl ? store.rawUrl(queda.path) : f.url; f.sha = queda.sha; tocados.add(p.id); }
+          if (f.path === otro.path && !f.externo) { f.path = queda.path; f.url = store.rawUrl ? store.rawUrl(queda.path) : f.url; f.sha = queda.sha; tocados.add(p.id); }
         }));
         sobran.push(otro);
       });
@@ -6683,7 +6696,8 @@ const ACTS = {
     renderEditor();
     // si otra pieza (o una versión anterior) apunta al mismo archivo, solo se saca de aquí
     const compartido = f && S.db.posts.some((p) => (p.files || []).some((x) => x.id !== f.id && x.path === f.path));
-    if (f && f.path && !compartido && store.deleteFile) store.deleteFile(f.path, f.sha).catch(() => {});
+    // los mudados al archivo no están en este repositorio: no hay nada que borrar aquí
+    if (f && f.path && !f.externo && !compartido && store.deleteFile) store.deleteFile(f.path, f.sha).catch(() => {});
   },
   'ed-view': (el) => {
     const f = ED && ED.d.files.find((x) => x.id === el.dataset.id); if (!f) return;

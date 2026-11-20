@@ -1,0 +1,110 @@
+# Muda los archivos viejos a un repositorio aparte, para que el sitio
+# publicado no llegue al tope de 1 GB de GitHub Pages.
+#
+# Nada se borra: primero se copia al repositorio de archivo y se comprueba
+# que llegó idéntica (comparando el sha de git), y recién después se saca
+# de aquí. El porqué está en el README, en "Mudar lo viejo a otro repositorio".
+#
+# Todos los días muda solo versiones anteriores de archivos, que es lo que
+# se va acumulando. Los archivos sueltos se mudan solo cuando alguien lo
+# pide a mano desde la pestaña Actions, porque conviene mirar la lista antes.
+name: Mudar lo viejo al archivo
+
+on:
+  schedule:
+    - cron: '43 8 * * *'   # 05:43 en Chile, después de guardar el historial
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'Qué mudar (versiones = solo versiones anteriores; todo = también los sueltos)'
+        type: choice
+        default: versiones
+        options: [versiones, todo]
+      simulacro:
+        description: 'Solo mirar, sin mover nada'
+        type: boolean
+        default: true
+      dias:
+        description: 'Días que tiene que llevar una versión para mudarse'
+        default: '7'
+      tope_mb:
+        description: 'Cuántos MB como máximo en esta pasada'
+        default: '300'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mudanza
+  cancel-in-progress: false
+
+env:
+  # El repositorio donde se van guardando los archivos viejos.
+  # Tiene que ser público (si no, la app no podría mostrar las fotos) y no
+  # necesita tener sitio publicado. Cuando se llene, se crea el del año
+  # siguiente y se cambia este nombre: lo ya mudado sigue donde está.
+  ARCHIVO_REPO: javimolin-rgb/cronograma-archivo-2026
+  ARCHIVO_RAMA: main
+
+jobs:
+  mudar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Ver si está configurado
+        id: listo
+        env:
+          LLAVE: ${{ secrets.ARCHIVO_TOKEN }}
+        run: |
+          if [ -z "$LLAVE" ]; then
+            echo "Falta el secreto ARCHIVO_TOKEN: todavía no se puede mudar nada."
+            echo "Cómo dejarlo listo: está en el README, en 'Mudar lo viejo a otro repositorio'."
+            echo "seguir=no" >> $GITHUB_OUTPUT
+          else
+            echo "seguir=si" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Mudar
+        if: steps.listo.outputs.seguir == 'si'
+        env:
+          ARCHIVO_TOKEN: ${{ secrets.ARCHIVO_TOKEN }}
+          MODO: ${{ inputs.modo || 'versiones' }}
+          DIAS: ${{ inputs.dias || '7' }}
+          TOPE_MB: ${{ inputs.tope_mb || '300' }}
+          SIMULACRO: ${{ inputs.simulacro || 'false' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          node .github/scripts/mudar.mjs --plan
+          node .github/scripts/mudar.mjs --subir
+
+          if [ "$SIMULACRO" = "true" ]; then
+            echo "Simulacro: hasta aquí. No se cambió nada."
+            exit 0
+          fi
+
+          intento=1
+          while [ $intento -le 3 ]; do
+            node .github/scripts/mudar.mjs --aplicar
+            git add -A datos archivos
+            if [ -z "$(git status --porcelain)" ]; then
+              echo "nada que mudar esta vez"
+              exit 0
+            fi
+            git commit -m "Mudados al archivo: el sitio pesa menos y no se pierde nada"
+            if git push; then exit 0; fi
+            # alguien guardó desde la app en el mismo momento: se vuelve a
+            # empezar con lo último. Los archivos ya están copiados allá, así
+            # que repetir solo rehace el cambio de datos y el borrado.
+            echo "guardaron al mismo tiempo: se reintenta sobre lo último"
+            git fetch origin ${{ github.ref_name }}
+            git reset --hard origin/${{ github.ref_name }}
+            sleep 5
+            intento=$((intento + 1))
+          done
+          echo "no se pudo esta vez; mañana se vuelve a intentar"

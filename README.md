@@ -618,11 +618,44 @@ En **Entregas → Espacio** se ve cuánto ocupa todo y qué se puede soltar, en 
 
 | Grupo | Qué es |
 |---|---|
-| Versiones anteriores | Lo que quedó atrás al subir una versión nueva. Se conserva siempre la última de cada archivo. |
-| Archivos sueltos | Están en el repositorio pero ninguna pieza los usa: sobras de subidas que no terminaron. |
+| Versiones anteriores | Lo que quedó atrás al subir una versión nueva. Se conserva siempre la última de cada archivo. **No hace falta soltarlas:** se mudan solas al archivo cada madrugada (ver *Mudar lo viejo a otro repositorio*). |
+| Archivos sueltos | Están en el repositorio pero ninguna pieza los usa: sobras de subidas que no terminaron. Si prefieres guardarlos en vez de borrarlos, se pueden mudar al archivo. |
 | Repetidos | El mismo contenido guardado dos veces. Se deja una copia y las piezas apuntan a ella. |
 
 Cada grupo se suelta por separado, con su confirmación y el peso que libera. Ojo: eso libera el sitio publicado, pero el historial de GitHub sigue guardando lo que hubo (es así por diseño).
+
+Arriba del todo aparece además **“Guardado en el archivo (no pesa aquí)”**: lo que ya se mudó al repositorio de archivo (ver abajo). Está guardado, se sigue viendo en la app, y no ocupa sitio publicado.
+
+### Mudar lo viejo a otro repositorio
+
+El sitio publicado de GitHub Pages tiene un tope **duro de 1 GB**. En noviembre de 2026 íbamos en 649 MB y subiendo ~19 MB al día: a ese ritmo el tope llegaba en tres semanas. Así que lo viejo se muda a un repositorio aparte y deja de pesar aquí.
+
+**Por qué no un fork.** Los forks comparten un mismo montón de objetos con el repositorio original, así que mudar a un fork no libera nada. Tiene que ser un repositorio normal.
+
+**Nada se borra.** El orden es siempre el mismo y no se salta: se copia al repositorio de archivo → **se comprueba** que la copia es idéntica → recién entonces se cambia la dirección en los datos y se saca de aquí. La comprobación compara el *sha de git*, que no es un parecido: el sha **es** el contenido, así que si cuadra la copia es idéntica byte a byte. Si algo falla a mitad de camino, lo peor que pasa es que el archivo quede en los dos lados; nunca en ninguno.
+
+En la app no cambia nada: las fotos y videos mudados se siguen viendo igual, porque cada archivo guarda su dirección completa y esa dirección se actualiza en la misma operación.
+
+**Qué se muda, cada madrugada a las 05:43 de Chile:**
+
+- Las **versiones anteriores** de un archivo, cuando ya hay una más nueva y pasaron 7 días. Son las que la pieza muestra en *“Ver más · N archivos anteriores”*, y se siguen viendo ahí.
+
+**Qué se muda solo si alguien lo pide** (Actions → *Mudar lo viejo al archivo* → modo `todo`):
+
+- Los **archivos sueltos**: están en el repositorio y ninguna pieza, ni Marca, ni ninguna página interactiva los usa. Van aparte porque conviene mirar la lista antes, y para eso el modo trae una casilla de **simulacro** que enseña qué haría sin tocar nada.
+
+**Qué no se muda nunca:** la última versión de cada archivo, las páginas interactivas, los archivos de Marca, y cualquier archivo cuyo nombre aparezca escrito dentro de un html, js o css del repositorio (puede que una página lo cargue sola).
+
+El registro de todo lo mudado queda en `datos/mudanzas.json`: qué archivo, su sha, su peso y de qué pieza venía. De ahí sale el recuadro de Espacio.
+
+#### Dejarlo andando (una vez)
+
+La tarea no hace nada hasta que existan estas dos cosas; mientras tanto sale en el registro diciendo qué falta.
+
+1. **Crear el repositorio** `cronograma-archivo-2026`, **público** y vacío. Público porque, si no, el navegador no podría mostrar las fotos. No necesita sitio publicado (Pages apagado): las direcciones `raw` funcionan igual, y así su peso no cuenta contra ningún tope de sitio.
+2. **Dar permiso para escribir ahí.** En GitHub → *Settings* → *Developer settings* → *Personal access tokens* → *Fine-grained tokens*, crear uno que alcance solo a ese repositorio, con permiso **Contents: Read and write**. Copiarlo y guardarlo en este repositorio como secreto llamado **`ARCHIVO_TOKEN`** (*Settings* → *Secrets and variables* → *Actions* → *New repository secret*).
+
+Si alguna vez el repositorio de archivo se llena, se crea el del año siguiente y se cambia `ARCHIVO_REPO` en `.github/workflows/mudanza.yml`. Lo ya mudado se queda donde está y se sigue viendo: cada archivo recuerda su propia dirección.
 
 ## Archivos por tandas
 

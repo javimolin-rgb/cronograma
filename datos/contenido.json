@@ -8137,6 +8137,14 @@
  ],
  "comments": [
   {
+   "id": "70df530b-1c08-4a2b-a8f8-27dfa68e2178",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Aprobado @Javi , gracias!!!",
+   "fileIds": [],
+   "createdAt": "2026-11-20T18:20:16.257Z"
+  },
+  {
    "id": "150ab1e2-dccb-45ef-826d-2230ebe227ed",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "javi",
@@ -11183,6 +11191,16 @@
  ],
  "activity": [
   {
+   "id": "f0b9b5eb-d70a-48d5-86eb-8fc327b6a19d",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T18:20:16.266Z"
+  },
+  {
    "id": "141a6740-4e90-41fc-8cf7-760f7b1d3c00",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14101,6 +14119,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4f5a2314-9523-4ec3-a537-726b3d87375a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Aprobado @Javi , gracias!!!",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Aprobado @Javi , gracias!!!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T18:20:16.272Z"
+  },
+  {
+   "id": "501ba12c-2d7c-4308-a713-63058c39d8f9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "mention",
+   "text": "te mencionó en “Un domingo en el refugio”: Aprobado @Javi , gracias!!!",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca te mencionó: Aprobado @Javi , gracias!!!",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T18:20:16.270Z"
+  },
   {
    "id": "e06b7112-d60f-4011-b21a-d60f75d7e164",
    "to": "javi",

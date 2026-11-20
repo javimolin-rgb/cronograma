@@ -1630,11 +1630,11 @@
    ],
    "spotify": "",
    "campaign": "3. Videos lifestyle",
-   "time": "",
+   "time": "21:00",
    "date": "2026-11-22",
    "inicio": "",
    "format": "reel",
-   "status": "aprobado",
+   "status": "programado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -2146,9 +2146,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T18:39:37.730Z",
+   "updatedAt": "2026-11-20T19:21:06.516Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-20T18:39:37.730Z",
+   "statusChangedAt": "2026-11-20T19:21:06.516Z",
    "publishedAt": null
   },
   {
@@ -11255,6 +11255,29 @@
  ],
  "activity": [
   {
+   "id": "a2f26479-dce9-4066-8b71-57c6053e617b",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó hora",
+   "meta": null,
+   "createdAt": "2026-11-20T19:21:06.518Z"
+  },
+  {
+   "id": "232f34f8-5ac6-414b-b7ae-4fea312439b0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a Programado",
+   "meta": {
+    "from": "aprobado",
+    "to": "programado"
+   },
+   "createdAt": "2026-11-20T19:21:06.517Z"
+  },
+  {
    "id": "4b8ceae2-80a8-43b4-8013-bd94f7cc001a",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14265,6 +14288,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5796f742-4358-4e42-a882-2fadbde1a3c5",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "update",
+   "text": "editó “Un domingo en el refugio” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T19:21:06.518Z"
+  },
+  {
+   "id": "2b522a78-92b6-4356-ae9d-57cb3fe0b955",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Programado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a Programado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T19:21:06.518Z"
+  },
   {
    "id": "7143e3c0-8830-49f5-91c8-bf7e0857f2ae",
    "to": "flavio",

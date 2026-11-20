@@ -2146,8 +2146,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T15:52:07.295Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-20T15:53:41.789Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -8045,6 +8045,14 @@
  ],
  "comments": [
   {
+   "id": "a228654d-be6d-4e91-89de-ed144b424ead",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍♀️",
+   "fileIds": [],
+   "createdAt": "2026-11-20T15:53:41.797Z"
+  },
+  {
    "id": "4132a8c9-38d1-4780-8d75-f2d6b160ba9e",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -11045,6 +11053,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "20cb2429-d40b-4141-a9f6-b279b4a12606",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T15:53:41.802Z"
+  },
   {
    "id": "500040e8-6cc7-48f9-998f-d513fe614663",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14091,6 +14109,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0f7da626-a26f-4531-8708-8372652319c3",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:53:41.804Z"
+  },
+  {
+   "id": "333d2eef-14d6-43f4-a211-aa6afe4bb486",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:53:41.804Z"
+  },
   {
    "id": "bfcfd04e-a0cc-4341-911c-9fa474355d73",
    "to": "flavio",
@@ -21619,8 +21667,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-20T15:47:35.500Z",
-   "hasta": "2026-11-20T15:47:35.494Z",
+   "at": "2026-11-20T15:53:41.796Z",
+   "hasta": "2026-11-20T15:53:41.789Z",
    "que": "comentario"
   },
   {

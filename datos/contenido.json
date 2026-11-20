@@ -11273,6 +11273,16 @@
  ],
  "activity": [
   {
+   "id": "72349fa2-99f5-44af-bff3-6def9db86cd5",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: necesita que revises esto hoy",
+   "meta": null,
+   "createdAt": "2026-11-20T21:24:06.068Z"
+  },
+  {
    "id": "303bd690-4e39-454f-ac89-3da28792ca13",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14316,6 +14326,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d53933d5-af85-4d44-bb03-a2b4167481a5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Roble”: necesita que revises esto hoy",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Roble",
+   "body": "Javi necesita que revises esto hoy",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-20T21:24:06.068Z"
+  },
   {
    "id": "e94d0adb-4125-4450-a260-9ae2fc353be4",
    "to": "flavio",

@@ -3282,7 +3282,7 @@
      "sha": "3dafdcf8477126885aa84c1e9c5da061b2227403",
      "type": "image/webp",
      "size": 84492,
-     "orden": 1003
+     "orden": 1016
     },
     {
      "id": "c8e0a54c-c1c6-4b3b-95b6-594a643c9ce7",
@@ -3297,7 +3297,7 @@
      "sha": "6a2d29eef921e09a5adbfbd3b4d89c5ec72f6a3b",
      "type": "image/webp",
      "size": 69790,
-     "orden": 1004
+     "orden": 1017
     },
     {
      "id": "0ee62adf-84d5-44f6-91e7-400c84574dcc",
@@ -3312,7 +3312,7 @@
      "sha": "df9761083ec23b32314b6827dcd60593fe0e617a",
      "type": "image/webp",
      "size": 102376,
-     "orden": 1005
+     "orden": 1018
     },
     {
      "id": "acdae51f-1054-4f25-84de-ef9d9b3097d6",
@@ -3327,7 +3327,7 @@
      "sha": "6035b98fb9ab12f28e0b7af26047d60d1a77e1f0",
      "type": "image/webp",
      "size": 62296,
-     "orden": 1006
+     "orden": 1019
     },
     {
      "id": "46842364-1b67-444e-8bf8-486a31ef3066",
@@ -3342,7 +3342,7 @@
      "sha": "88efbd948ff030fc584447e7860e3d06bf0326c5",
      "type": "image/webp",
      "size": 79816,
-     "orden": 1007
+     "orden": 1020
     },
     {
      "id": "b63c7c93-243d-42f2-a100-4ef98bdf1c2e",
@@ -3357,7 +3357,7 @@
      "sha": "39fedb19a790f844f2c0ba6d903451cdadb634de",
      "type": "image/webp",
      "size": 57180,
-     "orden": 1008
+     "orden": 1021
     },
     {
      "id": "d7dd7674-c5c1-4a19-a69b-5f23f85b42b5",
@@ -3372,7 +3372,7 @@
      "sha": "765652b6d2feb21b9b2a2e365fd7a895a1f16f66",
      "type": "image/webp",
      "size": 66754,
-     "orden": 1009,
+     "orden": 2,
      "extra": true
     },
     {
@@ -3388,7 +3388,7 @@
      "sha": "4247b3ea968fb9da3cc37fadf45220ee922387a4",
      "type": "image/webp",
      "size": 81604,
-     "orden": 1010,
+     "orden": 3,
      "extra": true
     },
     {
@@ -3404,7 +3404,7 @@
      "sha": "4f6429e4cbdd9ae56878656806152baa68576fc0",
      "type": "image/webp",
      "size": 111486,
-     "orden": 1011,
+     "orden": 4,
      "extra": true
     },
     {
@@ -3420,7 +3420,7 @@
      "sha": "028c6a426416405259410b17b5e7679157ab3993",
      "type": "image/webp",
      "size": 73414,
-     "orden": 1012,
+     "orden": 5,
      "extra": true
     },
     {
@@ -3436,7 +3436,7 @@
      "sha": "33b09e13136641d228c40f83c1be6a061f050497",
      "type": "image/webp",
      "size": 97150,
-     "orden": 1013,
+     "orden": 6,
      "extra": true
     },
     {
@@ -3452,7 +3452,7 @@
      "sha": "e35337040c43270038b7e92a39b18084e494c48d",
      "type": "image/webp",
      "size": 72038,
-     "orden": 1014,
+     "orden": 7,
      "extra": true
     },
     {
@@ -3468,7 +3468,7 @@
      "sha": "84066a932ca8d2e822139158feafe71b188ed938",
      "type": "image/webp",
      "size": 66708,
-     "orden": 1015,
+     "orden": 8,
      "extra": true
     },
     {
@@ -3484,7 +3484,7 @@
      "sha": "c5a2a3a5cd58301f3a9234546e9da773149e7d8e",
      "type": "image/webp",
      "size": 81634,
-     "orden": 1016,
+     "orden": 9,
      "extra": true
     },
     {
@@ -3500,7 +3500,7 @@
      "sha": "3151c7308cb6cb1e44254a1dab57c09c30b58747",
      "type": "image/webp",
      "size": 111654,
-     "orden": 1017,
+     "orden": 10,
      "extra": true
     },
     {
@@ -3516,7 +3516,7 @@
      "sha": "adacb32e1641609f8f924ac683962cd1f1113858",
      "type": "image/webp",
      "size": 97146,
-     "orden": 1018,
+     "orden": 11,
      "extra": true
     },
     {
@@ -3532,7 +3532,7 @@
      "sha": "e2e230f45c8abd02415f30f821e4af27b35c3006",
      "type": "image/webp",
      "size": 73232,
-     "orden": 1019,
+     "orden": 12,
      "extra": true
     },
     {
@@ -3548,7 +3548,7 @@
      "sha": "3d957abfdfe3c46f876df843a81f7db490418256",
      "type": "image/webp",
      "size": 71956,
-     "orden": 1020,
+     "orden": 13,
      "extra": true
     },
     {
@@ -3583,10 +3583,28 @@
      "type": "image/webp",
      "size": 87276,
      "orden": 1
+    },
+    {
+     "id": "6e39faaf-8bdd-4f89-8099-5c274d35aef3",
+     "by": "javi",
+     "at": "2026-11-20T19:14:16.198Z",
+     "base": "reel_casa_manio",
+     "version": 2,
+     "shaOrigen": "e28d3daeb76db42ca65ceb910992c81a64b6c348",
+     "dur": 46,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_manio-v2.mp4",
+     "path": "archivos/1.-modelos-3d/reel_casa_manio-v2.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/reel_casa_manio-v2.mp4",
+     "sha": "e28d3daeb76db42ca65ceb910992c81a64b6c348",
+     "type": "video/mp4",
+     "size": 14867507,
+     "orden": 14
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-20T19:06:51.424Z",
+   "updatedAt": "2026-11-20T19:14:21.928Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -11237,6 +11255,16 @@
  ],
  "activity": [
   {
+   "id": "4b8ceae2-80a8-43b4-8013-bd94f7cc001a",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-20T19:14:21.931Z"
+  },
+  {
    "id": "c809565d-aae9-4814-929c-d40b2c102259",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14237,6 +14265,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7143e3c0-8830-49f5-91c8-bf7e0857f2ae",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T19:14:21.932Z"
+  },
+  {
+   "id": "297a455c-493e-4751-9874-8ed542d95b93",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T19:14:21.932Z"
+  },
   {
    "id": "10ef2729-22eb-4e16-a2db-66d6f817ab12",
    "to": "maca",

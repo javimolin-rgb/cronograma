@@ -1175,7 +1175,7 @@
    "date": "2026-11-26",
    "inicio": "",
    "format": "carrusel",
-   "status": "espera",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1393,9 +1393,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T18:45:23.917Z",
+   "updatedAt": "2026-11-20T18:45:48.114Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-20T18:45:23.917Z",
+   "statusChangedAt": "2026-11-20T18:45:48.114Z",
    "publishedAt": null
   },
   {
@@ -11191,6 +11191,19 @@
  ],
  "activity": [
   {
+   "id": "1bd4a67e-d823-459b-9ba6-33a770c98c31",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Esperando aprobación a En revisión",
+   "meta": {
+    "from": "espera",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-20T18:45:48.115Z"
+  },
+  {
    "id": "1e6aba67-1cff-4265-8aa4-b789570a518c",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14145,6 +14158,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6529572d-8563-4160-92ab-d69d9e525999",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "status",
+   "text": "movió “Aire nuevo sin abrir la ventana” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-20T18:45:48.116Z"
+  },
   {
    "id": "4ef42582-5842-4740-a19e-20fe8eb71b31",
    "to": "maca",

@@ -449,6 +449,7 @@ Se abre una pantalla con todo lo que se necesita para ir a Instagram y publicar:
 
 - **El texto listo para pegar**: el copy con los hashtags debajo, con su cuenta de caracteres y de hashtags. **Copiar todo**, **Solo el copy** o **Solo los hashtags**, según cómo prefieras pegarlo.
 - **Las láminas finales, en su orden**, numeradas `01`, `02`, `03`… Son las últimas versiones de cada archivo y respetan el orden que les pusiste a mano. Tocando la miniatura se ven en grande.
+- **Las fotos salen en PNG.** Al subirlas, el cronograma las guarda en WebP porque pesa la mitad, pero **Instagram no acepta WebP**: al exportar se vuelven a escribir en PNG (el mismo contenido en otro formato, sin volver a comprimir, así que no pierden nada más). Lo que ya es JPG o PNG sale tal cual, y los videos no se tocan.
 - **En el celular, el botón principal es Guardar en la galería**: deja las fotos o el video en **Fotos**, que es de donde sube Instagram. Cada lámina tiene además su propio botón **Galería**, para guardarlas de a una.
 - **En el computador, el botón principal es Descargar todo**, una descarga normal: el `.zip` con todas numeradas y, adentro, el texto en **texto.txt** (si es un archivo solo, baja el archivo tal cual). Cada lámina tiene su **Bajar**. Compartir queda al lado, en chico: el ícono de la esquina abajo a la izquierda y, en cada lámina, el iconito de compartir. Eso abre el menú del computador —AirDrop, Mensajes, Agregar a Fotos—, que sirve para pasarlas al teléfono, no para dejarlas en el disco.
 

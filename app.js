@@ -3469,10 +3469,30 @@ let EXP = null;
 const expPieza = () => EXP && ((ED && ED.d && ED.d.id === EXP.id) ? ED.d : S.db.posts.find((x) => x.id === EXP.id));
 // Lo que de verdad se sube a la red: fotos y videos, sin el material de apoyo
 const expMedios = (p) => laminas(p).filter(esMedia);
+/* Instagram no acepta WebP, y al subir las fotos se guardan justamente en WebP porque
+   pesa la mitad. Así que lo que sale por “Para publicar” se convierte a PNG: se vuelve
+   a escribir la misma imagen en otro formato, sin volver a comprimirla, así que no
+   pierde nada más de lo que ya traía. Lo que ya es JPG o PNG sale tal cual. */
+const IG_OK = ['jpg', 'jpeg', 'png'];
+const hayQueConvertir = (f) => isImg(f) && !IG_OK.includes(extOf(f));
 // Cómo se llama al bajarlo: primero el número, que es el orden del carrusel
 function nombreExport(f, i, total) {
   const info = splitName(f.name);
-  return `${total > 1 ? pad(i + 1) + '-' : ''}${info.base || 'archivo'}${info.ext ? '.' + info.ext : ''}`;
+  const ext = hayQueConvertir(f) ? 'png' : info.ext;
+  return `${total > 1 ? pad(i + 1) + '-' : ''}${info.base || 'archivo'}${ext ? '.' + ext : ''}`;
+}
+/* El archivo listo para publicar: el mismo de siempre, o su copia en PNG si venía en
+   un formato que Instagram no traga. Devuelve algo que fetchFile() sabe leer. */
+async function archivoPublicable(f, i, total) {
+  const nombre = nombreExport(f, i, total);
+  if (!hayQueConvertir(f)) return Object.assign({}, f, { name: nombre });
+  try {
+    const png = await comoPng(await fetchFile(f));
+    if (png && png.size) return { id: f.id, name: nombre, blob: png, size: png.size, type: 'image/png' };
+  } catch (e) { console.warn('no se pudo pasar a PNG', f.name, e); }
+  // si el navegador no pudo convertirla, va tal cual con su nombre de siempre
+  const info = splitName(f.name);
+  return Object.assign({}, f, { name: `${total > 1 ? pad(i + 1) + '-' : ''}${info.base || 'archivo'}${info.ext ? '.' + info.ext : ''}` });
 }
 function palabraLamina(p, n) {
   if (p.format === 'carrusel') return n === 1 ? 'lámina' : 'láminas';
@@ -3537,8 +3557,9 @@ async function prepararCompartir(p) {
   try {
     const files = [];
     for (let i = 0; i < medios.length; i++) {
-      const b = await fetchFile(medios[i]);
-      files.push(new File([b], nombreExport(medios[i], i, medios.length), { type: b.type || medios[i].type || 'application/octet-stream' }));
+      const listo = await archivoPublicable(medios[i], i, medios.length);
+      const b = await fetchFile(listo);
+      files.push(new File([b], listo.name, { type: b.type || listo.type || 'application/octet-stream' }));
     }
     if (!navigator.canShare({ files })) return;
     if (EXP && EXP.id === p.id) { EXP.files = files; }
@@ -3583,6 +3604,7 @@ function renderExport() {
             <button class="expact" data-act="exp-una" data-f="${esc(f.id)}" title="${esc(prettySize(f.size) || '')}">${ic('download', 13)} Bajar</button>
             ${galeriaLista() && !esTelefono() ? `<button class="expact solo" data-act="exp-galeria" data-f="${esc(f.id)}" title="Compartir: AirDrop, Mensajes, Agregar a Fotos" aria-label="Compartir ${esc(f.name)}">${ic('share', 14)}</button>` : ''}
           </div></div>`).join('')}</div>
+        ${medios.some(hayQueConvertir) ? `<p class="hint">${ic('image', 14)} Las fotos salen en <b>PNG</b>: en el cronograma se guardan en WebP, que pesa la mitad pero Instagram no acepta.</p>` : ''}
         ${galeriaHintHtml(medios)}
         <p class="hint">${total > 1 ? `Bajar las deja numeradas (01, 02…) ${dondeQueda()}, para no perder el orden` : `Bajar lo deja ${dondeQueda()}`}${texto ? ', y el zip trae además el texto en <b>texto.txt</b>' : ''}. Tocando la miniatura se ve en grande.</p>`
       : `<p class="hint">Sube las fotos o el video a la pieza y aquí quedan listos para publicar.</p>`}
@@ -6719,15 +6741,21 @@ const ACTS = {
     const p = expPieza(); if (!p) return;
     const medios = expMedios(p), i = medios.findIndex((x) => x.id === el.dataset.f);
     if (i < 0) return;
-    await downloadOne(Object.assign({}, medios[i], { name: nombreExport(medios[i], i, medios.length) }));
+    if (hayQueConvertir(medios[i])) toast('Pasándola a PNG para Instagram…', 4000);
+    await downloadOne(await archivoPublicable(medios[i], i, medios.length));
   },
   'exp-zip': async () => {
     const p = expPieza(); if (!p) return;
     const medios = expMedios(p);
     if (!medios.length) { toast('Esta pieza todavía no tiene fotos ni videos'); return; }
     const texto = textoPublicacion(p);
-    if (medios.length === 1 && !texto) { await downloadOne(Object.assign({}, medios[0], { name: nombreExport(medios[0], 0, 1) })); return; }
-    const entries = medios.map((f, i) => ({ name: nombreExport(f, i, medios.length), file: f }));
+    if (medios.some(hayQueConvertir)) toast('Pasando las fotos a PNG para Instagram…', 5000);
+    if (medios.length === 1 && !texto) { await downloadOne(await archivoPublicable(medios[0], 0, 1)); return; }
+    const entries = [];
+    for (let i = 0; i < medios.length; i++) {
+      const listo = await archivoPublicable(medios[i], i, medios.length);
+      entries.push({ name: listo.name, file: listo });
+    }
     if (texto) entries.push({ name: 'texto.txt', file: { name: 'texto.txt', blob: new Blob([texto], { type: 'text/plain;charset=utf-8' }) } });
     await downloadZip(entries, slugify(p.title, 'pieza') + '-para-publicar');
   },

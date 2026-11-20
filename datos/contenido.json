@@ -3256,7 +3256,7 @@
    "date": "2026-11-24",
    "inicio": "2026-11-09",
    "format": "story",
-   "status": "diseno",
+   "status": "revision",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3282,7 +3282,7 @@
      "sha": "3dafdcf8477126885aa84c1e9c5da061b2227403",
      "type": "image/webp",
      "size": 84492,
-     "orden": 1007
+     "orden": 1003
     },
     {
      "id": "c8e0a54c-c1c6-4b3b-95b6-594a643c9ce7",
@@ -3297,7 +3297,7 @@
      "sha": "6a2d29eef921e09a5adbfbd3b4d89c5ec72f6a3b",
      "type": "image/webp",
      "size": 69790,
-     "orden": 1008
+     "orden": 1004
     },
     {
      "id": "0ee62adf-84d5-44f6-91e7-400c84574dcc",
@@ -3312,7 +3312,7 @@
      "sha": "df9761083ec23b32314b6827dcd60593fe0e617a",
      "type": "image/webp",
      "size": 102376,
-     "orden": 1009
+     "orden": 1005
     },
     {
      "id": "acdae51f-1054-4f25-84de-ef9d9b3097d6",
@@ -3327,7 +3327,7 @@
      "sha": "6035b98fb9ab12f28e0b7af26047d60d1a77e1f0",
      "type": "image/webp",
      "size": 62296,
-     "orden": 1010
+     "orden": 1006
     },
     {
      "id": "46842364-1b67-444e-8bf8-486a31ef3066",
@@ -3342,7 +3342,7 @@
      "sha": "88efbd948ff030fc584447e7860e3d06bf0326c5",
      "type": "image/webp",
      "size": 79816,
-     "orden": 1011
+     "orden": 1007
     },
     {
      "id": "b63c7c93-243d-42f2-a100-4ef98bdf1c2e",
@@ -3357,7 +3357,7 @@
      "sha": "39fedb19a790f844f2c0ba6d903451cdadb634de",
      "type": "image/webp",
      "size": 57180,
-     "orden": 1012
+     "orden": 1008
     },
     {
      "id": "d7dd7674-c5c1-4a19-a69b-5f23f85b42b5",
@@ -3372,7 +3372,7 @@
      "sha": "765652b6d2feb21b9b2a2e365fd7a895a1f16f66",
      "type": "image/webp",
      "size": 66754,
-     "orden": 1013,
+     "orden": 1009,
      "extra": true
     },
     {
@@ -3388,7 +3388,7 @@
      "sha": "4247b3ea968fb9da3cc37fadf45220ee922387a4",
      "type": "image/webp",
      "size": 81604,
-     "orden": 1014,
+     "orden": 1010,
      "extra": true
     },
     {
@@ -3404,7 +3404,7 @@
      "sha": "4f6429e4cbdd9ae56878656806152baa68576fc0",
      "type": "image/webp",
      "size": 111486,
-     "orden": 1015,
+     "orden": 1011,
      "extra": true
     },
     {
@@ -3420,7 +3420,7 @@
      "sha": "028c6a426416405259410b17b5e7679157ab3993",
      "type": "image/webp",
      "size": 73414,
-     "orden": 1016,
+     "orden": 1012,
      "extra": true
     },
     {
@@ -3436,7 +3436,7 @@
      "sha": "33b09e13136641d228c40f83c1be6a061f050497",
      "type": "image/webp",
      "size": 97150,
-     "orden": 1017,
+     "orden": 1013,
      "extra": true
     },
     {
@@ -3452,7 +3452,7 @@
      "sha": "e35337040c43270038b7e92a39b18084e494c48d",
      "type": "image/webp",
      "size": 72038,
-     "orden": 1018,
+     "orden": 1014,
      "extra": true
     },
     {
@@ -3468,7 +3468,8 @@
      "sha": "84066a932ca8d2e822139158feafe71b188ed938",
      "type": "image/webp",
      "size": 66708,
-     "orden": 0
+     "orden": 1015,
+     "extra": true
     },
     {
      "id": "98e352dc-dfcd-4246-8151-a0cc9a37ab2a",
@@ -3483,7 +3484,8 @@
      "sha": "c5a2a3a5cd58301f3a9234546e9da773149e7d8e",
      "type": "image/webp",
      "size": 81634,
-     "orden": 1
+     "orden": 1016,
+     "extra": true
     },
     {
      "id": "bb45a9ac-0a96-46d4-b200-1aa891c0d51e",
@@ -3498,7 +3500,8 @@
      "sha": "3151c7308cb6cb1e44254a1dab57c09c30b58747",
      "type": "image/webp",
      "size": 111654,
-     "orden": 2
+     "orden": 1017,
+     "extra": true
     },
     {
      "id": "9b2aad73-e060-40df-9d98-742953c7a535",
@@ -3513,7 +3516,8 @@
      "sha": "adacb32e1641609f8f924ac683962cd1f1113858",
      "type": "image/webp",
      "size": 97146,
-     "orden": 3
+     "orden": 1018,
+     "extra": true
     },
     {
      "id": "1a90e22e-7a7f-4f97-8891-5224a84e60f1",
@@ -3528,7 +3532,8 @@
      "sha": "e2e230f45c8abd02415f30f821e4af27b35c3006",
      "type": "image/webp",
      "size": 73232,
-     "orden": 4
+     "orden": 1019,
+     "extra": true
     },
     {
      "id": "a1822636-e936-450b-9c27-30ca54ee6c2b",
@@ -3543,15 +3548,49 @@
      "sha": "3d957abfdfe3c46f876df843a81f7db490418256",
      "type": "image/webp",
      "size": 71956,
-     "orden": 5
+     "orden": 1020,
+     "extra": true
+    },
+    {
+     "id": "aa451e40-4600-442b-b14f-d5aae8305a03",
+     "by": "javi",
+     "at": "2026-11-20T18:52:47.575Z",
+     "base": "reel_casa_manio",
+     "version": 1,
+     "shaOrigen": "4e67f20db44ce985eb6886f0eb29b260b7c384ba",
+     "dur": 46,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_manio-v1.mp4",
+     "path": "archivos/1.-modelos-3d/reel_casa_manio-v1.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/reel_casa_manio-v1.mp4",
+     "sha": "4e67f20db44ce985eb6886f0eb29b260b7c384ba",
+     "type": "video/mp4",
+     "size": 14874899,
+     "orden": 0
+    },
+    {
+     "id": "82e7fece-89a8-430f-9035-94a31ca0cfb6",
+     "by": "javi",
+     "at": "2026-11-20T18:52:52.322Z",
+     "base": "portada_casa_manio",
+     "version": 1,
+     "shaOrigen": "e07f82f07a7cb085964aa0af06f5b032a8f03eb7",
+     "name": "portada_casa_manio-v1.webp",
+     "path": "archivos/1.-modelos-3d/portada_casa_manio-v1-3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/portada_casa_manio-v1-3.webp",
+     "sha": "5ccdf8d3fad69c7a734726e3d1ca49be782aa67b",
+     "type": "image/webp",
+     "size": 87276,
+     "orden": 1
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-20T18:04:53.488Z",
+   "updatedAt": "2026-11-20T18:53:07.458Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-19T16:11:17.208Z",
+   "statusChangedAt": "2026-11-20T18:53:07.458Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -8137,6 +8176,13 @@
  ],
  "comments": [
   {
+   "id": "b738d332-fee0-4ff8-a2f5-fbd2d8083fab",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "javi",
+   "text": "Video y portada de reel subidos",
+   "createdAt": "2026-11-20T18:53:07.461Z"
+  },
+  {
    "id": "70df530b-1c08-4a2b-a8f8-27dfa68e2178",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -11191,6 +11237,39 @@
  ],
  "activity": [
   {
+   "id": "c809565d-aae9-4814-929c-d40b2c102259",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-20T18:53:07.461Z"
+  },
+  {
+   "id": "bc70d95d-6586-477a-956d-07251edbbe16",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-20T18:53:07.460Z"
+  },
+  {
+   "id": "1107f472-5cd8-4f4b-9117-7d3c190d4e3f",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En diseño a En revisión",
+   "meta": {
+    "from": "diseno",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-20T18:53:07.459Z"
+  },
+  {
    "id": "1bd4a67e-d823-459b-9ba6-33a770c98c31",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14158,6 +14237,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "10ef2729-22eb-4e16-a2db-66d6f817ab12",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 2 archivos en “Casa Mañío” para revisar: Video y portada de reel subidos",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi te pide revisar: Video y portada de reel subidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T18:53:07.461Z"
+  },
+  {
+   "id": "e913e894-852e-4b0a-b594-897f01371299",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 2 archivos en “Casa Mañío” para revisar: Video y portada de reel subidos",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi te pide revisar: Video y portada de reel subidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T18:53:07.461Z"
+  },
+  {
+   "id": "1ebfea5e-e769-4b0d-baa3-7adc36bbbca2",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T18:53:07.460Z"
+  },
+  {
+   "id": "98a601b7-756d-4af6-aee0-058bd0e41819",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T18:53:07.460Z"
+  },
+  {
+   "id": "4c3467df-c919-4909-b8db-7b0f35c64a3a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T18:53:07.459Z"
+  },
+  {
+   "id": "122d38a3-7c72-42c3-b441-73313ce32f32",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-20T18:53:07.459Z"
+  },
   {
    "id": "6529572d-8563-4160-92ab-d69d9e525999",
    "to": "maca",

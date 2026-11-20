@@ -1634,7 +1634,7 @@
    "date": "2026-11-22",
    "inicio": "",
    "format": "reel",
-   "status": "espera",
+   "status": "aprobado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -2146,9 +2146,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T18:20:17.203Z",
-   "updatedBy": "maca",
-   "statusChangedAt": "2026-11-19T16:11:07.804Z",
+   "updatedAt": "2026-11-20T18:39:37.730Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-20T18:39:37.730Z",
    "publishedAt": null
   },
   {
@@ -11191,6 +11191,19 @@
  ],
  "activity": [
   {
+   "id": "00079048-3b49-4fe6-b6ad-17b6cc19024c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Esperando aprobación a Aprobado",
+   "meta": {
+    "from": "espera",
+    "to": "aprobado"
+   },
+   "createdAt": "2026-11-20T18:39:37.731Z"
+  },
+  {
    "id": "f0b9b5eb-d70a-48d5-86eb-8fc327b6a19d",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "postTitle": "Un domingo en el refugio",
@@ -14119,6 +14132,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "eb6a2f9b-cd7c-400e-8ded-01dff5c1c4b5",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T18:39:37.732Z"
+  },
   {
    "id": "4f5a2314-9523-4ec3-a537-726b3d87375a",
    "to": "flavio",

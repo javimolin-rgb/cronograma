@@ -14152,13 +14152,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T15:58:18.015Z"
+   "createdAt": "2026-11-20T15:58:18.015Z",
+   "readAt": "2026-11-20T17:00:03.720Z"
   },
   {
    "id": "b231c889-edbe-44ab-be8a-1034f90715a1",

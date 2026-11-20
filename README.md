@@ -501,7 +501,17 @@ Las piezas sin fecha aparecen en **Agenda**, agrupadas al final bajo *Sin fecha*
 
 Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achican otro poco). Los audios y los documentos se suben tal cual, sin tocarlos.
 
-**Los videos se suben tal cual hasta 40 MB.** Un reel de 30 s en 1080×1920 bien exportado pesa entre 20 y 40 MB, así que en la práctica llega entero, con sus 30 fotogramas por segundo y su tamaño original. Solo si se pasa de ahí (o si viene en 4K, o con un bitrate desproporcionado) se **comprime en el mismo teléfono**: se vuelve a grabar más liviano, sin que se escuche, conservando el audio. Tarda lo que dura el video y se ve el avance. Y si GitHub igual lo rechaza por tamaño, recién ahí se achica y se vuelve a intentar, para no perder calidad por adelantado.
+**Los videos pesados se achican solos, y la copia se revisa antes de usarla.** Si el video no entra en los 40 MB, viene en 4K o trae muchos más bits de los que necesita un reel (sobre ~5 Mbps), se **vuelve a grabar más liviano en el mismo teléfono**, sin que se escuche y conservando el audio. Tarda lo que dura el video y se ve el avance. Un video liviano (bajo 8 MB) o ya bien exportado sube tal cual, sin tocarlo.
+
+### La copia se revisa siempre: o quedó fiel, o no se usa
+
+Esa regrabación se hace **en vivo** (se reproduce el video y se captura lo que se alcanza a ver), así que lo que al aparato le cueste dibujar simplemente no queda. Por eso, antes de subir nada, la app compara la copia con el original y mira tres cosas:
+
+- **que dure lo mismo** (se acepta hasta medio segundo de diferencia);
+- **que no se haya congelado** en ninguna parte: se anota a qué momento del video corresponde cada fotograma y un salto de varios cuadros seguidos es imagen que no quedó;
+- **que el aparato haya alcanzado el ritmo**: el navegador lleva la cuenta de los fotogramas que no alcanzó a dibujar, y si se perdió más del 5% la copia no sirve. Este es el que pilla el caso feo —una copia que dura lo mismo y no se congela en ningún punto, pero viene con la mitad de los fotogramas y se ve a tirones.
+
+Si la copia no pasa la revisión **no se sube**. Según el caso: se intenta una segunda vez más liviana (cuando el original no cabe y el problema fue un atasco puntual), se sube el original entero (cuando sí cabe), o se avisa en rojo con el motivo exacto y qué hacer. Nunca queda guardado un video cortado.
 
 ### Por qué el tope es 40 MB y no 24
 
@@ -514,7 +524,9 @@ Lo que cambió:
 - el tope subió a **40 MB**, y ahora solo se comprime lo que de verdad no entra (antes bastaba con pasar de 6 MB y ~4,5 Mbps, que es un 1080p normal);
 - cuando hay que comprimir, la grabación **empieza recién con el primer fotograma dibujado**, y si el video se atasca **se pausa la grabación** y sigue cuando vuelve: el atasco ya no queda congelado dentro del archivo;
 - el tamaño se calcula por el **lado corto**, así un vertical de 1080×1920 ya no queda en la mitad;
-- al terminar se compara la duración con la del original y, si se perdió más de medio segundo, **la app lo dice** en la pieza en vez de dejarlo pasar.
+- al terminar, **la copia se revisa entera** y, si no quedó fiel, no se usa (ver arriba).
+
+El 20 de noviembre volvió a activarse el achicado automático —subir reels grandes a mano era un lío—, pero ya con esa revisión de por medio: el caso de Maca hoy se detecta solo (la prueba con un 4K a 60 fps da “no alcanzó a dibujar el 52% de los fotogramas” y esa copia se descarta).
 
 Los videos que ya estaban subidos antes de este arreglo son esas copias degradadas: para tenerlos bien hay que **volver a subir el original**.
 
@@ -522,7 +534,7 @@ Cuando el computador no deja leer el archivo (pasa si se eligió mientras todav�
 
 Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o tú desde dos aparatos) guardan al mismo tiempo, la app reintenta sola en vez de fallar con un error de GitHub.
 
-**Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y el motivo (“pesa 45 MB y no se pudo achicar en este aparato”), con un botón **Reintentar**. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
+**Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y **el motivo de verdad** (“pesa 81 MB y el tope son 40 MB; no se pudo achicar aquí: el navegador no dejó reproducir el video”), con un botón **Reintentar**. Cuando el problema es el peso, el mismo aviso dice qué hacer: mandárselo por WhatsApp y subir la copia que llega, exportarlo bajo 40 MB, o dejarlo en Drive y pegar el enlace. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
 
 Un truco que funciona siempre cuando un video no entra: mandárselo por WhatsApp y subir esa copia, que viene comprimida.
 

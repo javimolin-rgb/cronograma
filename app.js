@@ -3753,7 +3753,6 @@ function renderEditor() {
       <button class="btn sm" data-act="ed-reintentar">Reintentar</button>
       <button class="iconbtn" data-act="ed-fallo-ok" aria-label="Entendido">${ic('x', 16)}</button></div>` : ''}
     ${ED.subidos && !ED.uploading ? `<div class="avisobar">${ic('send', 18)}<span>Subiste ${ED.subidos} archivo${ED.subidos === 1 ? '' : 's'}. ¿Les avisas para que lo revisen?</span><button class="btn sm" data-act="aviso-abrir">Avisar</button></div>` : ''}
-    ${(ED.avisosVideo || []).length ? `<div class="avisobar">${ic('alert', 18)}<span>${ED.avisosVideo.map(esc).join('<br>')}</span><button class="btn sm ghost" data-act="ed-aviso-video-ok">Entendido</button></div>` : ''}
     ${(() => {
       // Primero lo último (la versión más nueva de cada archivo); lo anterior queda detrás de "Ver más"
       const todosEd = archivosEditor(d);
@@ -4142,17 +4141,19 @@ function datosVideo(file) {
 }
 /* ¿Vale la pena volver a grabarlo más liviano? Solo si de verdad se gana:
    lo que no entra, lo que viene en 4K, o lo que trae mucho más dato del necesario. */
-/* Comprimir aquí siempre pierde calidad (se vuelve a grabar en vivo), así que solo
-   se hace cuando el archivo de verdad no cabe, o cuando es desproporcionado: 4K, o
-   un bitrate altísimo para lo que dura. Un 1080×1920 normal sube entero. */
+/* ¿Se achica antes de subir? Sí cuando no cabe, y también cuando el archivo viene
+   pesado para lo que es: 4K, o muchos más bits de los que necesita un reel. Así los
+   videos grandes suben solos y livianos, sin tener que exportarlos de nuevo a mano.
+   La copia después se revisa entera (ver revisarCopia): si no quedó fiel, no se usa. */
+const BITS_REEL = 5000000;                                // 5 Mbps alcanza de sobra para 1080 vertical
 async function convieneComprimir(file) {
   if (!esVideoArchivo(file)) return false;
   if (file.size > LIMITE_SUBIDA) return true;
-  if (file.size < 20 * 1024 * 1024) return false;         // cabe de sobra: no se toca
+  if (file.size < 8 * 1024 * 1024) return false;          // liviano: no vale la pena tocarlo
   const m = await datosVideo(file);
   if (!m || !m.dur) return false;
   const bits = (file.size * 8) / m.dur;
-  return Math.max(m.w, m.h) > 2200 || bits > 14000000;    // 4K, o más de ~14 Mbps
+  return Math.min(m.w, m.h) > 1080 || bits > BITS_REEL * 1.1;
 }
 /* El teléfono entrega los archivos con nombres inservibles (un UUID, IMG_1234…).
    Se les pone el nombre de la pieza para poder reconocerlos después. */
@@ -4169,7 +4170,48 @@ function nombreUtil(file, pieza, n) {
    sin el motivo no hay manera de saber si falta un permiso, si el navegador no sabe
    hacerlo o si el archivo venía malo. */
 let FALLO_COMPRESION = '';
-async function comprimirVideo(file, objetivo, alAvanzar) {
+/* ¿Tiene sentido intentarlo otra vez más liviano? Sí cuando el problema fue un atasco
+   puntual; no cuando al aparato no le dio el cuero para dibujar el video (un 4K a 60
+   por segundo no mejora porque la copia sea más chica: lo caro es leer el original). */
+let FALLO_REINTENTABLE = true;
+/* La copia achicada se revisa SIEMPRE antes de usarla. Un reel se subió cortado
+   («entre el segundo 1 y 3 se corta»): duraba lo mismo, pero traía 559 fotogramas
+   donde iban 944, porque la grabación se hace en vivo y lo que al aparato le costó
+   dibujar simplemente no quedó. Así que no basta con mirar la duración: hay que
+   mirar los saltos entre fotograma y fotograma. Si algo no cuadra, esta copia no
+   se usa —se prefiere subir el original, o decirlo, antes que guardar algo cortado—.
+   Devuelve el motivo si está mala, o '' si quedó fiel. */
+async function revisarCopia(original, copia, dur, saltos, dibujados, vOrigen) {
+  FALLO_REINTENTABLE = true;
+  const m = await datosVideo(copia).catch(() => null);
+  if (!m || !m.w || !m.dur) return 'la copia no se pudo volver a abrir';
+  const malos = [];
+  const seg = (n) => `${Math.round(n * 10) / 10} s`;
+  // 1) ¿dura lo mismo?
+  const difDur = Math.abs(m.dur - dur);
+  if (difDur > Math.max(0.4, dur * 0.02)) malos.push(`quedó ${m.dur < dur ? 'más corta' : 'más larga'} (${seg(difDur)} de diferencia)`);
+  /* 2) ¿se congeló en alguna parte? El hueco normal entre dos fotogramas es la mediana;
+        un salto de varios fotogramas seguidos es un pedazo que no quedó grabado. Saltarse
+        un cuadro suelto es normal en una grabación en vivo y no se nota, así que solo
+        cuentan los saltos de verdad. */
+  const orden = saltos.filter((x) => x > 0).sort((a, b) => a - b);
+  const tipico = orden.length ? orden[Math.floor(orden.length / 2)] : 1 / 30;
+  const hueco = Math.max(0.25, tipico * 6);
+  const congelado = saltos.reduce((a, x) => a + (x > hueco ? x - tipico : 0), 0);
+  if (congelado > 0.4) malos.push(`se congeló ${seg(congelado)}`);
+  /* 3) ¿alcanzó el ritmo en todo el camino? Esto es lo que pilla el caso feo: la copia
+        dura lo mismo y no se congela en ningún punto, pero viene con la mitad de los
+        fotogramas (559 donde iban 944) y se ve a tirones. El navegador lleva la cuenta. */
+  const q = vOrigen && vOrigen.getVideoPlaybackQuality ? vOrigen.getVideoPlaybackQuality() : null;
+  const caidos = q && q.totalVideoFrames > 30 ? q.droppedVideoFrames / q.totalVideoFrames : 0;
+  if (caidos > 0.05) {
+    malos.push(`el aparato no alcanzó a dibujar el ${Math.round(100 * caidos)}% de los fotogramas`);
+    FALLO_REINTENTABLE = false;   // volver a intentarlo aquí da lo mismo: hay que exportarlo más liviano
+  }
+  console.info('copia achicada: ' + JSON.stringify({ dur: +dur.toFixed(2), copia: +m.dur.toFixed(2), dibujados, porSeg: +(dibujados / Math.max(dur, 0.1)).toFixed(1), congelado: +congelado.toFixed(2), caidos: q ? `${q.droppedVideoFrames}/${q.totalVideoFrames}` : 'n/d', malos }));
+  return malos.length ? malos.join('; ') : '';
+}
+async function comprimirVideo(file, objetivo, alAvanzar, topeBits) {
   FALLO_COMPRESION = '';
   if (typeof MediaRecorder !== 'function') { FALLO_COMPRESION = 'este navegador no sabe grabar video'; return null; }
   const v = document.createElement('video');
@@ -4188,7 +4230,7 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
        miraba el lado largo. Si para el tamaño que hay que alcanzar no alcanzan los
        bits, se baja a 720 o a 540 de lado corto, que se ve mejor que 1080 ahogado. */
     const corto = Math.min(v.videoWidth, v.videoHeight);
-    const bitsPrevios = Math.max(900000, Math.min(6000000, Math.round(((objetivo - 96000 * dur / 8) * 8) / dur)));
+    const bitsPrevios = Math.max(900000, Math.min(topeBits || 6000000, Math.round(((objetivo - 96000 * dur / 8) * 8) / dur)));
     const ladoCorto = bitsPrevios >= 3500000 ? 1080 : bitsPrevios >= 1800000 ? 720 : 540;
     const r = Math.min(1, ladoCorto / corto);
     const c = document.createElement('canvas');
@@ -4253,11 +4295,21 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     };
     ['waiting', 'stalled', 'suspend'].forEach((ev) => v.addEventListener(ev, atascarse));
     ['playing', 'canplaythrough'].forEach((ev) => v.addEventListener(ev, seguir));
+    /* Se anota el momento del video al que corresponde cada fotograma dibujado. Con eso,
+       al final, se sabe si la grabación se saltó pedazos: es la única forma de pillar el
+       caso malo de verdad —la copia dura lo mismo pero le faltan cuadros, así que se ve
+       cortada o pegada—. Un salto grande entre dos fotogramas es imagen que no quedó. */
+    const saltos = [];
+    let dibujados = 0;
     await new Promise((ok) => {
-      let ultimo = 0;
-      const paso = () => {
+      let ultimo = 0, previo = -1;
+      const paso = (ahora, meta) => {
         if (v.ended || (v.paused && !v.seeking)) return ok();
         ctx.drawImage(v, 0, 0, c.width, c.height);
+        dibujados++;
+        const t = (meta && typeof meta.mediaTime === 'number') ? meta.mediaTime : v.currentTime;
+        if (previo >= 0 && t > previo) saltos.push(t - previo);
+        previo = t;
         if (rec.state === 'paused') seguir();          // volvió a haber fotogramas
         if (alAvanzar && v.currentTime - ultimo > 0.4) { ultimo = v.currentTime; alAvanzar(Math.min(0.99, v.currentTime / dur)); }
         if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(paso); else requestAnimationFrame(paso);
@@ -4277,11 +4329,8 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     if (blob.size >= file.size) { FALLO_COMPRESION = `la copia achicada pesaba lo mismo (${prettySize(blob.size)})`; return null; }
     const nombre = (file.name || 'video').replace(/\.[^.]+$/, '') + (salida === 'video/mp4' ? '.mp4' : '.webm');
     const out = new File([blob], nombre, { type: salida });
-    // ¿quedó entero? Si se perdió más de medio segundo por el camino, hay que decirlo
-    const m2 = await datosVideo(out).catch(() => null);
-    if (m2 && m2.dur && Math.abs(m2.dur - dur) > 0.5) {
-      out.aviso = `“${file.name}”: al achicarlo se perdieron ${Math.abs(Math.round((dur - m2.dur) * 10) / 10)} s. Si lo necesitas exacto, expórtalo más liviano (menos de ${prettySize(LIMITE_SUBIDA)}) y vuelve a subirlo.`;
-    }
+    const revision = await revisarCopia(file, out, dur, saltos, dibujados, v);
+    if (revision) { FALLO_COMPRESION = revision; return null; }
     return out;
   } catch (e) {
     limpiar();
@@ -4340,17 +4389,28 @@ async function subirArchivos(files) {
       if (!(await subirArtefacto(f))) {
         let archivo = f;
         if (await convieneComprimir(f)) {
+          const avance = (txt) => (pc) => {
+            if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `${txt} “${f.name}”… ${Math.round(pc * 100)}%`; }
+          };
           ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
-          toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy comprimiendo (dura lo que dura el video)`, 8000);
-          const chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, (pc) => {
-            if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Comprimiendo “${f.name}”… ${Math.round(pc * 100)}%`; }
-          });
+          toast(`“${f.name}” pesa ${prettySize(f.size)}: lo estoy achicando (dura lo que dura el video)`, 8000);
+          let chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.8, avance('Achicando'), BITS_REEL);
+          /* La copia se revisa siempre. Si salió cortada y el original no cabe, se intenta
+             una segunda vez más liviana: al aparato le cuesta menos dibujarla, así que
+             suele salir entera. Si tampoco, no se sube nada cortado. */
+          if (!chico && f.size > LIMITE_SUBIDA && FALLO_REINTENTABLE) {
+            toast(`Esa copia salió mal (${FALLO_COMPRESION}). La hago de nuevo, más liviana…`, 7000);
+            ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
+            chico = await comprimirVideo(f, LIMITE_SUBIDA * 0.5, avance('Segundo intento con'), 3200000);
+          }
           ed.comprimiendo = null; renderEditor();
           motivoAchique = chico ? '' : FALLO_COMPRESION;
           if (chico) {
             archivo = chico;
-            toast(chico.aviso || `Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, chico.aviso ? 9000 : 4000);
-            if (chico.aviso) ed.avisosVideo = (ed.avisosVideo || []).filter((x) => x !== chico.aviso).concat([chico.aviso]);
+            toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000);
+          } else if (f.size <= LIMITE_SUBIDA) {
+            // cabe igual: mejor subirlo tal cual que subir una copia cortada
+            toast(`No pude achicar “${f.name}” (${FALLO_COMPRESION}); lo subo tal cual, entero`, 7000);
           }
         }
         const info = splitName(archivo.name);
@@ -4390,13 +4450,12 @@ async function subirArchivos(files) {
               ed.comprimiendo = { nombre: f.name, pct: 0 }; renderEditor();
               const chico2 = await comprimirVideo(archivo, LIMITE_SUBIDA * 0.6, (pc) => {
                 if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Achicando “${f.name}”… ${Math.round(pc * 100)}%`; }
-              });
+              }, BITS_REEL);
               ed.comprimiendo = null; renderEditor();
               if (!chico2) { motivoAchique = FALLO_COMPRESION; throw e1; }
               archivo = chico2;
               const ext2 = (chico2.name.match(/\.([a-z0-9]+)$/i) || [, ''])[1];
               if (ext2) nombreSubida = nombre.replace(/\.[^.]+$/, '') + '.' + ext2;
-              if (chico2.aviso) ed.avisosVideo = (ed.avisosVideo || []).filter((x) => x !== chico2.aviso).concat([chico2.aviso]);
               r = await subir();
             } else if (/leer el archivo|no está donde estaba/i.test(msg)) {
               toast(`“${f.name}” no se dejó leer; lo intento otra vez…`, 3000);   // suele pasar si recién se descargaba
@@ -6676,7 +6735,6 @@ const ACTS = {
     renderAll();
     if (ED && sheetOpen) renderEditor();
   },
-  'ed-aviso-video-ok': () => { if (!ED) return; syncDraft(); ED.avisosVideo = []; renderEditor(); },
   'ed-vermas': () => { syncDraft(); ED.verAnteriores = !ED.verAnteriores; renderEditor(); },
   'aviso-abrir': () => openAviso(),
   'aviso-cerrar': () => { syncAviso(); const c = $('#avisocapa'); if (c) c.remove(); },

@@ -2146,8 +2146,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T15:57:22.289Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-20T15:58:18.009Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -8045,6 +8045,14 @@
  ],
  "comments": [
   {
+   "id": "a183d121-82c7-4e6e-9149-7705d52fc3f0",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb encontré del estilo musical.",
+   "fileIds": [],
+   "createdAt": "2026-11-20T15:58:18.013Z"
+  },
+  {
    "id": "1a0f673c-2d19-4030-8173-dd4c93f76507",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -11061,6 +11069,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "18189e05-f7ce-41e5-bb6d-3176020bcb8a",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T15:58:18.014Z"
+  },
   {
    "id": "ee41d6f0-a089-44ec-bdc5-7d8b6aef0235",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14127,6 +14145,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "52f40dcc-62a7-4ebd-b4e6-3dd3e9b82aa9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:58:18.015Z"
+  },
+  {
+   "id": "b231c889-edbe-44ab-be8a-1034f90715a1",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Y claro , era Epidemic sound y no pixabay , es que en ésta  busqué primero y tb …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:58:18.014Z"
+  },
   {
    "id": "8bc8292f-0951-42ea-865d-e605daa6d56f",
    "to": "flavio",
@@ -21701,8 +21749,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-20T15:53:41.796Z",
-   "hasta": "2026-11-20T15:53:41.789Z",
+   "at": "2026-11-20T15:58:18.012Z",
+   "hasta": "2026-11-20T15:58:18.009Z",
    "que": "comentario"
   },
   {

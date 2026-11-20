@@ -2146,8 +2146,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T15:53:41.789Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-20T15:57:22.289Z",
+   "updatedBy": "javi",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -8045,6 +8045,14 @@
  ],
  "comments": [
   {
+   "id": "1a0f673c-2d19-4030-8173-dd4c93f76507",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "Me pasas el enlace de donde la sacaron ustedes? ya que no la encontré en pixabay.",
+   "fileIds": [],
+   "createdAt": "2026-11-20T15:57:22.291Z"
+  },
+  {
    "id": "a228654d-be6d-4e91-89de-ed144b424ead",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -11053,6 +11061,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ee41d6f0-a089-44ec-bdc5-7d8b6aef0235",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T15:57:22.292Z"
+  },
   {
    "id": "20cb2429-d40b-4141-a9f6-b279b4a12606",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14109,6 +14127,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8bc8292f-0951-42ea-865d-e605daa6d56f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Me pasas el enlace de donde la sacaron ustedes? ya que no la encontré en pixabay…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Me pasas el enlace de donde la sacaron ustedes? ya que no la encontré en pixabay…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:57:22.293Z"
+  },
   {
    "id": "0f7da626-a26f-4531-8708-8372652319c3",
    "to": "javi",
@@ -21732,9 +21765,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "javi",
-   "at": "2026-11-20T15:56:31.667Z",
-   "hasta": "2026-11-20T15:53:41.789Z",
-   "que": "pieza"
+   "at": "2026-11-20T15:57:22.291Z",
+   "hasta": "2026-11-20T15:57:22.289Z",
+   "que": "comentario"
   },
   {
    "id": "db10db45-7eea-498b-bef7-0fc0093ab3b8|javi",

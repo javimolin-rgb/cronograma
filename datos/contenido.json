@@ -14211,13 +14211,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: @Maca Porfavor marcar como aprobado si está okay, sino mencióname que ajustar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Javi te mencionó: @Maca Porfavor marcar como aprobado si está okay, sino mencióname que ajustar",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T17:36:13.043Z"
+   "createdAt": "2026-11-20T17:36:13.043Z",
+   "readAt": "2026-11-20T18:17:20.665Z"
   },
   {
    "id": "77716e6f-7462-464e-b8b6-bd2cb3bf5702",
@@ -21344,8 +21345,8 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-20T17:13:48.876Z",
-   "hasta": "2026-11-20T17:00:35.599Z",
+   "at": "2026-11-20T18:17:20.666Z",
+   "hasta": "2026-11-20T17:36:13.040Z",
    "que": "pieza"
   },
   {

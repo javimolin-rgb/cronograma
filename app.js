@@ -4199,16 +4199,16 @@ async function revisarCopia(original, copia, dur, saltos, dibujados, vOrigen) {
   const hueco = Math.max(0.25, tipico * 6);
   const congelado = saltos.reduce((a, x) => a + (x > hueco ? x - tipico : 0), 0);
   if (congelado > 0.4) malos.push(`se congeló ${seg(congelado)}`);
-  /* 3) ¿alcanzó el ritmo en todo el camino? Esto es lo que pilla el caso feo: la copia
-        dura lo mismo y no se congela en ningún punto, pero viene con la mitad de los
-        fotogramas (559 donde iban 944) y se ve a tirones. El navegador lleva la cuenta. */
+  /* 3) Los fotogramas que el aparato no alcanzó a dibujar NO tumban la copia: un video
+        con menos cuadros se ve menos fluido, pero se ve entero y en su tiempo, y eso
+        sirve. Lo que no sirve es que quede cortado o pegado, y de eso se encargan los
+        dos controles de arriba. Igual queda anotado para saber cómo salió. */
   const q = vOrigen && vOrigen.getVideoPlaybackQuality ? vOrigen.getVideoPlaybackQuality() : null;
   const caidos = q && q.totalVideoFrames > 30 ? q.droppedVideoFrames / q.totalVideoFrames : 0;
-  if (caidos > 0.05) {
-    malos.push(`el aparato no alcanzó a dibujar el ${Math.round(100 * caidos)}% de los fotogramas`);
-    FALLO_REINTENTABLE = false;   // volver a intentarlo aquí da lo mismo: hay que exportarlo más liviano
-  }
-  console.info('copia achicada: ' + JSON.stringify({ dur: +dur.toFixed(2), copia: +m.dur.toFixed(2), dibujados, porSeg: +(dibujados / Math.max(dur, 0.1)).toFixed(1), congelado: +congelado.toFixed(2), caidos: q ? `${q.droppedVideoFrames}/${q.totalVideoFrames}` : 'n/d', malos }));
+  if (malos.length) FALLO_REINTENTABLE = caidos < 0.25;   // si el aparato iba muy ahogado, repetir no ayuda
+  const porSeg = +(dibujados / Math.max(dur, 0.1)).toFixed(1);
+  console.info('copia achicada: ' + JSON.stringify({ dur: +dur.toFixed(2), copia: +m.dur.toFixed(2), dibujados, porSeg, congelado: +congelado.toFixed(2), caidos: q ? `${q.droppedVideoFrames}/${q.totalVideoFrames}` : 'n/d', malos }));
+  copia.porSegundo = porSeg;
   return malos.length ? malos.join('; ') : '';
 }
 async function comprimirVideo(file, objetivo, alAvanzar, topeBits) {
@@ -4283,6 +4283,22 @@ async function comprimirVideo(file, objetivo, alAvanzar, topeBits) {
       else setTimeout(uno, 120);
     });
     rec.start(600);
+    /* Si el aparato no alcanza a ir al ritmo del video, la grabación —que corre con el
+       reloj de la pared— se va quedando atrás y la copia sale MÁS LARGA que el original:
+       eso es lo que se ve «pegado». No hay forma de arreglarlo a medio camino, así que
+       se corta apenas se nota, en vez de hacer esperar todo el video para nada. */
+    const t0 = v.currentTime, w0 = performance.now();
+    let grabadoMs = 0, ultimaMirada = w0, atrasado = '';
+    const vigia = setInterval(() => {
+      const ahora = performance.now();
+      if (rec.state === 'recording') grabadoMs += ahora - ultimaMirada;
+      ultimaMirada = ahora;
+      const avanzo = v.currentTime - t0, pared = grabadoMs / 1000;
+      if (pared > 6 && avanzo < pared * 0.85) {
+        atrasado = `este aparato va ${Math.round((1 - avanzo / pared) * 100)}% más lento que el video, así que la copia saldría pegada`;
+        try { v.pause(); } catch (e) { /* el bucle termina igual */ }
+      }
+    }, 400);
     let atascos = 0, atascoDesde = 0, perdido = 0;
     const atascarse = () => {
       if (rec.state !== 'recording') return;
@@ -4317,9 +4333,11 @@ async function comprimirVideo(file, objetivo, alAvanzar, topeBits) {
       v.onended = ok;
       paso();
     });
+    clearInterval(vigia);
     if (rec.state === 'paused') rec.resume();
     rec.stop();
     await listo;
+    if (atrasado) throw new Error(atrasado);
     if (atascos) console.warn(`el video se atascó ${atascos} ${atascos === 1 ? 'vez' : 'veces'} al comprimir (${Math.round(perdido / 100) / 10}s)`);
     try { actx.close(); } catch (e) { /* nada */ }
     limpiar();
@@ -4407,7 +4425,8 @@ async function subirArchivos(files) {
           motivoAchique = chico ? '' : FALLO_COMPRESION;
           if (chico) {
             archivo = chico;
-            toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, 4000);
+            toast(`Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`
+              + (chico.porSegundo && chico.porSegundo < 22 ? ` · quedó a ${chico.porSegundo} cuadros por segundo (entero, pero menos fluido)` : ''), 5000);
           } else if (f.size <= LIMITE_SUBIDA) {
             // cabe igual: mejor subirlo tal cual que subir una copia cortada
             toast(`No pude achicar “${f.name}” (${FALLO_COMPRESION}); lo subo tal cual, entero`, 7000);

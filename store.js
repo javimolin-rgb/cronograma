@@ -14,7 +14,13 @@
   /* Lo más pesado que se sube tal cual. Un reel de 30 s en 1080×1920 bien exportado
      anda entre 20 y 40 MB: por debajo de este tope no se toca, porque recomprimirlo
      en el navegador le come fotogramas (ver comprimirVideo en app.js). */
-  const MAX_SUBIDA = 40 * 1024 * 1024;
+  /* GitHub bloquea los archivos sobre 100 MiB, así que ese es el techo real. Lo que
+     pasa de GRANDE_POR_GIT no se manda por la vía de contents (que es un solo viaje
+     pero tiene un tope más bajo y sin documentar), sino por la de git —blob, árbol,
+     commit—, que GitHub documenta hasta 100 MB. Así un reel de 80 o 90 MB sube
+     entero y sin tocarlo, que es lo único que garantiza que no quede cortado. */
+  const MAX_SUBIDA = 95 * 1024 * 1024;
+  const GRANDE_POR_GIT = 20 * 1024 * 1024;
   const LS_KEY = 'crono_db_v1';
   const TOKEN_KEY = 'crono_gh_token';
   const API = 'https://api.github.com';
@@ -120,6 +126,22 @@
     for (let i = 0; i < datos.length; i += paso) bin += String.fromCharCode.apply(null, datos.subarray(i, i + paso));
     return btoa(bin);
   };
+  /* Lo mismo pero por partes, para los archivos pesados: el teléfono nunca tiene que
+     guardar el archivo entero convertido en una sola pieza (un video de 86 MB se vuelve
+     una cadena de 115 MB, y armarla de una se lleva varias veces eso en memoria). Cada
+     trozo mide un múltiplo de 3 bytes, que es lo que hace que su base64 cierre justo. */
+  async function base64EnTrozos(blob) {
+    const paso = 3 * 1024 * 1024;
+    if (!blob.slice || !blob.arrayBuffer) return [await toBase64(blob)];
+    const partes = [];
+    for (let i = 0; i < blob.size; i += paso) {
+      let buf;
+      try { buf = await blob.slice(i, Math.min(i + paso, blob.size)).arrayBuffer(); }
+      catch (e) { throw errorDeLectura(e); }
+      partes.push(binABase64(new Uint8Array(buf)));
+    }
+    return partes;
+  }
   async function toBase64(blob) {
     // La vía moderna aguanta mejor los archivos grandes; si no está, se usa FileReader
     if (blob.arrayBuffer) {
@@ -575,6 +597,66 @@
       if (choque) throw new Error('otra persona (o tu otro dispositivo) guardó al mismo tiempo; vuelve a intentar');
       throw new Error(this.revisarLlave(r.status, msg));
     },
+    gitUrl(resto) {
+      const c = this.cfg;
+      return `${API}/repos/${c.owner}/${c.repo}/git/${resto}`;
+    },
+    pedirGit(url, metodo, cuerpo, alAvanzar) {
+      const cab = Object.assign(cuerpo ? { 'Content-Type': 'application/json' } : {}, this.headers());
+      return new Promise((ok, mal) => {
+        const x = new XMLHttpRequest();
+        x.open(metodo, url, true);
+        Object.keys(cab).forEach((k) => x.setRequestHeader(k, cab[k]));
+        if (alAvanzar && x.upload) x.upload.onprogress = (e) => { if (e.lengthComputable) alAvanzar(e.loaded / e.total); };
+        x.onload = () => {
+          let j = null;
+          try { j = JSON.parse(x.responseText); } catch (e) { /* sin detalle */ }
+          if (x.status >= 200 && x.status < 300) return ok(j || {});
+          const msg = (j && j.message) || (x.status === 413 ? 'el archivo pesa demasiado para GitHub' : 'error ' + x.status);
+          mal(new Error(this.revisarLlave(x.status, msg)));
+        };
+        x.onerror = () => mal(new Error('se cortó la conexión'));
+        x.ontimeout = () => mal(new Error('se cortó la conexión'));
+        x.send(cuerpo || null);
+      });
+    },
+    /* Subir un archivo pesado tal cual, por la vía de git: primero el archivo (un blob),
+       después se cuelga del árbol y se mueve la rama. Si alguien más guardó en el mismo
+       momento, solo se repite la segunda parte: el archivo ya está arriba. */
+    async subirPorGit(path, blob, mensaje, alAvanzar) {
+      // el cuerpo se arma como Blob, de a trozos: así el archivo nunca queda entero
+      // en memoria convertido a texto, que es lo que tumba al teléfono con un video grande
+      const partes = await base64EnTrozos(blob);
+      const cuerpo = new Blob(['{"encoding":"base64","content":"'].concat(partes, ['"}']), { type: 'application/json' });
+      partes.length = 0;
+      const creado = await this.pedirGit(this.gitUrl('blobs'), 'POST', cuerpo, alAvanzar);
+      const blobSha = creado && creado.sha;
+      if (!blobSha) throw new Error('GitHub no devolvió el archivo guardado');
+      if (alAvanzar) alAvanzar(1);
+      const rama = encodeURIComponent(this.cfg.branch);
+      for (let intento = 0; ; intento++) {
+        try {
+          const ref = await this.pedirGit(this.gitUrl('ref/heads/' + rama), 'GET');
+          const head = ref && ref.object && ref.object.sha;
+          if (!head) throw new Error('no se encontró la rama ' + this.cfg.branch);
+          const commit = await this.pedirGit(this.gitUrl('commits/' + head), 'GET');
+          const arbol = await this.pedirGit(this.gitUrl('trees'), 'POST', JSON.stringify({
+            base_tree: commit.tree.sha,
+            tree: [{ path, mode: '100644', type: 'blob', sha: blobSha }]
+          }));
+          const nuevo = await this.pedirGit(this.gitUrl('commits'), 'POST', JSON.stringify({
+            message: mensaje, tree: arbol.sha, parents: [head]
+          }));
+          await this.pedirGit(this.gitUrl('refs/heads/' + rama), 'PATCH', JSON.stringify({ sha: nuevo.sha }));
+          return { content: { sha: blobSha } };
+        } catch (e) {
+          const msg = (e && e.message) || '';
+          const choque = /fast forward|but expected|is at |conflic/i.test(msg);
+          if (intento >= 3 || !choque) throw e;
+          await sleep(700 + intento * 900);
+        }
+      }
+    },
     async upload(file, opts = {}) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
       const max = MAX_SUBIDA;
@@ -594,11 +676,13 @@
       const extNueva = blob !== file && EXT_TIPO[blob.type];
       if (extNueva) name = name.replace(/\.[^.]+$/, '') + '.' + extNueva;   // se guardó en otro formato
       const path = await this.freePath(dir, name);
-      const j = await this.putContenido(path, {
-        message: 'Cronograma: ' + path,
-        content: await toBase64(blob),
-        branch: this.cfg.branch
-      }, opts.onProgreso);
+      const j = blob.size > GRANDE_POR_GIT
+        ? await this.subirPorGit(path, blob, 'Cronograma: ' + path, opts.onProgreso)
+        : await this.putContenido(path, {
+          message: 'Cronograma: ' + path,
+          content: await toBase64(blob),
+          branch: this.cfg.branch
+        }, opts.onProgreso);
       return {
         name,
         path,
@@ -635,6 +719,11 @@
     async putPath(path, blob, mensaje, shaPrevio, alAvanzar) {
       if (!this.token) throw new Error('modo solo lectura: no se pueden subir archivos');
       if (blob.size > MAX_SUBIDA) throw new Error('“' + path.split('/').pop() + `” pesa más de ${Math.round(MAX_SUBIDA / 1048576)} MB`);
+      // lo pesado también por la vía de git (ahí el árbol reemplaza por ruta, sin sha previo)
+      if (blob.size > GRANDE_POR_GIT) {
+        const g = await this.subirPorGit(path, blob, mensaje || ('Cronograma: ' + path), alAvanzar);
+        return { path, url: this.rawUrl(path), sha: g.content && g.content.sha, size: blob.size };
+      }
       const body = { message: mensaje || ('Cronograma: ' + path), content: await toBase64(blob), branch: this.cfg.branch };
       const sha = shaPrevio || await this.shaDe(path);
       if (sha) body.sha = sha;

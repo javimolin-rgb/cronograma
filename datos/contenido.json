@@ -13935,13 +13935,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "reaccion",
    "text": "le puso 👍 a tu comentario en “Un domingo en el refugio”: Y claro , era Epidemic sound y no pixabay , es que en ésta  ",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Un domingo en el refugio",
    "body": "Javi le puso 👍 a tu comentario: Y claro , era Epidemic sound y no pixabay , es que en ésta",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T17:00:18.457Z"
+   "createdAt": "2026-11-20T17:00:18.457Z",
+   "readAt": "2026-11-20T17:13:48.874Z"
   },
   {
    "id": "52f40dcc-62a7-4ebd-b4e6-3dd3e9b82aa9",
@@ -21052,9 +21053,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-20T15:58:18.012Z",
-   "hasta": "2026-11-20T15:58:18.009Z",
-   "que": "comentario"
+   "at": "2026-11-20T17:13:48.876Z",
+   "hasta": "2026-11-20T17:00:35.599Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

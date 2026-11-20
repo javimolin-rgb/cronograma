@@ -14141,13 +14141,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "mention",
    "text": "te mencionó en “Un domingo en el refugio”: Aprobado @Javi , gracias!!!",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca te mencionó: Aprobado @Javi , gracias!!!",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T18:20:16.270Z"
+   "createdAt": "2026-11-20T18:20:16.270Z",
+   "readAt": "2026-11-20T18:27:34.750Z"
   },
   {
    "id": "e06b7112-d60f-4011-b21a-d60f75d7e164",
@@ -14156,13 +14157,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "reaccion",
    "text": "le puso 👍 a tu comentario en “Un domingo en el refugio”: @Maca Porfavor marcar como aprobado si está okay, sino menci",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca le puso 👍 a tu comentario: @Maca Porfavor marcar como aprobado si está okay, sino menci",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T18:19:52.632Z"
+   "createdAt": "2026-11-20T18:19:52.632Z",
+   "readAt": "2026-11-20T18:27:34.750Z"
   },
   {
    "id": "299b3489-09e0-4ae3-a9f8-7e64873b7b39",

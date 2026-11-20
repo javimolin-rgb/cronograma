@@ -503,7 +503,17 @@ Las fotos se achican solas antes de subirse (y si siguen pesando mucho, se achic
 
 **El tope de un archivo son 95 MB**, que es lo que aguanta GitHub (bloquea sobre 100 MiB). Lo que pasa de 20 MB no se manda por la vía de siempre, sino por la **vía de git** —el archivo, el árbol, el commit—, que es la que GitHub documenta hasta 100 MB. Además el archivo se convierte **por trozos**: un video de 86 MB nunca queda entero en la memoria del teléfono convertido a texto, que es lo que lo hacía fallar.
 
-**Los videos pesados se achican solos, y la copia se revisa antes de usarla.** Si el video viene en 4K o con muchos más bits de los que necesita un reel (sobre ~5 Mbps), se **vuelve a grabar más liviano en el mismo teléfono**, sin que se escuche y conservando el audio. Tarda lo que dura el video y se ve el avance. Un video liviano (bajo 8 MB) o ya bien exportado sube tal cual, sin tocarlo. **Si la copia no sirve, se sube el original entero**: ahora casi siempre cabe.
+**Todos los videos se achican, y la copia se revisa antes de usarla.** Si al achicarlo se gana espacio de verdad (más de un 20%), se **vuelve a grabar más liviano en el mismo teléfono**, sin que se escuche y conservando el audio. Tarda lo que dura el video y se ve el avance. Solo se deja tal cual lo que ya viene liviano (bajo 4 MB, o bien exportado).
+
+**Si el aparato no da el ancho, se baja de escalón en vez de rendirse.** Son tres:
+
+| | Tamaño | Cuadros por segundo | Bits |
+|---|---|---|---|
+| 1 | 1080 de lado corto | 24 | 3,5 Mbps |
+| 2 | 720 | 20 | 2,2 Mbps |
+| 3 | 540 | 15 | 1,4 Mbps |
+
+Se parte por el primero. Si la copia sale mal, se prueba el siguiente: menos cuadros y menos tamaño es muchísimo menos trabajo, y suele ser la diferencia entre una copia entera y una pegada. Además **solo se dibujan los fotogramas que se van a grabar** —dibujar un 4K sesenta veces por segundo para grabarlo a veinte es justamente lo que hace que el teléfono se quede atrás—. Vale más una copia de 540 que un original de 86 MB ocupando el repositorio para siempre; el original entero queda como último recurso, y la app avisa cuánto va a ocupar.
 
 ### La copia se revisa siempre: o quedó fiel, o no se usa
 
@@ -515,7 +525,7 @@ Esa regrabación se hace **en vivo** (se reproduce el video y se captura lo que 
 
 **Perder fotogramas no tumba la copia.** Un video con menos cuadros se ve menos fluido, pero se ve entero y en su tiempo, y eso sirve; lo que no sirve es que quede cortado o pegado. Cuando queda por debajo de 22 cuadros por segundo, la app lo dice al terminar.
 
-Si la copia no pasa la revisión **no se sube**. Según el caso: se intenta una segunda vez más liviana, se sube el original entero (que es lo normal ahora, con el tope en 95 MB), o se avisa en rojo con el motivo exacto y qué hacer. Nunca queda guardado un video cortado.
+Si la copia no pasa la revisión **no se sube**: se prueba el escalón siguiente y, si ninguno sirve, se sube el original entero (cabe, con el tope en 95 MB) diciendo cuánto ocupa, o se avisa en rojo con el motivo exacto. Nunca queda guardado un video cortado.
 
 ### De 24 a 40 y de 40 a 95 MB: por qué
 
@@ -537,6 +547,8 @@ Los videos que ya estaban subidos antes de este arreglo son esas copias degradad
 Cuando el computador no deja leer el archivo (pasa si se eligió mientras todavía se descargaba, o si está en iCloud/Drive sin bajar), la app lo intenta una segunda vez sola y, si tampoco, lo dice con esas palabras en vez de un error técnico.
 
 Cada archivo muestra su **barra de avance** mientras sube, y si dos personas (o tú desde dos aparatos) guardan al mismo tiempo, la app reintenta sola en vez de fallar con un error de GitHub.
+
+En **Espacio** (dentro del Panel) se ve cuánto lleva ocupado el sitio y **qué porcentaje del tope de 1 GB** es; pasado el 75% aparece un aviso, porque GitHub no publica sitios más grandes que eso.
 
 **Si un archivo no se sube, queda a la vista.** Dentro de la pieza aparece un aviso rojo con el nombre y **el motivo de verdad** (“pesa 120 MB y el tope son 95 MB; no se pudo achicar aquí: este aparato va 20% más lento que el video”), con un botón **Reintentar**. Cuando el problema es el peso, el mismo aviso dice qué hacer: mandárselo por WhatsApp y subir la copia que llega, exportarlo bajo 95 MB, o dejarlo en Drive y pegar el enlace. Y si se intenta guardar la pieza con algo pendiente, la app pregunta antes, nombrando los archivos que no van a quedar. Así no se da por subido algo que en realidad no está.
 

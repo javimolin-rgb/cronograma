@@ -14116,13 +14116,14 @@
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "type": "supervision",
    "text": "comentó en “Un domingo en el refugio”: Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Un domingo en el refugio",
    "body": "Maca comentó: Nosotros creamos la Free account y nos mostró  dentro de muchas, esa canción 🤷‍…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
-   "createdAt": "2026-11-20T15:53:41.804Z"
+   "createdAt": "2026-11-20T15:53:41.804Z",
+   "readAt": "2026-11-20T15:56:27.677Z"
   },
   {
    "id": "333d2eef-14d6-43f4-a211-aa6afe4bb486",

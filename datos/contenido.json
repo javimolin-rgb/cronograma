@@ -8045,6 +8045,14 @@
  ],
  "comments": [
   {
+   "id": "4132a8c9-38d1-4780-8d75-f2d6b160ba9e",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "javi",
+   "text": "Porque como te comentaba, la plataforma en la que encontré la canción es distinta a la que les envié, y esa requiere suscripción",
+   "fileIds": [],
+   "createdAt": "2026-11-20T15:52:05.954Z"
+  },
+  {
    "id": "084fa0c5-5669-4778-8fac-e5e852b2b33c",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "maca",
@@ -11037,6 +11045,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "500040e8-6cc7-48f9-998f-d513fe614663",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T15:52:05.957Z"
+  },
   {
    "id": "592cdc9a-acff-4191-beb5-a6b38940ad79",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14073,6 +14091,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "bfcfd04e-a0cc-4341-911c-9fa474355d73",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Porque como te comentaba, la plataforma en la que encontré la canción es distint…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi comentó: Porque como te comentaba, la plataforma en la que encontré la canción es distint…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:52:05.957Z"
+  },
   {
    "id": "b595a5fa-895d-4e06-8c63-ed77ee7683ec",
    "to": "javi",

@@ -2146,8 +2146,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T15:43:47.509Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-20T15:47:35.494Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-19T16:11:07.804Z",
    "publishedAt": null
   },
@@ -8045,6 +8045,14 @@
  ],
  "comments": [
   {
+   "id": "084fa0c5-5669-4778-8fac-e5e852b2b33c",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "author": "maca",
+   "text": "Porque de forma ilegal si es una plataforma que permite usar la música?",
+   "fileIds": [],
+   "createdAt": "2026-11-20T15:47:35.502Z"
+  },
+  {
    "id": "1a55f678-347a-4e68-b397-74d4a17aada8",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "author": "javi",
@@ -11029,6 +11037,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "592cdc9a-acff-4191-beb5-a6b38940ad79",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-20T15:47:35.505Z"
+  },
   {
    "id": "50fe3fe7-4624-4050-9d25-b741ed986c00",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
@@ -14055,6 +14073,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "b595a5fa-895d-4e06-8c63-ed77ee7683ec",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "supervision",
+   "text": "comentó en “Un domingo en el refugio”: Porque de forma ilegal si es una plataforma que permite usar la música?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Porque de forma ilegal si es una plataforma que permite usar la música?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:47:35.506Z"
+  },
+  {
+   "id": "c9c6a810-679c-4499-9b60-32197b260c5c",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "comment",
+   "text": "comentó en “Un domingo en el refugio”: Porque de forma ilegal si es una plataforma que permite usar la música?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Maca comentó: Porque de forma ilegal si es una plataforma que permite usar la música?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T15:47:35.506Z"
+  },
   {
    "id": "46d0c407-8183-4bb7-b86a-a5dd984aac54",
    "to": "flavio",
@@ -21537,9 +21585,9 @@
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|maca",
    "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
    "person": "maca",
-   "at": "2026-11-20T15:45:43.960Z",
-   "hasta": "2026-11-20T15:43:47.509Z",
-   "que": "pieza"
+   "at": "2026-11-20T15:47:35.500Z",
+   "hasta": "2026-11-20T15:47:35.494Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|maca",

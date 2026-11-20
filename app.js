@@ -3744,7 +3744,11 @@ function renderEditor() {
     ${!esAdmin() ? (d.files.length ? `<label class="lbl">La entrega</label>${carruselHtml(laminas(d).length ? laminas(d) : pieceFiles(d, true), 'ed-' + d.id)}` : '') : `
     <label class="lbl">Archivos <small>fotos, videos, audios, PDF… cualquier archivo</small></label>
     ${(ED.fallos || []).length ? `<div class="avisobar mal">${ic('alert', 18)}
-      <span><b>${ED.fallos.length} archivo${ED.fallos.length === 1 ? ' no se subió' : 's no se subieron'}</b><br>${ED.fallos.map((x) => `${esc(x.nombre)} · ${esc(x.motivo)}`).join('<br>')}</span>
+      <span><b>${ED.fallos.length} archivo${ED.fallos.length === 1 ? ' no se subió' : 's no se subieron'}</b><br>${ED.fallos.map((x) => `${esc(x.nombre)} · ${esc(x.motivo)}`).join('<br>')}
+        ${ED.fallos.some((x) => x.porTamano) ? `<br><br><b>Qué hacer con un video muy pesado:</b><br>
+        · Mándatelo por WhatsApp y sube la copia que llega: queda en unos 15 MB y se ve bien.<br>
+        · O expórtalo de nuevo bajo ${esc(prettySize(LIMITE_SUBIDA))} (1080p basta para Instagram).<br>
+        · O déjalo en Drive y pega el enlace en <b>Enlaces</b>, acá abajo.` : ''}</span>
       ${store.caducada && esAdmin() ? `<button class="btn sm" data-act="llave-nueva">Cambiar la llave</button>` : ''}
       <button class="btn sm" data-act="ed-reintentar">Reintentar</button>
       <button class="iconbtn" data-act="ed-fallo-ok" aria-label="Entendido">${ic('x', 16)}</button></div>` : ''}
@@ -4160,14 +4164,24 @@ function nombreUtil(file, pieza, n) {
   const hermanos = (pieza.files || []).filter((x) => (x.base || '').startsWith(base)).length;
   return `${base}-${hermanos + (n || 0) + 1}`;
 }
+/* Por qué no se pudo achicar el último video. Antes esto quedaba solo en la consola
+   y el aviso decía siempre “no se pudo achicar en este aparato”, que no dice nada:
+   sin el motivo no hay manera de saber si falta un permiso, si el navegador no sabe
+   hacerlo o si el archivo venía malo. */
+let FALLO_COMPRESION = '';
 async function comprimirVideo(file, objetivo, alAvanzar) {
-  if (typeof MediaRecorder !== 'function') return null;
+  FALLO_COMPRESION = '';
+  if (typeof MediaRecorder !== 'function') { FALLO_COMPRESION = 'este navegador no sabe grabar video'; return null; }
   const v = document.createElement('video');
   v.preload = 'auto'; v.playsInline = true; v.muted = false;
   v.src = URL.createObjectURL(file);
   const limpiar = () => { try { URL.revokeObjectURL(v.src); } catch (e) { /* nada */ } };
   try {
     await new Promise((ok, mal) => { v.onloadedmetadata = ok; v.onerror = () => mal(new Error('no se pudo leer el video')); });
+    /* Reproducir con sonido solo se permite en los segundos siguientes a que tocaste algo,
+       y preparar un video pesado se come ese rato. Así que se arranca apenas se puede leer
+       y se pausa al tiro: el video queda con permiso y después ya se puede volver a partir. */
+    const permiso = v.play().then(() => { v.pause(); return ''; }, (e) => (e && e.name) || 'NotAllowedError');
     const dur = v.duration || 0;
     if (!dur || !isFinite(dur) || !v.videoWidth) throw new Error('video sin duración');
     /* El lado corto manda: un vertical de 1080×1920 se quedaba en 608×1080 porque se
@@ -4181,6 +4195,7 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     c.width = Math.max(2, Math.round(v.videoWidth * r / 2) * 2);
     c.height = Math.max(2, Math.round(v.videoHeight * r / 2) * 2);
     const ctx = c.getContext('2d');
+    if (typeof c.captureStream !== 'function') throw new Error('este navegador no deja grabar lo que se dibuja en un lienzo');
     const stream = c.captureStream(30);
     // El audio se desvía a la grabación: no se escucha por el parlante, pero no se pierde.
     const AC = window.AudioContext || window.webkitAudioContext;
@@ -4209,7 +4224,16 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
       v.addEventListener(ev, fin);
     });
     if (v.readyState < 4) await Promise.race([esperar('canplaythrough', 8000), esperar('canplay', 8000)]);
-    await v.play();
+    /* Para grabarlo hay que reproducirlo con sonido, y eso el navegador solo lo deja
+       justo después de que tocaste algo. Si se demoró en abrir el archivo, se pierde
+       ese permiso: entonces hay que decirlo, no quedarse callado. */
+    const fallaPermiso = await permiso;
+    try { if (v.currentTime > 0.01) { v.currentTime = 0; } await v.play(); }
+    catch (e) {
+      throw new Error(fallaPermiso
+        ? 'el navegador no dejó reproducir el video para achicarlo (toca Reintentar y no toques nada más mientras trabaja)'
+        : `no se pudo reproducir el video para achicarlo (${(e && e.name) || e})`);
+    }
     // el primer fotograma dibujado: a partir de aquí sí hay algo que grabar
     await new Promise((ok) => {
       const uno = () => { ctx.drawImage(v, 0, 0, c.width, c.height); ok(); };
@@ -4249,7 +4273,8 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     limpiar();
     const salida = tipo.startsWith('video/mp4') ? 'video/mp4' : 'video/webm';
     const blob = new Blob(trozos, { type: salida });
-    if (!blob.size || blob.size >= file.size) return null;
+    if (!blob.size) { FALLO_COMPRESION = 'la grabación salió vacía'; return null; }
+    if (blob.size >= file.size) { FALLO_COMPRESION = `la copia achicada pesaba lo mismo (${prettySize(blob.size)})`; return null; }
     const nombre = (file.name || 'video').replace(/\.[^.]+$/, '') + (salida === 'video/mp4' ? '.mp4' : '.webm');
     const out = new File([blob], nombre, { type: salida });
     // ¿quedó entero? Si se perdió más de medio segundo por el camino, hay que decirlo
@@ -4260,6 +4285,7 @@ async function comprimirVideo(file, objetivo, alAvanzar) {
     return out;
   } catch (e) {
     limpiar();
+    FALLO_COMPRESION = (e && e.message) || String(e);
     console.warn('no se pudo comprimir', e);
     return null;
   }
@@ -4292,10 +4318,10 @@ function archivoConSha(sha) {
   return null;
 }
 // Deja anotado un archivo que no quedó subido, para que se vea en la pieza y se pueda reintentar
-function anotarFallo(file, motivo) {
+function anotarFallo(file, motivo, porTamano) {
   const ed = ED; if (!ed) return;
   ed.fallos = (ed.fallos || []).filter((x) => x.nombre !== file.name)
-    .concat([{ id: uid(), nombre: file.name, size: file.size, file, motivo }]);
+    .concat([{ id: uid(), nombre: file.name, size: file.size, file, motivo, porTamano: !!porTamano }]);
 }
 /* Sube la lista y deja anotado, bien a la vista, lo que no se pudo subir:
    así nunca se da por subido algo que en realidad no quedó. */
@@ -4309,6 +4335,7 @@ async function subirArchivos(files) {
   let bien = 0, repetidos = 0;
   for (const f of files) {
     ed.fallos = (ed.fallos || []).filter((x) => x.nombre !== f.name);   // al reintentar, se borra el aviso anterior
+    let motivoAchique = '';
     try {
       if (!(await subirArtefacto(f))) {
         let archivo = f;
@@ -4319,6 +4346,7 @@ async function subirArchivos(files) {
             if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Comprimiendo “${f.name}”… ${Math.round(pc * 100)}%`; }
           });
           ed.comprimiendo = null; renderEditor();
+          motivoAchique = chico ? '' : FALLO_COMPRESION;
           if (chico) {
             archivo = chico;
             toast(chico.aviso || `Listo: de ${prettySize(f.size)} a ${prettySize(chico.size)}`, chico.aviso ? 9000 : 4000);
@@ -4364,7 +4392,7 @@ async function subirArchivos(files) {
                 if (ed.comprimiendo) { ed.comprimiendo.pct = pc; const b = $('#comprimiendo'); if (b) b.textContent = `Achicando “${f.name}”… ${Math.round(pc * 100)}%`; }
               });
               ed.comprimiendo = null; renderEditor();
-              if (!chico2) throw e1;
+              if (!chico2) { motivoAchique = FALLO_COMPRESION; throw e1; }
               archivo = chico2;
               const ext2 = (chico2.name.match(/\.([a-z0-9]+)$/i) || [, ''])[1];
               if (ext2) nombreSubida = nombre.replace(/\.[^.]+$/, '') + '.' + ext2;
@@ -4386,10 +4414,13 @@ async function subirArchivos(files) {
     }
     catch (e) {
       console.error(e);
-      const pesado = f.size > LIMITE_SUBIDA;
-      const motivo = pesado ? `pesa ${prettySize(f.size)} y no se pudo achicar en este aparato`
-        : ((e && e.message) || (e && e.type === 'error' ? 'el computador no dejó leer el archivo' : String(e)));
-      anotarFallo(f, motivo);
+      /* Culpar al tamaño solo cuando de verdad fue el tamaño: si el archivo era pesado
+         pero se achicó bien y falló otra cosa, hay que decir esa otra cosa. */
+      const msgE = (e && e.message) || '';
+      const pesado = f.size > LIMITE_SUBIDA && (motivoAchique || /pesa (más|demasiado)|too large|413/i.test(msgE));
+      const motivo = pesado ? `pesa ${prettySize(f.size)} y el tope son ${prettySize(LIMITE_SUBIDA)}; no se pudo achicar aquí${motivoAchique ? ': ' + motivoAchique : ''}`
+        : (msgE || (e && e.type === 'error' ? 'el computador no dejó leer el archivo' : String(e)));
+      anotarFallo(f, motivo, pesado);
       toast(`“${f.name}” NO se subió: ${motivo}`, 7000);
     }
     ed.uploading -= 1;

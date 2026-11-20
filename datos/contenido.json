@@ -8149,7 +8149,10 @@
    "author": "javi",
    "text": "@Maca Porfavor marcar como aprobado si está okay, sino mencióname que ajustar",
    "fileIds": [],
-   "createdAt": "2026-11-20T17:36:13.041Z"
+   "createdAt": "2026-11-20T17:36:13.041Z",
+   "reacciones": {
+    "maca": "up"
+   }
   },
   {
    "id": "a183d121-82c7-4e6e-9149-7705d52fc3f0",
@@ -14098,6 +14101,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e06b7112-d60f-4011-b21a-d60f75d7e164",
+   "to": "javi",
+   "from": "maca",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Un domingo en el refugio”: @Maca Porfavor marcar como aprobado si está okay, sino menci",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Un domingo en el refugio",
+   "body": "Maca le puso 👍 a tu comentario: @Maca Porfavor marcar como aprobado si está okay, sino menci",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-20T18:19:52.632Z"
+  },
   {
    "id": "299b3489-09e0-4ae3-a9f8-7e64873b7b39",
    "to": "maca",

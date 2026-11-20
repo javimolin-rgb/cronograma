@@ -11180,6 +11180,16 @@
  ],
  "activity": [
   {
+   "id": "141a6740-4e90-41fc-8cf7-760f7b1d3c00",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: está esperando tu respuesta",
+   "meta": null,
+   "createdAt": "2026-11-20T18:05:31.823Z"
+  },
+  {
    "id": "691a61cc-4320-400c-a8db-50db5ce8d6cb",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14088,6 +14098,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "299b3489-09e0-4ae3-a9f8-7e64873b7b39",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Aire nuevo sin abrir la ventana”: está esperando tu respuesta",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi está esperando tu respuesta",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-20T18:05:31.823Z"
+  },
   {
    "id": "2bcc8a65-0980-4869-b263-b4cc0f1ae91d",
    "to": "maca",

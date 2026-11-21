@@ -3128,8 +3128,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T15:44:11.717Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-21T15:49:16.886Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:02:29.505Z",
@@ -8212,6 +8212,14 @@
  ],
  "comments": [
   {
+   "id": "620f4dc1-7463-4b37-940d-16c5b3acdc7a",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es el ángulo o que se vea extraño porque no está la puerta",
+   "fileIds": [],
+   "createdAt": "2026-11-21T15:49:16.894Z"
+  },
+  {
    "id": "19fb529b-3da7-431f-ba62-19e309dc5e40",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "javi",
@@ -11324,6 +11332,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "e7198fba-5c9b-45c7-a70d-6aaa523fdc46",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T15:49:16.897Z"
+  },
   {
    "id": "5090e34f-7811-4a7a-9e7d-b0728e51b4a9",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -14448,6 +14466,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a408b494-11f3-4349-917b-d4af63df0c51",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "comentó en “Casa Roble”: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:49:16.899Z"
+  },
+  {
+   "id": "21001e55-31a5-403f-b4f6-b6d22f758fb8",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:49:16.899Z"
+  },
   {
    "id": "ecbd6431-7df8-41d5-93a6-0b8c25f9cac8",
    "to": "flavio",
@@ -22192,9 +22240,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-21T15:45:06.789Z",
-   "hasta": "2026-11-21T15:44:11.717Z",
-   "que": "pieza"
+   "at": "2026-11-21T15:49:16.892Z",
+   "hasta": "2026-11-21T15:49:16.886Z",
+   "que": "comentario"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

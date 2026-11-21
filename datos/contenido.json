@@ -3622,7 +3622,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T16:01:39.664Z",
+   "updatedAt": "2026-11-21T16:02:35.939Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -8212,6 +8212,14 @@
  ],
  "comments": [
   {
+   "id": "6662ea35-8dcd-4bd2-a81b-68074ecce556",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Esos ajustes los quieres dejar listos hoy o lunes?",
+   "fileIds": [],
+   "createdAt": "2026-11-21T16:02:35.941Z"
+  },
+  {
    "id": "749d0289-514f-4364-b7a4-f5cbd605834c",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11351,6 +11359,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "04c7d6d7-0b06-4fc8-af96-016cc6f6318a",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T16:02:35.941Z"
+  },
   {
    "id": "d9e1d958-6fd2-49df-b3e5-bac93865d2a3",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -14505,6 +14523,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "da71a55e-d614-41f2-bf80-0e2a627e4293",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Esos ajustes los quieres dejar listos hoy o lunes?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Esos ajustes los quieres dejar listos hoy o lunes?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-21T16:02:35.942Z"
+  },
+  {
+   "id": "7c588f41-01b0-450a-820a-93e814edd9d6",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Esos ajustes los quieres dejar listos hoy o lunes?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Esos ajustes los quieres dejar listos hoy o lunes?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-21T16:02:35.941Z"
+  },
   {
    "id": "d299f297-a558-4143-85ac-6929494bf290",
    "to": "flavio",
@@ -22372,8 +22420,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-21T16:01:39.667Z",
-   "hasta": "2026-11-21T16:01:39.664Z",
+   "at": "2026-11-21T16:02:35.941Z",
+   "hasta": "2026-11-21T16:02:35.939Z",
    "que": "comentario"
   },
   {

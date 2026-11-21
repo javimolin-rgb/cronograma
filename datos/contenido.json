@@ -3049,7 +3049,7 @@
      "sha": "6f6c69e11cb2ad37f1dbbf0fc16ada33569b56d5",
      "type": "image/webp",
      "size": 154412,
-     "orden": 0
+     "orden": 1013
     },
     {
      "id": "f701dcc7-ee63-497e-8d4c-60e3c3a90ddd",
@@ -3064,7 +3064,7 @@
      "sha": "02c747b26ba4cd876264acb4b6a5d9e073001ae7",
      "type": "image/webp",
      "size": 84634,
-     "orden": 1
+     "orden": 1014
     },
     {
      "id": "df4fe91d-bf14-4a4f-ae77-c84b61273344",
@@ -3079,7 +3079,7 @@
      "sha": "a8c03a5ce12f417d383f1a2a9d73dd666792ab0b",
      "type": "image/webp",
      "size": 55758,
-     "orden": 2
+     "orden": 1015
     },
     {
      "id": "44243ace-147a-4b34-ba93-30bfa7cac4b6",
@@ -3094,7 +3094,7 @@
      "sha": "d62ad59138a12cee8a24d8fb9bf2e7e6df77f7cd",
      "type": "image/webp",
      "size": 127148,
-     "orden": 3
+     "orden": 1016
     },
     {
      "id": "c3659b2a-ef5a-495f-83c6-e1bde03a1a83",
@@ -3109,7 +3109,7 @@
      "sha": "8915c4ba62da16e814d3a6e5b4d56eb6e703b8ee",
      "type": "image/webp",
      "size": 69164,
-     "orden": 4
+     "orden": 1017
     },
     {
      "id": "97393239-ce6d-4a4b-ac9f-a66f024c6f2b",
@@ -3124,7 +3124,7 @@
      "sha": "ffa3c6adae1485ae3a049efda2159881d1f56978",
      "type": "image/webp",
      "size": 116910,
-     "orden": 5
+     "orden": 1018
     },
     {
      "id": "77cc5244-f9da-4417-b026-395998c193bb",
@@ -3139,7 +3139,7 @@
      "sha": "9c3c5f4ad1af23c798097cd8fc78d40bcf185b67",
      "type": "image/webp",
      "size": 158034,
-     "orden": 6
+     "orden": 0
     },
     {
      "id": "4558a30f-a11f-4914-9565-a133fa66c9c6",
@@ -3154,7 +3154,7 @@
      "sha": "01900d951adae198f31facc4a19a6a537c50e426",
      "type": "image/webp",
      "size": 68476,
-     "orden": 7
+     "orden": 1
     },
     {
      "id": "32f4dedf-e77e-4395-81e2-6e02667b3ac3",
@@ -3169,7 +3169,7 @@
      "sha": "09c6de9b0acff3bc47e89fc4f39f171f5df54294",
      "type": "image/webp",
      "size": 85912,
-     "orden": 8
+     "orden": 2
     },
     {
      "id": "dcc83afd-a14e-433f-b3d5-a3581c69baca",
@@ -3184,7 +3184,7 @@
      "sha": "83817aeef0837772373289e49e1899493d3fcef4",
      "type": "image/webp",
      "size": 54800,
-     "orden": 9
+     "orden": 3
     },
     {
      "id": "5c65bba2-308d-440e-9bc2-a52481ad9db0",
@@ -3199,7 +3199,7 @@
      "sha": "89862c661a9008789a98b6f14d69f6566f5b0db5",
      "type": "image/webp",
      "size": 130840,
-     "orden": 10
+     "orden": 4
     },
     {
      "id": "4d3acb42-ba3a-4e34-a9ab-293a0f060eff",
@@ -3214,11 +3214,101 @@
      "sha": "ec16d59812292ae5a524861935435502d24ba16a",
      "type": "image/webp",
      "size": 116530,
+     "orden": 5
+    },
+    {
+     "id": "9c1a85f4-241f-46cf-ab9e-aa9c64700238",
+     "by": "javi",
+     "at": "2026-11-21T23:39:00.540Z",
+     "base": "izq_nevando",
+     "version": 3,
+     "shaOrigen": "839aa63767ff574ff6f7e5c2a71b7b84fd18e3ba",
+     "name": "izq_nevando-v3.webp",
+     "path": "archivos/1.-modelos-3d/izq_nevando-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/izq_nevando-v3.webp",
+     "sha": "e3a446c6c35d2403135adc116e07be2ffd7cda15",
+     "type": "image/webp",
+     "size": 160088,
+     "orden": 6
+    },
+    {
+     "id": "fe1c719a-8cd4-4bfe-89a9-30a9de200818",
+     "by": "javi",
+     "at": "2026-11-21T23:39:03.289Z",
+     "base": "contexto",
+     "version": 3,
+     "shaOrigen": "923e523447ba19641781b08ffbfefd585df89294",
+     "name": "contexto-v3.webp",
+     "path": "archivos/1.-modelos-3d/contexto-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/contexto-v3.webp",
+     "sha": "25c5d7a363552390709a0894f16098e6237ecca4",
+     "type": "image/webp",
+     "size": 68512,
+     "orden": 7
+    },
+    {
+     "id": "d8202cc4-ddda-4744-bbdb-e6a5eb8a5957",
+     "by": "javi",
+     "at": "2026-11-21T23:39:05.945Z",
+     "base": "der_atras",
+     "version": 3,
+     "shaOrigen": "6327f0c27a0d41e9d3a5e01800701b8e8da3f7c1",
+     "name": "der_atras-v3.webp",
+     "path": "archivos/1.-modelos-3d/der_atras-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/der_atras-v3.webp",
+     "sha": "dacb74c8bf838aeb043686f286b6d336191f1648",
+     "type": "image/webp",
+     "size": 85400,
+     "orden": 8
+    },
+    {
+     "id": "98ed623f-1567-421a-b721-b68807fa00ac",
+     "by": "javi",
+     "at": "2026-11-21T23:39:08.615Z",
+     "base": "izq_atras",
+     "version": 3,
+     "shaOrigen": "f65b941b7b116e14319f2bc707ed304e4c1fe36d",
+     "name": "izq_atras-v3.webp",
+     "path": "archivos/1.-modelos-3d/izq_atras-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/izq_atras-v3.webp",
+     "sha": "ef9a19b09a1580cfea75c137b86e8da28b1236f8",
+     "type": "image/webp",
+     "size": 54568,
+     "orden": 9
+    },
+    {
+     "id": "922e1d9e-4414-457c-b62f-a0332e1d5efe",
+     "by": "javi",
+     "at": "2026-11-21T23:39:11.635Z",
+     "base": "der",
+     "version": 3,
+     "shaOrigen": "ce368a3510b026a011abcfa459f2e73938e022a1",
+     "name": "der-v3.webp",
+     "path": "archivos/1.-modelos-3d/der-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/der-v3.webp",
+     "sha": "6b9b01b796477b9565138ef08005b6c63220a732",
+     "type": "image/webp",
+     "size": 116628,
+     "orden": 10
+    },
+    {
+     "id": "48680bda-7523-4405-bed4-a817655fbc3c",
+     "by": "javi",
+     "at": "2026-11-21T23:39:14.756Z",
+     "base": "izq",
+     "version": 3,
+     "shaOrigen": "024402ee96f88b11fd3d32d9480de1447caf44b0",
+     "name": "izq-v3.webp",
+     "path": "archivos/1.-modelos-3d/izq-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/izq-v3.webp",
+     "sha": "d46d7d1718e39c81da2bb95a3b0101049bc6579a",
+     "type": "image/webp",
+     "size": 130518,
      "orden": 11
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T21:45:21.441Z",
+   "updatedAt": "2026-11-21T23:39:22.968Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -11466,6 +11556,16 @@
  ],
  "activity": [
   {
+   "id": "036f62c9-32d3-4566-b54d-ebd5320334dc",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-21T23:39:22.971Z"
+  },
+  {
    "id": "4bab8690-b196-41a1-aed3-4366599d8b03",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14340,6 +14440,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "89fbc403-287a-40a4-bb12-23f9de574e1b",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T23:39:22.972Z"
+  },
+  {
+   "id": "592af2ca-07a3-4feb-9f2e-17592e394668",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T23:39:22.972Z"
+  },
   {
    "id": "c26c42c0-26da-458c-8531-9e70afac8023",
    "to": "flavio",

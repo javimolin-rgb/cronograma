@@ -14491,13 +14491,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:52:04.195Z"
+   "createdAt": "2026-11-21T15:52:04.195Z",
+   "readAt": "2026-11-21T15:57:09.533Z"
   },
   {
    "id": "2a15ff64-2af4-4092-b282-8c0d116d685f",
@@ -14521,13 +14522,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:49:16.899Z"
+   "createdAt": "2026-11-21T15:49:16.899Z",
+   "readAt": "2026-11-21T15:57:09.533Z"
   },
   {
    "id": "21001e55-31a5-403f-b4f6-b6d22f758fb8",

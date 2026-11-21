@@ -3128,7 +3128,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T15:49:16.886Z",
+   "updatedAt": "2026-11-21T15:52:04.190Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -8212,6 +8212,14 @@
  ],
  "comments": [
   {
+   "id": "c22aec18-82b5-41ef-ac5f-d5f81ef42e55",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa darle más prestancia",
+   "fileIds": [],
+   "createdAt": "2026-11-21T15:52:04.192Z"
+  },
+  {
    "id": "620f4dc1-7463-4b37-940d-16c5b3acdc7a",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11332,6 +11340,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "7aa118ca-a43a-4daf-b4b8-05f0ed41f4a6",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T15:52:04.193Z"
+  },
   {
    "id": "e7198fba-5c9b-45c7-a70d-6aaa523fdc46",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -14466,6 +14484,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7b10eb12-3c9f-4269-8627-d2f23909300c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "comentó en “Casa Roble”: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:52:04.195Z"
+  },
+  {
+   "id": "2a15ff64-2af4-4092-b282-8c0d116d685f",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:52:04.194Z"
+  },
   {
    "id": "a408b494-11f3-4349-917b-d4af63df0c51",
    "to": "javi",
@@ -22240,8 +22288,8 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-21T15:49:16.892Z",
-   "hasta": "2026-11-21T15:49:16.886Z",
+   "at": "2026-11-21T15:52:04.192Z",
+   "hasta": "2026-11-21T15:52:04.190Z",
    "que": "comentario"
   },
   {

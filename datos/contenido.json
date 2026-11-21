@@ -3128,7 +3128,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T15:37:36.374Z",
+   "updatedAt": "2026-11-21T15:41:08.181Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -8212,6 +8212,16 @@
  ],
  "comments": [
   {
+   "id": "6d6e877c-3492-4b59-aca9-5e693ed5292a",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se vean y no solo el hueco\nExtender terraza entrada\nSacar el andarivel que está justo atrás, porque se confunde con poste de luz. Si quieres poner andarivel que sea un poco más lejos y se vean las sillas . Sino sacarlo.",
+   "fileIds": [
+    "df4fe91d-bf14-4a4f-ae77-c84b61273344"
+   ],
+   "createdAt": "2026-11-21T15:41:08.189Z"
+  },
+  {
    "id": "7a4b0e9f-a510-4576-b8cc-7dee15551e3a",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11298,6 +11308,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "06202b2f-6fdf-46e3-b9e6-cae25d3510c6",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T15:41:08.194Z"
+  },
   {
    "id": "ba5258ab-7387-41e6-9ed4-8ea236aa867a",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -14392,6 +14412,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "278ea13f-a6f8-45b6-b775-5d0795cc5280",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "comentó en “Casa Roble”: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:41:08.196Z"
+  },
+  {
+   "id": "896b0cbd-db25-4c7b-895e-15cb7f4dc90e",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:41:08.195Z"
+  },
   {
    "id": "57e79e2a-83fe-4d0c-96a9-ebdb74991dd1",
    "to": "javi",
@@ -22042,8 +22092,8 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-21T15:37:36.378Z",
-   "hasta": "2026-11-21T15:37:36.374Z",
+   "at": "2026-11-21T15:41:08.188Z",
+   "hasta": "2026-11-21T15:41:08.181Z",
    "que": "comentario"
   },
   {

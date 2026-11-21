@@ -3128,8 +3128,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T14:53:37.257Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-21T15:37:36.374Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:02:29.505Z",
@@ -8212,6 +8212,16 @@
  ],
  "comments": [
   {
+   "id": "7a4b0e9f-a510-4576-b8cc-7dee15551e3a",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco . \nExtender la terraza de acceso",
+   "fileIds": [
+    "f701dcc7-ee63-497e-8d4c-60e3c3a90ddd"
+   ],
+   "createdAt": "2026-11-21T15:37:36.380Z"
+  },
+  {
    "id": "c4f05a21-57be-4dd5-a60b-3ea68adf58e1",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11288,6 +11298,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "ba5258ab-7387-41e6-9ed4-8ea236aa867a",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T15:37:36.383Z"
+  },
   {
    "id": "577ea383-86e2-4867-a49e-ed51e91f8a56",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
@@ -14372,6 +14392,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "57e79e2a-83fe-4d0c-96a9-ebdb74991dd1",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "comentó en “Casa Roble”: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:37:36.385Z"
+  },
+  {
+   "id": "529606ea-dc85-417b-ab72-07b70f77c37a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:37:36.385Z"
+  },
   {
    "id": "bdaec399-38f6-4e07-af4b-eac8cadcced8",
    "to": "flavio",
@@ -21992,9 +22042,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-21T15:19:05.954Z",
-   "hasta": "2026-11-21T14:53:37.257Z",
-   "que": "pieza"
+   "at": "2026-11-21T15:37:36.378Z",
+   "hasta": "2026-11-21T15:37:36.374Z",
+   "que": "comentario"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

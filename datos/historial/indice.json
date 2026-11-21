@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-20T17:00:30.703Z",
+ "actualizado": "2026-11-21T16:12:47.039Z",
  "meses": [
   "2026-08",
   "2026-09",
@@ -8,8 +8,8 @@
  ],
  "total": {
   "comments": 16,
-  "activity": 400,
-  "notifications": 477
+  "activity": 429,
+  "notifications": 505
  },
  "piezas": {
   "e-c1": {
@@ -179,32 +179,32 @@
   },
   "03b2da82-2617-417b-8081-df3dadaefb31": {
    "comments": 0,
-   "activity": 88,
+   "activity": 89,
    "notifications": 146
   },
   "804906ab-7f99-4598-afc6-ef726afa4e20": {
    "comments": 0,
-   "activity": 4,
+   "activity": 5,
    "notifications": 1
   },
   "e2e69c7f-c96f-41d1-9f29-6f57e2be4125": {
    "comments": 0,
-   "activity": 4,
+   "activity": 5,
    "notifications": 1
   },
   "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b": {
    "comments": 0,
-   "activity": 3,
+   "activity": 4,
    "notifications": 0
   },
   "bb42e33d-36ab-4a0d-a913-b8b5185b775f": {
    "comments": 0,
-   "activity": 4,
+   "activity": 5,
    "notifications": 1
   },
   "323a4823-a2d6-4dcf-ba09-8d0f60536507": {
    "comments": 0,
-   "activity": 4,
+   "activity": 5,
    "notifications": 0
   },
   "b7258377-7bcd-4a03-b7d4-ed25bf0220e4": {
@@ -219,13 +219,13 @@
   },
   "549a3272-d695-4f76-9011-a252831ac96c": {
    "comments": 0,
-   "activity": 6,
-   "notifications": 5
+   "activity": 8,
+   "notifications": 7
   },
   "2fa98f13-69ae-40b5-9cea-3d63c396c517": {
    "comments": 0,
-   "activity": 6,
-   "notifications": 5
+   "activity": 8,
+   "notifications": 7
   },
   "76bfb3d4-fbf3-4b23-9f7d-178fe02050cd": {
    "comments": 0,
@@ -239,8 +239,8 @@
   },
   "c14e3171-4bf1-4be7-a2db-acec3a3fce60": {
    "comments": 0,
-   "activity": 8,
-   "notifications": 7
+   "activity": 13,
+   "notifications": 13
   },
   "30efd072-8377-4a3a-96f6-e2a60dab643d": {
    "comments": 0,
@@ -261,6 +261,16 @@
    "comments": 0,
    "activity": 5,
    "notifications": 9
+  },
+  "5acaad61-db8d-4625-9fc2-112f3b8a0b94": {
+   "comments": 0,
+   "activity": 13,
+   "notifications": 18
+  },
+  "db10db45-7eea-498b-bef7-0fc0093ab3b8": {
+   "comments": 0,
+   "activity": 1,
+   "notifications": 0
   }
  }
 }

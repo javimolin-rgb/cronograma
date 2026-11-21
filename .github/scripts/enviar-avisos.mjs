@@ -7,6 +7,11 @@ const DATOS = 'datos/contenido.json';
 const REGISTRO = 'datos/avisos-enviados.json';
 const DIAS = 3;                       // avisos más viejos que esto ya no se mandan
 const MAX_REGISTRO = 3000;
+// Dónde anotar lo que se manda en ESTA pasada, fuera del repositorio. Hace falta
+// porque el registro se guarda con un commit que puede chocar con un guardado de
+// la app: si eso pasa, el paso de anotar rehace la anotación sobre lo último
+// usando este archivo. Sin él, el aviso quedaría sin anotar y se mandaría otra vez.
+const AHORA = process.env.ENVIADOS_AHORA || '';
 
 const { VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT } = process.env;
 if (!VAPID_PUBLIC_KEY || !VAPID_PRIVATE_KEY) {
@@ -22,6 +27,7 @@ const yaEnviado = new Set(registro.enviados || []);
 // Celulares que ya no existen (la app se borró o la suscripción venció): no se les insiste,
 // y la app los saca solos de la lista la próxima vez que alguien la abre.
 const muertos = new Set(registro.muertos || []);
+const muertosNuevos = new Set();   // solo las que vencieron en esta pasada
 
 const corte = Date.now() - DIAS * 864e5;
 const pendientes = (db.notifications || []).filter((n) =>
@@ -31,6 +37,14 @@ if (!pendientes.length) { console.log('No hay avisos pendientes.'); process.exit
 
 const subs = db.push_subs || [];
 let enviados = 0, fallidos = 0;
+
+// Los avisos que ya salieron en esta pasada. Se escribe en disco después de cada
+// uno: lo que ya salió queda anotado aunque esto se corte por la mitad.
+const mandados = [];
+const guardarAhora = () => {
+  if (!AHORA) return;
+  fs.writeFileSync(AHORA, JSON.stringify({ enviados: mandados, muertos: [...muertosNuevos] }, null, 1) + '\n');
+};
 
 for (const n of pendientes) {
   const destinos = subs.filter((s) => s.person === n.to && s.sub && !muertos.has(s.id));
@@ -45,15 +59,26 @@ for (const n of pendientes) {
   });
   // un zumbido se entrega de inmediato, aunque el teléfono esté ahorrando batería
   const opciones = n.urgente ? { urgency: 'high', TTL: 3600 } : {};
+  let llegaron = 0, pasajeros = 0;
   for (const s of destinos) {
-    try { await webpush.sendNotification(s.sub, carga, opciones); enviados++; }
+    try { await webpush.sendNotification(s.sub, carga, opciones); enviados++; llegaron++; }
     catch (e) {
       const codigo = e.statusCode || 0;
-      if (codigo === 404 || codigo === 410) { muertos.add(s.id); console.log('Suscripción vencida de', n.to, '— se borrará de la lista'); }
-      else { fallidos++; console.log('No se pudo enviar a', n.to, codigo || e.message); }
+      if (codigo === 404 || codigo === 410) { muertos.add(s.id); muertosNuevos.add(s.id); console.log('Suscripción vencida de', n.to, '— se borrará de la lista'); }
+      else { fallidos++; pasajeros++; console.log('No se pudo enviar a', n.to, codigo || e.message); }
     }
   }
+  // Si no salió a NINGÚN aparato y el problema parece pasajero (no una
+  // suscripción vencida), no se anota: así la pasada siguiente lo vuelve a
+  // intentar y el aviso no se pierde. No puede duplicar, justamente porque
+  // esta vez no llegó a ninguno.
+  if (llegaron === 0 && pasajeros > 0) {
+    console.log(`Aviso para ${n.to}: no salió a ningún aparato, se reintenta en la pasada siguiente.`);
+    continue;
+  }
   yaEnviado.add(n.id);
+  mandados.push(n.id);
+  guardarAhora();
 }
 
 const lista = [...yaEnviado].slice(-MAX_REGISTRO);

@@ -29,13 +29,55 @@ jobs:
           VAPID_PUBLIC_KEY: ${{ secrets.VAPID_PUBLIC_KEY }}
           VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
           VAPID_SUBJECT: ${{ secrets.VAPID_SUBJECT }}
+          ENVIADOS_AHORA: ${{ runner.temp }}/enviados-ahora.json
         run: node .github/scripts/enviar-avisos.mjs
+
+      # Un aviso que sale y no queda anotado se vuelve a mandar en la pasada
+      # siguiente, y al celular llegan dos notificaciones iguales. Así que esto
+      # insiste hasta que la anotación quede guardada, y corre aunque el paso de
+      # arriba se haya caído: puede haberse caído DESPUÉS de mandar algo.
       - name: Anotar lo que ya se envió
+        if: always()
+        env:
+          ENVIADOS_AHORA: ${{ runner.temp }}/enviados-ahora.json
         run: |
-          if [ -n "$(git status --porcelain datos/avisos-enviados.json)" ]; then
-            git config user.name  "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add datos/avisos-enviados.json
-            git commit -m "Avisos enviados [skip ci]"
-            git push
+          if [ ! -f "$ENVIADOS_AHORA" ]; then
+            echo "No salió ningún aviso en esta pasada: no hay nada que anotar."
+            exit 0
           fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          intento=1
+          while [ $intento -le 5 ]; do
+            # Primero meter en el registro todo lo de esta pasada. Va al principio
+            # de cada vuelta a propósito: así, si el push de más abajo pasa, el
+            # registro tiene con seguridad lo que salió. Si esto falla, se corta
+            # aquí en vez de cantar un "guardado" que no es cierto.
+            if ! node .github/scripts/anotar-enviados.mjs; then
+              echo "::error::No se pudo anotar en el registro lo que ya salió. Estos avisos se mandarían de nuevo; revisar antes de que corra otra vez."
+              exit 1
+            fi
+
+            if [ -n "$(git status --porcelain datos/avisos-enviados.json)" ]; then
+              git add datos/avisos-enviados.json
+              git commit -m "Avisos enviados [skip ci]"
+            fi
+            if git push; then
+              echo "Registro guardado: estos avisos no se vuelven a mandar."
+              exit 0
+            fi
+
+            # La app guardó en el mismo momento. Los avisos YA salieron, así que
+            # no hay que mandarlos otra vez: solo falta dejarlos anotados. Se trae
+            # lo último, se descarta la anotación local y la vuelta siguiente la
+            # rehace encima. Juntar listas de ids es una unión: no da conflicto.
+            echo "Guardaron al mismo tiempo: se rehace la anotación sobre lo último (intento $intento)"
+            git fetch origin ${{ github.ref_name }}
+            git reset --hard origin/${{ github.ref_name }}
+            sleep $((intento * 3))
+            intento=$((intento + 1))
+          done
+
+          echo "::error::No se pudo anotar lo enviado después de 5 intentos: estos avisos se van a mandar de nuevo y llegarán duplicados al celular."
+          exit 1

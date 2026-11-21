@@ -3128,8 +3128,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T15:42:44.105Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-21T15:44:11.717Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:02:29.505Z",
@@ -8212,6 +8212,14 @@
  ],
  "comments": [
   {
+   "id": "19fb529b-3da7-431f-ba62-19e309dc5e40",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "javi",
+   "text": "@Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificamente (ya que está hecha a base de los planos y renders oficiales y no quiero inventar nada)",
+   "fileIds": [],
+   "createdAt": "2026-11-21T15:44:11.719Z"
+  },
+  {
    "id": "6c7723cc-8fb1-4b1a-979e-4102a561e561",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11316,6 +11324,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "5090e34f-7811-4a7a-9e7d-b0728e51b4a9",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T15:44:11.720Z"
+  },
   {
    "id": "c59e6310-e1f6-4efd-a475-dc906fdf2ad3",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -14430,6 +14448,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ecbd6431-7df8-41d5-93a6-0b8c25f9cac8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: @Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificam…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi comentó: @Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificam…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:44:11.721Z"
+  },
+  {
+   "id": "3b1db2f3-808b-4b5c-884a-c61ee18996a7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: @Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificam…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi te mencionó: @Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificam…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:44:11.721Z"
+  },
   {
    "id": "fee29295-26c5-4d5d-8e09-23ed5abd7a8b",
    "to": "javi",
@@ -22126,9 +22174,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|javi",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "javi",
-   "at": "2026-11-21T15:42:31.433Z",
-   "hasta": "2026-11-21T15:41:08.181Z",
-   "que": "pieza"
+   "at": "2026-11-21T15:44:11.718Z",
+   "hasta": "2026-11-21T15:44:11.717Z",
+   "que": "comentario"
   },
   {
    "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf|maca",

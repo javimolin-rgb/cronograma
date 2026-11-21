@@ -14419,13 +14419,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:41:08.196Z"
+   "createdAt": "2026-11-21T15:41:08.196Z",
+   "readAt": "2026-11-21T15:42:28.161Z"
   },
   {
    "id": "896b0cbd-db25-4c7b-895e-15cb7f4dc90e",
@@ -14449,13 +14450,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:37:36.385Z"
+   "createdAt": "2026-11-21T15:37:36.385Z",
+   "readAt": "2026-11-21T15:42:28.161Z"
   },
   {
    "id": "529606ea-dc85-417b-ab72-07b70f77c37a",
@@ -21829,7 +21831,7 @@
    "version": "2026.11.20-8",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-20T22:38:32.119Z"
+   "lastSeen": "2026-11-21T15:42:27.898Z"
   }
  ],
  "recursos": [

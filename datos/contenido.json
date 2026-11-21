@@ -3622,8 +3622,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T16:02:35.939Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-21T16:22:23.908Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:53:07.458Z",
@@ -8212,6 +8212,14 @@
  ],
  "comments": [
   {
+   "id": "ae8bb488-1567-43e1-91e1-6fd766df0836",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "javi",
+   "text": "Mientras antes siempre mejor, pero estos no son urgentes para hoy. Por mi dejaría todas las del mes listas y progrmaadas",
+   "fileIds": [],
+   "createdAt": "2026-11-21T16:22:23.909Z"
+  },
+  {
    "id": "6662ea35-8dcd-4bd2-a81b-68074ecce556",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11360,6 +11368,16 @@
  ],
  "activity": [
   {
+   "id": "bbcf6781-5a8f-4784-b4a9-b26c8e7fde2b",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T16:22:23.911Z"
+  },
+  {
    "id": "04c7d6d7-0b06-4fc8-af96-016cc6f6318a",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14194,6 +14212,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7fabe5f6-a78a-4472-ac76-c3c73f13405e",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Mientras antes siempre mejor, pero estos no son urgentes para hoy. Por mi dejarí…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi comentó: Mientras antes siempre mejor, pero estos no son urgentes para hoy. Por mi dejarí…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-21T16:22:23.912Z"
+  },
+  {
+   "id": "851fbf49-4332-4490-b269-51f31f22902a",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Mientras antes siempre mejor, pero estos no son urgentes para hoy. Por mi dejarí…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi comentó: Mientras antes siempre mejor, pero estos no son urgentes para hoy. Por mi dejarí…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-21T16:22:23.912Z"
+  },
   {
    "id": "da71a55e-d614-41f2-bf80-0e2a627e4293",
    "to": "javi",
@@ -21742,9 +21790,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "javi",
-   "at": "2026-11-21T16:20:50.623Z",
-   "hasta": "2026-11-21T16:02:35.939Z",
-   "que": "pieza"
+   "at": "2026-11-21T16:22:23.909Z",
+   "hasta": "2026-11-21T16:22:23.908Z",
+   "que": "comentario"
   },
   {
    "id": "c14e3171-4bf1-4be7-a2db-acec3a3fce60|javi",

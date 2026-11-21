@@ -97,7 +97,10 @@ const env = leer(ENVIADOS, null);
 if (env && Array.isArray(env.enviados)) {
   const vivos = new Set((sigueDentro.notifications || []).map((n) => n.id));
   const antes = env.enviados.length;
-  env.enviados = env.enviados.filter((id) => vivos.has(id));
+  // Cada entrada es "aviso|suscripción" (o solo el aviso, en el formato viejo):
+  // se compara la parte del aviso, no la entrada entera. Si esto se compara mal,
+  // el registro queda vacío y todos los avisos se mandan de nuevo.
+  env.enviados = env.enviados.filter((e) => vivos.has(String(e).split('|')[0]));
   if (env.enviados.length !== antes) { escribir(ENVIADOS, env); console.log(`avisos-enviados: ${antes} → ${env.enviados.length}`); }
 }
 

@@ -3218,7 +3218,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T20:35:28.093Z",
+   "updatedAt": "2026-11-21T21:45:21.441Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -8302,6 +8302,14 @@
  ],
  "comments": [
   {
+   "id": "334f5945-dfa3-4297-8221-9463cdafe940",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "javi",
+   "text": "@Maca me avisas si tienes algún otro cambio para empezar a renderizar",
+   "fileIds": [],
+   "createdAt": "2026-11-21T21:45:21.444Z"
+  },
+  {
    "id": "ae8bb488-1567-43e1-91e1-6fd766df0836",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "javi",
@@ -11458,6 +11466,16 @@
  ],
  "activity": [
   {
+   "id": "4bab8690-b196-41a1-aed3-4366599d8b03",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T21:45:21.447Z"
+  },
+  {
    "id": "363cdc11-4a05-4d5e-aa93-05fa5a438043",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14322,6 +14340,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c26c42c0-26da-458c-8531-9e70afac8023",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: @Maca me avisas si tienes algún otro cambio para empezar a renderizar",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi comentó: @Maca me avisas si tienes algún otro cambio para empezar a renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T21:45:21.449Z"
+  },
+  {
+   "id": "6e8d929f-44b1-4442-92b1-aec1241ac923",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: @Maca me avisas si tienes algún otro cambio para empezar a renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi te mencionó: @Maca me avisas si tienes algún otro cambio para empezar a renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T21:45:21.448Z"
+  },
   {
    "id": "4c3f9849-b4d6-4a9d-b5a5-3784e1de3b71",
    "to": "maca",
@@ -21856,9 +21904,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|javi",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "javi",
-   "at": "2026-11-21T21:44:56.748Z",
-   "hasta": "2026-11-21T20:35:28.093Z",
-   "que": "pieza"
+   "at": "2026-11-21T21:45:21.443Z",
+   "hasta": "2026-11-21T21:45:21.441Z",
+   "que": "comentario"
   },
   {
    "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf|maca",

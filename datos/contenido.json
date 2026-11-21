@@ -3622,8 +3622,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-21T15:23:46.043Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-21T16:01:39.664Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:53:07.458Z",
@@ -8212,6 +8212,14 @@
  ],
  "comments": [
   {
+   "id": "749d0289-514f-4364-b7a4-f5cbd605834c",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "@javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poco .",
+   "fileIds": [],
+   "createdAt": "2026-11-21T16:01:39.667Z"
+  },
+  {
    "id": "c22aec18-82b5-41ef-ac5f-d5f81ef42e55",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11343,6 +11351,16 @@
   }
  ],
  "activity": [
+  {
+   "id": "d9e1d958-6fd2-49df-b3e5-bac93865d2a3",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-21T16:01:39.669Z"
+  },
   {
    "id": "7aa118ca-a43a-4daf-b4b8-05f0ed41f4a6",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
@@ -14487,6 +14505,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d299f297-a558-4143-85ac-6929494bf290",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: @javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poc…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: @javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poc…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-21T16:01:39.670Z"
+  },
+  {
+   "id": "bbd1a71b-12ec-4b23-9eb8-5ad7dd3b4aec",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "mention",
+   "text": "te mencionó en “Casa Mañío”: @javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poc…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca te mencionó: @javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poc…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-21T16:01:39.670Z"
+  },
   {
    "id": "a0698b69-3797-44cc-9aa2-ce17410d22d4",
    "to": "maca",
@@ -22324,9 +22372,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-21T15:52:46.028Z",
-   "hasta": "2026-11-21T15:23:46.043Z",
-   "que": "pieza"
+   "at": "2026-11-21T16:01:39.667Z",
+   "hasta": "2026-11-21T16:01:39.664Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

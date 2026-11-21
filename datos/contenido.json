@@ -8217,7 +8217,10 @@
    "author": "maca",
    "text": "Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa darle más prestancia",
    "fileIds": [],
-   "createdAt": "2026-11-21T15:52:04.192Z"
+   "createdAt": "2026-11-21T15:52:04.192Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "620f4dc1-7463-4b37-940d-16c5b3acdc7a",
@@ -14484,6 +14487,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a0698b69-3797-44cc-9aa2-ce17410d22d4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Casa Roble”: Si es a base de los renders oficiales hay q dejarla así pero",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi le puso 👍 a tu comentario: Si es a base de los renders oficiales hay q dejarla así pero",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-21T15:57:20.596Z"
+  },
   {
    "id": "7b10eb12-3c9f-4269-8627-d2f23909300c",
    "to": "javi",

@@ -14394,13 +14394,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "mention",
    "text": "te mencionó en “Casa Mañío”: @Javi, gracias. Haré solo unos pequeños ajustes en la voz en off y estamos ok. B…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca te mencionó: @Javi, gracias. Haré solo unos pequeños ajustes en la voz en off y estamos ok. B…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-21T15:18:56.747Z"
+   "createdAt": "2026-11-21T15:18:56.747Z",
+   "readAt": "2026-11-21T15:23:20.079Z"
   },
   {
    "id": "c3d12c0e-3ec8-41ad-a47e-798c5d44053e",

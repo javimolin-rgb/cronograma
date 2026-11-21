@@ -14201,13 +14201,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Esos ajustes los quieres dejar listos hoy o lunes?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Esos ajustes los quieres dejar listos hoy o lunes?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-21T16:02:35.942Z"
+   "createdAt": "2026-11-21T16:02:35.942Z",
+   "readAt": "2026-11-21T16:20:47.569Z"
   },
   {
    "id": "7c588f41-01b0-450a-820a-93e814edd9d6",
@@ -14246,13 +14247,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "mention",
    "text": "te mencionó en “Casa Mañío”: @javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poc…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca te mencionó: @javi, a penas pueda te mando ajustes del texto en pantalla y voz en off. Es poc…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-21T16:01:39.670Z"
+   "createdAt": "2026-11-21T16:01:39.670Z",
+   "readAt": "2026-11-21T16:20:47.570Z"
   },
   {
    "id": "a0698b69-3797-44cc-9aa2-ce17410d22d4",

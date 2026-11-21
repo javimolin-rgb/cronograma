@@ -14485,13 +14485,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: El resto de las imágenes Ok.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: El resto de las imágenes Ok.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:42:44.110Z"
+   "createdAt": "2026-11-21T15:42:44.110Z",
+   "readAt": "2026-11-21T15:44:16.546Z"
   },
   {
    "id": "8c82a06d-5670-44a0-9448-d7bedb315de9",

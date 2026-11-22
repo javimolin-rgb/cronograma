@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-21T16:12:47.039Z",
+ "actualizado": "2026-11-22T16:20:54.752Z",
  "meses": [
   "2026-08",
   "2026-09",
@@ -7,9 +7,9 @@
   "2026-11"
  ],
  "total": {
-  "comments": 16,
-  "activity": 429,
-  "notifications": 505
+  "comments": 18,
+  "activity": 473,
+  "notifications": 576
  },
  "piezas": {
   "e-c1": {
@@ -38,7 +38,7 @@
    "notifications": 0
   },
   "e-web-wix": {
-   "comments": 2,
+   "comments": 4,
    "activity": 2,
    "notifications": 0
   },
@@ -179,13 +179,13 @@
   },
   "03b2da82-2617-417b-8081-df3dadaefb31": {
    "comments": 0,
-   "activity": 89,
-   "notifications": 146
+   "activity": 90,
+   "notifications": 148
   },
   "804906ab-7f99-4598-afc6-ef726afa4e20": {
    "comments": 0,
-   "activity": 5,
-   "notifications": 1
+   "activity": 9,
+   "notifications": 6
   },
   "e2e69c7f-c96f-41d1-9f29-6f57e2be4125": {
    "comments": 0,
@@ -219,7 +219,7 @@
   },
   "549a3272-d695-4f76-9011-a252831ac96c": {
    "comments": 0,
-   "activity": 8,
+   "activity": 9,
    "notifications": 7
   },
   "2fa98f13-69ae-40b5-9cea-3d63c396c517": {
@@ -239,8 +239,8 @@
   },
   "c14e3171-4bf1-4be7-a2db-acec3a3fce60": {
    "comments": 0,
-   "activity": 13,
-   "notifications": 13
+   "activity": 22,
+   "notifications": 23
   },
   "30efd072-8377-4a3a-96f6-e2a60dab643d": {
    "comments": 0,
@@ -264,13 +264,13 @@
   },
   "5acaad61-db8d-4625-9fc2-112f3b8a0b94": {
    "comments": 0,
-   "activity": 13,
-   "notifications": 18
+   "activity": 28,
+   "notifications": 47
   },
   "db10db45-7eea-498b-bef7-0fc0093ab3b8": {
    "comments": 0,
-   "activity": 1,
-   "notifications": 0
+   "activity": 15,
+   "notifications": 25
   }
  }
 }

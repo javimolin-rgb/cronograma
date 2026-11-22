@@ -102,6 +102,21 @@
    "author": "flavio",
    "text": "Esconder la pestaña Promociones mientras no haya nada que comunicar: sirve solo para publicar las bases legales.",
    "createdAt": "2026-09-15T19:14:00.000Z"
+  },
+  {
+   "id": "e-web-wix-d1",
+   "postId": "e-web-wix",
+   "author": "flavio",
+   "text": "Los banners de encabezado deben mantener el mismo estilo en todas las páginas: color con entramado lineal. No usar transparencia con foto (Galería) ni dejarlos sin entramado (FAQ y Contacto).",
+   "createdAt": "2026-09-23T14:52:00.000Z"
+  },
+  {
+   "id": "e-web-wix-c1",
+   "postId": "e-web-wix",
+   "author": "flavio",
+   "text": "Revisión completa, página por página: banners con el mismo entramado, fotos reales en vez de renders repetidos y la página de Promociones oculta hasta tener qué comunicar. Publicar después de esos ajustes.",
+   "createdAt": "2026-09-23T15:12:00.000Z",
+   "via": "imp"
   }
  ],
  "activity": [

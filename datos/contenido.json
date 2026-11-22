@@ -3308,8 +3308,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-22T01:02:32.537Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-22T01:12:08.628Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:02:29.505Z",
@@ -8392,6 +8392,14 @@
  ],
  "comments": [
   {
+   "id": "d74d5bbe-c297-42d8-829d-206301772a6d",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "Todo ok, muchas gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-22T01:12:08.635Z"
+  },
+  {
    "id": "334f5945-dfa3-4297-8221-9463cdafe940",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "javi",
@@ -11556,6 +11564,16 @@
  ],
  "activity": [
   {
+   "id": "3ded1267-963f-4f3c-80e9-9e36ad99be55",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-22T01:12:08.638Z"
+  },
+  {
    "id": "f2cc58c6-412a-4a97-b626-2b5f87f624a6",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14460,6 +14478,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ac0f21be-441a-4c56-8f44-0915774eef92",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "comentó en “Casa Roble”: Todo ok, muchas gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Todo ok, muchas gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-22T01:12:08.640Z"
+  },
+  {
+   "id": "f146d9ca-7fce-4216-ad65-1d7b305d003e",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: Todo ok, muchas gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Todo ok, muchas gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-22T01:12:08.640Z"
+  },
   {
    "id": "29ee053f-3c9c-4578-91f8-0574d2527650",
    "to": "maca",
@@ -22125,9 +22173,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-22T01:09:37.223Z",
-   "hasta": "2026-11-22T01:02:32.537Z",
-   "que": "pieza"
+   "at": "2026-11-22T01:12:08.634Z",
+   "hasta": "2026-11-22T01:12:08.628Z",
+   "que": "comentario"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

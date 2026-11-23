@@ -3050,7 +3050,7 @@
    "date": "2026-12-02",
    "inicio": "2026-11-19",
    "format": "story",
-   "status": "revision",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3337,11 +3337,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-22T01:12:08.628Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-23T20:15:12.839Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-20T18:02:29.505Z",
+   "statusChangedAt": "2026-11-23T20:15:12.839Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -11623,6 +11623,19 @@
  ],
  "activity": [
   {
+   "id": "2cd131a2-1307-4431-bfcc-60b4e2e9cf1e",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a En diseño",
+   "meta": {
+    "from": "revision",
+    "to": "diseno"
+   },
+   "createdAt": "2026-11-23T20:15:12.840Z"
+  },
+  {
    "id": "6d998111-0e2f-4ba0-a629-be586331e410",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14166,6 +14179,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7dda19d2-f0c4-45ff-89d2-e209c6785b21",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "status",
+   "text": "movió “Casa Roble” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-23T20:15:12.840Z"
+  },
+  {
+   "id": "db9475ee-aec2-4ad8-aec7-e81589f1284d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "status",
+   "text": "movió “Casa Roble” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-23T20:15:12.840Z"
+  },
   {
    "id": "4d0c6d62-1e9f-4386-94b1-f54f88448cef",
    "to": "maca",

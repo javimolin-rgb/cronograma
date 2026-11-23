@@ -8397,7 +8397,10 @@
    "author": "maca",
    "text": "Por mi parte lo encuentro excelente! Solo cambiaría el mobiliario de la imagen principal por colores más nude, linos , estilo nórdico.  Gracias!",
    "fileIds": [],
-   "createdAt": "2026-11-23T12:14:56.525Z"
+   "createdAt": "2026-11-23T12:14:56.525Z",
+   "reacciones": {
+    "javi": "up"
+   }
   },
   {
    "id": "d74d5bbe-c297-42d8-829d-206301772a6d",
@@ -14030,6 +14033,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cbbc2a57-5764-4700-a4f8-4c15fc122ec8",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "reaccion",
+   "text": "le puso 👍 a tu comentario en “Aire nuevo sin abrir la ventana”: Por mi parte lo encuentro excelente! Solo cambiaría el mobil",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi le puso 👍 a tu comentario: Por mi parte lo encuentro excelente! Solo cambiaría el mobil",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T16:07:54.294Z"
+  },
   {
    "id": "d622aa53-a0be-4e93-82a6-c9459047806a",
    "to": "flavio",

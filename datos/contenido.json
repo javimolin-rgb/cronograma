@@ -1634,7 +1634,7 @@
    "date": "2026-11-22",
    "inicio": "",
    "format": "reel",
-   "status": "programado",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -2146,10 +2146,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T19:22:19.603Z",
+   "updatedAt": "2026-11-23T16:07:16.948Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-20T19:21:06.516Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-11-23T16:07:16.948Z",
+   "publishedAt": "2026-11-23T16:07:16.948Z"
   },
   {
    "title": "El muro que guarda el sol",
@@ -11557,6 +11557,19 @@
  ],
  "activity": [
   {
+   "id": "6d61ace0-23fe-4666-b9df-c1ebe6ea257a",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "postTitle": "Un domingo en el refugio",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Programado a Publicado",
+   "meta": {
+    "from": "programado",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-23T16:07:16.950Z"
+  },
+  {
    "id": "8c18ec31-8714-455f-9645-740193918566",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14017,6 +14030,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d622aa53-a0be-4e93-82a6-c9459047806a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "type": "status",
+   "text": "movió “Un domingo en el refugio” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Un domingo en el refugio",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c14e3171-4bf1-4be7-a2db-acec3a3fce60",
+   "createdAt": "2026-11-23T16:07:16.951Z"
+  },
   {
    "id": "61d8b34e-75d4-4606-89d7-94341a9bee70",
    "to": "javi",

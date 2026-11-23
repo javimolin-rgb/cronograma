@@ -1212,8 +1212,7 @@
      "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/aire-nuevo-01-portada-v1.webp",
      "sha": "02b86553f578ed42a0dc75138ebf979939e9dba6",
      "type": "image/webp",
-     "size": 118644,
-     "orden": 0
+     "size": 118644
     },
     {
      "id": "ecb9b3f2-c6b6-42e6-8d60-521200a96484",
@@ -1349,6 +1348,36 @@
      "type": "application/zip",
      "size": 3699399,
      "extra": true
+    },
+    {
+     "id": "814330a5-e258-49f6-ad72-58578b244450",
+     "by": "javi",
+     "at": "2026-11-23T19:54:40.287Z",
+     "base": "aire-nuevo-01-portada",
+     "version": 2,
+     "shaOrigen": "8fc023f6b715f0dd76f6e83235342f4a9b4db43b",
+     "name": "aire-nuevo-01-portada-v2.webp",
+     "path": "archivos/publicaciones-informativas/aire-nuevo-01-portada-v2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/aire-nuevo-01-portada-v2.webp",
+     "sha": "3d57536b9fef012cb42dbe66e31884aec88a9cf7",
+     "type": "image/webp",
+     "size": 115696,
+     "orden": 0
+    },
+    {
+     "id": "c7046fb3-9711-4197-a4d3-218f1d067b37",
+     "by": "javi",
+     "at": "2026-11-23T19:54:41.287Z",
+     "base": "aire-nuevo-sin-abrir-la-ventana-editables",
+     "version": 2,
+     "shaOrigen": "40a1c876c1803c86bd7b43743ce1a938241ce5b7",
+     "name": "aire-nuevo-sin-abrir-la-ventana-editables-v2.zip",
+     "path": "archivos/publicaciones-informativas/aire-nuevo-sin-abrir-la-ventana-editables-v2.zip",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/publicaciones-informativas/aire-nuevo-sin-abrir-la-ventana-editables-v2.zip",
+     "sha": "40a1c876c1803c86bd7b43743ce1a938241ce5b7",
+     "type": "application/zip",
+     "size": 3755601,
+     "extra": true
     }
    ],
    "checklist": [],
@@ -1393,7 +1422,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-23T16:07:57.135Z",
+   "updatedAt": "2026-11-23T19:54:40.287Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-20T18:45:48.114Z",
    "publishedAt": null
@@ -14076,6 +14105,16 @@
    "text": "dejó el copy con 5 hashtags",
    "meta": null,
    "createdAt": "2026-11-19T16:24:20.946Z"
+  },
+  {
+   "id": "d1490c89-1969-4b5d-a6cc-78192100c734",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "file",
+   "text": "subió la portada v2: mobiliario nórdico en tonos nude y lino, como pidió Maca",
+   "meta": null,
+   "createdAt": "2026-11-23T19:54:40.287Z"
   }
  ],
  "notifications": [

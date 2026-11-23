@@ -1422,7 +1422,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-23T19:54:40.287Z",
+   "updatedAt": "2026-11-23T20:14:11.089Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-20T18:45:48.114Z",
    "publishedAt": null
@@ -11623,6 +11623,16 @@
  ],
  "activity": [
   {
+   "id": "6d998111-0e2f-4ba0-a629-be586331e410",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-23T20:14:11.090Z"
+  },
+  {
    "id": "34b0b7f8-a708-4a1f-a83a-9d5c1da12792",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14156,6 +14166,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4d0c6d62-1e9f-4386-94b1-f54f88448cef",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "review",
+   "text": "subió 1 archivo en “Aire nuevo sin abrir la ventana” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi subió 1 archivo para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T20:14:11.090Z"
+  },
   {
    "id": "204bb25f-e13c-481f-aeda-d22fc55d05e3",
    "to": "maca",

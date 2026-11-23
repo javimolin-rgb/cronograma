@@ -3849,8 +3849,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T20:15:37.553Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-23T20:42:58.114Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-23T20:15:37.553Z",
@@ -8439,6 +8439,14 @@
  ],
  "comments": [
   {
+   "id": "9a5e60cb-4cce-4e7e-8032-c40ab963904d",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Hay como hacer que diga Neorigen?",
+   "fileIds": [],
+   "createdAt": "2026-11-23T20:42:58.121Z"
+  },
+  {
    "id": "8a2a6f08-85b7-48ba-9cfa-c2f6939b2b0a",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "author": "maca",
@@ -11631,6 +11639,16 @@
  ],
  "activity": [
   {
+   "id": "6a2eb89c-678b-4942-ad89-07303b84bd6f",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-23T20:42:58.121Z"
+  },
+  {
    "id": "209ff319-04a5-41a3-b012-d75fbc6bb265",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14004,6 +14022,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "68032d63-5ce7-427a-96a3-358e4be0f036",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Ha…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Ha…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:42:58.123Z"
+  },
+  {
+   "id": "adff31b5-def3-4428-b2d0-73a6a855f3ec",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Ha…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Ha…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:42:58.122Z"
+  },
   {
    "id": "05d702be-86ff-4c2f-ae58-c803a4bd16fe",
    "to": "javi",
@@ -20228,9 +20276,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-23T20:35:49.191Z",
-   "hasta": "2026-11-23T20:15:37.553Z",
-   "que": "pieza"
+   "at": "2026-11-23T20:42:58.119Z",
+   "hasta": "2026-11-23T20:42:58.114Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

@@ -3849,7 +3849,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T20:42:58.114Z",
+   "updatedAt": "2026-11-23T20:46:14.568Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -8439,6 +8439,14 @@
  ],
  "comments": [
   {
+   "id": "158170f0-ec8f-478c-9ebc-2e7ba2849dad",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( Aquí porfa agrégale…)  3 dormitorios y \nLa comodidad de tener todo en un mismo nivel.\n( para que no quede tanto silencio)",
+   "fileIds": [],
+   "createdAt": "2026-11-23T20:46:14.570Z"
+  },
+  {
    "id": "9a5e60cb-4cce-4e7e-8032-c40ab963904d",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11639,6 +11647,16 @@
  ],
  "activity": [
   {
+   "id": "03247e0a-f787-4726-8e31-37dca90335eb",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-23T20:46:14.576Z"
+  },
+  {
    "id": "6a2eb89c-678b-4942-ad89-07303b84bd6f",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14022,6 +14040,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6d60443a-1fe3-4658-b1b8-142bc605274c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( …",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:46:14.577Z"
+  },
+  {
+   "id": "f166cb1b-fe8f-49c9-b5eb-6674a3cc0cc7",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( …",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( …",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:46:14.577Z"
+  },
   {
    "id": "68032d63-5ce7-427a-96a3-358e4be0f036",
    "to": "javi",
@@ -20276,8 +20324,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-23T20:42:58.119Z",
-   "hasta": "2026-11-23T20:42:58.114Z",
+   "at": "2026-11-23T20:46:14.570Z",
+   "hasta": "2026-11-23T20:46:14.568Z",
    "que": "comentario"
   },
   {

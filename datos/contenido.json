@@ -1422,8 +1422,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-23T20:15:41.698Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-23T20:39:10.154Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-23T20:15:41.698Z",
    "publishedAt": null
   },
@@ -8439,6 +8439,14 @@
  ],
  "comments": [
   {
+   "id": "8a2a6f08-85b7-48ba-9cfa-c2f6939b2b0a",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "author": "maca",
+   "text": "Ok con el cambio !!! \nFlavio revisará la info .",
+   "fileIds": [],
+   "createdAt": "2026-11-23T20:39:10.159Z"
+  },
+  {
    "id": "4fd38b9d-c04b-4d7b-9a1d-6295e2f3ab02",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11623,6 +11631,16 @@
  ],
  "activity": [
   {
+   "id": "209ff319-04a5-41a3-b012-d75fbc6bb265",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-23T20:39:10.163Z"
+  },
+  {
    "id": "e7774ca3-d3cc-42a5-a482-ef36fc167d44",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -13986,6 +14004,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "05d702be-86ff-4c2f-ae58-c803a4bd16fe",
+   "to": "javi",
+   "from": "maca",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "comentó en “Aire nuevo sin abrir la ventana”: Ok con el cambio !!! \nFlavio revisará la info .",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Maca comentó: Ok con el cambio !!! \nFlavio revisará la info .",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T20:39:10.165Z"
+  },
   {
    "id": "c74d89a2-68f6-4c51-ad47-3ce0ecdcf162",
    "to": "maca",
@@ -20187,9 +20220,9 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "maca",
-   "at": "2026-11-23T20:36:28.207Z",
-   "hasta": "2026-11-23T20:15:41.698Z",
-   "que": "pieza"
+   "at": "2026-11-23T20:39:10.158Z",
+   "hasta": "2026-11-23T20:39:10.154Z",
+   "que": "comentario"
   },
   {
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",

@@ -3802,7 +3802,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T19:16:06.327Z",
+   "updatedAt": "2026-11-23T19:17:14.086Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
@@ -8392,6 +8392,14 @@
  ],
  "comments": [
   {
+   "id": "4fd38b9d-c04b-4d7b-9a1d-6295e2f3ab02",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "Ahí está el texto y voz en off.",
+   "fileIds": [],
+   "createdAt": "2026-11-23T19:17:14.087Z"
+  },
+  {
    "id": "c2f4480f-eb9b-494e-b368-2231c4de1d00",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11568,6 +11576,16 @@
  ],
  "activity": [
   {
+   "id": "9b4eba74-13c6-47fa-ad9e-c21fa7e36249",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-23T19:17:14.090Z"
+  },
+  {
    "id": "9e845b19-9a0b-4cba-b004-79977ec166f5",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14061,6 +14079,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8b42f617-ffda-40ca-ab0e-e2e009e115ff",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: Ahí está el texto y voz en off.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Ahí está el texto y voz en off.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T19:17:14.091Z"
+  },
+  {
+   "id": "1428a9fb-4ce7-4895-bf00-f222478f0e74",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: Ahí está el texto y voz en off.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: Ahí está el texto y voz en off.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T19:17:14.091Z"
+  },
   {
    "id": "7a22aa39-a049-4543-af25-ea390f7f8e7c",
    "to": "javi",
@@ -20754,8 +20802,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-23T19:16:06.330Z",
-   "hasta": "2026-11-23T19:16:06.327Z",
+   "at": "2026-11-23T19:17:14.087Z",
+   "hasta": "2026-11-23T19:17:14.086Z",
    "que": "comentario"
   },
   {

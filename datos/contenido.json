@@ -14052,13 +14052,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "supervision",
    "text": "comentó en “Aire nuevo sin abrir la ventana”: Por mi parte lo encuentro excelente! Solo cambiaría el mobiliario de la imagen p…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Maca comentó: Por mi parte lo encuentro excelente! Solo cambiaría el mobiliario de la imagen p…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T12:14:56.529Z"
+   "createdAt": "2026-11-23T12:14:56.529Z",
+   "readAt": "2026-11-23T16:07:24.514Z"
   },
   {
    "id": "ac0f21be-441a-4c56-8f44-0915774eef92",
@@ -14067,13 +14068,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: Todo ok, muchas gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: Todo ok, muchas gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-22T01:12:08.640Z"
+   "createdAt": "2026-11-22T01:12:08.640Z",
+   "readAt": "2026-11-23T16:07:24.514Z"
   },
   {
    "id": "f146d9ca-7fce-4216-ad65-1d7b305d003e",

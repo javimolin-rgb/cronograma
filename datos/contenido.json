@@ -1393,8 +1393,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-20T18:45:48.114Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-23T12:14:56.520Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-20T18:45:48.114Z",
    "publishedAt": null
   },
@@ -8392,6 +8392,14 @@
  ],
  "comments": [
   {
+   "id": "cb2f7bc8-2dcf-40b5-a9c2-9207c629b9c2",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "author": "maca",
+   "text": "Por mi parte lo encuentro excelente! Solo cambiaría el mobiliario de la imagen principal por colores más nude, linos , estilo nórdico.  Gracias!",
+   "fileIds": [],
+   "createdAt": "2026-11-23T12:14:56.525Z"
+  },
+  {
    "id": "d74d5bbe-c297-42d8-829d-206301772a6d",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11549,6 +11557,16 @@
  ],
  "activity": [
   {
+   "id": "8c18ec31-8714-455f-9645-740193918566",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-23T12:14:56.528Z"
+  },
+  {
    "id": "3ded1267-963f-4f3c-80e9-9e36ad99be55",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -13999,6 +14017,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "61d8b34e-75d4-4606-89d7-94341a9bee70",
+   "to": "javi",
+   "from": "maca",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "comentó en “Aire nuevo sin abrir la ventana”: Por mi parte lo encuentro excelente! Solo cambiaría el mobiliario de la imagen p…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Maca comentó: Por mi parte lo encuentro excelente! Solo cambiaría el mobiliario de la imagen p…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T12:14:56.529Z"
+  },
   {
    "id": "ac0f21be-441a-4c56-8f44-0915774eef92",
    "to": "javi",
@@ -20589,9 +20622,9 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "maca",
-   "at": "2026-11-23T12:07:55.560Z",
-   "hasta": "2026-11-20T18:45:48.114Z",
-   "que": "pieza"
+   "at": "2026-11-23T12:14:56.524Z",
+   "hasta": "2026-11-23T12:14:56.520Z",
+   "que": "comentario"
   },
   {
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",

@@ -3802,8 +3802,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T16:08:12.693Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-23T19:16:06.327Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:53:07.458Z",
@@ -8392,6 +8392,14 @@
  ],
  "comments": [
   {
+   "id": "c2f4480f-eb9b-494e-b368-2231c4de1d00",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a punta.\n\nVOZ EN OFF:\nHay casas con una ventana al mar… esta es toda ventana.\n\n2. SUPERFICIE\n\nEN PANTALLA:\nSUPERFICIE ÚTIL · 106 m²\n3 dormitorios y 2 baños\n\nVOZ EN OFF:\nTodo en un solo nivel, para moverse con libertad, sin barreras.\n\n3. LUZ\n\nEN PANTALLA:\nUN SOLO PISO · Gran amplitud · Mucha luz desde sus ventanales\n\nVOZ EN OFF:\nLa fachada vidriada corre a lo largo, y la luz llega a cada rincón.\n\n4. SUSTENTABLE\n\nEN PANTALLA:\nVIVE LO NATURAL · Arquitectura horizontal · Integrada al entorno\n\nVOZ EN OFF:\nDe líneas horizontales, se abre al paisaje y resguarda tu privacidad.\n\n5. DORMITORIOS\n\nEN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF:\nLa comodidad de tener todo en un mismo nivel.\n\n6. TERRAZA\n\nEN PANTALLA:\nTERRAZA · De punta a punta\nA lo largo de la fachada\n\nVOZ EN OFF:\nDel living a la terraza hay solo un paso, y el día se vive afuera.\n\n7. PLANTA\n\nEN PANTALLA:\nPLANTA DE ARQUITECTURA\nPlantas y ficha técnica en neorigen.cl\n\nVOZ EN OFF:\nUna casa para disfrutar cada espacio y hacer del entorno parte de tu día.\n\n8. CIERRE\n\nEN PANTALLA:\nLlave en mano · Plazo estimado: 8 meses\n\nVOZ EN OFF:\nCasa Mañío. Arquitectura para vivir bien, de forma natural.\n\n9. LLAMADO\n\nEN PANTALLA:\nDESCUBRE MÁS EN NEORIGEN.CL\n\nVOZ EN OFF:\nDescúbrela en neorigen.cl",
+   "fileIds": [],
+   "createdAt": "2026-11-23T19:16:06.331Z"
+  },
+  {
    "id": "cb2f7bc8-2dcf-40b5-a9c2-9207c629b9c2",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "author": "maca",
@@ -11560,6 +11568,16 @@
  ],
  "activity": [
   {
+   "id": "9e845b19-9a0b-4cba-b004-79977ec166f5",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-23T19:16:06.336Z"
+  },
+  {
    "id": "0e212aa0-ff0c-4a05-b6be-8a77a0922c6d",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14043,6 +14061,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "7a22aa39-a049-4543-af25-ea390f7f8e7c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "supervision",
+   "text": "comentó en “Casa Mañío”: 1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a pu…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: 1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a pu…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T19:16:06.338Z"
+  },
+  {
+   "id": "6e1587e6-1757-4366-be09-688a3d40463d",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: 1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a pu…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: 1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a pu…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T19:16:06.337Z"
+  },
   {
    "id": "4ab10d72-a0f9-47ac-be67-550b25035b6c",
    "to": "maca",
@@ -20706,9 +20754,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-23T19:15:25.446Z",
-   "hasta": "2026-11-23T16:08:12.693Z",
-   "que": "pieza"
+   "at": "2026-11-23T19:16:06.330Z",
+   "hasta": "2026-11-23T19:16:06.327Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

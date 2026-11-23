@@ -14060,13 +14060,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "supervision",
    "text": "en “Aire nuevo sin abrir la ventana”: la movió a Aprobado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio la movió a Aprobado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T20:47:20.478Z"
+   "createdAt": "2026-11-23T20:47:20.478Z",
+   "readAt": "2026-11-23T20:52:43.392Z"
   },
   {
    "id": "819816ae-8b8c-4f90-9b09-bebfb5357b91",
@@ -14152,13 +14153,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "supervision",
    "text": "comentó en “Aire nuevo sin abrir la ventana”: Ok con el cambio !!! \nFlavio revisará la info .",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Maca comentó: Ok con el cambio !!! \nFlavio revisará la info .",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T20:39:10.165Z"
+   "createdAt": "2026-11-23T20:39:10.165Z",
+   "readAt": "2026-11-23T20:52:43.395Z"
   },
   {
    "id": "c74d89a2-68f6-4c51-ad47-3ce0ecdcf162",

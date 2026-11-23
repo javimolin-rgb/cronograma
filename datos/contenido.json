@@ -14050,14 +14050,15 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Mañío”: está esperando tu respuesta",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Mañío",
    "body": "Javi está esperando tu respuesta",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T16:08:11.858Z"
+   "createdAt": "2026-11-23T16:08:11.858Z",
+   "readAt": "2026-11-23T18:27:06.617Z"
   },
   {
    "id": "cbbc2a57-5764-4700-a4f8-4c15fc122ec8",
@@ -20705,8 +20706,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-23T12:06:56.995Z",
-   "hasta": "2026-11-21T16:22:23.908Z",
+   "at": "2026-11-23T18:27:06.619Z",
+   "hasta": "2026-11-23T16:08:12.693Z",
    "que": "pieza"
   },
   {

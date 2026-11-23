@@ -14086,13 +14086,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Ahí está el texto y voz en off.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Ahí está el texto y voz en off.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T19:17:14.091Z"
+   "createdAt": "2026-11-23T19:17:14.091Z",
+   "readAt": "2026-11-23T19:32:12.987Z"
   },
   {
    "id": "1428a9fb-4ce7-4895-bf00-f222478f0e74",
@@ -14116,13 +14117,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: 1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a pu…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: 1. APERTURA\n\nEN PANTALLA:\nMODELO DE LA SEMANA · Casa Mañío\nAbierta de punta a pu…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T19:16:06.338Z"
+   "createdAt": "2026-11-23T19:16:06.338Z",
+   "readAt": "2026-11-23T19:32:12.988Z"
   },
   {
    "id": "6e1587e6-1757-4366-be09-688a3d40463d",

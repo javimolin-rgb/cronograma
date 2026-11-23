@@ -14090,13 +14090,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: EN PANTALLA:\nDORMITORIOS · 3 dormitorios\nTodos en el mismo nivel\n\nVOZ EN OFF: ( …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T20:46:14.577Z"
+   "createdAt": "2026-11-23T20:46:14.577Z",
+   "readAt": "2026-11-23T20:50:19.557Z"
   },
   {
    "id": "f166cb1b-fe8f-49c9-b5eb-6674a3cc0cc7",
@@ -14120,13 +14121,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "supervision",
    "text": "comentó en “Casa Mañío”: Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Ha…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca comentó: Gracias Javi! Me parece ok! Pero el señor del audio dice Neorrigen , jaja!!!! Ha…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T20:42:58.123Z"
+   "createdAt": "2026-11-23T20:42:58.123Z",
+   "readAt": "2026-11-23T20:50:19.558Z"
   },
   {
    "id": "adff31b5-def3-4428-b2d0-73a6a855f3ec",
@@ -20439,8 +20441,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|javi",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "javi",
-   "at": "2026-11-23T20:14:16.286Z",
-   "hasta": "2026-11-23T20:13:52.505Z",
+   "at": "2026-11-23T20:50:19.559Z",
+   "hasta": "2026-11-23T20:46:14.568Z",
    "que": "pieza"
   },
   {

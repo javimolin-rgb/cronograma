@@ -3465,7 +3465,7 @@
    "date": "2026-11-24",
    "inicio": "2026-11-09",
    "format": "story",
-   "status": "revision",
+   "status": "espera",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3849,11 +3849,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T20:13:52.505Z",
+   "updatedAt": "2026-11-23T20:15:37.553Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-20T18:53:07.458Z",
+   "statusChangedAt": "2026-11-23T20:15:37.553Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -11623,6 +11623,19 @@
  ],
  "activity": [
   {
+   "id": "6613f37e-70b0-4d84-a20e-703edcfefb13",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Esperando aprobación",
+   "meta": {
+    "from": "revision",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-23T20:15:37.554Z"
+  },
+  {
    "id": "2cd131a2-1307-4431-bfcc-60b4e2e9cf1e",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14179,6 +14192,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "49aed2c0-b9c3-4ede-acdd-b32fc56a01ce",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:15:37.554Z"
+  },
+  {
+   "id": "60be5756-195c-4994-9827-1d66334f8116",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:15:37.554Z"
+  },
   {
    "id": "7dda19d2-f0c4-45ff-89d2-e209c6785b21",
    "to": "flavio",

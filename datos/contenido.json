@@ -14023,13 +14023,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "status",
    "text": "movió “Casa Mañío” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T20:15:37.554Z"
+   "createdAt": "2026-11-23T20:15:37.554Z",
+   "readAt": "2026-11-23T20:35:49.186Z"
   },
   {
    "id": "7dda19d2-f0c4-45ff-89d2-e209c6785b21",
@@ -14083,13 +14084,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "review",
    "text": "subió 1 archivo en “Casa Mañío” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T20:12:03.367Z"
+   "createdAt": "2026-11-23T20:12:03.367Z",
+   "readAt": "2026-11-23T20:35:49.189Z"
   },
   {
    "id": "51c78e8b-076b-4177-8f17-47bd0aecfe99",
@@ -14128,13 +14130,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-23T20:12:03.366Z"
+   "createdAt": "2026-11-23T20:12:03.366Z",
+   "readAt": "2026-11-23T20:35:49.189Z"
   },
   {
    "id": "8b42f617-ffda-40ca-ab0e-e2e009e115ff",
@@ -20189,9 +20192,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-23T19:17:14.087Z",
-   "hasta": "2026-11-23T19:17:14.086Z",
-   "que": "comentario"
+   "at": "2026-11-23T20:35:49.191Z",
+   "hasta": "2026-11-23T20:15:37.553Z",
+   "que": "pieza"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

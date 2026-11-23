@@ -13993,13 +13993,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "status",
    "text": "movió “Aire nuevo sin abrir la ventana” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T20:15:41.699Z"
+   "createdAt": "2026-11-23T20:15:41.699Z",
+   "readAt": "2026-11-23T20:36:28.206Z"
   },
   {
    "id": "49aed2c0-b9c3-4ede-acdd-b32fc56a01ce",
@@ -14069,13 +14070,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "review",
    "text": "subió 1 archivo en “Aire nuevo sin abrir la ventana” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi subió 1 archivo para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T20:14:11.090Z"
+   "createdAt": "2026-11-23T20:14:11.090Z",
+   "readAt": "2026-11-23T20:36:28.206Z"
   },
   {
    "id": "204bb25f-e13c-481f-aeda-d22fc55d05e3",
@@ -20184,8 +20186,8 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "maca",
-   "at": "2026-11-23T18:26:52.565Z",
-   "hasta": "2026-11-23T16:07:57.135Z",
+   "at": "2026-11-23T20:36:28.207Z",
+   "hasta": "2026-11-23T20:15:41.698Z",
    "que": "pieza"
   },
   {

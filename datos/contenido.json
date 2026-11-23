@@ -14066,13 +14066,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "reaccion",
    "text": "le puso 👍 a tu comentario en “Aire nuevo sin abrir la ventana”: Por mi parte lo encuentro excelente! Solo cambiaría el mobil",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi le puso 👍 a tu comentario: Por mi parte lo encuentro excelente! Solo cambiaría el mobil",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T16:07:54.294Z"
+   "createdAt": "2026-11-23T16:07:54.294Z",
+   "readAt": "2026-11-23T18:26:52.561Z"
   },
   {
    "id": "d622aa53-a0be-4e93-82a6-c9459047806a",
@@ -20696,9 +20697,9 @@
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "person": "maca",
-   "at": "2026-11-23T12:14:56.524Z",
-   "hasta": "2026-11-23T12:14:56.520Z",
-   "que": "comentario"
+   "at": "2026-11-23T18:26:52.565Z",
+   "hasta": "2026-11-23T16:07:57.135Z",
+   "que": "pieza"
   },
   {
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",

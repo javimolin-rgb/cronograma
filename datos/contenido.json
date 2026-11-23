@@ -1175,7 +1175,7 @@
    "date": "2026-11-26",
    "inicio": "",
    "format": "carrusel",
-   "status": "espera",
+   "status": "aprobado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1422,9 +1422,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-23T20:39:10.154Z",
-   "updatedBy": "maca",
-   "statusChangedAt": "2026-11-23T20:15:41.698Z",
+   "updatedAt": "2026-11-23T20:47:20.476Z",
+   "updatedBy": "flavio",
+   "statusChangedAt": "2026-11-23T20:47:20.476Z",
    "publishedAt": null
   },
   {
@@ -11647,6 +11647,19 @@
  ],
  "activity": [
   {
+   "id": "84375222-7183-470e-b8cf-fe9cf39c318f",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "flavio",
+   "type": "status",
+   "text": "movió de Esperando aprobación a Aprobado",
+   "meta": {
+    "from": "espera",
+    "to": "aprobado"
+   },
+   "createdAt": "2026-11-23T20:47:20.477Z"
+  },
+  {
    "id": "03247e0a-f787-4726-8e31-37dca90335eb",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14040,6 +14053,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "89ae4ccc-5468-4a7c-aaf4-e5aa126bfaf0",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "supervision",
+   "text": "en “Aire nuevo sin abrir la ventana”: la movió a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio la movió a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T20:47:20.478Z"
+  },
+  {
+   "id": "819816ae-8b8c-4f90-9b09-bebfb5357b91",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "status",
+   "text": "movió “Aire nuevo sin abrir la ventana” a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Flavio la movió a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T20:47:20.478Z"
+  },
   {
    "id": "6d60443a-1fe3-4658-b1b8-142bc605274c",
    "to": "javi",

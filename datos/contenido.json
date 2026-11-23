@@ -3809,7 +3809,7 @@
      "sha": "e28d3daeb76db42ca65ceb910992c81a64b6c348",
      "type": "video/mp4",
      "size": 14867507,
-     "orden": 13
+     "orden": 1023
     },
     {
      "id": "f4a3cf61-b59e-4e6a-b7a6-c538a52d19f7",
@@ -3827,12 +3827,30 @@
      "sha": "1b1b3720aa69d8a0e7e747938f4373e2ea614a25",
      "type": "video/mp4",
      "size": 7819767,
+     "orden": 13
+    },
+    {
+     "id": "97a4200f-5cad-4b70-b8ed-c53edf471545",
+     "by": "javi",
+     "at": "2026-11-23T20:11:57.974Z",
+     "base": "reel_casa_manio",
+     "version": 4,
+     "shaOrigen": "dfca051ad28927b13a47f7a45251347ac2214abe",
+     "dur": 46,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_manio-v4.mp4",
+     "path": "archivos/1.-modelos-3d/reel_casa_manio-v4.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/reel_casa_manio-v4.mp4",
+     "sha": "dfca051ad28927b13a47f7a45251347ac2214abe",
+     "type": "video/mp4",
+     "size": 7592635,
      "orden": 14
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T19:17:14.086Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-23T20:12:03.364Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-20T18:53:07.458Z",
@@ -11605,6 +11623,26 @@
  ],
  "activity": [
   {
+   "id": "34b0b7f8-a708-4a1f-a83a-9d5c1da12792",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-23T20:12:03.367Z"
+  },
+  {
+   "id": "8b0e03f0-d5b8-4cc5-86c4-f2787360c002",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-23T20:12:03.366Z"
+  },
+  {
    "id": "9b4eba74-13c6-47fa-ad9e-c21fa7e36249",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14118,6 +14156,66 @@
   }
  ],
  "notifications": [
+  {
+   "id": "204bb25f-e13c-481f-aeda-d22fc55d05e3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Mañío” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi subió 1 archivo para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:12:03.367Z"
+  },
+  {
+   "id": "51c78e8b-076b-4177-8f17-47bd0aecfe99",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Mañío” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi subió 1 archivo para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:12:03.366Z"
+  },
+  {
+   "id": "6306b723-1a53-41c5-b36d-1e80774cb7f4",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:12:03.366Z"
+  },
+  {
+   "id": "2f24c7ac-c612-4ad7-bb58-668f88cdacc9",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-23T20:12:03.366Z"
+  },
   {
    "id": "8b42f617-ffda-40ca-ab0e-e2e009e115ff",
    "to": "javi",

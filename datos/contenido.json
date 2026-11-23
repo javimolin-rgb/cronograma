@@ -1175,7 +1175,7 @@
    "date": "2026-11-26",
    "inicio": "",
    "format": "carrusel",
-   "status": "revision",
+   "status": "espera",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1422,9 +1422,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-23T20:14:11.089Z",
+   "updatedAt": "2026-11-23T20:15:41.698Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-20T18:45:48.114Z",
+   "statusChangedAt": "2026-11-23T20:15:41.698Z",
    "publishedAt": null
   },
   {
@@ -11623,6 +11623,19 @@
  ],
  "activity": [
   {
+   "id": "e7774ca3-d3cc-42a5-a482-ef36fc167d44",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a Esperando aprobación",
+   "meta": {
+    "from": "revision",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-23T20:15:41.699Z"
+  },
+  {
    "id": "6613f37e-70b0-4d84-a20e-703edcfefb13",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -14192,6 +14205,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c74d89a2-68f6-4c51-ad47-3ce0ecdcf162",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "status",
+   "text": "movió “Aire nuevo sin abrir la ventana” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-23T20:15:41.699Z"
+  },
   {
    "id": "49aed2c0-b9c3-4ede-acdd-b32fc56a01ce",
    "to": "flavio",

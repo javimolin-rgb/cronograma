@@ -13953,14 +13953,15 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Mañío”: está esperando tu aprobación para poder publicar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Mañío",
    "body": "Javi está esperando tu aprobación para poder publicar",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-24T19:37:43.266Z"
+   "createdAt": "2026-11-24T19:37:43.266Z",
+   "readAt": "2026-11-24T21:24:50.858Z"
   },
   {
    "id": "ffa52263-bc1b-4b88-a5c4-c1a89d0e6ad1",
@@ -13969,13 +13970,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "review",
    "text": "subió 1 archivo en “Casa Mañío” para revisar: Ajustes de audio subidos",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Javi te pide revisar: Ajustes de audio subidos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-24T16:53:38.975Z"
+   "createdAt": "2026-11-24T16:53:38.975Z",
+   "readAt": "2026-11-24T21:24:50.860Z"
   },
   {
    "id": "6b8bdcb8-ac55-47bc-a988-226583f0ce78",
@@ -13999,13 +14001,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "update",
    "text": "editó “Casa Mañío” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-24T16:53:38.975Z"
+   "createdAt": "2026-11-24T16:53:38.975Z",
+   "readAt": "2026-11-24T21:24:50.860Z"
   },
   {
    "id": "89ae4ccc-5468-4a7c-aaf4-e5aa126bfaf0",
@@ -19876,8 +19879,8 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-24T13:15:54.460Z",
-   "hasta": "2026-11-23T20:46:14.568Z",
+   "at": "2026-11-24T21:24:50.862Z",
+   "hasta": "2026-11-24T19:37:47.799Z",
    "que": "pieza"
   },
   {

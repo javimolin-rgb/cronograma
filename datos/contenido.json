@@ -3827,7 +3827,7 @@
      "sha": "1b1b3720aa69d8a0e7e747938f4373e2ea614a25",
      "type": "video/mp4",
      "size": 7819767,
-     "orden": 13
+     "orden": 1024
     },
     {
      "id": "97a4200f-5cad-4b70-b8ed-c53edf471545",
@@ -3845,12 +3845,30 @@
      "sha": "dfca051ad28927b13a47f7a45251347ac2214abe",
      "type": "video/mp4",
      "size": 7592635,
+     "orden": 13
+    },
+    {
+     "id": "63c62856-eb98-42f8-9b44-df8da3b3d919",
+     "by": "javi",
+     "at": "2026-11-24T16:48:07.300Z",
+     "base": "reel_casa_manio",
+     "version": 5,
+     "shaOrigen": "a8b5913571e2ded69546ab63365657786da85274",
+     "dur": 46,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_manio-v5.mp4",
+     "path": "archivos/1.-modelos-3d/reel_casa_manio-v5.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/reel_casa_manio-v5.mp4",
+     "sha": "a8b5913571e2ded69546ab63365657786da85274",
+     "type": "video/mp4",
+     "size": 7173837,
      "orden": 14
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T20:46:14.568Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-24T16:53:38.973Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-23T20:15:37.553Z",
@@ -8439,6 +8457,13 @@
  ],
  "comments": [
   {
+   "id": "7d32d6e1-1dc0-49c8-ab23-7f3bbe430360",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "javi",
+   "text": "Ajustes de audio subidos",
+   "createdAt": "2026-11-24T16:53:38.975Z"
+  },
+  {
    "id": "158170f0-ec8f-478c-9ebc-2e7ba2849dad",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11647,6 +11672,26 @@
  ],
  "activity": [
   {
+   "id": "abf3566f-563b-4dfe-a2c2-0082826339e8",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-24T16:53:38.975Z"
+  },
+  {
+   "id": "658351dd-be12-4b7a-8e1f-744ba35cfc57",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-24T16:53:38.974Z"
+  },
+  {
    "id": "84375222-7183-470e-b8cf-fe9cf39c318f",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -14053,6 +14098,51 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ffa52263-bc1b-4b88-a5c4-c1a89d0e6ad1",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Mañío” para revisar: Ajustes de audio subidos",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi te pide revisar: Ajustes de audio subidos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-24T16:53:38.975Z"
+  },
+  {
+   "id": "6b8bdcb8-ac55-47bc-a988-226583f0ce78",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-24T16:53:38.975Z"
+  },
+  {
+   "id": "32052a8d-56f9-46e9-a71a-00544e8279d1",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "update",
+   "text": "editó “Casa Mañío” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-24T16:53:38.975Z"
+  },
   {
    "id": "89ae4ccc-5468-4a7c-aaf4-e5aa126bfaf0",
    "to": "javi",

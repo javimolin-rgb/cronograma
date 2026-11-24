@@ -3867,8 +3867,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-24T19:37:47.799Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-24T21:26:46.305Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-23T20:15:37.553Z",
@@ -8457,6 +8457,14 @@
  ],
  "comments": [
   {
+   "id": "b53a1da1-6eb7-494f-ba2a-d31b344b1f9c",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "author": "maca",
+   "text": "@Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-24T21:26:46.312Z"
+  },
+  {
    "id": "7d32d6e1-1dc0-49c8-ab23-7f3bbe430360",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "javi",
@@ -11672,6 +11680,16 @@
  ],
  "activity": [
   {
+   "id": "5b398118-850b-450c-9595-102c7d2b3ec2",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-24T21:26:46.316Z"
+  },
+  {
    "id": "864dffdf-ff5f-44f3-9969-179bc1f7b4b6",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -13946,6 +13964,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8dc9afd9-6a01-4b0b-a81b-f962608527b0",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "comment",
+   "text": "comentó en “Casa Mañío”: @Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Maca comentó: @Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-24T21:26:46.317Z"
+  },
+  {
+   "id": "725f600d-da2c-44ba-b121-cf56ee359a28",
+   "to": "javi",
+   "from": "maca",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "mention",
+   "text": "te mencionó en “Casa Mañío”: @Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Mañío",
+   "body": "Maca te mencionó: @Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-24T21:26:46.317Z"
+  },
   {
    "id": "ba7acfc1-cf06-47b7-adb8-4ccf9eee5746",
    "to": "maca",
@@ -19879,9 +19927,9 @@
    "id": "804906ab-7f99-4598-afc6-ef726afa4e20|maca",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "person": "maca",
-   "at": "2026-11-24T21:24:50.862Z",
-   "hasta": "2026-11-24T19:37:47.799Z",
-   "que": "pieza"
+   "at": "2026-11-24T21:26:46.311Z",
+   "hasta": "2026-11-24T21:26:46.305Z",
+   "que": "comentario"
   },
   {
    "id": "03b2da82-2617-417b-8081-df3dadaefb31|javi",

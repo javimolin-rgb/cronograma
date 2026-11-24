@@ -11672,6 +11672,16 @@
  ],
  "activity": [
   {
+   "id": "864dffdf-ff5f-44f3-9969-179bc1f7b4b6",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: está esperando tu aprobación para poder publicar",
+   "meta": null,
+   "createdAt": "2026-11-24T19:37:43.267Z"
+  },
+  {
    "id": "abf3566f-563b-4dfe-a2c2-0082826339e8",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -13936,6 +13946,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ba7acfc1-cf06-47b7-adb8-4ccf9eee5746",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Mañío”: está esperando tu aprobación para poder publicar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Mañío",
+   "body": "Javi está esperando tu aprobación para poder publicar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-24T19:37:43.266Z"
+  },
   {
    "id": "ffa52263-bc1b-4b88-a5c4-c1a89d0e6ad1",
    "to": "maca",

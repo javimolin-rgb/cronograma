@@ -1048,7 +1048,7 @@
    "campaign": "3. Videos lifestyle",
    "time": "",
    "date": "2026-12-06",
-   "inicio": "",
+   "inicio": "2026-11-25",
    "format": "reel",
    "status": "estructura",
    "priority": "normal",
@@ -1081,7 +1081,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:25.564Z",
+   "updatedAt": "2026-11-25T21:20:46.240Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-03T19:57:08.735Z",
    "publishedAt": null
@@ -11712,6 +11712,16 @@
  ],
  "activity": [
   {
+   "id": "d5db9126-a2ad-4945-ae45-46f4cb35b8d7",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-25T21:20:46.244Z"
+  },
+  {
    "id": "521f8234-4014-4446-badd-d1a134179628",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14049,6 +14059,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9ce7b37a-3b97-4d59-b680-8eaf1e1acacc",
+   "to": "maca",
+   "from": "javi",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "update",
+   "text": "editó “Del primer mensaje a la obra, en 6 pasos” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Del primer mensaje a la obra, en 6 pasos",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-25T21:20:46.246Z"
+  },
   {
    "id": "20b2954e-d02d-4130-a699-bc43fa790af5",
    "to": "flavio",

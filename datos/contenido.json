@@ -8342,7 +8342,7 @@
    "campaign": "3. Videos lifestyle",
    "time": "19:00",
    "date": "2027-01-12",
-   "inicio": "",
+   "inicio": "2026-12-30",
    "format": "reel",
    "status": "idea",
    "priority": "normal",
@@ -8370,9 +8370,10 @@
    "marca": [],
    "createdAt": "2026-11-18T20:20:23.500Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T23:14:54.622Z",
+   "updatedAt": "2026-11-25T21:23:37.248Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-18T20:20:23.500Z"
+   "statusChangedAt": "2026-11-18T20:20:23.500Z",
+   "publishedAt": null
   },
   {
    "title": "La primera noche",
@@ -11715,6 +11716,16 @@
  ],
  "activity": [
   {
+   "id": "8e1102ab-3d02-4e21-9c91-62e1b1975bec",
+   "postId": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
+   "postTitle": "Mi oficina tiene ventana al bosque",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-25T21:23:37.249Z"
+  },
+  {
    "id": "ff7ec086-d773-4781-a890-c3b130ade60a",
    "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
    "postTitle": "La siesta de enero",
@@ -14112,6 +14123,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "a88b8e5d-b06e-481d-adb0-e7e2e6c4fff5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
+   "type": "update",
+   "text": "editó “Mi oficina tiene ventana al bosque” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Mi oficina tiene ventana al bosque",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
+   "createdAt": "2026-11-25T21:23:37.249Z"
+  },
   {
    "id": "e432f89e-01e8-442e-baaf-f815ca8a2b3c",
    "to": "maca",

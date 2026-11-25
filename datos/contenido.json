@@ -3345,8 +3345,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-25T20:21:18.062Z",
-   "updatedBy": "flavio",
+   "updatedAt": "2026-11-25T20:27:10.529Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-23T20:15:12.839Z",
@@ -8465,6 +8465,14 @@
  ],
  "comments": [
   {
+   "id": "6b35a725-4972-4797-8c3d-8b0332e7df10",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "@Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente en la mesa y la nieve cayendo afuera.",
+   "fileIds": [],
+   "createdAt": "2026-11-25T20:27:10.536Z"
+  },
+  {
    "id": "59ba661e-c49e-4790-860b-516217a5b891",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11704,6 +11712,16 @@
  ],
  "activity": [
   {
+   "id": "521f8234-4014-4446-badd-d1a134179628",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-25T20:27:10.541Z"
+  },
+  {
    "id": "d2cd81cb-4b75-4cd7-b23f-c60ee366fd7e",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14031,6 +14049,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "20b2954e-d02d-4130-a699-bc43fa790af5",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: @Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente e…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: @Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente e…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:27:10.542Z"
+  },
+  {
+   "id": "2f12c70e-d568-493c-bb4d-a010f447bec8",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: @Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente e…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca te mencionó: @Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente e…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:27:10.542Z"
+  },
   {
    "id": "480ab41e-6a85-4ebe-bb06-92faaaadf944",
    "to": "javi",
@@ -20122,8 +20170,8 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-25T20:12:44.325Z",
-   "hasta": "2026-11-25T20:12:44.320Z",
+   "at": "2026-11-25T20:27:10.535Z",
+   "hasta": "2026-11-25T20:27:10.529Z",
    "que": "comentario"
   },
   {

@@ -1081,7 +1081,7 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-25T21:46:20.687Z",
+   "updatedAt": "2026-11-25T21:50:56.596Z",
    "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T19:57:08.735Z",
    "publishedAt": null
@@ -8469,6 +8469,14 @@
  ],
  "comments": [
   {
+   "id": "b58d04dd-e18a-4e3f-b569-5a42561c7c3c",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "author": "maca",
+   "text": "@Javi, lo anterior propuesta de la IA que me interpreta muy bien. Creo que la propuesta se acerca a lo que necesitamos transmitir .",
+   "fileIds": [],
+   "createdAt": "2026-11-25T21:50:56.597Z"
+  },
+  {
    "id": "ae721c1a-3734-413d-b0c8-fe5d43d2931d",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "author": "maca",
@@ -11724,6 +11732,16 @@
  ],
  "activity": [
   {
+   "id": "84b35777-4b02-4943-bd78-b3af530d1e82",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-25T21:50:56.599Z"
+  },
+  {
    "id": "bb7955a9-726a-47b0-aeda-bf419e21b02c",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -14141,6 +14159,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e2a18393-31be-4dc6-b6e2-0ce6d4bae44c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "mention",
+   "text": "te mencionó en “Del primer mensaje a la obra, en 6 pasos”: @Javi, lo anterior propuesta de la IA que me interpreta muy bien. Creo que la pr…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Del primer mensaje a la obra, en 6 pasos",
+   "body": "Maca te mencionó: @Javi, lo anterior propuesta de la IA que me interpreta muy bien. Creo que la pr…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-25T21:50:56.599Z"
+  },
   {
    "id": "17672201-7985-483b-b6d9-663217d70818",
    "to": "javi",
@@ -20360,8 +20393,8 @@
    "id": "549a3272-d695-4f76-9011-a252831ac96c|maca",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "person": "maca",
-   "at": "2026-11-25T21:46:20.691Z",
-   "hasta": "2026-11-25T21:46:20.687Z",
+   "at": "2026-11-25T21:50:56.597Z",
+   "hasta": "2026-11-25T21:50:56.596Z",
    "que": "comentario"
   },
   {

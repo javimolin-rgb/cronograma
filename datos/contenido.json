@@ -3337,8 +3337,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-25T20:10:04.236Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-25T20:12:44.320Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-23T20:15:12.839Z",
@@ -8457,6 +8457,14 @@
  ],
  "comments": [
   {
+   "id": "59ba661e-c49e-4790-860b-516217a5b891",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "Lo veo ahora",
+   "fileIds": [],
+   "createdAt": "2026-11-25T20:12:44.327Z"
+  },
+  {
    "id": "353c1899-36bd-467f-ae30-46789782768e",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "javi",
@@ -11688,6 +11696,16 @@
  ],
  "activity": [
   {
+   "id": "64a57ab1-ca7c-4cda-a210-a716ffef6562",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-25T20:12:44.329Z"
+  },
+  {
    "id": "f04a45ed-eab4-493a-a8f1-972716a10af0",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -13995,6 +14013,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "270ca497-db2d-4bc7-b5d1-0bf025186b7c",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "comentó en “Casa Roble”: Lo veo ahora",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Lo veo ahora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:12:44.331Z"
+  },
+  {
+   "id": "6b252b7a-9e69-4c13-a1df-237361ca4e8b",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: Lo veo ahora",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: Lo veo ahora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:12:44.331Z"
+  },
   {
    "id": "5c1c135e-e0ab-4a76-a7bd-fdc895155ff4",
    "to": "maca",
@@ -20005,9 +20053,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-25T20:10:56.786Z",
-   "hasta": "2026-11-25T20:10:04.236Z",
-   "que": "pieza"
+   "at": "2026-11-25T20:12:44.325Z",
+   "hasta": "2026-11-25T20:12:44.320Z",
+   "que": "comentario"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

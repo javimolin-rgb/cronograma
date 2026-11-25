@@ -3465,7 +3465,7 @@
    "date": "2026-11-24",
    "inicio": "2026-11-09",
    "format": "story",
-   "status": "espera",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -3867,12 +3867,12 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-24T21:26:46.305Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-25T20:09:21.242Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:05:48.447Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-23T20:15:37.553Z",
-   "publishedAt": null,
+   "statusChangedAt": "2026-11-25T20:09:21.242Z",
+   "publishedAt": "2026-11-25T20:09:21.242Z",
    "artefactos": [],
    "versionesTexto": [
     {
@@ -11688,6 +11688,19 @@
  ],
  "activity": [
   {
+   "id": "d1d2322e-6dae-4f8c-9eec-b7814e113b78",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "postTitle": "Casa Mañío",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Esperando aprobación a Publicado",
+   "meta": {
+    "from": "espera",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-25T20:09:21.243Z"
+  },
+  {
    "id": "ec2a70c2-0e3f-4485-8657-71bdb33fd6b4",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -13972,6 +13985,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9086b184-a4fd-4d64-b6f2-db6da6cced66",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-25T20:09:21.244Z"
+  },
+  {
+   "id": "a8420870-eb6f-4b3c-b798-5fec0f0f43a7",
+   "to": "maca",
+   "from": "javi",
+   "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
+   "type": "status",
+   "text": "movió “Casa Mañío” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Mañío",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
+   "createdAt": "2026-11-25T20:09:21.244Z"
+  },
   {
    "id": "c9de150f-cb9b-48e7-b72e-7cd1ef8d571c",
    "to": "flavio",

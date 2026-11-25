@@ -3337,7 +3337,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-23T20:15:12.839Z",
+   "updatedAt": "2026-11-25T16:04:50.478Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -8457,6 +8457,14 @@
  ],
  "comments": [
   {
+   "id": "353c1899-36bd-467f-ae30-46789782768e",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "javi",
+   "text": "@Maca Hay cambios en textos o voz en off?",
+   "fileIds": [],
+   "createdAt": "2026-11-25T16:04:50.480Z"
+  },
+  {
    "id": "b53a1da1-6eb7-494f-ba2a-d31b344b1f9c",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "author": "maca",
@@ -11680,6 +11688,16 @@
  ],
  "activity": [
   {
+   "id": "ec2a70c2-0e3f-4485-8657-71bdb33fd6b4",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-25T16:04:50.482Z"
+  },
+  {
    "id": "5b398118-850b-450c-9595-102c7d2b3ec2",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -13964,6 +13982,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "c9de150f-cb9b-48e7-b72e-7cd1ef8d571c",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: @Maca Hay cambios en textos o voz en off?",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi comentó: @Maca Hay cambios en textos o voz en off?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T16:04:50.483Z"
+  },
+  {
+   "id": "9fecf4b6-5c6f-40ae-b41c-c246475a94bf",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: @Maca Hay cambios en textos o voz en off?",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi te mencionó: @Maca Hay cambios en textos o voz en off?",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T16:04:50.483Z"
+  },
   {
    "id": "8dc9afd9-6a01-4b0b-a81b-f962608527b0",
    "to": "flavio",
@@ -19896,9 +19944,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|javi",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "javi",
-   "at": "2026-11-25T16:04:26.729Z",
-   "hasta": "2026-11-23T20:15:12.839Z",
-   "que": "pieza"
+   "at": "2026-11-25T16:04:50.479Z",
+   "hasta": "2026-11-25T16:04:50.478Z",
+   "que": "comentario"
   },
   {
    "id": "06d85fd3-83d5-4de0-a4e8-38c7e9bca2bf|maca",

@@ -14071,13 +14071,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "mention",
    "text": "te mencionó en “Casa Roble”: @Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente e…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca te mencionó: @Javi, Flavio hizo un ajuste y yo éste….    Botas en la entrada, algo caliente e…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:27:10.542Z"
+   "createdAt": "2026-11-25T20:27:10.542Z",
+   "readAt": "2026-11-25T20:39:05.257Z"
   },
   {
    "id": "480ab41e-6a85-4ebe-bb06-92faaaadf944",
@@ -14086,13 +14087,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "en “Casa Roble”: editó los comentarios de la estructura",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Flavio editó los comentarios de la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:19:58.535Z"
+   "createdAt": "2026-11-25T20:19:58.535Z",
+   "readAt": "2026-11-25T20:39:05.257Z"
   },
   {
    "id": "8d96c0aa-f0a3-4e39-883c-5feea00bcc89",

@@ -11688,6 +11688,16 @@
  ],
  "activity": [
   {
+   "id": "f04a45ed-eab4-493a-a8f1-972716a10af0",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Flavio y Maca: te está esperando para poder seguir",
+   "meta": null,
+   "createdAt": "2026-11-25T20:10:00.509Z"
+  },
+  {
    "id": "d1d2322e-6dae-4f8c-9eec-b7814e113b78",
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "postTitle": "Casa Mañío",
@@ -13985,6 +13995,38 @@
   }
  ],
  "notifications": [
+  {
+   "id": "5c1c135e-e0ab-4a76-a7bd-fdc895155ff4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Roble”: te está esperando para poder seguir",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Roble",
+   "body": "Javi te está esperando para poder seguir",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:10:00.509Z"
+  },
+  {
+   "id": "d8ae8ff9-fb33-41a3-9309-1a52f3815ed2",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Roble”: te está esperando para poder seguir",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Roble",
+   "body": "Javi te está esperando para poder seguir",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:10:00.508Z"
+  },
   {
    "id": "9086b184-a4fd-4d64-b6f2-db6da6cced66",
    "to": "flavio",

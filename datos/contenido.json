@@ -6880,7 +6880,7 @@
    "campaign": "2. Carruseles informativos",
    "time": "",
    "date": "2026-12-10",
-   "inicio": "",
+   "inicio": "2026-11-27",
    "format": "carrusel",
    "status": "revision",
    "priority": "normal",
@@ -7070,7 +7070,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:01:25.052Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:08:20.118Z",
+   "updatedAt": "2026-11-25T21:21:13.295Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:01:25.052Z",
    "publishedAt": null
@@ -11712,6 +11712,16 @@
  ],
  "activity": [
   {
+   "id": "7c4c0d5f-9362-4518-a7c7-f84960dc9cc8",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "postTitle": "¿Cuánto demora construir tu casa?",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-25T21:21:13.296Z"
+  },
+  {
    "id": "d5db9126-a2ad-4945-ae45-46f4cb35b8d7",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -14059,6 +14069,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0ab628e9-5554-49d7-b068-6682fe5b11a5",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "type": "update",
+   "text": "editó “¿Cuánto demora construir tu casa?” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "¿Cuánto demora construir tu casa?",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "createdAt": "2026-11-25T21:21:13.297Z"
+  },
+  {
+   "id": "9fc01c2b-c07b-4b71-9ff9-aa138e40f466",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "type": "update",
+   "text": "editó “¿Cuánto demora construir tu casa?” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "¿Cuánto demora construir tu casa?",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "createdAt": "2026-11-25T21:21:13.296Z"
+  },
   {
    "id": "9ce7b37a-3b97-4d59-b680-8eaf1e1acacc",
    "to": "maca",

@@ -13986,13 +13986,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "mention",
    "text": "te mencionó en “Casa Mañío”: @Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Mañío",
    "body": "Maca te mencionó: @Javi, secaaaaaa!!!! Lo lograste 👏👏.quedó buenísimo! Estamos ok. Gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-24T21:26:46.317Z"
+   "createdAt": "2026-11-24T21:26:46.317Z",
+   "readAt": "2026-11-25T16:04:20.308Z"
   },
   {
    "id": "ba7acfc1-cf06-47b7-adb8-4ccf9eee5746",
@@ -19632,7 +19633,7 @@
    "version": "2026.11.20-8",
    "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
    "firstSeen": "2026-10-24T20:56:25.891Z",
-   "lastSeen": "2026-11-24T16:32:20.289Z"
+   "lastSeen": "2026-11-25T16:04:16.295Z"
   }
  ],
  "recursos": [
@@ -19895,7 +19896,7 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|javi",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "javi",
-   "at": "2026-11-24T16:32:19.234Z",
+   "at": "2026-11-25T16:04:26.729Z",
    "hasta": "2026-11-23T20:15:12.839Z",
    "que": "pieza"
   },

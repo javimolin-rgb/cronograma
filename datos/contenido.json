@@ -20188,6 +20188,14 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "5e8167b4-6659-4af9-af95-5739523291f0|javi",
+   "postId": "5e8167b4-6659-4af9-af95-5739523291f0",
+   "person": "javi",
+   "at": "2026-11-25T21:22:53.916Z",
+   "hasta": "2026-11-18T23:14:54.616Z",
+   "que": "pieza"
+  },
+  {
    "id": "637d9c7f-fa66-42cb-b1c2-dc7d52628540|javi",
    "postId": "637d9c7f-fa66-42cb-b1c2-dc7d52628540",
    "person": "javi",

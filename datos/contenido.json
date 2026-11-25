@@ -3043,7 +3043,15 @@
     ],
     "voz": 3
    },
-   "guionNotas": [],
+   "guionNotas": [
+    {
+     "id": "e52430a5-f9d3-4f89-a91f-8ea52b859e3e",
+     "fila": "7adc60d2-de1c-4f6d-8abe-2e872fea1e7b",
+     "text": "Cambiar a TECHO A DOS AGUAS: Favorable para lluvias y nieve. (ya que si se acumula)",
+     "by": "flavio",
+     "at": "2026-11-25T20:17:29.045Z"
+    }
+   ],
    "spotify": "",
    "campaign": "1. Modelos 3D",
    "time": "",
@@ -3337,8 +3345,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-25T20:12:44.320Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-25T20:19:58.533Z",
+   "updatedBy": "flavio",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-23T20:15:12.839Z",
@@ -11696,6 +11704,16 @@
  ],
  "activity": [
   {
+   "id": "d2cd81cb-4b75-4cd7-b23f-c60ee366fd7e",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "flavio",
+   "type": "edit",
+   "text": "editó los comentarios de la estructura",
+   "meta": null,
+   "createdAt": "2026-11-25T20:19:58.534Z"
+  },
+  {
    "id": "64a57ab1-ca7c-4cda-a210-a716ffef6562",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14013,6 +14031,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "480ab41e-6a85-4ebe-bb06-92faaaadf944",
+   "to": "javi",
+   "from": "flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "supervision",
+   "text": "en “Casa Roble”: editó los comentarios de la estructura",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Flavio editó los comentarios de la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:19:58.535Z"
+  },
+  {
+   "id": "8d96c0aa-f0a3-4e39-883c-5feea00bcc89",
+   "to": "maca",
+   "from": "flavio",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (los comentarios de la estructura)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Flavio editó los comentarios de la estructura",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-25T20:19:58.534Z"
+  },
   {
    "id": "270ca497-db2d-4bc7-b5d1-0bf025186b7c",
    "to": "javi",

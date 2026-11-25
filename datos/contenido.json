@@ -14130,13 +14130,14 @@
    "postId": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
    "type": "update",
    "text": "editó “Mi oficina tiene ventana al bosque” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Mi oficina tiene ventana al bosque",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
-   "createdAt": "2026-11-25T21:23:37.249Z"
+   "createdAt": "2026-11-25T21:23:37.249Z",
+   "readAt": "2026-11-25T21:26:47.202Z"
   },
   {
    "id": "e432f89e-01e8-442e-baaf-f815ca8a2b3c",
@@ -14145,13 +14146,14 @@
    "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
    "type": "update",
    "text": "editó “La siesta de enero” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "La siesta de enero",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
-   "createdAt": "2026-11-25T21:23:22.978Z"
+   "createdAt": "2026-11-25T21:23:22.978Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "1b115dc5-0c4e-4987-bce3-ed1d4e5ff13c",
@@ -14160,13 +14162,14 @@
    "postId": "5e8167b4-6659-4af9-af95-5739523291f0",
    "type": "update",
    "text": "editó “Volver” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Volver",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=5e8167b4-6659-4af9-af95-5739523291f0",
-   "createdAt": "2026-11-25T21:23:02.424Z"
+   "createdAt": "2026-11-25T21:23:02.424Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "d6ed8019-358d-4a5d-8fc5-675647592354",
@@ -14190,13 +14193,14 @@
    "postId": "637d9c7f-fa66-42cb-b1c2-dc7d52628540",
    "type": "update",
    "text": "editó “Tu refugio en la parcela” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Tu refugio en la parcela",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=637d9c7f-fa66-42cb-b1c2-dc7d52628540",
-   "createdAt": "2026-11-25T21:21:45.635Z"
+   "createdAt": "2026-11-25T21:21:45.635Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "9bcfc60c-6346-4fe7-bdb6-2687aecdb520",
@@ -14205,13 +14209,14 @@
    "postId": "22ba5b64-b19b-4472-95f1-79b70966fa28",
    "type": "update",
    "text": "editó “La mesa larga” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "La mesa larga",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=22ba5b64-b19b-4472-95f1-79b70966fa28",
-   "createdAt": "2026-11-25T21:21:33.535Z"
+   "createdAt": "2026-11-25T21:21:33.535Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "0ab628e9-5554-49d7-b068-6682fe5b11a5",
@@ -14235,13 +14240,14 @@
    "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
    "type": "update",
    "text": "editó “¿Cuánto demora construir tu casa?” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "¿Cuánto demora construir tu casa?",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
-   "createdAt": "2026-11-25T21:21:13.296Z"
+   "createdAt": "2026-11-25T21:21:13.296Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "9ce7b37a-3b97-4d59-b680-8eaf1e1acacc",
@@ -14250,13 +14256,14 @@
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "type": "update",
    "text": "editó “Del primer mensaje a la obra, en 6 pasos” (cuándo empieza)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "body": "Javi editó cuándo empieza",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
-   "createdAt": "2026-11-25T21:20:46.246Z"
+   "createdAt": "2026-11-25T21:20:46.246Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "20b2954e-d02d-4130-a699-bc43fa790af5",
@@ -14312,13 +14319,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (los comentarios de la estructura)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Flavio editó los comentarios de la estructura",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:19:58.534Z"
+   "createdAt": "2026-11-25T20:19:58.534Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "270ca497-db2d-4bc7-b5d1-0bf025186b7c",
@@ -14408,13 +14416,14 @@
    "postId": "804906ab-7f99-4598-afc6-ef726afa4e20",
    "type": "status",
    "text": "movió “Casa Mañío” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Mañío",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=804906ab-7f99-4598-afc6-ef726afa4e20",
-   "createdAt": "2026-11-25T20:09:21.244Z"
+   "createdAt": "2026-11-25T20:09:21.244Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "c9de150f-cb9b-48e7-b72e-7cd1ef8d571c",
@@ -14566,13 +14575,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "status",
    "text": "movió “Aire nuevo sin abrir la ventana” a Aprobado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Flavio la movió a Aprobado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-23T20:47:20.478Z"
+   "createdAt": "2026-11-23T20:47:20.478Z",
+   "readAt": "2026-11-25T21:26:47.205Z"
   },
   {
    "id": "6d60443a-1fe3-4658-b1b8-142bc605274c",

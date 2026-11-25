@@ -14020,13 +14020,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "supervision",
    "text": "comentó en “Casa Roble”: Lo veo ahora",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca comentó: Lo veo ahora",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:12:44.331Z"
+   "createdAt": "2026-11-25T20:12:44.331Z",
+   "readAt": "2026-11-25T20:19:07.317Z"
   },
   {
    "id": "6b252b7a-9e69-4c13-a1df-237361ca4e8b",

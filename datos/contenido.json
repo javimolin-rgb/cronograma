@@ -14166,13 +14166,14 @@
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "type": "mention",
    "text": "te mencionó en “Del primer mensaje a la obra, en 6 pasos”: @Javi, lo anterior propuesta de la IA que me interpreta muy bien. Creo que la pr…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "body": "Maca te mencionó: @Javi, lo anterior propuesta de la IA que me interpreta muy bien. Creo que la pr…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
-   "createdAt": "2026-11-25T21:50:56.599Z"
+   "createdAt": "2026-11-25T21:50:56.599Z",
+   "readAt": "2026-11-25T23:59:56.503Z"
   },
   {
    "id": "17672201-7985-483b-b6d9-663217d70818",
@@ -14181,13 +14182,14 @@
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "type": "supervision",
    "text": "comentó en “Del primer mensaje a la obra, en 6 pasos”: Mi primera impresión, siendo bien crítica: la estructura está bien, pero el leng…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "body": "Maca comentó: Mi primera impresión, siendo bien crítica: la estructura está bien, pero el leng…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
-   "createdAt": "2026-11-25T21:46:20.696Z"
+   "createdAt": "2026-11-25T21:46:20.696Z",
+   "readAt": "2026-11-25T23:59:56.504Z"
   },
   {
    "id": "a88b8e5d-b06e-481d-adb0-e7e2e6c4fff5",

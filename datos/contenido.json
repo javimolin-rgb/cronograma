@@ -1081,8 +1081,8 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-25T21:20:46.240Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-25T21:46:20.687Z",
+   "updatedBy": "maca",
    "statusChangedAt": "2026-11-03T19:57:08.735Z",
    "publishedAt": null
   },
@@ -8469,6 +8469,14 @@
  ],
  "comments": [
   {
+   "id": "ae721c1a-3734-413d-b0c8-fe5d43d2931d",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "author": "maca",
+   "text": "Mi primera impresión, siendo bien crítica: la estructura está bien, pero el lenguaje todavía se parece demasiado al de una inmobiliaria o constructora que quiere vender un proceso. Y Neorigen tiene una oportunidad de comunicar algo bastante más interesante.\n\nEl reel debería transmitir tres cosas: confianza, claridad y una manera distinta de hacer las cosas. Sin parecer un video corporativo, ni una publicidad de casas prefabricadas, ni el típico recorrido de una inmobiliaria.\n\nTomé como referencia el posicionamiento actual de Neorigen: diseño para el bienestar, construcción real, sustentabilidad aplicada, personalización y acompañamiento directo. También la línea de contenidos que hemos venido desarrollando para las casas Peumo y Boldo: lenguaje cercano, visual, cuidado y sin frases publicitarias demasiado evidentes.\n\n1. Qué cambiaría de la propuesta original\n\nHay algunas expresiones que evitaría:\n\n* «¿Y qué pasa después de escribirnos?» Es correcta, pero demasiado genérica. No construye identidad.\n* «Todo empieza con una pregunta». Es una frase bastante utilizada en publicidad.\n* «Y esa conversación empieza a tener forma». Es bonita, pero no explica demasiado.\n* «Antes de poner la primera piedra». Es un cliché del rubro inmobiliario.\n* «Mientras se levanta, sabes en qué va». Suena informal y poco sofisticada.\n* «Hasta el día en que la casa por fin es tuya». Tiene un tono de venta inmobiliaria que no corresponde demasiado a Neorigen.\n\nTambién cambiaría «atendido por los dueños». La idea es buena y constituye un diferencial importante, pero la expresaría desde el acompañamiento directo, no desde quiénes son los propietarios.\n\n2. Mi propuesta principal\n\nMantendría las seis etapas y los 30 segundos. No necesitamos más información, sino comunicar mejor lo que sucede en cada una.",
+   "fileIds": [],
+   "createdAt": "2026-11-25T21:46:20.692Z"
+  },
+  {
    "id": "6b35a725-4972-4797-8c3d-8b0332e7df10",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11716,6 +11724,16 @@
  ],
  "activity": [
   {
+   "id": "bb7955a9-726a-47b0-aeda-bf419e21b02c",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-25T21:46:20.695Z"
+  },
+  {
    "id": "8e1102ab-3d02-4e21-9c91-62e1b1975bec",
    "postId": "c2bc9d6a-c5b4-4489-99c0-0385419bcae9",
    "postTitle": "Mi oficina tiene ventana al bosque",
@@ -14123,6 +14141,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "17672201-7985-483b-b6d9-663217d70818",
+   "to": "javi",
+   "from": "maca",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "supervision",
+   "text": "comentó en “Del primer mensaje a la obra, en 6 pasos”: Mi primera impresión, siendo bien crítica: la estructura está bien, pero el leng…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Del primer mensaje a la obra, en 6 pasos",
+   "body": "Maca comentó: Mi primera impresión, siendo bien crítica: la estructura está bien, pero el leng…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-25T21:46:20.696Z"
+  },
   {
    "id": "a88b8e5d-b06e-481d-adb0-e7e2e6c4fff5",
    "to": "maca",
@@ -20327,9 +20360,9 @@
    "id": "549a3272-d695-4f76-9011-a252831ac96c|maca",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "person": "maca",
-   "at": "2026-11-25T21:28:20.398Z",
-   "hasta": "2026-11-25T21:20:46.240Z",
-   "que": "pieza"
+   "at": "2026-11-25T21:46:20.691Z",
+   "hasta": "2026-11-25T21:46:20.687Z",
+   "que": "comentario"
   },
   {
    "id": "549a3272-d695-4f76-9011-a252831ac96c|javi",

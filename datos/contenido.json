@@ -8063,7 +8063,7 @@
    "campaign": "3. Videos lifestyle",
    "time": "",
    "date": "2026-12-20",
-   "inicio": "",
+   "inicio": "2026-12-07",
    "format": "reel",
    "status": "idea",
    "priority": "normal",
@@ -8091,9 +8091,10 @@
    "marca": [],
    "createdAt": "2026-11-18T20:20:20.500Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T20:20:20.500Z",
+   "updatedAt": "2026-11-25T21:21:33.534Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-18T20:20:20.500Z"
+   "statusChangedAt": "2026-11-18T20:20:20.500Z",
+   "publishedAt": null
   },
   {
    "title": "Volver",
@@ -11712,6 +11713,16 @@
  ],
  "activity": [
   {
+   "id": "315da0b3-cc6f-47de-b519-d4eef175accc",
+   "postId": "22ba5b64-b19b-4472-95f1-79b70966fa28",
+   "postTitle": "La mesa larga",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-25T21:21:33.535Z"
+  },
+  {
    "id": "7c4c0d5f-9362-4518-a7c7-f84960dc9cc8",
    "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
    "postTitle": "¿Cuánto demora construir tu casa?",
@@ -14069,6 +14080,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9bcfc60c-6346-4fe7-bdb6-2687aecdb520",
+   "to": "maca",
+   "from": "javi",
+   "postId": "22ba5b64-b19b-4472-95f1-79b70966fa28",
+   "type": "update",
+   "text": "editó “La mesa larga” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "La mesa larga",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=22ba5b64-b19b-4472-95f1-79b70966fa28",
+   "createdAt": "2026-11-25T21:21:33.535Z"
+  },
   {
    "id": "0ab628e9-5554-49d7-b068-6682fe5b11a5",
    "to": "flavio",

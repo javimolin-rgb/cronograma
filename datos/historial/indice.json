@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-24T19:32:39.247Z",
+ "actualizado": "2026-11-25T18:41:15.417Z",
  "meses": [
   "2026-08",
   "2026-09",
@@ -8,8 +8,8 @@
  ],
  "total": {
   "comments": 18,
-  "activity": 509,
-  "notifications": 647
+  "activity": 510,
+  "notifications": 649
  },
  "piezas": {
   "e-c1": {
@@ -269,8 +269,8 @@
   },
   "db10db45-7eea-498b-bef7-0fc0093ab3b8": {
    "comments": 0,
-   "activity": 28,
-   "notifications": 51
+   "activity": 29,
+   "notifications": 53
   }
  }
 }

@@ -13781,16 +13781,6 @@
    "createdAt": "2026-11-15T21:06:52.319Z"
   },
   {
-   "id": "813c855a-e89c-400f-8d20-982725492601",
-   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "postTitle": "Historia: los modelos de casas",
-   "actor": "maca",
-   "type": "comment",
-   "text": "comentó",
-   "meta": null,
-   "createdAt": "2026-11-15T13:19:47.026Z"
-  },
-  {
    "id": "367d3778-978d-4f71-b8f4-ce9e7bdf9bed",
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "postTitle": "Aire nuevo sin abrir la ventana",
@@ -18932,38 +18922,6 @@
    "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
    "createdAt": "2026-11-15T21:06:52.319Z",
    "readAt": "2026-11-16T20:54:41.275Z"
-  },
-  {
-   "id": "67c538cc-14c4-4f32-8898-ecd8b8d4f128",
-   "to": "javi",
-   "from": "maca",
-   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "type": "supervision",
-   "text": "comentó en “Historia: los modelos de casas”: Hola Javi, estamos ok. Gracias",
-   "read": true,
-   "inApp": true,
-   "push": true,
-   "title": "Historia: los modelos de casas",
-   "body": "Maca comentó: Hola Javi, estamos ok. Gracias",
-   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-15T13:19:47.029Z",
-   "readAt": "2026-11-15T20:59:31.966Z"
-  },
-  {
-   "id": "140d8a35-b473-44fb-a062-5c787a07e07f",
-   "to": "flavio",
-   "from": "maca",
-   "postId": "db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "type": "comment",
-   "text": "comentó en “Historia: los modelos de casas”: Hola Javi, estamos ok. Gracias",
-   "read": true,
-   "inApp": true,
-   "push": false,
-   "title": "Historia: los modelos de casas",
-   "body": "Maca comentó: Hola Javi, estamos ok. Gracias",
-   "url": "https://javimolin-rgb.github.io/cronograma/#post=db10db45-7eea-498b-bef7-0fc0093ab3b8",
-   "createdAt": "2026-11-15T13:19:47.028Z",
-   "readAt": "2026-11-17T20:48:21.626Z"
   },
   {
    "id": "74311f89-30d5-40fc-bc66-d73afd87ef5a",

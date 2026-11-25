@@ -8245,7 +8245,7 @@
    "campaign": "3. Videos lifestyle",
    "time": "19:00",
    "date": "2027-01-05",
-   "inicio": "",
+   "inicio": "2026-12-21",
    "format": "reel",
    "status": "idea",
    "priority": "normal",
@@ -8278,9 +8278,10 @@
    "marca": [],
    "createdAt": "2026-11-18T20:20:22.500Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T23:14:54.619Z",
+   "updatedAt": "2026-11-25T21:23:22.978Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-18T20:20:22.500Z"
+   "statusChangedAt": "2026-11-18T20:20:22.500Z",
+   "publishedAt": null
   },
   {
    "title": "Mi oficina tiene ventana al bosque",
@@ -11714,6 +11715,16 @@
  ],
  "activity": [
   {
+   "id": "ff7ec086-d773-4781-a890-c3b130ade60a",
+   "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "postTitle": "La siesta de enero",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-25T21:23:22.978Z"
+  },
+  {
    "id": "d1e287dd-b523-41e4-ac3d-a206640e34be",
    "postId": "5e8167b4-6659-4af9-af95-5739523291f0",
    "postTitle": "Volver",
@@ -14101,6 +14112,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "e432f89e-01e8-442e-baaf-f815ca8a2b3c",
+   "to": "maca",
+   "from": "javi",
+   "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "type": "update",
+   "text": "editó “La siesta de enero” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "La siesta de enero",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "createdAt": "2026-11-25T21:23:22.978Z"
+  },
   {
    "id": "1b115dc5-0c4e-4987-bce3-ed1d4e5ff13c",
    "to": "maca",

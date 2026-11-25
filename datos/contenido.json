@@ -20214,6 +20214,14 @@
  "carpetas": [],
  "vistas": [
   {
+   "id": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca|javi",
+   "postId": "31cdff01-e89f-4a7e-a5c7-3edd3bb8abca",
+   "person": "javi",
+   "at": "2026-11-25T21:23:10.962Z",
+   "hasta": "2026-11-18T23:14:54.619Z",
+   "que": "pieza"
+  },
+  {
    "id": "5e8167b4-6659-4af9-af95-5739523291f0|javi",
    "postId": "5e8167b4-6659-4af9-af95-5739523291f0",
    "person": "javi",

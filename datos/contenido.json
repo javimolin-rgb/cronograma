@@ -7152,7 +7152,7 @@
    "campaign": "2. Carruseles informativos",
    "time": "19:00",
    "date": "2026-12-23",
-   "inicio": "",
+   "inicio": "2026-12-11",
    "format": "carrusel",
    "status": "revision",
    "priority": "normal",
@@ -7327,7 +7327,7 @@
    "marca": [],
    "createdAt": "2026-11-18T20:01:26.052Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-18T23:14:54.606Z",
+   "updatedAt": "2026-11-25T21:21:45.633Z",
    "updatedBy": "javi",
    "statusChangedAt": "2026-11-18T20:01:26.052Z",
    "publishedAt": null
@@ -11713,6 +11713,16 @@
  ],
  "activity": [
   {
+   "id": "35958fbb-e18b-4aa1-8d44-1e134d52bcdc",
+   "postId": "637d9c7f-fa66-42cb-b1c2-dc7d52628540",
+   "postTitle": "Tu refugio en la parcela",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó cuándo empieza",
+   "meta": null,
+   "createdAt": "2026-11-25T21:21:45.635Z"
+  },
+  {
    "id": "315da0b3-cc6f-47de-b519-d4eef175accc",
    "postId": "22ba5b64-b19b-4472-95f1-79b70966fa28",
    "postTitle": "La mesa larga",
@@ -14080,6 +14090,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "d6ed8019-358d-4a5d-8fc5-675647592354",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "637d9c7f-fa66-42cb-b1c2-dc7d52628540",
+   "type": "update",
+   "text": "editó “Tu refugio en la parcela” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Tu refugio en la parcela",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=637d9c7f-fa66-42cb-b1c2-dc7d52628540",
+   "createdAt": "2026-11-25T21:21:45.635Z"
+  },
+  {
+   "id": "513e5e97-0158-487c-84d4-81d6bf889858",
+   "to": "maca",
+   "from": "javi",
+   "postId": "637d9c7f-fa66-42cb-b1c2-dc7d52628540",
+   "type": "update",
+   "text": "editó “Tu refugio en la parcela” (cuándo empieza)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Tu refugio en la parcela",
+   "body": "Javi editó cuándo empieza",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=637d9c7f-fa66-42cb-b1c2-dc7d52628540",
+   "createdAt": "2026-11-25T21:21:45.635Z"
+  },
   {
    "id": "9bcfc60c-6346-4fe7-bdb6-2687aecdb520",
    "to": "maca",

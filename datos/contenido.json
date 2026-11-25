@@ -14035,13 +14035,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: Lo veo ahora",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: Lo veo ahora",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:12:44.331Z"
+   "createdAt": "2026-11-25T20:12:44.331Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "5c1c135e-e0ab-4a76-a7bd-fdc895155ff4",
@@ -14067,14 +14068,15 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Roble”: te está esperando para poder seguir",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Roble",
    "body": "Javi te está esperando para poder seguir",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:10:00.508Z"
+   "createdAt": "2026-11-25T20:10:00.508Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "9086b184-a4fd-4d64-b6f2-db6da6cced66",
@@ -14113,13 +14115,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: @Maca Hay cambios en textos o voz en off?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi comentó: @Maca Hay cambios en textos o voz en off?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T16:04:50.483Z"
+   "createdAt": "2026-11-25T16:04:50.483Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "9fecf4b6-5c6f-40ae-b41c-c246475a94bf",
@@ -14395,13 +14398,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "status",
    "text": "movió “Casa Roble” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-23T20:15:12.840Z"
+   "createdAt": "2026-11-23T20:15:12.840Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "db9475ee-aec2-4ad8-aec7-e81589f1284d",
@@ -14646,13 +14650,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: Todo ok, muchas gracias",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: Todo ok, muchas gracias",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-22T01:12:08.640Z"
+   "createdAt": "2026-11-22T01:12:08.640Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "29ee053f-3c9c-4578-91f8-0574d2527650",
@@ -14678,14 +14683,15 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Roble”: necesita esto con urgencia",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Roble",
    "body": "Javi necesita esto con urgencia",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-22T01:02:31.418Z"
+   "createdAt": "2026-11-22T01:02:31.418Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "95c8be57-cb30-4977-8b72-bc7aa998eae7",
@@ -14711,13 +14717,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T23:39:22.972Z"
+   "createdAt": "2026-11-21T23:39:22.972Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "592af2ca-07a3-4feb-9f2e-17592e394668",
@@ -14742,13 +14749,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: @Maca me avisas si tienes algún otro cambio para empezar a renderizar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi comentó: @Maca me avisas si tienes algún otro cambio para empezar a renderizar",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T21:45:21.449Z"
+   "createdAt": "2026-11-21T21:45:21.449Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "6e8d929f-44b1-4442-92b1-aec1241ac923",
@@ -14789,13 +14797,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "review",
    "text": "subió 6 archivos en “Casa Roble” para revisar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi subió 6 archivos para que lo revises",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T20:34:47.120Z"
+   "createdAt": "2026-11-21T20:34:47.120Z",
+   "readAt": "2026-11-25T20:15:53.876Z"
   },
   {
    "id": "e23a66f7-d1da-4ac5-bbc2-0cb1289d0434",
@@ -14804,13 +14813,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T20:34:47.120Z"
+   "createdAt": "2026-11-21T20:34:47.120Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "1ea3983d-fa31-4a41-b842-84da2e90f55f",
@@ -14960,13 +14970,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: Si es a base de los renders oficiales hay q dejarla así pero ponle puerta pa dar…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:52:04.194Z"
+   "createdAt": "2026-11-21T15:52:04.194Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "a408b494-11f3-4349-917b-d4af63df0c51",
@@ -14991,13 +15002,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: Ahhh! Es que se ve muy angosta para ser puerta de acceso principal. No sé si es …",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:49:16.899Z"
+   "createdAt": "2026-11-21T15:49:16.899Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "ecbd6431-7df8-41d5-93a6-0b8c25f9cac8",
@@ -15006,13 +15018,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: @Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificam…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi comentó: @Maca Con lo de agrandar puerta principal me queda la duda en cuanto especificam…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:44:11.721Z"
+   "createdAt": "2026-11-21T15:44:11.721Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "3b1db2f3-808b-4b5c-884a-c61ee18996a7",
@@ -15053,13 +15066,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: El resto de las imágenes Ok.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: El resto de las imágenes Ok.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:42:44.110Z"
+   "createdAt": "2026-11-21T15:42:44.110Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "278ea13f-a6f8-45b6-b775-5d0795cc5280",
@@ -15084,13 +15098,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: Agrandar puerta principal\nAl igual que imagen anterior que puerta y ventana se v…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:41:08.195Z"
+   "createdAt": "2026-11-21T15:41:08.195Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "57e79e2a-83fe-4d0c-96a9-ebdb74991dd1",
@@ -15115,13 +15130,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Maca comentó: Agrandar puerta principal  \nPuerta principal y ventana se ven como solo el hueco…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T15:37:36.385Z"
+   "createdAt": "2026-11-21T15:37:36.385Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "bdaec399-38f6-4e07-af4b-eac8cadcced8",
@@ -15161,13 +15177,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "comment",
    "text": "comentó en “Casa Roble”: @Maca Hoy a las 20:00 empiezo renderizando...",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi comentó: @Maca Hoy a las 20:00 empiezo renderizando...",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-21T14:53:37.264Z"
+   "createdAt": "2026-11-21T14:53:37.264Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "c6262797-0a29-4304-82d2-1ff830373fd0",
@@ -15192,14 +15209,15 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Roble”: necesita que revises esto hoy",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Roble",
    "body": "Javi necesita que revises esto hoy",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-20T23:41:50.681Z"
+   "createdAt": "2026-11-20T23:41:50.681Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "19b514ef-214b-49f8-8b4b-772239c9904e",
@@ -15554,13 +15572,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "review",
    "text": "subió 6 archivos en “Casa Roble” para revisar: Subi imagenes para previsualizar el render. ideal dejar comentarios y ajustes listos hoy para dejar renderizando durante el fin de semana",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi te pide revisar: Subi imagenes para previsualizar el render. ideal dejar comentarios y ajustes listos hoy para dejar renderizando durante el fin ",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-20T18:02:29.508Z"
+   "createdAt": "2026-11-20T18:02:29.508Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "9d33fdbf-a97b-487f-afe5-4e65a5c58293",
@@ -15601,13 +15620,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "tagged",
    "text": "te etiquetó en “Casa Roble”",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi te etiquetó como responsable",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-20T18:02:29.507Z"
+   "createdAt": "2026-11-20T18:02:29.507Z",
+   "readAt": "2026-11-25T20:15:53.877Z"
   },
   {
    "id": "a34fc559-9b95-4015-bb2d-59a9d2d6b458",
@@ -19957,8 +19977,8 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|flavio",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "flavio",
-   "at": "2026-11-19T14:11:34.528Z",
-   "hasta": "2026-11-19T13:53:24.604Z",
+   "at": "2026-11-25T20:15:53.878Z",
+   "hasta": "2026-11-25T20:12:44.320Z",
    "que": "pieza"
   },
   {

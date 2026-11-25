@@ -14002,14 +14002,15 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Roble”: te está esperando para poder seguir",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Roble",
    "body": "Javi te está esperando para poder seguir",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T20:10:00.509Z"
+   "createdAt": "2026-11-25T20:10:00.509Z",
+   "readAt": "2026-11-25T20:10:56.786Z"
   },
   {
    "id": "d8ae8ff9-fb33-41a3-9309-1a52f3815ed2",
@@ -14079,13 +14080,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "mention",
    "text": "te mencionó en “Casa Roble”: @Maca Hay cambios en textos o voz en off?",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi te mencionó: @Maca Hay cambios en textos o voz en off?",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-25T16:04:50.483Z"
+   "createdAt": "2026-11-25T16:04:50.483Z",
+   "readAt": "2026-11-25T20:10:56.786Z"
   },
   {
    "id": "8dc9afd9-6a01-4b0b-a81b-f962608527b0",
@@ -20003,8 +20005,8 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-23T19:17:21.393Z",
-   "hasta": "2026-11-22T01:12:08.628Z",
+   "at": "2026-11-25T20:10:56.786Z",
+   "hasta": "2026-11-25T20:10:04.236Z",
    "que": "pieza"
   },
   {

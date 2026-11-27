@@ -1050,7 +1050,7 @@
    "date": "2026-12-06",
    "inicio": "2026-11-25",
    "format": "reel",
-   "status": "estructura",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1081,9 +1081,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-25T21:50:56.596Z",
-   "updatedBy": "maca",
-   "statusChangedAt": "2026-11-03T19:57:08.735Z",
+   "updatedAt": "2026-11-27T17:57:03.035Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-27T17:57:03.035Z",
    "publishedAt": null
   },
   {
@@ -11944,6 +11944,19 @@
  ],
  "activity": [
   {
+   "id": "4425e7ef-188a-4993-8310-980bc1ff1dd7",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "postTitle": "Del primer mensaje a la obra, en 6 pasos",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Estructura por aprobar a En diseño",
+   "meta": {
+    "from": "estructura",
+    "to": "diseno"
+   },
+   "createdAt": "2026-11-27T17:57:03.036Z"
+  },
+  {
    "id": "9547ad24-b479-4805-9bc0-0b5b9ffec8d9",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14429,6 +14442,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "9d69e326-76b5-4653-bb7c-7b6d1e37eca0",
+   "to": "maca",
+   "from": "javi",
+   "postId": "549a3272-d695-4f76-9011-a252831ac96c",
+   "type": "status",
+   "text": "movió “Del primer mensaje a la obra, en 6 pasos” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Del primer mensaje a la obra, en 6 pasos",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
+   "createdAt": "2026-11-27T17:57:03.036Z"
+  },
   {
    "id": "8c14e824-fcc3-4326-ba56-4f40ae39d00f",
    "to": "flavio",

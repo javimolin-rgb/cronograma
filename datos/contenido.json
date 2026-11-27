@@ -3036,7 +3036,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T17:49:13.236Z",
+   "updatedAt": "2026-11-27T17:51:49.647Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -8604,6 +8604,16 @@
  ],
  "comments": [
   {
+   "id": "aff251f6-dcbc-428b-a083-418ae610f1b8",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "Está al igual que las que vienen poner la casa un poco más atrás porque se ve como sobrepuesta sobre la roca ,",
+   "fileIds": [
+    "a3cffec5-8d38-418b-8d7b-853fb9d3707a"
+   ],
+   "createdAt": "2026-11-27T17:51:49.650Z"
+  },
+  {
    "id": "a4abbe5a-659d-4e9c-b3b5-95d3eefd8c73",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "maca",
@@ -11924,6 +11934,16 @@
  ],
  "activity": [
   {
+   "id": "4ea08af7-570c-4b2b-86b1-92c2c8f751cf",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T17:51:49.651Z"
+  },
+  {
    "id": "14c543cc-6e0d-48fd-96bd-118412650e1b",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14363,6 +14383,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "f7173897-f1d2-41f2-824d-515b2a54e967",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "supervision",
+   "text": "comentó en “Casa Maitén”: Está al igual que las que vienen poner la casa un poco más atrás porque se ve co…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Está al igual que las que vienen poner la casa un poco más atrás porque se ve co…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:51:49.652Z"
+  },
+  {
+   "id": "f8f54bf6-3a59-407a-b4b4-5fad7914df20",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: Está al igual que las que vienen poner la casa un poco más atrás porque se ve co…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Está al igual que las que vienen poner la casa un poco más atrás porque se ve co…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:51:49.652Z"
+  },
   {
    "id": "50d3aa89-81ed-47cd-b314-ca6dbc4fbd62",
    "to": "javi",
@@ -20537,8 +20587,8 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T17:49:13.238Z",
-   "hasta": "2026-11-27T17:49:13.236Z",
+   "at": "2026-11-27T17:51:49.650Z",
+   "hasta": "2026-11-27T17:51:49.647Z",
    "que": "comentario"
   },
   {

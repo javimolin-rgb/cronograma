@@ -3369,8 +3369,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T13:55:46.103Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-27T15:50:59.530Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-27T13:55:26.224Z",
@@ -8493,6 +8493,14 @@
  ],
  "comments": [
   {
+   "id": "a580e5d2-9c26-4c12-a87b-95e7b928f38e",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "@Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, solo que el “ tono” que le pone a la frase “ Botas en la entrada……vidrio” no es muy adecuada. \nNo sé si la entonación se puede cambiar o probamos con la voz de hombre para ver cómo lo dice 🤪 Gracias",
+   "fileIds": [],
+   "createdAt": "2026-11-27T15:50:59.537Z"
+  },
+  {
    "id": "49d3dc47-3700-47d8-93c1-c0fadfeb4ef9",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "javi",
@@ -11763,6 +11771,16 @@
  ],
  "activity": [
   {
+   "id": "384f06d6-1753-4a40-ae4b-2d3110eeb635",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T15:50:59.541Z"
+  },
+  {
    "id": "8f24b9bd-4332-4058-8df6-ae6fcc2987a6",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14050,6 +14068,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ad61cfd4-af01-4689-97e6-fc0d5e475aa3",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: @Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, sol…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: @Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, sol…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T15:50:59.542Z"
+  },
+  {
+   "id": "a68a5cdc-7186-489f-94ea-1b9ba254ea19",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: @Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, sol…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca te mencionó: @Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, sol…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T15:50:59.542Z"
+  },
   {
    "id": "41fdb842-359f-43e0-8637-8677c8138c9b",
    "to": "flavio",
@@ -20043,9 +20091,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-27T15:43:43.066Z",
-   "hasta": "2026-11-27T13:55:46.103Z",
-   "que": "pieza"
+   "at": "2026-11-27T15:50:59.535Z",
+   "hasta": "2026-11-27T15:50:59.530Z",
+   "que": "comentario"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

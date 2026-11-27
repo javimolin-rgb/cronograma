@@ -1175,7 +1175,7 @@
    "date": "2026-11-26",
    "inicio": "",
    "format": "carrusel",
-   "status": "programado",
+   "status": "publicado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1422,10 +1422,10 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-27T13:29:40.439Z",
+   "updatedAt": "2026-11-27T16:14:44.003Z",
    "updatedBy": "javi",
-   "statusChangedAt": "2026-11-27T13:29:40.439Z",
-   "publishedAt": null
+   "statusChangedAt": "2026-11-27T16:14:44.003Z",
+   "publishedAt": "2026-11-27T16:14:44.003Z"
   },
   {
    "title": "La casa que respira",
@@ -11771,6 +11771,19 @@
  ],
  "activity": [
   {
+   "id": "d0665b2d-966c-46a3-a407-59d021e2446d",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Programado a Publicado",
+   "meta": {
+    "from": "programado",
+    "to": "publicado"
+   },
+   "createdAt": "2026-11-27T16:14:44.003Z"
+  },
+  {
    "id": "384f06d6-1753-4a40-ae4b-2d3110eeb635",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14068,6 +14081,21 @@
   }
  ],
  "notifications": [
+  {
+   "id": "6478ecb1-548a-4f02-8ea5-28504069679d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "status",
+   "text": "movió “Aire nuevo sin abrir la ventana” a Publicado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi la movió a Publicado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-27T16:14:44.003Z"
+  },
   {
    "id": "ad61cfd4-af01-4689-97e6-fc0d5e475aa3",
    "to": "flavio",

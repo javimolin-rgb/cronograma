@@ -3086,7 +3086,7 @@
      "sha": "6f6c69e11cb2ad37f1dbbf0fc16ada33569b56d5",
      "type": "image/webp",
      "size": 154412,
-     "orden": 1008
+     "orden": 1002
     },
     {
      "id": "f701dcc7-ee63-497e-8d4c-60e3c3a90ddd",
@@ -3101,7 +3101,7 @@
      "sha": "02c747b26ba4cd876264acb4b6a5d9e073001ae7",
      "type": "image/webp",
      "size": 84634,
-     "orden": 1009
+     "orden": 1003
     },
     {
      "id": "df4fe91d-bf14-4a4f-ae77-c84b61273344",
@@ -3116,7 +3116,7 @@
      "sha": "a8c03a5ce12f417d383f1a2a9d73dd666792ab0b",
      "type": "image/webp",
      "size": 55758,
-     "orden": 1010
+     "orden": 1004
     },
     {
      "id": "44243ace-147a-4b34-ba93-30bfa7cac4b6",
@@ -3131,7 +3131,7 @@
      "sha": "d62ad59138a12cee8a24d8fb9bf2e7e6df77f7cd",
      "type": "image/webp",
      "size": 127148,
-     "orden": 1011
+     "orden": 1005
     },
     {
      "id": "c3659b2a-ef5a-495f-83c6-e1bde03a1a83",
@@ -3146,7 +3146,7 @@
      "sha": "8915c4ba62da16e814d3a6e5b4d56eb6e703b8ee",
      "type": "image/webp",
      "size": 69164,
-     "orden": 1012
+     "orden": 1006
     },
     {
      "id": "97393239-ce6d-4a4b-ac9f-a66f024c6f2b",
@@ -3161,7 +3161,7 @@
      "sha": "ffa3c6adae1485ae3a049efda2159881d1f56978",
      "type": "image/webp",
      "size": 116910,
-     "orden": 1013
+     "orden": 1007
     },
     {
      "id": "77cc5244-f9da-4417-b026-395998c193bb",
@@ -3176,7 +3176,7 @@
      "sha": "9c3c5f4ad1af23c798097cd8fc78d40bcf185b67",
      "type": "image/webp",
      "size": 158034,
-     "orden": 1014
+     "orden": 1008
     },
     {
      "id": "4558a30f-a11f-4914-9565-a133fa66c9c6",
@@ -3191,7 +3191,7 @@
      "sha": "01900d951adae198f31facc4a19a6a537c50e426",
      "type": "image/webp",
      "size": 68476,
-     "orden": 1015
+     "orden": 1009
     },
     {
      "id": "32f4dedf-e77e-4395-81e2-6e02667b3ac3",
@@ -3206,7 +3206,7 @@
      "sha": "09c6de9b0acff3bc47e89fc4f39f171f5df54294",
      "type": "image/webp",
      "size": 85912,
-     "orden": 1016
+     "orden": 1010
     },
     {
      "id": "dcc83afd-a14e-433f-b3d5-a3581c69baca",
@@ -3221,7 +3221,7 @@
      "sha": "83817aeef0837772373289e49e1899493d3fcef4",
      "type": "image/webp",
      "size": 54800,
-     "orden": 1017
+     "orden": 1011
     },
     {
      "id": "5c65bba2-308d-440e-9bc2-a52481ad9db0",
@@ -3236,7 +3236,7 @@
      "sha": "89862c661a9008789a98b6f14d69f6566f5b0db5",
      "type": "image/webp",
      "size": 130840,
-     "orden": 1018
+     "orden": 1012
     },
     {
      "id": "4d3acb42-ba3a-4e34-a9ab-293a0f060eff",
@@ -3251,7 +3251,7 @@
      "sha": "ec16d59812292ae5a524861935435502d24ba16a",
      "type": "image/webp",
      "size": 116530,
-     "orden": 1019
+     "orden": 1013
     },
     {
      "id": "9c1a85f4-241f-46cf-ab9e-aa9c64700238",
@@ -3266,7 +3266,8 @@
      "sha": "e3a446c6c35d2403135adc116e07be2ffd7cda15",
      "type": "image/webp",
      "size": 160088,
-     "orden": 0
+     "orden": 1014,
+     "extra": true
     },
     {
      "id": "fe1c719a-8cd4-4bfe-89a9-30a9de200818",
@@ -3281,7 +3282,8 @@
      "sha": "25c5d7a363552390709a0894f16098e6237ecca4",
      "type": "image/webp",
      "size": 68512,
-     "orden": 1
+     "orden": 1015,
+     "extra": true
     },
     {
      "id": "d8202cc4-ddda-4744-bbdb-e6a5eb8a5957",
@@ -3296,7 +3298,8 @@
      "sha": "dacb74c8bf838aeb043686f286b6d336191f1648",
      "type": "image/webp",
      "size": 85400,
-     "orden": 2
+     "orden": 1016,
+     "extra": true
     },
     {
      "id": "98ed623f-1567-421a-b721-b68807fa00ac",
@@ -3311,7 +3314,8 @@
      "sha": "ef9a19b09a1580cfea75c137b86e8da28b1236f8",
      "type": "image/webp",
      "size": 54568,
-     "orden": 3
+     "orden": 1017,
+     "extra": true
     },
     {
      "id": "922e1d9e-4414-457c-b62f-a0332e1d5efe",
@@ -3326,7 +3330,8 @@
      "sha": "6b9b01b796477b9565138ef08005b6c63220a732",
      "type": "image/webp",
      "size": 116628,
-     "orden": 4
+     "orden": 1018,
+     "extra": true
     },
     {
      "id": "48680bda-7523-4405-bed4-a817655fbc3c",
@@ -3341,7 +3346,8 @@
      "sha": "d46d7d1718e39c81da2bb95a3b0101049bc6579a",
      "type": "image/webp",
      "size": 130518,
-     "orden": 5
+     "orden": 1019,
+     "extra": true
     },
     {
      "id": "6385396c-871a-47fa-b15d-da6fe481e261",
@@ -3359,11 +3365,11 @@
      "sha": "4874ee9ffa27bc75372b0236bc66a7f5701420db",
      "type": "video/mp4",
      "size": 8345226,
-     "orden": 6
+     "orden": 0
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T13:55:26.224Z",
+   "updatedAt": "2026-11-27T13:55:46.103Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
@@ -11757,6 +11763,16 @@
  ],
  "activity": [
   {
+   "id": "8f24b9bd-4332-4058-8df6-ae6fcc2987a6",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-27T13:55:46.104Z"
+  },
+  {
    "id": "85de06c3-556d-4a69-a0e3-225604efdd5e",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14034,6 +14050,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "41fdb842-359f-43e0-8637-8677c8138c9b",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T13:55:46.104Z"
+  },
+  {
+   "id": "8129e9ee-35d9-4539-a124-c79a85d3bcc3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T13:55:46.104Z"
+  },
   {
    "id": "eb758f1b-49d9-43e4-b6e7-b7c49172d34c",
    "to": "maca",

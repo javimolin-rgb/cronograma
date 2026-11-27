@@ -3036,7 +3036,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T17:51:49.647Z",
+   "updatedAt": "2026-11-27T17:54:56.436Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -8604,6 +8604,16 @@
  ],
  "comments": [
   {
+   "id": "ee49be12-37ff-40ff-827a-7fc43d05bbd6",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  sustentable , de piedrecitas.",
+   "fileIds": [
+    "b7745b29-a32c-4d2c-a0cf-ca68cd11297a"
+   ],
+   "createdAt": "2026-11-27T17:54:56.437Z"
+  },
+  {
    "id": "aff251f6-dcbc-428b-a083-418ae610f1b8",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "maca",
@@ -11934,6 +11944,16 @@
  ],
  "activity": [
   {
+   "id": "e458be02-9d42-4173-b8cb-3982a9fb697f",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T17:54:56.438Z"
+  },
+  {
    "id": "4ea08af7-570c-4b2b-86b1-92c2c8f751cf",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14383,6 +14403,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "1de3241e-34c6-489a-99a0-9e9a8bea4ab6",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "supervision",
+   "text": "comentó en “Casa Maitén”: Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  s…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  s…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:54:56.438Z"
+  },
+  {
+   "id": "8d8d9823-4cd1-4bfd-8000-598d547fc17e",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  s…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  s…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:54:56.438Z"
+  },
   {
    "id": "f7173897-f1d2-41f2-824d-515b2a54e967",
    "to": "javi",
@@ -20587,8 +20637,8 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T17:51:49.650Z",
-   "hasta": "2026-11-27T17:51:49.647Z",
+   "at": "2026-11-27T17:54:56.437Z",
+   "hasta": "2026-11-27T17:54:56.436Z",
    "que": "comentario"
   },
   {

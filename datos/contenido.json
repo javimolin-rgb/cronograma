@@ -14312,14 +14312,15 @@
    "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
    "type": "zumbido",
    "text": "te mandó un zumbido en “¿Cuánto demora construir tu casa?”: está esperando tu respuesta",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "¿Cuánto demora construir tu casa?",
    "body": "Javi está esperando tu respuesta",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
-   "createdAt": "2026-11-27T16:49:21.324Z"
+   "createdAt": "2026-11-27T16:49:21.324Z",
+   "readAt": "2026-11-27T16:51:08.522Z"
   },
   {
    "id": "832f2acf-a6f1-4da1-bd70-5584b90bc387",
@@ -20384,6 +20385,14 @@
  ],
  "carpetas": [],
  "vistas": [
+  {
+   "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "person": "maca",
+   "at": "2026-11-27T16:51:08.522Z",
+   "hasta": "2026-11-27T16:49:22.209Z",
+   "que": "pieza"
+  },
   {
    "id": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4|maca",
    "postId": "b7258377-7bcd-4a03-b7d4-ed25bf0220e4",

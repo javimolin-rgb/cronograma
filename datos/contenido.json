@@ -3036,8 +3036,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T17:56:37.768Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-27T17:59:04.208Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-27T17:56:37.768Z",
@@ -8604,6 +8604,14 @@
  ],
  "comments": [
   {
+   "id": "83363b47-d275-416a-9546-ea4f61fcb375",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona. \nAhhh!!! Y porfa los marcos de las ventanas negras",
+   "fileIds": [],
+   "createdAt": "2026-11-27T17:59:04.212Z"
+  },
+  {
    "id": "ee49be12-37ff-40ff-827a-7fc43d05bbd6",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "maca",
@@ -11944,6 +11952,16 @@
  ],
  "activity": [
   {
+   "id": "4fe989c6-4d7b-4e91-82aa-89ccd4a25729",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T17:59:04.216Z"
+  },
+  {
    "id": "4425e7ef-188a-4993-8310-980bc1ff1dd7",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -14442,6 +14460,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "48a093e5-ed5d-4c7d-a911-e36a6ba8ab96",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "supervision",
+   "text": "comentó en “Casa Maitén”: Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona.…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona.…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:59:04.218Z"
+  },
+  {
+   "id": "0fc97a6d-cea4-4dfa-9e6c-09cf6704d1d6",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona.…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona.…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:59:04.217Z"
+  },
   {
    "id": "9d69e326-76b5-4653-bb7c-7b6d1e37eca0",
    "to": "maca",
@@ -20757,9 +20805,9 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T17:57:27.908Z",
-   "hasta": "2026-11-27T17:56:37.768Z",
-   "que": "pieza"
+   "at": "2026-11-27T17:59:04.210Z",
+   "hasta": "2026-11-27T17:59:04.208Z",
+   "que": "comentario"
   },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",

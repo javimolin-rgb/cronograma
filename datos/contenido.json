@@ -14344,13 +14344,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "review",
    "text": "subió 1 archivo en “Casa Roble” para revisar: Video con cambios subido",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi te pide revisar: Video con cambios subido",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T16:48:35.334Z"
+   "createdAt": "2026-11-27T16:48:35.334Z",
+   "readAt": "2026-11-27T16:49:45.754Z"
   },
   {
    "id": "01c50b40-8b97-495d-a2e6-fff3f862e075",
@@ -14374,13 +14375,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T16:48:35.334Z"
+   "createdAt": "2026-11-27T16:48:35.334Z",
+   "readAt": "2026-11-27T16:49:45.755Z"
   },
   {
    "id": "97e0ae49-2706-464a-85f9-48cc904c746e",
@@ -14404,13 +14406,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "status",
    "text": "movió “Casa Roble” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T16:48:35.333Z"
+   "createdAt": "2026-11-27T16:48:35.333Z",
+   "readAt": "2026-11-27T16:49:45.755Z"
   },
   {
    "id": "195438a6-2cf5-43c9-beb7-f2ae3f72362a",
@@ -14434,13 +14437,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "status",
    "text": "movió “Casa Roble” a Cambios",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi la movió a Cambios",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T16:17:25.599Z"
+   "createdAt": "2026-11-27T16:17:25.599Z",
+   "readAt": "2026-11-27T16:49:45.755Z"
   },
   {
    "id": "fb8a1962-5d4d-45bb-871d-0c5d880182fc",
@@ -20552,9 +20556,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-27T15:50:59.535Z",
-   "hasta": "2026-11-27T15:50:59.530Z",
-   "que": "comentario"
+   "at": "2026-11-27T16:49:45.755Z",
+   "hasta": "2026-11-27T16:48:35.333Z",
+   "que": "pieza"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

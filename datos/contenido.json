@@ -14274,13 +14274,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "review",
    "text": "subió 6 archivos en “Casa Maitén” para revisar: Vistas del render subidas",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Javi te pide revisar: Vistas del render subidas",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T16:15:24.983Z"
+   "createdAt": "2026-11-27T16:15:24.983Z",
+   "readAt": "2026-11-27T16:17:25.872Z"
   },
   {
    "id": "15272936-7d7a-450d-a6a8-8bbe78afb86a",
@@ -14304,13 +14305,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "tagged",
    "text": "te etiquetó en “Casa Maitén”",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Javi te etiquetó como responsable",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T16:15:24.982Z"
+   "createdAt": "2026-11-27T16:15:24.982Z",
+   "readAt": "2026-11-27T16:17:25.875Z"
   },
   {
    "id": "e6fc7a1f-5a47-42b0-9489-f166f4934e62",
@@ -14334,13 +14336,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "status",
    "text": "movió “Aire nuevo sin abrir la ventana” a Publicado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi la movió a Publicado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-27T16:14:44.003Z"
+   "createdAt": "2026-11-27T16:14:44.003Z",
+   "readAt": "2026-11-27T16:17:25.875Z"
   },
   {
    "id": "ad61cfd4-af01-4689-97e6-fc0d5e475aa3",

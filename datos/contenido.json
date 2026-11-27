@@ -11896,6 +11896,16 @@
  ],
  "activity": [
   {
+   "id": "5ea06ac4-1192-4c1c-a311-2ec38dbabb8d",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "postTitle": "¿Cuánto demora construir tu casa?",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Flavio y Maca: está esperando tu respuesta",
+   "meta": null,
+   "createdAt": "2026-11-27T16:49:21.325Z"
+  },
+  {
    "id": "5c43d835-2edf-4cd3-bd75-f50b940359f5",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14295,6 +14305,38 @@
   }
  ],
  "notifications": [
+  {
+   "id": "88f55ef8-8a1e-43e7-a0ea-93580ab120e6",
+   "to": "maca",
+   "from": "javi",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “¿Cuánto demora construir tu casa?”: está esperando tu respuesta",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "¿Cuánto demora construir tu casa?",
+   "body": "Javi está esperando tu respuesta",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "createdAt": "2026-11-27T16:49:21.324Z"
+  },
+  {
+   "id": "832f2acf-a6f1-4da1-bd70-5584b90bc387",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “¿Cuánto demora construir tu casa?”: está esperando tu respuesta",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "¿Cuánto demora construir tu casa?",
+   "body": "Javi está esperando tu respuesta",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
+   "createdAt": "2026-11-27T16:49:21.324Z"
+  },
   {
    "id": "23a00ac6-d001-4697-8d07-14e891d4bfdd",
    "to": "maca",

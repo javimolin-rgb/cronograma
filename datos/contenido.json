@@ -3036,7 +3036,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T17:59:04.208Z",
+   "updatedAt": "2026-11-27T19:36:04.401Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -8604,6 +8604,14 @@
  ],
  "comments": [
   {
+   "id": "dc1c8ff8-595a-415a-a99e-c7ae2ce22f6b",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "@Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tiene que estar más atrás, no tan encima del acantilado. Los ventanales con marco negro y si se puede ponerle algo de “ ambiente “ al terreno donde está dispuesta la casa. Muchas gracias. \nEl resto todo súper!",
+   "fileIds": [],
+   "createdAt": "2026-11-27T19:36:04.407Z"
+  },
+  {
    "id": "83363b47-d275-416a-9546-ea4f61fcb375",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "maca",
@@ -11944,6 +11952,16 @@
  ],
  "activity": [
   {
+   "id": "420ac010-8c88-471f-b89b-95e073828a5a",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T19:36:04.412Z"
+  },
+  {
    "id": "4fe989c6-4d7b-4e91-82aa-89ccd4a25729",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14299,6 +14317,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0f689d68-f768-43dd-b84a-5a3f4c7a99c1",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: @Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tien…",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: @Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tien…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T19:36:04.414Z"
+  },
+  {
+   "id": "eb4047e1-cee3-4827-87e2-9768afb2837e",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "mention",
+   "text": "te mencionó en “Casa Maitén”: @Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tien…",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca te mencionó: @Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tien…",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T19:36:04.413Z"
+  },
   {
    "id": "48a093e5-ed5d-4c7d-a911-e36a6ba8ab96",
    "to": "javi",
@@ -20216,9 +20264,9 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T19:31:08.376Z",
-   "hasta": "2026-11-27T17:59:04.208Z",
-   "que": "pieza"
+   "at": "2026-11-27T19:36:04.407Z",
+   "hasta": "2026-11-27T19:36:04.401Z",
+   "que": "comentario"
   },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",

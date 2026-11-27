@@ -14072,13 +14072,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T13:55:46.104Z"
+   "createdAt": "2026-11-27T13:55:46.104Z",
+   "readAt": "2026-11-27T15:43:18.335Z"
   },
   {
    "id": "eb758f1b-49d9-43e4-b6e7-b7c49172d34c",
@@ -14087,13 +14088,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "review",
    "text": "subió 1 archivo en “Casa Roble” para revisar: Video subido",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Javi te pide revisar: Video subido",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T13:55:26.229Z"
+   "createdAt": "2026-11-27T13:55:26.229Z",
+   "readAt": "2026-11-27T15:43:18.337Z"
   },
   {
    "id": "ad9bdf5f-6c99-45f3-b40c-af41bfef1305",
@@ -14132,13 +14134,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "update",
    "text": "editó “Casa Roble” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T13:55:26.228Z"
+   "createdAt": "2026-11-27T13:55:26.228Z",
+   "readAt": "2026-11-27T15:43:18.337Z"
   },
   {
    "id": "cac0ee21-498a-4381-b6ec-50658c863293",
@@ -14162,13 +14165,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "status",
    "text": "movió “Casa Roble” a En revisión",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi la movió a En revisión",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T13:55:26.226Z"
+   "createdAt": "2026-11-27T13:55:26.226Z",
+   "readAt": "2026-11-27T15:43:18.337Z"
   },
   {
    "id": "4d3a9d02-e80e-44e7-8d66-2c64b39da98d",
@@ -14177,13 +14181,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "update",
    "text": "editó “Aire nuevo sin abrir la ventana” (hora)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi editó hora",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-27T13:29:40.441Z"
+   "createdAt": "2026-11-27T13:29:40.441Z",
+   "readAt": "2026-11-27T15:43:18.337Z"
   },
   {
    "id": "202d55cc-38d4-4186-b15f-74e68bf5e6d3",
@@ -14192,13 +14197,14 @@
    "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
    "type": "status",
    "text": "movió “Aire nuevo sin abrir la ventana” a Programado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Aire nuevo sin abrir la ventana",
    "body": "Javi la movió a Programado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
-   "createdAt": "2026-11-27T13:29:40.440Z"
+   "createdAt": "2026-11-27T13:29:40.440Z",
+   "readAt": "2026-11-27T15:43:18.337Z"
   },
   {
    "id": "e2a18393-31be-4dc6-b6e2-0ce6d4bae44c",

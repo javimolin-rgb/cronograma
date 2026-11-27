@@ -3036,7 +3036,7 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T17:47:28.232Z",
+   "updatedAt": "2026-11-27T17:49:13.236Z",
    "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
@@ -8604,6 +8604,16 @@
  ],
  "comments": [
   {
+   "id": "a4abbe5a-659d-4e9c-b3b5-95d3eefd8c73",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "Achicar un poco las rocas que se ven demasiado falsas .",
+   "fileIds": [
+    "a3cffec5-8d38-418b-8d7b-853fb9d3707a"
+   ],
+   "createdAt": "2026-11-27T17:49:13.238Z"
+  },
+  {
    "id": "91ab903e-32d9-4110-99ad-72e51f2119e0",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "maca",
@@ -11914,6 +11924,16 @@
  ],
  "activity": [
   {
+   "id": "14c543cc-6e0d-48fd-96bd-118412650e1b",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T17:49:13.238Z"
+  },
+  {
    "id": "c8a9c940-9313-4c38-b502-f65fd4e916c8",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14343,6 +14363,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "50d3aa89-81ed-47cd-b314-ca6dbc4fbd62",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "supervision",
+   "text": "comentó en “Casa Maitén”: Achicar un poco las rocas que se ven demasiado falsas .",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Achicar un poco las rocas que se ven demasiado falsas .",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:49:13.239Z"
+  },
+  {
+   "id": "6f38f104-cfd2-41b5-8381-0af0a18f5101",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: Achicar un poco las rocas que se ven demasiado falsas .",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Achicar un poco las rocas que se ven demasiado falsas .",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:49:13.238Z"
+  },
   {
    "id": "cffc171c-a6c1-49b0-b00f-a53bfd2bf555",
    "to": "javi",
@@ -20487,8 +20537,8 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T17:47:28.239Z",
-   "hasta": "2026-11-27T17:47:28.232Z",
+   "at": "2026-11-27T17:49:13.238Z",
+   "hasta": "2026-11-27T17:49:13.236Z",
    "que": "comentario"
   },
   {

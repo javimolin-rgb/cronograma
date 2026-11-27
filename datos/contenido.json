@@ -3151,7 +3151,7 @@
    "date": "2026-12-02",
    "inicio": "2026-11-19",
    "format": "story",
-   "status": "cambios",
+   "status": "espera",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -3179,7 +3179,7 @@
      "sha": "6f6c69e11cb2ad37f1dbbf0fc16ada33569b56d5",
      "type": "image/webp",
      "size": 154412,
-     "orden": 1002
+     "orden": 1009
     },
     {
      "id": "f701dcc7-ee63-497e-8d4c-60e3c3a90ddd",
@@ -3194,7 +3194,7 @@
      "sha": "02c747b26ba4cd876264acb4b6a5d9e073001ae7",
      "type": "image/webp",
      "size": 84634,
-     "orden": 1003
+     "orden": 1010
     },
     {
      "id": "df4fe91d-bf14-4a4f-ae77-c84b61273344",
@@ -3209,7 +3209,7 @@
      "sha": "a8c03a5ce12f417d383f1a2a9d73dd666792ab0b",
      "type": "image/webp",
      "size": 55758,
-     "orden": 1004
+     "orden": 1011
     },
     {
      "id": "44243ace-147a-4b34-ba93-30bfa7cac4b6",
@@ -3224,7 +3224,7 @@
      "sha": "d62ad59138a12cee8a24d8fb9bf2e7e6df77f7cd",
      "type": "image/webp",
      "size": 127148,
-     "orden": 1005
+     "orden": 1012
     },
     {
      "id": "c3659b2a-ef5a-495f-83c6-e1bde03a1a83",
@@ -3239,7 +3239,7 @@
      "sha": "8915c4ba62da16e814d3a6e5b4d56eb6e703b8ee",
      "type": "image/webp",
      "size": 69164,
-     "orden": 1006
+     "orden": 1013
     },
     {
      "id": "97393239-ce6d-4a4b-ac9f-a66f024c6f2b",
@@ -3254,7 +3254,7 @@
      "sha": "ffa3c6adae1485ae3a049efda2159881d1f56978",
      "type": "image/webp",
      "size": 116910,
-     "orden": 1007
+     "orden": 1014
     },
     {
      "id": "77cc5244-f9da-4417-b026-395998c193bb",
@@ -3269,7 +3269,7 @@
      "sha": "9c3c5f4ad1af23c798097cd8fc78d40bcf185b67",
      "type": "image/webp",
      "size": 158034,
-     "orden": 1008
+     "orden": 1015
     },
     {
      "id": "4558a30f-a11f-4914-9565-a133fa66c9c6",
@@ -3284,7 +3284,7 @@
      "sha": "01900d951adae198f31facc4a19a6a537c50e426",
      "type": "image/webp",
      "size": 68476,
-     "orden": 1009
+     "orden": 1016
     },
     {
      "id": "32f4dedf-e77e-4395-81e2-6e02667b3ac3",
@@ -3299,7 +3299,7 @@
      "sha": "09c6de9b0acff3bc47e89fc4f39f171f5df54294",
      "type": "image/webp",
      "size": 85912,
-     "orden": 1010
+     "orden": 1017
     },
     {
      "id": "dcc83afd-a14e-433f-b3d5-a3581c69baca",
@@ -3314,7 +3314,7 @@
      "sha": "83817aeef0837772373289e49e1899493d3fcef4",
      "type": "image/webp",
      "size": 54800,
-     "orden": 1011
+     "orden": 1018
     },
     {
      "id": "5c65bba2-308d-440e-9bc2-a52481ad9db0",
@@ -3329,7 +3329,7 @@
      "sha": "89862c661a9008789a98b6f14d69f6566f5b0db5",
      "type": "image/webp",
      "size": 130840,
-     "orden": 1012
+     "orden": 1019
     },
     {
      "id": "4d3acb42-ba3a-4e34-a9ab-293a0f060eff",
@@ -3344,7 +3344,7 @@
      "sha": "ec16d59812292ae5a524861935435502d24ba16a",
      "type": "image/webp",
      "size": 116530,
-     "orden": 1013
+     "orden": 1020
     },
     {
      "id": "9c1a85f4-241f-46cf-ab9e-aa9c64700238",
@@ -3359,7 +3359,7 @@
      "sha": "e3a446c6c35d2403135adc116e07be2ffd7cda15",
      "type": "image/webp",
      "size": 160088,
-     "orden": 1014,
+     "orden": 1,
      "extra": true
     },
     {
@@ -3375,7 +3375,7 @@
      "sha": "25c5d7a363552390709a0894f16098e6237ecca4",
      "type": "image/webp",
      "size": 68512,
-     "orden": 1015,
+     "orden": 2,
      "extra": true
     },
     {
@@ -3391,7 +3391,7 @@
      "sha": "dacb74c8bf838aeb043686f286b6d336191f1648",
      "type": "image/webp",
      "size": 85400,
-     "orden": 1016,
+     "orden": 3,
      "extra": true
     },
     {
@@ -3407,7 +3407,7 @@
      "sha": "ef9a19b09a1580cfea75c137b86e8da28b1236f8",
      "type": "image/webp",
      "size": 54568,
-     "orden": 1017,
+     "orden": 4,
      "extra": true
     },
     {
@@ -3423,7 +3423,7 @@
      "sha": "6b9b01b796477b9565138ef08005b6c63220a732",
      "type": "image/webp",
      "size": 116628,
-     "orden": 1018,
+     "orden": 5,
      "extra": true
     },
     {
@@ -3439,7 +3439,7 @@
      "sha": "d46d7d1718e39c81da2bb95a3b0101049bc6579a",
      "type": "image/webp",
      "size": 130518,
-     "orden": 1019,
+     "orden": 6,
      "extra": true
     },
     {
@@ -3459,14 +3459,32 @@
      "type": "video/mp4",
      "size": 8345226,
      "orden": 0
+    },
+    {
+     "id": "3a2453df-772c-40fd-8637-4c27b91b5a10",
+     "by": "javi",
+     "at": "2026-11-27T16:48:24.219Z",
+     "base": "reel_casa_roble",
+     "version": 2,
+     "shaOrigen": "6abea66956d7952c93bdc19219a94a79d4e473d8",
+     "dur": 50.125,
+     "w": 1080,
+     "h": 1920,
+     "name": "reel_casa_roble-v2.mp4",
+     "path": "archivos/1.-modelos-3d/reel_casa_roble-v2.mp4",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/reel_casa_roble-v2.mp4",
+     "sha": "6abea66956d7952c93bdc19219a94a79d4e473d8",
+     "type": "video/mp4",
+     "size": 8357969,
+     "orden": 7
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T16:17:25.598Z",
+   "updatedAt": "2026-11-27T16:48:35.333Z",
    "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-27T16:17:25.598Z",
+   "statusChangedAt": "2026-11-27T16:48:35.333Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -8586,6 +8604,13 @@
  ],
  "comments": [
   {
+   "id": "618e3286-cf29-41b1-ade5-280d0a25aaf9",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "javi",
+   "text": "Video con cambios subido",
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
    "id": "09252251-3bac-4d44-911b-e7fbc2f160ba",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "javi",
@@ -11871,6 +11896,39 @@
  ],
  "activity": [
   {
+   "id": "5c43d835-2edf-4cd3-bd75-f50b940359f5",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Maca",
+   "meta": null,
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
+   "id": "18c0f077-6777-46e2-b9c8-b479d1847577",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
+   "id": "7299b7d6-904e-4215-aeb7-713ba65b1429",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Cambios a Esperando aprobación",
+   "meta": {
+    "from": "cambios",
+    "to": "espera"
+   },
+   "createdAt": "2026-11-27T16:48:35.333Z"
+  },
+  {
    "id": "dccdb1d0-ec49-4e13-b02b-f168fa721254",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14237,6 +14295,81 @@
   }
  ],
  "notifications": [
+  {
+   "id": "23a00ac6-d001-4697-8d07-14e891d4bfdd",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "review",
+   "text": "subió 1 archivo en “Casa Roble” para revisar: Video con cambios subido",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi te pide revisar: Video con cambios subido",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
+   "id": "01c50b40-8b97-495d-a2e6-fff3f862e075",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
+   "id": "b542877a-b491-4781-af65-73fba57463f2",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "update",
+   "text": "editó “Casa Roble” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
+   "id": "97e0ae49-2706-464a-85f9-48cc904c746e",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "status",
+   "text": "movió “Casa Roble” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:48:35.334Z"
+  },
+  {
+   "id": "ff5af200-0e89-43f9-8559-aea1c7e9d92d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "status",
+   "text": "movió “Casa Roble” a Esperando aprobación",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi la movió a Esperando aprobación",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:48:35.333Z"
+  },
   {
    "id": "195438a6-2cf5-43c9-beb7-f2ae3f72362a",
    "to": "flavio",

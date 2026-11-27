@@ -14494,13 +14494,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "status",
    "text": "movió “Casa Maitén” a Cambios",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Maitén",
    "body": "Javi la movió a Cambios",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T17:56:37.769Z"
+   "createdAt": "2026-11-27T17:56:37.769Z",
+   "readAt": "2026-11-27T17:57:27.905Z"
   },
   {
    "id": "4ab2f6ae-dbce-4add-bc98-6f6a7fc28c64",
@@ -20756,9 +20757,9 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T17:54:56.437Z",
-   "hasta": "2026-11-27T17:54:56.436Z",
-   "que": "comentario"
+   "at": "2026-11-27T17:57:27.908Z",
+   "hasta": "2026-11-27T17:56:37.768Z",
+   "que": "pieza"
   },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",

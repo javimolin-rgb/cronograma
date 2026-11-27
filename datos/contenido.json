@@ -14410,13 +14410,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  s…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Darle más ambiente alrededor de la casa, algo de vegetación, o tal vez jardín  s…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T17:54:56.438Z"
+   "createdAt": "2026-11-27T17:54:56.438Z",
+   "readAt": "2026-11-27T17:55:51.425Z"
   },
   {
    "id": "8d8d9823-4cd1-4bfd-8000-598d547fc17e",
@@ -14440,13 +14441,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Está al igual que las que vienen poner la casa un poco más atrás porque se ve co…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Está al igual que las que vienen poner la casa un poco más atrás porque se ve co…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T17:51:49.652Z"
+   "createdAt": "2026-11-27T17:51:49.652Z",
+   "readAt": "2026-11-27T17:55:51.426Z"
   },
   {
    "id": "f8f54bf6-3a59-407a-b4b4-5fad7914df20",
@@ -14470,13 +14472,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Achicar un poco las rocas que se ven demasiado falsas .",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Achicar un poco las rocas que se ven demasiado falsas .",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T17:49:13.239Z"
+   "createdAt": "2026-11-27T17:49:13.239Z",
+   "readAt": "2026-11-27T17:55:51.426Z"
   },
   {
    "id": "6f38f104-cfd2-41b5-8381-0af0a18f5101",
@@ -14500,13 +14503,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T17:47:28.245Z"
+   "createdAt": "2026-11-27T17:47:28.245Z",
+   "readAt": "2026-11-27T17:55:51.426Z"
   },
   {
    "id": "6ca2aff0-6ba3-4ae5-9076-cf03302ee09a",
@@ -14545,13 +14549,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "mention",
    "text": "te mencionó en “Casa Roble”: @Javi!!! Me gusta ! Ok",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca te mencionó: @Javi!!! Me gusta ! Ok",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T16:54:29.474Z"
+   "createdAt": "2026-11-27T16:54:29.474Z",
+   "readAt": "2026-11-27T17:55:51.426Z"
   },
   {
    "id": "88f55ef8-8a1e-43e7-a0ea-93580ab120e6",

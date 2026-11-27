@@ -117,6 +117,14 @@
    "text": "Revisión completa, página por página: banners con el mismo entramado, fotos reales en vez de renders repetidos y la página de Promociones oculta hasta tener qué comunicar. Publicar después de esos ajustes.",
    "createdAt": "2026-09-23T15:12:00.000Z",
    "via": "imp"
+  },
+  {
+   "id": "e-cotizador-correos-i1",
+   "postId": "e-cotizador-correos",
+   "author": "flavio",
+   "text": "Dejar correos y teléfono predeterminados en el cotizador, y mostrar el valor neto y el total.",
+   "createdAt": "2026-09-28T14:00:00.000Z",
+   "via": "imp"
   }
  ],
  "activity": [

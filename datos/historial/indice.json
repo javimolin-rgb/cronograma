@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-26T18:28:55.159Z",
+ "actualizado": "2026-11-27T18:15:55.100Z",
  "meses": [
   "2026-08",
   "2026-09",
@@ -7,9 +7,9 @@
   "2026-11"
  ],
  "total": {
-  "comments": 18,
-  "activity": 530,
-  "notifications": 680
+  "comments": 19,
+  "activity": 545,
+  "notifications": 708
  },
  "piezas": {
   "e-c1": {
@@ -42,6 +42,11 @@
    "activity": 2,
    "notifications": 0
   },
+  "e-cotizador-correos": {
+   "comments": 1,
+   "activity": 2,
+   "notifications": 0
+  },
   "e-diagnostico": {
    "comments": 0,
    "activity": 2,
@@ -58,11 +63,6 @@
    "notifications": 0
   },
   "e-web-textos": {
-   "comments": 0,
-   "activity": 2,
-   "notifications": 0
-  },
-  "e-cotizador-correos": {
    "comments": 0,
    "activity": 2,
    "notifications": 0
@@ -179,13 +179,13 @@
   },
   "03b2da82-2617-417b-8081-df3dadaefb31": {
    "comments": 0,
-   "activity": 101,
-   "notifications": 169
+   "activity": 107,
+   "notifications": 181
   },
   "804906ab-7f99-4598-afc6-ef726afa4e20": {
    "comments": 0,
-   "activity": 20,
-   "notifications": 28
+   "activity": 23,
+   "notifications": 34
   },
   "e2e69c7f-c96f-41d1-9f29-6f57e2be4125": {
    "comments": 0,
@@ -239,8 +239,8 @@
   },
   "c14e3171-4bf1-4be7-a2db-acec3a3fce60": {
    "comments": 0,
-   "activity": 29,
-   "notifications": 37
+   "activity": 35,
+   "notifications": 47
   },
   "30efd072-8377-4a3a-96f6-e2a60dab643d": {
    "comments": 0,

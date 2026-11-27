@@ -14339,13 +14339,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "mention",
    "text": "te mencionó en “Casa Maitén”: @Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tien…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca te mencionó: @Javi, hablé recién con Flavio ( está en Chiloé) y tb concuerda que la casa tien…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T19:36:04.413Z"
+   "createdAt": "2026-11-27T19:36:04.413Z",
+   "readAt": "2026-11-27T19:58:59.614Z"
   },
   {
    "id": "48a093e5-ed5d-4c7d-a911-e36a6ba8ab96",

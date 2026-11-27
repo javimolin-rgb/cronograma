@@ -3480,8 +3480,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T16:48:35.333Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-27T16:54:29.464Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-27T16:48:35.333Z",
@@ -8604,6 +8604,14 @@
  ],
  "comments": [
   {
+   "id": "eb863067-dc09-441c-a745-119aa278c3ca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "author": "maca",
+   "text": "@Javi!!! Me gusta ! Ok",
+   "fileIds": [],
+   "createdAt": "2026-11-27T16:54:29.470Z"
+  },
+  {
    "id": "618e3286-cf29-41b1-ade5-280d0a25aaf9",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "javi",
@@ -11896,6 +11904,16 @@
  ],
  "activity": [
   {
+   "id": "9cf95332-1353-4684-8571-4b4cf0600c0d",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T16:54:29.474Z"
+  },
+  {
    "id": "5ea06ac4-1192-4c1c-a311-2ec38dbabb8d",
    "postId": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7",
    "postTitle": "¿Cuánto demora construir tu casa?",
@@ -14305,6 +14323,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "ced3873c-b8e5-41b9-afa2-094a767a1553",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "comment",
+   "text": "comentó en “Casa Roble”: @Javi!!! Me gusta ! Ok",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Maca comentó: @Javi!!! Me gusta ! Ok",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:54:29.475Z"
+  },
+  {
+   "id": "00c4bf65-15f4-4629-beca-9f54547eb7cc",
+   "to": "javi",
+   "from": "maca",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "mention",
+   "text": "te mencionó en “Casa Roble”: @Javi!!! Me gusta ! Ok",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Roble",
+   "body": "Maca te mencionó: @Javi!!! Me gusta ! Ok",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T16:54:29.474Z"
+  },
   {
    "id": "88f55ef8-8a1e-43e7-a0ea-93580ab120e6",
    "to": "maca",
@@ -20565,9 +20613,9 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-27T16:49:45.755Z",
-   "hasta": "2026-11-27T16:48:35.333Z",
-   "que": "pieza"
+   "at": "2026-11-27T16:54:29.468Z",
+   "hasta": "2026-11-27T16:54:29.464Z",
+   "que": "comentario"
   },
   {
    "id": "2fa98f13-69ae-40b5-9cea-3d63c396c517|maca",

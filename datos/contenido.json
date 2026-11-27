@@ -3036,8 +3036,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T16:15:24.981Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-27T17:47:28.232Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-27T16:15:24.981Z",
@@ -8604,6 +8604,16 @@
  ],
  "comments": [
   {
+   "id": "91ab903e-32d9-4110-99ad-72e51f2119e0",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
+   "fileIds": [
+    "ad734b57-5dfd-4f03-9449-34e985b75762"
+   ],
+   "createdAt": "2026-11-27T17:47:28.240Z"
+  },
+  {
    "id": "eb863067-dc09-441c-a745-119aa278c3ca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "author": "maca",
@@ -11904,6 +11914,16 @@
  ],
  "activity": [
   {
+   "id": "c8a9c940-9313-4c38-b502-f65fd4e916c8",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-27T17:47:28.243Z"
+  },
+  {
    "id": "9cf95332-1353-4684-8571-4b4cf0600c0d",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "postTitle": "Casa Roble",
@@ -14323,6 +14343,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "cffc171c-a6c1-49b0-b00f-a53bfd2bf555",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "supervision",
+   "text": "comentó en “Casa Maitén”: Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:47:28.245Z"
+  },
+  {
+   "id": "6ca2aff0-6ba3-4ae5-9076-cf03302ee09a",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Se ve una sombra clara extraña en el alero, pero tal vez no se nota en el reel.",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-27T17:47:28.244Z"
+  },
   {
    "id": "ced3873c-b8e5-41b9-afa2-094a767a1553",
    "to": "flavio",
@@ -20437,9 +20487,9 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T17:42:40.588Z",
-   "hasta": "2026-11-27T16:15:24.981Z",
-   "que": "pieza"
+   "at": "2026-11-27T17:47:28.239Z",
+   "hasta": "2026-11-27T17:47:28.232Z",
+   "que": "comentario"
   },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",

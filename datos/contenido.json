@@ -3151,7 +3151,7 @@
    "date": "2026-12-02",
    "inicio": "2026-11-19",
    "format": "story",
-   "status": "espera",
+   "status": "aprobado",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -3480,11 +3480,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-27T16:54:29.464Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-27T17:56:48.747Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:01.849Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-27T16:48:35.333Z",
+   "statusChangedAt": "2026-11-27T17:56:48.747Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -11944,6 +11944,19 @@
  ],
  "activity": [
   {
+   "id": "9547ad24-b479-4805-9bc0-0b5b9ffec8d9",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "postTitle": "Casa Roble",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Esperando aprobación a Aprobado",
+   "meta": {
+    "from": "espera",
+    "to": "aprobado"
+   },
+   "createdAt": "2026-11-27T17:56:48.748Z"
+  },
+  {
    "id": "116775a9-5c76-4ade-a8ff-398369acfa3b",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14416,6 +14429,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8c14e824-fcc3-4326-ba56-4f40ae39d00f",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "status",
+   "text": "movió “Casa Roble” a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi la movió a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T17:56:48.749Z"
+  },
+  {
+   "id": "6162fc53-4a0a-4d42-9c7b-9f1b302db8ba",
+   "to": "maca",
+   "from": "javi",
+   "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "type": "status",
+   "text": "movió “Casa Roble” a Aprobado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Roble",
+   "body": "Javi la movió a Aprobado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
+   "createdAt": "2026-11-27T17:56:48.749Z"
+  },
   {
    "id": "b805b5f9-9e38-4aa3-9614-b185014c4c5f",
    "to": "maca",

@@ -1171,11 +1171,11 @@
    "guionNotas": [],
    "spotify": "",
    "campaign": "2. Carruseles informativos",
-   "time": "",
+   "time": "12:27",
    "date": "2026-11-26",
    "inicio": "",
    "format": "carrusel",
-   "status": "aprobado",
+   "status": "programado",
    "priority": "normal",
    "revisions": 0,
    "desarchivada": false,
@@ -1422,9 +1422,9 @@
    "marca": [],
    "createdAt": "2026-11-03T15:07:28.689Z",
    "createdBy": "javi",
-   "updatedAt": "2026-11-23T20:47:20.476Z",
-   "updatedBy": "flavio",
-   "statusChangedAt": "2026-11-23T20:47:20.476Z",
+   "updatedAt": "2026-11-27T13:29:40.439Z",
+   "updatedBy": "javi",
+   "statusChangedAt": "2026-11-27T13:29:40.439Z",
    "publishedAt": null
   },
   {
@@ -11732,6 +11732,29 @@
  ],
  "activity": [
   {
+   "id": "a5a70054-d24e-486c-950a-96940b4e6d63",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó hora",
+   "meta": null,
+   "createdAt": "2026-11-27T13:29:40.441Z"
+  },
+  {
+   "id": "9dae9edd-12b8-467f-9e75-d62124f26dee",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "postTitle": "Aire nuevo sin abrir la ventana",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Aprobado a Programado",
+   "meta": {
+    "from": "aprobado",
+    "to": "programado"
+   },
+   "createdAt": "2026-11-27T13:29:40.440Z"
+  },
+  {
    "id": "84b35777-4b02-4943-bd78-b3af530d1e82",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "postTitle": "Del primer mensaje a la obra, en 6 pasos",
@@ -13953,6 +13976,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4d3a9d02-e80e-44e7-8d66-2c64b39da98d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "update",
+   "text": "editó “Aire nuevo sin abrir la ventana” (hora)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi editó hora",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-27T13:29:40.441Z"
+  },
+  {
+   "id": "202d55cc-38d4-4186-b15f-74e68bf5e6d3",
+   "to": "maca",
+   "from": "javi",
+   "postId": "2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "type": "status",
+   "text": "movió “Aire nuevo sin abrir la ventana” a Programado",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Aire nuevo sin abrir la ventana",
+   "body": "Javi la movió a Programado",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=2fa98f13-69ae-40b5-9cea-3d63c396c517",
+   "createdAt": "2026-11-27T13:29:40.440Z"
+  },
   {
    "id": "e2a18393-31be-4dc6-b6e2-0ce6d4bae44c",
    "to": "javi",

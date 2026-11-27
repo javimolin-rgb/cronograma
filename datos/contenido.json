@@ -14306,13 +14306,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona.…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Si es muy pesado en renderizar. Solo algo de ambiente con vegetación de la zona.…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T17:59:04.218Z"
+   "createdAt": "2026-11-27T17:59:04.218Z",
+   "readAt": "2026-11-27T18:36:03.294Z"
   },
   {
    "id": "0fc97a6d-cea4-4dfa-9e6c-09cf6704d1d6",
@@ -20356,8 +20357,8 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|javi",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "javi",
-   "at": "2026-11-27T17:55:52.912Z",
-   "hasta": "2026-11-27T17:54:56.436Z",
+   "at": "2026-11-27T18:36:03.295Z",
+   "hasta": "2026-11-27T17:59:04.208Z",
    "que": "pieza"
   },
   {

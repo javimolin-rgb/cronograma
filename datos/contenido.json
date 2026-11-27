@@ -14321,13 +14321,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "mention",
    "text": "te mencionó en “Casa Roble”: @Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, sol…",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Roble",
    "body": "Maca te mencionó: @Javi, por favor  probar con otra musica de fondo.  Y la voz me parece bien, sol…",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T15:50:59.542Z"
+   "createdAt": "2026-11-27T15:50:59.542Z",
+   "readAt": "2026-11-27T16:15:30.635Z"
   },
   {
    "id": "41fdb842-359f-43e0-8637-8677c8138c9b",

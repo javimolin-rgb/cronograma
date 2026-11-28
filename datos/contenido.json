@@ -14623,13 +14623,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Gracias, estamos ok para renderizar",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Gracias, estamos ok para renderizar",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-28T13:56:56.260Z"
+   "createdAt": "2026-11-28T13:56:56.260Z",
+   "readAt": "2026-11-28T15:23:46.677Z"
   },
   {
    "id": "afcbd4d2-db8f-4275-9857-ab3b3c677786",

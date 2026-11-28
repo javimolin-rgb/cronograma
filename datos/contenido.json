@@ -14668,13 +14668,14 @@
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "type": "status",
    "text": "movió “Casa Roble” a Aprobado",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Roble",
    "body": "Javi la movió a Aprobado",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
-   "createdAt": "2026-11-27T17:56:48.749Z"
+   "createdAt": "2026-11-27T17:56:48.749Z",
+   "readAt": "2026-11-28T12:18:04.577Z"
   },
   {
    "id": "b805b5f9-9e38-4aa3-9614-b185014c4c5f",
@@ -20685,8 +20686,8 @@
    "id": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125|maca",
    "postId": "e2e69c7f-c96f-41d1-9f29-6f57e2be4125",
    "person": "maca",
-   "at": "2026-11-27T17:45:23.331Z",
-   "hasta": "2026-11-27T16:54:29.464Z",
+   "at": "2026-11-28T12:18:04.583Z",
+   "hasta": "2026-11-27T17:56:48.747Z",
    "que": "pieza"
   },
   {

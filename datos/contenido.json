@@ -14994,13 +14994,14 @@
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "type": "status",
    "text": "movió “Del primer mensaje a la obra, en 6 pasos” a En diseño",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Del primer mensaje a la obra, en 6 pasos",
    "body": "Javi la movió a En diseño",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=549a3272-d695-4f76-9011-a252831ac96c",
-   "createdAt": "2026-11-27T17:57:03.036Z"
+   "createdAt": "2026-11-27T17:57:03.036Z",
+   "readAt": "2026-11-28T15:43:24.404Z"
   },
   {
    "id": "8c14e824-fcc3-4326-ba56-4f40ae39d00f",
@@ -20931,8 +20932,8 @@
    "id": "549a3272-d695-4f76-9011-a252831ac96c|maca",
    "postId": "549a3272-d695-4f76-9011-a252831ac96c",
    "person": "maca",
-   "at": "2026-11-27T15:51:06.573Z",
-   "hasta": "2026-11-25T21:50:56.596Z",
+   "at": "2026-11-28T15:43:24.407Z",
+   "hasta": "2026-11-27T17:57:03.035Z",
    "que": "pieza"
   },
   {

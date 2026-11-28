@@ -14464,14 +14464,15 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "zumbido",
    "text": "te mandó un zumbido en “Casa Maitén”: necesita esto con urgencia",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "urgente": true,
    "title": "Casa Maitén",
    "body": "Javi necesita esto con urgencia",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-28T03:24:48.390Z"
+   "createdAt": "2026-11-28T03:24:48.390Z",
+   "readAt": "2026-11-28T12:12:49.566Z"
   },
   {
    "id": "5fe9315c-30e7-4d72-9a3e-0ae115db8243",
@@ -14480,13 +14481,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "review",
    "text": "subió 6 archivos en “Casa Maitén” para revisar: Subidas las vistas del render con los cambios solicitados",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Javi te pide revisar: Subidas las vistas del render con los cambios solicitados",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T19:59:43.704Z"
+   "createdAt": "2026-11-27T19:59:43.704Z",
+   "readAt": "2026-11-28T12:12:49.567Z"
   },
   {
    "id": "b08524aa-27f6-4132-96a7-5bc885d089f2",
@@ -14510,13 +14512,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "update",
    "text": "editó “Casa Maitén” (archivos)",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Maitén",
    "body": "Javi editó archivos",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T19:59:43.704Z"
+   "createdAt": "2026-11-27T19:59:43.704Z",
+   "readAt": "2026-11-28T12:12:49.567Z"
   },
   {
    "id": "665abda2-7034-417c-812c-f0b04eed7a2d",
@@ -14540,13 +14543,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "status",
    "text": "movió “Casa Maitén” a Esperando aprobación",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": false,
    "title": "Casa Maitén",
    "body": "Javi la movió a Esperando aprobación",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-27T19:59:43.703Z"
+   "createdAt": "2026-11-27T19:59:43.703Z",
+   "readAt": "2026-11-28T12:12:49.567Z"
   },
   {
    "id": "508de868-72d1-42b6-b04d-06524e6ab4f8",
@@ -20497,9 +20501,9 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-27T19:36:04.407Z",
-   "hasta": "2026-11-27T19:36:04.401Z",
-   "que": "comentario"
+   "at": "2026-11-28T12:12:49.568Z",
+   "hasta": "2026-11-28T03:24:49.529Z",
+   "que": "pieza"
   },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",

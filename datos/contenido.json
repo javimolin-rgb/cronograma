@@ -2931,7 +2931,7 @@
    "date": "2026-12-08",
    "inicio": "2026-11-25",
    "format": "story",
-   "status": "espera",
+   "status": "revision",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -2957,7 +2957,7 @@
      "sha": "e1ef75fa532cf385f62e12957d67349c59b14c11",
      "type": "image/webp",
      "size": 79812,
-     "orden": 0
+     "orden": 1013
     },
     {
      "id": "ad734b57-5dfd-4f03-9449-34e985b75762",
@@ -2972,7 +2972,7 @@
      "sha": "67a26edd1d363dd8a9fce67bbc3feb995ad88d96",
      "type": "image/webp",
      "size": 75448,
-     "orden": 1
+     "orden": 1014
     },
     {
      "id": "a3cffec5-8d38-418b-8d7b-853fb9d3707a",
@@ -2987,7 +2987,7 @@
      "sha": "d2e28b21133f1a384664ce6183b98d248b31955f",
      "type": "image/webp",
      "size": 43072,
-     "orden": 2
+     "orden": 1015
     },
     {
      "id": "07ed2475-8e27-48a6-b25f-fc16b4c38847",
@@ -3002,7 +3002,7 @@
      "sha": "ee5a7cd2b270f56701fe0d38baa9af0f5d36a256",
      "type": "image/webp",
      "size": 43752,
-     "orden": 3
+     "orden": 1016
     },
     {
      "id": "69767b63-61f1-44b7-b3c4-452490915278",
@@ -3017,7 +3017,7 @@
      "sha": "06233c6e2d837daae76506fb5dd42d8d7771ea0b",
      "type": "image/webp",
      "size": 49662,
-     "orden": 4
+     "orden": 1017
     },
     {
      "id": "b7745b29-a32c-4d2c-a0cf-ca68cd11297a",
@@ -3032,7 +3032,7 @@
      "sha": "65d54abd07b32975391600aa2b4e2666c36fddfd",
      "type": "image/webp",
      "size": 52832,
-     "orden": 5
+     "orden": 1018
     },
     {
      "id": "2ba54bb8-1ee4-49ac-a630-d86de43589e8",
@@ -3047,7 +3047,7 @@
      "sha": "cc5a6344f1997d2c108940eeb8c6939938044b1e",
      "type": "image/webp",
      "size": 80254,
-     "orden": 6
+     "orden": 0
     },
     {
      "id": "0638240d-6438-405a-80e9-48cf08f01fd3",
@@ -3062,7 +3062,7 @@
      "sha": "b8428db4ee95ddc9d4c527f7047beeac4cde1095",
      "type": "image/webp",
      "size": 64860,
-     "orden": 7
+     "orden": 1
     },
     {
      "id": "e73a876c-0fcd-4c30-88b6-5ac308555e07",
@@ -3077,7 +3077,7 @@
      "sha": "ef407b7c4b5a6102b4eb3778d5b7d41c3770e29d",
      "type": "image/webp",
      "size": 75774,
-     "orden": 8
+     "orden": 2
     },
     {
      "id": "8e0d54ca-dd0c-4529-acd5-b811d492c987",
@@ -3092,7 +3092,7 @@
      "sha": "0db0322d619e47742da32b7907230ab3785c95f2",
      "type": "image/webp",
      "size": 76588,
-     "orden": 9
+     "orden": 3
     },
     {
      "id": "b285c9ff-4762-4520-8ff5-038ceabaa280",
@@ -3107,7 +3107,7 @@
      "sha": "84f6c8b7b00d40b0077fc9b12be2faba73b8ff77",
      "type": "image/webp",
      "size": 56264,
-     "orden": 10
+     "orden": 4
     },
     {
      "id": "5d33d0b9-d7f5-4507-806b-aac4cc2bda15",
@@ -3122,15 +3122,105 @@
      "sha": "2647acf2a26d11e9681a2557c744a05203cb8abf",
      "type": "image/webp",
      "size": 63592,
+     "orden": 5
+    },
+    {
+     "id": "7a5ec9ff-bd12-4965-8214-f0746d1deb5b",
+     "by": "javi",
+     "at": "2026-11-28T13:02:12.767Z",
+     "base": "der_atras",
+     "version": 3,
+     "shaOrigen": "3dd8c891dc60e75cc7c22f8d0c55c78ccf0c17f7",
+     "name": "der_atras-v3.webp",
+     "path": "archivos/1.-modelos-3d/der_atras-v3-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/der_atras-v3-2.webp",
+     "sha": "2dce64c74beb07a866c9d73c48128131de462d59",
+     "type": "image/webp",
+     "size": 80280,
+     "orden": 6
+    },
+    {
+     "id": "9b447c1d-d478-4611-a097-0f15efd920c4",
+     "by": "javi",
+     "at": "2026-11-28T13:02:16.677Z",
+     "base": "izq_atras",
+     "version": 3,
+     "shaOrigen": "5143db45782e4b32235ecb52a22046ccc4ba3ab7",
+     "name": "izq_atras-v3.webp",
+     "path": "archivos/1.-modelos-3d/izq_atras-v3-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/izq_atras-v3-2.webp",
+     "sha": "c5124e544000f5b88bc546ea1e789a500613c615",
+     "type": "image/webp",
+     "size": 64848,
+     "orden": 7
+    },
+    {
+     "id": "adfa349b-14f2-4c48-bfc3-174dde268d2c",
+     "by": "javi",
+     "at": "2026-11-28T13:02:20.100Z",
+     "base": "izq",
+     "version": 3,
+     "shaOrigen": "98f1321a2fc7cb0c291aaa1e17298466e9b70e67",
+     "name": "izq-v3.webp",
+     "path": "archivos/1.-modelos-3d/izq-v3-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/izq-v3-2.webp",
+     "sha": "c055a879a2c84af3dc1673659ea827c89125b304",
+     "type": "image/webp",
+     "size": 56912,
+     "orden": 8
+    },
+    {
+     "id": "7939e2be-3a90-4cf2-8eda-226da72d9ac2",
+     "by": "javi",
+     "at": "2026-11-28T13:02:23.124Z",
+     "base": "der",
+     "version": 3,
+     "shaOrigen": "5a71f1d151ad5e4de361921f0acb3b98485537a6",
+     "name": "der-v3.webp",
+     "path": "archivos/1.-modelos-3d/der-v3-2.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/der-v3-2.webp",
+     "sha": "0ca4504fbf499d0c82ff52b846ecbf8b2442fc6d",
+     "type": "image/webp",
+     "size": 64512,
+     "orden": 9
+    },
+    {
+     "id": "06465629-4b31-475e-b16b-d35701f9f027",
+     "by": "javi",
+     "at": "2026-11-28T13:02:25.943Z",
+     "base": "izq_cerca",
+     "version": 3,
+     "shaOrigen": "d9d57177a7028fecd41adeb17c618e4ee7b2b3ae",
+     "name": "izq_cerca-v3.webp",
+     "path": "archivos/1.-modelos-3d/izq_cerca-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/izq_cerca-v3.webp",
+     "sha": "9d1554be02371e62ab8732ba1fac3a8bc8d30254",
+     "type": "image/webp",
+     "size": 77644,
+     "orden": 10
+    },
+    {
+     "id": "065620b9-c263-4b55-801c-bc866656e9d1",
+     "by": "javi",
+     "at": "2026-11-28T13:02:29.356Z",
+     "base": "der_cerca",
+     "version": 3,
+     "shaOrigen": "ce6aff77188dbced0f244ef372a4d6f0eff095be",
+     "name": "der_cerca-v3.webp",
+     "path": "archivos/1.-modelos-3d/der_cerca-v3.webp",
+     "url": "https://raw.githubusercontent.com/javimolin-rgb/cronograma/main/archivos/1.-modelos-3d/der_cerca-v3.webp",
+     "sha": "99d78b29374479d623764702d33c277464399f96",
+     "type": "image/webp",
+     "size": 76944,
      "orden": 11
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-28T12:20:39.076Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-28T13:02:35.495Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-27T19:59:43.702Z",
+   "statusChangedAt": "2026-11-28T13:02:35.495Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -12057,6 +12147,39 @@
  ],
  "activity": [
   {
+   "id": "85f78b4f-74c7-4f4b-9dbf-e0a970c276dc",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "review",
+   "text": "pidió revisión a Flavio y Maca",
+   "meta": null,
+   "createdAt": "2026-11-28T13:02:35.501Z"
+  },
+  {
+   "id": "fbb080cd-e8df-4e7c-bb5b-75b715bafb79",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "edit",
+   "text": "editó archivos",
+   "meta": null,
+   "createdAt": "2026-11-28T13:02:35.498Z"
+  },
+  {
+   "id": "c3d2bb40-67fb-4b80-9875-dfd7ccbd471f",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de Esperando aprobación a En revisión",
+   "meta": {
+    "from": "espera",
+    "to": "revision"
+   },
+   "createdAt": "2026-11-28T13:02:35.497Z"
+  },
+  {
    "id": "1944b4ac-3040-47d0-807d-3ef146e33dd9",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14475,6 +14598,96 @@
   }
  ],
  "notifications": [
+  {
+   "id": "4b15b0cd-a3cd-4c5f-80a1-50c17fb9c325",
+   "to": "maca",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "review",
+   "text": "subió 6 archivos en “Casa Maitén” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Javi subió 6 archivos para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:02:35.498Z"
+  },
+  {
+   "id": "da569ccb-dce7-439b-80cb-2dff4b0ef4a8",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "review",
+   "text": "subió 6 archivos en “Casa Maitén” para revisar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Javi subió 6 archivos para que lo revises",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:02:35.498Z"
+  },
+  {
+   "id": "272df470-f233-4a81-bc88-c53f9f42bbd5",
+   "to": "maca",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "update",
+   "text": "editó “Casa Maitén” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:02:35.498Z"
+  },
+  {
+   "id": "8fc0c94e-e753-44df-87ba-6481fcdd44ed",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "update",
+   "text": "editó “Casa Maitén” (archivos)",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Javi editó archivos",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:02:35.498Z"
+  },
+  {
+   "id": "e2c75569-0a1a-4d17-af57-d2ad2d50984d",
+   "to": "maca",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "status",
+   "text": "movió “Casa Maitén” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:02:35.497Z"
+  },
+  {
+   "id": "e7836d21-b460-4980-a866-1d857f71dc3a",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "status",
+   "text": "movió “Casa Maitén” a En revisión",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Javi la movió a En revisión",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:02:35.497Z"
+  },
   {
    "id": "970d88ae-a775-44fd-8d76-7723199531c8",
    "to": "javi",

@@ -2931,7 +2931,7 @@
    "date": "2026-12-08",
    "inicio": "2026-11-25",
    "format": "story",
-   "status": "revision",
+   "status": "diseno",
    "priority": "normal",
    "revisions": 1,
    "desarchivada": false,
@@ -3216,11 +3216,11 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-28T13:56:56.251Z",
-   "updatedBy": "maca",
+   "updatedAt": "2026-11-28T15:26:06.788Z",
+   "updatedBy": "javi",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
-   "statusChangedAt": "2026-11-28T13:02:35.495Z",
+   "statusChangedAt": "2026-11-28T15:26:06.788Z",
    "publishedAt": null,
    "artefactos": [],
    "versionesTexto": [
@@ -12155,6 +12155,19 @@
  ],
  "activity": [
   {
+   "id": "4dc5a322-3d3e-449d-a276-6b1c7f7f0b80",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "status",
+   "text": "movió de En revisión a En diseño",
+   "meta": {
+    "from": "revision",
+    "to": "diseno"
+   },
+   "createdAt": "2026-11-28T15:26:06.788Z"
+  },
+  {
    "id": "f9734f63-0a31-4b24-8bd1-0fe8713a9adc",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14616,6 +14629,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "8d41c70f-ce9d-4905-a52b-f5aefbc084e4",
+   "to": "maca",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "status",
+   "text": "movió “Casa Maitén” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T15:26:06.789Z"
+  },
+  {
+   "id": "dc609996-6b3e-4ae0-9521-a150c7d45785",
+   "to": "flavio",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "status",
+   "text": "movió “Casa Maitén” a En diseño",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Javi la movió a En diseño",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T15:26:06.789Z"
+  },
   {
    "id": "0cfc5709-67ff-4799-aa00-6cc9c69456e9",
    "to": "javi",

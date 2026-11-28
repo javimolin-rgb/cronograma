@@ -12049,6 +12049,16 @@
  ],
  "activity": [
   {
+   "id": "e4852908-4f52-4ed5-a301-bcfdae306ee8",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "javi",
+   "type": "review",
+   "text": "mandó un zumbido a Maca: necesita esto con urgencia",
+   "meta": null,
+   "createdAt": "2026-11-28T03:24:48.390Z"
+  },
+  {
    "id": "c1fcd11b-d511-445f-8043-d63322808399",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14447,6 +14457,22 @@
   }
  ],
  "notifications": [
+  {
+   "id": "701fad3b-69b8-463b-a478-0fffb9d1d5ae",
+   "to": "maca",
+   "from": "javi",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "zumbido",
+   "text": "te mandó un zumbido en “Casa Maitén”: necesita esto con urgencia",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "urgente": true,
+   "title": "Casa Maitén",
+   "body": "Javi necesita esto con urgencia",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T03:24:48.390Z"
+  },
   {
    "id": "5fe9315c-30e7-4d72-9a3e-0ae115db8243",
    "to": "maca",
@@ -20081,8 +20107,7 @@
    "createdAt": "2026-10-22T20:38:02.121Z",
    "silenciadas": [
     "e-fotos-itahue",
-    "db10db45-7eea-498b-bef7-0fc0093ab3b8",
-    "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b"
+    "db10db45-7eea-498b-bef7-0fc0093ab3b8"
    ],
    "seguidas": []
   }

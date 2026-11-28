@@ -3216,8 +3216,8 @@
     }
    ],
    "checklist": [],
-   "updatedAt": "2026-11-28T13:03:20.984Z",
-   "updatedBy": "javi",
+   "updatedAt": "2026-11-28T13:56:56.251Z",
+   "updatedBy": "maca",
    "createdAt": "2026-11-02T23:06:32.432Z",
    "createdBy": "javi",
    "statusChangedAt": "2026-11-28T13:02:35.495Z",
@@ -8784,6 +8784,14 @@
  ],
  "comments": [
   {
+   "id": "bd917baf-9838-4544-bde5-7ddfcf0cde48",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "author": "maca",
+   "text": "Gracias, estamos ok para renderizar",
+   "fileIds": [],
+   "createdAt": "2026-11-28T13:56:56.255Z"
+  },
+  {
    "id": "cdf72d42-9168-44aa-83b4-7834ffce7d5d",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "author": "maca",
@@ -12147,6 +12155,16 @@
  ],
  "activity": [
   {
+   "id": "f9734f63-0a31-4b24-8bd1-0fe8713a9adc",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "postTitle": "Casa Maitén",
+   "actor": "maca",
+   "type": "comment",
+   "text": "comentó",
+   "meta": null,
+   "createdAt": "2026-11-28T13:56:56.258Z"
+  },
+  {
    "id": "85f78b4f-74c7-4f4b-9dbf-e0a970c276dc",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "postTitle": "Casa Maitén",
@@ -14598,6 +14616,36 @@
   }
  ],
  "notifications": [
+  {
+   "id": "0cfc5709-67ff-4799-aa00-6cc9c69456e9",
+   "to": "javi",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "supervision",
+   "text": "comentó en “Casa Maitén”: Gracias, estamos ok para renderizar",
+   "read": false,
+   "inApp": true,
+   "push": true,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Gracias, estamos ok para renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:56:56.260Z"
+  },
+  {
+   "id": "afcbd4d2-db8f-4275-9857-ab3b3c677786",
+   "to": "flavio",
+   "from": "maca",
+   "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "type": "comment",
+   "text": "comentó en “Casa Maitén”: Gracias, estamos ok para renderizar",
+   "read": false,
+   "inApp": true,
+   "push": false,
+   "title": "Casa Maitén",
+   "body": "Maca comentó: Gracias, estamos ok para renderizar",
+   "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
+   "createdAt": "2026-11-28T13:56:56.260Z"
+  },
   {
    "id": "4b15b0cd-a3cd-4c5f-80a1-50c17fb9c325",
    "to": "maca",
@@ -20767,9 +20815,9 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|maca",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "maca",
-   "at": "2026-11-28T13:55:58.389Z",
-   "hasta": "2026-11-28T13:03:20.984Z",
-   "que": "pieza"
+   "at": "2026-11-28T13:56:56.253Z",
+   "hasta": "2026-11-28T13:56:56.251Z",
+   "que": "comentario"
   },
   {
    "id": "c1dbfc2f-ecc8-40b8-b2fb-24cdc773cba7|maca",

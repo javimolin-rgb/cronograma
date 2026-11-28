@@ -14482,13 +14482,14 @@
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "type": "supervision",
    "text": "comentó en “Casa Maitén”: Hola Javi, faltaría sólo los marcos de las ventanas negros",
-   "read": false,
+   "read": true,
    "inApp": true,
    "push": true,
    "title": "Casa Maitén",
    "body": "Maca comentó: Hola Javi, faltaría sólo los marcos de las ventanas negros",
    "url": "https://javimolin-rgb.github.io/cronograma/#post=01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
-   "createdAt": "2026-11-28T12:20:39.088Z"
+   "createdAt": "2026-11-28T12:20:39.088Z",
+   "readAt": "2026-11-28T13:01:55.088Z"
   },
   {
    "id": "e4406880-2eac-45c0-9b2f-7cfa89940adc",
@@ -20710,8 +20711,8 @@
    "id": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b|javi",
    "postId": "01d59c6a-ae8d-4be7-9f59-aec8ddd0168b",
    "person": "javi",
-   "at": "2026-11-28T12:02:37.261Z",
-   "hasta": "2026-11-28T03:24:49.529Z",
+   "at": "2026-11-28T13:01:55.088Z",
+   "hasta": "2026-11-28T12:20:39.076Z",
    "que": "pieza"
   },
   {
